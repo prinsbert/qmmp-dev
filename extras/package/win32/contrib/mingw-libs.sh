@@ -32,9 +32,6 @@ fi
 export LDFLAGS="-lssp"
 export STRIP=false
 export JOBS=2
-
-
-mkdir -p ${PREFIX} ${PREFIX}/bin ${PREFIX}/lib/pkgconfig ${PREFIX}/share/doc
 export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig 
 
 case $1 in
@@ -48,6 +45,9 @@ case $1 in
     done
   ;;
   --install|--install-win64)
+    
+    mkdir -p ${PREFIX} ${PREFIX}/bin ${PREFIX}/lib/pkgconfig ${PREFIX}/share/doc
+
     if [ -n "$2" ]; then
         LIB_NAMES=$2
     fi

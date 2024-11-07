@@ -13,9 +13,9 @@ case $1 in
   --install)
     cd temp
     if [ ${MINGW64_PATH} ]; then
-        unzip ${NAME}_${VERSION}-2_win64.zip -d ${PREFIX}/        
+        unzip -o ${NAME}_${VERSION}-2_win64.zip -d ${PREFIX}/        
     else
-        unzip ${NAME}_${VERSION}-3_win32.zip -d ${PREFIX}/ 
+        unzip -o ${NAME}_${VERSION}-3_win32.zip -d ${PREFIX}/ 
     fi
   ;;
   --clean)
