@@ -4,19 +4,24 @@ LIB_NAMES+='qtbase qttools qttranslations qtwinextras qtimageformats'
 
 export QT_VERSION=5.15.15
 export DEV_PATH=/c/devel
-export MINGW32_PATH=${DEV_PATH}/mingw32
-export QT5_PATH=${DEV_PATH}/qt5
-export ZLIB_ROOT=${MINGW32_PATH}/i686-w64-mingw32
-export PREFIX=${DEV_PATH}/qt5
 
-export PATH=${PATH}:${MINGW32_PATH}/bin:${QT5_PATH}/bin:${PREFIX}/bin
-export OPENSSL_PATH=${DEV_PATH}/mingw32/opt
+if [ "$1" == "--install-win64" ]; then
+    export MINGW64_PATH=${DEV_PATH}/mingw64
+    export QT5_PATH=${DEV_PATH}/qt5-win64
+    export ZLIB_ROOT=${MINGW32_PATH}/x86_64-w64-mingw32
+    export PREFIX=${DEV_PATH}/qt5-win64
+    export PATH=${PATH}:${MINGW64_PATH}/bin:${QT5_PATH}/bin:${PREFIX}/bin    
+else
+    export MINGW32_PATH=${DEV_PATH}/mingw32
+    export QT5_PATH=${DEV_PATH}/qt5
+    export ZLIB_ROOT=${MINGW32_PATH}/i686-w64-mingw32
+    export PREFIX=${DEV_PATH}/qt5
+    export PATH=${PATH}:${MINGW32_PATH}/bin:${QT5_PATH}/bin:${PREFIX}/bin
+fi
 
 export STRIP=false
 export JOBS=2
 
-
-mkdir -p ${PREFIX} ${PREFIX}/bin ${PREFIX}/lib/pkgconfig ${PREFIX}/share/doc
 export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig 
 
 case $1 in
@@ -29,7 +34,8 @@ case $1 in
         cd ..
     done
   ;;
-  --install)
+  --install|--install-win64)
+    mkdir -p ${PREFIX} ${PREFIX}/bin ${PREFIX}/lib/pkgconfig ${PREFIX}/share/doc
     for NAME in $LIB_NAMES
     do
         echo 'installing '${NAME}'...'
