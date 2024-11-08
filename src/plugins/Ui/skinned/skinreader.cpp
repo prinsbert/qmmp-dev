@@ -113,7 +113,10 @@ void SkinReader::loadSkins(const QStringList &paths)
     thumbnailes = cacheDir.entryInfoList(QDir::Files | QDir::Hidden);
 
     for(const QFileInfo &i : std::as_const(thumbnailes))
-        thumbnailHash.insert(i.baseName(), i.canonicalFilePath());
+    {
+        if (i.size() > 0)
+            thumbnailHash.insert(i.baseName(), i.canonicalFilePath());
+    }
 
     for(const QFileInfo &info : std::as_const(infoList))
     {
@@ -200,7 +203,7 @@ void SkinReader::untar(const QString &from, const QString &to, bool preview)
     QProcess process;
     process.start(u"tar"_s, { u"tf"_s, from }); //list archive
     process.waitForFinished();
-    QByteArray array = process.readAllStandardOutput ();
+    QByteArray array = process.readAllStandardOutput();
     const QStringList outputList = QString::fromLocal8Bit(array).split(QChar::LineFeed, Qt::SkipEmptyParts);
 
     for(QString str : std::as_const(outputList))
@@ -210,12 +213,20 @@ void SkinReader::untar(const QString &from, const QString &to, bool preview)
         if(str.endsWith(QLatin1Char('/')))
             continue;
 
-        if (!preview || (str.contains(u"/main."_s, Qt::CaseInsensitive)
-                         || str.startsWith(u"main."_s, Qt::CaseInsensitive)))
+        if(preview && !str.endsWith(u".png"_s, Qt::CaseInsensitive) &&
+                !str.endsWith(u".bmp"_s, Qt::CaseInsensitive) &&
+                !str.endsWith(u".xpm"_s, Qt::CaseInsensitive))
         {
-            QStringList args = { u"xvfk"_s , from , u"-O"_s , str };
+            continue;
+        }
+
+        if(!preview || (str.contains(u"/main."_s, Qt::CaseInsensitive) || str.startsWith(u"main."_s, Qt::CaseInsensitive)))
+        {
+            str.replace(QLatin1Char('['), QStringLiteral("\\\\["));
+            str.replace(QLatin1Char(']'), QStringLiteral("\\\\]"));
+
+            QStringList args = { u"xvfk"_s , from , u"-O"_s , u"--"_s, str };
             process.start(u"tar"_s, args);
-            process.waitForStarted();
             process.waitForFinished();
             array = process.readAllStandardOutput();
 
