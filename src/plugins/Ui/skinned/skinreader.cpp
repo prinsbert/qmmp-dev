@@ -63,7 +63,7 @@ void SkinReader::loadSkins(const QStringList &paths)
     QFileInfoList thumbnailes = cacheDir.entryInfoList(QDir::Files | QDir::Hidden);
 
     for(const QFileInfo &i : std::as_const(thumbnailes))
-        thumbnailHash.insert(i.baseName(), i.canonicalFilePath());
+        thumbnailHash.insert(i.completeBaseName(), i.canonicalFilePath());
 
     for(const QFileInfo &info : std::as_const(infoList))
     {
@@ -79,7 +79,7 @@ void SkinReader::loadSkins(const QStringList &paths)
         }
         else if(info.isFile())
         {
-            QString thumbnailPath = thumbnailHash.value(info.baseName());
+            QString thumbnailPath = thumbnailHash.value(info.fileName());
 
             if(thumbnailPath.isEmpty())
             {
@@ -115,7 +115,7 @@ void SkinReader::loadSkins(const QStringList &paths)
     for(const QFileInfo &i : std::as_const(thumbnailes))
     {
         if (i.size() > 0)
-            thumbnailHash.insert(i.baseName(), i.canonicalFilePath());
+            thumbnailHash.insert(i.completeBaseName(), i.canonicalFilePath());
     }
 
     for(const QFileInfo &info : std::as_const(infoList))
@@ -125,7 +125,7 @@ void SkinReader::loadSkins(const QStringList &paths)
 
         if(m_previewHash.contains(info.canonicalFilePath()) && m_previewHash.value(info.canonicalFilePath()).isEmpty())
         {
-            QString thumbnailPath = thumbnailHash.value(info.baseName());
+            QString thumbnailPath = thumbnailHash.value(info.fileName());
             if(!thumbnailPath.isEmpty())
             {
                 qCDebug(plugin, "adding %s to cache", qPrintable(info.fileName()));
