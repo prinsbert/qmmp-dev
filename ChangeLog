@@ -1941,7 +1941,18 @@ Version 2.2.1
 
 Version 2.2.2
 * added SIGTERM signal support
+* added additional information in the "about..." dialog
+* improved skin unpacking
+* improved Windows support:
+  - using 7-Zip archiver for skin unpacking
+  - support for packed skins in tar.gz and tar.bz2 formats
+  - 64-bit build support
+  - mute support for wasapi and directsoud output plugins
 * fixed double-click behavior of the file system viewer in the simple
   user interface
 * fixed crash in the two-panel file dialog
 * fixed playback starting from the file dialog (thanks to cybersnow_2001)
+* updated Dutch translation (Heimen Stoffels)
+* updated Finnish translation (Kimmo Kujansuu)
+* updated Polish translation (Marek Adamski)
+* updated Russian translation
