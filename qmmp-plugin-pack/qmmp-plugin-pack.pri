@@ -60,12 +60,20 @@ unix {
   QMAKE_LIBDIR += /home/user/qmmp-$${QMMP_PLUGIN_PACK_VERSION_MAJOR}.$${QMMP_PLUGIN_PACK_VERSION_MINOR}/lib
   INCLUDEPATH += /usr/local/include
 } else {
-  INCLUDEPATH += C:/projects/qmmp-svn-stable/qmmp-2.0/src
-  QMAKE_LIBDIR += C:/projects/qmmp-svn-stable/qmmp-2.0/bin
-  EXTRA_INCDIR = C:/devel/mingw32-libs/include
-  QMAKE_CXXFLAGS += "-isystem $${EXTRA_INCDIR}"
-  QMAKE_CFLAGS += "-isystem $${EXTRA_INCDIR}"
-  QMAKE_LIBDIR +=  C:/devel/mingw32-libs/lib
+  INCLUDEPATH += C:/projects/qmmp-svn-trunk/qmmp/src
+  QMAKE_LIBDIR += C:/projects/qmmp-svn-trunk/qmmp/bin
+  
+  win32 {
+    contains(QT_ARCH, x86_64) {
+      EXTRA_INCDIR = C:/devel/mingw64-libs/include
+      QMAKE_LIBDIR +=  C:/devel/mingw64-libs/lib 
+    } else {
+      EXTRA_INCDIR = C:/devel/mingw32-libs/include 
+      QMAKE_LIBDIR +=  C:/devel/mingw32-libs/lib
+    }
+    QMAKE_CXXFLAGS += "-isystem $${EXTRA_INCDIR}"
+    QMAKE_CFLAGS += "-isystem $${EXTRA_INCDIR}"
+  }
 }
 
 #Comment/uncomment this if you want to change plugins list
