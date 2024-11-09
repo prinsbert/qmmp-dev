@@ -36,7 +36,7 @@
     <message>
         <location filename="../aboutdialog.cpp" line="69"/>
         <source>Qt-based Multimedia Player (Qmmp)</source>
-        <translation>Qt-pohjainen multimediasoitin (Qmmp)</translation>
+        <translation>Qt-multimediasoitin (Qmmp)</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="72"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../aboutdialog.cpp" line="79"/>
         <source>(c) %1-%2 Qmmp Development Team</source>
-        <translation>(c) %1-%2 Qmmp kehitysryhmä</translation>
+        <translation>(c) %1-%2 Qmmp Development Team</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="84"/>
@@ -81,27 +81,27 @@
     <message>
         <location filename="../aboutdialog.cpp" line="126"/>
         <source>Output plugins:</source>
-        <translation>Laajennukset:</translation>
+        <translation>Ulostulon laajennukset:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="73"/>
         <source>Qt version: %1 (compiled with %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt-versio: %1 (tehty %2)</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="74"/>
         <source>Qt platform: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt-alusta: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="75"/>
         <source>System: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Järjestelmä: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="76"/>
         <source>Build ABI: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Koonti ABI: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="113"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../aboutdialog.cpp" line="120"/>
         <source>General plugins:</source>
-        <translation>Yleiset liitännäiset:</translation>
+        <translation>Yleiset laajennukset:</translation>
     </message>
 </context>
 <context>
@@ -288,7 +288,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="67"/>
         <source>Plugins</source>
-        <translation>Liitännäiset</translation>
+        <translation>Laajennukset</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="76"/>
@@ -304,7 +304,7 @@
         <location filename="../forms/configdialog.ui" line="94"/>
         <location filename="../forms/configdialog.ui" line="996"/>
         <source>Audio</source>
-        <translation>Ääni</translation>
+        <translation>Audio</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="153"/>
@@ -319,7 +319,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="159"/>
         <source>Load metadata from files</source>
-        <translation>Lataa metatiedot tiedostoista</translation>
+        <translation>Lataa tiedostojen metatiedot</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="176"/>
@@ -341,7 +341,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="169"/>
         <source>Read tags while loading a playlist</source>
-        <translation>Lue tunnisteet ladatessasi soittolistaa</translation>
+        <translation>Lue tunnisteet soittolistaa ladatessa</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="193"/>
@@ -397,7 +397,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="336"/>
         <source>Auto-save playlist when modified</source>
-        <translation>Tallenna soittolista automaattisesti muokkauksen yhteydessä</translation>
+        <translation>Tallenna autom. soittolista muokatessa</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="343"/>
@@ -489,12 +489,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="638"/>
         <source>Auto-paste URL from clipboard</source>
-        <translation>Liitä leikepöydältä URL automaattisesti</translation>
+        <translation>Liitä URL autom. leikepöydältä</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="648"/>
         <source>CUE Editor</source>
-        <translation>CUE -editori</translation>
+        <translation>CUE-editori</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="654"/>
@@ -580,7 +580,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="986"/>
         <source>Use  peak info to prevent clipping</source>
-        <translation>Käytä tietoja estääksesi huippujen leikkaamisen</translation>
+        <translation>Käytä piikkitietoja ja estä huippujen leikkaantuminen</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1002"/>
@@ -660,7 +660,7 @@
     <message>
         <location filename="../configdialog.cpp" line="69"/>
         <source>Disabled</source>
-        <translation>Pois käytöstä</translation>
+        <translation>Pois</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="76"/>
@@ -906,12 +906,12 @@
     <message>
         <location filename="../coverviewer.cpp" line="35"/>
         <source>&amp;Save As...</source>
-        <translation>&amp;Tallenna nimellä...</translation>
+        <translation>&amp;Tallenna...</translation>
     </message>
     <message>
         <location filename="../coverviewer.cpp" line="68"/>
         <source>Save Cover As</source>
-        <translation>Tallenna kansikuva nimellä</translation>
+        <translation>Tallenna kansi...</translation>
     </message>
     <message>
         <location filename="../coverviewer.cpp" line="70"/>
@@ -1044,7 +1044,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="312"/>
         <source>Disc number</source>
-        <translation>Levyn numero</translation>
+        <translation>Levynumero</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="331"/>
@@ -1168,7 +1168,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="29"/>
         <source>Album Artist</source>
-        <translation>Albumin Artisti</translation>
+        <translation>Albumin artisti</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="32"/>
@@ -1178,12 +1178,12 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="33"/>
         <source>Track Number</source>
-        <translation>Kappalenumero</translation>
+        <translation>Kappale nro.</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="34"/>
         <source>Two-digit Track Number</source>
-        <translation>Kahden merkkin kappalenumero</translation>
+        <translation>Kaksimekkinen kappale nro.</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="38"/>
@@ -1234,7 +1234,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="68"/>
         <source>Parent Directory Path</source>
-        <translation>Ylätason kansion polku</translation>
+        <translation>Ylätason kansiopolku</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="70"/>
@@ -1408,7 +1408,7 @@
     <message>
         <location filename="../forms/shortcutdialog.ui" line="29"/>
         <source>Press the key combination you want to assign</source>
-        <translation>Paina näppäinyhdistelmä, jonka haluat käyttöön</translation>
+        <translation>Paina näppäinyhdistelmää, jota haluat käyttää</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="52"/>
@@ -1515,7 +1515,7 @@
     <message>
         <location filename="../uihelper.cpp" line="142"/>
         <source>Select one or more files to open</source>
-        <translation>Valitse yksi tai useampi tiedosto avausta varten</translation>
+        <translation>Valitse yksi tai useampi avattava tiedosto</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="154"/>
@@ -1531,7 +1531,7 @@
         <location filename="../uihelper.cpp" line="178"/>
         <location filename="../uihelper.cpp" line="202"/>
         <source>Playlist Files</source>
-        <translation>Soittolistatiedostot</translation>
+        <translation>Soittolistoja</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="180"/>
@@ -1549,7 +1549,7 @@
         <source>%1 already exists.
 Do you want to replace it?</source>
         <translation>%1 on jo olemassa.
-Haluatko korvata sen?</translation>
+Haluatko korvata?</translation>
     </message>
 </context>
 <context>
