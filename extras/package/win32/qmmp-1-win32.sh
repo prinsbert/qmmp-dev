@@ -95,7 +95,7 @@ create_distr ()
   cp -v ../../qmmp-1.x/nsis-translations/*.nsh ./nsis-translations
   cp -v ../../qmmp-1.x/*.conf ./
   cp -v ../../qmmp-1.x/*.default ./
-  cp -v ${PREFIX}/bin/${LIB_NAME}/7za.exe ./
+  cp -v ${PREFIX}/bin/7za.exe ./
   cp -rv ../../themes ./
   cp -rv ../../skins ./
   cp -v ../qmmp-${QMMP_VERSION}/bin/*.exe ./
