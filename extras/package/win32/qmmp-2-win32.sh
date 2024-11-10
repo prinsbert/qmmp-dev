@@ -184,7 +184,7 @@ case $1 in
     build
     create_distr
     find qmmp-distr -type f -name *.dll   | xargs strip -v
-    find qmmp-distr -type f -name *.exe -name 7za.exe  | xargs strip -v 
+    find qmmp-distr -type f -name *.exe -not -name 7za.exe  | xargs strip -v 
   ;;
   --clean)
     cd tmp
