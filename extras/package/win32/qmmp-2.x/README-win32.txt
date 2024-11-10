@@ -27,7 +27,7 @@ List of the third-party libraries.
 
   MinGW-w64           5.0.0      https://github.com/cristianadam/mingw-builds/
   Qt                  6.7.3      https://qt.io/
-  unzip               5.51       https://www.info-zip.org/pub/infozip/UnZip.html
+  7-Zip               24.08      https://www.7-zip.org/
   taglib              2.0.2      https://taglib.github.io/
   libmad              0.15.1b    https://www.underbit.com/products/mad/
   libogg              1.3.5      https://www.vorbis.com/
@@ -38,22 +38,22 @@ List of the third-party libraries.
   opus                1.5.2      https://www.opus-codec.org/
   opusfile            0.12       https://www.opus-codec.org/
   libbs2b             3.1.0      https://bs2b.sourceforge.net/
-  curl                8.10.1     https://curl.haxx.se/
+  curl                8.11.0     https://curl.haxx.se/
   libcdio             2.1.0      https://www.gnu.org/software/libcdio/
   libcdio-paranoia    10.2+2.0.2 https://www.gnu.org/software/libcdio/  
   mingw-libgnurx      2.5.1      https://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      https://libcddb.sourceforge.net/
-  ffmpeg              7.0.2      https://ffmpeg.org/
+  ffmpeg              7.1        https://ffmpeg.org/
   libxmp              4.6.0      https://github.com/libxmp/libxmp
   game-music-emu      0.6.3      https://bitbucket.org/mpyne/game-music-emu
   musepack            r475       https://www.musepack.net/
   glew                2.2.0      https://glew.sourceforge.net/
   projectm            2.1.0      https://projectm.sourceforge.net/
-  libsidplayfp        2.9.0      https://sourceforge.net/projects/sidplay-residfp/
+  libsidplayfp        2.11.0     https://sourceforge.net/projects/sidplay-residfp/
   enca                1.19       https://cihar.com/software/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
   librcd              0.1.14     https://github.com/RusXMMS/librcd
-  mpg123              1.32.7     https://www.mpg123.de/
+  mpg123              1.32.9     https://www.mpg123.de/
   adplug              2.3.3      https://github.com/adplug/adplug
   libbinio            1.5        https://github.com/adplug/libbinio
 

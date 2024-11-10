@@ -508,3 +508,10 @@ LEGEND
 2.2.1
 [*] qmmp-2.2.1
 [*] qmmp-plugin-pack-2.2.1
+
+2.2.2
+[*] qmmp-2.2.2
+[*] curl-8.11.0
+[*] libsidplayfp-2.11.0
+[*] mpg123-1.32.9
+[*] ffmpeg-7.1

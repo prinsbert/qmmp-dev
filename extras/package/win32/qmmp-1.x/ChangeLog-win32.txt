@@ -511,3 +511,10 @@ LEGEND
 1.7.1
 [*] qmmp-1.7.1
 [*] qmmp-plugin-pack-1.7.1
+
+1.7.2
+[*] qmmp-1.7.2
+[*] curl-8.11.0
+[*] libsidplayfp-2.11.0
+[*] mpg123-1.32.9
+[*] ffmpeg-7.1
