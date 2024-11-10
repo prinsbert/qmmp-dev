@@ -116,7 +116,7 @@ create_distr ()
     cp -v ${QT6_PATH}/bin/${LIB_NAME} ./
   done
   #Qt plugins
-  mkdir -p plugins/imageformats plugins/platforms plugins/sqldrivers plugins/styles
+  mkdir -p plugins/imageformats plugins/platforms plugins/sqldrivers plugins/styles plugins/tls
   cp -v ${QT6_PATH}/plugins/imageformats/*.dll ./plugins/imageformats  
   for LIB_NAME in qwindows.dll
   do
@@ -130,6 +130,7 @@ create_distr ()
   do
     cp -v ${QT6_PATH}/plugins/styles/${LIB_NAME} ./plugins/styles
   done
+  cp -v ${QT6_PATH}/plugins/tls/*.dll ./plugins/tls
   #translations
   cp -v ${QT6_PATH}/translations/qtbase_??.qm ./translations
   #mingw32 libs
