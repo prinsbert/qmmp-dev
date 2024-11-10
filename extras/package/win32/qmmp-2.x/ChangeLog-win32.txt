@@ -515,3 +515,4 @@ LEGEND
 [*] libsidplayfp-2.11.0
 [*] mpg123-1.32.9
 [*] ffmpeg-7.1
+[+] 7z-24.08
