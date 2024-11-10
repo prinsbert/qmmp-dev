@@ -94,7 +94,6 @@ create_distr ()
   cp -v ../../qmmp-2.x/*.nsi ./
   cp -v ../../qmmp-2.x/nsis-translations/*.nsh ./nsis-translations
   cp -v ../../qmmp-2.x/*.conf ./
-  cp -v ../../qmmp-2.x/*.default ./
   cp -v ${PREFIX}/bin/7za.exe ./
   cp -rv ../../themes ./
   cp -rv ../../skins ./
@@ -185,7 +184,7 @@ case $1 in
     build
     create_distr
     find qmmp-distr -type f -name *.dll   | xargs strip -v
-    find qmmp-distr -type f -name *.exe   | xargs strip -v 
+    find qmmp-distr -type f -name *.exe -name 7za.exe  | xargs strip -v 
   ;;
   --clean)
     cd tmp
