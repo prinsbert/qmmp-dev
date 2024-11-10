@@ -209,7 +209,7 @@ Section "-General Section"
      FileClose $0
   ${EndIf}
   
-  File *.txt qmmp.exe unzip.exe *.dll *.conf
+  File *.txt qmmp.exe 7za.exe *.dll *.conf
 
   SetOutPath "$INSTDIR\plugins"
   File  /r plugins\*.dll
