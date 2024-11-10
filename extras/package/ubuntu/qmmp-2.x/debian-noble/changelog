@@ -1,3 +1,9 @@
+qmmp-qt6 (2.2.2-1ubuntu1~noble0) noble; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Sun, 10 Nov 2024 20:24:02 +0300
+
 qmmp-qt6 (2.2.1-1ubuntu1~noble0) noble; urgency=medium
 
   * New upstream release.
