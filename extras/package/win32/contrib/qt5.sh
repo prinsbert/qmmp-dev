@@ -83,6 +83,7 @@ case $1 in
     echo "Commands:"
     echo "--download"
     echo "--install"
+    echo "--install-win64"
     echo "--clean"
     echo "--clean-src"
     echo "--print-versions"
