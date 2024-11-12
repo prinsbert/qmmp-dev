@@ -1,19 +1,28 @@
 #!/bin/sh
 
 QMMP_VERSION=1.7.2
-QMMP_PLUGIN_PACK_VERSION=1.7.1
+QMMP_PLUGIN_PACK_VERSION=1.7.2
 
 export DEV_PATH=/c/devel
-export MINGW32_PATH=${DEV_PATH}/mingw32
-export QT5_PATH=${DEV_PATH}/qt5
-export ZLIB_ROOT=${MINGW32_PATH}/i686-w64-mingw32
-export PREFIX=${DEV_PATH}/mingw32-libs
+
+if [ "$1" == "--install-win64" ]; then
+  export MINGW32_PATH=${DEV_PATH}/mingw64
+  export QT5_PATH=${DEV_PATH}/qt5-win64
+  export ZLIB_ROOT=${MINGW32_PATH}/mingw64/x86_64-w64-mingw32
+  export PREFIX=${DEV_PATH}/mingw64-libs
+else
+  export MINGW32_PATH=${DEV_PATH}/mingw32
+  export QT5_PATH=${DEV_PATH}/qt5
+  export ZLIB_ROOT=${MINGW32_PATH}/i686-w64-mingw32
+  export PREFIX=${DEV_PATH}/mingw32-libs
+fi
+
+
 export SVN_PATH=/c/Program\ Files/SlikSvn/bin
 export PATH=${PATH}:${MINGW32_PATH}/bin:${QT5_PATH}/bin:${PREFIX}/bin:${SVN_PATH}
 export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig 
 
 export JOBS=2
-
 
 
 download_qmmp_tarball()
@@ -133,11 +142,11 @@ create_distr ()
   #translations
   cp -v ${QT5_PATH}/translations/qtbase_??.qm ./translations
   #mingw32 libs
-  for LIB_NAME in libgcc_s_dw2-1.dll libstdc++-6.dll libwinpthread-1.dll libgomp-1.dll libssp-0.dll
+  for LIB_NAME in libgcc_s_dw2-1.dll libgcc_s_sjlj-1.dll libstdc++-6.dll libwinpthread-1.dll libgomp-1.dll libssp-0.dll
   do
     cp -v ${MINGW32_PATH}/bin/${LIB_NAME} ./
   done
-  for LIB_NAME in libcrypto-1_1.dll libssl-1_1.dll
+  for LIB_NAME in libcrypto-1_1.dll libssl-1_1.dll libcrypto-1_1-x64.dll libssl-1_1-x64.dll
   do
     cp -v ${MINGW32_PATH}/opt/bin/${LIB_NAME} ./
   done
@@ -174,17 +183,20 @@ create_distr ()
 case $1 in
   --download)
     download_qmmp_tarball
-    download_plugins_tarball
+    #download_plugins_tarball
     #download_qmmp_svn
-    #download_plugins_svn
+    download_plugins_svn
     download_qmmp_adplug_archive
   ;;
-  --install)
+  --install|--install-win64)
     cd tmp
     build
     create_distr
     find qmmp-distr -type f -name *.dll   | xargs strip -v
-    find qmmp-distr -type f -name *.exe -not -name 7za.exe | xargs strip -v 
+    find qmmp-distr -type f -name *.exe -not -name 7za.exe | xargs strip -v
+    if [ "$1" == "--install" ]; then
+      sed '/!define WIN64/d' -i ./qmmp-distr/qmmp.nsi
+    fi 
   ;;
   --clean)
     cd tmp
@@ -199,6 +211,7 @@ case $1 in
     echo "Commands:"
     echo "--download"
     echo "--install"
+    echo "--install-win64"
     echo "--clean"
     echo "--clean-src"
   ;;

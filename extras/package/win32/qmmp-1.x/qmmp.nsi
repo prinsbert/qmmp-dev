@@ -11,6 +11,7 @@
  ;Defines
  
    !define QMMP_VERSION "1.7.2"
+   !define WIN64 "1"
    !define QMMP_DEF_PROGS_KEY "Software\Clients\Media\Qmmp"
    !define QMMP_UNINSTALL_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\Qmmp"
    !define APP_DESCRIPTION $(text_app_desc)
@@ -25,16 +26,25 @@
  ;Includes
  
   !include WinVer.nsh
+  !include x64.nsh
 
 ;--------------------------------
 ;General
 
   ;Name and file
   Name "Qt-based Multimedia Player"
+!ifdef WIN64
+  OutFile "qmmp-${QMMP_VERSION}-win64.exe"
+!else
   OutFile "qmmp-${QMMP_VERSION}-win32.exe"
+!endif
 
   ;Default installation folder
+!ifdef WIN64
+  InstallDir "$PROGRAMFILES64\Qt-based Multimedia Player"
+!else
   InstallDir "$PROGRAMFILES\Qt-based Multimedia Player"
+!endif
   
   ;Get installation folder from registry if available
   ;InstallDirRegKey HKCU "Software\Modern UI Test" ""
@@ -171,6 +181,12 @@ Function .onInit
     MessageBox MB_OK "$(text_win7_warning)"
     Quit
   ${EndIf}
+!ifdef WIN64
+  ${IfNot} ${RunningX64}
+    MessageBox MB_OK|MB_ICONSTOP $(text_win64_warning)
+    Quit
+  ${EndIf}
+!endif
 FunctionEnd
 
 ;--------------------------------
@@ -233,7 +249,11 @@ Section "-General Section"
 	WriteUninstaller "$INSTDIR\Uninstall.exe"
 
 	; Write the uninstall keys for Windows
-	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayName" "Qt-based Multimedia Player"
+!ifdef WIN64
+	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayName" "Qt-based Multimedia Player (x64)"
+!else
+        WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayName" "Qt-based Multimedia Player"
+!endif
 	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "UninstallString" "$INSTDIR\Uninstall.exe"
 	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayIcon" "$INSTDIR\qmmp.exe,0"
 	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayVersion" "${QMMP_VERSION}"

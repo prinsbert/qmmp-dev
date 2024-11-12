@@ -195,8 +195,7 @@ case $1 in
     find qmmp-distr -type f -name *.exe -not -name 7za.exe  | xargs strip -v
     if [ "$1" == "--install" ]; then
       sed '/!define WIN64/d' -i ./qmmp-distr/qmmp.nsi
-    fi
- 
+    fi 
   ;;
   --clean)
     cd tmp
