@@ -9,3 +9,4 @@ LangString text_default_simple_ui      ${LANG_Dutch} "Altijd eenvoudige vormgevi
 LangString text_enable_librcd          ${LANG_Dutch} "Automatische ID3v1-/ID3v2-tekensetdetectie (libRCD)"
 LangString text_enable_adlib           ${LANG_Dutch} "AdLib-formaatondersteuning (AdPlug)"
 LangString text_startmenu_shortcuts    ${LANG_Dutch} "Startmenusneltoetsen"
+LangString text_win64_warning          ${LANG_Dutch} "A 64-bit Windows operating system is required to install this software."

@@ -9,3 +9,4 @@ LangString text_default_simple_ui      ${LANG_English} "Use Simple UI by default
 LangString text_enable_librcd          ${LANG_English} "Automatic ID3v1/ID3v2 charset detection (libRCD)"
 LangString text_enable_adlib           ${LANG_English} "AdLib formats support (AdPlug)"
 LangString text_startmenu_shortcuts    ${LANG_English} "Start Menu Shortcuts"
+LangString text_win64_warning          ${LANG_English} "A 64-bit Windows operating system is required to install this software."
