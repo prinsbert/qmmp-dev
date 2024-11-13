@@ -9,7 +9,7 @@ LangString text_default_simple_ui      ${LANG_Polish} "Domyślnie używaj proste
 LangString text_enable_librcd          ${LANG_Polish} "Automatycznie wykrywaj kodowanie ID3v1/ID3v2 (libRCD)"
 LangString text_enable_adlib           ${LANG_Polish} "Obsługuj formaty AdLib (AdPlug)"
 LangString text_startmenu_shortcuts    ${LANG_Polish} "Skróty w menu Start"
-LangString text_win64_warning          ${LANG_Polish} "A 64-bit Windows operating system is required to install this software."
+LangString text_win64_warning          ${LANG_Polish} "Do zainstalowania tego oprogramowania wymagany jest 64-bitowy system operacyjny Windows."
 
 
 

@@ -9,3 +9,4 @@ Altijd eenvoudige vormgeving gebruiken
 Automatische ID3v1-/ID3v2-tekensetdetectie (libRCD)
 AdLib-formaatondersteuning (AdPlug)
 Startmenusneltoetsen
+Deze software vereist een 64-bitsversie van Windows.
