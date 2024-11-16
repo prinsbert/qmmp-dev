@@ -362,7 +362,7 @@ void FileLoader::removeIgnoredTracks(QList<PlayListTrack *> *tracks, QSet<QStrin
         QString path = (*it)->path();
 
         //strip path from URL
-        if(path.contains(u"^//"_s))
+        if(path.contains(u"^://"_s))
             path = TrackInfo::pathFromUrl(path);
 
         if(ignoredPaths->contains(path))
