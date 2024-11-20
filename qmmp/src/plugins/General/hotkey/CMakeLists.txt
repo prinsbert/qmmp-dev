@@ -16,10 +16,6 @@ SET(libhotkey_SRCS
     translations/translations.qrc
 )
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(X11_FOUND AND XCB_FOUND)
     set_property(SOURCE hotkeymanager_x11.cpp PROPERTY SKIP_AUTOMOC ON)
     add_library(hotkey MODULE ${libhotkey_SRCS})

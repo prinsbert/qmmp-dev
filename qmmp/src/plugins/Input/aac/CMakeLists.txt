@@ -10,10 +10,6 @@ set(libaac_SRCS
   translations/translations.qrc
 )
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(FAAD_FOUND)
     add_library(aac MODULE ${libaac_SRCS} ${libaac_RCC_SRCS})
     target_link_libraries(aac PRIVATE Qt6::Widgets libqmmp PkgConfig::FAAD PkgConfig::TAGLIB)

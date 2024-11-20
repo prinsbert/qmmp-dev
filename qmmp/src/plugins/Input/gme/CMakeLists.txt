@@ -23,10 +23,6 @@ SET(libgme_SRCS
   translations/translations.qrc
 )
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(GME_FOUND)
     add_library(gme MODULE ${libgme_SRCS} ${libgme_RCC_SRCS})
     target_link_libraries(gme PRIVATE Qt6::Widgets libqmmp ${GME_LIB})

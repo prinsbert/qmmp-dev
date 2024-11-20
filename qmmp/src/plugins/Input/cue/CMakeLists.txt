@@ -14,10 +14,6 @@ SET(libcue_SRCS
   cuesettingsdialog.ui
 )
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 add_library(cue MODULE ${libcue_SRCS} ${libcue_RCC_SRCS})
 if(USE_ENCA AND ENCA_FOUND)
     target_link_libraries(cue PRIVATE Qt6::Widgets libqmmp PkgConfig::ENCA)

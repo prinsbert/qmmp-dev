@@ -2,8 +2,6 @@ project(libgoom)
 
 ADD_DEFINITIONS(-DYY_NO_INPUT)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 SET(libgoom_SRCS
   config_param.c
   convolve_fx.c

@@ -2,8 +2,6 @@ project(libwaveout)
 
 include(CheckIncludeFile)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 # Win32 waveout
 check_include_file(windows.h WINDOWS_H_FOUND)
 

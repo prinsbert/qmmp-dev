@@ -1,7 +1,5 @@
 project(seekoption)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 SET(seekoption_SRCS
     seekoption.cpp
     translations/translations.qrc

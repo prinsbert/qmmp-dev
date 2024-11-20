@@ -2,8 +2,6 @@ project(libjack)
 
 include(CheckCXXSourceCompiles)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 # libjack and libsoxr
 pkg_check_modules(JACK jack>=1.9.8 soxr IMPORTED_TARGET)
 

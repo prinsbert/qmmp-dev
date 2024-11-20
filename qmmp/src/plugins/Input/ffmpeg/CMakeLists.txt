@@ -19,10 +19,6 @@ SET(libffmpeg_SRCS
   translations/translations.qrc
 )
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(FFMPEG_FOUND)
     add_library(ffmpeg MODULE ${libffmpeg_SRCS})
     target_link_libraries(ffmpeg PRIVATE Qt6::Widgets libqmmp PkgConfig::FFMPEG PkgConfig::TAGLIB)

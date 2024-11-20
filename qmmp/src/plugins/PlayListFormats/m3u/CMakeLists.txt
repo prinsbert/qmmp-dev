@@ -1,7 +1,5 @@
 project(libm3uplaylistformat)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 set(libm3uplaylistformat_SRCS
     m3uplaylistformat.cpp
 )

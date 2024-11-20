@@ -1,7 +1,5 @@
 project(statusoption)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 set(statusoption_SRCS
     statusoption.cpp
     translations/translations.qrc

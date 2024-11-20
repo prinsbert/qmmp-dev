@@ -11,10 +11,6 @@ SET(libalsa_SRCS
   translations/translations.qrc
 )
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(ALSA_FOUND)
     add_library(alsa MODULE ${libalsa_SRCS})
     target_link_libraries(alsa PRIVATE Qt6::Widgets libqmmp PkgConfig::ALSA)

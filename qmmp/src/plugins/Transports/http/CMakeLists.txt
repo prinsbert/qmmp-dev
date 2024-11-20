@@ -17,10 +17,6 @@ set(libhttp_SRCS
     translations/translations.qrc
 )
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(CURL_FOUND)
     add_library(http MODULE ${libhttp_SRCS})
 

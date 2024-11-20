@@ -14,10 +14,6 @@ SET(libsid_SRCS
   translations/translations.qrc
 )
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(SIDPLAYFP_FOUND)
     add_library(sid MODULE ${libsid_SRCS})
     target_link_libraries(sid PRIVATE Qt6::Widgets libqmmp PkgConfig::SIDPLAYFP)

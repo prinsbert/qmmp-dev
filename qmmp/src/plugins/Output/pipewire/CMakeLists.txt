@@ -9,10 +9,6 @@ set(libpipewire_SRCS
   translations/translations.qrc
 )
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 add_compile_options(-Wno-missing-field-initializers)
 
 if(PIPEWIRE_FOUND)

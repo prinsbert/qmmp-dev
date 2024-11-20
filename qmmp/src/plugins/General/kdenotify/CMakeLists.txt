@@ -8,11 +8,6 @@ set(libkdenotify_SRCS
     translations/translations.qrc
 )
 
-# QT5_WRAP_UI(libkdenotify_UIS_H ${libkdenotify_UIS})
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 add_library(kdenotify MODULE ${libkdenotify_SRCS})
 target_link_libraries(kdenotify PRIVATE Qt6::Widgets Qt6::DBus libqmmpui libqmmp)
 install(TARGETS kdenotify DESTINATION ${PLUGIN_DIR}/General)

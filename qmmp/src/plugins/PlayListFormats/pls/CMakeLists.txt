@@ -1,7 +1,5 @@
 project(libplsplaylistformat)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 set(libplsplaylistformat_SRCS
     plsplaylistformat.cpp
 )
