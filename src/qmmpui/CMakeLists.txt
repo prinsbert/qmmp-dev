@@ -103,7 +103,6 @@ SET(libqmmpui_DEVEL_HDRS
     visualmenu.h
 )
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
 set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_AUTOUIC_SEARCH_PATHS} ${CMAKE_CURRENT_SOURCE_DIR}/forms)
 
 add_library(libqmmpui SHARED ${libqmmpui_SRCS})

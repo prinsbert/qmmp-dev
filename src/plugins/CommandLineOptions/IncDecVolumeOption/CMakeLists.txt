@@ -1,7 +1,5 @@
 project(libincdecvolumeoption)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 set(libincdecvolumeoption_SRCS
     incdecvolumeoption.cpp
     translations/translations.qrc

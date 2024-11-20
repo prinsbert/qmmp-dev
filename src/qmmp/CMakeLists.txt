@@ -98,10 +98,6 @@ SET(libqmmp_DEVEL_HDRS
     volumehandler.h
 )
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 add_library(libqmmp SHARED ${libqmmp_SRCS})
 target_link_libraries(libqmmp PRIVATE Qt6::Widgets)
 set_target_properties(libqmmp PROPERTIES VERSION ${QMMP_VERSION} SOVERSION ${QMMP_SOVERSION} OUTPUT_NAME qmmp${APP_NAME_SUFFIX})

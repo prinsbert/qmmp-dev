@@ -10,8 +10,6 @@ SET(libwavpack_SRCS
   translations/translations.qrc
 )
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(WAVPACK_FOUND)
     add_library(wavpack MODULE ${libwavpack_SRCS})
     target_link_libraries(wavpack PRIVATE Qt6::Widgets libqmmp PkgConfig::WAVPACK)

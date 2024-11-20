@@ -10,10 +10,6 @@ set(libnotifier_SRCS
     notifier_images.qrc
 )
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 add_library(notifier MODULE ${libnotifier_SRCS} ${libnotifier_UIS_H} ${libnotifier_RCC_SRCS})
 if(X11_FOUND)
     add_definitions(-DX11_FOUND)

@@ -18,8 +18,6 @@ set(libmpc_SRCS
   translations/translations.qrc
 )
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(MPC_FOUND)
     add_library(mpc MODULE ${libmpc_SRCS})
     target_link_libraries(mpc PRIVATE Qt6::Widgets libqmmp ${MPC_LIB} PkgConfig::TAGLIB)

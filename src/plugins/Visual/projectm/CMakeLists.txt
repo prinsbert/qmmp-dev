@@ -50,12 +50,9 @@ else(projectM4_FOUND)
     set(libprojectm_SRCS ${libprojectm_SRCS} projectmwidget.cpp projectmwrapper.cpp)
 endif(projectM4_FOUND)
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
 if(PROJECTM_FOUND)
     add_library(projectm MODULE ${libprojectm_SRCS})
-  
+
     if(projectM4_FOUND)
         target_link_libraries(projectm PRIVATE Qt6::OpenGLWidgets libqmmp libprojectM::playlist)
     else(projectM4_FOUND)

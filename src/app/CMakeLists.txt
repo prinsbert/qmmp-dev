@@ -2,8 +2,6 @@ project(app)
 
 include(UsePkgConfig)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-
 set(app_SRCS
     builtincommandlineoption.cpp
     main.cpp
@@ -11,10 +9,6 @@ set(app_SRCS
     images/images.qrc
     translations/qmmp_locales.qrc
 )
-
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_executable(qmmp ${app_SRCS})
 target_link_libraries(qmmp PRIVATE Qt6::Widgets Qt6::Network libqmmp libqmmpui)

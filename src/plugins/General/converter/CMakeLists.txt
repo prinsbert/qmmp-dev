@@ -12,10 +12,6 @@ set(libconverter_SRCS
     presets.qrc
 )
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 add_library(converter MODULE ${libconverter_SRCS})
 target_link_libraries(converter PRIVATE Qt6::Widgets libqmmpui libqmmp PkgConfig::TAGLIB)
 install(TARGETS converter DESTINATION ${PLUGIN_DIR}/General)

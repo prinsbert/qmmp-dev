@@ -2,8 +2,6 @@ project(liboss)
 
 include(CheckIncludeFile)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 #OSS
 check_include_file(sys/soundcard.h SYS_SOUNDCARD_H_FOUND)
 if(SYS_SOUNDCARD_H_FOUND)

@@ -11,8 +11,6 @@ set(libarchive_SRCS
   translations/translations.qrc
 )
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(LIBARCHIVE_FOUND)
     add_library(archive MODULE ${libarchive_SRCS})
     target_link_libraries(archive PRIVATE Qt6::Widgets libqmmp PkgConfig::LIBARCHIVE PkgConfig::TAGLIB)

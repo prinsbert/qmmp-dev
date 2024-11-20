@@ -50,8 +50,6 @@ set(liboss4_SRCS
   translations/translations.qrc
 )
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(OSS4_FOUND)
     add_library(oss4 MODULE ${liboss4_SRCS})
     target_link_libraries(oss4 PRIVATE Qt6::Widgets libqmmp)

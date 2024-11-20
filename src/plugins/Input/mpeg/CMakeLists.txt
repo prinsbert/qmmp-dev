@@ -44,10 +44,6 @@ if(MPG123_FOUND)
     set(libmpeg_SRCS ${libmpeg_SRCS} decoder_mpg123.cpp)
 endif(MPG123_FOUND)
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(MAD_FOUND OR MPG123_FOUND)
     add_library(mpeg MODULE ${libmpeg_SRCS})
     target_link_libraries(mpeg PRIVATE Qt6::Widgets libqmmp PkgConfig::TAGLIB ${LIBRCD_LDFLAGS})

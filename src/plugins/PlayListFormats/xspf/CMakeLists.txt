@@ -1,7 +1,5 @@
 project(libxspfplaylistformat)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 set(libxspfplaylistformat_SRCS
     xspfplaylistformat.cpp
 )

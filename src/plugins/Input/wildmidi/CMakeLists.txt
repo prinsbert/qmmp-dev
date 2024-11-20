@@ -22,10 +22,6 @@ else(WILDMIDI_HEADER_FOUND AND (NOT WILDMIDI_LIB MATCHES "^.*-NOTFOUND"))
     message(STATUS "Could not find WildMidi library")
 endif(WILDMIDI_HEADER_FOUND AND (NOT WILDMIDI_LIB MATCHES "^.*-NOTFOUND"))
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(WILDMIDI_FOUND)
     add_library(wildmidi MODULE ${libwildmidi_SRCS})
     target_link_libraries(wildmidi Qt6::Widgets libqmmp ${WILDMIDI_LIB})

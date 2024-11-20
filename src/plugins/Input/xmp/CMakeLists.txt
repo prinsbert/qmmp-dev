@@ -13,10 +13,6 @@ SET(libxmp_SRCS
   translations/translations.qrc
 )
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(XMP_FOUND)
     add_library(xmp MODULE ${libxmp_SRCS} ${libxmp_UIS_H})
     target_link_libraries(xmp PRIVATE Qt6::Widgets libqmmp PkgConfig::XMP)

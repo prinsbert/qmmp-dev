@@ -2,8 +2,6 @@ project(libdirectsound)
 
 include(CheckIncludeFile)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 # Win32 DirectSound
 check_include_file(dsound.h DSOUND_H_FOUND)
 

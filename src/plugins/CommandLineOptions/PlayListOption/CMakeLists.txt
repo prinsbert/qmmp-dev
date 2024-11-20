@@ -1,7 +1,5 @@
 project(libplaylistoption)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 set(libplaylistoption_SRCS
     playlistoption.cpp
     translations/translations.qrc
