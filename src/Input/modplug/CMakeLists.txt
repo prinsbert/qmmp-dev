@@ -26,11 +26,6 @@ SET(libmodplug_SRCS
     translations/translations.qrc
 )
 
-
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(MODPLUG_FOUND)
     add_library(modplug MODULE ${libmodplug_SRCS})
     target_link_libraries(modplug PRIVATE Qt6::Widgets PkgConfig::QMMP PkgConfig::MODPLUG)

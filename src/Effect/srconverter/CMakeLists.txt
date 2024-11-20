@@ -10,10 +10,6 @@ SET(libsrconverter_SRCS
     translations/translations.qrc
 )
 
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 if(SAMPLERATE_FOUND)
     add_library(srconverter MODULE ${libsrconverter_SRCS})
     target_link_libraries(srconverter PRIVATE Qt6::Widgets PkgConfig::QMMP PkgConfig::SAMPLERATE)
