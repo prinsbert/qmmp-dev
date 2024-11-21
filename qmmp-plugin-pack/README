@@ -12,6 +12,7 @@ Description:
 - Goom - audio visualization based on goom project
 - FFVideo - video playback engine based on FFmpeg library
 - Ytb - audio playback from YouTube (uses yt-dlp)
+- MMS - MMS protocol support (uses libmms library)
 
 Requirements:
 - Qt >= 6.2 (qtbase and qttools for build)
@@ -20,6 +21,7 @@ Requirements:
 - libmodplug >= 0.8.4 (optional)
 - libsamplerate >= 0.1.2 (optional)
 - ffmpeg >= 3.4 (optional)
+- libmms >= 0.4 (optional)
 - yt-dlp (latest version, optional)
 - cmake >= 3.18.0 (for build only)
 
@@ -39,7 +41,7 @@ by running the following command:
 cmake ./ -DUSE_MODPLUG:BOOL=FALSE
 
 Available options:
-- USE_FFAP, USE_MODPLUG, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_YTB (plugins)
+- USE_FFAP, USE_MODPLUG, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_YTB, USE_MMS (plugins)
 
 Also you can use ccmake to change plugin configuration.
 By default program will be installed in /usr/local. You can change default path by running:
