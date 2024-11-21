@@ -15,6 +15,6 @@ set(libmms_SRCS
 
 if(MMS_FOUND)
     add_library(mms MODULE ${libmms_SRCS})
-    target_link_libraries(mms PRIVATE Qt6::Widgets libqmmp PkgConfig::MMS)
+    target_link_libraries(mms PRIVATE Qt6::Widgets PkgConfig::QMMP PkgConfig::MMS)
     install(TARGETS mms DESTINATION ${PLUGIN_DIR}/Transports)
 endif(MMS_FOUND)

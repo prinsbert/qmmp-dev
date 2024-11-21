@@ -123,6 +123,7 @@ endif(UNIX)
 MESSAGE("")
 MESSAGE("Transports:")
 PRINT_SUMMARY ("YouTube support ................." USE_YTB 1)
+PRINT_SUMMARY ("MMS support ....................." USE_MMS MMS_FOUND)
 
 MESSAGE("")
 MESSAGE("Input Plugins:")
