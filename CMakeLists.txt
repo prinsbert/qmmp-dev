@@ -172,7 +172,6 @@ endif(UNIX)
 message("")
 message("Transports:")
 PRINT_SUMMARY ("HTTP support .........................." USE_CURL CURL_FOUND)
-PRINT_SUMMARY ("MMS support ..........................." USE_MMS MMS_FOUND)
 
 message("")
 message("Input Plugins:")
