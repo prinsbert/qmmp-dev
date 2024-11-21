@@ -54,7 +54,6 @@ Other features:
 - alternative user interface based on standard widgets set
 - 10-band equalizer
 - MP3, Vorbis, AAC, AAC+ streams support
-- mms support
 - MPRIS
 - removable device detection (via UDisks)
 - video playback via Mplayer
@@ -89,7 +88,6 @@ Requirements:
 - curl >= 7.32
 - libmpg123 >= 1.13.0 (optional)
 - qtmultimedia >= 6.2 (optional)
-- libmms >= 0.4 (optional)
 - flac >= 1.1.3 (optional)
 - libmpcdec >= 1.3.0 (optional)
 - jackit1 >= 0.121.0 or jackit2 >= 1.9.8 (optional)
@@ -135,7 +133,7 @@ by running the following command:
 cmake ./ -DUSE_JACK:BOOL=FALSE
 
 Available options:
-- USE_CURL, USE_MMS (transports);
+- USE_CURL (transports);
 - USE_MAD, USE_MPG123, USE_FLAC, USE_VORBIS, USE_MPC, USE_XMP, USE_SNDFILE, USE_WAVPACK, USE_FFMPEG, USE_AAC, USE_CUE,
   USE_MPLAYER, USE_CDA, USE_MIDI, USE_GME, USE_OPUS, USE_SID, USE_ARCHIVE (decoders);
 - USE_ALSA, USE_OSS, USE_JACK, USE_PULSE, USE_PIPEWIRE, USE_NULL, USE_OSS4, USE_WAVEOUT, UDE_DSOUND, USE_QTMULTIMEDIA,
