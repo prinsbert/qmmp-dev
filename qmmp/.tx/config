@@ -37,12 +37,6 @@ source_lang = en
 source_file = src/plugins/Transports/http/translations/http_plugin_en.ts
 type = QT
 
-[o:qmmp-development-team:p:qmmp:r:mms]
-file_filter = src/plugins/Transports/mms/translations/mms_plugin_<lang>.ts
-source_lang = en
-source_file = src/plugins/Transports/mms/translations/mms_plugin_en.ts
-type = QT
-
 [o:qmmp-development-team:p:qmmp:r:incdecvolume]
 file_filter = src/plugins/CommandLineOptions/IncDecVolumeOption/translations/incdecvolume_plugin_<lang>.ts
 source_lang = en

@@ -13,6 +13,12 @@ source_lang = en
 source_file = src/Transports/ytb/translations/ytb_plugin_en.ts
 type = QT
 
+[o:qmmp-development-team:p:qmmp-plugin-pack:r:mms]
+file_filter = src/Transports/mms/translations/mms_plugin_<lang>.ts
+source_lang = en
+source_file = src/Transports/mms/translations/mms_plugin_en.ts
+type = QT
+
 [o:qmmp-development-team:p:qmmp-plugin-pack:r:goom]
 file_filter = src/Visual/goom/translations/goom_plugin_<lang>.ts
 source_lang = en
