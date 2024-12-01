@@ -104,7 +104,7 @@ Qmmp - Qt-based multimedia player
 - game-music-emu >= 0.5.5 (опционально)
 - opus >= 1.0.2 (опционально)
 - opusfile >= 0.2 (опционально)
-- libWildMidi >= 0.2.3.4 (опционально)
+- libWildMidi >= 0.4.1 (опционально)
 - libsidplayfp >= 1.0.3 (опционально)
 - libbs2b >= 3.0.0 (опционально)
 - libprojectM >= 2.0.0 (опционально)
