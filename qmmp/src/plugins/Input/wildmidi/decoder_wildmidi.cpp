@@ -82,10 +82,5 @@ int DecoderWildMidi::bitrate() const
 
 qint64 DecoderWildMidi::read(unsigned char *data, qint64 size)
 {
-#if defined(LIBWILDMIDI_VERSION) && (LIBWILDMIDI_VERSION >= 0x000400)
-    return WildMidi_GetOutput (midi_ptr, (int8_t *)data, size);
-#else
-    return WildMidi_GetOutput (midi_ptr, (char *)data, size);
-#endif
-
+    return WildMidi_GetOutput(midi_ptr, (int8_t *)data, size);
 }

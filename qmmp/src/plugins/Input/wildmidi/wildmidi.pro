@@ -17,9 +17,7 @@ FORMS += \
 
 RESOURCES = translations/translations.qrc
 
-LIBS += -L/usr/lib \
-    -I/usr/include \
-    -lWildMidi
+PKGCONFIG += wildmidi
 
 target.path = $$PLUGIN_DIR/Input
 INSTALLS += target

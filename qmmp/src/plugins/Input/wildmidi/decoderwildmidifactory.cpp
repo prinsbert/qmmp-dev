@@ -36,21 +36,15 @@ bool DecoderWildMidiFactory::canDecode(QIODevice *input) const
     char buf[4];
     if(input->peek(buf, 4) != 4)
         return false;
-#if defined(LIBWILDMIDI_VERSION) && (LIBWILDMIDI_VERSION >= 0x000400)
+
     return !memcmp(buf, "MThd", 4) || !memcmp(buf, "MUS", 3) || !memcmp(buf, "FORM", 4);
-#else
-    return !memcmp(buf, "MThd", 4);
-#endif
 }
 
 DecoderProperties DecoderWildMidiFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("WildMidi Plugin");
-    properties.filters = QStringList { u"*.mid"_s };
-#if defined(LIBWILDMIDI_VERSION) && (LIBWILDMIDI_VERSION >= 0x000400)
-    properties.filters << QStringList { u"*.mus"_s, u"*.xmi"_s };
-#endif
+    properties.filters = QStringList { u"*.mid"_s, u"*.mus"_s, u"*.xmi"_s };
     properties.description = tr("Midi Files");
     //properties.contentType = ;
     properties.shortName = "wildmidi"_L1;
