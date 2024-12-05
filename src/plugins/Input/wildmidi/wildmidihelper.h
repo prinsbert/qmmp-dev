@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -37,6 +37,7 @@ public:
     void addPtr(void *);
     void removePtr(void *);
     QStringList configFiles() const;
+    bool validateConfigFile(const QString &path) const;
     static WildMidiHelper *instance();
 
 private:

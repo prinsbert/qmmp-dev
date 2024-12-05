@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -63,6 +63,14 @@ bool WildMidiHelper::initialize()
         m_mutex.unlock();
         return false;
     }
+
+    if(!validateConfigFile(configPath))
+    {
+        qWarning("WildMidiHelper: malformed wildmidi config: %s", qPrintable(configPath));
+        m_mutex.unlock();
+        return false;
+    }
+
     unsigned short int sample_rate = settings.value("sample_rate", 44100).toInt();
     if(settings.value("enhanced_resampling", false).toBool())
         mixer_options |= WM_MO_ENHANCED_RESAMPLING;
@@ -113,15 +121,45 @@ void WildMidiHelper::removePtr(void *t)
 
 QStringList WildMidiHelper::configFiles() const
 {
-    QStringList files = QStringList() << "/etc/timidity.cfg"
-                                      << "/etc/timidity/timidity.cfg"
-                                      << "/etc/wildmidi/wildmidi.cfg";
+    QStringList files = QStringList() << "/etc/wildmidi/wildmidi.cfg"
+                                      << "/etc/timidity/freepats.cfg"
+                                      << "/etc/timidity.cfg"
+                                      << "/etc/timidity/timidity.cfg";
     foreach(QString path, files)
     {
         if(!QFile::exists(path))
             files.removeAll(path);
     }
     return files;
+}
+
+bool WildMidiHelper::validateConfigFile(const QString &path) const
+{
+    QFile file(path);
+    if(!file.open(QIODevice::ReadOnly))
+    {
+        qWarning("WildMidiHelper: unable to wildmidi file; error: %s", qPrintable(file.errorString()));
+        return false;
+    }
+
+    //check 'dir' option only
+    while(!file.atEnd())
+    {
+        QString line = QString::fromUtf8(file.readLine()).trimmed();
+
+        if(line.startsWith("dir"))
+        {
+            QStringList args = line.split(QChar::Space, QString::SkipEmptyParts);
+            if (args.count() != 2)
+                continue;
+
+            //check 'dir' option
+            if (QFile::exists(args.at(1)))
+                return true;
+        }
+    }
+
+    return false;
 }
 
 quint32 WildMidiHelper::sampleRate()
