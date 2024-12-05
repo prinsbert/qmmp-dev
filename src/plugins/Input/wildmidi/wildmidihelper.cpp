@@ -64,9 +64,9 @@ bool WildMidiHelper::initialize()
         return false;
     }
 
-    if(!validateConfigFile(configPath))
+    if(!validateConfigFile(conf_path))
     {
-        qWarning("WildMidiHelper: malformed wildmidi config: %s", qPrintable(configPath));
+        qWarning("WildMidiHelper: malformed wildmidi config: %s", qPrintable(conf_path));
         m_mutex.unlock();
         return false;
     }
@@ -149,7 +149,7 @@ bool WildMidiHelper::validateConfigFile(const QString &path) const
 
         if(line.startsWith("dir"))
         {
-            QStringList args = line.split(QChar::Space, QString::SkipEmptyParts);
+            QStringList args = line.split(" ", QString::SkipEmptyParts);
             if (args.count() != 2)
                 continue;
 
