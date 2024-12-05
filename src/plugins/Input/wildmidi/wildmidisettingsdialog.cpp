@@ -33,9 +33,9 @@ WildMidiSettingsDialog::WildMidiSettingsDialog(QWidget *parent)
     QSettings settings;
     settings.beginGroup(u"Midi"_s);
     QStringList files = WildMidiHelper::instance()->configFiles();
-    QString conf_path = files.isEmpty() ? QString() : files.constFirst();
+    QString configPath = files.isEmpty() ? QString() : files.constFirst();
     m_ui->confPathComboBox->addItems(files);
-    m_ui->confPathComboBox->setEditText(settings.value(u"conf_path"_s, conf_path).toString());
+    m_ui->confPathComboBox->setEditText(settings.value(u"conf_path"_s, configPath).toString());
     m_ui->sampleRateComboBox->addItem(tr("44100 Hz"), 44100);
     m_ui->sampleRateComboBox->addItem(tr("48000 Hz"), 48000);
     int i = m_ui->sampleRateComboBox->findData(settings.value(u"sample_rate"_s, 44100).toInt());

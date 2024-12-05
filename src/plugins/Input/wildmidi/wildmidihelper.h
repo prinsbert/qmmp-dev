@@ -37,6 +37,7 @@ public:
     void addPtr(void *);
     void removePtr(void *);
     QStringList configFiles() const;
+    bool validateConfigFile(const QString &path) const;
     static WildMidiHelper *instance();
 
 private:
