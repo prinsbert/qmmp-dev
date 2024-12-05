@@ -52,15 +52,25 @@ bool WildMidiHelper::initialize()
 
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Midi"_s);
-    unsigned short int mixer_options = 0;
-    QString conf_path = configFiles().isEmpty() ? QString() : configFiles().constFirst();
-    conf_path = settings.value(u"conf_path"_s, conf_path).toString();
-    if(conf_path.isEmpty() || !QFile::exists(conf_path))
+
+    QStringList availableConfigFiles = configFiles();
+    QString configPath = availableConfigFiles.isEmpty() ? QString() : availableConfigFiles.constFirst();
+    configPath = settings.value(u"conf_path"_s, configPath).toString();
+    if(configPath.isEmpty() || !QFile::exists(configPath))
     {
-        qCWarning(plugin, "invalid config path: %s", qPrintable(conf_path));
+        qCWarning(plugin, "missing or invalid config file path: %s", qPrintable(configPath));
         m_mutex.unlock();
         return false;
     }
+
+    if(!validateConfigFile(configPath))
+    {
+        qCWarning(plugin, "malformed wildmidi config: %s", qPrintable(configPath));
+        m_mutex.unlock();
+        return false;
+    }
+
+    unsigned short int mixer_options = 0;
     unsigned short int sample_rate = settings.value(u"sample_rate"_s, 44100).toInt();
     if(settings.value(u"enhanced_resampling"_s, false).toBool())
         mixer_options |= WM_MO_ENHANCED_RESAMPLING;
@@ -69,7 +79,7 @@ bool WildMidiHelper::initialize()
     settings.endGroup();
 
     m_sample_rate = sample_rate;
-    if(WildMidi_Init(qPrintable(conf_path), sample_rate, mixer_options) < 0)
+    if(WildMidi_Init(qPrintable(configPath), sample_rate, mixer_options) < 0)
     {
         qCWarning(plugin, "unable to initialize WildMidi library");
         m_mutex.unlock();
@@ -112,9 +122,10 @@ void WildMidiHelper::removePtr(void *t)
 QStringList WildMidiHelper::configFiles() const
 {
     static const QStringList paths = {
+        u"/etc/wildmidi/wildmidi.cfg"_s,
+        u"/etc/timidity/freepats.cfg"_s,
         u"/etc/timidity.cfg"_s,
         u"/etc/timidity/timidity.cfg"_s,
-        u"/etc/wildmidi/wildmidi.cfg"_s
     };
     QStringList filtered;
     for(const QString &path : std::as_const(paths))
@@ -123,6 +134,35 @@ QStringList WildMidiHelper::configFiles() const
             filtered << path;
     }
     return filtered;
+}
+
+bool WildMidiHelper::validateConfigFile(const QString &path) const
+{
+    QFile file(path);
+    if(!file.open(QIODevice::ReadOnly))
+    {
+        qCWarning(plugin) << "unable to wildmidi file; error:" << file.errorString();
+        return false;
+    }
+
+    //check 'dir' option only
+    while(!file.atEnd())
+    {
+        QString line = QString::fromUtf8(file.readLine()).trimmed();
+
+        if(line.startsWith(u"dir"_s))
+        {
+            QStringList args = line.split(QChar::Space, Qt::SkipEmptyParts);
+            if (args.count() != 2)
+                continue;
+
+            //check 'dir' option
+            if (QFile::exists(args.at(1)))
+                return true;
+        }
+    }
+
+    return false;
 }
 
 quint32 WildMidiHelper::sampleRate()
