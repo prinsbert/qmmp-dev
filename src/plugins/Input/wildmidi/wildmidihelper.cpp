@@ -112,9 +112,10 @@ void WildMidiHelper::removePtr(void *t)
 QStringList WildMidiHelper::configFiles() const
 {
     static const QStringList paths = {
+        u"/etc/wildmidi/wildmidi.cfg"_s,
+        u"/etc/timidity/freepats.cfg"_s,
         u"/etc/timidity.cfg"_s,
         u"/etc/timidity/timidity.cfg"_s,
-        u"/etc/wildmidi/wildmidi.cfg"_s
     };
     QStringList filtered;
     for(const QString &path : std::as_const(paths))
