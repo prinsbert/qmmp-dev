@@ -58,7 +58,7 @@ bool WildMidiHelper::initialize()
     configPath = settings.value(u"conf_path"_s, configPath).toString();
     if(configPath.isEmpty() || !QFile::exists(configPath))
     {
-        qCWarning(plugin, "missing or invalid config file path: %s", qPrintable(configPath));
+        qCWarning(plugin, "missing config file path: %s", qPrintable(configPath));
         m_mutex.unlock();
         return false;
     }
