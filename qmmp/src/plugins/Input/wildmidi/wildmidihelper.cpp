@@ -149,7 +149,6 @@ bool WildMidiHelper::validateConfigFile(const QString &path) const
     while(!file.atEnd())
     {
         QString line = QString::fromUtf8(file.readLine()).trimmed();
-        qDebug() << line;
 
         if(line.startsWith(u"dir"_s))
         {
