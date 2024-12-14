@@ -148,13 +148,13 @@ void Notifier::showMetaData()
 
 void Notifier::showVolume(int v)
 {
-    if ((m_volume != v) && m_showVolume)
+    if((m_volume != v) && m_showVolume)
     {
         if (m_volume >= 0 && !hasFullscreenWindow())
         {
             if (!m_popupWidget)
                 m_popupWidget = new PopupWidget();
-            m_popupWidget->showVolume(m_volume);
+            m_popupWidget->showVolume(v);
         }
         m_volume = v;
     }
