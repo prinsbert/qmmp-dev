@@ -28,13 +28,13 @@ case $1 in
     --enable-decoder=ape --enable-decoder=wmav1 --enable-decoder=wmav2 --enable-decoder=truehd \
     --enable-decoder=aac --enable-decoder=alac --enable-decoder=shorten --enable-decoder=twinvq \
     --enable-decoder=tta --enable-decoder=ra_288 --enable-decoder=ra_144 \
-    --enable-decoder=eac3 --enable-decoder=flac \
+    --enable-decoder=eac3 --enable-decoder=ac3 --enable-decoder=flac \
     --enable-decoder=dsd_lsbf --enable-decoder=dsd_lsbf_planar --enable-decoder=dsd_msbf --enable-decoder=dsd_msbf_planar \
     --enable-decoder=dca \
     --enable-demuxer=ape  --enable-demuxer=xwma --enable-demuxer=truehd \
     --enable-demuxer=aac  --enable-demuxer=shorten --enable-demuxer=rtsp \
     --enable-demuxer=tta --enable-demuxer=rtp \
-    --enable-demuxer=eac3 --enable-demuxer=dts --enable-demuxer=dtshd --enable-demuxer=flac \
+    --enable-demuxer=eac3 --enable-demuxer=ac3 --enable-demuxer=dts --enable-demuxer=dtshd --enable-demuxer=flac \
     --enable-demuxer=matroska --enable-demuxer=asf --enable-demuxer=mov \
     --enable-decoder=tak --enable-demuxer=tak \
     --disable-d3d11va --disable-dxva2
