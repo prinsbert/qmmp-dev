@@ -13,7 +13,7 @@ case $1 in
     cd temp
     tar xvJf $NAME-$VERSION-Source.tar.xz
     cd $NAME-$VERSION-Source
-    cmake ./ -DCMAKE_INSTALL_PREFIX=${PREFIX} -G "MinGW Makefiles" \
+    cmake ./ -DCMAKE_INSTALL_PREFIX=${PREFIX} -G "MSYS Makefiles" \
     -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DBUILD_SHARED_LIBS=ON \
     -DCMAKE_BUILD_TYPE=Release
     mingw32-make -j${JOBS}
