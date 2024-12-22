@@ -72,7 +72,7 @@ bool DecoderFFmpegFactory::canDecode(QIODevice *i) const
         return true;
     if(filters.contains(u"*.aac"_s) && formats.contains(u"aac"_s))
         return true;
-    if(filters.contains(u"*.ac3"_s) && formats.contains(u"eac3"_s))
+    if(filters.contains(u"*.ac3"_s) && (formats.contains(u"ac3"_s) || formats.contains(u"eac3"_s)))
         return true;
     if(filters.contains(u"*.dts"_s) && formats.contains(u"dts"_s))
         return true;
@@ -98,7 +98,7 @@ DecoderProperties DecoderFFmpegFactory::properties() const
     QSettings settings;
     QSet<QString> filters = {
         u"*.wma"_s, u"*.ape"_s, u"*.tta"_s, u"*.m4a"_s, u"*.m4b"_s, u"*.aac"_s, u"*.mp3"_s, u"*.ra"_s, u"*.shn"_s,
-        u"*.vqf"_s, u"*.ac3"_s, u"*.tak"_s, u"*.dsf"_s, u"*.dsdiff"_s, u"*.mka"_s
+        u"*.ac3"_s, u"*.dts"_s, u"*.mka"_s,  u"*.vqf"_s, u"*.tak"_s, u"*.dsf"_s, u"*.dsdiff"_s
     };
     const QStringList disabledFilters = settings.value(u"FFMPEG/disabled_filters"_s, { u"*.mp3"_s }).toStringList();
 
@@ -124,7 +124,7 @@ DecoderProperties DecoderFFmpegFactory::properties() const
         filters.remove(u"*.ra"_s);
     if(!avcodec_find_decoder(AV_CODEC_ID_SHORTEN))
         filters.remove(u"*.shn"_s);
-    if(!avcodec_find_decoder(AV_CODEC_ID_EAC3))
+    if(!avcodec_find_decoder(AV_CODEC_ID_AC3) && !avcodec_find_decoder(AV_CODEC_ID_EAC3))
         filters.remove(u"*.ac3"_s);
     if(!avcodec_find_decoder(AV_CODEC_ID_DTS))
         filters.remove(u"*.dts"_s);
