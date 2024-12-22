@@ -36,7 +36,10 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     setAttribute(Qt::WA_DeleteOnClose);
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     QStringList filters;
-    filters << "*.wma" << "*.ape" << "*.tta" << "*.m4a" << "*.aac" << "*.ra" << "*.shn" << "*.vqf" << "*.ac3" << "*.tak";
+    filters << "*.wma" << "*.ape" << "*.tta" << "*.m4a" << "*.aac" << "*.ra" << "*.shn" << "*.vqf" << "*.ac3" << "*.dts";
+#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53,2,0)) //libav 9
+    filters << "*.tak";
+#endif
     filters = settings.value("FFMPEG/filters", filters).toStringList();
 #if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(55,34,0)) //libav 10
     m_ui.wmaCheckBox->setEnabled(avcodec_find_decoder(AV_CODEC_ID_WMAV1));

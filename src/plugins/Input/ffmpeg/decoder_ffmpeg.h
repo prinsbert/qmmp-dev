@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -30,7 +30,7 @@ extern "C"{
 
 #include <qmmp/decoder.h>
 
-#define PROBE_BUFFER_SIZE 8192
+#define PROBE_BUFFER_SIZE 16384
 #define INPUT_BUFFER_SIZE 16384
 
 class DecoderFFmpeg : public Decoder

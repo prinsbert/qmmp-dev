@@ -94,7 +94,7 @@ DecoderProperties DecoderFFmpegFactory::properties() const
 {
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     QStringList filters;
-    filters << "*.wma" << "*.ape" << "*.tta" << "*.m4a" << "*.aac" << "*.ra" << "*.shn" << "*.vqf" << "*.ac3";
+    filters << "*.wma" << "*.ape" << "*.tta" << "*.m4a" << "*.aac" << "*.ra" << "*.shn" << "*.vqf" << "*.ac3" << "*.dts";
 #if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53,2,0)) //libav 9
     filters << "*.tak";
 #endif
