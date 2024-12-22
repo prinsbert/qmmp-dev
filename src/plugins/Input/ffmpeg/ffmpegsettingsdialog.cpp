@@ -54,8 +54,9 @@ FFmpegSettingsDialog::FFmpegSettingsDialog(QWidget *parent)
     m_ui->raCheckBox->setEnabled(avcodec_find_decoder(AV_CODEC_ID_RA_288));
     m_ui->raCheckBox->setChecked(!disabledFilters.contains(u"*.ra"_s) && avcodec_find_decoder(AV_CODEC_ID_RA_288));
     m_ui->shCheckBox->setChecked(!disabledFilters.contains(u"*.shn"_s) && avcodec_find_decoder(AV_CODEC_ID_SHORTEN));
-    m_ui->ac3CheckBox->setEnabled(avcodec_find_decoder(AV_CODEC_ID_EAC3));
-    m_ui->ac3CheckBox->setChecked(!disabledFilters.contains(u"*.ac3"_s) && avcodec_find_decoder(AV_CODEC_ID_EAC3));
+    m_ui->ac3CheckBox->setEnabled(avcodec_find_decoder(AV_CODEC_ID_AC3) || avcodec_find_decoder(AV_CODEC_ID_EAC3));
+    m_ui->ac3CheckBox->setChecked(!disabledFilters.contains(u"*.ac3"_s) && (avcodec_find_decoder(AV_CODEC_ID_AC3) ||
+                                  avcodec_find_decoder(AV_CODEC_ID_EAC3)));
     m_ui->dtsCheckBox->setEnabled(avcodec_find_decoder(AV_CODEC_ID_DTS));
     m_ui->dtsCheckBox->setChecked(!disabledFilters.contains(u"*.dts"_s) && avcodec_find_decoder(AV_CODEC_ID_DTS));
     m_ui->mkaCheckBox->setEnabled(avcodec_find_decoder(AV_CODEC_ID_TRUEHD));
