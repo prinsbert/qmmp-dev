@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2025 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -50,7 +50,7 @@ QSUiActionManager::QSUiActionManager(QObject *parent) :
         { EJECT, createAction(tr("&Play Files"), u"eject"_s, tr("E"), u"media-eject"_s) },
         { RECORD, createAction2(tr("&Record"), u"record"_s, QString(), u"media-record"_s) },
         { REPEAT_ALL, createAction2(tr("&Repeat Playlist"), u"repeate_playlist"_s, tr("R"), u"media-playlist-repeat"_s) },
-        { REPEAT_TRACK, createAction2(tr("&Repeat Track"), u"repeate_track"_s, tr("Ctrl+R")) },
+        { REPEAT_TRACK, createAction2(tr("&Repeat Track"), u"repeate_track"_s, tr("Ctrl+R"), u"media-repeat-single"_s) },
         { SHUFFLE, createAction2(tr("&Shuffle"), u"shuffle"_s, tr("S"), u"media-playlist-shuffle"_s) },
         { NO_PL_ADVANCE, createAction2(tr("&No Playlist Advance"), u"no_playlist_advance"_s, tr("Ctrl+N")) },
         { TRANSIT_BETWEEN_PLAYLISTS, createAction2(tr("&Transit between playlists"), u"transit_between_playlists"_s) },
