@@ -1,99 +1,185 @@
 Changelog of Qmmp Plugin Pack
-
 --------------
-Version 0.6.0
-* initial release
 
-Version 0.6.1
-* added feature to disable assembler optimizations in the FFap plugin
-* fixed documentation
-* fixed playlist scrolling
-* fixed build
-* updated Ukrainian translation (Gennadi Motsyo)
+Version 0.12.3
+* fixed build with FFmpeg 5.1
+* enabled libxmp plugin under Windows
+* updated home page
 
-Version 0.6.2
-* fixed FSF address
-* fixed some bugs in cmake files
-* removed executable stack from libffap.so (thanks to Karel Volný)
-* fixed crash in the playlist popup message
-* updated Lithuanian translation (Algirdas Butkus)
+Version 0.12.2
+* fixed cmake warning
+* updated French translation (Adrien Vigneron)
 
-Version 0.6.3
-* added Hebrew translation (Genghis Khan)
-* added missing translation files
-* fixed resources
-* fixed qsui settings
-* fixed shortcut editor
-* fixed qsui position bar behavior
-* fixed division line position in the playlist of the qsui plugin
+Version 0.12.1
+* fixed issue with missing properties for CUE tracks in the ffap plugin
 
-Version 0.6.4
-* added http redirect support to the url dialog of the qsui plugin
+Version 0.12.0
+* ported to qmmp 0.12 api
+* improved ffvideo plugin
+* removed history plugin
+* removed mpg123 plugin
+* updated Russian translation (Alexey Loginov, Viktor Eruhin)
+* updated Polish translation (mrerexx)
+* updated Portuguese translation (Sérgio Marques)
+* updated Ukrainian translation (Gennady Motsyo)
+* updated Spanish translation (Joel Barrios)
+* updated German translation (Ettore Atalan)
+* updated Greek translation (Dimitrios Glentadakis)
+* updated Galician translation (Delio Docampo Cordeiro)
+* updated Indonesian translation (Wantoyo)
+* updated Italian translation (Luigi Toscano)
+* updated Finnish translation (Jiri Grönroos)
+* updated Chinese Traditional translation (Cosmos Chen)
+
+Version 0.11.4
+* fixed ffvideo plugin linking
+
+Version 0.11.3
+* fixed gcc 8.1 support
+
+Version 0.11.2
+* fixed Goom plugin:
+  - fixed segmentation fault
+  - fixed issue with gcc optimizations (-O2 flag)
+
+Version 0.11.1
+* added ffmpeg 4.0 support in the ffvideo plugin
+* fixed issues with some corrupted files in the mpg123 plugin
+* updated Italian translation (Luigi Toscano)
+
+Version 0.11.0
+* ported to qmmp 0.11 api
+* added history plugin
+* added ffvideo plugin
+* added Goom visualization
+* fixed memory leaks
+* added Finnish translation (Jiri Grönroos)
+* updated Brazilian Portuguese translation (Vitor Pereira)
+* updated Chezh translation (Jaroslav Lichtblau)
+* updated Chinese Simplified translation (Mingcong Bai)
+* updated French translation (Adrien Vigneron and Sébastien Aperghis-Tramoni)
+* updated Galician translation (Delio Docampo Cordeiro)
+* updated German translation (Ettore Atalan)
+* updated Greek translation (Dimitrios Glentadakis)
+* updated Polish translation (Daniel Krawczyk)
+* updated Portuguese translation (Sérgio Marques)
+* updated Russian translation (Alexey Loginov)
+* updated Spanish translation (Joel Barrios and Bohdan Shuba)
+* updated Japanese translation (RyoTa SimaMoto)
+* updated Ukrainian translation (Gennady Motsyo)
+
+Version 0.10.4
+* added album artist tag support in the ffap plugin
+* fixed cmake 3.10 support
+* fixed rusxmms support in the mpg123 plugin
+* updated Greek translation (Dimitrios Glentadakis)
+* updated Spanish translation (Joel Barrios)
+
+Version 0.10.3
+* fixed possible segmentation fault in the mpg123 plugin
+* fixed MP3 in WAV container detection in the mpg123 plugin
+* fixed Russian translation
+* updated Galician translation (Delio Docampo Cordeiro)
+
+Version 0.10.2
+* fixed 24 bits support in the ffap plugin
+
+Version 0.10.1
+* updated German translation (Ettore Atalan)
+* updated Brazilian Portuguese translation (Vitor Pereira)
+
+Version 0.10.0
+* ported to qmmp 0.10 api
+* added libsamplerate-based sample rate converter
+* changed default settings in the mpg123 plugin
+* updated Bulgarian translation (Kiril Kirilov)
+* updated Chinese Traditional translation (Jeff Huang)
+* updated Chinese Simplified translation (Mingcong Bai, Mingye Wang, mabier)
+* updated French translation (Adrien Vigneron and Sébastien Aperghis-Tramoni)
+* updated German translation (Ettore Atalan)
+* updated Greek translation (Dimitrios Glentadakis)
 * updated Hebrew translation (Genghis Khan)
-
-Version 0.6.5
-* improved rtl locales support
-* fixed compiler warnings
-
-Version 0.6.6
-* fixed typo
-
-Version 0.7.0
-* ported to qmmp 0.7 api
-* added windows support to the ffap plugin
-* added streams support to the mpg123 plugin
-* added automatic yasm detection
-* improved qsui plugin:
-  - added spectrum analyzer
-  - added sorting by file creation date
-  - added playlist colors settings
-  - added cover art display
-  - added equalizer presets
-  - improved tabs (movable, closable by middle click)
-* removed rename dialog, using standard instead
-* removed qmmp 0.6.x support
-* updated Ukrainian translation (Gennadi Motsyo)
+* updated Japanese translation (RyoTa SimaMoto)
+* updated Portuguese translation (Sérgio Marques)
 * updated Russian translation
-* updated Polish translation (Grzegorz Gibas)
-* updated Japanese translation (Ryota Shimamoto)
+* updated Ukrainian translation (Gennadi Motsyo)
+
+Version 0.9.5
+* fixed TagLib-1.7 support
+
+Version 0.9.4
+* fixed unicode support under windows
+* fixed support of ape with embedded cue under windows
+* updated French translation (Adrien Vigneron)
+* updated Chinese Traditional translation (Mingye Wang)
 * updated Hebrew translation (Genghis Khan)
-* updated Chezh translation (Karel Volny)
 
-Version 0.7.1
-* fixed Ukrainian translation (Gennadi Motsyo)
-* fixed windows support in the ffap plugin
-* fixed shortcut editor dialog in the qsui plugin
-* fixed 'play/pause' action in the qsui plugin
+Version 0.9.3
+* fixed build
+* fixed cover art support in the mpg123 plugin
+* updated Russian translation (AlexL)
 
-Version 0.7.2
+Version 0.9.2
+* fixed build (RyoTa SimaMoto)
+* reduced tag reading delay in the ffap plugin
+
+Version 0.9.1
+* fixed buffer overflow in the mpg123 plugin
+
+Version 0.9.0
+* ported to qmmp 0.9 api
+* added xmp plugin
+* added album artist tag support to the mpg123 plugin
+* added feature to disable plugins without qmmp-plugin-pack.pri modification (qmake only)
+* removed qsui plugin
+* improved cmake build scripts
+* updated Russian translation
+* updated Czech translation (Jaroslav Lichtblau)
+* updated Hebrew translation (Genghis Khan)
+* updated German translation (Ettore Atalan)
+* updated Portuguese translation (Sérgio Marques)
+* updated Ukrainian translation (Gennadi Motsyo)
+* updated French translation (Sébastien Aperghis-Tramoni)
+* updated Polish translation (Daniel Krawczyk)
+* updated Greek translation (Dimitrios Glentadakis)
+* updated Japanese translation (RyoTa SimaMoto)
+
+Version 0.8.6
+* fixed documentation
+
+Version 0.8.5
+* fixed Japanese translation (RyoTa SimaMoto)
+* fixed cmake support
 * fixed qsui plugin:
-  - fixed memory leak
-  - fixed text eliding
-  - fixed 'rename list' shortcut
+  - fixed problem with "jumping" slider
+  - restore maximized mode after hide/show cycle
+  - write settings when main window hides
 
-Version 0.7.3
-* fixed bug causes equalizer reset in the qsui plugin
+Version 0.8.4
+* fixed qsui plugin:
+  - fixed Ukrainian translation (Gennadi Motsyo)
+  - fixed custom color scheme usage
+  - optimized playlist drawing
+  - improved cover scaling quality
+* fixed clang warnings in the ffap plugin
 
-Version 0.7.4
-* fixed gcc 4.8 warnings
-* fixed memory leak
+Version 0.8.3
+* fixed qsui plugin:
+  - fixed displaying of the symbol '&' in the tab name
+  - fixed displaying name of the current directory
 
-Version 0.7.5
-* fixed tab closing bug in the qsui plugin
-* fixed cpu architecture detection while build using qmake
-* fixed feature to disable qsui before build (Ryota Shimamoto)
-* fixed latest cmake support
+Version 0.8.2
+* added Portuguese translation (Sérgio Marques)
+* added transifex integration
+* added feature to create a new playlist on double click in the qsui plugin (patch by Evgeniy Alekseev)
+* improved image scaling quality
+* fixed color settings in the qsui plugin
+* reduced tag reading delay in the mpg123 plugin
 
-Version 0.7.6
-* added seeking using mouse wheel
-* fixed crash in the ffap plugin under win32
-* fixed playlist name update bug
-* fixed reset selection of tracks when calling context menu
-
-Version 0.7.7
-* fixed typos
-* fixed Polish locale support
-* removed useless files
+Version 0.8.1
+* added rusxmms patch autodetection to the mpg123 plugin
+* fixed selection behaviour when using keyboard in the qsui plugin
+* fixed main window activation in the qsui plugin
 
 Version 0.8.0
 * ported to qmmp 0.8 api
@@ -124,182 +210,96 @@ Version 0.8.0
 * updated Polish translation (Grzegorz Gibas)
 * updated Lithuanian translation (Algirdas Butkus)
 
-Version 0.8.1
-* added rusxmms patch autodetection to the mpg123 plugin
-* fixed selection behaviour when using keyboard in the qsui plugin
-* fixed main window activation in the qsui plugin
+Version 0.7.7
+* fixed typos
+* fixed Polish locale support
+* removed useless files
 
-Version 0.8.2
-* added Portuguese translation (Sérgio Marques)
-* added transifex integration
-* added feature to create a new playlist on double click in the qsui plugin (patch by Evgeniy Alekseev)
-* improved image scaling quality
-* fixed color settings in the qsui plugin
-* reduced tag reading delay in the mpg123 plugin
+Version 0.7.6
+* added seeking using mouse wheel
+* fixed crash in the ffap plugin under win32
+* fixed playlist name update bug
+* fixed reset selection of tracks when calling context menu
 
-Version 0.8.3
+Version 0.7.5
+* fixed tab closing bug in the qsui plugin
+* fixed cpu architecture detection while build using qmake
+* fixed feature to disable qsui before build (Ryota Shimamoto)
+* fixed latest cmake support
+
+Version 0.7.4
+* fixed gcc 4.8 warnings
+* fixed memory leak
+
+Version 0.7.3
+* fixed bug causes equalizer reset in the qsui plugin
+
+Version 0.7.2
 * fixed qsui plugin:
-  - fixed displaying of the symbol '&' in the tab name
-  - fixed displaying name of the current directory
+  - fixed memory leak
+  - fixed text eliding
+  - fixed 'rename list' shortcut
 
-Version 0.8.4
-* fixed qsui plugin:
-  - fixed Ukrainian translation (Gennadi Motsyo)
-  - fixed custom color scheme usage
-  - optimized playlist drawing
-  - improved cover scaling quality
-* fixed clang warnings in the ffap plugin
+Version 0.7.1
+* fixed Ukrainian translation (Gennadi Motsyo)
+* fixed windows support in the ffap plugin
+* fixed shortcut editor dialog in the qsui plugin
+* fixed 'play/pause' action in the qsui plugin
 
-Version 0.8.5
-* fixed Japanese translation (RyoTa SimaMoto)
-* fixed cmake support
-* fixed qsui plugin:
-  - fixed problem with "jumping" slider
-  - restore maximized mode after hide/show cycle
-  - write settings when main window hides
+Version 0.7.0
+* ported to qmmp 0.7 api
+* added windows support to the ffap plugin
+* added streams support to the mpg123 plugin
+* added automatic yasm detection
+* improved qsui plugin:
+  - added spectrum analyzer
+  - added sorting by file creation date
+  - added playlist colors settings
+  - added cover art display
+  - added equalizer presets
+  - improved tabs (movable, closable by middle click)
+* removed rename dialog, using standard instead
+* removed qmmp 0.6.x support
+* updated Ukrainian translation (Gennadi Motsyo)
+* updated Russian translation
+* updated Polish translation (Grzegorz Gibas)
+* updated Japanese translation (Ryota Shimamoto)
+* updated Hebrew translation (Genghis Khan)
+* updated Chezh translation (Karel Volny)
 
-Version 0.8.6
+Version 0.6.6
+* fixed typo
+
+Version 0.6.5
+* improved rtl locales support
+* fixed compiler warnings
+
+Version 0.6.4
+* added http redirect support to the url dialog of the qsui plugin
+* updated Hebrew translation (Genghis Khan)
+
+Version 0.6.3
+* added Hebrew translation (Genghis Khan)
+* added missing translation files
+* fixed resources
+* fixed qsui settings
+* fixed shortcut editor
+* fixed qsui position bar behavior
+* fixed division line position in the playlist of the qsui plugin
+
+Version 0.6.2
+* fixed FSF address
+* fixed some bugs in cmake files
+* removed executable stack from libffap.so (thanks to Karel Volný)
+* fixed crash in the playlist popup message
+* updated Lithuanian translation (Algirdas Butkus)
+
+Version 0.6.1
+* added feature to disable assembler optimizations in the FFap plugin
 * fixed documentation
-
-Version 0.9.0
-* ported to qmmp 0.9 api
-* added xmp plugin
-* added album artist tag support to the mpg123 plugin
-* added feature to disable plugins without qmmp-plugin-pack.pri modification (qmake only)
-* removed qsui plugin
-* improved cmake build scripts
-* updated Russian translation
-* updated Czech translation (Jaroslav Lichtblau)
-* updated Hebrew translation (Genghis Khan)
-* updated German translation (Ettore Atalan)
-* updated Portuguese translation (Sérgio Marques)
-* updated Ukrainian translation (Gennadi Motsyo)
-* updated French translation (Sébastien Aperghis-Tramoni)
-* updated Polish translation (Daniel Krawczyk)
-* updated Greek translation (Dimitrios Glentadakis)
-* updated Japanese translation (RyoTa SimaMoto)
-
-Version 0.9.1
-* fixed buffer overflow in the mpg123 plugin
-
-Version 0.9.2
-* fixed build (RyoTa SimaMoto)
-* reduced tag reading delay in the ffap plugin
-
-Version 0.9.3
+* fixed playlist scrolling
 * fixed build
-* fixed cover art support in the mpg123 plugin
-* updated Russian translation (AlexL)
-
-Version 0.9.4
-* fixed unicode support under windows
-* fixed support of ape with embedded cue under windows
-* updated French translation (Adrien Vigneron)
-* updated Chinese Traditional translation (Mingye Wang)
-* updated Hebrew translation (Genghis Khan)
-
-Version 0.9.5
-* fixed TagLib-1.7 support
-
-Version 0.10.0
-* ported to qmmp 0.10 api
-* added libsamplerate-based sample rate converter
-* changed default settings in the mpg123 plugin
-* updated Bulgarian translation (Kiril Kirilov)
-* updated Chinese Traditional translation (Jeff Huang)
-* updated Chinese Simplified translation (Mingcong Bai, Mingye Wang, mabier)
-* updated French translation (Adrien Vigneron and Sébastien Aperghis-Tramoni)
-* updated German translation (Ettore Atalan)
-* updated Greek translation (Dimitrios Glentadakis)
-* updated Hebrew translation (Genghis Khan)
-* updated Japanese translation (RyoTa SimaMoto)
-* updated Portuguese translation (Sérgio Marques)
-* updated Russian translation
 * updated Ukrainian translation (Gennadi Motsyo)
 
-Version 0.10.1
-* updated German translation (Ettore Atalan)
-* updated Brazilian Portuguese translation (Vitor Pereira)
-
-Version 0.10.2
-* fixed 24 bits support in the ffap plugin
-
-Version 0.10.3
-* fixed possible segmentation fault in the mpg123 plugin
-* fixed MP3 in WAV container detection in the mpg123 plugin
-* fixed Russian translation
-* updated Galician translation (Delio Docampo Cordeiro)
-
-Version 0.10.4
-* added album artist tag support in the ffap plugin
-* fixed cmake 3.10 support
-* fixed rusxmms support in the mpg123 plugin
-* updated Greek translation (Dimitrios Glentadakis)
-* updated Spanish translation (Joel Barrios)
-
-Version 0.11.0
-* ported to qmmp 0.11 api
-* added history plugin
-* added ffvideo plugin
-* added Goom visualization
-* fixed memory leaks
-* added Finnish translation (Jiri Grönroos)
-* updated Brazilian Portuguese translation (Vitor Pereira)
-* updated Chezh translation (Jaroslav Lichtblau)
-* updated Chinese Simplified translation (Mingcong Bai)
-* updated French translation (Adrien Vigneron and Sébastien Aperghis-Tramoni)
-* updated Galician translation (Delio Docampo Cordeiro)
-* updated German translation (Ettore Atalan)
-* updated Greek translation (Dimitrios Glentadakis)
-* updated Polish translation (Daniel Krawczyk)
-* updated Portuguese translation (Sérgio Marques)
-* updated Russian translation (Alexey Loginov)
-* updated Spanish translation (Joel Barrios and Bohdan Shuba)
-* updated Japanese translation (RyoTa SimaMoto)
-* updated Ukrainian translation (Gennady Motsyo)
-
-Version 0.11.1
-* added ffmpeg 4.0 support in the ffvideo plugin
-* fixed issues with some corrupted files in the mpg123 plugin
-* updated Italian translation (Luigi Toscano)
-
-Version 0.11.2
-* fixed Goom plugin:
-  - fixed segmentation fault
-  - fixed issue with gcc optimizations (-O2 flag)
-
-Version 0.11.3
-* fixed gcc 8.1 support
-
-Version 0.11.4
-* fixed ffvideo plugin linking
-
-Version 0.12.0
-* ported to qmmp 0.12 api
-* improved ffvideo plugin
-* removed history plugin
-* removed mpg123 plugin
-* updated Russian translation (Alexey Loginov, Viktor Eruhin)
-* updated Polish translation (mrerexx)
-* updated Portuguese translation (Sérgio Marques)
-* updated Ukrainian translation (Gennady Motsyo)
-* updated Spanish translation (Joel Barrios)
-* updated German translation (Ettore Atalan)
-* updated Greek translation (Dimitrios Glentadakis)
-* updated Galician translation (Delio Docampo Cordeiro)
-* updated Indonesian translation (Wantoyo)
-* updated Italian translation (Luigi Toscano)
-* updated Finnish translation (Jiri Grönroos)
-* updated Chinese Traditional translation (Cosmos Chen)
-
-Version 0.12.1
-* fixed issue with missing properties for CUE tracks in the ffap plugin
-
-Version 0.12.2
-* fixed cmake warning
-* updated French translation (Adrien Vigneron)
-
-Version 0.12.3
-* fixed build with FFmpeg 5.1
-* enabled libxmp plugin under Windows
-* updated home page
+Version 0.6.0
+* initial release
