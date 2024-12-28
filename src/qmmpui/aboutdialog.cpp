@@ -76,7 +76,7 @@ QString AboutDialog::loadAbout()
     text.append(tr("Build ABI: %1").arg(QSysInfo::buildAbi()) + u"</p>"_s);
 
     text.append(u"<p>"_s);
-    text.append(tr("(c) %1-%2 Qmmp Development Team").arg(2006).arg(2024) + u"<br>"_s);
+    text.append(tr("(c) %1-%2 Qmmp Development Team").arg(2006).arg(2025) + u"<br>"_s);
     text.append(u"<a href=\"https://qmmp.ylsoftware.com/\">https://qmmp.ylsoftware.com/</a><br>"_s);
     text.append(u"<a href=\"https://sourceforge.net/projects/qmmp-dev/\">https://sourceforge.net/projects/qmmp-dev/</a>"_s);
     text.append(u"</p>"_s);
