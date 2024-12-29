@@ -49,7 +49,7 @@ ActionManager::ActionManager(QObject *parent) :
 
     m_actions[REPEAT_ALL] = createAction2(tr("&Repeat Playlist"), "repeate_playlist", tr("R"),
                                           "media-playlist-repeat");
-    m_actions[REPEAT_TRACK] = createAction2(tr("&Repeat Track"), "repeate_track", tr("Ctrl+R"));
+    m_actions[REPEAT_TRACK] = createAction2(tr("&Repeat Track"), "repeate_track", tr("Ctrl+R"), "media-repeat-single");
     m_actions[SHUFFLE] = createAction2(tr("&Shuffle"), "shuffle", tr("S"), "media-playlist-shuffle");
     m_actions[NO_PL_ADVANCE] = createAction2(tr("&No Playlist Advance"), "no_playlist_advance",
                                             tr("Ctrl+N"));
