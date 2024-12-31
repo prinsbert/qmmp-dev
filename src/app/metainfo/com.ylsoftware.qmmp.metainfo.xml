@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
-  <id>qmmp.desktop</id>
+<component type="desktop-application">
+  <id>com.ylsoftware.qmmp</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>Qmmp</name>
@@ -62,7 +62,6 @@
   </keywords>
   <content_rating type="oars-1.1" />
   <url type="bugtracker">https://sourceforge.net/p/qmmp-dev/tickets/</url>
-  <url type="donation">https://qmmp.ylsoftware.com/index.php</url>
   <url type="help">https://sourceforge.net/p/qmmp-dev/tickets/</url>
   <url type="homepage">https://qmmp.ylsoftware.com/index.php</url>
   <url type="translate">https://www.transifex.com/qmmp-development-team/</url>
@@ -78,14 +77,18 @@
       <image type="source">https://qmmp.ylsoftware.com/images/qmmp-1.4_full_1.png</image>
     </screenshot>
     <screenshot>
-	  <image type="source">https://qmmp.ylsoftware.com/images/qmmp-1.4_full_2.png</image>
+      <image type="source">https://qmmp.ylsoftware.com/images/qmmp-1.4_full_2.png</image>
     </screenshot>
   </screenshots>
   <launchable type="desktop-id">qmmp.desktop</launchable>
   <update_contact>forkotov02_AT_ya.ru</update_contact>
   <translation type="qt">qmmp</translation>
-  <developer_name>Qmmp Development Team</developer_name>
+  <developer>
+    <id>com.ylsoftware.qmmp</id>
+    <name>Qmmp Development Team</name>
+  </developer>
   <releases>
+    <release version="2.2" date="2024-10-05" />"
     <release version="2.1" date="2022-05-17" />
     <release version="2.0" date="2022-03-28" />
     <release version="1.6" date="2022-05-17" />
