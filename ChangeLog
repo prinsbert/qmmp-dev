@@ -8,6 +8,7 @@ Version 2.2.3
 * fixed volume level notification
 * fixed dts/ac3 support in the ffmpeg plugin
 * fixed ignoring of the CUE data file with embedded CUE
+* updated Korean translation (Jung Hee Lee)
 
 Version 2.2.2
 * added SIGTERM signal support
