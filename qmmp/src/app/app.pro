@@ -38,7 +38,7 @@ unix {
     icon256.files = images/256x256/qmmp$${APP_NAME_SUFFIX}.png
     icon_svg.files = images/scalable/qmmp$${APP_NAME_SUFFIX}.svgz \
         images/scalable/qmmp-simple$${APP_NAME_SUFFIX}.svgz
-    appdata.files = appdata/qmmp$${APP_NAME_SUFFIX}.appdata.xml
+    appdata.files = metainfo/com.ylsoftware.qmmp.metainfo.xml
     icon16.path = $$DATA_DIR/icons/hicolor/16x16/apps
     icon32.path = $$DATA_DIR/icons/hicolor/32x32/apps
     icon48.path = $$DATA_DIR/icons/hicolor/48x48/apps
