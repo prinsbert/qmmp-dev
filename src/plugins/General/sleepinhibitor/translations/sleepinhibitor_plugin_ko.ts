@@ -21,7 +21,7 @@
     <message>
         <location filename="../sleepinhibitorfactory.cpp" line="51"/>
         <source>This plugin inhibits sleep mode while audio playback</source>
-        <translation>이 플러그인은 오디오 플레이백 중 절전 모드를 억제합니다</translation>
+        <translation>이 플러그인은 오디오 재생 중 절전 모드를 억제합니다</translation>
     </message>
     <message>
         <location filename="../sleepinhibitorfactory.cpp" line="52"/>
