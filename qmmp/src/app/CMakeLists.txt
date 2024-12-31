@@ -25,7 +25,7 @@ install(FILES images/64x64/qmmp${APP_NAME_SUFFIX}.png DESTINATION ${CMAKE_INSTAL
 install(FILES images/128x128/qmmp${APP_NAME_SUFFIX}.png DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/128x128/apps)
 install(FILES images/256x256/qmmp${APP_NAME_SUFFIX}.png DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps)
 install(FILES images/scalable/qmmp${APP_NAME_SUFFIX}.svgz images/scalable/qmmp-simple${APP_NAME_SUFFIX}.svgz DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps)
-install(FILES metainfo/com.ylsoftware.qmmp.metainfo.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo)
+install(FILES metainfo/com.ylsoftware.qmmp${APP_NAME_SUFFIX}.metainfo.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo)
 
 if(USE_DIR_ASSOC)
     install(FILES qmmp-enqueue${APP_NAME_SUFFIX}.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
