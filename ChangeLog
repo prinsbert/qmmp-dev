@@ -1,6 +1,14 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 2.2.3
+* added simple WildMidi config validation
+* updated AppStream metadata
+* fixed build without X11 support
+* fixed volume level notification
+* fixed dts/ac3 support in the ffmpeg plugin
+* fixed ignoring of the CUE data file with embedded CUE
+
 Version 2.2.2
 * added SIGTERM signal support
 * added additional information in the "about..." dialog
