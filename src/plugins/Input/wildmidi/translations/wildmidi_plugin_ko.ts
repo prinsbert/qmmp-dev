@@ -4,32 +4,32 @@
 <context>
     <name>DecoderWildMidiFactory</name>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="49"/>
+        <location filename="../decoderwildmidifactory.cpp" line="46"/>
         <source>WildMidi Plugin</source>
         <translation>WildMidi 플러그인</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="54"/>
+        <location filename="../decoderwildmidifactory.cpp" line="48"/>
         <source>Midi Files</source>
         <translation>Midi 파일</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="105"/>
+        <location filename="../decoderwildmidifactory.cpp" line="99"/>
         <source>About WildMidi Audio Plugin</source>
         <translation>WildMidi 오디오 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="106"/>
+        <location filename="../decoderwildmidifactory.cpp" line="100"/>
         <source>Qmmp WildMidi Audio Plugin</source>
         <translation>Qmmp WildMidi 오디오 플러그인</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="107"/>
+        <location filename="../decoderwildmidifactory.cpp" line="101"/>
         <source>This plugin uses WildMidi library to play midi files</source>
         <translation>이 플러그인은 WildMidi 라이브러리를 사용하여 미디 파일을 재생합니다</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="108"/>
+        <location filename="../decoderwildmidifactory.cpp" line="102"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
