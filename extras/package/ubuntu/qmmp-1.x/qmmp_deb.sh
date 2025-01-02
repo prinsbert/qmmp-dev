@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=1.7.2
+QMMP_VERSION=1.7.3
 UBUNTU_CODENAMES='focal jammy noble oracular'
 BUILD_ROOT=build-root
 
