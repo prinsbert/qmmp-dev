@@ -3,6 +3,7 @@ Changelog of Qt-based Multimedia Player
 
 Version 2.2.3
 * added simple WildMidi config validation
+* added icon for the 'Repeat track' action
 * updated AppStream metadata
 * fixed build without X11 support
 * fixed volume level notification
