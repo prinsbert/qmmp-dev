@@ -3,6 +3,7 @@ Changelog of Qt-based Multimedia Player
 
 Version 1.7.3
 * added simple WildMidi config validation
+* added icon for the 'Repeat track' action
 * updated AppStream metadata
 * fixed volume level notification
 * fixed dts/ac3 support in the ffmpeg plugin
