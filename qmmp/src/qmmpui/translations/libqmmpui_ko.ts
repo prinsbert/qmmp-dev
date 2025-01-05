@@ -86,22 +86,22 @@
     <message>
         <location filename="../aboutdialog.cpp" line="73"/>
         <source>Qt version: %1 (compiled with %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt 버전: %1 (%2로 컴파일됨)</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="74"/>
         <source>Qt platform: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt 플랫폼: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="75"/>
         <source>System: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>시스템: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="76"/>
         <source>Build ABI: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ABI 빌드: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="113"/>
@@ -346,27 +346,27 @@
     <message>
         <location filename="../forms/configdialog.ui" line="193"/>
         <source>Group Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>그룹 모드</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="202"/>
         <source>Group size:</source>
-        <translation type="unfinished"></translation>
+        <translation>그룹 크기:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="219"/>
         <source>Show dividing line</source>
-        <translation type="unfinished"></translation>
+        <translation>구분선 표시하기</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="251"/>
         <source>Extra row format:</source>
-        <translation type="unfinished"></translation>
+        <translation>추가 행 형식:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="276"/>
         <source>Show extra row</source>
-        <translation type="unfinished"></translation>
+        <translation>추가 행 표시하기</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="283"/>
@@ -630,22 +630,22 @@
     <message>
         <location filename="../configdialog.cpp" line="63"/>
         <source>1 row</source>
-        <translation type="unfinished"></translation>
+        <translation>1 행</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="64"/>
         <source>3 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>3 행</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="65"/>
         <source>4 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>4 행</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="66"/>
         <source>5 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>5 행</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="67"/>
@@ -1219,17 +1219,17 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>Duration | Format | Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>재생시간 | 형식 | 비트레이트</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>Duration | Format | Bitrate | Sample rate </source>
-        <translation type="unfinished"></translation>
+        <translation>재생시간 | 형식 | 비트레이트 | 샘플 레이트</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>Year | Duration | Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>년도 | 재생시간 | 비트레이트</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="68"/>
@@ -1311,17 +1311,17 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>%y | %if(%l,%l | ,)%{bitrate} kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>%y | %if(%l,%l | ,)%{bitrate} kbps</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="67"/>
@@ -1382,7 +1382,7 @@
     <message>
         <location filename="../qmmpuisettings.cpp" line="39"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../qmmpuisettings.cpp" line="64"/>

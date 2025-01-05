@@ -31,7 +31,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="51"/>
         <source>Display Jump to Track dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>트랙 대화상자로 이동 화면표시</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="52"/>
@@ -124,7 +124,7 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="518"/>
         <source>Print debugging messages</source>
-        <translation type="unfinished"></translation>
+        <translation>디버깅 메시지 출력하기</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="519"/>
