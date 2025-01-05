@@ -49,7 +49,7 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="101"/>
         <source>Replace Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>재생목록 바꾸기</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="102"/>
@@ -69,22 +69,22 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="116"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>분류</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="110"/>
         <source>By Name</source>
-        <translation type="unfinished"></translation>
+        <translation>이름별</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="111"/>
         <source>By Size</source>
-        <translation type="unfinished"></translation>
+        <translation>크기별</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="112"/>
         <source>By Type</source>
-        <translation type="unfinished"></translation>
+        <translation>유형별</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="113"/>
@@ -142,17 +142,17 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="703"/>
         <source>Override group colors</source>
-        <translation type="unfinished"></translation>
+        <translation>그룹 색상 재정의</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="806"/>
         <source>Override current track colors</source>
-        <translation type="unfinished"></translation>
+        <translation>현재 트랙 색상 재정의</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="816"/>
         <source>Current track text:</source>
-        <translation type="unfinished"></translation>
+        <translation>현재 트랙 텍스트:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="915"/>
@@ -329,12 +329,12 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="1268"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>그룹:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1275"/>
         <source>Extra group row:</source>
-        <translation type="unfinished"></translation>
+        <translation>추가 그룹 행:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1372"/>
@@ -675,7 +675,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="68"/>
         <source>Block Floating Panels</source>
-        <translation type="unfinished"></translation>
+        <translation>블록 플로팅 패널</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="69"/>
@@ -1757,7 +1757,7 @@
     <message>
         <location filename="../volumeslider.cpp" line="110"/>
         <source>%1: %2%</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: %2%</translation>
     </message>
 </context>
 </TS>

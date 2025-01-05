@@ -64,12 +64,12 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="34"/>
         <source>Default buffer size:</source>
-        <translation type="unfinished"></translation>
+        <translation>기본 버퍼 크기:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="50"/>
         <source>This value is used if information about bitrate is &lt;b&gt;not&lt;/b&gt; available.</source>
-        <translation type="unfinished"></translation>
+        <translation>이 값은 비트레이트에 대한 정보를 사용할 수 &lt;b&gt;없는&lt;/b&gt; 경우에 사용됩니다.</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="53"/>
@@ -84,12 +84,12 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="90"/>
         <source>Buffer duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>버퍼 재생시간:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="97"/>
         <source>This value is used if information about bitrate is available.</source>
-        <translation type="unfinished"></translation>
+        <translation>버퍼 재생시간:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="100"/>

@@ -1186,12 +1186,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="994"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>그룹:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1021"/>
         <source>Extra group row:</source>
-        <translation type="unfinished"></translation>
+        <translation>추가 그룹 행:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1048"/>
@@ -1328,7 +1328,7 @@
     <message>
         <location filename="../skinnedsettings.cpp" line="165"/>
         <source>Default skin</source>
-        <translation type="unfinished"></translation>
+        <translation>기본 스킨</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="174"/>
