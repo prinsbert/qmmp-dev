@@ -59,8 +59,13 @@ ProjectMPlugin::ProjectMPlugin (QWidget *parent)
     layout->setContentsMargins(0,0,0,0);
     setLayout(layout);
     addActions(m_projectMWidget->actions());
+#ifdef PROJECTM_4
+    connect(m_projectMWidget, &ProjectM4Widget::showMenuToggled, listWidget, &QListWidget::setVisible);
+    connect(m_projectMWidget, &ProjectM4Widget::fullscreenToggled, this, &ProjectMPlugin::setFullScreen);
+#else
     connect(m_projectMWidget, &ProjectMWidget::showMenuToggled, listWidget, &QListWidget::setVisible);
     connect(m_projectMWidget, &ProjectMWidget::fullscreenToggled, this, &ProjectMPlugin::setFullScreen);
+#endif
     listWidget->hide();
     resize(600,400);
     QSettings settings;
