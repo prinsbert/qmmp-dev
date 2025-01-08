@@ -24,6 +24,7 @@
 #include <QString>
 #include <QList>
 #include <gme/gme.h>
+#undef byte
 #include <qmmp/trackinfo.h>
 
 /**
