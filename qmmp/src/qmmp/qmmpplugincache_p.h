@@ -40,11 +40,11 @@ class QmmpPluginCache
 public:
     QmmpPluginCache(const QString &file, QSettings *settings);
 
-    const QString shortName() const;
-    const QString file() const;
-    const QStringList &filters() const;
-    const QStringList &contentTypes() const;
-    const QStringList &protocols() const;
+    QString shortName() const;
+    QString file() const;
+    QStringList filters() const;
+    QStringList contentTypes() const;
+    QStringList protocols() const;
     int priority() const;
     bool hasError() const;
 
@@ -54,6 +54,7 @@ public:
     EffectFactory *effectFactory();
     InputSourceFactory *inputSourceFactory();
 
+    void update(QSettings *settings);
     static void cleanup(QSettings *settings);
 
 private:
