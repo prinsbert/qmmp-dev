@@ -206,6 +206,7 @@ protected:
 
 private:
     static void loadPlugins();
+    static void updateCache();
     static QList<QmmpPluginCache*> *m_cache;
     static QStringList m_disabledNames;
     AudioParameters m_parameters;
