@@ -73,10 +73,7 @@ case $1 in
   --print-versions)
     for NAME in $LIB_NAMES
     do
-        cd $NAME
-        VERSION=`cat ./$NAME.sh | grep ^VERSION= | cut -d = -f 2` 
-        echo ${NAME}-${VERSION}
-        cd ..
+        echo ${NAME}-${QT_VERSION}
     done
   ;;
   *)
