@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NAME=game-music-emu
+NAME=libgme
 VERSION=0.6.4
 
 case $1 in
