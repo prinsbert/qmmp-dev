@@ -28,7 +28,8 @@ case $1 in
     -DCURL_DISABLE_SMB=ON \
     -DCURL_DISABLE_TELNET=ON \
     -DCURL_DISABLE_TFTP=ON \
-    -DCURL_DISABLE_SMTP=ON
+    -DCURL_DISABLE_SMTP=ON \
+    -DCURL_USE_LIBPSL=OFF
     mingw32-make -j${JOBS}
     mingw32-make install
 
