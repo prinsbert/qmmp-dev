@@ -10,7 +10,11 @@ include(GNUInstallDirs)
 include(FindPkgConfig)
 
 if(POLICY CMP0071)
-  cmake_policy(SET CMP0071 NEW)
+    cmake_policy(SET CMP0071 NEW)
+endif()
+
+if(POLICY CMP0175)
+    cmake_policy(SET CMP0175 NEW)
 endif()
 
 configure_file(
@@ -85,7 +89,8 @@ if(UNIX)
     ADD_CUSTOM_TARGET (distclean @echo cleaning for source distribution)
 
     ADD_CUSTOM_COMMAND(
-        COMMENT "distribution clean"
+		POST_BUILD
+		COMMENT "distribution clean"
 		COMMAND make
 		ARGS -C ${CMAKE_CURRENT_BINARY_DIR} clean
 		COMMAND find
