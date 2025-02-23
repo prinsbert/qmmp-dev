@@ -13,12 +13,16 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} /opt/local/include)
 endif()
 
-IF(POLICY CMP0071)
+if(POLICY CMP0071)
   cmake_policy(SET CMP0071 NEW)
-ENDIF()
+endif()
 
 if(POLICY CMP0063)
     cmake_policy(SET CMP0063 NEW)
+endif()
+
+if(POLICY CMP0175)
+    cmake_policy(SET CMP0175 NEW)
 endif()
 
 #Qt6 modules
@@ -131,7 +135,8 @@ endmacro(PRINT_SUMMARY)
 if(UNIX)
     add_custom_target (distclean @echo cleaning for source distribution)
 
-   add_custom_command(
+    add_custom_command(
+    POST_BUILD
     COMMENT "distribution clean"
     COMMAND make
     ARGS -C ${CMAKE_CURRENT_BINARY_DIR} clean
