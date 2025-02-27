@@ -1,6 +1,12 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 1.7.4
+* fixed build with ProjectM 4.0 or higher
+* fixed build with TagLib 2.0
+* fixed cmake warning
+* fixed filter list update
+
 Version 1.7.3
 * added simple WildMidi config validation
 * added icon for the 'Repeat track' action
