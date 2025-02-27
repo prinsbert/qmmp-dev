@@ -79,7 +79,11 @@ public:
     {
         return m_input->isOpen();
     }
+#if TAGLIB_MAJOR_VERSION >= 2
+    virtual void seek(TagLib::offset_t offset, Position p = Beginning) override
+#else
     virtual void seek(long offset, Position p = Beginning) override
+#endif
     {
         switch (p)
         {
@@ -99,15 +103,27 @@ public:
         m_input->seek(0);
         TagLib::IOStream::clear();
     }
+#if TAGLIB_MAJOR_VERSION >= 2
+    virtual TagLib::offset_t tell() const override
+#else
     virtual long tell() const override
+#endif
     {
         return m_input->pos();
     }
+#if TAGLIB_MAJOR_VERSION >= 2
+    virtual TagLib::offset_t length() override
+#else
     virtual long length() override
+#endif
     {
         return m_input->size();
     }
+#if TAGLIB_MAJOR_VERSION >= 2
+    virtual void truncate(TagLib::offset_t) override
+#else
     virtual void truncate(long) override
+#endif
     {}
 
 private:
