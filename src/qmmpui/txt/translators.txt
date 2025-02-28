@@ -9,6 +9,7 @@ Bulgarian:
     Miroslav Mihov
 
 Chinese Traditional:
+    Edouard.J.K Li <edouardlicn@gmail.com>
     Cosmos Chen
     lon <lon83129@126.com>
     Jeff Huang
