@@ -39,7 +39,7 @@ public:
     QMap <Qmmp::ReplayGainKey, double> replayGainInfo() const;
 
 private:
-    void setValue(Qmmp::ReplayGainKey key, QString value);
+    void setValue(Qmmp::ReplayGainKey key, const QString &value);
     QMap <Qmmp::ReplayGainKey, double> m_values;
 };
 

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016 by Ilya Kotov                                      *
+ *   Copyright (C) 2016-2025 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,17 +23,24 @@
 ReplayGainReader::ReplayGainReader(AVFormatContext *ic)
 {
     AVDictionaryEntry *t = 0;
-    while((t = av_dict_get(ic->metadata, "", t, AV_DICT_IGNORE_SUFFIX)))
-    {
-        if(!strcmp(t->key, "replaygain_album_gain"))
-            setValue(Qmmp::REPLAYGAIN_ALBUM_GAIN, t->value);
-        else if(!strcmp(t->key, "replaygain_album_peak"))
-            setValue(Qmmp::REPLAYGAIN_ALBUM_PEAK, t->value);
-        else if(!strcmp(t->key, "replaygain_track_gain"))
-            setValue(Qmmp::REPLAYGAIN_TRACK_GAIN, t->value);
-        else if(!strcmp(t->key, "replaygain_track_peak"))
-            setValue(Qmmp::REPLAYGAIN_TRACK_PEAK, t->value);
-    }
+
+    while((t = av_dict_get(ic->metadata, "REPLAYGAIN_ALBUM_GAIN", t, 0)))
+        setValue(Qmmp::REPLAYGAIN_ALBUM_GAIN, t->value);
+
+    t = nullptr;
+
+    while((t = av_dict_get(ic->metadata, "REPLAYGAIN_ALBUM_PEAK", t, 0)))
+        setValue(Qmmp::REPLAYGAIN_ALBUM_PEAK, t->value);
+
+    t = nullptr;
+
+    while((t = av_dict_get(ic->metadata, "REPLAYGAIN_TRACK_GAIN", t, 0)))
+        setValue(Qmmp::REPLAYGAIN_TRACK_GAIN, t->value);
+
+    t = nullptr;
+
+    while((t = av_dict_get(ic->metadata, "REPLAYGAIN_TRACK_PEAK", t, 0)))
+        setValue(Qmmp::REPLAYGAIN_TRACK_PEAK, t->value);
 }
 
 QMap <Qmmp::ReplayGainKey, double> ReplayGainReader::replayGainInfo() const
@@ -41,7 +48,7 @@ QMap <Qmmp::ReplayGainKey, double> ReplayGainReader::replayGainInfo() const
     return m_values;
 }
 
-void ReplayGainReader::setValue(Qmmp::ReplayGainKey key, QString value)
+void ReplayGainReader::setValue(Qmmp::ReplayGainKey key, const QString &value)
 {
     value.remove(" dB");
     if(value.isEmpty())
