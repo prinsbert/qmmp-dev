@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #include <QFile>
+#include <QBuffer>
 #include <QDBusMetaType>
 #include <QDBusArgument>
 #include <QDBusMessage>
@@ -127,10 +128,22 @@ QVariantMap Player2Object::metadata() const
     QVariantMap map;
     TrackInfo info = m_core->trackInfo();
     map[u"mpris:length"_s] = qMax(m_core->duration() * 1000 , qint64(0));
-    if(!MetaDataManager::instance()->getCoverPath(info.path()).isEmpty())
+    QString coverPath = MetaDataManager::instance()->getCoverPath(info.path());
+    if(!coverPath.isEmpty())
     {
-        map[u"mpris:artUrl"_s] = QUrl::fromLocalFile(
-                    MetaDataManager::instance()->getCoverPath(info.path())).toString();
+        map[u"mpris:artUrl"_s] = QUrl::fromLocalFile(coverPath).toString();
+    }
+    else
+    {
+        QImage coverImage = MetaDataManager::instance()->getCover(info.path());
+        if(!coverImage.isNull())
+        {
+            QByteArray tmp;
+            QBuffer buffer(&tmp);
+            buffer.open(QIODevice::WriteOnly);
+            coverImage.save(&buffer, "JPEG");
+            map[u"mpris:artUrl"_s] = QStringLiteral("data:image/jpeg;base64,%1").arg(QString::fromLatin1(tmp.toBase64()));
+        }
     }
     if(!info.value(Qmmp::ALBUM).isEmpty())
         map[u"xesam:album"_s] = info.value(Qmmp::ALBUM);
