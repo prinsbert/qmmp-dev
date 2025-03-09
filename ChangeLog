@@ -2,6 +2,7 @@ Changelog of Qt-based Multimedia Player
 --------------
 
 Version 1.7.4
+* added support for embedded cover art images in the mpris plugin
 * fixed build with ProjectM 4.0 or higher
 * fixed build with TagLib 2.0
 * fixed cmake warning
