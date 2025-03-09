@@ -1,13 +1,13 @@
 #!/bin/sh
 
 NAME=ffmpeg
-VERSION=7.1
+VERSION=7.1.1
 
 case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc http://ffmpeg.org/releases/$NAME-$VERSION.tar.bz2
+    wget -nc https://ffmpeg.org/releases/$NAME-$VERSION.tar.bz2
   ;;
   --install)
     cd temp

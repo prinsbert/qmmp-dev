@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=libxmp
-VERSION=4.6.1
+VERSION=4.6.2
 
 case $1 in
   --download)
