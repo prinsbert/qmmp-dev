@@ -1,7 +1,7 @@
 LangString text_app_desc               ${LANG_Russian} "Плеер на базе Qt с поддержкой нескольких форматов"
 LangString text_win10_warning          ${LANG_Russian} "Требуется Windows 10 и выше"
 LangString text_win7_warning           ${LANG_Russian} "Требуется Windows 7 и выше"
-LangString text_app_full_name          ${LANG_Russian} "Плеер Qmmp"
+LangString text_app_full_name          ${LANG_Russian} "Мультимедиа плеер на основе Qt"
 LangString text_portable_configuration ${LANG_Russian} "Переносимая конфигурация"
 LangString text_portable_warning       ${LANG_Russian} "Удалите этот файл для отключения переносимой конфигурации"
 LangString text_extra_skins            ${LANG_Russian} "Дополнительные обложки"
