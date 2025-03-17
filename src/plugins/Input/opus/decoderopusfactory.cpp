@@ -41,7 +41,7 @@ DecoderProperties DecoderOpusFactory::properties() const
     DecoderProperties properties;
     properties.name = tr("Opus Plugin");
     properties.shortName = "opus"_L1;
-    properties.filters = QStringList { u"*.opus"_s };
+    properties.filters = QStringList { u"*.opus"_s, u"*.oga"_s, u"*.ogg"_s };
     properties.description = tr("Ogg Opus Files");
     properties.contentTypes = QStringList { u"audio/opus"_s };
     properties.hasAbout = true;
