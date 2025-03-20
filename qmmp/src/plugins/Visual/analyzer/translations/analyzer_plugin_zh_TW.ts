@@ -6,7 +6,7 @@
     <message>
         <location filename="../analyzer.cpp" line="36"/>
         <source>Qmmp Analyzer</source>
-        <translation>Qmmp 可視化解析器</translation>
+        <translation>Qmmp 解析器</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="320"/>
@@ -82,7 +82,7 @@
         <location filename="../analyzer.cpp" line="365"/>
         <location filename="../analyzer.cpp" line="367"/>
         <source>&amp;Full Screen</source>
-        <translation>(&amp;F)全螢幕</translation>
+        <translation>全熒幕(&amp;F)</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="365"/>
@@ -104,7 +104,7 @@
     <message>
         <location filename="../analyzersettingsdialog.ui" line="14"/>
         <source>Analyzer Plugin Settings</source>
-        <translation>可視化解析器插件設定</translation>
+        <translation>分析器插件設定</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="35"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../visualanalyzerfactory.cpp" line="49"/>
         <source>About Analyzer Visual Plugin</source>
-        <translation>關於可視化解析器外掛</translation>
+        <translation>關於可視化解析器插件</translation>
     </message>
     <message>
         <location filename="../visualanalyzerfactory.cpp" line="50"/>

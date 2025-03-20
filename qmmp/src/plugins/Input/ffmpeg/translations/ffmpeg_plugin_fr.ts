@@ -114,7 +114,7 @@
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="152"/>
         <source>Direct Stream Digital (DSD)</source>
-        <translation type="unfinished"></translation>
+        <translation>Direct Stream Digital (DSD)</translation>
     </message>
 </context>
 </TS>

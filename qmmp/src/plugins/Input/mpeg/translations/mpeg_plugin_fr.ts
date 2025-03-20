@@ -95,7 +95,7 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="71"/>
         <source>Enable CRC checking</source>
-        <translation type="unfinished"></translation>
+        <translation>Activer la méthode CRC</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="87"/>
@@ -168,7 +168,7 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="343"/>
         <source>Try to detect encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Essayer de détecter l&apos;encodage</translation>
     </message>
 </context>
 </TS>

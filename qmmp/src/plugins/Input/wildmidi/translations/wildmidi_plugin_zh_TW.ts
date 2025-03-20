@@ -6,27 +6,27 @@
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="46"/>
         <source>WildMidi Plugin</source>
-        <translation>WildMidi 外掛</translation>
+        <translation>WildMidi 插件</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="48"/>
         <source>Midi Files</source>
-        <translation>Midi 文件</translation>
+        <translation>Midi 檔案</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="99"/>
         <source>About WildMidi Audio Plugin</source>
-        <translation>關於 WildMidi 外掛</translation>
+        <translation>關於 WildMidi 插件</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="100"/>
         <source>Qmmp WildMidi Audio Plugin</source>
-        <translation>Qmmp WildMidi 外掛</translation>
+        <translation>Qmmp WildMidi 插件</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="101"/>
         <source>This plugin uses WildMidi library to play midi files</source>
-        <translation>此插件使用 WildMidi 庫來播放 Midi 文件</translation>
+        <translation>此插件使用 WildMidi 庫來播放 Midi 檔案</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="102"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="50"/>
         <source>Enhanced resampling</source>
-        <translation>提高再取樣</translation>
+        <translation>增強重採樣</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="57"/>

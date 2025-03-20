@@ -6,7 +6,7 @@
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="14"/>
         <source>Crossfade Plugin Settings</source>
-        <translation>交叉衰落插件設定</translation>
+        <translation>交叉淡入淡出插件設置</translation>
     </message>
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="29"/>
@@ -24,17 +24,17 @@
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="30"/>
         <source>Crossfade Plugin</source>
-        <translation>交叉衰落插件</translation>
+        <translation>交叉淡入淡出插件</translation>
     </message>
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="50"/>
         <source>About Crossfade Plugin</source>
-        <translation>關於交叉衰落插件</translation>
+        <translation>關於交叉淡入淡出插件</translation>
     </message>
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="51"/>
         <source>Qmmp Crossfade Plugin</source>
-        <translation>Qmmp 交叉衰落插件</translation>
+        <translation>Qmmp 交叉淡入淡出插件</translation>
     </message>
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="52"/>

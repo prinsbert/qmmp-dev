@@ -26,7 +26,7 @@
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="39"/>
         <source>CDDB</source>
-        <translation type="unfinished"></translation>
+        <translation>CDDB</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="48"/>
@@ -79,7 +79,7 @@
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="104"/>
         <source>Compiled against libcdio-%1</source>
-        <translation type="unfinished"></translation>
+        <translation>編譯依賴 libcdio-%1</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="107"/>

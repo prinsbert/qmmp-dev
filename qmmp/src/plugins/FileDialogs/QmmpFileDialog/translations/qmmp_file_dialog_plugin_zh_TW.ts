@@ -39,7 +39,7 @@
     <message>
         <location filename="../qmmpfiledialog.ui" line="124"/>
         <source>File name:</source>
-        <translation>文件名：</translation>
+        <translation>檔案名：</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="140"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../qmmpfiledialog.ui" line="147"/>
         <source>Files of type:</source>
-        <translation>文件類型：</translation>
+        <translation>檔案類型：</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="173"/>
@@ -75,14 +75,14 @@
         <source>Written by:
 Vladimir Kuznetsov &lt;vovanec@gmail.com&gt;
 Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>作者：
+        <translation>撰寫：
 Vladimir Kuznetsov &lt;vovanec@gmail.com&gt;
 Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.cpp" line="84"/>
         <source>Some code is copied from the Qt library</source>
-        <translation>一些源碼基於 Qt 程式庫</translation>
+        <translation>部分源碼基於 Qt 程式庫</translation>
     </message>
 </context>
 <context>

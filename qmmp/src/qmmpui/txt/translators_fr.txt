@@ -9,6 +9,7 @@ Bulgare:
     Miroslav Mihov
 
 Chinois traditionnel :
+    Edouard.J.K Li <edouardlicn@gmail.com>
     Cosmos Chen
     lon <lon83129@126.com>
     Jeff Huang
@@ -68,7 +69,7 @@ Japonais :
 Kazakh :
     Baurzhan Muftakhidinov <baurthefirst@gmail.com>
 
-Korean:
+Coréen :
    Jung Hee Lee <daemul72@gmail.com>
 
 Lituanien :
@@ -99,7 +100,7 @@ Espagnol :
     Félix Medrano <xukosky@yahoo.es>
     Joel Barrios <darkshram@gmail.com>
 
-Swedish:
+Suédois :
     Luna Jernberg <droidbittin@gmail.com>
 
 Turc :

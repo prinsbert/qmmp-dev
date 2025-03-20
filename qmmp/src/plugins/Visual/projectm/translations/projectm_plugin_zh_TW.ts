@@ -36,7 +36,7 @@
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished"></translation>
+        <translation>亂序</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>

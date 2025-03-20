@@ -6,17 +6,17 @@
     <message>
         <location filename="../outputwaveoutfactory.cpp" line="29"/>
         <source>WaveOut Plugin</source>
-        <translation>WaveOut 外掛</translation>
+        <translation>WaveOut 插件</translation>
     </message>
     <message>
         <location filename="../outputwaveoutfactory.cpp" line="61"/>
         <source>About WaveOut Output Plugin</source>
-        <translation>關於 WaveOut 匯出插件</translation>
+        <translation>關於 WaveOut 輸出插件</translation>
     </message>
     <message>
         <location filename="../outputwaveoutfactory.cpp" line="62"/>
         <source>Qmmp WaveOut Output Plugin</source>
-        <translation>Qmmp WaveOut 匯出插件</translation>
+        <translation>Qmmp WaveOut 輸出插件</translation>
     </message>
     <message>
         <location filename="../outputwaveoutfactory.cpp" line="63"/>

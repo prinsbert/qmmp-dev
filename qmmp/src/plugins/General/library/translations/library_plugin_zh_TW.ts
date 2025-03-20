@@ -200,17 +200,17 @@
     <message>
         <location filename="../librarywidget.cpp" line="52"/>
         <source>Replace Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>替換播放列表</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="53"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;查看曲目詳細信息</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="55"/>
         <source>Quick Search</source>
-        <translation type="unfinished"></translation>
+        <translation>快速搜尋</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="56"/>

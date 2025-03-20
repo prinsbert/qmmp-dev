@@ -19,7 +19,7 @@
     <message>
         <location filename="../history.cpp" line="58"/>
         <source>Alt+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+H</translation>
     </message>
 </context>
 <context>
@@ -27,22 +27,22 @@
     <message>
         <location filename="../historyfactory.cpp" line="31"/>
         <source>Listening History Plugin</source>
-        <translation>聆聽歷史外掛程式</translation>
+        <translation>聆聽歷史插件</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="51"/>
         <source>About Listening History Plugin</source>
-        <translation>關於聆聽歷史外掛程式</translation>
+        <translation>關於聆聽歷史插件</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="52"/>
         <source>Qmmp Listening History Plugin</source>
-        <translation>Qmmp 聆聽歷史外掛程式</translation>
+        <translation>Qmmp 聆聽歷史插件</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="53"/>
         <source>This plugin collects information about listened tracks</source>
-        <translation>這個外掛程式會收集關於聆聽音軌的資訊</translation>
+        <translation>這個插件會收集關於聆聽音軌的資訊</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="54"/>
@@ -55,7 +55,7 @@
     <message>
         <location filename="../historysettingsdialog.ui" line="14"/>
         <source>Listening History Plugin Settings</source>
-        <translation>聆聽歷史外掛程式設定</translation>
+        <translation>聆聽歷史插件設定</translation>
     </message>
     <message>
         <location filename="../historysettingsdialog.ui" line="31"/>
@@ -115,7 +115,7 @@
     <message>
         <location filename="../historywindow.ui" line="143"/>
         <source>Distribution</source>
-        <translation>散佈版</translation>
+        <translation>發行版本</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="156"/>
@@ -178,17 +178,17 @@
     <message>
         <location filename="../historywindow.cpp" line="499"/>
         <source>Add to Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>新增到播放列表</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="500"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;查看曲目詳細信息</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="502"/>
         <source>Remove from History</source>
-        <translation type="unfinished"></translation>
+        <translation>從歷史記錄中刪除</translation>
     </message>
 </context>
 </TS>

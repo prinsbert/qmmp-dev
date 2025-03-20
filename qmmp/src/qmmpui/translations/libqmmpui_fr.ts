@@ -51,32 +51,32 @@
     <message>
         <location filename="../aboutdialog.cpp" line="84"/>
         <source>Transports:</source>
-        <translation type="unfinished"></translation>
+        <translation>Transports :</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="90"/>
         <source>Decoders:</source>
-        <translation type="unfinished"></translation>
+        <translation>Décodeurs :</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="98"/>
         <source>Engines:</source>
-        <translation type="unfinished"></translation>
+        <translation>Moteurs :</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="105"/>
         <source>Effects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Effets :</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="134"/>
         <source>File dialogs:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fenêtres de fichier :</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="143"/>
         <source>User interfaces:</source>
-        <translation type="unfinished"></translation>
+        <translation>Interfaces utilisateur :</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="126"/>
@@ -86,22 +86,22 @@
     <message>
         <location filename="../aboutdialog.cpp" line="73"/>
         <source>Qt version: %1 (compiled with %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt version : %1 (compilé avec %2)</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="74"/>
         <source>Qt platform: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt platforme : %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="75"/>
         <source>System: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Système : %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="76"/>
         <source>Build ABI: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ABI : %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="113"/>
@@ -265,7 +265,7 @@
     <message>
         <location filename="../columneditor.cpp" line="104"/>
         <source>Parent Directory Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Répertoire parent</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="105"/>
@@ -346,12 +346,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="193"/>
         <source>Group Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mode groupe</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="202"/>
         <source>Group size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Taille du groupe :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="219"/>
@@ -439,7 +439,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="515"/>
         <source>Display average bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher le débit moyen</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="525"/>
@@ -494,12 +494,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="648"/>
         <source>CUE Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Editeur de CUE</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="654"/>
         <source>Use system font</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser les polices systèmes</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="675"/>
@@ -630,22 +630,22 @@
     <message>
         <location filename="../configdialog.cpp" line="63"/>
         <source>1 row</source>
-        <translation type="unfinished"></translation>
+        <translation>1 colonne</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="64"/>
         <source>3 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>3 colonnes</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="65"/>
         <source>4 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>4 colonnes</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="66"/>
         <source>5 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>5 colonnes</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="67"/>
@@ -805,7 +805,7 @@
     <message>
         <location filename="../configdialog.cpp" line="371"/>
         <source>Korean</source>
-        <translation type="unfinished"></translation>
+        <translation>Coréen</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="372"/>
@@ -840,7 +840,7 @@
     <message>
         <location filename="../configdialog.cpp" line="378"/>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Suédois</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="379"/>
@@ -945,7 +945,7 @@
     <message>
         <location filename="../cueeditor.cpp" line="131"/>
         <source>Open CUE File</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir le fichier CUE</translation>
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="131"/>
@@ -956,7 +956,7 @@
     <message>
         <location filename="../cueeditor.cpp" line="148"/>
         <source>Save CUE File</source>
-        <translation type="unfinished"></translation>
+        <translation>Sauver le fichier CUE</translation>
     </message>
 </context>
 <context>
@@ -994,7 +994,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="283"/>
         <source>Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Paroles</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="303"/>
@@ -1122,7 +1122,7 @@
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="46"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtre</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
@@ -1219,22 +1219,22 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>Duration | Format | Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Durée | Format | Débit</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>Duration | Format | Bitrate | Sample rate </source>
-        <translation type="unfinished"></translation>
+        <translation>Durée | Format | Débit | Echantillonnage</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>Year | Duration | Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Année | Durée | Débit</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="68"/>
         <source>Parent Directory Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Répertoire parent</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="70"/>
@@ -1311,17 +1311,17 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{débit} kbps</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{débit} kbps | %{échantillonage} Hz</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>%y | %if(%l,%l | ,)%{bitrate} kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>%y | %if(%l,%l | ,)%{débit} kbps</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="67"/>
@@ -1382,7 +1382,7 @@
     <message>
         <location filename="../qmmpuisettings.cpp" line="39"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{débit} kbps | %{échantillonage} Hz</translation>
     </message>
     <message>
         <location filename="../qmmpuisettings.cpp" line="64"/>
