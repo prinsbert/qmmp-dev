@@ -24,12 +24,12 @@
     <message>
         <location filename="../lyricsfactory.cpp" line="36"/>
         <source>Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Paroles</translation>
     </message>
     <message>
         <location filename="../lyricsfactory.cpp" line="36"/>
         <source>Ctrl+2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+2</translation>
     </message>
     <message>
         <location filename="../lyricsfactory.cpp" line="68"/>
@@ -137,7 +137,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="257"/>
         <source>Cache</source>
-        <translation type="unfinished"></translation>
+        <translation>Cache</translation>
     </message>
 </context>
 <context>

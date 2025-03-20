@@ -36,7 +36,7 @@
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished"></translation>
+        <translation>亂序</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
@@ -208,7 +208,7 @@
     <message>
         <location filename="../visualprojectmfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="54"/>

@@ -21,7 +21,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="418"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG 1.0/2.0/2.5 layer 1/2/3 音訊解碼器</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="419"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="428"/>
         <source>mpg123, API version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>mpg123, API版本： %1</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="432"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="433"/>
         <source>Source code based on mq3 and madplay projects</source>
-        <translation type="unfinished"></translation>
+        <translation>基於mq3和madplay專案的源碼</translation>
     </message>
 </context>
 <context>
@@ -80,22 +80,22 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="35"/>
         <source>Decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>解碼器</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="41"/>
         <source>MAD</source>
-        <translation type="unfinished"></translation>
+        <translation>MAD</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="48"/>
         <source>MPG123</source>
-        <translation type="unfinished"></translation>
+        <translation>MPG123</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="71"/>
         <source>Enable CRC checking</source>
-        <translation type="unfinished"></translation>
+        <translation>啟用 CRC 檢查</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="87"/>
@@ -148,7 +148,7 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="253"/>
         <source>Merge selected tag types</source>
-        <translation type="unfinished"></translation>
+        <translation>合併選定的標籤類型</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="272"/>
@@ -168,7 +168,7 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="343"/>
         <source>Try to detect encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>嘗試檢測編碼</translation>
     </message>
 </context>
 </TS>

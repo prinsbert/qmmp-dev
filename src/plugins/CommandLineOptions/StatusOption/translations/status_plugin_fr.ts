@@ -96,7 +96,7 @@
     <message>
         <location filename="../statusoption.cpp" line="109"/>
         <source>%{bitrate} - bitrate</source>
-        <translation>%{débit} - débit</translation>
+        <translation>%{bitrate} - débit</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="110"/>

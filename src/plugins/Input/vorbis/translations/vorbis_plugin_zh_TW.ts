@@ -26,7 +26,7 @@
     <message>
         <location filename="../decodervorbisfactory.cpp" line="130"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodervorbisfactory.cpp" line="131"/>

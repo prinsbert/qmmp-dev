@@ -21,7 +21,7 @@
     <message>
         <location filename="../effectstereofactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../effectstereofactory.cpp" line="52"/>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../stereosettingsdialog.ui" line="54"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
 </context>
 </TS>

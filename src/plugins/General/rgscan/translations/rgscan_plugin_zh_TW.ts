@@ -21,7 +21,7 @@
     <message>
         <location filename="../rgscandialog.ui" line="47"/>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation>進度</translation>
     </message>
     <message>
         <location filename="../rgscandialog.ui" line="52"/>
@@ -75,7 +75,7 @@
         <location filename="../rgscandialog.cpp" line="163"/>
         <location filename="../rgscandialog.cpp" line="228"/>
         <source>%1 dB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 dB</translation>
     </message>
 </context>
 <context>
@@ -103,7 +103,7 @@
     <message>
         <location filename="../rgscanfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../rgscanfactory.cpp" line="53"/>

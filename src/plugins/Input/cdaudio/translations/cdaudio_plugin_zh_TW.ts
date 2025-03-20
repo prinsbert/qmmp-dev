@@ -26,7 +26,7 @@
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="39"/>
         <source>CDDB</source>
-        <translation type="unfinished"></translation>
+        <translation>CDDB</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="48"/>
@@ -79,12 +79,12 @@
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="104"/>
         <source>Compiled against libcdio-%1</source>
-        <translation type="unfinished"></translation>
+        <translation>編譯依賴 libcdio-%1</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="107"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="108"/>

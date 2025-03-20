@@ -392,7 +392,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="330"/>
         <source>Miscellaneous</source>
-        <translation type="unfinished"></translation>
+        <translation>各類設置</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="336"/>
@@ -1264,7 +1264,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="75"/>
         <source>Decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>解碼器</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="78"/>
@@ -1374,7 +1374,7 @@
     <message>
         <location filename="../playlisttrack.cpp" line="250"/>
         <source>Empty group</source>
-        <translation>清空群組</translation>
+        <translation>空白群組</translation>
     </message>
 </context>
 <context>

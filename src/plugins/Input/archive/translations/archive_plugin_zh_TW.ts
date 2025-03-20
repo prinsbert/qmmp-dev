@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderarchivefactory.cpp" line="169"/>
         <source>Compiled against %1</source>
-        <translation type="unfinished"></translation>
+        <translation>編譯針對 %1 </translation>
     </message>
     <message>
         <location filename="../decoderarchivefactory.cpp" line="170"/>

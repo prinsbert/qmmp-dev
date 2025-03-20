@@ -17,7 +17,7 @@
         <location filename="../bs2bsettingsdialog.ui" line="45"/>
         <location filename="../bs2bsettingsdialog.ui" line="59"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="71"/>
@@ -27,22 +27,22 @@
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="78"/>
         <source>C.Moy</source>
-        <translation type="unfinished"></translation>
+        <translation>C.Moy</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="85"/>
         <source>J. Meier</source>
-        <translation type="unfinished"></translation>
+        <translation>J. Meier</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.cpp" line="61"/>
         <source>%1 Hz, %2 us</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Hz, %2 us</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.cpp" line="68"/>
         <source>%1 dB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 dB</translation>
     </message>
 </context>
 <context>
@@ -80,12 +80,12 @@
     <message>
         <location filename="../effectbs2bfactory.cpp" line="60"/>
         <source>Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="61"/>
         <source>Sebastian Pipping &amp;lt;sebastian@pipping.org&amp;gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Sebastian Pipping &amp;lt;sebastian@pipping.org&amp;gt;</translation>
     </message>
 </context>
 </TS>
