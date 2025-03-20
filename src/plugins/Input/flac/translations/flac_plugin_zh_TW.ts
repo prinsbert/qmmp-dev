@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderflacfactory.cpp" line="53"/>
         <source>FLAC Plugin</source>
-        <translation>FLAC 外掛</translation>
+        <translation>FLAC 插件</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="55"/>

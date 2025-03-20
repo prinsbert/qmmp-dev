@@ -6,12 +6,12 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>&amp;Play</source>
-        <translation type="unfinished"></translation>
+        <translation>播放(&amp;)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="40"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="41"/>
@@ -36,27 +36,27 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>&amp;Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>上一個(&amp;P)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Z</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>&amp;Next</source>
-        <translation type="unfinished"></translation>
+        <translation>下一個</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>&amp;Play/Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>播放/暫停</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="44"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>&amp;Jump to Track</source>
-        <translation type="unfinished"></translation>
+        <translation>跳到軌道</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>&amp;Repeat Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>重復播放清單</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
@@ -86,32 +86,32 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>&amp;Repeat Track</source>
-        <translation type="unfinished"></translation>
+        <translation>重複單曲</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished"></translation>
+        <translation>亂序</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>S</source>
-        <translation type="unfinished"></translation>
+        <translation>S</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>&amp;No Playlist Advance</source>
-        <translation type="unfinished"></translation>
+        <translation>播放清單中的曲目不自動前進</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
@@ -126,7 +126,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
         <source>&amp;Transit between playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>在播放清單之間轉換</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="52"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;查看曲目詳細信息</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="78"/>
@@ -451,7 +451,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>&amp;Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;結束</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="94"/>
@@ -641,7 +641,7 @@
     <message>
         <location filename="../skinnedfactory.cpp" line="66"/>
         <source>Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../skinnedfactory.cpp" line="67"/>
@@ -689,7 +689,7 @@
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="63"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>視圖</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
@@ -732,7 +732,7 @@
     <message>
         <location filename="../skinnedmainwindow.cpp" line="433"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>視圖</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="442"/>
@@ -752,7 +752,7 @@
     <message>
         <location filename="../skinnedmainwindow.cpp" line="541"/>
         <source>Qmmp</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp</translation>
     </message>
 </context>
 <context>
@@ -782,19 +782,19 @@
         <location filename="../skinnedplaylist.cpp" line="224"/>
         <location filename="../skinnedplaylist.cpp" line="264"/>
         <source>By Album</source>
-        <translation type="unfinished"></translation>
+        <translation>依據專輯</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="227"/>
         <location filename="../skinnedplaylist.cpp" line="267"/>
         <source>By Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>依據作者</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="230"/>
         <location filename="../skinnedplaylist.cpp" line="270"/>
         <source>By Album Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>依據專輯作者</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="233"/>
@@ -824,19 +824,19 @@
         <location filename="../skinnedplaylist.cpp" line="245"/>
         <location filename="../skinnedplaylist.cpp" line="285"/>
         <source>By Disc Number</source>
-        <translation type="unfinished"></translation>
+        <translation>依據光碟編號</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="248"/>
         <location filename="../skinnedplaylist.cpp" line="288"/>
         <source>By File Creation Date</source>
-        <translation type="unfinished"></translation>
+        <translation>依據檔案創作日期</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="251"/>
         <location filename="../skinnedplaylist.cpp" line="291"/>
         <source>By File Modification Date</source>
-        <translation type="unfinished"></translation>
+        <translation>依據檔案修改日期</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="254"/>
@@ -945,13 +945,13 @@
         <location filename="../skinnedplaylistheader.cpp" line="85"/>
         <source>Left</source>
         <comment>alignment</comment>
-        <translation type="unfinished"></translation>
+        <translation>左</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="86"/>
         <source>Right</source>
         <comment>alignment</comment>
-        <translation type="unfinished"></translation>
+        <translation>右</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="87"/>
@@ -1061,17 +1061,17 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="103"/>
         <source>Main Window</source>
-        <translation type="unfinished"></translation>
+        <translation>主視窗</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="109"/>
         <source>Hide on close</source>
-        <translation type="unfinished"></translation>
+        <translation>關閉時隱藏</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="116"/>
         <source>Start hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>以隱藏狀態開始</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="123"/>
@@ -1081,12 +1081,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="261"/>
         <source>Single Column Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>單列模式</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="308"/>
         <source>Show splitters</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示分離器</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="315"/>
@@ -1101,7 +1101,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="421"/>
         <source>Playlist Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>播放清單顏色</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="427"/>
@@ -1111,22 +1111,22 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="545"/>
         <source>Background #2:</source>
-        <translation type="unfinished"></translation>
+        <translation>背景 #2:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="609"/>
         <source>Highlighted background:</source>
-        <translation type="unfinished"></translation>
+        <translation>突出顯示的背景：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="500"/>
         <source>Normal text:</source>
-        <translation type="unfinished"></translation>
+        <translation>普通文字：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="763"/>
         <source>Splitter:</source>
-        <translation type="unfinished"></translation>
+        <translation>分離器：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="577"/>
@@ -1136,12 +1136,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="641"/>
         <source>Highlighted text:</source>
-        <translation type="unfinished"></translation>
+        <translation>突出顯示的文字：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="813"/>
         <source>Current track background:</source>
-        <translation type="unfinished"></translation>
+        <translation>目前曲目背景：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="871"/>
@@ -1151,7 +1151,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="778"/>
         <source>Group background:</source>
-        <translation type="unfinished"></translation>
+        <translation>組背景：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="878"/>
@@ -1161,12 +1161,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="700"/>
         <source>Group text:</source>
-        <translation type="unfinished"></translation>
+        <translation>組文字：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="455"/>
         <source>Background #1:</source>
-        <translation type="unfinished"></translation>
+        <translation>背景 #1:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="691"/>
@@ -1176,27 +1176,27 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="904"/>
         <source>Fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>字體</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="958"/>
         <source>Playlist:</source>
-        <translation type="unfinished"></translation>
+        <translation>播放清單：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="994"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>組別：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1021"/>
         <source>Extra group row:</source>
-        <translation type="unfinished"></translation>
+        <translation>額外組行：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1048"/>
         <source>Column headers:</source>
-        <translation type="unfinished"></translation>
+        <translation>列標題：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="916"/>
@@ -1221,7 +1221,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1103"/>
         <source>Reset fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>重置字體</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1112"/>
@@ -1231,7 +1231,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="132"/>
         <source>Window title format:</source>
-        <translation type="unfinished"></translation>
+        <translation>視窗標題格式：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="97"/>
@@ -1268,37 +1268,37 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="255"/>
         <source>Song Display</source>
-        <translation type="unfinished"></translation>
+        <translation>歌曲顯示</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="294"/>
         <source>Show protocol</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示協定</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="274"/>
         <source>Show song lengths</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示歌曲長度</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="267"/>
         <source>Show song numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示歌曲編號</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="284"/>
         <source>Align song numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>對齊歌曲編號</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="301"/>
         <source>Show anchor</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示錨點</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="363"/>
         <source>Show popup information</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示彈出訊息</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="375"/>
@@ -1313,7 +1313,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="322"/>
         <source>Show &apos;New Playlist&apos; button</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示“新播放清單”按鈕</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="81"/>

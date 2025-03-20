@@ -13,18 +13,18 @@
         <location filename="../fileops.cpp" line="108"/>
         <location filename="../fileops.cpp" line="151"/>
         <source>Destination directory doesn&apos;t exist</source>
-        <translation>目標目錄早已存在</translation>
+        <translation>目標目錄不存在</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="154"/>
         <source>Move Files</source>
-        <translation type="unfinished"></translation>
+        <translation>移動檔案</translation>
     </message>
     <message numerus="yes">
         <location filename="../fileops.cpp" line="155"/>
         <source>Are you sure you want to move %n file(s)?</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>您確定要移動 %n 個檔案嗎？</numerusform>
         </translation>
     </message>
     <message>
@@ -46,23 +46,23 @@
     <message>
         <location filename="../fileops.cpp" line="274"/>
         <source>Moving</source>
-        <translation type="unfinished"></translation>
+        <translation>移動中</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="313"/>
         <source>Moving file %1/%2</source>
-        <translation type="unfinished"></translation>
+        <translation>移動檔案 %1/%2</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="123"/>
         <source>Remove Files</source>
-        <translation type="unfinished"></translation>
+        <translation>刪除檔案</translation>
     </message>
     <message numerus="yes">
         <location filename="../fileops.cpp" line="124"/>
         <source>Are you sure you want to remove %n file(s) from disk?</source>
         <translation>
-            <numerusform>你確認要從磁盤中刪除%n文件？</numerusform>
+            <numerusform>你確認要從磁盤中刪除 %n 檔案？</numerusform>
         </translation>
     </message>
 </context>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="184"/>
         <source>Command:</source>
-        <translation type="unfinished"></translation>
+        <translation>命令：</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="219"/>
@@ -167,7 +167,7 @@
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="221"/>
         <source>Move</source>
-        <translation type="unfinished"></translation>
+        <translation>移動</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="223"/>

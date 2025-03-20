@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="182"/>
         <source>WavPack library version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Version de la librairie WavPack : %1</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="184"/>

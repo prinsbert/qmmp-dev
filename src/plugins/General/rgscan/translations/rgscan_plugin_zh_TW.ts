@@ -21,7 +21,7 @@
     <message>
         <location filename="../rgscandialog.ui" line="47"/>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation>進度</translation>
     </message>
     <message>
         <location filename="../rgscandialog.ui" line="52"/>
@@ -75,7 +75,7 @@
         <location filename="../rgscandialog.cpp" line="163"/>
         <location filename="../rgscandialog.cpp" line="228"/>
         <source>%1 dB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 dB</translation>
     </message>
 </context>
 <context>

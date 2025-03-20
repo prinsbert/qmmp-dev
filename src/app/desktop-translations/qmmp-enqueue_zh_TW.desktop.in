@@ -13,3 +13,6 @@ Terminal=false
 
 
 # Translations
+Name[zh_TW]=添加到Qmmp的隊列
+Comment[zh_TW]=將檔案新增至 Qmmp 播放列表
+Icon[zh_TW]=qmmp

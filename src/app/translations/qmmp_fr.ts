@@ -124,7 +124,7 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="518"/>
         <source>Print debugging messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher les messages de débogage</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="519"/>

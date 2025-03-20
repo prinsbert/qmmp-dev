@@ -6,27 +6,27 @@
     <message>
         <location filename="../decodergmefactory.cpp" line="37"/>
         <source>GME Plugin</source>
-        <translation>GME 外掛</translation>
+        <translation>GME 插件</translation>
     </message>
     <message>
         <location filename="../decodergmefactory.cpp" line="42"/>
         <source>Game Music Files</source>
-        <translation>Game 音頻文件</translation>
+        <translation>Game 音頻檔案</translation>
     </message>
     <message>
         <location filename="../decodergmefactory.cpp" line="101"/>
         <source>About GME Audio Plugin</source>
-        <translation>關於 Game 音頻文件</translation>
+        <translation>關於 Game 音頻插件</translation>
     </message>
     <message>
         <location filename="../decodergmefactory.cpp" line="102"/>
         <source>Qmmp GME Audio Plugin</source>
-        <translation>Qmmp Game 音頻文件</translation>
+        <translation>Qmmp Game 音頻插件</translation>
     </message>
     <message>
         <location filename="../decodergmefactory.cpp" line="103"/>
         <source>This plugin uses Game_Music_Emu library to play game music files</source>
-        <translation>此插件使用 Game_Music_Emu 庫播放 Game 音頻文件</translation>
+        <translation>此插件使用 Game_Music_Emu 庫播放 Game 音頻檔案</translation>
     </message>
     <message>
         <location filename="../decodergmefactory.cpp" line="104"/>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../gmesettingsdialog.ui" line="14"/>
         <source>GME Plugin Settings</source>
-        <translation>GME 外掛設定</translation>
+        <translation>GME 插件設定</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="34"/>
         <source>Fadeout length:</source>
-        <translation>音量淡出時間:</translation>
+        <translation>淡出時長:</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="44"/>

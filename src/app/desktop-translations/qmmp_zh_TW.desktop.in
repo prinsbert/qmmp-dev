@@ -35,3 +35,7 @@ Exec=qmmp --no-start --next
 
 
 # Translations
+Name[zh_TW]=Qmmp
+Comment[zh_TW]=基於Qt的多媒體播放器
+GenericName[zh_TW]=音訊播放器
+Icon[zh_TW]=qmmp
