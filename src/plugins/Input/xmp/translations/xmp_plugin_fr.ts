@@ -142,12 +142,12 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="109"/>
         <source>Emulate sample loop bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Simuler bug de boucle</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="116"/>
         <source>Use Paula mixer in Amiga modules</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser le mixer Paula pour le module Amiga</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="33"/>

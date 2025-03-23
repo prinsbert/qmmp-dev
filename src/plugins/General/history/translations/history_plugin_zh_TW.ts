@@ -19,7 +19,7 @@
     <message>
         <location filename="../history.cpp" line="58"/>
         <source>Alt+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+H</translation>
     </message>
 </context>
 <context>
@@ -178,17 +178,17 @@
     <message>
         <location filename="../historywindow.cpp" line="495"/>
         <source>Add to Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>新增到播放列表</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="496"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;查看曲目詳細信息</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="498"/>
         <source>Remove from History</source>
-        <translation type="unfinished"></translation>
+        <translation>從歷史記錄中刪除</translation>
     </message>
 </context>
 </TS>

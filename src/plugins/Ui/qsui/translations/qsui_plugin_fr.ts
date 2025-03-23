@@ -49,7 +49,7 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="101"/>
         <source>Replace Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Remplacer la liste de lecture</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="102"/>
@@ -59,7 +59,7 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="105"/>
         <source>Tree View Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Vue d&apos;arborescence</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="107"/>
@@ -69,22 +69,22 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="109"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Tri</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="118"/>
         <source>By Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Par nom</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="119"/>
         <source>By Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Par taille</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="120"/>
         <source>By Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Par type</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="121"/>
@@ -142,38 +142,38 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="703"/>
         <source>Override group colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Remplacer le fond du groupe</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="806"/>
         <source>Override current track colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Remplacer le fond de la piste courante</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="816"/>
         <source>Current track text:</source>
-        <translation type="unfinished"></translation>
+        <translation>Texte de la piste courante :</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="915"/>
         <source>Waveform Seekbar Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleurs de la forme d&apos;onde de la piste</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="921"/>
         <source>Progress bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>Barre de progression :</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1010"/>
         <source>RMS:</source>
         <extracomment>Root mean square</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>RMS:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1055"/>
         <source>Waveform:</source>
-        <translation type="unfinished"></translation>
+        <translation>Forme d&apos;onde :</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1096"/>
@@ -329,7 +329,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="1268"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>Groupes :</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1275"/>
@@ -339,7 +339,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="1372"/>
         <source>Tab position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Position de l&apos;onglet :</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1409"/>
@@ -675,7 +675,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="68"/>
         <source>Block Floating Panels</source>
-        <translation type="unfinished"></translation>
+        <translation>Bloquer le panneau libre :</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="69"/>
@@ -930,7 +930,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="101"/>
         <source>Application Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Menu principal</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="102"/>
@@ -1179,7 +1179,7 @@
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="135"/>
         <source>Waveform Seek Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Forme d&apos;onde de la piste</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="149"/>
@@ -1295,7 +1295,7 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="415"/>
         <source>Menu Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barre de menu</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="434"/>
@@ -1586,12 +1586,12 @@
     <message>
         <location filename="../qsuisettings.cpp" line="48"/>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Haut</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="49"/>
         <source>Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Bas</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="50"/>
@@ -1609,12 +1609,12 @@
     <message>
         <location filename="../qsuistatusbar.cpp" line="68"/>
         <source>tracks: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Piste : %1</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="69"/>
         <source>total time: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Temps total : %1</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="87"/>
@@ -1629,7 +1629,7 @@
     <message>
         <location filename="../qsuistatusbar.cpp" line="102"/>
         <source>Buffering</source>
-        <translation type="unfinished"></translation>
+        <translation>Mise en cache</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="127"/>
@@ -1649,24 +1649,24 @@
     <message>
         <location filename="../qsuistatusbar.cpp" line="152"/>
         <source>%1 bits</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 bits</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="154"/>
         <source>mono</source>
-        <translation type="unfinished"></translation>
+        <translation>mono</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="156"/>
         <source>stereo</source>
-        <translation type="unfinished"></translation>
+        <translation>stéréo</translation>
     </message>
     <message numerus="yes">
         <location filename="../qsuistatusbar.cpp" line="158"/>
         <source>%n channels</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n canal</numerusform>
+            <numerusform>%n canaux</numerusform>
         </translation>
     </message>
     <message>
@@ -1685,13 +1685,13 @@
     <message>
         <location filename="../qsuiwaveformseekbar.cpp" line="328"/>
         <source>2 Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>2 canaux</translation>
     </message>
     <message>
         <location filename="../qsuiwaveformseekbar.cpp" line="331"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>RMS</translation>
     </message>
 </context>
 <context>

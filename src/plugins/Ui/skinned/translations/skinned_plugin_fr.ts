@@ -421,12 +421,12 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>Show &amp;Tab Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher la barre d&apos;ongle&amp;ts</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>Alt+T</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+T</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="91"/>
@@ -1186,7 +1186,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="994"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>Groupes :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1021"/>
@@ -1328,7 +1328,7 @@
     <message>
         <location filename="../skinnedsettings.cpp" line="165"/>
         <source>Default skin</source>
-        <translation type="unfinished"></translation>
+        <translation>Thème par défaut</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="174"/>
@@ -1338,7 +1338,7 @@
     <message>
         <location filename="../skinnedsettings.cpp" line="174"/>
         <source>Archived skin %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Thème archivé %1</translation>
     </message>
 </context>
 <context>

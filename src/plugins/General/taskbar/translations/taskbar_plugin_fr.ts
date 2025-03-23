@@ -31,22 +31,22 @@
     <message>
         <location filename="../taskbarfactory.cpp" line="53"/>
         <source>Based on QtWinExtras module of the Qt Toolkit</source>
-        <translation type="unfinished"></translation>
+        <translation>Basé sur le module QtWinExtras de Qt Toolkit</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="54"/>
         <source>QtWinExtras developers:</source>
-        <translation type="unfinished"></translation>
+        <translation>QtWinExtras développeurs :</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="55"/>
         <source>Ivan Vizir &lt;define-true-false@yandex.com&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ivan Vizir &lt;define-true-false@yandex.com&gt;</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="56"/>
         <source>The Qt Company Ltd.</source>
-        <translation type="unfinished"></translation>
+        <translation>The Qt Company Ltd.</translation>
     </message>
 </context>
 </TS>

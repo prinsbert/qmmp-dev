@@ -51,32 +51,32 @@
     <message>
         <location filename="../aboutdialog.cpp" line="84"/>
         <source>Transports:</source>
-        <translation type="unfinished"></translation>
+        <translation>傳輸：</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="90"/>
         <source>Decoders:</source>
-        <translation type="unfinished"></translation>
+        <translation>解碼器：</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="98"/>
         <source>Engines:</source>
-        <translation type="unfinished"></translation>
+        <translation>引擎：</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="105"/>
         <source>Effects:</source>
-        <translation type="unfinished"></translation>
+        <translation>特效：</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="134"/>
         <source>File dialogs:</source>
-        <translation type="unfinished"></translation>
+        <translation>檔案對話框：</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="143"/>
         <source>User interfaces:</source>
-        <translation type="unfinished"></translation>
+        <translation>使用者介面：</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="126"/>
@@ -86,22 +86,22 @@
     <message>
         <location filename="../aboutdialog.cpp" line="73"/>
         <source>Qt version: %1 (compiled with %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt 版本: %1 (編譯使用 %2)</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="74"/>
         <source>Qt platform: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt 平台: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="75"/>
         <source>System: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>系統: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="76"/>
         <source>Build ABI: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>建置 ABI: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="113"/>
@@ -265,7 +265,7 @@
     <message>
         <location filename="../columneditor.cpp" line="104"/>
         <source>Parent Directory Path</source>
-        <translation type="unfinished"></translation>
+        <translation>上層目錄路徑</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="105"/>
@@ -341,68 +341,68 @@
     <message>
         <location filename="../forms/configdialog.ui" line="169"/>
         <source>Read tags while loading a playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>載入播放清單時讀取標籤</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="193"/>
         <source>Group Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>群組模式</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="202"/>
         <source>Group size:</source>
-        <translation type="unfinished"></translation>
+        <translation>群組大小：</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="219"/>
         <source>Show dividing line</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示分隔線</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="251"/>
         <source>Extra row format:</source>
-        <translation type="unfinished"></translation>
+        <translation>額外列格式：</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="276"/>
         <source>Show extra row</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示額外列</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="283"/>
         <source>Show cover</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示封面</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="293"/>
         <source>Directory Scanning Options</source>
-        <translation type="unfinished"></translation>
+        <translation>目錄掃描選項</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="299"/>
         <source>Restrict files to:</source>
-        <translation type="unfinished"></translation>
+        <translation>限制檔案類型：</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="313"/>
         <location filename="../forms/configdialog.ui" line="588"/>
         <source>Exclude files:</source>
-        <translation type="unfinished"></translation>
+        <translation>排除檔案：</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="330"/>
         <source>Miscellaneous</source>
-        <translation type="unfinished"></translation>
+        <translation>各類設置</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="336"/>
         <source>Auto-save playlist when modified</source>
-        <translation type="unfinished"></translation>
+        <translation>修改後自動儲存播放清單</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="343"/>
         <source>Clear previous playlist when opening new one</source>
-        <translation type="unfinished"></translation>
+        <translation>開啟新播放清單時清除前一個</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="396"/>
@@ -439,7 +439,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="515"/>
         <source>Display average bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示平均取樣率</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="525"/>
@@ -449,27 +449,27 @@
     <message>
         <location filename="../forms/configdialog.ui" line="531"/>
         <source>Continue playback on startup</source>
-        <translation type="unfinished"></translation>
+        <translation>啟動時繼續播放</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="538"/>
         <source>Determine file type by content</source>
-        <translation type="unfinished"></translation>
+        <translation>依內容判斷檔案類型</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="545"/>
         <source>Add files from command line to this playlist:</source>
-        <translation type="unfinished"></translation>
+        <translation>從命令列新增檔案至播放清單：</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="562"/>
         <source>Cover Image Retrieve</source>
-        <translation type="unfinished"></translation>
+        <translation>封面圖像取得</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="568"/>
         <source>Use separate image files</source>
-        <translation type="unfinished"></translation>
+        <translation>使用獨立圖像檔案</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="578"/>
@@ -479,7 +479,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="600"/>
         <source>Recursive search depth:</source>
-        <translation type="unfinished"></translation>
+        <translation>遞迴搜尋深度：</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="632"/>
@@ -489,17 +489,17 @@
     <message>
         <location filename="../forms/configdialog.ui" line="638"/>
         <source>Auto-paste URL from clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>自動貼上剪貼簿中的 URL</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="648"/>
         <source>CUE Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>CUE 編輯器</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="654"/>
         <source>Use system font</source>
-        <translation type="unfinished"></translation>
+        <translation>使用系統字型</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="675"/>
@@ -509,7 +509,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="700"/>
         <source>???</source>
-        <translation type="unfinished"></translation>
+        <translation>???</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="739"/>
@@ -524,7 +524,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="758"/>
         <source>Proxy type:</source>
-        <translation type="unfinished"></translation>
+        <translation>代理類型：</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="768"/>
@@ -554,33 +554,33 @@
     <message>
         <location filename="../forms/configdialog.ui" line="866"/>
         <source>Replay Gain</source>
-        <translation type="unfinished"></translation>
+        <translation>重播增益</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="872"/>
         <source>Replay Gain mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>重播增益模式：</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="889"/>
         <source>Preamp:</source>
-        <translation type="unfinished"></translation>
+        <translation>前置放大器：</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="921"/>
         <location filename="../forms/configdialog.ui" line="966"/>
         <source>dB</source>
-        <translation type="unfinished"></translation>
+        <translation>dB</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="934"/>
         <source>Default gain:</source>
-        <translation type="unfinished"></translation>
+        <translation>預設增益：</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="986"/>
         <source>Use  peak info to prevent clipping</source>
-        <translation type="unfinished"></translation>
+        <translation>使用峰值資訊防止削波</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1002"/>
@@ -600,52 +600,52 @@
     <message>
         <location filename="../forms/configdialog.ui" line="1101"/>
         <source>Use two passes for equalizer</source>
-        <translation type="unfinished"></translation>
+        <translation>對等化器採用兩階段處理</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1044"/>
         <source>Volume adjustment step:</source>
-        <translation type="unfinished"></translation>
+        <translation>音量調整步幅：</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="350"/>
         <source>Skip already existing tracks when adding</source>
-        <translation type="unfinished"></translation>
+        <translation>新增時跳過已存在的曲目</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="357"/>
         <source>Stop playback after removing of current track</source>
-        <translation type="unfinished"></translation>
+        <translation>移除當前曲目後停止播放</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1068"/>
         <source>Output bit depth:</source>
-        <translation type="unfinished"></translation>
+        <translation>輸出位元深度：</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1009"/>
         <source>Use dithering</source>
-        <translation type="unfinished"></translation>
+        <translation>使用抖動</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="63"/>
         <source>1 row</source>
-        <translation type="unfinished"></translation>
+        <translation>1 行</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="64"/>
         <source>3 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>3 行</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="65"/>
         <source>4 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>4 行</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="66"/>
         <source>5 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>5 行</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="67"/>
@@ -665,22 +665,22 @@
     <message>
         <location filename="../configdialog.cpp" line="76"/>
         <source>HTTP</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="77"/>
         <source>SOCKS5</source>
-        <translation type="unfinished"></translation>
+        <translation>SOCKS5</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="208"/>
         <source>Transports</source>
-        <translation type="unfinished"></translation>
+        <translation>傳輸</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="219"/>
         <source>Decoders</source>
-        <translation type="unfinished"></translation>
+        <translation>解碼器</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="230"/>
@@ -720,12 +720,12 @@
     <message>
         <location filename="../configdialog.cpp" line="358"/>
         <source>&lt;Autodetect&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;自動偵測&gt;</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="359"/>
         <source>Brazilian Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>Brazilian Portuguese</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="360"/>
@@ -740,37 +740,37 @@
     <message>
         <location filename="../configdialog.cpp" line="362"/>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation>Czech</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="363"/>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>Dutch</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="364"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation>英語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="365"/>
         <source>French</source>
-        <translation type="unfinished"></translation>
+        <translation>法語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="366"/>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>加利西亞語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="367"/>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>德語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="368"/>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>希臘語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="369"/>
@@ -785,7 +785,7 @@
     <message>
         <location filename="../configdialog.cpp" line="371"/>
         <source>Indonesian</source>
-        <translation type="unfinished"></translation>
+        <translation>印尼語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="372"/>
@@ -800,72 +800,72 @@
     <message>
         <location filename="../configdialog.cpp" line="374"/>
         <source>Kazakh</source>
-        <translation type="unfinished"></translation>
+        <translation>哈薩克語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="375"/>
         <source>Korean</source>
-        <translation type="unfinished"></translation>
+        <translation>韓語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="376"/>
         <source>Lithuanian</source>
-        <translation type="unfinished"></translation>
+        <translation>立陶宛語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="377"/>
         <source>Polish</source>
-        <translation type="unfinished"></translation>
+        <translation>波蘭語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="378"/>
         <source>Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>葡萄牙語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="379"/>
         <source>Russian</source>
-        <translation type="unfinished"></translation>
+        <translation>俄語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="380"/>
         <source>Serbian</source>
-        <translation type="unfinished"></translation>
+        <translation>塞爾維亞語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="381"/>
         <source>Slovak</source>
-        <translation type="unfinished"></translation>
+        <translation>斯洛伐克語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="382"/>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>瑞典語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="383"/>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation>西班牙語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="384"/>
         <source>Turkish</source>
-        <translation type="unfinished"></translation>
+        <translation>土耳其語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="385"/>
         <source>Ukrainian</source>
-        <translation type="unfinished"></translation>
+        <translation>烏克蘭語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="386"/>
         <source>Serbian (Ijekavian)</source>
-        <translation type="unfinished"></translation>
+        <translation>塞爾維亞語（伊耶卡維亞方言）</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="387"/>
         <source>Serbian (Ekavian)</source>
-        <translation type="unfinished"></translation>
+        <translation>塞爾維亞語（埃卡維亞方言）</translation>
     </message>
 </context>
 <context>
@@ -873,7 +873,7 @@
     <message>
         <location filename="../forms/covereditor.ui" line="22"/>
         <source>Image source:</source>
-        <translation type="unfinished"></translation>
+        <translation>圖像來源：</translation>
     </message>
     <message>
         <location filename="../forms/covereditor.ui" line="76"/>
@@ -888,17 +888,17 @@
     <message>
         <location filename="../forms/covereditor.ui" line="90"/>
         <source>Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>另存為...</translation>
     </message>
     <message>
         <location filename="../covereditor.cpp" line="34"/>
         <source>External file</source>
-        <translation type="unfinished"></translation>
+        <translation>外部檔案</translation>
     </message>
     <message>
         <location filename="../covereditor.cpp" line="35"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>標籤</translation>
     </message>
 </context>
 <context>
@@ -922,7 +922,7 @@
     <message>
         <location filename="../coverviewer.cpp" line="81"/>
         <source>Open Image</source>
-        <translation type="unfinished"></translation>
+        <translation>開啟圖像</translation>
     </message>
 </context>
 <context>
@@ -940,12 +940,12 @@
     <message>
         <location filename="../forms/cueeditor.ui" line="54"/>
         <source>Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>另存為...</translation>
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="131"/>
         <source>Open CUE File</source>
-        <translation type="unfinished"></translation>
+        <translation>開啟 CUE 檔案</translation>
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="131"/>
@@ -956,7 +956,7 @@
     <message>
         <location filename="../cueeditor.cpp" line="148"/>
         <source>Save CUE File</source>
-        <translation type="unfinished"></translation>
+        <translation>儲存 CUE 檔案</translation>
     </message>
 </context>
 <context>
@@ -994,7 +994,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="283"/>
         <source>Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>歌詞</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="303"/>
@@ -1079,17 +1079,17 @@
     <message>
         <location filename="../detailsdialog.cpp" line="337"/>
         <source>Sample size</source>
-        <translation type="unfinished"></translation>
+        <translation>取樣大小</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="337"/>
         <source>bits</source>
-        <translation type="unfinished"></translation>
+        <translation>位元</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="338"/>
         <source>Format name</source>
-        <translation type="unfinished"></translation>
+        <translation>格式名稱</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="339"/>
@@ -1122,14 +1122,14 @@
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="46"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>篩選</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
         <location filename="../jumptotrackdialog.cpp" line="125"/>
         <location filename="../jumptotrackdialog.cpp" line="156"/>
         <source>Queue</source>
-        <translation type="unfinished"></translation>
+        <translation>佇列</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="105"/>
@@ -1152,7 +1152,7 @@
         <location filename="../jumptotrackdialog.cpp" line="123"/>
         <location filename="../jumptotrackdialog.cpp" line="154"/>
         <source>Unqueue</source>
-        <translation type="unfinished"></translation>
+        <translation>取消佇列</translation>
     </message>
 </context>
 <context>
@@ -1221,22 +1221,22 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>Duration | Format | Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>持續時間 | 格式 | 取樣率</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>Duration | Format | Bitrate | Sample rate </source>
-        <translation type="unfinished"></translation>
+        <translation>持續時間 | 格式 | 取樣率 | 取樣率</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>Year | Duration | Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>年份 | 持續時間 | 取樣率</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="68"/>
         <source>Parent Directory Path</source>
-        <translation type="unfinished"></translation>
+        <translation>上層目錄路徑</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="70"/>
@@ -1246,17 +1246,17 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="71"/>
         <source>Sample Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>取樣率</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="72"/>
         <source>Number of Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>音頻通道數</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="73"/>
         <source>Sample Size</source>
-        <translation type="unfinished"></translation>
+        <translation>取樣大小</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="74"/>
@@ -1266,12 +1266,12 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="75"/>
         <source>Decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>解碼器</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="78"/>
         <source>File Size</source>
-        <translation type="unfinished"></translation>
+        <translation>檔案大小</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="43"/>
@@ -1308,22 +1308,22 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="56"/>
         <source>Artist - [Year] Album</source>
-        <translation type="unfinished"></translation>
+        <translation>演作家 - [年份] 專輯</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>%y | %if(%l,%l | ,)%{bitrate} kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>%y | %if(%l,%l | ,)%{bitrate} kbps</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="67"/>
@@ -1354,7 +1354,7 @@
     <message>
         <location filename="../playlistheadermodel.cpp" line="186"/>
         <source>Add Column</source>
-        <translation type="unfinished"></translation>
+        <translation>新增欄位</translation>
     </message>
 </context>
 <context>
@@ -1371,12 +1371,12 @@
     <message>
         <location filename="../playlisttrack.cpp" line="245"/>
         <source>Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>串流</translation>
     </message>
     <message>
         <location filename="../playlisttrack.cpp" line="250"/>
         <source>Empty group</source>
-        <translation>清空群組</translation>
+        <translation>空白群組</translation>
     </message>
 </context>
 <context>
@@ -1384,7 +1384,7 @@
     <message>
         <location filename="../qmmpuisettings.cpp" line="39"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../qmmpuisettings.cpp" line="64"/>
@@ -1405,7 +1405,7 @@
     <message>
         <location filename="../forms/shortcutdialog.ui" line="14"/>
         <source>Change Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>變更捷徑</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="29"/>
@@ -1443,7 +1443,7 @@
     <message>
         <location filename="../forms/tageditor.ui" line="113"/>
         <source>Album artist:</source>
-        <translation type="unfinished"></translation>
+        <translation>專輯 演作者：</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="123"/>
@@ -1512,17 +1512,17 @@
         <location filename="../uihelper.cpp" line="136"/>
         <location filename="../uihelper.cpp" line="148"/>
         <source>All Supported Bitstreams</source>
-        <translation type="unfinished"></translation>
+        <translation>所有支援的位元流</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="142"/>
         <source>Select one or more files to open</source>
-        <translation type="unfinished"></translation>
+        <translation>選擇一個或多個檔案開啟</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="154"/>
         <source>Select one or more files to play</source>
-        <translation type="unfinished"></translation>
+        <translation>選擇一個或多個檔案播放</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="162"/>
@@ -1567,7 +1567,7 @@ Do you want to replace it?</source>
     <message>
         <location filename="../forms/winfileassocpage.ui" line="43"/>
         <source>Media files handled by Qmmp:</source>
-        <translation type="unfinished"></translation>
+        <translation>由 Qmmp 處理的媒體檔案：</translation>
     </message>
     <message>
         <location filename="../forms/winfileassocpage.ui" line="17"/>

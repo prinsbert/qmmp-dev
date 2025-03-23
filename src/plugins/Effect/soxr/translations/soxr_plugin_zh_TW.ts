@@ -6,22 +6,22 @@
     <message>
         <location filename="../effectsoxrfactory.cpp" line="30"/>
         <source>SoX Resampler Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>SoX 重採樣插件</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="50"/>
         <source>About SoX Resampler Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>關於 SoX 重採樣插件</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="51"/>
         <source>Qmmp SoX Resampler Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp SoX 重採樣插件</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -44,12 +44,12 @@
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="34"/>
         <source>Quick</source>
-        <translation type="unfinished"></translation>
+        <translation>快速</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="35"/>
         <source>Low</source>
-        <translation type="unfinished"></translation>
+        <translation>低</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="36"/>
@@ -59,12 +59,12 @@
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="37"/>
         <source>High</source>
-        <translation type="unfinished"></translation>
+        <translation>高</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="38"/>
         <source>Very High</source>
-        <translation type="unfinished"></translation>
+        <translation>極高</translation>
     </message>
 </context>
 </TS>

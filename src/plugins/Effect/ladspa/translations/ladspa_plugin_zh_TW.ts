@@ -21,7 +21,7 @@
     <message>
         <location filename="../effectladspafactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../effectladspafactory.cpp" line="52"/>
@@ -36,12 +36,12 @@
     <message>
         <location filename="../effectladspafactory.cpp" line="54"/>
         <source>Nick Lamb &lt;njl195@zepler.org.uk&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Nick Lamb &lt;njl195@zepler.org.uk&gt;</translation>
     </message>
     <message>
         <location filename="../effectladspafactory.cpp" line="55"/>
         <source>Giacomo Lozito &lt;city_hunter@users.sf.net&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Giacomo Lozito &lt;city_hunter@users.sf.net&gt;</translation>
     </message>
 </context>
 <context>
@@ -54,12 +54,12 @@
     <message>
         <location filename="../ladspasettingsdialog.ui" line="52"/>
         <source>&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&gt;</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="59"/>
         <source>&lt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="94"/>
@@ -69,7 +69,7 @@
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="46"/>
         <source>UID</source>
-        <translation type="unfinished"></translation>
+        <translation>UID</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="47"/>

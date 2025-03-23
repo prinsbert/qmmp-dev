@@ -7,7 +7,7 @@
         <location filename="../converter.cpp" line="125"/>
         <location filename="../converter.cpp" line="228"/>
         <source>Cancelled</source>
-        <translation type="unfinished"></translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="140"/>
@@ -18,17 +18,17 @@
     <message>
         <location filename="../converter.cpp" line="178"/>
         <source>Converting</source>
-        <translation type="unfinished"></translation>
+        <translation>轉換中</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="239"/>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>編碼中</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="281"/>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation>完成的</translation>
     </message>
 </context>
 <context>
@@ -36,17 +36,17 @@
     <message>
         <location filename="../converterdialog.ui" line="14"/>
         <source>Audio Converter</source>
-        <translation type="unfinished"></translation>
+        <translation>音訊轉換器</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="44"/>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation>進度</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="49"/>
         <source>State</source>
-        <translation type="unfinished"></translation>
+        <translation>狀態</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="63"/>
@@ -61,17 +61,17 @@
     <message>
         <location filename="../converterdialog.ui" line="97"/>
         <source>Preset:</source>
-        <translation type="unfinished"></translation>
+        <translation>預設：</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="114"/>
         <source>Overwrite existing files</source>
-        <translation type="unfinished"></translation>
+        <translation>覆蓋現有文件</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="124"/>
         <source>Convert</source>
-        <translation type="unfinished"></translation>
+        <translation>轉變</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="131"/>
@@ -91,7 +91,7 @@
     <message>
         <location filename="../converterdialog.cpp" line="205"/>
         <source>Create a Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>建立副本</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="136"/>
@@ -103,17 +103,17 @@
     <message>
         <location filename="../converterdialog.cpp" line="141"/>
         <source>Waiting</source>
-        <translation type="unfinished"></translation>
+        <translation>等待中</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="203"/>
         <source>Create</source>
-        <translation type="unfinished"></translation>
+        <translation>創造</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="204"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>編輯</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="206"/>
@@ -123,12 +123,12 @@
     <message>
         <location filename="../converterdialog.cpp" line="358"/>
         <source>Unable to execute &quot;%1&quot;. Program not found.</source>
-        <translation type="unfinished"></translation>
+        <translation>無法執行 &quot;%1&quot;。找不到程式。</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="365"/>
         <source>Process &quot;%1&quot; finished with error.</source>
-        <translation type="unfinished"></translation>
+        <translation>進程&quot;%1&quot;已完成，但出現錯誤。</translation>
     </message>
 </context>
 <context>
@@ -136,27 +136,27 @@
     <message>
         <location filename="../converterfactory.cpp" line="28"/>
         <source>Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>轉換器插件</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="49"/>
         <source>About Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>關於轉換器插件</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="50"/>
         <source>Qmmp Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp 轉換器插件</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="51"/>
         <source>This plugin converts supported audio files to other file formats using external command-line encoders</source>
-        <translation type="unfinished"></translation>
+        <translation>該插件使用外部命令列編碼器將支援的音訊檔案轉換為其他檔案格式</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -164,12 +164,12 @@
     <message>
         <location filename="../converterhelper.cpp" line="33"/>
         <source>Convert</source>
-        <translation type="unfinished"></translation>
+        <translation>轉變</translation>
     </message>
     <message>
         <location filename="../converterhelper.cpp" line="34"/>
         <source>Meta+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Meta+C</translation>
     </message>
 </context>
 <context>
@@ -192,12 +192,12 @@
     <message>
         <location filename="../converterpreseteditor.ui" line="45"/>
         <source>Extension:</source>
-        <translation type="unfinished"></translation>
+        <translation>擴展：</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="58"/>
         <source>Command</source>
-        <translation type="unfinished"></translation>
+        <translation>命令</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="77"/>
@@ -207,12 +207,12 @@
     <message>
         <location filename="../converterpreseteditor.ui" line="83"/>
         <source>Write tags</source>
-        <translation type="unfinished"></translation>
+        <translation>寫入標籤</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="90"/>
         <source>Convert to 16 bit</source>
-        <translation type="unfinished"></translation>
+        <translation>轉換為16位</translation>
     </message>
 </context>
 <context>
@@ -220,17 +220,17 @@
     <message>
         <location filename="../converterpreseteditor.cpp" line="40"/>
         <source>%1 (Read Only)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (只讀)</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.cpp" line="73"/>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>輸出檔案</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.cpp" line="74"/>
         <source>Input file</source>
-        <translation type="unfinished"></translation>
+        <translation>輸入檔案</translation>
     </message>
 </context>
 </TS>

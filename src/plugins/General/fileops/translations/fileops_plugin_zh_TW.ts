@@ -18,13 +18,13 @@
     <message>
         <location filename="../fileops.cpp" line="154"/>
         <source>Move Files</source>
-        <translation type="unfinished"></translation>
+        <translation>移動檔案</translation>
     </message>
     <message numerus="yes">
         <location filename="../fileops.cpp" line="155"/>
         <source>Are you sure you want to move %n file(s)?</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>您確定要移動 %n 個檔案嗎？</numerusform>
         </translation>
     </message>
     <message>
@@ -46,17 +46,17 @@
     <message>
         <location filename="../fileops.cpp" line="274"/>
         <source>Moving</source>
-        <translation type="unfinished"></translation>
+        <translation>移動中</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="313"/>
         <source>Moving file %1/%2</source>
-        <translation type="unfinished"></translation>
+        <translation>移動檔案 %1/%2</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="123"/>
         <source>Remove Files</source>
-        <translation type="unfinished"></translation>
+        <translation>刪除檔案</translation>
     </message>
     <message numerus="yes">
         <location filename="../fileops.cpp" line="124"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../fileopsfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="183"/>
         <source>Command:</source>
-        <translation type="unfinished"></translation>
+        <translation>命令：</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="218"/>
@@ -167,7 +167,7 @@
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="220"/>
         <source>Move</source>
-        <translation type="unfinished"></translation>
+        <translation>移動</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="222"/>

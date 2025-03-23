@@ -6,7 +6,7 @@
     <message>
         <location filename="../rdetectfactory.cpp" line="30"/>
         <source>Volume Detection Plugin</source>
-        <translation>Plugin de détection du volume</translation>
+        <translation>Greffon de détection du volume</translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="50"/>

@@ -154,7 +154,7 @@
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="183"/>
         <source>Command:</source>
-        <translation type="unfinished"></translation>
+        <translation>Commande :</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="218"/>

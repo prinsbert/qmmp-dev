@@ -21,7 +21,7 @@
     <message>
         <location filename="../notifierfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -85,7 +85,7 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="361"/>
         <source>Playback resume notification</source>
-        <translation type="unfinished"></translation>
+        <translation>播放恢復通知</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="368"/>
@@ -95,12 +95,12 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="375"/>
         <source>Disable notifications when another application is in the Full Screen Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>當其他應用程式處於全螢幕模式時停用通知</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="378"/>
         <source>Disable for full screen windows</source>
-        <translation type="unfinished"></translation>
+        <translation>停用全螢幕視窗通知</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="388"/>

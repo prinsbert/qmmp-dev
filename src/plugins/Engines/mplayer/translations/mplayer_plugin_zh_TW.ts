@@ -31,7 +31,7 @@
     <message>
         <location filename="../mplayerenginefactory.cpp" line="76"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -143,12 +143,12 @@
     <message>
         <location filename="../mplayersettingsdialog.ui" line="89"/>
         <source>Extra options:</source>
-        <translation type="unfinished"></translation>
+        <translation>額外選項：</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="96"/>
         <source>Extra command line options</source>
-        <translation type="unfinished"></translation>
+        <translation>額外的命令列選項</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.cpp" line="29"/>

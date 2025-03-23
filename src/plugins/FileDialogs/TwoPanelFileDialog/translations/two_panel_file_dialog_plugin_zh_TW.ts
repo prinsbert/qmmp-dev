@@ -40,22 +40,22 @@
         <location filename="../twopanelfiledialog.cpp" line="67"/>
         <location filename="../twopanelfiledialog.cpp" line="77"/>
         <source>Two-panel File Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>雙面板檔案對話框</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialog.cpp" line="76"/>
         <source>About Two-panel File Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>關於雙面板檔案對話框</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialog.cpp" line="78"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialog.cpp" line="79"/>
         <source>Based on code from the Qt library</source>
-        <translation type="unfinished"></translation>
+        <translation>基於 Qt 程式庫的程式碼</translation>
     </message>
 </context>
 <context>

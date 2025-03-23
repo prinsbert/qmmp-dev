@@ -26,12 +26,12 @@
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="182"/>
         <source>WavPack library version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>WavPack library version: %1</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="184"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
