@@ -6,12 +6,12 @@
     <message>
         <location filename="../projectm4widget.cpp" line="163"/>
         <source>&amp;Show Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp; 顯示功能表</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="163"/>
         <source>M</source>
-        <translation type="unfinished"></translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="165"/>
@@ -114,13 +114,13 @@
         <location filename="../projectmwidget.cpp" line="147"/>
         <location filename="../projectmwidget.cpp" line="159"/>
         <source>&amp;Show Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp; 顯示功能表</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="147"/>
         <location filename="../projectmwidget.cpp" line="159"/>
         <source>M</source>
-        <translation type="unfinished"></translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="149"/>

@@ -6,22 +6,22 @@
     <message>
         <location filename="../listenbrainzfactory.cpp" line="30"/>
         <source>ListenBrainz Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>ListenBrainz 插件</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="50"/>
         <source>About ListenBrainz Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>關於 ListenBrainz 插件</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="51"/>
         <source>Qmmp ListenBrainz Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp ListenBrainz 插件</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="52"/>
         <source>This plugin submits listen history to ListenBrainz server</source>
-        <translation type="unfinished"></translation>
+        <translation>此插件會將聆聽歷史提交到 ListenBrainz 伺服器</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="53"/>
@@ -34,12 +34,12 @@
     <message>
         <location filename="../listenbrainzsettingsdialog.ui" line="14"/>
         <source>ListenBrainz Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>ListenBrainz 插件設定</translation>
     </message>
     <message>
         <location filename="../listenbrainzsettingsdialog.ui" line="29"/>
         <source>ListenBrainz user token:</source>
-        <translation type="unfinished"></translation>
+        <translation>ListenBrainz 使用者令牌：</translation>
     </message>
 </context>
 </TS>

@@ -6,12 +6,12 @@
     <message>
         <location filename="../editstreamdialog.ui" line="14"/>
         <source>Edit Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>編輯串流</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="34"/>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>網址：</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="44"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../editstreamdialog.ui" line="64"/>
         <source>Bitrate:</source>
-        <translation type="unfinished"></translation>
+        <translation>比特率：</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="74"/>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../streambrowser.cpp" line="33"/>
         <source>Add Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>新增串流</translation>
     </message>
     <message>
         <location filename="../streambrowser.cpp" line="34"/>
         <source>Ctrl+U</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+U</translation>
     </message>
 </context>
 <context>
@@ -52,22 +52,22 @@
     <message>
         <location filename="../streambrowserfactory.cpp" line="29"/>
         <source>Stream Browser Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>串流瀏覽器插件</translation>
     </message>
     <message>
         <location filename="../streambrowserfactory.cpp" line="50"/>
         <source>About Stream Browser Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>關於串流瀏覽器插件</translation>
     </message>
     <message>
         <location filename="../streambrowserfactory.cpp" line="51"/>
         <source>Qmmp Stream Browser Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp 串流瀏覽器插件</translation>
     </message>
     <message>
         <location filename="../streambrowserfactory.cpp" line="52"/>
         <source>This plugin allows one to add stream from IceCast stream directory</source>
-        <translation type="unfinished"></translation>
+        <translation>此插件支援從 IceCast 串流目錄新增串流</translation>
     </message>
     <message>
         <location filename="../streambrowserfactory.cpp" line="53"/>
@@ -80,7 +80,7 @@
     <message>
         <location filename="../streamwindow.ui" line="14"/>
         <source>Stream Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>串流瀏覽器</translation>
     </message>
     <message>
         <location filename="../streamwindow.ui" line="31"/>
@@ -90,12 +90,12 @@
     <message>
         <location filename="../streamwindow.ui" line="47"/>
         <source>Favorites</source>
-        <translation type="unfinished"></translation>
+        <translation>最愛</translation>
     </message>
     <message>
         <location filename="../streamwindow.ui" line="73"/>
         <source>IceCast</source>
-        <translation type="unfinished"></translation>
+        <translation>IceCast</translation>
     </message>
     <message>
         <location filename="../streamwindow.ui" line="102"/>
@@ -105,7 +105,7 @@
     <message>
         <location filename="../streamwindow.ui" line="109"/>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation>更新</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="55"/>
@@ -134,28 +134,28 @@
     <message>
         <location filename="../streamwindow.cpp" line="125"/>
         <source>&amp;Add to favorites</source>
-        <translation type="unfinished"></translation>
+        <translation>新增至最愛(&amp;A)</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="128"/>
         <source>&amp;Add to playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>新增至播放清單(&amp;P)</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="131"/>
         <source>&amp;Create</source>
-        <translation type="unfinished"></translation>
+        <translation>建立(&amp;C)</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="132"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>編輯(&amp;E)</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="136"/>
         <location filename="../streamwindow.cpp" line="139"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除(&amp;R)</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="152"/>
@@ -176,7 +176,7 @@
     <message>
         <location filename="../streamwindow.cpp" line="278"/>
         <source>Edit Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>編輯串流</translation>
     </message>
 </context>
 </TS>

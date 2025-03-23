@@ -143,12 +143,12 @@
     <message>
         <location filename="../mplayersettingsdialog.ui" line="89"/>
         <source>Extra options:</source>
-        <translation type="unfinished"></translation>
+        <translation>額外選項：</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="96"/>
         <source>Extra command line options</source>
-        <translation type="unfinished"></translation>
+        <translation>額外的命令列選項</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.cpp" line="29"/>
