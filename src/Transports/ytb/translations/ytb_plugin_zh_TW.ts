@@ -6,32 +6,32 @@
     <message>
         <location filename="../ytbinputfactory.cpp" line="36"/>
         <source>Youtube Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Youtube 插件</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="70"/>
         <source>About Youtube Transport Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>關於Youtube傳輸插件</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="71"/>
         <source>Qmmp Youtube Transport Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Youtube傳輸插件</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="72"/>
         <source>This plugin adds feature to play audio from Youtube using %1 utility</source>
-        <translation type="unfinished"></translation>
+        <translation>這個插件增加了使用 %1  工具從 YouTube 播放音訊的功能。</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="74"/>
         <source>%1 version: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 版本： %2</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="75"/>
         <source>Written by: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>撰寫： Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
     </message>
 </context>
 <context>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../ytbinputsource.cpp" line="185"/>
         <source>Uploader</source>
-        <translation type="unfinished"></translation>
+        <translation>上傳器</translation>
     </message>
     <message>
         <location filename="../ytbinputsource.cpp" line="186"/>
         <source>Upload date</source>
-        <translation type="unfinished"></translation>
+        <translation>上傳日期</translation>
     </message>
     <message>
         <location filename="../ytbinputsource.cpp" line="187"/>

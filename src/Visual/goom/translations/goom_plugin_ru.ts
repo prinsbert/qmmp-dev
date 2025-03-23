@@ -16,17 +16,17 @@
     <message>
         <location filename="../goomwidget.cpp" line="190"/>
         <source>60 fps</source>
-        <translation>60 гц</translation>
+        <translation>60 к/с</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="191"/>
         <source>50 fps</source>
-        <translation>50 Гц</translation>
+        <translation>50 к/с</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="192"/>
         <source>25 fps</source>
-        <translation>25 Гц</translation>
+        <translation>25 к/с</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="198"/>

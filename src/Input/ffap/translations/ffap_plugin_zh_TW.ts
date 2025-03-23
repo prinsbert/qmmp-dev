@@ -6,27 +6,27 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="43"/>
         <source>FFap Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>FFap 插件</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="45"/>
         <source>Monkey&apos;s Audio Files</source>
-        <translation type="unfinished"></translation>
+        <translation>猴子音訊檔案</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="150"/>
         <source>About FFap Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>關於 FFap 音訊插件</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="151"/>
         <source>Qmmp FFap Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp FFap 音訊插件</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="152"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
-        <translation type="unfinished"></translation>
+        <translation>此插件提供猴子音訊（APE）支援</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="153"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="154"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
-        <translation type="unfinished"></translation>
+        <translation>基於 deadbeef、FFmpeg 和 rockbox 的程式碼</translation>
     </message>
 </context>
 <context>
