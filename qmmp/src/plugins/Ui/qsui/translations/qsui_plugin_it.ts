@@ -49,7 +49,7 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="101"/>
         <source>Replace Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Sostituisci scaletta</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="102"/>
@@ -59,7 +59,7 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="105"/>
         <source>Tree View Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modalità vista ad albero</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="107"/>
@@ -69,22 +69,22 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="116"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordina</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="110"/>
         <source>By Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Per nome</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="111"/>
         <source>By Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Per dimensione</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="112"/>
         <source>By Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Per tipo</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="113"/>
@@ -142,22 +142,22 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="703"/>
         <source>Override group colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Sovrascrivi colori di gruppo</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="806"/>
         <source>Override current track colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Sovrascrivi colori della traccia corrente</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="816"/>
         <source>Current track text:</source>
-        <translation type="unfinished"></translation>
+        <translation>Testo della traccia attuale:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="915"/>
         <source>Waveform Seekbar Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Colori barra di progresso selezionabile della forma d&apos;onda</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="921"/>
@@ -168,7 +168,7 @@
         <location filename="../forms/qsuisettings.ui" line="1010"/>
         <source>RMS:</source>
         <extracomment>Root mean square</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Val.efficace:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1055"/>
@@ -329,12 +329,12 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="1268"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppi</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1275"/>
         <source>Extra group row:</source>
-        <translation type="unfinished"></translation>
+        <translation>Riga aggiuntiva di gruppo</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1372"/>
@@ -389,7 +389,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="1358"/>
         <source>Show tab list menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra menu dell&apos;elenco di schede</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1365"/>
@@ -675,7 +675,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="68"/>
         <source>Block Floating Panels</source>
-        <translation type="unfinished"></translation>
+        <translation>Blocca i pannelli fluttuanti</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="69"/>
@@ -1179,7 +1179,7 @@
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="135"/>
         <source>Waveform Seek Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra di progresso selezionabile della forma d&apos;onda</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="149"/>
@@ -1691,7 +1691,7 @@
         <location filename="../qsuiwaveformseekbar.cpp" line="338"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Val.efficace</translation>
     </message>
 </context>
 <context>
@@ -1758,7 +1758,7 @@
     <message>
         <location filename="../volumeslider.cpp" line="110"/>
         <source>%1: %2%</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: %2%</translation>
     </message>
 </context>
 </TS>

@@ -6,22 +6,22 @@
     <message>
         <location filename="../mplayerenginefactory.cpp" line="33"/>
         <source>Mplayer Plugin</source>
-        <translation>Mplayer 外掛</translation>
+        <translation>Mplayer 插件</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="36"/>
         <source>Video Files</source>
-        <translation>視頻文件</translation>
+        <translation>視頻檔案</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="73"/>
         <source>About MPlayer Plugin</source>
-        <translation>關於 Mplayer 外掛</translation>
+        <translation>關於 Mplayer 插件</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="74"/>
         <source>Qmmp MPlayer Plugin</source>
-        <translation>Qmmp Mplayer 外掛</translation>
+        <translation>Qmmp Mplayer 插件</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="75"/>
@@ -110,7 +110,7 @@
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="65"/>
         <source>Resolution</source>
-        <translation>分辨率</translation>
+        <translation>解析度</translation>
     </message>
 </context>
 <context>
@@ -143,12 +143,12 @@
     <message>
         <location filename="../mplayersettingsdialog.ui" line="89"/>
         <source>Extra options:</source>
-        <translation type="unfinished"></translation>
+        <translation>額外選項：</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="96"/>
         <source>Extra command line options</source>
-        <translation type="unfinished"></translation>
+        <translation>額外的命令列選項</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.cpp" line="29"/>

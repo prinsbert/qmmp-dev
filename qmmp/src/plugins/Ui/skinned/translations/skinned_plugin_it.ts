@@ -1186,12 +1186,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="994"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppi</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1021"/>
         <source>Extra group row:</source>
-        <translation type="unfinished"></translation>
+        <translation>Riga aggiuntiva di gruppo</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1048"/>
@@ -1328,17 +1328,17 @@
     <message>
         <location filename="../skinnedsettings.cpp" line="165"/>
         <source>Default skin</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema predefinito</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="174"/>
         <source>Unarchived skin %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema non archiviato %1</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="174"/>
         <source>Archived skin %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema archiviato %1</translation>
     </message>
 </context>
 <context>

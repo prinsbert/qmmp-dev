@@ -127,7 +127,7 @@
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="50"/>
         <source>Jump to track</source>
-        <translation>Salta alla traccia</translation>
+        <translation>Passa alla traccia</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="51"/>

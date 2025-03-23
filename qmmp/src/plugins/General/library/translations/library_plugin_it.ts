@@ -78,82 +78,82 @@
     <message>
         <location filename="../librarymodel.cpp" line="354"/>
         <source>Unable to connect to database</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile collegarsi alla banca dati</translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="375"/>
         <source>%n day(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n giorno</numerusform>
+            <numerusform>%n giorni</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="376"/>
         <source>%n hour(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n ora</numerusform>
+            <numerusform>%n ore</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="377"/>
         <source>%n minute(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n minuto</numerusform>
+            <numerusform>%n minuti</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="378"/>
         <source>%n second(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n secondo</numerusform>
+            <numerusform>%n secondi</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="382"/>
         <source>%1 %2 %3 %4</source>
         <comment>days hours minutes seconds</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 %3 %4</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="384"/>
         <source>%1 %2 %3</source>
         <comment>hours minutes seconds</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 %3</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="386"/>
         <source>%1 %2</source>
         <comment>minutes seconds</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="389"/>
         <source>Number of tracks: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero di tracce: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="390"/>
         <source>Number of albums: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero di album: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="391"/>
         <source>Number of artists: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero di artisti: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="392"/>
         <source>Total duration: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Durata totale: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="395"/>
         <source>Library Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioni sulla libreria</translation>
     </message>
 </context>
 <context>
@@ -204,7 +204,7 @@
     <message>
         <location filename="../librarywidget.cpp" line="52"/>
         <source>Replace Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Sostituisci scaletta</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="53"/>
@@ -219,7 +219,7 @@
     <message>
         <location filename="../librarywidget.cpp" line="56"/>
         <source>&amp;Library Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioni sulla &amp;libreria</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="90"/>

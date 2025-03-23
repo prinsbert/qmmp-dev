@@ -11,12 +11,12 @@
     <message>
         <location filename="../effectladspafactory.cpp" line="49"/>
         <source>About LADSPA Host for Qmmp</source>
-        <translation>關於 Qmmp LADSPA 主机</translation>
+        <translation>關於 Qmmp LADSPA 主機</translation>
     </message>
     <message>
         <location filename="../effectladspafactory.cpp" line="50"/>
         <source>LADSPA Host for Qmmp</source>
-        <translation>Qmmp 的 LADSPA 主机</translation>
+        <translation>Qmmp 的 LADSPA 主機</translation>
     </message>
     <message>
         <location filename="../effectladspafactory.cpp" line="51"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../effectladspafactory.cpp" line="52"/>
         <source>Based on the LADSPA Host for BMP</source>
-        <translation>基於 BMP 的 LADSPA 主机</translation>
+        <translation>基於 BMP 的 LADSPA 主機</translation>
     </message>
     <message>
         <location filename="../effectladspafactory.cpp" line="53"/>
@@ -36,12 +36,12 @@
     <message>
         <location filename="../effectladspafactory.cpp" line="54"/>
         <source>Nick Lamb &lt;njl195@zepler.org.uk&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Nick Lamb &lt;njl195@zepler.org.uk&gt;</translation>
     </message>
     <message>
         <location filename="../effectladspafactory.cpp" line="55"/>
         <source>Giacomo Lozito &lt;city_hunter@users.sf.net&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Giacomo Lozito &lt;city_hunter@users.sf.net&gt;</translation>
     </message>
 </context>
 <context>
@@ -49,27 +49,27 @@
     <message>
         <location filename="../ladspasettingsdialog.ui" line="14"/>
         <source>LADSPA Plugin Catalog</source>
-        <translation>LADSPA 插件目錄</translation>
+        <translation>LADSPA 外掛目錄</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="52"/>
         <source>&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&gt;</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="59"/>
         <source>&lt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="94"/>
         <source>Configure</source>
-        <translation>配置</translation>
+        <translation>設定</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="46"/>
         <source>UID</source>
-        <translation type="unfinished"></translation>
+        <translation>UID</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="47"/>
@@ -79,7 +79,7 @@
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="131"/>
         <source>This LADSPA plugin has no user controls</source>
-        <translation>LADSPA 插件用戶設定</translation>
+        <translation>此 LADSPA 外掛無使用者控制項</translation>
     </message>
 </context>
 </TS>

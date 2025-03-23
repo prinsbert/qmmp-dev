@@ -33,6 +33,7 @@ Finnois:
     Kimmo Kujansuu
 
 Français :
+    Nicolas PARLANT
     Adrien Vigneron - VRad <adrienvigneron@ml1.net>
     Sébastien Aperghis-Tramoni (maddingue)
     Stanislas Zeller <uncensored.assault@gmail.com>

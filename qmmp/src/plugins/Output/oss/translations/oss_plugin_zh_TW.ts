@@ -46,7 +46,7 @@
     <message>
         <location filename="../osssettingsdialog.ui" line="236"/>
         <source>PCM over Master</source>
-        <translation type="unfinished"></translation>
+        <translation>PCM over Master</translation>
     </message>
 </context>
 <context>
@@ -54,17 +54,17 @@
     <message>
         <location filename="../outputossfactory.cpp" line="36"/>
         <source>OSS Plugin</source>
-        <translation>OSS 外掛</translation>
+        <translation>OSS 插件</translation>
     </message>
     <message>
         <location filename="../outputossfactory.cpp" line="55"/>
         <source>About OSS Output Plugin</source>
-        <translation>關於 OSS 匯出插件</translation>
+        <translation>關於 OSS 輸出插件</translation>
     </message>
     <message>
         <location filename="../outputossfactory.cpp" line="56"/>
         <source>Qmmp OSS Output Plugin</source>
-        <translation>Qmmp OSS 匯出插件</translation>
+        <translation>Qmmp OSS 輸出插件</translation>
     </message>
     <message>
         <location filename="../outputossfactory.cpp" line="57"/>

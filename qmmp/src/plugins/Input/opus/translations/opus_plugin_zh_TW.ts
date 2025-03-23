@@ -6,22 +6,22 @@
     <message>
         <location filename="../decoderopusfactory.cpp" line="42"/>
         <source>Opus Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Opus 插件</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="45"/>
         <source>Ogg Opus Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ogg Opus 檔案</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="125"/>
         <source>About Opus Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>關於Opus音頻插件</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="126"/>
         <source>Qmmp Opus Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Opus音頻插件</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="127"/>

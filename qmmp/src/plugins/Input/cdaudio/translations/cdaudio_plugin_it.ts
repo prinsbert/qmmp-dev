@@ -79,7 +79,8 @@
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="104"/>
         <source>Compiled against libcdio-%1</source>
-        <translation type="unfinished"></translation>
+        <translation> 88% match 
+Compilato con libcdio-%1</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="107"/>

@@ -6,17 +6,17 @@
     <message>
         <location filename="../outputwasapifactory.cpp" line="29"/>
         <source>WASAPI Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>WASAPI 插件</translation>
     </message>
     <message>
         <location filename="../outputwasapifactory.cpp" line="53"/>
         <source>About WASAPI Output Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>關於 WASAPI 輸出插件</translation>
     </message>
     <message>
         <location filename="../outputwasapifactory.cpp" line="54"/>
         <source>Qmmp WASAPI Output Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp WASAPI 輸出插件</translation>
     </message>
     <message>
         <location filename="../outputwasapifactory.cpp" line="55"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../wasapisettingsdialog.ui" line="14"/>
         <source>WASAPI Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>WASAPI 插件設定</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="35"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../wasapisettingsdialog.ui" line="55"/>
         <source>Buffer size:</source>
-        <translation>緩沖大小：</translation>
+        <translation>緩衝大小：</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="62"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../wasapisettingsdialog.ui" line="78"/>
         <source>Exclusive mode</source>
-        <translation type="unfinished"></translation>
+        <translation>獨佔模式</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.cpp" line="65"/>
