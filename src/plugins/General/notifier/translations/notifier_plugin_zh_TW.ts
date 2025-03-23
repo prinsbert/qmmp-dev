@@ -65,7 +65,7 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="251"/>
         <source>Edit template</source>
-        <translation>編輯模板</translation>
+        <translation>編輯範本</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="299"/>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="325"/>
         <source>Volume change notification</source>
-        <translation>音量改變通知</translation>
+        <translation>音量變更通知</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="332"/>
@@ -85,22 +85,22 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="361"/>
         <source>Playback resume notification</source>
-        <translation type="unfinished"></translation>
+        <translation>播放恢復通知</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="368"/>
         <source>Song change notification</source>
-        <translation>曲目改變通知</translation>
+        <translation>曲目變更通知</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="375"/>
         <source>Disable notifications when another application is in the Full Screen Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>當其他應用程式處於全螢幕模式時停用通知</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="378"/>
         <source>Disable for full screen windows</source>
-        <translation type="unfinished"></translation>
+        <translation>停用全螢幕視窗通知</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="388"/>
@@ -115,7 +115,7 @@
     <message>
         <location filename="../notifiersettingsdialog.cpp" line="115"/>
         <source>Notification Template</source>
-        <translation>通知模板</translation>
+        <translation>通知範本</translation>
     </message>
 </context>
 <context>

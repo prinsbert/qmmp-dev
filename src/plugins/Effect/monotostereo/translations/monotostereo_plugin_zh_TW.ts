@@ -6,22 +6,22 @@
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="29"/>
         <source>Mono to Stereo Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>單聲道轉立體聲轉換器插件</translation>
     </message>
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="49"/>
         <source>About Mono to Stereo Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>關於單聲道轉立體聲轉換器插件</translation>
     </message>
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="50"/>
         <source>Qmmp Mono to Stereo Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp 單聲道轉立體聲轉換器插件</translation>
     </message>
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>程式編寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>撰寫者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 </TS>

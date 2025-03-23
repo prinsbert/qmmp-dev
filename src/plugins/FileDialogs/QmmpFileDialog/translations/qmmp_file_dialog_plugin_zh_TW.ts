@@ -6,7 +6,7 @@
     <message>
         <location filename="../qmmpfiledialog.ui" line="14"/>
         <source>Add Files</source>
-        <translation>添加文件</translation>
+        <translation>添加檔案</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="198"/>

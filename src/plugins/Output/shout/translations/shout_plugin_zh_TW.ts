@@ -6,22 +6,22 @@
     <message>
         <location filename="../outputshoutfactory.cpp" line="39"/>
         <source>Icecast Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Icecast 插件</translation>
     </message>
     <message>
         <location filename="../outputshoutfactory.cpp" line="63"/>
         <source>About Icecast Output Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>關於 Icecast 輸出插件</translation>
     </message>
     <message>
         <location filename="../outputshoutfactory.cpp" line="64"/>
         <source>Qmmp Icecast Output Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp 的 Icecast 輸出插件</translation>
     </message>
     <message>
         <location filename="../outputshoutfactory.cpp" line="65"/>
         <source>Compiled against libshout-%1</source>
-        <translation type="unfinished"></translation>
+        <translation>使用 libshout-%1 編譯</translation>
     </message>
     <message>
         <location filename="../outputshoutfactory.cpp" line="66"/>
@@ -34,12 +34,12 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="14"/>
         <source>Connection Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>連線設定</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="32"/>
         <source>Host:</source>
-        <translation type="unfinished"></translation>
+        <translation>主機：</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="42"/>
@@ -49,17 +49,17 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="56"/>
         <source>Mount point:</source>
-        <translation type="unfinished"></translation>
+        <translation>掛載點：</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="66"/>
         <source>User:</source>
-        <translation type="unfinished"></translation>
+        <translation>使用者：</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="76"/>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>密碼：</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="86"/>
@@ -74,12 +74,12 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="136"/>
         <source>Public</source>
-        <translation type="unfinished"></translation>
+        <translation>公開</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="143"/>
         <source>Hz</source>
-        <translation>Hz</translation>
+        <translation>赫茲</translation>
     </message>
 </context>
 </TS>

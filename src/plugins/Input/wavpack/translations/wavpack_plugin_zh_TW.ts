@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="38"/>
         <source>WavPack Plugin</source>
-        <translation>WavPack 外掛</translation>
+        <translation>WavPack 插件</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="40"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="182"/>
         <source>WavPack library version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>WavPack library version: %1</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="184"/>
