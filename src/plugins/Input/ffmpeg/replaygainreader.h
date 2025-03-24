@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016 by Ilya Kotov                                      *
+ *   Copyright (C) 2016-2025 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -39,7 +39,7 @@ public:
     QMap <Qmmp::ReplayGainKey, double> replayGainInfo() const;
 
 private:
-    void setValue(Qmmp::ReplayGainKey key, const QString &value);
+    void setValue(Qmmp::ReplayGainKey key, QString value);
     QMap <Qmmp::ReplayGainKey, double> m_values;
 };
 

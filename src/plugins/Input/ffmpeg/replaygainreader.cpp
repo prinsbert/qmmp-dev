@@ -27,17 +27,17 @@ ReplayGainReader::ReplayGainReader(AVFormatContext *ic)
     while((t = av_dict_get(ic->metadata, "REPLAYGAIN_ALBUM_GAIN", t, 0)))
         setValue(Qmmp::REPLAYGAIN_ALBUM_GAIN, t->value);
 
-    t = nullptr;
+    t = 0;
 
     while((t = av_dict_get(ic->metadata, "REPLAYGAIN_ALBUM_PEAK", t, 0)))
         setValue(Qmmp::REPLAYGAIN_ALBUM_PEAK, t->value);
 
-    t = nullptr;
+    t = 0;
 
     while((t = av_dict_get(ic->metadata, "REPLAYGAIN_TRACK_GAIN", t, 0)))
         setValue(Qmmp::REPLAYGAIN_TRACK_GAIN, t->value);
 
-    t = nullptr;
+    t = 0;
 
     while((t = av_dict_get(ic->metadata, "REPLAYGAIN_TRACK_PEAK", t, 0)))
         setValue(Qmmp::REPLAYGAIN_TRACK_PEAK, t->value);
@@ -48,7 +48,7 @@ QMap <Qmmp::ReplayGainKey, double> ReplayGainReader::replayGainInfo() const
     return m_values;
 }
 
-void ReplayGainReader::setValue(Qmmp::ReplayGainKey key, const QString &value)
+void ReplayGainReader::setValue(Qmmp::ReplayGainKey key, QString value)
 {
     value.remove(" dB");
     if(value.isEmpty())
