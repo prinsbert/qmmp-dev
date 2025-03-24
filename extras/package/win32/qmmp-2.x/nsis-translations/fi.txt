@@ -9,3 +9,4 @@ Käytä Simple UI oletuksena
 Automaattinen ID3v1/ID3v2 tunnistus (libRCD)
 AdLib formaattien tuki (AdPlug)
 Käynnistä-valikon pikakuvakkeet
+Ohjelmiston asentamiseen tarvitaan 64-bit Windows-käyttöjärjestelmä.
