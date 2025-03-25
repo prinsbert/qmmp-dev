@@ -7,6 +7,7 @@ Version 1.7.4
 * fixed build with TagLib 2.0
 * fixed cmake warning
 * fixed filter list update
+* fixed proxy URL
 * using case insensitive search for ReplayGain tags in the ffmpeg plugin
   (thanks to anjanms)
 * updated Chinese Traditional translation (Edouard.J.K Li)
