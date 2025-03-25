@@ -10,6 +10,8 @@ Version 2.2.4
 * fixed filter list update
 * using case insensitive search for ReplayGain tags in the ffmpeg plugin
   (thanks to anjanms)
+* updated Chinese Traditional translation (Edouard.J.K Li)
+* updated French translation (Nicolas PARLANT)
 
 Version 2.2.3
 * added simple WildMidi config validation
