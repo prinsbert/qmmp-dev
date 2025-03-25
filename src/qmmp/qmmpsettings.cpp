@@ -175,6 +175,10 @@ void QmmpSettings::setNetworkSettings(bool use_proxy, bool auth, ProxyType type,
     m_proxy_auth = auth;
     m_proxy_type = type;
     m_proxy_url = proxy;
+    if(type == HTTP_PROXY)
+        m_proxy_url.setScheme(u"http"_s);
+    else if(type == SOCKS5_PROXY)
+        m_proxy_url.setScheme(u"socks5"_s);
     saveSettings();
     emit networkSettingsChanged();
 }
