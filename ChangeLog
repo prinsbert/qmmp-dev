@@ -2,7 +2,9 @@ Changelog of Qmmp Plugin Pack
 --------------
 
 Version 2.2.2
-
+* added Windows 64 bit support
+* fixed cmake warning
+* updated Chinese Traditional translation (Edouard.J.K Li)
 
 Version 2.2.1
 * fixed "about" dialog in the ytb plugin
