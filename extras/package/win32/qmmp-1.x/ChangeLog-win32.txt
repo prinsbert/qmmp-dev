@@ -4,6 +4,15 @@ LEGEND
 [-] Bug fix
 [!] Enhancement
 
+1.7.4
+[*] qmmp-1.7.4
+[*] qmmp-plugin-pack-1.7.2
+[*] wavpack-5.8.1
+[*] curl-8.12.1
+[*] ffmpeg-7.1.1
+[*] libxmp-4.6.2
+[!] added missing icons
+
 1.7.3
 [*] qmmp-1.7.3
 [*] curl-8.11.1

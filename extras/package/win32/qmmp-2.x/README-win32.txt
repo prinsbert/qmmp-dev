@@ -33,18 +33,18 @@ List of the third-party libraries.
   libogg              1.3.5      https://www.vorbis.com/
   libvorbis           1.3.7      https://www.vorbis.com/
   flac                1.4.3      https://xiph.org/flac/index.html
-  wavpack             5.7.0      https://www.wavpack.com/
+  wavpack             5.8.1      https://www.wavpack.com/
   libsndfile          1.2.2      https://github.com/libsndfile/libsndfile
   opus                1.5.2      https://www.opus-codec.org/
   opusfile            0.12       https://www.opus-codec.org/
   libbs2b             3.1.0      https://bs2b.sourceforge.net/
-  curl                8.11.1     https://curl.haxx.se/
+  curl                8.12.1     https://curl.haxx.se/
   libcdio             2.1.0      https://www.gnu.org/software/libcdio/
   libcdio-paranoia    10.2+2.0.2 https://www.gnu.org/software/libcdio/  
   mingw-libgnurx      2.5.1      https://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      https://libcddb.sourceforge.net/
-  ffmpeg              7.1        https://ffmpeg.org/
-  libxmp              4.6.1      https://github.com/libxmp/libxmp
+  ffmpeg              7.1.1      https://ffmpeg.org/
+  libxmp              4.6.2      https://github.com/libxmp/libxmp
   game-music-emu      0.6.3      https://bitbucket.org/mpyne/game-music-emu
   musepack            r475       https://www.musepack.net/
   glew                2.2.0      https://glew.sourceforge.net/

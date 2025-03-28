@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=2.2.3
+QMMP_VERSION=2.2.4
 QMMP_PLUGIN_PACK_VERSION=2.2.2
 
 export DEV_PATH=/c/devel
@@ -59,8 +59,8 @@ download_qmmp_svn()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp...'
-  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp qmmp-${QMMP_VERSION}
-  #svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-2.1 qmmp-${QMMP_VERSION}
+  #svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp qmmp-${QMMP_VERSION}
+  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-2.2 qmmp-${QMMP_VERSION}
   cd ..
 }
 
@@ -182,9 +182,9 @@ create_distr ()
 case $1 in
   --download)
     download_qmmp_tarball
-    #download_plugins_tarball
+    download_plugins_tarball
     #download_qmmp_svn
-    download_plugins_svn
+    #download_plugins_svn
     download_qmmp_adplug_archive
   ;;
   --install|--install-win64)
