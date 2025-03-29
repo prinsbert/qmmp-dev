@@ -25,7 +25,7 @@ QT += widgets
 
 #Version
 
-QMMP_PLUGIN_PACK_VERSION = 1.7.2
+QMMP_PLUGIN_PACK_VERSION = 1.7.3
 
 #Install paths
 
