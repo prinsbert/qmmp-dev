@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=2.2.1
-UBUNTU_CODENAMES='jammy noble oracular'
+PLUGIN_PACK_VERSION=2.2.2
+UBUNTU_CODENAMES='jammy noble oracular plucky'
 BUILD_ROOT=build-root
 
 
@@ -9,6 +9,7 @@ prepare ()
 {
     cp ../qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2 ./
     mv ./qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2 ./qmmp-plugin-pack-qt6_$PLUGIN_PACK_VERSION.orig.tar.bz2
+    cp ./qmmp-plugin-pack-qt6_$PLUGIN_PACK_VERSION.orig.tar.bz2 ./qmmp-plugin-pack_$PLUGIN_PACK_VERSION.orig.tar.bz2
 }
 
 build ()
@@ -20,8 +21,9 @@ build ()
     mkdir qmmp-plugin-pack-$PLUGIN_PACK_VERSION/debian
     cp -rv ../../debian-$1/* -t qmmp-plugin-pack-$PLUGIN_PACK_VERSION/debian/
     cp ../qmmp-plugin-pack-qt6_$PLUGIN_PACK_VERSION.orig.tar.bz2 ./
+    cp ../qmmp-plugin-pack_$PLUGIN_PACK_VERSION.orig.tar.bz2 ./
     cd qmmp-plugin-pack-$PLUGIN_PACK_VERSION
-    if [ "$1" = "jammy" ] ; then
+    if [ "$1" = "jammy" ] || [ "$1" = "plucky" ] ; then
         debuild -S -sa -d -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
     else
         debuild -S -sd -d -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
