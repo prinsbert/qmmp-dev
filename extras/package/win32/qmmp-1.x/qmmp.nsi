@@ -78,7 +78,7 @@
   !insertmacro MUI_LANGUAGE "Polish"  
   !insertmacro MUI_LANGUAGE "Russian"
   !insertmacro MUI_LANGUAGE "Ukrainian"
-  !insertmacro MUI_LANGUAGE "TradChinese.nsh"
+  !insertmacro MUI_LANGUAGE "TradChinese"
   
   
   !include "nsis-translations\English.nsh"
