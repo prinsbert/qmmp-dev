@@ -36,7 +36,7 @@ MpegSettingsDialog::MpegSettingsDialog(bool using_rusxmms, QWidget *parent)
     settings.beginGroup(u"MPEG"_s);
 
 #if defined(WITH_MAD) && defined(WITH_MPG123)
-    QString decoderName = settings.value(u"decoder"_s, u"mad"_s).toString();
+    QString decoderName = settings.value(u"decoder"_s, u"mpg123"_s).toString();
     m_ui->madRadioButton->setChecked(true);
     m_ui->mpg123RadioButton->setChecked(decoderName == "mpg123"_L1);
     m_ui->enableCrcCheckBox->setChecked(settings.value(u"enable_crc"_s, false).toBool());
