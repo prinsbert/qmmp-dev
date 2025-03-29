@@ -10,7 +10,7 @@
  ;-------------------------------
  ;Defines
  
-   !define QMMP_VERSION "1.7.3"
+   !define QMMP_VERSION "1.7.4"
    !define WIN64 "1"
    !define QMMP_DEF_PROGS_KEY "Software\Clients\Media\Qmmp"
    !define QMMP_UNINSTALL_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\Qmmp"
@@ -72,21 +72,25 @@
   !insertmacro MUI_LANGUAGE "English"
   !insertmacro MUI_LANGUAGE "Dutch"
   !insertmacro MUI_LANGUAGE "Finnish"
+  !insertmacro MUI_LANGUAGE "French"
   !insertmacro MUI_LANGUAGE "Italian"
   !insertmacro MUI_LANGUAGE "Korean"
   !insertmacro MUI_LANGUAGE "Polish"  
   !insertmacro MUI_LANGUAGE "Russian"
   !insertmacro MUI_LANGUAGE "Ukrainian"
+  !insertmacro MUI_LANGUAGE "TradChinese.nsh"
   
   
-  !include "nsis-translations\english.nsh"
-  !include "nsis-translations\dutch.nsh"
-  !include "nsis-translations\finnish.nsh"
-  !include "nsis-translations\italian.nsh"
-  !include "nsis-translations\korean.nsh"
-  !include "nsis-translations\polish.nsh"
-  !include "nsis-translations\russian.nsh"
-  !include "nsis-translations\ukrainian.nsh"
+  !include "nsis-translations\English.nsh"
+  !include "nsis-translations\Dutch.nsh"
+  !include "nsis-translations\Finnish.nsh"
+  !include "nsis-translations\French.nsh"
+  !include "nsis-translations\Italian.nsh"
+  !include "nsis-translations\Korean.nsh"
+  !include "nsis-translations\Polish.nsh"
+  !include "nsis-translations\Russian.nsh"
+  !include "nsis-translations\Ukrainian.nsh"
+  !include "nsis-translations\TradChinese.nsh"
 
 ;--------------------------------
 ;Macros
