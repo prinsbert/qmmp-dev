@@ -1,6 +1,19 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 2.2.4
+* added support for embedded cover art images in the mpris plugin
+* fixed build with ProjectM 4.0 or higher
+* fixed build with Qt 6.9
+* fixed build with TagLib 2.0
+* fixed cmake warning
+* fixed filter list update
+* fixed proxy URL
+* using case insensitive search for ReplayGain tags in the ffmpeg plugin
+  (thanks to anjanms)
+* updated Chinese Traditional translation (Edouard.J.K Li)
+* updated French translation (Nicolas PARLANT)
+
 Version 2.2.3
 * added simple WildMidi config validation
 * added icon for the 'Repeat track' action
