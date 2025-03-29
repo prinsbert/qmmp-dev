@@ -1,7 +1,7 @@
 #!/bin/sh
 
-QMMP_VERSION=1.7.3
-UBUNTU_CODENAMES='focal jammy noble oracular'
+QMMP_VERSION=1.7.4
+UBUNTU_CODENAMES='focal jammy noble oracular plucky'
 BUILD_ROOT=build-root
 
 
@@ -9,6 +9,7 @@ prepare ()
 {
     cp ../qmmp-$QMMP_VERSION.tar.bz2 ./
     mv ./qmmp-$QMMP_VERSION.tar.bz2 ./qmmp_$QMMP_VERSION.orig.tar.bz2
+    cp ./qmmp_$QMMP_VERSION.orig.tar.bz2 ./qmmp-qt5_$QMMP_VERSION.orig.tar.bz2
 }
 
 build ()
@@ -20,8 +21,9 @@ build ()
     mkdir qmmp-$QMMP_VERSION/debian
     cp -rv ../../debian-$1/* -t qmmp-$QMMP_VERSION/debian/
     cp ../qmmp_$QMMP_VERSION.orig.tar.bz2 ./
+    cp ../qmmp-qt5_$QMMP_VERSION.orig.tar.bz2 ./
     cd qmmp-$QMMP_VERSION
-    if [ "$1" = "focal" ] ; then
+    if [ "$1" = "focal" ] || [ "$1" = "plucky" ] ; then
         debuild -S -d -sa -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
     else
         debuild -S -d -sd -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4

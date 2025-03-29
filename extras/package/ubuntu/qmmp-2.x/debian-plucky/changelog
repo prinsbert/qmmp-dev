@@ -1,146 +1,76 @@
-qmmp (1.7.4-1ubuntu1~noble0) noble; urgency=medium
+qmmp (2.2.4-1ubuntu1~plucky0) plucky; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Sat, 29 Mar 2025 13:58:57 +0300
-
-qmmp (1.7.3-1ubuntu1~noble0) noble; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Thu, 02 Jan 2025 22:14:03 +0300
-
-qmmp (1.7.2-1ubuntu1~noble0) noble; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Sun, 10 Nov 2024 20:21:07 +0300
-
-qmmp (1.7.1-1ubuntu1~noble1) noble; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Mon, 14 Oct 2024 22:28:45 +0300
-
-qmmp (1.7.0-1ubuntu1~noble1) noble; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Fri, 04 Oct 2024 21:41:10 +0300
-
-qmmp (1.6.9-1ubuntu1~noble1) noble; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Mon, 12 Aug 2024 15:04:37 +0300
-
-qmmp (1.6.8-1ubuntu1~noble0) noble; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Thu, 16 May 2024 22:15:31 +0300
-
-qmmp (1.6.7-1ubuntu1~noble0) noble; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 17 Apr 2024 18:42:05 +0300
-
-qmmp (1.6.6-1ubuntu1~mantic0) mantic; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Sat, 09 Mar 2024 16:26:50 +0300
-
-qmmp (1.6.5-1ubuntu1~mantic0) mantic; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Tue, 29 Aug 2023 22:25:08 +0300
-
-qmmp (1.6.4-1ubuntu1~lunar0) lunar; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Thu, 25 May 2023 21:19:23 +0300
-
-qmmp (1.6.3-1ubuntu1~lunar0) lunar; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Thu, 30 Mar 2023 22:53:03 +0300
-
-qmmp (1.6.2-1ubuntu2~lunar0) lunar; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 14 Sep 2022 22:41:44 +0300
-
-qmmp (1.6.1-1ubuntu1~kinetic1) kinetic; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Fri, 10 Jun 2022 21:07:34 +0300
-
-qmmp (1.6.0-1ubuntu1~kinetic2) kinetic; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Tue, 17 May 2022 22:18:36 +0300
-
-qmmp (1.5.4-1ubuntu1~kinetic0) kinetic; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Mon, 28 Mar 2022 20:50:27 +0300
-
-qmmp (1.5.3-1ubuntu1~impish0) impish; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Tue, 04 Jan 2022 23:17:10 +0300
-
-qmmp (1.5.2-1ubuntu2~impish0) impish; urgency=medium
-
-  * skinned: fixed volume bar draw in the double size mode.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 10 Nov 2021 20:03:58 +0300
-
-qmmp (1.5.2-1ubuntu1~impish0) impish; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Mon, 11 Oct 2021 23:41:59 +0300
-
-qmmp (1.5.1-1ubuntu1~impish0) impish; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Tue, 13 Jul 2021 11:13:11 +0300
-
-qmmp (1.5.0-1ubuntu1~hirsute1) hirsute; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Sun, 23 May 2021 13:02:07 +0300
-
-qmmp (1.4.6-1ubuntu1~hirsute0) hirsute; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Sun, 09 May 2021 11:34:39 +0300
-
-qmmp (1.4.5-1ubuntu1~hirsute0) hirsute; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 28 Apr 2021 21:14:38 +0300
-
-qmmp (1.4.4-2~hirsute0) hirsute; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <iokotov@astralinux.ru>  Mon, 22 Feb 2021 00:18:59 +0300
+ -- Ilya Kotov <iokotov@astralinux.ru>  Sat, 29 Mar 2025 13:30:58 +0300
+
+qmmp (2.2.3-1) unstable; urgency=medium
+
+  * Acknowledging NMU
+  * New upstream version 2.2.3
+    + Dropped 0001-qmmp.appdata.xml-Use-rDNS-identifier.patch
+      (merged upstream)
+    + Refreshed 0002-Fix-taglib-2.x-compatibility.patch
+  * Updated d/copyright
+
+ -- Harald Dunkel <harri@afaics.de>  Sat, 25 Jan 2025 11:35:32 +0100
+
+qmmp (2.2.2-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Rebuild against taglib 2.0.2.
+  * debian/control: Use up-to-date taglib 2.x build-dependency package name:
+    libtag1-dev => libtag-dev.
+  * debian/patches/0002-Fix-taglib-2.x-compatibility.patch:
+    Add patch to fix taglib 2.x compatibility.
+
+ -- Boyuan Yang <byang@debian.org>  Sun, 12 Jan 2025 21:10:58 -0500
+
+qmmp (2.2.2-1) unstable; urgency=medium
+
+  * New upstream version 2.2.2
+    + d/control: Updated dependencies for Qmmp 2 (Qt 6) [ Harald Dunkel ]
+    + Reverted to qmmp instead of qmmp-1 [ Matteo Cypriani ]
+    + Updated manpage qmmp.1 [ Matteo Cypriani ]
+
+  [ Harald Dunkel ]
+  * Bump Standards-Version to 4.7.0 (no changes needed)
+
+  [ Matteo Cypriani ]
+  * d/control: Added Harald Dunkel as a co-maintainer
+  * d/control: Dropped build depends on obsolete pkg-config
+  * d/control: Recommend freepats (Closes: #1068028)
+  * d/watch: Updated for new upstream hierarchy
+  * Updated d/copyright
+  * Added "wtH" lintian override
+  * d/rules: Simplified hardening flags
+  * Added qmmp.appdata.xml patch to use rDNS identifier
+
+ -- Matteo Cypriani <mcy@lm7.fr>  Sun, 24 Nov 2024 22:47:44 +0100
+
+qmmp (1.6.2-1) unstable; urgency=medium
+
+  * New upstream version (Closes: #1009894).
+    + Updated d/copyright.
+    + d/control: updated package description.
+    + d/control: updated dependencies.
+    + d/rules: updated build options to match added/dropped dependencies.
+  * New upstream version renames qmmp to qmmp-1.
+    + d/rules: fixed "qmmp-1" path. [ Harald Dunkel ]
+    + Renamed manpage to qmmp-1.1.
+    + Added d/qmmp.links to provide /usr/bin/qmmp and
+      /usr/share/man/man1/qmmp.1.gz symlinks.
+  * Bump Standards-Version to 4.6.1 (no changes needed).
+  * d/upstream/metadata: dropped Donation (no donation page on upstream's
+    website).
+
+ -- Matteo Cypriani <mcy@lm7.fr>  Wed, 23 Nov 2022 21:30:17 +0100
+
+qmmp (1.4.4-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Matteo Cypriani <mcy@lm7.fr>  Mon, 22 Feb 2021 21:02:09 +0100
 
 qmmp (1.4.3-2) unstable; urgency=medium
 
