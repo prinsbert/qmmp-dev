@@ -103,14 +103,13 @@ bool DecoderMpegFactory::canDecode(QIODevice *input) const
     if(dataSize <= 0)
         return false;
 
-    QString decoderName;
 #if defined(WITH_MAD) && defined(WITH_MPG123)
     QSettings settings;
-    decoderName = settings.value(u"MPEG/decoder"_s, u"mad"_s).toString();
+    QString decoderName = settings.value(u"MPEG/decoder"_s, u"mad"_s).toString();
 #elif defined(WITH_MAD)
-    decoderName = "mad";
+    QString decoderName = u"mad"_s;
 #elif defined(WITH_MPG123)
-    decoderName = "mpg123";
+    QString decoderName = u"mpg123"_s;
 #endif
 
 #ifdef WITH_MAD
