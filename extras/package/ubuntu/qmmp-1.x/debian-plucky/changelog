@@ -1,4 +1,4 @@
-qmmp-qt5 (1.7.4-1ubuntu1~plucky1) plucky; urgency=medium
+qmmp-qt5 (1.7.4-1ubuntu1~plucky2) plucky; urgency=medium
 
   * Fixed pkg-config file.
 
