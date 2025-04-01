@@ -1,0 +1,13 @@
+Index: qmmp-1.7.4/src/qmmp/qmmp.pc.in
+===================================================================
+--- qmmp-1.7.4.orig/src/qmmp/qmmp.pc.in
++++ qmmp-1.7.4/src/qmmp/qmmp.pc.in
+@@ -2,7 +2,7 @@ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=@CMAKE_INSTALL_PREFIX@
+ libdir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_LIBDIR@
+ includedir=@QMMP_INCLUDE_DIR@
+-plugindir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_LIBDIR@/qmmp-@QMMP_VERSION_MAJOR@.@QMMP_VERSION_MINOR@
++plugindir=@CMAKE_INSTALL_PREFIX@/@PLUGIN_DIR@
+ 
+ Name: qmmp@APP_NAME_SUFFIX@
+ Description: qmmp core library

@@ -1,3 +1,9 @@
+qmmp-qt6 (2.2.4-1ubuntu1~oracular1) oracular; urgency=medium
+
+  * Fixed pkg-config file.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Tue, 01 Apr 2025 20:12:05 +0300
+
 qmmp-qt6 (2.2.4-1ubuntu1~oracular0) oracular; urgency=medium
 
   * New upstream release.
