@@ -1,8 +1,13 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 2.2.5
+* fixed build without mpg123 or libmad
+* fixed plugin path in the pkg-config file
+
 Version 2.2.4
 * added support for embedded cover art images in the mpris plugin
+* added .ogg extension for more plugins
 * fixed build with ProjectM 4.0 or higher
 * fixed build with Qt 6.9
 * fixed build with TagLib 2.0
