@@ -8,6 +8,7 @@ Version 0.12.21
 * using case insensitive search for ReplayGain tags in the ffmpeg plugin
   (thanks to anjanms)
 * fixed plugin path in the pkg-config file
+* fixed "device not open" warning on first startup
 
 Version 0.12.20
 * fixed displaying bitrate in the wavpack plugin
