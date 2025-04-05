@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2025 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -146,6 +146,65 @@ const QPixmap SkinReader::getPreview(const QString &skinPath)
     return QPixmap(m_previewMap.value(skinPath));
 }
 
+#if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
+void SkinReader::untar(const QString &from, const QString &to, bool preview)
+{
+    QProcess process1;
+    QProcess process2;
+
+    process1.setStandardOutputProcess(&process2);
+    process1.start("7za", QStringList() << "e" << "-so" << from);
+    QStringList args;
+    args << "e" << "-si" << "-ttar" << "-y" << "-o" + to;
+
+    if(preview)
+        args << "main.???" << "*/main.???";
+
+    process2.start("7za", args);
+
+    process1.waitForFinished();
+    process2.waitForFinished();
+
+    if(preview)
+    {
+        QDir dir(to);
+        dir.setFilter(QDir::Files | QDir::Hidden);
+        const QFileInfoList fileList = dir.entryInfoList();
+        foreach(QFileInfo thumbInfo, fileList)
+        {
+            if(thumbInfo.fileName().startsWith("main.", Qt::CaseInsensitive))
+            {
+                dir.rename(thumbInfo.fileName(), from.section(QLatin1Char('/'), -1) + QLatin1Char('.') + thumbInfo.suffix());
+            }
+        }
+    }
+}
+
+void SkinReader::unzip(const QString &from, const QString &to, bool preview)
+{
+    if(preview)
+    {
+        QStringList args = QStringList() << "e" << from << "-y" << "-o" + to << "main.???" << "*/main.???";
+        QProcess::execute("7za", args);
+        QDir dir(to);
+        dir.setFilter(QDir::Files | QDir::Hidden);
+        const QFileInfoList fileList = dir.entryInfoList();
+        foreach(QFileInfo thumbInfo, fileList)
+        {
+            if(thumbInfo.fileName().startsWith("main.", Qt::CaseInsensitive))
+            {
+                dir.rename(thumbInfo.fileName(), from.section(QLatin1Char('/'), -1) + QLatin1Char('.') + thumbInfo.suffix());
+            }
+        }
+    }
+    else
+    {
+        QStringList args = QStringList() << "e" << from << "-y" << "-o" + to;
+        QProcess::execute("7za", args);
+    }
+}
+
+#else
 void SkinReader::untar(const QString &from, const QString &to, bool preview)
 {
     QByteArray array;
@@ -209,3 +268,4 @@ void SkinReader::unzip(const QString &from, const QString &to, bool preview)
         QProcess::execute("unzip", args);
     }
 }
+#endif
