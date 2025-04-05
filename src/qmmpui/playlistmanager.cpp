@@ -262,55 +262,57 @@ void PlayListManager::readPlayLists()
     int s = 0, current = 0, pl = 0;
     QList <PlayListTrack *> tracks;
     QFile file(Qmmp::configDir() + "/playlist.txt");
-    file.open(QIODevice::ReadOnly);
-    QByteArray array = file.readAll();
-    file.close();
-    QBuffer buffer(&array);
-    buffer.open(QIODevice::ReadOnly);
-
-    while (!buffer.atEnd())
+    if(file.open(QIODevice::ReadOnly))
     {
-        line = QString::fromUtf8(buffer.readLine().constData()).trimmed();
-        if ((s = line.indexOf("=")) < 0)
-            continue;
+        QByteArray array = file.readAll();
+        file.close();
+        QBuffer buffer(&array);
+        buffer.open(QIODevice::ReadOnly);
 
-        key = line.left(s);
-        value = line.right(line.size() - s - 1);
-
-        if(key == "current_playlist")
-            pl = value.toInt();
-        else if(key == "playlist")
+        while (!buffer.atEnd())
         {
-            if(!m_models.isEmpty() && !tracks.isEmpty())
+            line = QString::fromUtf8(buffer.readLine().constData()).trimmed();
+            if ((s = line.indexOf("=")) < 0)
+                continue;
+
+            key = line.left(s);
+            value = line.right(line.size() - s - 1);
+
+            if(key == "current_playlist")
+                pl = value.toInt();
+            else if(key == "playlist")
             {
-                m_models.last()->add(tracks);
-                m_models.last()->setCurrent(tracks.at(qBound(0, current, tracks.count()-1)));
+                if(!m_models.isEmpty() && !tracks.isEmpty())
+                {
+                    m_models.last()->add(tracks);
+                    m_models.last()->setCurrent(tracks.at(qBound(0, current, tracks.count()-1)));
+                }
+                tracks.clear();
+                current = 0;
+                m_models << new PlayListModel(value, this);
             }
-            tracks.clear();
-            current = 0;
-            m_models << new PlayListModel(value, this);
+            else if (key == "current")
+            {
+                current = value.toInt();
+            }
+            else if (key == "file")
+            {
+                tracks << new PlayListTrack();
+                tracks.last()->setPath(value);
+            }
+            else if (tracks.isEmpty())
+                continue;
+            else if (key == "duration")
+                tracks.last()->setDuration(value.toInt());
+            else if (key == "length")
+                tracks.last()->setDuration(value.toInt() * 1000);
+            else if((metaKey = m_metaKeys.value(key, Qmmp::UNKNOWN)) != Qmmp::UNKNOWN)
+                tracks.last()->setValue(metaKey, value);
+            else if((propKey = m_propKeys.value(key, Qmmp::UNKNOWN_PROPERTY)) != Qmmp::UNKNOWN_PROPERTY)
+                tracks.last()->setValue(propKey, value);
         }
-        else if (key == "current")
-        {
-            current = value.toInt();
-        }
-        else if (key == "file")
-        {
-            tracks << new PlayListTrack();
-            tracks.last()->setPath(value);
-        }
-        else if (tracks.isEmpty())
-            continue;
-        else if (key == "duration")
-            tracks.last()->setDuration(value.toInt());
-        else if (key == "length")
-            tracks.last()->setDuration(value.toInt() * 1000);
-        else if((metaKey = m_metaKeys.value(key, Qmmp::UNKNOWN)) != Qmmp::UNKNOWN)
-            tracks.last()->setValue(metaKey, value);
-        else if((propKey = m_propKeys.value(key, Qmmp::UNKNOWN_PROPERTY)) != Qmmp::UNKNOWN_PROPERTY)
-            tracks.last()->setValue(propKey, value);
+        buffer.close();
     }
-    buffer.close();
     if(m_models.isEmpty())
     {
         m_models << new PlayListModel(tr("Playlist"),this);
