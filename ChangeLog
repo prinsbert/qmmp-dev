@@ -4,6 +4,7 @@ Changelog of Qt-based Multimedia Player
 Version 0.12.21
 * added simple WildMidi config validation
 * added icon for the 'Repeat track' action
+* using 7-Zip archiver for skin unpacking under Windows
 * fixed dts/ac3 support in the ffmpeg plugin
 * using case insensitive search for ReplayGain tags in the ffmpeg plugin
   (thanks to anjanms)
