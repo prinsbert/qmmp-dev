@@ -4,6 +4,7 @@ Changelog of Qt-based Multimedia Player
 Version 2.2.5
 * fixed build without mpg123 or libmad
 * fixed plugin path in the pkg-config file
+* fixed "device not open" warning on first startup
 
 Version 2.2.4
 * added support for embedded cover art images in the mpris plugin
