@@ -11,6 +11,7 @@ LEGEND
 [*] curl-8.12.1
 [*] ffmpeg-7.1.1
 [*] libxmp-4.6.2
+[*] libgme-0.6.4
 [!] added missing icons
 
 2.2.3

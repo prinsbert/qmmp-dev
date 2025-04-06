@@ -45,7 +45,7 @@ List of the third-party libraries.
   libcddb             1.3.2      https://libcddb.sourceforge.net/
   ffmpeg              7.1.1      https://ffmpeg.org/
   libxmp              4.6.2      https://github.com/libxmp/libxmp
-  game-music-emu      0.6.3      https://bitbucket.org/mpyne/game-music-emu
+  libgme              0.6.4      https://github.com/libgme/game-music-emu
   musepack            r475       https://www.musepack.net/
   glew                2.2.0      https://glew.sourceforge.net/
   projectm            2.1.0      https://projectm.sourceforge.net/
