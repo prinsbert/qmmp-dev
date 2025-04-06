@@ -4,6 +4,16 @@ LEGEND
 [-] Bug fix
 [!] Enhancement
 
+0.12.21
+[*] qmmp-0.12.21
+[*] qmmp-plugin-pack-0.12.4
+[*] curl-8.12.1
+[*] ffmpeg-3.4.14
+[*] game-music-emu-0.6.4
+[*] mpg123-1.32.10
+[+] 7z-24.08
+[!] added missing icons
+
 0.12.20
 [*] qmmp-0.12.20
 [*] curl-8.10.1

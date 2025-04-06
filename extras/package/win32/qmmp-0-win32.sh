@@ -1,7 +1,7 @@
 #!/bin/sh
 
-QMMP_VERSION=0.12.20
-QMMP_PLUGIN_PACK_VERSION=0.12.3
+QMMP_VERSION=0.12.21
+QMMP_PLUGIN_PACK_VERSION=0.12.4
 
 export DEV_PATH=/c/devel
 export MINGW32_PATH=${DEV_PATH}/mingw32
@@ -154,7 +154,7 @@ case $1 in
     build
     create_distr
     find qmmp-distr -type f -name *.dll   | xargs strip -v
-    find qmmp-distr -type f -name *.exe   | xargs strip -v 
+    find qmmp-distr -type f -name *.exe -not -name 7za.exe | xargs strip -v 
   ;;
   --clean)
     cd tmp
