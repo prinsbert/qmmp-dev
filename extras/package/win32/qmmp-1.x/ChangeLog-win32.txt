@@ -4,6 +4,10 @@ LEGEND
 [-] Bug fix
 [!] Enhancement
 
+1.7.4-1
+[-] fixed FLAC support
+[!] improved installer translation
+
 1.7.4
 [*] qmmp-1.7.4
 [*] qmmp-plugin-pack-1.7.2
