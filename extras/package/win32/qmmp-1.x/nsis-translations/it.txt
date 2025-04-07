@@ -10,3 +10,4 @@ Rilevamento automatico codifica ID3v1/ID3v2 (libRCD)
 Supporto formati AdLib (AdPlug)
 Scorciatoia del menu di avvio
 È richiesto un sistema operativo Windows a 64 bit per installare questo programma.
+Accoda in Qmmp

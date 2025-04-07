@@ -10,3 +10,4 @@ LangString text_enable_librcd          ${LANG_Polish} "Automatycznie wykrywaj ko
 LangString text_enable_adlib           ${LANG_Polish} "Obsługuj formaty AdLib (AdPlug)"
 LangString text_startmenu_shortcuts    ${LANG_Polish} "Skróty w menu Start"
 LangString text_win64_warning          ${LANG_Polish} "Do zainstalowania tego oprogramowania wymagany jest 64-bitowy system operacyjny Windows."
+LangString text_enqueue                ${LANG_Polish} "Kolejkuj w Qmmp"

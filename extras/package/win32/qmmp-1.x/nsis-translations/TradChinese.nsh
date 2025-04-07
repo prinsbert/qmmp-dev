@@ -10,3 +10,4 @@ LangString text_enable_librcd          ${LANG_TradChinese} "自動 ID3v1/ID3v2 �
 LangString text_enable_adlib           ${LANG_TradChinese} "AdLib 格式支援 (AdPlug)"
 LangString text_startmenu_shortcuts    ${LANG_TradChinese} "開始功能表快捷方式"
 LangString text_win64_warning          ${LANG_TradChinese} "安裝此軟體需要 64 位元 Windows 作業系統。"
+LangString text_enqueue                ${LANG_TradChinese} "添加到Qmmp的隊列"

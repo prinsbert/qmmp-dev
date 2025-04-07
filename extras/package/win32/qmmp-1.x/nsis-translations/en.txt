@@ -10,3 +10,4 @@ Automatic ID3v1/ID3v2 charset detection (libRCD)
 AdLib formats support (AdPlug)
 Start Menu Shortcuts
 A 64-bit Windows operating system is required to install this software.
+Enqueue in Qmmp

@@ -10,3 +10,4 @@ LangString text_enable_librcd          ${LANG_Russian} "Автоматическ
 LangString text_enable_adlib           ${LANG_Russian} "Поддержка форматов AdLib (AdPlug)"
 LangString text_startmenu_shortcuts    ${LANG_Russian} "Создавать ярлыки в стартовом меню"
 LangString text_win64_warning          ${LANG_Russian} "Для установки данной программы требуется 64-битная версия Windows."
+LangString text_enqueue                ${LANG_Russian} "Добавить в очередь Qmmp"

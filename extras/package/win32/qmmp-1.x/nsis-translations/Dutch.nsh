@@ -10,3 +10,4 @@ LangString text_enable_librcd          ${LANG_Dutch} "Automatische ID3v1-/ID3v2-
 LangString text_enable_adlib           ${LANG_Dutch} "AdLib-formaatondersteuning (AdPlug)"
 LangString text_startmenu_shortcuts    ${LANG_Dutch} "Startmenusneltoetsen"
 LangString text_win64_warning          ${LANG_Dutch} "Deze software vereist een 64-bitsversie van Windows."
+LangString text_enqueue                ${LANG_Dutch} "Toevoegen aan Qmmp-wachtrij"

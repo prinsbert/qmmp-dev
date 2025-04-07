@@ -10,3 +10,4 @@ Détection des jeux de caractères pour ID3v1/ID3v2 (libRCD)
 AdLib formats support (AdPlug)
 Menu raccourcis
 Un système d'exploitation Windows 64-bits est requis pour installer le logiciel.
+Mettre en queue dans Qmmp

@@ -10,3 +10,4 @@ LangString text_enable_librcd          ${LANG_Ukrainian} "Automatic ID3v1/ID3v2 
 LangString text_enable_adlib           ${LANG_Ukrainian} "AdLib formats support (AdPlug)"
 LangString text_startmenu_shortcuts    ${LANG_Ukrainian} "Start Menu Shortcuts"
 LangString text_win64_warning          ${LANG_Ukrainian} "A 64-bit Windows operating system is required to install this software."
+LangString text_enqueue                ${LANG_Ukrainian} "Enqueue in Qmmp"

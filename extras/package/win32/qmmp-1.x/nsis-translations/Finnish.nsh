@@ -10,3 +10,4 @@ LangString text_enable_librcd          ${LANG_Finnish} "Automaattinen ID3v1/ID3v
 LangString text_enable_adlib           ${LANG_Finnish} "AdLib formaattien tuki (AdPlug)"
 LangString text_startmenu_shortcuts    ${LANG_Finnish} "Käynnistä-valikon pikakuvakkeet"
 LangString text_win64_warning          ${LANG_Finnish} "Ohjelmiston asentamiseen tarvitaan 64-bit Windows-käyttöjärjestelmä."
+LangString text_enqueue                ${LANG_Finnish} "Aseta jonoon Qmmp:ssä"

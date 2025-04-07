@@ -10,3 +10,4 @@ Automatycznie wykrywaj kodowanie ID3v1/ID3v2 (libRCD)
 Obsługuj formaty AdLib (AdPlug)
 Skróty w menu Start
 Do zainstalowania tego oprogramowania wymagany jest 64-bitowy system operacyjny Windows.
+Kolejkuj w Qmmp

@@ -10,3 +10,4 @@ LangString text_enable_librcd          ${LANG_Italian} "Rilevamento automatico c
 LangString text_enable_adlib           ${LANG_Italian} "Supporto formati AdLib (AdPlug)"
 LangString text_startmenu_shortcuts    ${LANG_Italian} "Scorciatoia del menu di avvio"
 LangString text_win64_warning          ${LANG_Italian} "È richiesto un sistema operativo Windows a 64 bit per installare questo programma."
+LangString text_enqueue                ${LANG_Italian} "Accoda in Qmmp"

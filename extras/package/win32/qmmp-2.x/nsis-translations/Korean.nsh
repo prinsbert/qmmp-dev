@@ -10,3 +10,4 @@ LangString text_enable_librcd          ${LANG_Korean} "자동 ID3v1/ID3v2 문자
 LangString text_enable_adlib           ${LANG_Korean} "AdLib 포맷 지원 (AdPlug)"
 LangString text_startmenu_shortcuts    ${LANG_Korean} "시작 메뉴 단축키"
 LangString text_win64_warning          ${LANG_Korean} "이 소프트웨어를 설치하려면 64비트 Windows 운영 체제가 필요합니다."
+LangString text_enqueue                ${LANG_Korean} "Qmmp의 대기열에 넣기"
