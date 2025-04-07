@@ -1,6 +1,9 @@
 Changelog of Qmmp Plugin Pack
 --------------
 
+Version 0.12.4
+* fixed documentation
+
 Version 0.12.3
 * fixed build with FFmpeg 5.1
 * enabled libxmp plugin under Windows
