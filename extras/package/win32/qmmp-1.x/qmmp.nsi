@@ -201,7 +201,7 @@ FunctionEnd
 
 Function RegisterDefaultPrograms
   WriteRegStr HKCR "QmmpFileAudio\DefaultIcon" "" '"$INSTDIR\qmmp.exe",1'
-  WriteRegStr HKCR "QmmpFileAudio\shell\enqueue" "" "Enqueue in Qmmp"
+  WriteRegStr HKCR "QmmpFileAudio\shell\enqueue" "" $(text_enqueue)
   WriteRegStr HKCR "QmmpFileAudio\shell\enqueue\command" "" '"$INSTDIR\qmmp.exe" --enqueue "%1"'
   WriteRegStr HKCR "QmmpFileAudio\shell\open" "FriendlyAppName" $(text_app_full_name)
   WriteRegStr HKCR "QmmpFileAudio\shell\open\command" "" '"$INSTDIR\qmmp.exe" "%1"'
