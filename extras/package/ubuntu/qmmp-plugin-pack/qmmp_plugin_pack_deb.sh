@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=0.12.3
+PLUGIN_PACK_VERSION=0.12.4
 UBUNTU_CODENAMES='trusty xenial bionic'
 BUILD_ROOT=build-root
 
