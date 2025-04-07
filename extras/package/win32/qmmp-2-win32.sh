@@ -150,7 +150,7 @@ create_distr ()
     cp -v ${MINGW32_PATH}/opt/bin/${LIB_NAME} ./
   done
   #third party libs   
-  for LIB_NAME in avcodec-*.dll avformat-*.dll avutil-*.dll glew32.dll libFLAC-12.dll libcddb-2.dll libcdio-19.dll libcdio_cdda-2.dll libcdio_paranoia-2.dll
+  for LIB_NAME in avcodec-*.dll avformat-*.dll avutil-*.dll glew32.dll libFLAC-*.dll libcddb-2.dll libcdio-19.dll libcdio_cdda-2.dll libcdio_paranoia-2.dll
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
