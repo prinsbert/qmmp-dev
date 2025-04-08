@@ -83,7 +83,7 @@ void SkinnedSettings::on_skinInstallButton_clicked()
     for(const QString &path : std::as_const(files))
     {
         QFile file(path);
-        file.copy(Qmmp::userDataPath() + u"/skins"_s + QFileInfo(path).fileName());
+        file.copy(Qmmp::configDir() + u"/skins/"_s + QFileInfo(path).fileName());
     }
     loadSkins();
 }
