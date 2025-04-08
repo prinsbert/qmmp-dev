@@ -54,9 +54,9 @@ Skin::Skin(QObject *parent) : QObject (parent)
     ACTION(SkinnedActionManager::WM_DOUBLE_SIZE)->setChecked(m_double_size);
     ACTION(SkinnedActionManager::WM_ANTIALIASING)->setChecked(m_antialiasing);
     setSkin(QDir::cleanPath(path), false);
-    /* skin directory */
-    QDir skinDir(Qmmp::configDir());
-    skinDir.mkdir(u"skins"_s);
+    /* skin directories */
+    QDir::root().mkpath(Qmmp::userDataPath() + u"/skins"_s);
+    QDir::root().mkpath(Qmmp::configDir() + u"/skins"_s);
 }
 
 Skin::~Skin()
