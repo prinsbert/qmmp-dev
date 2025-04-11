@@ -68,7 +68,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060200 -DQT_DEPRECATED_WARNINGS -DQT_MESSAGELOGCONTEXT)
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050D00 -DQT_DEPRECATED_WARNINGS -DQT_MESSAGELOGCONTEXT)
 add_compile_options(-Wall -Wextra)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src) #libqmmp & libqmmpui
 
@@ -97,7 +97,7 @@ set(USE_DIR_ASSOC TRUE CACHE BOOL "enable/disable inode/directory mime type asso
 set(APP_NAME_SUFFIX "-1")
 
 if(Qt5X11Extras_FOUND)
-    pkg_search_module(X11 x11 IMPORTED_TARGET)    
+    pkg_search_module(X11 x11 IMPORTED_TARGET)
 endif()
 
 if(X11_FOUND)
