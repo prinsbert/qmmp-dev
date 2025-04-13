@@ -23,6 +23,7 @@
 
 #include <QWidget>
 #include <QHash>
+#include <QSet>
 #include <qmmp/audioparameters.h>
 #include <qmmp/qmmp.h>
 
@@ -38,15 +39,8 @@ public:
     explicit QSUiStatusBar(QWidget *parent = nullptr);
 
     void updatePlayListStatus();
+    void readSettings();
 
-private slots:
-    void onStateChanged(Qmmp::State state);
-    void onBufferingProgress(int percent);
-    void onAudioParametersChanged(const AudioParameters &ap);
-    void onBitrateChanged(int bitrate);
-    void onElapsedChanged(qint64 elapsed);
-
-private:
     enum LabelType
     {
         StatusLabel = 0,
@@ -58,6 +52,19 @@ private:
         BitrateLabel,
         TimeLabel
     };
+
+    static QVariantList defaultLabels();
+
+private slots:
+    void onStateChanged(Qmmp::State state);
+    void onBufferingProgress(int percent);
+    void onAudioParametersChanged(const AudioParameters &ap);
+    void onBitrateChanged(int bitrate);
+    void onElapsedChanged(qint64 elapsed);
+
+private:
+    void setVisibleLabels(QSet<LabelType> &visibleLabels);
+    void setText(LabelType type, const QString &text);
 
     QHash<LabelType, QLabel*> m_labels;
     QHash<LabelType, QFrame*> m_separators;
