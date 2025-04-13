@@ -603,6 +603,12 @@
              </item>
              <item>
               <widget class="QSpinBox" name="coverDepthSpinBox">
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>0</height>
+                </size>
+               </property>
                <property name="maximum">
                 <number>6</number>
                </property>
