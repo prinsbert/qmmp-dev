@@ -669,7 +669,7 @@
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
         <source>Restore Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>По умолчанию</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>

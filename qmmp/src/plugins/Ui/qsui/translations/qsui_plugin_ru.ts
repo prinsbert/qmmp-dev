@@ -1074,7 +1074,7 @@
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="63"/>
         <source>Restore Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>По умолчанию</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="56"/>
@@ -1345,7 +1345,7 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="545"/>
         <source>Edit Statusbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить строку состояния</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="547"/>
@@ -1691,72 +1691,72 @@
     <message>
         <location filename="../forms/qsuistatusbareditor.ui" line="14"/>
         <source>StatusBar Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Редактор строки состояния</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="102"/>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Состояние</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="103"/>
         <source>Sample Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Разрядность</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="104"/>
         <source>Number of Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Число каналов</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="105"/>
         <source>Sample Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Частота дискретизации</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="106"/>
         <source>Track Count</source>
-        <translation type="unfinished"></translation>
+        <translation>Число треков</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="107"/>
         <source>Total Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Общее время</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="109"/>
         <source>Elapsed Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Текущее время</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="110"/>
         <source>Remaining Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Оставшееся время</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="111"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Длительность</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="112"/>
         <source>Elapsed Time + Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Текущее время + длительность</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="113"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Формат</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="114"/>
         <source>Decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>Декодер</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="108"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Битовая частота</translation>
     </message>
 </context>
 <context>
@@ -1764,53 +1764,53 @@
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="14"/>
         <source>ToolBar Editor</source>
-        <translation type="unfinished">Редактор панели инструментов</translation>
+        <translation>Редактор панели инструментов</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="34"/>
         <source>Toolbar:</source>
-        <translation type="unfinished">Панель:</translation>
+        <translation>Панель:</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="57"/>
         <source>&amp;Create</source>
-        <translation type="unfinished">&amp;Создать</translation>
+        <translation>&amp;Создать</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="73"/>
         <source>Re&amp;name</source>
-        <translation type="unfinished">&amp;Переименовать</translation>
+        <translation>&amp;Переименовать</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="89"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished">&amp;Удалить</translation>
+        <translation>&amp;Удалить</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="104"/>
         <location filename="../qsuitoolbareditor.cpp" line="197"/>
         <source>Separator</source>
-        <translation type="unfinished">Разделитель</translation>
+        <translation>Разделитель</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="247"/>
         <source>Toolbar</source>
-        <translation type="unfinished">Панель инструментов</translation>
+        <translation>Панель инструментов</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="249"/>
         <source>Toolbar %1</source>
-        <translation type="unfinished">Панель %1</translation>
+        <translation>Панель %1</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="263"/>
         <source>Rename Toolbar</source>
-        <translation type="unfinished">Переименовать панель</translation>
+        <translation>Переименовать панель</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="263"/>
         <source>Toolbar name:</source>
-        <translation type="unfinished">Имя панель:</translation>
+        <translation>Имя панель:</translation>
     </message>
 </context>
 <context>
