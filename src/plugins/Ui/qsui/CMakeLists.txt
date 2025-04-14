@@ -28,14 +28,14 @@ set(libqsui_SRCS
     qsuivisualization.cpp
     qsuiwaveformseekbar.cpp
     qsuishortcutitem.cpp
-    toolbareditor.cpp
+    qsuitoolbareditor.cpp
     volumeslider.cpp
     fft.c
     forms/qsuimainwindow.ui
     forms/qsuipopupsettings.ui
     forms/qsuisettings.ui
     forms/aboutqsuidialog.ui
-    forms/toolbareditor.ui
+    forms/qsuitoolbareditor.ui
     forms/qsuihotkeyeditor.ui
     translations/translations.qrc
     txt/qsui_txt.qrc
