@@ -49,8 +49,8 @@ void QSUiStatusBar::updatePlayListStatus()
 {
     int tracks = m_pl_manager->currentPlayList()->trackCount();
     qint64 duration = m_pl_manager->currentPlayList()->totalDuration();
-    m_labels[TrackCountLabel]->setText(tr("tracks: %1").arg(tracks));
-    m_labels[TotalTimeLabel]->setText(tr("total time: %1").arg(MetaDataFormatter::formatDuration(duration, false)));
+    setText(TrackCountLabel, tr("tracks: %1").arg(tracks));
+    setText(TotalTimeLabel, tr("total time: %1").arg(MetaDataFormatter::formatDuration(duration, false)));
 }
 
 void QSUiStatusBar::readSettings()
@@ -64,28 +64,31 @@ void QSUiStatusBar::readSettings()
         delete child;
     }
 
+    m_labels.clear();
+    m_labelHash.clear();
+
     QSettings settings;
     QVariantList labels = settings.value("Simple/toolbar_labels"_L1, defaultLabels()).toList();
 
     for(const QVariant &id : std::as_const(labels))
     {
-        QLabel *label = new QLabel;
-        m_labels.insert(LabelType(id.toInt()), label);
-        layout()->addWidget(label);
+        LabelWidgets w;
+        w.type = static_cast<LabelType>(id.toInt());
+        w.label = new QLabel;
+        w.separator = new QFrame(this);
+        w.separator->setFrameStyle(QFrame::VLine | QFrame::Raised);
 
-        if(id != labels.constLast()) //do not add separator after last label
-        {
-            QFrame *sep = new QFrame(this);
-            sep->setFrameStyle(QFrame::VLine | QFrame::Raised);
-            m_separators.insert(LabelType(id.toInt()), sep);
-            hLayout->addWidget(sep);
-        }
+        hLayout->addWidget(w.label);
+        hLayout->addWidget(w.separator);
+
+        m_labels << w;
+        m_labelHash.insert(w.type, w);
+
+        if(w.type == BitrateLabel || w.type == TimeLabel)
+            w.label->setAlignment(Qt::AlignRight);
     }
 
-    m_labels[BitrateLabel]->setAlignment(Qt::AlignRight);
-    m_labels[TimeLabel]->setAlignment(Qt::AlignRight);
     hLayout->addSpacerItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Preferred));
-
     onStateChanged(m_core->state());
 }
 
@@ -109,22 +112,19 @@ void QSUiStatusBar::onStateChanged(Qmmp::State state)
 {
     if(state == Qmmp::Playing || state == Qmmp::Paused)
     {        
-        for(QLabel *label : std::as_const(m_labels))
-            label->show();
+        setVisibleLabels({ StatusLabel, SampleSizeLabel, ChannelsLabel, SampleRateLabel,
+                           TrackCountLabel, TotalTimeLabel, BitrateLabel, TimeLabel });
 
-        for(QFrame *sep : std::as_const(m_separators))
-            sep->show();
-
-        if(m_labels.contains(BitrateLabel))
+        if(m_labelHash.contains(BitrateLabel))
         {
-            m_labels[BitrateLabel]->setMinimumWidth(0);
-            m_labels[BitrateLabel]->clear();
+            m_labelHash[BitrateLabel].label->setMinimumWidth(0);
+            m_labelHash[BitrateLabel].label->clear();
         }
 
-        if(m_labels.contains(TimeLabel))
+        if(m_labelHash.contains(TimeLabel))
         {
-            m_labels[TimeLabel]->setMinimumWidth(0);
-            m_labels[TimeLabel]->clear();
+            m_labelHash[TimeLabel].label->setMinimumWidth(0);
+            m_labelHash[TimeLabel].label->clear();
         }
 
         setText(StatusLabel, QStringLiteral("<b>%1</b>").arg(state == Qmmp::Playing ? tr("Playing") : tr("Paused")));
@@ -135,70 +135,19 @@ void QSUiStatusBar::onStateChanged(Qmmp::State state)
     }
     else if(state == Qmmp::Buffering)
     {
-        for(int i = SampleRateLabel; i <= TimeLabel; ++i)
-        {
-            if(m_labels.contains(LabelType(i)))
-                m_labels[LabelType(i)]->hide();
-        }
-
-        for(QFrame *sep : std::as_const(m_separators))
-            sep->hide();
-
-        if(m_labels.contains(TimeLabel))
-        {
-            m_labels[StatusLabel]->show();
-            m_labels[StatusLabel]->setText(tr("Buffering"));
-        }
+        setVisibleLabels({ StatusLabel, SampleSizeLabel, ChannelsLabel });
+        setText(StatusLabel, tr("Buffering"));
     }
     else if(state == Qmmp::Stopped)
     {
-        for(int i = StatusLabel; i <= TimeLabel; ++i)
-        {
-            LabelType t = LabelType(i);
-            if(t == StatusLabel || t == TrackCountLabel)
-            {
-                if(m_labels.contains(t))
-                    m_labels[t]->show();
-
-                if(m_separators.contains(t))
-                    m_separators[t]->show();
-            }
-            else if(t == TotalTimeLabel)
-            {
-                if(m_labels.contains(t))
-                    m_labels[t]->show();
-
-                if(m_separators.contains(t))
-                    m_separators[t]->hide();
-            }
-            else
-            {
-                if(m_labels.contains(t))
-                    m_labels[t]->hide();
-                if(t != TimeLabel && m_separators.contains(t))
-                    m_separators[t]->hide();
-            }
-        }
-
+        setVisibleLabels({ StatusLabel, TrackCountLabel, TotalTimeLabel });
         setText(StatusLabel, QStringLiteral("<b>%1</b>").arg(tr("Stopped")));
         updatePlayListStatus();
     }
     else
     {
-        for(int i = SampleRateLabel; i <= TimeLabel; ++i)
-        {
-            if(m_labels.contains(LabelType(i)))
-                m_labels[LabelType(i)]->hide();
-        }
-
-        for(QFrame *sep : std::as_const(m_separators))
-            sep->hide();
-
-        if(m_labels.contains(StatusLabel))
-        {
-            m_labels[StatusLabel]->show();
-            m_labels[StatusLabel]->setText(QStringLiteral("<b>%1</b>").arg(tr("Error")));
-        }
+        setVisibleLabels({ StatusLabel, SampleSizeLabel, ChannelsLabel });
+        setText(StatusLabel, QStringLiteral("<b>%1</b>").arg(tr("Error")));
         updatePlayListStatus();
     }
 }
@@ -223,11 +172,11 @@ void QSUiStatusBar::onAudioParametersChanged(const AudioParameters &ap)
 
 void QSUiStatusBar::onBitrateChanged(int bitrate)
 {
-    if(!m_labels.contains(BitrateLabel))
+    if(!m_labelHash.contains(BitrateLabel))
         return;
 
     QString text = tr("%1 kbps").arg(bitrate);
-    QLabel *label = m_labels[BitrateLabel];
+    QLabel *label = m_labelHash[BitrateLabel].label;
     static const QRegularExpression numberRegExp(u"\\d"_s);
     if(text.size() > label->text().size()) //label width tuning to avoid text jumping
     {
@@ -241,12 +190,12 @@ void QSUiStatusBar::onBitrateChanged(int bitrate)
 
 void QSUiStatusBar::onElapsedChanged(qint64 elapsed)
 {
-    if(!m_labels.contains(TimeLabel))
+    if(!m_labelHash.contains(TimeLabel))
         return;
 
     QString elapsedText = MetaDataFormatter::formatDuration(elapsed, false);
     QString plDurationText;
-    QLabel *label = m_labels[TimeLabel];
+    QLabel *label = m_labelHash[TimeLabel].label;
     static const QRegularExpression numberRegExp(u"\\d"_s);
     if(m_core->duration() > 1000)
     {
@@ -263,23 +212,25 @@ void QSUiStatusBar::onElapsedChanged(qint64 elapsed)
     label->setText(elapsedText + plDurationText);
 }
 
-void QSUiStatusBar::setVisibleLabels(QSet<LabelType> &visibleLabels)
+void QSUiStatusBar::setVisibleLabels(const QSet<LabelType> &visibleLabels)
 {
-    for(int i = StatusLabel; i <= TimeLabel; ++i)
+    QFrame *lastVisibleSeparator = nullptr;
+
+    for(const LabelWidgets &w : std::as_const(m_labels))
     {
-        LabelType type = static_cast<LabelType>(i);
-        bool visible = visibleLabels.contains(type);
-
-        if(m_labels.contains(type))
-            m_labels[type]->setVisible(visible);
-
-        if(m_separators.contains(type))
-            m_separators[type]->setVisible(visible);
+        bool visible = visibleLabels.contains(w.type);
+        w.label->setVisible(visible);
+        w.separator->setVisible(visible);
+        if(visible)
+            lastVisibleSeparator = w.separator;
     }
+
+    if(lastVisibleSeparator)
+        lastVisibleSeparator->hide(); //hide last visible separator
 }
 
 void QSUiStatusBar::setText(LabelType type, const QString &text)
 {
-    if(m_labels.contains(type))
-        m_labels[type]->setText(text);
+    if(m_labelHash.contains(type))
+        m_labelHash[type].label->setText(text);
 }
