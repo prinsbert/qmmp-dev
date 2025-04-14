@@ -114,15 +114,21 @@ void QSUiStatusBarEditor::populateLabelList(bool reset)
         { QSUiStatusBar::DecoderLabel, tr("Decoder") },
     };
 
+    for(const QVariant &id : std::as_const(labels))
+    {
+        QListWidgetItem *item = new QListWidgetItem();
+        item->setData(Qt::UserRole, id);
+        item->setText(names.value(id.toInt()));
+        m_ui->enabledLabelsListWidget->addItem(item);
+    }
+
     for(auto it = names.cbegin(); it != names.cend(); ++it)
     {
         QListWidgetItem *item = new QListWidgetItem();
         item->setData(Qt::UserRole, it.key());
         item->setText(it.value());
 
-        if(labels.contains(it.key()))
-            m_ui->enabledLabelsListWidget->addItem(item);
-        else
+        if(!labels.contains(it.key()))
             m_ui->labelsListWidget->addItem(item);
     }
 }
