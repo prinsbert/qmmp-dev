@@ -302,7 +302,7 @@
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="94"/>
-        <location filename="../forms/configdialog.ui" line="996"/>
+        <location filename="../forms/configdialog.ui" line="1002"/>
         <source>Audio</source>
         <translation>聲訊</translation>
     </message>
@@ -334,7 +334,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="242"/>
         <location filename="../forms/configdialog.ui" line="267"/>
-        <location filename="../forms/configdialog.ui" line="710"/>
+        <location filename="../forms/configdialog.ui" line="716"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -482,128 +482,128 @@
         <translation>遞迴搜尋深度：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="632"/>
+        <location filename="../forms/configdialog.ui" line="638"/>
         <source>URL Dialog</source>
         <translation>網址對話框</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="638"/>
+        <location filename="../forms/configdialog.ui" line="644"/>
         <source>Auto-paste URL from clipboard</source>
         <translation>自動貼上剪貼簿中的 URL</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="648"/>
+        <location filename="../forms/configdialog.ui" line="654"/>
         <source>CUE Editor</source>
         <translation>CUE 編輯器</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="654"/>
+        <location filename="../forms/configdialog.ui" line="660"/>
         <source>Use system font</source>
         <translation>使用系統字型</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="675"/>
+        <location filename="../forms/configdialog.ui" line="681"/>
         <source>Font:</source>
         <translation>字體：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="700"/>
+        <location filename="../forms/configdialog.ui" line="706"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="739"/>
+        <location filename="../forms/configdialog.ui" line="745"/>
         <source>Proxy</source>
         <translation>代理</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="751"/>
+        <location filename="../forms/configdialog.ui" line="757"/>
         <source>Enable proxy usage</source>
         <translation>啟用代理</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="758"/>
+        <location filename="../forms/configdialog.ui" line="764"/>
         <source>Proxy type:</source>
         <translation>代理類型：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="768"/>
+        <location filename="../forms/configdialog.ui" line="774"/>
         <source>Proxy host name:</source>
         <translation>主機名：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="785"/>
+        <location filename="../forms/configdialog.ui" line="791"/>
         <source>Proxy port:</source>
         <translation>通訊埠：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="802"/>
+        <location filename="../forms/configdialog.ui" line="808"/>
         <source>Use authentication with proxy</source>
         <translation>需要身份驗證</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="809"/>
+        <location filename="../forms/configdialog.ui" line="815"/>
         <source>Proxy user name:</source>
         <translation>用戶名：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="826"/>
+        <location filename="../forms/configdialog.ui" line="832"/>
         <source>Proxy password:</source>
         <translation>密碼：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="866"/>
+        <location filename="../forms/configdialog.ui" line="872"/>
         <source>Replay Gain</source>
         <translation>重播增益</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="872"/>
+        <location filename="../forms/configdialog.ui" line="878"/>
         <source>Replay Gain mode:</source>
         <translation>重播增益模式：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="889"/>
+        <location filename="../forms/configdialog.ui" line="895"/>
         <source>Preamp:</source>
         <translation>前置放大器：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="921"/>
-        <location filename="../forms/configdialog.ui" line="966"/>
+        <location filename="../forms/configdialog.ui" line="927"/>
+        <location filename="../forms/configdialog.ui" line="972"/>
         <source>dB</source>
         <translation>dB</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="934"/>
+        <location filename="../forms/configdialog.ui" line="940"/>
         <source>Default gain:</source>
         <translation>預設增益：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="986"/>
+        <location filename="../forms/configdialog.ui" line="992"/>
         <source>Use  peak info to prevent clipping</source>
         <translation>使用峰值資訊防止削波</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1002"/>
+        <location filename="../forms/configdialog.ui" line="1008"/>
         <source>Buffer size:</source>
         <translation>緩沖大小：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1028"/>
+        <location filename="../forms/configdialog.ui" line="1034"/>
         <source>ms</source>
         <translation>毫秒</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1061"/>
+        <location filename="../forms/configdialog.ui" line="1067"/>
         <source>Use software volume control</source>
         <translation>使用軟裝置音量控制</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1101"/>
+        <location filename="../forms/configdialog.ui" line="1107"/>
         <source>Use two passes for equalizer</source>
         <translation>對等化器採用兩階段處理</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1044"/>
+        <location filename="../forms/configdialog.ui" line="1050"/>
         <source>Volume adjustment step:</source>
         <translation>音量調整步幅：</translation>
     </message>
@@ -618,12 +618,12 @@
         <translation>移除當前曲目後停止播放</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1068"/>
+        <location filename="../forms/configdialog.ui" line="1074"/>
         <source>Output bit depth:</source>
         <translation>輸出位元深度：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1009"/>
+        <location filename="../forms/configdialog.ui" line="1015"/>
         <source>Use dithering</source>
         <translation>使用抖動</translation>
     </message>
@@ -1359,7 +1359,7 @@
     <name>PlayListManager</name>
     <message>
         <location filename="../playlistmanager.cpp" line="177"/>
-        <location filename="../playlistmanager.cpp" line="319"/>
+        <location filename="../playlistmanager.cpp" line="322"/>
         <source>Playlist</source>
         <translation>播放清單</translation>
     </message>
@@ -1494,12 +1494,7 @@
         <translation>模板編輯</translation>
     </message>
     <message>
-        <location filename="../forms/templateeditor.ui" line="39"/>
-        <source>Reset</source>
-        <translation>重設</translation>
-    </message>
-    <message>
-        <location filename="../forms/templateeditor.ui" line="46"/>
+        <location filename="../forms/templateeditor.ui" line="30"/>
         <source>Insert</source>
         <translation>插入</translation>
     </message>

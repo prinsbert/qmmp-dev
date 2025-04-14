@@ -302,7 +302,7 @@
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="94"/>
-        <location filename="../forms/configdialog.ui" line="996"/>
+        <location filename="../forms/configdialog.ui" line="1002"/>
         <source>Audio</source>
         <translation>Ήχος</translation>
     </message>
@@ -334,7 +334,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="242"/>
         <location filename="../forms/configdialog.ui" line="267"/>
-        <location filename="../forms/configdialog.ui" line="710"/>
+        <location filename="../forms/configdialog.ui" line="716"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -482,128 +482,128 @@
         <translation>Βάθος αναδρομικής αναζήτησης:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="632"/>
+        <location filename="../forms/configdialog.ui" line="638"/>
         <source>URL Dialog</source>
         <translation>Διάλογος URL</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="638"/>
+        <location filename="../forms/configdialog.ui" line="644"/>
         <source>Auto-paste URL from clipboard</source>
         <translation>Αυτόματη επικόλληση του URL από το πρόχειρο</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="648"/>
+        <location filename="../forms/configdialog.ui" line="654"/>
         <source>CUE Editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="654"/>
+        <location filename="../forms/configdialog.ui" line="660"/>
         <source>Use system font</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="675"/>
+        <location filename="../forms/configdialog.ui" line="681"/>
         <source>Font:</source>
         <translation>Γραμματοσειρά:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="700"/>
+        <location filename="../forms/configdialog.ui" line="706"/>
         <source>???</source>
         <translation>;;;</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="739"/>
+        <location filename="../forms/configdialog.ui" line="745"/>
         <source>Proxy</source>
         <translation>Διαμεσολαβητής</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="751"/>
+        <location filename="../forms/configdialog.ui" line="757"/>
         <source>Enable proxy usage</source>
         <translation>Ενεργοποίηση της χρήσης διαμεσολαβητή</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="758"/>
+        <location filename="../forms/configdialog.ui" line="764"/>
         <source>Proxy type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="768"/>
+        <location filename="../forms/configdialog.ui" line="774"/>
         <source>Proxy host name:</source>
         <translation>Όνομα υπολογιστή του διαμεσολαβητή:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="785"/>
+        <location filename="../forms/configdialog.ui" line="791"/>
         <source>Proxy port:</source>
         <translation>Θύρα διαμεσολαβητή:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="802"/>
+        <location filename="../forms/configdialog.ui" line="808"/>
         <source>Use authentication with proxy</source>
         <translation>Χρήση ταυτοποίησης με τον διαμεσολαβητή</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="809"/>
+        <location filename="../forms/configdialog.ui" line="815"/>
         <source>Proxy user name:</source>
         <translation>Όνομα χρήστη του διαμεσολαβητή:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="826"/>
+        <location filename="../forms/configdialog.ui" line="832"/>
         <source>Proxy password:</source>
         <translation>Κωδικός πρόσβασης διαμεσολαβητή:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="866"/>
+        <location filename="../forms/configdialog.ui" line="872"/>
         <source>Replay Gain</source>
         <translation>Κανονικοποίηση ακουστότητας</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="872"/>
+        <location filename="../forms/configdialog.ui" line="878"/>
         <source>Replay Gain mode:</source>
         <translation>Λειτουργία κανονικοποίησης ακουστότητας:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="889"/>
+        <location filename="../forms/configdialog.ui" line="895"/>
         <source>Preamp:</source>
         <translation>Προενίσχυση:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="921"/>
-        <location filename="../forms/configdialog.ui" line="966"/>
+        <location filename="../forms/configdialog.ui" line="927"/>
+        <location filename="../forms/configdialog.ui" line="972"/>
         <source>dB</source>
         <translation>dB</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="934"/>
+        <location filename="../forms/configdialog.ui" line="940"/>
         <source>Default gain:</source>
         <translation>Εξ ορισμού ενίσχυση:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="986"/>
+        <location filename="../forms/configdialog.ui" line="992"/>
         <source>Use  peak info to prevent clipping</source>
         <translation>Χρήση αιχμών για την αποτροπή διακοπών</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1002"/>
+        <location filename="../forms/configdialog.ui" line="1008"/>
         <source>Buffer size:</source>
         <translation>Μέγεθος ενδιάμεσης μνήμης:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1028"/>
+        <location filename="../forms/configdialog.ui" line="1034"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1061"/>
+        <location filename="../forms/configdialog.ui" line="1067"/>
         <source>Use software volume control</source>
         <translation>Χρήση ελέγχου έντασης μέσω λογισμικού</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1101"/>
+        <location filename="../forms/configdialog.ui" line="1107"/>
         <source>Use two passes for equalizer</source>
         <translation>Χρήση δυο περασμάτων για τον ισοσταθμιστή</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1044"/>
+        <location filename="../forms/configdialog.ui" line="1050"/>
         <source>Volume adjustment step:</source>
         <translation>Βήμα προσαρμογής έντασης:</translation>
     </message>
@@ -618,12 +618,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1068"/>
+        <location filename="../forms/configdialog.ui" line="1074"/>
         <source>Output bit depth:</source>
         <translation>Βάθος bit εξόδου:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1009"/>
+        <location filename="../forms/configdialog.ui" line="1015"/>
         <source>Use dithering</source>
         <translation>Χρήση αμφιταλάντευσης</translation>
     </message>
@@ -1359,7 +1359,7 @@
     <name>PlayListManager</name>
     <message>
         <location filename="../playlistmanager.cpp" line="177"/>
-        <location filename="../playlistmanager.cpp" line="319"/>
+        <location filename="../playlistmanager.cpp" line="322"/>
         <source>Playlist</source>
         <translation>Λίστα αναπαραγωγής</translation>
     </message>
@@ -1494,12 +1494,7 @@
         <translation>Επεξεργαστής πρότυπων</translation>
     </message>
     <message>
-        <location filename="../forms/templateeditor.ui" line="39"/>
-        <source>Reset</source>
-        <translation>Επαναφορά</translation>
-    </message>
-    <message>
-        <location filename="../forms/templateeditor.ui" line="46"/>
+        <location filename="../forms/templateeditor.ui" line="30"/>
         <source>Insert</source>
         <translation>Εισαγωγή</translation>
     </message>
