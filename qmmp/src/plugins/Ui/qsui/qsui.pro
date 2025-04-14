@@ -26,7 +26,7 @@ SOURCES += \
     qsuitabbar.cpp \
     filesystembrowser.cpp \
     elidinglabel.cpp \
-    toolbareditor.cpp \
+    qsuitoolbareditor.cpp \
     volumeslider.cpp \
     qsuiquicksearch.cpp \
     qsuivisualization.cpp \
@@ -58,7 +58,7 @@ HEADERS += \
     qsuitabbar.h \
     filesystembrowser.h \
     elidinglabel.h \
-    toolbareditor.h \
+    qsuitoolbareditor.h \
     volumeslider.h \
     qsuiquicksearch.h \
     qsuivisualization.h \
@@ -72,7 +72,7 @@ FORMS += \
     forms/qsuipopupsettings.ui \
     forms/aboutqsuidialog.ui \
     forms/qsuisettings.ui \
-    forms/toolbareditor.ui
+    forms/qsuitoolbareditor.ui
 
 RESOURCES += translations/translations.qrc resources/qsui_resources.qrc txt/qsui_txt.qrc
 

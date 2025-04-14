@@ -42,7 +42,7 @@
 #include <qmmpui/qmmpuisettings.h>
 #include <qmmpui/visualmenu.h>
 #include "qsuitabbar.h"
-#include "toolbareditor.h"
+#include "qsuitoolbareditor.h"
 #include "qsuiactionmanager.h"
 #include "qsuivisualization.h"
 #include "qsuilistwidget.h"
@@ -896,7 +896,7 @@ void QSUiMainWindow::setToolBarsBlocked(bool blocked)
 
 void QSUiMainWindow::editToolBar()
 {
-    ToolBarEditor *e = new ToolBarEditor(this);
+    QSUiToolBarEditor *e = new QSUiToolBarEditor(this);
     if(e->exec() == QDialog::Accepted)
     {
         readSettings();
