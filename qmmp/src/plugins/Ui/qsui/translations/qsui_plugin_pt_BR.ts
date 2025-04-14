@@ -1612,62 +1612,62 @@
 <context>
     <name>QSUiStatusBar</name>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="52"/>
+        <location filename="../qsuistatusbar.cpp" line="53"/>
         <source>tracks: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="53"/>
+        <location filename="../qsuistatusbar.cpp" line="54"/>
         <source>total time: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="130"/>
+        <location filename="../qsuistatusbar.cpp" line="133"/>
         <source>Playing</source>
         <translation>Reprodução</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="130"/>
+        <location filename="../qsuistatusbar.cpp" line="133"/>
         <source>Paused</source>
         <translation>Pausado</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="139"/>
+        <location filename="../qsuistatusbar.cpp" line="143"/>
         <source>Buffering</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="144"/>
+        <location filename="../qsuistatusbar.cpp" line="148"/>
         <source>Stopped</source>
         <translation>Parado</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="150"/>
+        <location filename="../qsuistatusbar.cpp" line="154"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="158"/>
+        <location filename="../qsuistatusbar.cpp" line="162"/>
         <source>Buffering: %1%</source>
         <translation>Processamento: %1%</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="163"/>
+        <location filename="../qsuistatusbar.cpp" line="167"/>
         <source>%1 bits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="165"/>
+        <location filename="../qsuistatusbar.cpp" line="169"/>
         <source>mono</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="167"/>
+        <location filename="../qsuistatusbar.cpp" line="171"/>
         <source>stereo</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../qsuistatusbar.cpp" line="169"/>
+        <location filename="../qsuistatusbar.cpp" line="173"/>
         <source>%n channels</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -1675,12 +1675,12 @@
         </translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="170"/>
+        <location filename="../qsuistatusbar.cpp" line="174"/>
         <source>%1 Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="178"/>
+        <location filename="../qsuistatusbar.cpp" line="182"/>
         <source>%1 kbps</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1699,37 +1699,62 @@
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="103"/>
-        <source>Sample size</source>
+        <source>Sample Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="104"/>
-        <source>Number of channels</source>
+        <source>Number of Channels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="105"/>
-        <source>Sample rate</source>
+        <source>Sample Rate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="106"/>
-        <source>Track count</source>
+        <source>Track Count</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="107"/>
-        <source>Total time</source>
+        <source>Total Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuistatusbareditor.cpp" line="109"/>
+        <source>Elapsed Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuistatusbareditor.cpp" line="110"/>
+        <source>Remaining Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuistatusbareditor.cpp" line="111"/>
+        <source>Duration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuistatusbareditor.cpp" line="112"/>
+        <source>Elapsed Time + Duration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuistatusbareditor.cpp" line="113"/>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuistatusbareditor.cpp" line="114"/>
+        <source>Decoder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="108"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qsuistatusbareditor.cpp" line="109"/>
-        <source>Current time</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
