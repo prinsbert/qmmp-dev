@@ -100,13 +100,18 @@ void QSUiStatusBarEditor::populateLabelList(bool reset)
 
     const QMap<int, QString> names = {
         { QSUiStatusBar::StatusLabel, tr("Status") },
-        { QSUiStatusBar::SampleSizeLabel, tr("Sample size") },
-        { QSUiStatusBar::ChannelsLabel, tr("Number of channels") },
-        { QSUiStatusBar::SampleRateLabel, tr("Sample rate") },
-        { QSUiStatusBar::TrackCountLabel, tr("Track count") },
-        { QSUiStatusBar::TotalTimeLabel, tr("Total time") },
+        { QSUiStatusBar::SampleSizeLabel, tr("Sample Size") },
+        { QSUiStatusBar::ChannelsLabel, tr("Number of Channels") },
+        { QSUiStatusBar::SampleRateLabel, tr("Sample Rate") },
+        { QSUiStatusBar::TrackCountLabel, tr("Track Count") },
+        { QSUiStatusBar::TotalTimeLabel, tr("Total Time") },
         { QSUiStatusBar::BitrateLabel, tr("Bitrate") },
-        { QSUiStatusBar::TimeLabel , tr("Current time") }
+        { QSUiStatusBar::ElapsedTimeLabel, tr("Elapsed Time") },
+        { QSUiStatusBar::RemainingTimeLabel, tr("Remaining Time") },
+        { QSUiStatusBar::DurationLabel, tr("Duration") },
+        { QSUiStatusBar::ElapsedAndDurationLabel, tr("Elapsed Time + Duration") },
+        { QSUiStatusBar::FormatLabel, tr("Format") },
+        { QSUiStatusBar::DecoderLabel, tr("Decoder") },
     };
 
     for(auto it = names.cbegin(); it != names.cend(); ++it)

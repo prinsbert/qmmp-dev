@@ -41,6 +41,7 @@ QSUiStatusBar::QSUiStatusBar(QWidget *parent) : QWidget(parent)
     connect(m_core, &SoundCore::audioParametersChanged, this, &QSUiStatusBar::onAudioParametersChanged);
     connect(m_core, &SoundCore::bitrateChanged, this, &QSUiStatusBar::onBitrateChanged);
     connect(m_core, &SoundCore::elapsedChanged, this, &QSUiStatusBar::onElapsedChanged);
+    connect(m_core, &SoundCore::trackInfoChanged, this, &QSUiStatusBar::onTrackInfoChanged);
 
     readSettings();
 }
@@ -84,7 +85,7 @@ void QSUiStatusBar::readSettings()
         m_labels << w;
         m_labelHash.insert(w.type, w);
 
-        if(w.type == BitrateLabel || w.type == TimeLabel)
+        if(w.type == BitrateLabel || w.type == ElapsedTimeLabel)
             w.label->setAlignment(Qt::AlignRight);
     }
 
@@ -102,7 +103,7 @@ QVariantList QSUiStatusBar::defaultLabels()
         TrackCountLabel,
         TotalTimeLabel,
         BitrateLabel,
-        TimeLabel
+        ElapsedAndDurationLabel
     };
 
     return labels;
@@ -113,29 +114,32 @@ void QSUiStatusBar::onStateChanged(Qmmp::State state)
     if(state == Qmmp::Playing || state == Qmmp::Paused)
     {        
         setVisibleLabels({ StatusLabel, SampleSizeLabel, ChannelsLabel, SampleRateLabel,
-                           TrackCountLabel, TotalTimeLabel, BitrateLabel, TimeLabel });
+                           TrackCountLabel, TotalTimeLabel, BitrateLabel, ElapsedTimeLabel,
+                           RemainingTimeLabel, DurationLabel, ElapsedAndDurationLabel, FormatLabel, DecoderLabel });
 
-        if(m_labelHash.contains(BitrateLabel))
-        {
-            m_labelHash[BitrateLabel].label->setMinimumWidth(0);
-            m_labelHash[BitrateLabel].label->clear();
-        }
+        static const QList<LabelType> labelsToClear = { BitrateLabel, ElapsedTimeLabel, RemainingTimeLabel,
+                                                        DurationLabel, ElapsedAndDurationLabel, FormatLabel,
+                                                        DecoderLabel };
 
-        if(m_labelHash.contains(TimeLabel))
+        for(LabelType t : std::as_const(labelsToClear))
         {
-            m_labelHash[TimeLabel].label->setMinimumWidth(0);
-            m_labelHash[TimeLabel].label->clear();
+            if(m_labelHash.contains(t))
+            {
+                m_labelHash[t].label->setMinimumWidth(0);
+                m_labelHash[t].label->clear();
+            }
         }
 
         setText(StatusLabel, QStringLiteral("<b>%1</b>").arg(state == Qmmp::Playing ? tr("Playing") : tr("Paused")));
         onAudioParametersChanged(m_core->audioParameters());
         onElapsedChanged(m_core->elapsed());
         onBitrateChanged(m_core->bitrate());
+        onTrackInfoChanged();
         updatePlayListStatus();
     }
     else if(state == Qmmp::Buffering)
     {
-        setVisibleLabels({ StatusLabel, SampleSizeLabel, ChannelsLabel });
+        setVisibleLabels({ StatusLabel });
         setText(StatusLabel, tr("Buffering"));
     }
     else if(state == Qmmp::Stopped)
@@ -190,26 +194,86 @@ void QSUiStatusBar::onBitrateChanged(int bitrate)
 
 void QSUiStatusBar::onElapsedChanged(qint64 elapsed)
 {
-    if(!m_labelHash.contains(TimeLabel))
-        return;
-
     QString elapsedText = MetaDataFormatter::formatDuration(elapsed, false);
-    QString plDurationText;
-    QLabel *label = m_labelHash[TimeLabel].label;
+    QString durationText = MetaDataFormatter::formatDuration(m_core->duration(), false);
+
     static const QRegularExpression numberRegExp(u"\\d"_s);
-    if(m_core->duration() > 1000)
+
+    if(m_labelHash.contains(ElapsedTimeLabel))
     {
-        plDurationText.append(QLatin1Char('/'));
-        plDurationText.append(MetaDataFormatter::formatDuration(m_core->duration()));
+        QLabel *label = m_labelHash[ElapsedTimeLabel].label;
+
+        if(elapsedText.size() != label->text().size())
+        {
+            QString tmp = elapsedText;
+            tmp.replace(numberRegExp, u"4"_s);
+            int width = label->fontMetrics().horizontalAdvance(tmp);
+            label->setMinimumWidth(width);
+        }
+
+        label->setText(elapsedText);
     }
-    if((elapsedText.size() + plDurationText.size()) != label->text().size()) //label width tuning to avoid text jumping
+
+    if(m_labelHash.contains(RemainingTimeLabel))
     {
-        QString tmp = elapsedText;
-        tmp.replace(numberRegExp, u"4"_s);
-        int width = label->fontMetrics().horizontalAdvance(tmp + plDurationText);
-        label->setMinimumWidth(width);
+        QString remainingText = MetaDataFormatter::formatDuration(qAbs(m_core->duration() - elapsed), false);
+        QLabel *label = m_labelHash[RemainingTimeLabel].label;
+
+        if(remainingText.size() != label->text().size())
+        {
+            QString tmp = remainingText;
+            tmp.replace(numberRegExp, u"4"_s);
+            int width = label->fontMetrics().horizontalAdvance(tmp);
+            label->setMinimumWidth(width);
+        }
+
+        label->setText(remainingText);
     }
-    label->setText(elapsedText + plDurationText);
+
+    if(m_labelHash.contains(DurationLabel))
+    {
+        QLabel *label = m_labelHash[DurationLabel].label;
+        label->setText(durationText);
+        label->setVisible(m_core->duration() > 1000);
+        if(m_labels.last().type != DurationLabel) //last separator is always hidden
+            m_labelHash[DurationLabel].separator->setVisible(m_core->duration() > 1000);
+
+        if(durationText.size() != label->text().size() && m_core->duration() > 1000)
+        {
+            int width = label->fontMetrics().horizontalAdvance(durationText);
+            label->setMinimumWidth(width);
+        }
+
+        label->setText(durationText);
+    }
+
+    if(m_labelHash.contains(ElapsedAndDurationLabel))
+    {
+        QLabel *label = m_labelHash[ElapsedAndDurationLabel].label;
+        QString durationSuffix;
+
+        if(m_core->duration() > 1000)
+        {
+            durationSuffix.append(QLatin1Char('/'));
+            durationSuffix.append(durationText);
+        }
+
+        if((elapsedText.size() + durationSuffix.size()) != label->text().size()) //label width tuning to avoid text jumping
+        {
+            QString tmp = elapsedText;
+            tmp.replace(numberRegExp, u"4"_s);
+            int width = label->fontMetrics().horizontalAdvance(tmp + durationSuffix);
+            label->setMinimumWidth(width);
+        }
+
+        label->setText(elapsedText + durationSuffix);
+    }
+}
+
+void QSUiStatusBar::onTrackInfoChanged()
+{
+    setText(FormatLabel, m_core->trackInfo().value(Qmmp::FORMAT_NAME));
+    setText(DecoderLabel, m_core->trackInfo().value(Qmmp::DECODER));
 }
 
 void QSUiStatusBar::setVisibleLabels(const QSet<LabelType> &visibleLabels)
