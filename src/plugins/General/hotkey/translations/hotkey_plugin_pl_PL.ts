@@ -55,19 +55,14 @@
         <translation>Ustawienia wtyczki Globalne skróŧy klawiszowe</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.ui" line="42"/>
+        <location filename="../hotkeysettingsdialog.ui" line="51"/>
         <source>Action</source>
         <translation>Akcja</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.ui" line="47"/>
+        <location filename="../hotkeysettingsdialog.ui" line="56"/>
         <source>Shortcut</source>
         <translation>Skrót klawiszowy</translation>
-    </message>
-    <message>
-        <location filename="../hotkeysettingsdialog.ui" line="55"/>
-        <source>Reset</source>
-        <translation>Resetuj</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="39"/>
@@ -135,12 +130,12 @@
         <translation>Wycisz</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
         <source>Warning</source>
         <translation>Ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
         <source>Key sequence &apos;%1&apos; is already used</source>
         <translation>Sekwencja &apos;%1&apos; jest już używana</translation>
     </message>

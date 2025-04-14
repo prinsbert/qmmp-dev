@@ -55,19 +55,14 @@
         <translation>Opcións do engadido Global Hotkey</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.ui" line="42"/>
+        <location filename="../hotkeysettingsdialog.ui" line="51"/>
         <source>Action</source>
         <translation>Acción</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.ui" line="47"/>
+        <location filename="../hotkeysettingsdialog.ui" line="56"/>
         <source>Shortcut</source>
         <translation>Acceso directo</translation>
-    </message>
-    <message>
-        <location filename="../hotkeysettingsdialog.ui" line="55"/>
-        <source>Reset</source>
-        <translation>Restablecer</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="39"/>
@@ -135,12 +130,12 @@
         <translation>Silenciar</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
         <source>Warning</source>
         <translation>Advertencia</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
         <source>Key sequence &apos;%1&apos; is already used</source>
         <translation>A combinación de tecras &quot;%1&quot; xa está en uso</translation>
     </message>

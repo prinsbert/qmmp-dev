@@ -55,19 +55,14 @@
         <translation>Ρυθμίσεις πρόσθετου καθολικών συντομεύσεων</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.ui" line="42"/>
+        <location filename="../hotkeysettingsdialog.ui" line="51"/>
         <source>Action</source>
         <translation>Ενέργεια</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.ui" line="47"/>
+        <location filename="../hotkeysettingsdialog.ui" line="56"/>
         <source>Shortcut</source>
         <translation>Συντόμευση</translation>
-    </message>
-    <message>
-        <location filename="../hotkeysettingsdialog.ui" line="55"/>
-        <source>Reset</source>
-        <translation>Επαναφορά</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="39"/>
@@ -135,12 +130,12 @@
         <translation>Σίγαση</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
         <source>Warning</source>
         <translation>Προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
         <source>Key sequence &apos;%1&apos; is already used</source>
         <translation>Η ακολουθία πλήκτρων «%1» χρησιμοποιείται ήδη </translation>
     </message>

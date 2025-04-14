@@ -55,19 +55,14 @@
         <translation type="unfinished">Setelan Plugin Hotkey Global</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.ui" line="42"/>
+        <location filename="../hotkeysettingsdialog.ui" line="51"/>
         <source>Action</source>
         <translation type="unfinished">Tindakan</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.ui" line="47"/>
+        <location filename="../hotkeysettingsdialog.ui" line="56"/>
         <source>Shortcut</source>
         <translation type="unfinished">Pintasan</translation>
-    </message>
-    <message>
-        <location filename="../hotkeysettingsdialog.ui" line="55"/>
-        <source>Reset</source>
-        <translation type="unfinished">Setel ulang</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="39"/>
@@ -135,12 +130,12 @@
         <translation type="unfinished">Bungkam</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
         <source>Warning</source>
         <translation type="unfinished">Peringatan</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
         <source>Key sequence &apos;%1&apos; is already used</source>
         <translation type="unfinished">Rangkaian tombol &apos;%1&apos; sudah digunakan</translation>
     </message>

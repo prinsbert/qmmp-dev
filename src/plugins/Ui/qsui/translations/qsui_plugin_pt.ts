@@ -1057,24 +1057,24 @@
 <context>
     <name>QSUiHotkeyEditor</name>
     <message>
-        <location filename="../forms/qsuihotkeyeditor.ui" line="33"/>
+        <location filename="../forms/qsuihotkeyeditor.ui" line="40"/>
         <source>Change shortcut...</source>
         <translation>Mudar atalho...</translation>
     </message>
     <message>
-        <location filename="../forms/qsuihotkeyeditor.ui" line="40"/>
-        <source>Reset</source>
-        <translation>Restaurar</translation>
-    </message>
-    <message>
-        <location filename="../forms/qsuihotkeyeditor.ui" line="54"/>
+        <location filename="../forms/qsuihotkeyeditor.ui" line="27"/>
         <source>Action</source>
         <translation>Ação</translation>
     </message>
     <message>
-        <location filename="../forms/qsuihotkeyeditor.ui" line="59"/>
+        <location filename="../forms/qsuihotkeyeditor.ui" line="32"/>
         <source>Shortcut</source>
         <translation>Atalho</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuihotkeyeditor.ui" line="63"/>
+        <source>Restore Defaults</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="56"/>
@@ -1121,7 +1121,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="917"/>
+        <location filename="../qsuimainwindow.cpp" line="921"/>
         <source>Qmmp</source>
         <translation>Qmmp</translation>
     </message>
@@ -1268,178 +1268,183 @@
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="259"/>
-        <location filename="../qsuimainwindow.cpp" line="295"/>
+        <location filename="../qsuimainwindow.cpp" line="296"/>
         <source>Rename Playlist</source>
         <translation>Renomear lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="86"/>
+        <location filename="../qsuimainwindow.cpp" line="87"/>
         <source>&amp;Copy Selection To</source>
         <translation>&amp;Copiar seleção para</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="295"/>
+        <location filename="../qsuimainwindow.cpp" line="296"/>
         <source>Playlist name:</source>
         <translation>Nome da lista de reprodução:</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="335"/>
+        <location filename="../qsuimainwindow.cpp" line="336"/>
         <source>Appearance</source>
         <translation>Aparência</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="336"/>
+        <location filename="../qsuimainwindow.cpp" line="337"/>
         <source>Shortcuts</source>
         <translation>Atalhos</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="415"/>
+        <location filename="../qsuimainwindow.cpp" line="416"/>
         <source>Menu Bar</source>
         <translation>Barra de menu</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="434"/>
+        <location filename="../qsuimainwindow.cpp" line="435"/>
         <source>Add new playlist</source>
         <translation>Adicionar nova lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="440"/>
+        <location filename="../qsuimainwindow.cpp" line="441"/>
         <source>Show all tabs</source>
         <translation>Mostrar todos os separadores</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="467"/>
+        <location filename="../qsuimainwindow.cpp" line="468"/>
         <source>Ctrl+0</source>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="473"/>
+        <location filename="../qsuimainwindow.cpp" line="474"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="478"/>
+        <location filename="../qsuimainwindow.cpp" line="479"/>
         <source>Position</source>
         <translation>Posição</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="480"/>
+        <location filename="../qsuimainwindow.cpp" line="481"/>
         <source>Volume</source>
         <translation>Volume</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="482"/>
+        <location filename="../qsuimainwindow.cpp" line="483"/>
         <source>Balance</source>
         <translation>Equilíbrio</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="485"/>
+        <location filename="../qsuimainwindow.cpp" line="486"/>
         <source>Quick Search</source>
         <translation>Procura rápida</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="543"/>
+        <location filename="../qsuimainwindow.cpp" line="544"/>
         <source>Edit Toolbars</source>
         <translation>Editar barras de ferramentas</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="545"/>
+        <source>Edit Statusbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="547"/>
         <source>Sort List</source>
         <translation>Organizar lista</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="547"/>
-        <location filename="../qsuimainwindow.cpp" line="563"/>
+        <location filename="../qsuimainwindow.cpp" line="549"/>
+        <location filename="../qsuimainwindow.cpp" line="565"/>
         <source>By Title</source>
         <translation>Por título</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="548"/>
-        <location filename="../qsuimainwindow.cpp" line="564"/>
+        <location filename="../qsuimainwindow.cpp" line="550"/>
+        <location filename="../qsuimainwindow.cpp" line="566"/>
         <source>By Album</source>
         <translation>Por álbum</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="549"/>
-        <location filename="../qsuimainwindow.cpp" line="565"/>
+        <location filename="../qsuimainwindow.cpp" line="551"/>
+        <location filename="../qsuimainwindow.cpp" line="567"/>
         <source>By Artist</source>
         <translation>Por artista</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="550"/>
-        <location filename="../qsuimainwindow.cpp" line="566"/>
+        <location filename="../qsuimainwindow.cpp" line="552"/>
+        <location filename="../qsuimainwindow.cpp" line="568"/>
         <source>By Album Artist</source>
         <translation>Por artista do álbum</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="551"/>
-        <location filename="../qsuimainwindow.cpp" line="567"/>
+        <location filename="../qsuimainwindow.cpp" line="553"/>
+        <location filename="../qsuimainwindow.cpp" line="569"/>
         <source>By Filename</source>
         <translation>Por nome de ficheiro</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="552"/>
-        <location filename="../qsuimainwindow.cpp" line="568"/>
+        <location filename="../qsuimainwindow.cpp" line="554"/>
+        <location filename="../qsuimainwindow.cpp" line="570"/>
         <source>By Path + Filename</source>
         <translation>Por caminho e nome de ficheiro</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="553"/>
-        <location filename="../qsuimainwindow.cpp" line="569"/>
+        <location filename="../qsuimainwindow.cpp" line="555"/>
+        <location filename="../qsuimainwindow.cpp" line="571"/>
         <source>By Date</source>
         <translation>Por data</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="554"/>
-        <location filename="../qsuimainwindow.cpp" line="570"/>
+        <location filename="../qsuimainwindow.cpp" line="556"/>
+        <location filename="../qsuimainwindow.cpp" line="572"/>
         <source>By Track Number</source>
         <translation>Por número de faixa</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="555"/>
-        <location filename="../qsuimainwindow.cpp" line="571"/>
+        <location filename="../qsuimainwindow.cpp" line="557"/>
+        <location filename="../qsuimainwindow.cpp" line="573"/>
         <source>By Disc Number</source>
         <translation>Por número de disco</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="556"/>
-        <location filename="../qsuimainwindow.cpp" line="572"/>
+        <location filename="../qsuimainwindow.cpp" line="558"/>
+        <location filename="../qsuimainwindow.cpp" line="574"/>
         <source>By File Creation Date</source>
         <translation>Por data de criação do ficheiro</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="557"/>
-        <location filename="../qsuimainwindow.cpp" line="573"/>
+        <location filename="../qsuimainwindow.cpp" line="559"/>
+        <location filename="../qsuimainwindow.cpp" line="575"/>
         <source>By File Modification Date</source>
         <translation>Por data de modificação do ficheiro</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="558"/>
+        <location filename="../qsuimainwindow.cpp" line="560"/>
         <source>By Group</source>
         <translation>Por grupo</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="561"/>
+        <location filename="../qsuimainwindow.cpp" line="563"/>
         <source>Sort Selection</source>
         <translation>Organizar seleção</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="577"/>
+        <location filename="../qsuimainwindow.cpp" line="579"/>
         <source>Randomize List</source>
         <translation>Lista aleatória</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="579"/>
+        <location filename="../qsuimainwindow.cpp" line="581"/>
         <source>Reverse List</source>
         <translation>Inverter lista</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="620"/>
+        <location filename="../qsuimainwindow.cpp" line="622"/>
         <source>Actions</source>
         <translation>Ações</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="938"/>
+        <location filename="../qsuimainwindow.cpp" line="942"/>
         <source>&amp;New PlayList</source>
         <translation>&amp;Nova lista de reprodução</translation>
     </message>
@@ -1607,62 +1612,62 @@
 <context>
     <name>QSUiStatusBar</name>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="68"/>
+        <location filename="../qsuistatusbar.cpp" line="52"/>
         <source>tracks: %1</source>
         <translation>faixas: %1</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="69"/>
+        <location filename="../qsuistatusbar.cpp" line="53"/>
         <source>total time: %1</source>
         <translation>duração total: %1</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="87"/>
+        <location filename="../qsuistatusbar.cpp" line="130"/>
         <source>Playing</source>
         <translation>Reprodução</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="87"/>
+        <location filename="../qsuistatusbar.cpp" line="130"/>
         <source>Paused</source>
         <translation>Pausa</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="102"/>
+        <location filename="../qsuistatusbar.cpp" line="139"/>
         <source>Buffering</source>
         <translation>Processamento</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="127"/>
+        <location filename="../qsuistatusbar.cpp" line="144"/>
         <source>Stopped</source>
         <translation>Parado</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="139"/>
+        <location filename="../qsuistatusbar.cpp" line="150"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="147"/>
+        <location filename="../qsuistatusbar.cpp" line="158"/>
         <source>Buffering: %1%</source>
         <translation>Processamento: %1%</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="152"/>
+        <location filename="../qsuistatusbar.cpp" line="163"/>
         <source>%1 bits</source>
         <translation>%1 bits</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="154"/>
+        <location filename="../qsuistatusbar.cpp" line="165"/>
         <source>mono</source>
         <translation>mono</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="156"/>
+        <location filename="../qsuistatusbar.cpp" line="167"/>
         <source>stereo</source>
         <translation>estéreo</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qsuistatusbar.cpp" line="158"/>
+        <location filename="../qsuistatusbar.cpp" line="169"/>
         <source>%n channels</source>
         <translation>
             <numerusform>%n canal</numerusform>
@@ -1670,14 +1675,116 @@
         </translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="159"/>
+        <location filename="../qsuistatusbar.cpp" line="170"/>
         <source>%1 Hz</source>
         <translation>%1 Hz</translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="164"/>
+        <location filename="../qsuistatusbar.cpp" line="178"/>
         <source>%1 kbps</source>
         <translation>%1 kbps</translation>
+    </message>
+</context>
+<context>
+    <name>QSUiStatusBarEditor</name>
+    <message>
+        <location filename="../forms/qsuistatusbareditor.ui" line="14"/>
+        <source>StatusBar Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuistatusbareditor.cpp" line="102"/>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuistatusbareditor.cpp" line="103"/>
+        <source>Sample size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuistatusbareditor.cpp" line="104"/>
+        <source>Number of channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuistatusbareditor.cpp" line="105"/>
+        <source>Sample rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuistatusbareditor.cpp" line="106"/>
+        <source>Track count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuistatusbareditor.cpp" line="107"/>
+        <source>Total time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuistatusbareditor.cpp" line="108"/>
+        <source>Bitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuistatusbareditor.cpp" line="109"/>
+        <source>Current time</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QSUiToolBarEditor</name>
+    <message>
+        <location filename="../forms/qsuitoolbareditor.ui" line="14"/>
+        <source>ToolBar Editor</source>
+        <translation type="unfinished">Editor da barra de ferramentas</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuitoolbareditor.ui" line="34"/>
+        <source>Toolbar:</source>
+        <translation type="unfinished">Barra de ferramentas:</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuitoolbareditor.ui" line="57"/>
+        <source>&amp;Create</source>
+        <translation type="unfinished">&amp;Criar</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuitoolbareditor.ui" line="73"/>
+        <source>Re&amp;name</source>
+        <translation type="unfinished">Re&amp;nomear</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuitoolbareditor.ui" line="89"/>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">&amp;Remover</translation>
+    </message>
+    <message>
+        <location filename="../qsuitoolbareditor.cpp" line="104"/>
+        <location filename="../qsuitoolbareditor.cpp" line="197"/>
+        <source>Separator</source>
+        <translation type="unfinished">Separador</translation>
+    </message>
+    <message>
+        <location filename="../qsuitoolbareditor.cpp" line="247"/>
+        <source>Toolbar</source>
+        <translation type="unfinished">Barra de ferramentas</translation>
+    </message>
+    <message>
+        <location filename="../qsuitoolbareditor.cpp" line="249"/>
+        <source>Toolbar %1</source>
+        <translation type="unfinished">Barra de ferramentas %1</translation>
+    </message>
+    <message>
+        <location filename="../qsuitoolbareditor.cpp" line="263"/>
+        <source>Rename Toolbar</source>
+        <translation type="unfinished">Renomear barra de ferramentas</translation>
+    </message>
+    <message>
+        <location filename="../qsuitoolbareditor.cpp" line="263"/>
+        <source>Toolbar name:</source>
+        <translation type="unfinished">Nome da barra de ferramentas:</translation>
     </message>
 </context>
 <context>
@@ -1692,65 +1799,6 @@
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation>RMS</translation>
-    </message>
-</context>
-<context>
-    <name>ToolBarEditor</name>
-    <message>
-        <location filename="../forms/toolbareditor.ui" line="14"/>
-        <source>ToolBar Editor</source>
-        <translation>Editor da barra de ferramentas</translation>
-    </message>
-    <message>
-        <location filename="../forms/toolbareditor.ui" line="62"/>
-        <source>Reset</source>
-        <translation>Restaurar</translation>
-    </message>
-    <message>
-        <location filename="../forms/toolbareditor.ui" line="199"/>
-        <source>Toolbar:</source>
-        <translation>Barra de ferramentas:</translation>
-    </message>
-    <message>
-        <location filename="../forms/toolbareditor.ui" line="222"/>
-        <source>&amp;Create</source>
-        <translation>&amp;Criar</translation>
-    </message>
-    <message>
-        <location filename="../forms/toolbareditor.ui" line="238"/>
-        <source>Re&amp;name</source>
-        <translation>Re&amp;nomear</translation>
-    </message>
-    <message>
-        <location filename="../forms/toolbareditor.ui" line="254"/>
-        <source>&amp;Remove</source>
-        <translation>&amp;Remover</translation>
-    </message>
-    <message>
-        <location filename="../toolbareditor.cpp" line="100"/>
-        <location filename="../toolbareditor.cpp" line="198"/>
-        <source>Separator</source>
-        <translation>Separador</translation>
-    </message>
-    <message>
-        <location filename="../toolbareditor.cpp" line="248"/>
-        <source>Toolbar</source>
-        <translation>Barra de ferramentas</translation>
-    </message>
-    <message>
-        <location filename="../toolbareditor.cpp" line="250"/>
-        <source>Toolbar %1</source>
-        <translation>Barra de ferramentas %1</translation>
-    </message>
-    <message>
-        <location filename="../toolbareditor.cpp" line="264"/>
-        <source>Rename Toolbar</source>
-        <translation>Renomear barra de ferramentas</translation>
-    </message>
-    <message>
-        <location filename="../toolbareditor.cpp" line="264"/>
-        <source>Toolbar name:</source>
-        <translation>Nome da barra de ferramentas:</translation>
     </message>
 </context>
 <context>

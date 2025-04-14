@@ -55,19 +55,14 @@
         <translation>Asetukset Global Hotkey Plugin</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.ui" line="42"/>
+        <location filename="../hotkeysettingsdialog.ui" line="51"/>
         <source>Action</source>
         <translation>Toiminto</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.ui" line="47"/>
+        <location filename="../hotkeysettingsdialog.ui" line="56"/>
         <source>Shortcut</source>
         <translation>Pikanäppäin</translation>
-    </message>
-    <message>
-        <location filename="../hotkeysettingsdialog.ui" line="55"/>
-        <source>Reset</source>
-        <translation>Tyhjennä</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="39"/>
@@ -135,12 +130,12 @@
         <translation>Mykistä</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
         <source>Warning</source>
         <translation>Varoitus</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
         <source>Key sequence &apos;%1&apos; is already used</source>
         <translation>Yhdistelmä &apos;%1&apos; on jo käytössä</translation>
     </message>

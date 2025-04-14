@@ -668,8 +668,8 @@
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
-        <source>Reset</source>
-        <translation type="unfinished">Ресетуј</translation>
+        <source>Restore Defaults</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>
