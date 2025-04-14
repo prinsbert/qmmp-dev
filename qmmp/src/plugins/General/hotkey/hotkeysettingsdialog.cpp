@@ -50,6 +50,8 @@ HotkeySettingsDialog::HotkeySettingsDialog(QWidget *parent)
     m_ui->tableWidget->setItem(11,0, new QTableWidgetItem(tr("Jump to track")));
     m_ui->tableWidget->setItem(12,0, new QTableWidgetItem(tr("Mute")));
 
+    connect(m_ui->buttonBox, &QDialogButtonBox::clicked, this, &HotkeySettingsDialog::restoreKeys);
+
     QSettings settings;
     settings.beginGroup(u"Hotkey"_s);
     for (int i = Hotkey::PLAY, j = 0; i <= Hotkey::VOLUME_MUTE; ++i, ++j)
@@ -110,7 +112,7 @@ void HotkeySettingsDialog::on_tableWidget_itemDoubleClicked (QTableWidgetItem *i
     delete dialog;
 }
 
-void HotkeySettingsDialog::on_resetButton_clicked ()
+void HotkeySettingsDialog::restoreKeys()
 {
     for (int i = 0; i < m_hotkeys.size(); ++i)
     {
