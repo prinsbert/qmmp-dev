@@ -29,6 +29,7 @@ set(libqsui_SRCS
     qsuiwaveformseekbar.cpp
     qsuishortcutitem.cpp
     qsuitoolbareditor.cpp
+    qsuistatusbareditor.cpp
     volumeslider.cpp
     fft.c
     forms/qsuimainwindow.ui
@@ -36,6 +37,7 @@ set(libqsui_SRCS
     forms/qsuisettings.ui
     forms/aboutqsuidialog.ui
     forms/qsuitoolbareditor.ui
+    forms/qsuistatusbareditor.ui
     forms/qsuihotkeyeditor.ui
     translations/translations.qrc
     txt/qsui_txt.qrc

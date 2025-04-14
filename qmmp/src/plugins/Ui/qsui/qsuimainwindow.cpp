@@ -43,6 +43,7 @@
 #include <qmmpui/visualmenu.h>
 #include "qsuitabbar.h"
 #include "qsuitoolbareditor.h"
+#include "qsuistatusbareditor.h"
 #include "qsuiactionmanager.h"
 #include "qsuivisualization.h"
 #include "qsuilistwidget.h"
@@ -541,6 +542,7 @@ void QSUiMainWindow::createActions()
     m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::UI_BLOCK_DOCKWIDGETS, this, &QSUiMainWindow::setDockWidgetsBlocked));
     m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS, this, &QSUiMainWindow::setToolBarsBlocked));
     m_ui->menuView->addAction(tr("Edit Toolbars"), this, &QSUiMainWindow::editToolBar);
+    m_ui->menuView->addAction(tr("Edit Statusbar"), this, &QSUiMainWindow::editStatusBar);
 
     QMenu *sortMenu = new QMenu(tr("Sort List"), this);
     sortMenu->setIcon(QIcon::fromTheme(u"view-sort-ascending"_s));
@@ -900,6 +902,16 @@ void QSUiMainWindow::editToolBar()
     if(e->exec() == QDialog::Accepted)
     {
         readSettings();
+    }
+    e->deleteLater();
+}
+
+void QSUiMainWindow::editStatusBar()
+{
+    QSUiStatusBarEditor *e = new QSUiStatusBarEditor(this);
+    if(e->exec() == QDialog::Accepted)
+    {
+        m_statusBar->readSettings();
     }
     e->deleteLater();
 }
