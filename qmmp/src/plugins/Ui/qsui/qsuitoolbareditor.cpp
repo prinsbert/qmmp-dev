@@ -43,11 +43,15 @@ QSUiToolBarEditor::QSUiToolBarEditor(QWidget *parent) :
             this, &QSUiToolBarEditor::onRowsAboutToBeRemoved);
     connect(m_ui->activeActionsListWidget->model(), &QAbstractItemModel::rowsAboutToBeRemoved,
             this, &QSUiToolBarEditor::onRowsAboutToBeRemoved);
+    connect(m_ui->buttonBox, &QDialogButtonBox::clicked, this, [this](QAbstractButton *button) {
+        if(m_ui->buttonBox->standardButton(button) == QDialogButtonBox::RestoreDefaults)
+           populateActionList(true);
+    });
 
     m_toolBarInfoList = QSUiActionManager::instance()->readToolBarSettings();
 
     m_previousIndex = -1;
-    populateActionList();
+    populateActionList(false);
 }
 
 QSUiToolBarEditor::~QSUiToolBarEditor()
@@ -168,11 +172,6 @@ void QSUiToolBarEditor::on_downToolButton_clicked()
     }
 }
 
-void QSUiToolBarEditor::on_resetPushButton_clicked()
-{
-    populateActionList(true);
-}
-
 void QSUiToolBarEditor::on_toolbarNameComboBox_activated(int index)
 {
     if(m_previousIndex >= 0 && m_previousIndex < m_toolBarInfoList.count())
@@ -283,5 +282,5 @@ void QSUiToolBarEditor::on_removeButton_clicked()
         m_toolBarInfoList.removeAt(index);
     }
 
-    populateActionList();
+    populateActionList(false);
 }
