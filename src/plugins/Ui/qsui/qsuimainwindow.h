@@ -96,6 +96,7 @@ private slots:
     void setDockWidgetsBlocked(bool blocked);
     void setToolBarsBlocked(bool blocked);
     void editToolBar();
+    void editStatusBar();
     void restoreWindowTitle();
     void onListChanged(int flags);
     void onCurrentPlayListChanged(PlayListModel *current, PlayListModel *previous);
