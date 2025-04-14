@@ -45,7 +45,7 @@ public slots:
 
 private slots:
     void on_tableWidget_itemDoubleClicked (QTableWidgetItem * item);
-    void on_resetButton_clicked();
+    void restoreKeys();
 
 private:
     Ui::HotkeySettingsDialog *m_ui;
