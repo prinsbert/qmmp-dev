@@ -63,11 +63,18 @@ private slots:
     void onElapsedChanged(qint64 elapsed);
 
 private:
-    void setVisibleLabels(QSet<LabelType> &visibleLabels);
+    void setVisibleLabels(const QSet<LabelType> &visibleLabels);
     void setText(LabelType type, const QString &text);
 
-    QHash<LabelType, QLabel*> m_labels;
-    QHash<LabelType, QFrame*> m_separators;
+    struct LabelWidgets
+    {
+        LabelType type = StatusLabel;
+        QLabel *label = nullptr;
+        QFrame *separator = nullptr;
+    };
+
+    QHash<LabelType, LabelWidgets> m_labelHash;
+    QList<LabelWidgets> m_labels;
     SoundCore *m_core;
     PlayListManager *m_pl_manager;
 };
