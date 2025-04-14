@@ -541,6 +541,7 @@ void QSUiMainWindow::createActions()
     m_ui->menuView->addSeparator();
     m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::UI_BLOCK_DOCKWIDGETS, this, &QSUiMainWindow::setDockWidgetsBlocked));
     m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS, this, &QSUiMainWindow::setToolBarsBlocked));
+    m_ui->menuView->addSeparator();
     m_ui->menuView->addAction(tr("Edit Toolbars"), this, &QSUiMainWindow::editToolBar);
     m_ui->menuView->addAction(tr("Edit Statusbar"), this, &QSUiMainWindow::editStatusBar);
 
