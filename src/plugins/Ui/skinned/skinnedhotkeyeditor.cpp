@@ -88,7 +88,7 @@ void SkinnedHotkeyEditor::loadShortcuts()
     m_ui->shortcutTreeWidget->resizeColumnToContents(1);
 }
 
-void SkinnedHotkeyEditor::on_resetShortcutsButton_clicked()
+void SkinnedHotkeyEditor::on_restoreShortcutsButton_clicked()
 {
     if(QMessageBox::question(this, tr("Reset Shortcuts"),
                              tr("Do you want to restore default shortcuts?"),
