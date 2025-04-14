@@ -30,7 +30,7 @@
 #include "qsuiactionmanager.h"
 #include "qsuishortcutitem.h"
 #include "qsuipopupsettings.h"
-#include "toolbareditor.h"
+#include "qsuitoolbareditor.h"
 #include "ui_qsuisettings.h"
 #include "qsuisettings.h"
 
@@ -126,7 +126,7 @@ void QSUiSettings::on_popupTemplateButton_clicked()
 
 void QSUiSettings::on_customizeToolBarButton_clicked()
 {
-    ToolBarEditor editor(this);
+    QSUiToolBarEditor editor(this);
     editor.exec();
 }
 

@@ -18,8 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef TOOLBAREDITOR_H
-#define TOOLBAREDITOR_H
+#ifndef QSUITOOLBAREDITOR_H
+#define QSUITOOLBAREDITOR_H
 
 #include <QDialog>
 #include <QModelIndex>
@@ -27,7 +27,7 @@
 #include "qsuiactionmanager.h"
 
 namespace Ui {
-class ToolBarEditor;
+class QSUiToolBarEditor;
 }
 
 class QListWidgetItem;
@@ -35,13 +35,13 @@ class QListWidgetItem;
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class ToolBarEditor : public QDialog
+class QSUiToolBarEditor : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit ToolBarEditor(QWidget *parent);
-    ~ToolBarEditor();
+    explicit QSUiToolBarEditor(QWidget *parent);
+    ~QSUiToolBarEditor();
 
 public slots:
     void accept() override;
@@ -61,9 +61,9 @@ private slots:
 private:
     void populateActionList(bool reset = false);
     QListWidgetItem *createExtraItem(const QString &name, const QString &shortName, const QIcon &icon = QIcon());
-    Ui::ToolBarEditor *m_ui;
+    Ui::QSUiToolBarEditor *m_ui;
     QList<QSUiActionManager::ToolBarInfo> m_toolBarInfoList;
     int m_previousIndex;
 };
 
-#endif // TOOLBAREDITOR_H
+#endif // QSUITOOLBAREDITOR_H
