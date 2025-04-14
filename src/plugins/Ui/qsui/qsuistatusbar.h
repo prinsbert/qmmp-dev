@@ -50,7 +50,12 @@ public:
         TrackCountLabel,
         TotalTimeLabel,
         BitrateLabel,
-        TimeLabel
+        ElapsedTimeLabel,
+        RemainingTimeLabel,
+        DurationLabel,
+        ElapsedAndDurationLabel,
+        FormatLabel,
+        DecoderLabel
     };
 
     static QVariantList defaultLabels();
@@ -61,6 +66,7 @@ private slots:
     void onAudioParametersChanged(const AudioParameters &ap);
     void onBitrateChanged(int bitrate);
     void onElapsedChanged(qint64 elapsed);
+    void onTrackInfoChanged();
 
 private:
     void setVisibleLabels(const QSet<LabelType> &visibleLabels);
