@@ -39,9 +39,9 @@
     </widget>
    </item>
    <item row="1" column="2">
-    <widget class="QPushButton" name="resetShortcutsButton">
+    <widget class="QPushButton" name="restoreShortcutsButton">
      <property name="text">
-      <string>Reset</string>
+      <string>Restore Defaults</string>
      </property>
     </widget>
    </item>

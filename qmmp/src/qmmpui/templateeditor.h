@@ -68,9 +68,6 @@ public:
     static QString getTemplate (QWidget *parent, const QString &title, const QString &text = QString(),
                                 const QString &default_template = QString(), bool *ok = nullptr);
 
-private slots:
-    void on_resetButton_clicked();
-
 private:
     void createMenu();
     Ui::TemplateEditor *m_ui;

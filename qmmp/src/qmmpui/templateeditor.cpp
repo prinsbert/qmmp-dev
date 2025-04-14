@@ -26,6 +26,10 @@ TemplateEditor::TemplateEditor(QWidget *parent) : QDialog(parent), m_ui(new Ui::
 {
     m_ui->setupUi(this);
     createMenu();
+    connect(m_ui->buttonBox, &QDialogButtonBox::clicked, this, [this](QAbstractButton *button) {
+        if(m_ui->buttonBox->standardButton(button) == QDialogButtonBox::RestoreDefaults)
+            m_ui->textEdit->setPlainText(m_defaultTemplate);
+    });
 }
 
 TemplateEditor::~TemplateEditor()
@@ -53,11 +57,6 @@ void TemplateEditor::createMenu()
     MetaDataFormatterMenu *menu = new MetaDataFormatterMenu(MetaDataFormatterMenu::TITLE_MENU, this);
     m_ui->insertButton->setMenu(menu);
     connect(menu, &MetaDataFormatterMenu::patternSelected, m_ui->textEdit, &QPlainTextEdit::insertPlainText);
-}
-
-void TemplateEditor::on_resetButton_clicked()
-{
-    m_ui->textEdit->setPlainText(m_defaultTemplate);
 }
 
 QString TemplateEditor::getTemplate(QWidget *parent, const QString &title, const QString &text,

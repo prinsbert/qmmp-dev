@@ -51,7 +51,7 @@ void QSUiHotkeyEditor::on_changeShortcutButton_clicked()
     }
 }
 
-void QSUiHotkeyEditor::on_resetShortcutsButton_clicked()
+void QSUiHotkeyEditor::on_restoreShortcutsButton_clicked()
 {
     if(QMessageBox::question(this, tr("Reset Shortcuts"),
                              tr("Do you want to restore default shortcuts?"),
