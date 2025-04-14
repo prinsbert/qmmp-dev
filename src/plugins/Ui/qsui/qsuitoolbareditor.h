@@ -51,7 +51,6 @@ private slots:
     void on_removeToolButton_clicked();
     void on_upToolButton_clicked();
     void on_downToolButton_clicked();
-    void on_resetPushButton_clicked();
     void on_toolbarNameComboBox_activated(int index);
     void onRowsAboutToBeRemoved(const QModelIndex &, int start, int);
     void on_createButton_clicked();
@@ -59,7 +58,7 @@ private slots:
     void on_removeButton_clicked();
 
 private:
-    void populateActionList(bool reset = false);
+    void populateActionList(bool reset);
     QListWidgetItem *createExtraItem(const QString &name, const QString &shortName, const QIcon &icon = QIcon());
     Ui::QSUiToolBarEditor *m_ui;
     QList<QSUiActionManager::ToolBarInfo> m_toolBarInfoList;
