@@ -1121,7 +1121,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="921"/>
+        <location filename="../qsuimainwindow.cpp" line="922"/>
         <source>Qmmp</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1338,113 +1338,113 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="544"/>
+        <location filename="../qsuimainwindow.cpp" line="545"/>
         <source>Edit Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="545"/>
+        <location filename="../qsuimainwindow.cpp" line="546"/>
         <source>Edit Statusbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="547"/>
+        <location filename="../qsuimainwindow.cpp" line="548"/>
         <source>Sort List</source>
         <translation type="unfinished">Сұрыптау</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="549"/>
-        <location filename="../qsuimainwindow.cpp" line="565"/>
+        <location filename="../qsuimainwindow.cpp" line="550"/>
+        <location filename="../qsuimainwindow.cpp" line="566"/>
         <source>By Title</source>
         <translation type="unfinished">Аты бойынша</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="550"/>
-        <location filename="../qsuimainwindow.cpp" line="566"/>
-        <source>By Album</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../qsuimainwindow.cpp" line="551"/>
         <location filename="../qsuimainwindow.cpp" line="567"/>
-        <source>By Artist</source>
+        <source>By Album</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="552"/>
         <location filename="../qsuimainwindow.cpp" line="568"/>
-        <source>By Album Artist</source>
+        <source>By Artist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="553"/>
         <location filename="../qsuimainwindow.cpp" line="569"/>
-        <source>By Filename</source>
-        <translation type="unfinished">Файл аты бойынша</translation>
+        <source>By Album Artist</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="554"/>
         <location filename="../qsuimainwindow.cpp" line="570"/>
-        <source>By Path + Filename</source>
-        <translation type="unfinished">Жолы мен файл аты бойынша</translation>
+        <source>By Filename</source>
+        <translation type="unfinished">Файл аты бойынша</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="555"/>
         <location filename="../qsuimainwindow.cpp" line="571"/>
-        <source>By Date</source>
-        <translation type="unfinished">Уақыты бойынша</translation>
+        <source>By Path + Filename</source>
+        <translation type="unfinished">Жолы мен файл аты бойынша</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="556"/>
         <location filename="../qsuimainwindow.cpp" line="572"/>
-        <source>By Track Number</source>
-        <translation type="unfinished">Трек нөмірі бойынша</translation>
+        <source>By Date</source>
+        <translation type="unfinished">Уақыты бойынша</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="557"/>
         <location filename="../qsuimainwindow.cpp" line="573"/>
-        <source>By Disc Number</source>
-        <translation type="unfinished"></translation>
+        <source>By Track Number</source>
+        <translation type="unfinished">Трек нөмірі бойынша</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="558"/>
         <location filename="../qsuimainwindow.cpp" line="574"/>
-        <source>By File Creation Date</source>
+        <source>By Disc Number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="559"/>
         <location filename="../qsuimainwindow.cpp" line="575"/>
-        <source>By File Modification Date</source>
+        <source>By File Creation Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="560"/>
+        <location filename="../qsuimainwindow.cpp" line="576"/>
+        <source>By File Modification Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="561"/>
         <source>By Group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="563"/>
+        <location filename="../qsuimainwindow.cpp" line="564"/>
         <source>Sort Selection</source>
         <translation type="unfinished">Таңдалғанды сұрыптау</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="579"/>
+        <location filename="../qsuimainwindow.cpp" line="580"/>
         <source>Randomize List</source>
         <translation type="unfinished">Тізімді араластыру</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="581"/>
+        <location filename="../qsuimainwindow.cpp" line="582"/>
         <source>Reverse List</source>
         <translation type="unfinished">Тізімді кері айналдыру</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="622"/>
+        <location filename="../qsuimainwindow.cpp" line="623"/>
         <source>Actions</source>
         <translation type="unfinished">Әрекеттер</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="942"/>
+        <location filename="../qsuimainwindow.cpp" line="943"/>
         <source>&amp;New PlayList</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1622,52 +1622,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="133"/>
+        <location filename="../qsuistatusbar.cpp" line="138"/>
         <source>Playing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="133"/>
+        <location filename="../qsuistatusbar.cpp" line="138"/>
         <source>Paused</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="143"/>
+        <location filename="../qsuistatusbar.cpp" line="148"/>
         <source>Buffering</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="148"/>
+        <location filename="../qsuistatusbar.cpp" line="153"/>
         <source>Stopped</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="154"/>
+        <location filename="../qsuistatusbar.cpp" line="159"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="162"/>
+        <location filename="../qsuistatusbar.cpp" line="167"/>
         <source>Buffering: %1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="167"/>
+        <location filename="../qsuistatusbar.cpp" line="172"/>
         <source>%1 bits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="169"/>
+        <location filename="../qsuistatusbar.cpp" line="174"/>
         <source>mono</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="171"/>
+        <location filename="../qsuistatusbar.cpp" line="176"/>
         <source>stereo</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../qsuistatusbar.cpp" line="173"/>
+        <location filename="../qsuistatusbar.cpp" line="178"/>
         <source>%n channels</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -1675,12 +1675,12 @@
         </translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="174"/>
+        <location filename="../qsuistatusbar.cpp" line="179"/>
         <source>%1 Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuistatusbar.cpp" line="182"/>
+        <location filename="../qsuistatusbar.cpp" line="187"/>
         <source>%1 kbps</source>
         <translation type="unfinished"></translation>
     </message>
