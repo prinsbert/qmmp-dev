@@ -71,6 +71,7 @@ private slots:
 private:
     void setVisibleLabels(const QSet<LabelType> &visibleLabels);
     void setText(LabelType type, const QString &text);
+    QSet<LabelType> allLabels() const;
 
     struct LabelWidgets
     {
