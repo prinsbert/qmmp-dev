@@ -733,12 +733,7 @@ const QString QSUiListWidget::getExtraString(PlayListItem *item)
 
 bool QSUiListWidget::updateRowCount()
 {
-    int h = height();
-    if(m_header->isVisibleTo(this))
-        h -= m_header->requiredHeight();
-    if(m_hslider->isVisibleTo(this))
-        h -= m_hslider->height();
-    int row_count = qMax(0, h / m_drawer.rowHeight());
+    int row_count = qMax(0, viewportHeight() / m_drawer.rowHeight());
     if(m_row_count != row_count)
     {
         m_row_count = row_count;
@@ -801,6 +796,17 @@ void QSUiListWidget::updateScrollBars()
         m_hslider->setGeometry(0, height() - m_hslider->sizeHint().height(), width() - vslider_width,
                                m_hslider->sizeHint().height());
     }
+}
+
+int QSUiListWidget::viewportHeight() const
+{
+    int h = height();
+    if(m_header->isVisibleTo(this))
+        h -= m_header->requiredHeight();
+    if(m_hslider->isVisibleTo(this))
+        h -= m_hslider->height();
+
+    return h;
 }
 
 void QSUiListWidget::mouseMoveEvent(QMouseEvent *e)
