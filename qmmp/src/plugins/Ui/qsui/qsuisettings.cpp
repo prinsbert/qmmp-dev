@@ -155,6 +155,7 @@ void QSUiSettings::readSettings()
     QSettings settings;
     settings.beginGroup(u"Simple"_s);
     //playlist
+    m_ui->smoothScrollingCheckBox->setChecked(settings.value(u"pl_smooth_scrolling"_s, false).toBool());
     m_ui->protocolCheckBox->setChecked(settings.value(u"pl_show_protocol"_s, false).toBool());
     m_ui->numbersCheckBox->setChecked(settings.value(u"pl_show_numbers"_s, true).toBool());
     m_ui->lengthsCheckBox->setChecked(settings.value(u"pl_show_lengths"_s, true).toBool());
@@ -214,6 +215,7 @@ void QSUiSettings::writeSettings()
 {
     QSettings settings;
     settings.beginGroup(u"Simple"_s);
+    settings.setValue(u"pl_smooth_scrolling"_s, m_ui->smoothScrollingCheckBox->isChecked());
     settings.setValue(u"pl_show_protocol"_s, m_ui->protocolCheckBox->isChecked());
     settings.setValue(u"pl_show_numbers"_s, m_ui->numbersCheckBox->isChecked());
     settings.setValue(u"pl_show_lengths"_s, m_ui->lengthsCheckBox->isChecked());

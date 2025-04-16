@@ -38,6 +38,7 @@ class PlayListTrack;
 class QmmpUiSettings;
 class QSUiPlayListHeader;
 class QSUiPopupWidget;
+class QVariantAnimation;
 
 
 /**
@@ -72,6 +73,7 @@ public slots:
     void readSettings();
     void updateList(int flags);
     void setViewPosition(int sc);
+    void scroll(int y);
     void setFilterString(const QString &str = QString());
     void clear();
     void removeSelected();
@@ -125,6 +127,7 @@ private:
     QMenu *m_menu = nullptr;
     PlayListModel *m_model;
     int m_row_count = 0, m_firstLine = 0, m_lineCount = 0; //visible rows, first visible index, total item count
+    int m_row_offset = 0;
     PlayListItem *m_firstItem = nullptr; //first visible item
     /*!
      * Scroll direction that is performing in current moment.
@@ -133,10 +136,12 @@ private:
     int m_prev_y = 0;
     bool m_select_on_release = false;
     bool m_show_protocol;
+    bool m_smooth_scrolling;
     QList<QSUiListWidgetRow *> m_rows;
     QmmpUiSettings *m_ui_settings;
     QSUiPopupWidget *m_popupWidget = nullptr;
     QTimer *m_timer;
+    QVariantAnimation *m_scrollAnimation;
     QScrollBar *m_scrollBar;
     QSUiListWidgetDrawer m_drawer;
     QSUiPlayListHeader *m_header;
