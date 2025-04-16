@@ -68,3 +68,4 @@ Type=Application
 Categories=AudioVideo;Player;Audio;Qt;
 MimeType=inode/directory;
 X-KDE-StartupNotify=false
+StartupWMClass=qmmp-1
