@@ -115,78 +115,83 @@
         <translation>숨김 시작</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="210"/>
+        <location filename="../forms/qsuisettings.ui" line="80"/>
+        <source>Use smooth scrolling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="217"/>
         <source>Visualization Colors</source>
         <translation>시각화 색상</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="216"/>
+        <location filename="../forms/qsuisettings.ui" line="223"/>
         <source>Color #1:</source>
         <translation>색상 #1:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="283"/>
+        <location filename="../forms/qsuisettings.ui" line="290"/>
         <source>Color #2:</source>
         <translation>색상 #2:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="347"/>
+        <location filename="../forms/qsuisettings.ui" line="354"/>
         <source>Color #3:</source>
         <translation>색상 #3:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="436"/>
+        <location filename="../forms/qsuisettings.ui" line="443"/>
         <source>Reset colors</source>
         <translation>색상 재설정</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="703"/>
+        <location filename="../forms/qsuisettings.ui" line="710"/>
         <source>Override group colors</source>
         <translation>그룹 색상 재정의</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="806"/>
+        <location filename="../forms/qsuisettings.ui" line="813"/>
         <source>Override current track colors</source>
         <translation>현재 트랙 색상 재정의</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="816"/>
+        <location filename="../forms/qsuisettings.ui" line="823"/>
         <source>Current track text:</source>
         <translation>현재 트랙 텍스트:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="915"/>
+        <location filename="../forms/qsuisettings.ui" line="922"/>
         <source>Waveform Seekbar Colors</source>
         <translation>파형 탐색막대 색상</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="921"/>
+        <location filename="../forms/qsuisettings.ui" line="928"/>
         <source>Progress bar:</source>
         <translation>진행률 표시줄:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1010"/>
+        <location filename="../forms/qsuisettings.ui" line="1017"/>
         <source>RMS:</source>
         <extracomment>Root mean square</extracomment>
         <translation>RMS:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1055"/>
+        <location filename="../forms/qsuisettings.ui" line="1062"/>
         <source>Waveform:</source>
         <translation>파형:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1096"/>
+        <location filename="../forms/qsuisettings.ui" line="1103"/>
         <source>Fonts</source>
         <translation>글꼴</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1102"/>
+        <location filename="../forms/qsuisettings.ui" line="1109"/>
         <source>Use system fonts</source>
         <translation>시스템 글꼴 사용</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1176"/>
+        <location filename="../forms/qsuisettings.ui" line="1183"/>
         <source>Playlist:</source>
         <translation>재생목록:</translation>
     </message>
@@ -211,188 +216,188 @@
         <translation>음악 화면표시</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="80"/>
+        <location filename="../forms/qsuisettings.ui" line="87"/>
         <source>Show protocol</source>
         <translation>프로토콜 표시</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="148"/>
+        <location filename="../forms/qsuisettings.ui" line="155"/>
         <source>Show song numbers</source>
         <translation>곡 번호 표시</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="155"/>
+        <location filename="../forms/qsuisettings.ui" line="162"/>
         <source>Show song lengths</source>
         <translation>곡 길이 표시</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="165"/>
+        <location filename="../forms/qsuisettings.ui" line="172"/>
         <source>Align song numbers</source>
         <translation>곡 번호 정렬</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="87"/>
+        <location filename="../forms/qsuisettings.ui" line="94"/>
         <source>Show anchor</source>
         <translation>앵커 표시</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="101"/>
+        <location filename="../forms/qsuisettings.ui" line="108"/>
         <source>Show popup information</source>
         <translation>팝업 정보 표시</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="113"/>
+        <location filename="../forms/qsuisettings.ui" line="120"/>
         <source>Edit template</source>
         <translation>템플릿 편집</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1243"/>
+        <location filename="../forms/qsuisettings.ui" line="1250"/>
         <source>Reset fonts</source>
         <translation>글꼴 재설정</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1192"/>
+        <location filename="../forms/qsuisettings.ui" line="1199"/>
         <source>Column headers:</source>
         <translation>열 헤더:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1258"/>
+        <location filename="../forms/qsuisettings.ui" line="1265"/>
         <source>Tab names:</source>
         <translation>탭 이름:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1339"/>
+        <location filename="../forms/qsuisettings.ui" line="1346"/>
         <source>Miscellaneous</source>
         <translation>기타</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="94"/>
+        <location filename="../forms/qsuisettings.ui" line="101"/>
         <source>Show splitters</source>
         <translation>스플리터 표시</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="142"/>
+        <location filename="../forms/qsuisettings.ui" line="149"/>
         <source>Single Column Mode</source>
         <translation>단일 열 모드</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="189"/>
+        <location filename="../forms/qsuisettings.ui" line="196"/>
         <source>Colors</source>
         <translation>색상</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="251"/>
+        <location filename="../forms/qsuisettings.ui" line="258"/>
         <source>Peaks:</source>
         <translation>피크:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="315"/>
-        <location filename="../forms/qsuisettings.ui" line="1003"/>
+        <location filename="../forms/qsuisettings.ui" line="322"/>
+        <location filename="../forms/qsuisettings.ui" line="1010"/>
         <source>Background:</source>
         <translation>배경:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="448"/>
+        <location filename="../forms/qsuisettings.ui" line="455"/>
         <source>Playlist Colors</source>
         <translation>재생목록 색상</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="470"/>
+        <location filename="../forms/qsuisettings.ui" line="477"/>
         <source>Background #1:</source>
         <translation>배경 #1:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="601"/>
+        <location filename="../forms/qsuisettings.ui" line="608"/>
         <source>Normal text:</source>
         <translation>일반 텍스트:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="569"/>
+        <location filename="../forms/qsuisettings.ui" line="576"/>
         <source>Background #2:</source>
         <translation>배경 #2:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="633"/>
+        <location filename="../forms/qsuisettings.ui" line="640"/>
         <source>Highlighted background:</source>
         <translation>강조 표시된 배경:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="665"/>
+        <location filename="../forms/qsuisettings.ui" line="672"/>
         <source>Highlighted text:</source>
         <translation>강조 표시된 텍스트:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="867"/>
+        <location filename="../forms/qsuisettings.ui" line="874"/>
         <source>Current track background:</source>
         <translation>현재 트랙 배경</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1268"/>
+        <location filename="../forms/qsuisettings.ui" line="1275"/>
         <source>Groups:</source>
         <translation>그룹:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1275"/>
+        <location filename="../forms/qsuisettings.ui" line="1282"/>
         <source>Extra group row:</source>
         <translation>추가 그룹 행:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1372"/>
+        <location filename="../forms/qsuisettings.ui" line="1379"/>
         <source>Tab position:</source>
         <translation>탭 위치:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1409"/>
+        <location filename="../forms/qsuisettings.ui" line="1416"/>
         <source>Toolbars</source>
         <translation>도구모음</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1417"/>
+        <location filename="../forms/qsuisettings.ui" line="1424"/>
         <source>Icon size:</source>
         <translation>아이콘 크기:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1442"/>
+        <location filename="../forms/qsuisettings.ui" line="1449"/>
         <source>Customize...</source>
         <translation>맞춤 설정...</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="454"/>
+        <location filename="../forms/qsuisettings.ui" line="461"/>
         <source>Use system colors</source>
         <translation>시스템 색상 사용</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="761"/>
+        <location filename="../forms/qsuisettings.ui" line="768"/>
         <source>Group background:</source>
         <translation>그룹 배경:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="713"/>
+        <location filename="../forms/qsuisettings.ui" line="720"/>
         <source>Group text:</source>
         <translation>그룹 텍스트:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="515"/>
+        <location filename="../forms/qsuisettings.ui" line="522"/>
         <source>Splitter:</source>
         <translation>스플리터:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1345"/>
+        <location filename="../forms/qsuisettings.ui" line="1352"/>
         <source>Tabs</source>
         <translation>탭</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1351"/>
+        <location filename="../forms/qsuisettings.ui" line="1358"/>
         <source>Show close buttons</source>
         <translation>닫기 버튼 표시</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1358"/>
+        <location filename="../forms/qsuisettings.ui" line="1365"/>
         <source>Show tab list menu</source>
         <translation>탭 목록 메뉴 표시</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1365"/>
+        <location filename="../forms/qsuisettings.ui" line="1372"/>
         <source>Show &apos;New Playlist&apos; button</source>
         <translation>&apos;새 재생목록&apos; 버튼 표시</translation>
     </message>

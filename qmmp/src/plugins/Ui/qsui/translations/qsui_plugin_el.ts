@@ -115,78 +115,83 @@
         <translation>Εκκίνηση σε απόκρυψη</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="210"/>
+        <location filename="../forms/qsuisettings.ui" line="80"/>
+        <source>Use smooth scrolling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="217"/>
         <source>Visualization Colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="216"/>
+        <location filename="../forms/qsuisettings.ui" line="223"/>
         <source>Color #1:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="283"/>
+        <location filename="../forms/qsuisettings.ui" line="290"/>
         <source>Color #2:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="347"/>
+        <location filename="../forms/qsuisettings.ui" line="354"/>
         <source>Color #3:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="436"/>
+        <location filename="../forms/qsuisettings.ui" line="443"/>
         <source>Reset colors</source>
         <translation>Επαναφορά χρωμάτων</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="703"/>
+        <location filename="../forms/qsuisettings.ui" line="710"/>
         <source>Override group colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="806"/>
+        <location filename="../forms/qsuisettings.ui" line="813"/>
         <source>Override current track colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="816"/>
+        <location filename="../forms/qsuisettings.ui" line="823"/>
         <source>Current track text:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="915"/>
+        <location filename="../forms/qsuisettings.ui" line="922"/>
         <source>Waveform Seekbar Colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="921"/>
+        <location filename="../forms/qsuisettings.ui" line="928"/>
         <source>Progress bar:</source>
         <translation>Ράβδος προόδου:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1010"/>
+        <location filename="../forms/qsuisettings.ui" line="1017"/>
         <source>RMS:</source>
         <extracomment>Root mean square</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1055"/>
+        <location filename="../forms/qsuisettings.ui" line="1062"/>
         <source>Waveform:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1096"/>
+        <location filename="../forms/qsuisettings.ui" line="1103"/>
         <source>Fonts</source>
         <translation>Γραμματοσειρές</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1102"/>
+        <location filename="../forms/qsuisettings.ui" line="1109"/>
         <source>Use system fonts</source>
         <translation>Χρήση των γραμματοσειρών του συστήματος</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1176"/>
+        <location filename="../forms/qsuisettings.ui" line="1183"/>
         <source>Playlist:</source>
         <translation>Λίστα αναπαραγωγής:</translation>
     </message>
@@ -211,188 +216,188 @@
         <translation>Εμφάνιση τραγουδιού</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="80"/>
+        <location filename="../forms/qsuisettings.ui" line="87"/>
         <source>Show protocol</source>
         <translation>Εμφάνιση πρωτοκόλλου</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="148"/>
+        <location filename="../forms/qsuisettings.ui" line="155"/>
         <source>Show song numbers</source>
         <translation>Εμφάνιση αριθμού τραγουδιού</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="155"/>
+        <location filename="../forms/qsuisettings.ui" line="162"/>
         <source>Show song lengths</source>
         <translation>Εμφάνιση διάρκειας τραγουδιού</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="165"/>
+        <location filename="../forms/qsuisettings.ui" line="172"/>
         <source>Align song numbers</source>
         <translation>Ευθυγράμμιση αριθμών τραγουδιού</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="87"/>
+        <location filename="../forms/qsuisettings.ui" line="94"/>
         <source>Show anchor</source>
         <translation>Εμφάνιση άγκυρας</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="101"/>
+        <location filename="../forms/qsuisettings.ui" line="108"/>
         <source>Show popup information</source>
         <translation>Εμφάνιση αναδυόμενων πληροφοριών</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="113"/>
+        <location filename="../forms/qsuisettings.ui" line="120"/>
         <source>Edit template</source>
         <translation>Επεξεργασία πρότυπου</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1243"/>
+        <location filename="../forms/qsuisettings.ui" line="1250"/>
         <source>Reset fonts</source>
         <translation>Επαναφορά γραμματοσειρών</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1192"/>
+        <location filename="../forms/qsuisettings.ui" line="1199"/>
         <source>Column headers:</source>
         <translation>Επικεφαλίδες στηλών:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1258"/>
+        <location filename="../forms/qsuisettings.ui" line="1265"/>
         <source>Tab names:</source>
         <translation>Ονόματα καρτελών</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1339"/>
+        <location filename="../forms/qsuisettings.ui" line="1346"/>
         <source>Miscellaneous</source>
         <translation>Διάφορα</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="94"/>
+        <location filename="../forms/qsuisettings.ui" line="101"/>
         <source>Show splitters</source>
         <translation>Εμφάνιση διαχωριστών</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="142"/>
+        <location filename="../forms/qsuisettings.ui" line="149"/>
         <source>Single Column Mode</source>
         <translation>Λειτουργία μονής στήλης</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="189"/>
+        <location filename="../forms/qsuisettings.ui" line="196"/>
         <source>Colors</source>
         <translation>Χρώματα</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="251"/>
+        <location filename="../forms/qsuisettings.ui" line="258"/>
         <source>Peaks:</source>
         <translation>Αιχμές:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="315"/>
-        <location filename="../forms/qsuisettings.ui" line="1003"/>
+        <location filename="../forms/qsuisettings.ui" line="322"/>
+        <location filename="../forms/qsuisettings.ui" line="1010"/>
         <source>Background:</source>
         <translation>Παρασκήνιο:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="448"/>
+        <location filename="../forms/qsuisettings.ui" line="455"/>
         <source>Playlist Colors</source>
         <translation>Χρώματα λίστας αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="470"/>
+        <location filename="../forms/qsuisettings.ui" line="477"/>
         <source>Background #1:</source>
         <translation>Παρασκήνιο #1:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="601"/>
+        <location filename="../forms/qsuisettings.ui" line="608"/>
         <source>Normal text:</source>
         <translation>Κανονικό κείμενο:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="569"/>
+        <location filename="../forms/qsuisettings.ui" line="576"/>
         <source>Background #2:</source>
         <translation>Παρασκήνιο #2:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="633"/>
+        <location filename="../forms/qsuisettings.ui" line="640"/>
         <source>Highlighted background:</source>
         <translation>Τονισμένο παρασκήνιο:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="665"/>
+        <location filename="../forms/qsuisettings.ui" line="672"/>
         <source>Highlighted text:</source>
         <translation>Τονισμένο κείμενο:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="867"/>
+        <location filename="../forms/qsuisettings.ui" line="874"/>
         <source>Current track background:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1268"/>
+        <location filename="../forms/qsuisettings.ui" line="1275"/>
         <source>Groups:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1275"/>
+        <location filename="../forms/qsuisettings.ui" line="1282"/>
         <source>Extra group row:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1372"/>
+        <location filename="../forms/qsuisettings.ui" line="1379"/>
         <source>Tab position:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1409"/>
+        <location filename="../forms/qsuisettings.ui" line="1416"/>
         <source>Toolbars</source>
         <translation>Εργαλειοθήκες</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1417"/>
+        <location filename="../forms/qsuisettings.ui" line="1424"/>
         <source>Icon size:</source>
         <translation>Μέγεθος εικονιδίων:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1442"/>
+        <location filename="../forms/qsuisettings.ui" line="1449"/>
         <source>Customize...</source>
         <translation>Προσαρμογή...</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="454"/>
+        <location filename="../forms/qsuisettings.ui" line="461"/>
         <source>Use system colors</source>
         <translation>Χρήση των χρωμάτων του συστήματος</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="761"/>
+        <location filename="../forms/qsuisettings.ui" line="768"/>
         <source>Group background:</source>
         <translation>Παρασκήνιο ομάδας:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="713"/>
+        <location filename="../forms/qsuisettings.ui" line="720"/>
         <source>Group text:</source>
         <translation>Κείμενο ομάδας:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="515"/>
+        <location filename="../forms/qsuisettings.ui" line="522"/>
         <source>Splitter:</source>
         <translation>Διαχωριστής:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1345"/>
+        <location filename="../forms/qsuisettings.ui" line="1352"/>
         <source>Tabs</source>
         <translation>Καρτέλες</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1351"/>
+        <location filename="../forms/qsuisettings.ui" line="1358"/>
         <source>Show close buttons</source>
         <translation>Εμφάνιση των κουμπιών κλεισίματος</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1358"/>
+        <location filename="../forms/qsuisettings.ui" line="1365"/>
         <source>Show tab list menu</source>
         <translation>Εμφάνιση του μενού λίστας των καρτελών</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1365"/>
+        <location filename="../forms/qsuisettings.ui" line="1372"/>
         <source>Show &apos;New Playlist&apos; button</source>
         <translation>Εμφάνιση του κουμπιού «Νέα λίστα αναπαραγωγής»</translation>
     </message>
