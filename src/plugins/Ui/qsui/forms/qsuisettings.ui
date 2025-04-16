@@ -75,6 +75,13 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
+           <widget class="QCheckBox" name="smoothScrollingCheckBox">
+            <property name="text">
+             <string>Use smooth scrolling</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QCheckBox" name="protocolCheckBox">
             <property name="text">
              <string>Show protocol</string>
