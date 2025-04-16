@@ -118,6 +118,7 @@ private:
     bool updateRowCount();
     void restoreFirstVisible();
     void updateScrollBars();
+    int viewportHeight() const;
 
     bool m_update = false;
     int m_pressedLine = -1, m_dropLine = -1, m_anchorLine = -1;
