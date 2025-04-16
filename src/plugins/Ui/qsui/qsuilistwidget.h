@@ -78,7 +78,6 @@ public slots:
     void removeUnselected();
 
 signals:
-    void positionChanged(int, int); //current position, maximum value
     void doubleClicked();
 
 protected:
@@ -100,7 +99,6 @@ protected:
     bool event(QEvent *e) override;
 
 private slots:
-    void updateSkin();
     void autoscroll();
     void updateRepeatIndicator();
     void scrollTo(int index);
