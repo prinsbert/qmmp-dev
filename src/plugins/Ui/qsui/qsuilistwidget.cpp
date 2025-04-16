@@ -409,7 +409,6 @@ void QSUiListWidget::updateList(int flags)
             m_firstLine = 0;
             m_scrollBar->setMaximum(0);
             m_scrollBar->setValue(0);
-            emit positionChanged(0, 0);
         }
         else if(m_firstLine + m_row_count >= count)
         {
@@ -423,7 +422,6 @@ void QSUiListWidget::updateList(int flags)
                 m_firstLine = qMax(0, count - m_row_count);
             m_scrollBar->setMaximum(count - m_row_count);
             m_scrollBar->setValue(m_firstLine);
-            emit positionChanged(m_firstLine, m_firstLine);
         }
         else if(!m_filterMode && (m_lineCount > 0) && (m_lineCount != m_model->lineCount()) &&
                 m_firstItem && m_model->itemAtLine(m_firstLine) != m_firstItem)
@@ -431,13 +429,11 @@ void QSUiListWidget::updateList(int flags)
             restoreFirstVisible();
             m_scrollBar->setMaximum(count - m_row_count);
             m_scrollBar->setValue(m_firstLine);
-            emit positionChanged(m_firstLine, m_model->lineCount() - m_row_count);
         }
         else
         {
             m_scrollBar->setMaximum(count - m_row_count);
             m_scrollBar->setValue(m_firstLine);
-            emit positionChanged(m_firstLine, count - m_row_count);
         }
         m_scrollBar->blockSignals(false);
 
