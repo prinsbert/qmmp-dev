@@ -83,7 +83,7 @@ void SkinnedListWidget::readSettings()
     m_header->setVisible(ACTION(SkinnedActionManager::PL_SHOW_HEADER)->isChecked());
     m_header->setGeometry(0, 0, width(), m_header->requiredHeight());
 
-    if (m_update)
+    if(m_update)
     {
         m_drawer.readSettings();
         updateList(PlayListModel::STRUCTURE);
@@ -93,10 +93,8 @@ void SkinnedListWidget::readSettings()
             m_popupWidget = nullptr;
         }
     }
-    else
-    {
-        m_update = true;
-    }
+
+    m_update = true;
 
     if(show_popup)
         m_popupWidget = new SkinnedPopupWidget(this);
