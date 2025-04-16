@@ -658,12 +658,6 @@ void QSUiListWidget::removeUnselected()
     }
 }
 
-void QSUiListWidget::updateSkin()
-{
-    m_drawer.loadSystemColors();
-    update();
-}
-
 void QSUiListWidget::dragEnterEvent(QDragEnterEvent *event)
 {
     if(event->mimeData()->hasFormat(u"text/uri-list"_s) || event->mimeData()->hasFormat(u"application/json"_s))
