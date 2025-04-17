@@ -31,6 +31,7 @@ class QFontMetrics;
 class QMenu;
 class QAction;
 class QTimer;
+class QVariantAnimation;
 class PlayListModel;
 class Skin;
 class PlayListItem;
@@ -69,12 +70,13 @@ public:
 public slots:
     void readSettings();
     void updateList(int flags);
+    void scroll(int y);
     void setViewPosition(int sc);
     void setModel(PlayListModel *selected, PlayListModel *previous = nullptr);
 
 signals:
     void doubleClicked();
-    void positionChanged(int, int); //current position, maximum value
+    void scrollPositionChanged(int, int); //current position, maximum value
 
 private slots:
     void updateSkin();
@@ -106,6 +108,7 @@ private:
     bool updateRowCount();
     void restoreFirstVisible();
     int viewportHeight() const;
+    void setScrollPosition(int value, int maximum);
 
     enum ScrollDirection
     {
@@ -116,6 +119,8 @@ private:
     QMenu *m_menu = nullptr;
     PlayListModel *m_model;
     int m_row_count = 0, m_firstLine = 0, m_lineCount = 0; //visible rows, first visible index, total item count
+    int m_row_offset = 0;
+    int m_scroll_value = 0, m_scroll_maximum = 0; //scrollbar values
     PlayListItem *m_firstItem = nullptr; //first visible item
     Skin *m_skin;
     /*!
@@ -125,10 +130,12 @@ private:
     int m_prev_y = 0;
     bool m_select_on_release = false;
     bool m_show_protocol = false;
+    bool m_smooth_scrolling;
     QList<SkinnedListWidgetRow *> m_rows;
     QmmpUiSettings *m_ui_settings;
     SkinnedPopupWidget *m_popupWidget;
     QTimer *m_timer;
+    QVariantAnimation *m_scrollAnimation;
     SkinnedListWidgetDrawer m_drawer;
     SkinnedPlayListHeader *m_header;
     SkinnedHorizontalSlider *m_hslider;
