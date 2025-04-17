@@ -33,7 +33,7 @@ Suomi:
     Kimmo Kujansuu
 
 Ranska:
-    Nicolas PARLANT
+    Nicolas Parlant
     Adrien Vigneron - VRad <adrienvigneron@ml1.net>
     Sébastien Aperghis-Tramoni (maddingue)
     Stanislas Zeller <uncensored.assault@gmail.com>

@@ -117,7 +117,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="80"/>
         <source>Use smooth scrolling</source>
-        <translation type="unfinished"></translation>
+        <translation>Vloeiend schuiven inschakelen</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="217"/>

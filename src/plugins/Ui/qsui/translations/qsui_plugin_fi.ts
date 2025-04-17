@@ -117,7 +117,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="80"/>
         <source>Use smooth scrolling</source>
-        <translation type="unfinished"></translation>
+        <translation>Pehmeä vieritys</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="217"/>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="813"/>
         <source>Override current track colors</source>
-        <translation>Ohita nykyisen raidan värit</translation>
+        <translation>Ohita raidan värit</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="823"/>
@@ -1056,7 +1056,7 @@
     <message>
         <location filename="../qsuifactory.cpp" line="32"/>
         <source>Simple User Interface</source>
-        <translation>Yksinkertainen käyttöliittymä</translation>
+        <translation>Helppo käyttöliittymä</translation>
     </message>
 </context>
 <context>
@@ -1079,7 +1079,7 @@
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="63"/>
         <source>Restore Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>Palauta oletukset</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="56"/>
@@ -1089,7 +1089,7 @@
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="57"/>
         <source>Do you want to restore default shortcuts?</source>
-        <translation>Haluatko palauttaa oletusarvoiset pikanäppäimet?</translation>
+        <translation>Haluatko palauttaa oletuspikanäppäimet?</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="69"/>
@@ -1275,7 +1275,7 @@
         <location filename="../forms/qsuimainwindow.ui" line="259"/>
         <location filename="../qsuimainwindow.cpp" line="296"/>
         <source>Rename Playlist</source>
-        <translation>Nimeä soittolista uudelleen</translation>
+        <translation>Nimeä soittolista</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="87"/>
@@ -1350,7 +1350,7 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="546"/>
         <source>Edit Statusbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Muokkaa tilapalkkia</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="548"/>
@@ -1654,12 +1654,12 @@
     <message>
         <location filename="../qsuistatusbar.cpp" line="167"/>
         <source>Buffering: %1%</source>
-        <translation>Puskuroidaan: %1 %</translation>
+        <translation>Puskuroidaan: %1%</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="172"/>
         <source>%1 bits</source>
-        <translation>%1 bittiä</translation>
+        <translation>%1 bit</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="174"/>
@@ -1695,72 +1695,72 @@
     <message>
         <location filename="../forms/qsuistatusbareditor.ui" line="14"/>
         <source>StatusBar Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilapalkin editori</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="102"/>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Tila</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="103"/>
         <source>Sample Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytteen koko</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="104"/>
         <source>Number of Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanavien määrä</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="105"/>
         <source>Sample Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Taajuus</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="106"/>
         <source>Track Count</source>
-        <translation type="unfinished"></translation>
+        <translation>Kappaleita</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="107"/>
         <source>Total Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Kokonaisaika</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="109"/>
         <source>Elapsed Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Kulunut</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="110"/>
         <source>Remaining Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Jäljellä</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="111"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesto</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="112"/>
         <source>Elapsed Time + Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Kulunut + kesto</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="113"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Muoto</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="114"/>
         <source>Decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>Purkaja</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="108"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Bittinopeus</translation>
     </message>
 </context>
 <context>
@@ -1768,53 +1768,53 @@
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="14"/>
         <source>ToolBar Editor</source>
-        <translation type="unfinished">Työkalupalkin muokkain</translation>
+        <translation>Työkalupalkin muokkain</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="34"/>
         <source>Toolbar:</source>
-        <translation type="unfinished">Työkalupalkki:</translation>
+        <translation>Työkalupalkki:</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="57"/>
         <source>&amp;Create</source>
-        <translation type="unfinished">&amp;Luo</translation>
+        <translation>&amp;Luo</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="73"/>
         <source>Re&amp;name</source>
-        <translation type="unfinished">Ni&amp;meä uudelleen</translation>
+        <translation>Ni&amp;meä uudelleen</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="89"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Poi&amp;sta</translation>
+        <translation>Poi&amp;sta</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="104"/>
         <location filename="../qsuitoolbareditor.cpp" line="197"/>
         <source>Separator</source>
-        <translation type="unfinished">Erotin</translation>
+        <translation>Erotin</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="247"/>
         <source>Toolbar</source>
-        <translation type="unfinished">Työkalupalkki</translation>
+        <translation>Työkalupalkki</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="249"/>
         <source>Toolbar %1</source>
-        <translation type="unfinished">Työkalupalkki %1</translation>
+        <translation>Työkalupalkki %1</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="263"/>
         <source>Rename Toolbar</source>
-        <translation type="unfinished">Nimeä työkalupalkki uudelleen</translation>
+        <translation>Nimeä työkalupalkki uudelleen</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="263"/>
         <source>Toolbar name:</source>
-        <translation type="unfinished">Työkalupalkin nimi:</translation>
+        <translation>Työkalupalkin nimi:</translation>
     </message>
 </context>
 <context>

@@ -1084,147 +1084,152 @@
         <translation>단일 열 모드</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="308"/>
+        <location filename="../forms/skinnedsettings.ui" line="294"/>
+        <source>Use smooth scrolling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="315"/>
         <source>Show splitters</source>
         <translation>스플리터 표시</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="315"/>
+        <location filename="../forms/skinnedsettings.ui" line="322"/>
         <source>Alternate splitter color</source>
         <translation>대체 스플리터 색상</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="415"/>
+        <location filename="../forms/skinnedsettings.ui" line="422"/>
         <source>Colors</source>
         <translation>색상</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="421"/>
+        <location filename="../forms/skinnedsettings.ui" line="428"/>
         <source>Playlist Colors</source>
         <translation>재생목록 색상</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="427"/>
+        <location filename="../forms/skinnedsettings.ui" line="434"/>
         <source>Use skin colors</source>
         <translation>스킨 색상 사용</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="545"/>
+        <location filename="../forms/skinnedsettings.ui" line="552"/>
         <source>Background #2:</source>
         <translation>배경 #2:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="609"/>
+        <location filename="../forms/skinnedsettings.ui" line="616"/>
         <source>Highlighted background:</source>
         <translation>강조 표시된 배경:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="500"/>
+        <location filename="../forms/skinnedsettings.ui" line="507"/>
         <source>Normal text:</source>
         <translation>일반 텍스트:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="763"/>
+        <location filename="../forms/skinnedsettings.ui" line="770"/>
         <source>Splitter:</source>
         <translation>스플리터:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="577"/>
+        <location filename="../forms/skinnedsettings.ui" line="584"/>
         <source>Current text:</source>
         <translation>현재 텍스트:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="641"/>
+        <location filename="../forms/skinnedsettings.ui" line="648"/>
         <source>Highlighted text:</source>
         <translation>강조 표시된 텍스트:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="813"/>
+        <location filename="../forms/skinnedsettings.ui" line="820"/>
         <source>Current track background:</source>
         <translation>현재 트랙 배경</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="871"/>
+        <location filename="../forms/skinnedsettings.ui" line="878"/>
         <source>Override current track background</source>
         <translation>현재 트랙 배경 재정의</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="778"/>
+        <location filename="../forms/skinnedsettings.ui" line="785"/>
         <source>Group background:</source>
         <translation>그룹 배경:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="878"/>
+        <location filename="../forms/skinnedsettings.ui" line="885"/>
         <source>Override group background</source>
         <translation>그룹 배경 재정의</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="700"/>
+        <location filename="../forms/skinnedsettings.ui" line="707"/>
         <source>Group text:</source>
         <translation>그룹 텍스트:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="455"/>
+        <location filename="../forms/skinnedsettings.ui" line="462"/>
         <source>Background #1:</source>
         <translation>배경 #1:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="691"/>
+        <location filename="../forms/skinnedsettings.ui" line="698"/>
         <source>Load skin colors</source>
         <translation>스킨 색상 불러오기</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="904"/>
+        <location filename="../forms/skinnedsettings.ui" line="911"/>
         <source>Fonts</source>
         <translation>글꼴</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="958"/>
+        <location filename="../forms/skinnedsettings.ui" line="965"/>
         <source>Playlist:</source>
         <translation>재생목록:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="994"/>
+        <location filename="../forms/skinnedsettings.ui" line="1001"/>
         <source>Groups:</source>
         <translation>그룹:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1021"/>
+        <location filename="../forms/skinnedsettings.ui" line="1028"/>
         <source>Extra group row:</source>
         <translation>추가 그룹 행:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1048"/>
+        <location filename="../forms/skinnedsettings.ui" line="1055"/>
         <source>Column headers:</source>
         <translation>열 헤더:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="916"/>
+        <location filename="../forms/skinnedsettings.ui" line="923"/>
         <source>Player:</source>
         <translation>재생기</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="938"/>
-        <location filename="../forms/skinnedsettings.ui" line="980"/>
-        <location filename="../forms/skinnedsettings.ui" line="1061"/>
+        <location filename="../forms/skinnedsettings.ui" line="945"/>
+        <location filename="../forms/skinnedsettings.ui" line="987"/>
+        <location filename="../forms/skinnedsettings.ui" line="1068"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="142"/>
-        <location filename="../forms/skinnedsettings.ui" line="945"/>
-        <location filename="../forms/skinnedsettings.ui" line="987"/>
-        <location filename="../forms/skinnedsettings.ui" line="1068"/>
+        <location filename="../forms/skinnedsettings.ui" line="952"/>
+        <location filename="../forms/skinnedsettings.ui" line="994"/>
+        <location filename="../forms/skinnedsettings.ui" line="1075"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1103"/>
+        <location filename="../forms/skinnedsettings.ui" line="1110"/>
         <source>Reset fonts</source>
         <translation>글꼴 재설정</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1112"/>
+        <location filename="../forms/skinnedsettings.ui" line="1119"/>
         <source>Use bitmap font if available</source>
         <translation>사용 가능한 경우 비트맵 글꼴 사용</translation>
     </message>
@@ -1271,7 +1276,7 @@
         <translation>음악 화면표시</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="294"/>
+        <location filename="../forms/skinnedsettings.ui" line="301"/>
         <source>Show protocol</source>
         <translation>프로토콜 표시</translation>
     </message>
@@ -1291,27 +1296,27 @@
         <translation>곡 번호 정렬</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="301"/>
+        <location filename="../forms/skinnedsettings.ui" line="308"/>
         <source>Show anchor</source>
         <translation>앵커 표시</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="363"/>
+        <location filename="../forms/skinnedsettings.ui" line="370"/>
         <source>Show popup information</source>
         <translation>팝업 정보 표시</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="375"/>
+        <location filename="../forms/skinnedsettings.ui" line="382"/>
         <source>Edit template</source>
         <translation>템플릿 편집</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="331"/>
+        <location filename="../forms/skinnedsettings.ui" line="338"/>
         <source>Playlist separator:</source>
         <translation>재생목록 구분자:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="322"/>
+        <location filename="../forms/skinnedsettings.ui" line="329"/>
         <source>Show &apos;New Playlist&apos; button</source>
         <translation>&apos;새 재생목록&apos; 버튼 표시</translation>
     </message>
