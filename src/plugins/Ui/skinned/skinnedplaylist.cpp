@@ -103,8 +103,8 @@ SkinnedPlayList::SkinnedPlayList(PlayListManager *manager, SkinnedMainWindow *pa
 
     connect(m_listWidget, &SkinnedListWidget::doubleClicked, parent, &SkinnedMainWindow::replay);
 
-    connect(m_plslider, &SkinnedPlayListSlider::sliderMoved, m_listWidget, &SkinnedListWidget::setViewPosition);
-    connect(m_listWidget, &SkinnedListWidget::positionChanged, m_plslider, &SkinnedPlayListSlider::setPos);
+    connect(m_plslider, &SkinnedPlayListSlider::sliderMoved, m_listWidget, &SkinnedListWidget::scroll);
+    connect(m_listWidget, &SkinnedListWidget::scrollPositionChanged, m_plslider, &SkinnedPlayListSlider::setPos);
     connect(m_skin, &Skin::skinChanged, this, &SkinnedPlayList::updateSkin);
     connect(m_buttonAdd, &SkinnedButton::clicked, this, &SkinnedPlayList::showAddMenu);
     connect(m_buttonSub, &SkinnedButton::clicked, this, &SkinnedPlayList::showSubMenu);

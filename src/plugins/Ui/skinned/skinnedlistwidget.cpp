@@ -29,6 +29,7 @@
 #include <QHelpEvent>
 #include <QTimer>
 #include <QMimeData>
+#include <QVariantAnimation>
 #include <qmmpui/playlistitem.h>
 #include <qmmpui/playlistmodel.h>
 #include <qmmpui/qmmpuisettings.h>
@@ -53,6 +54,8 @@ SkinnedListWidget::SkinnedListWidget(QWidget *parent) : QWidget(parent)
 
     m_header = new SkinnedPlayListHeader(this);
     m_hslider = new SkinnedHorizontalSlider(this);
+    m_scrollAnimation = new QVariantAnimation(this);
+    m_scrollAnimation->setDuration(125);
 
     setAcceptDrops(true);
     setMouseTracking(true);
@@ -63,6 +66,9 @@ SkinnedListWidget::SkinnedListWidget(QWidget *parent) : QWidget(parent)
     connect(m_timer, &QTimer::timeout, this, &SkinnedListWidget::autoscroll);
     connect(m_hslider, &SkinnedHorizontalSlider::sliderMoved, m_header, &SkinnedPlayListHeader::scroll);
     connect(m_hslider, &SkinnedHorizontalSlider::sliderMoved, this, qOverload<>(&SkinnedListWidget::update));
+    connect(m_scrollAnimation, &QVariantAnimation::valueChanged, this, [this](const QVariant &value) {
+        scroll(value.toInt());
+    });
     SET_ACTION(SkinnedActionManager::PL_SHOW_HEADER, this, &SkinnedListWidget::readSettings);
 }
 
@@ -77,6 +83,7 @@ void SkinnedListWidget::readSettings()
     QSettings settings;
     settings.beginGroup("Skinned"_L1);
     m_show_protocol = settings.value("pl_show_protocol"_L1, false).toBool();
+    m_smooth_scrolling = settings.value(u"pl_smooth_scrolling"_s, false).toBool();
     bool show_popup = settings.value("pl_show_popup"_L1, false).toBool();
 
     m_header->readSettings();
@@ -141,7 +148,7 @@ void SkinnedListWidget::paintEvent(QPaintEvent *)
     const int linesPerGroup = m_model->linesPerGroup();
 
     painter.setClipRect(5, 0, width() - 9, height());
-    painter.translate(rtl ? m_header->offset() : -m_header->offset(), 0);
+    painter.translate(rtl ? m_header->offset() : -m_header->offset(), m_row_offset);
 
     for(int i = 0; i < m_rows.size(); ++i)
     {
@@ -172,7 +179,7 @@ void SkinnedListWidget::paintEvent(QPaintEvent *)
     }
 }
 
-void SkinnedListWidget::mouseDoubleClickEvent (QMouseEvent *e)
+void SkinnedListWidget::mouseDoubleClickEvent(QMouseEvent *e)
 {
     int y = e->position().y();
     int lineIndex = lineAt(y);
@@ -263,8 +270,8 @@ void SkinnedListWidget::mousePressEvent(QMouseEvent *e)
 
 void SkinnedListWidget::resizeEvent(QResizeEvent *e)
 {
-    m_header->setGeometry(0,0,width(), m_header->requiredHeight());
-    m_hslider->setGeometry(5,height() - 7, width() - 10, 7);
+    m_header->setGeometry(0, 0, width(), m_header->requiredHeight());
+    m_hslider->setGeometry(5, height() - 7, width() - 10, 7);
     updateList(PlayListModel::STRUCTURE);
     QWidget::resizeEvent(e);
 }
@@ -274,18 +281,29 @@ void SkinnedListWidget::wheelEvent(QWheelEvent *e)
     if(m_model->lineCount() <= m_row_count)
         return;
 
-    if((m_firstLine == 0 && e->angleDelta().y() > 0) ||
-            ((m_firstLine == m_model->lineCount() - m_row_count) && e->angleDelta().y() < 0))
-        return;
+    //40*3 TODO: add step to config
+    int delta = e->angleDelta().y() * m_drawer.rowHeight() / 40;
+    int endValue = m_scroll_value - delta;
 
-    m_firstLine -= e->angleDelta().y() / 40;  //40*3 TODO: add step to config
-    if(m_firstLine < 0)
-        m_firstLine = 0;
+    if(m_smooth_scrolling)
+    {
+        int startValue = m_scroll_value;
 
-    if(m_firstLine > m_model->lineCount() - m_row_count)
-        m_firstLine = m_model->lineCount() - m_row_count;
+        if(m_scrollAnimation->state() == QAbstractAnimation::Running)
+        {
+            startValue = m_scrollAnimation->currentValue().toInt();
+            endValue = m_scrollAnimation->endValue().toInt() - delta;
+        }
 
-    updateList(PlayListModel::STRUCTURE);
+        m_scrollAnimation->stop();
+        m_scrollAnimation->setStartValue(startValue);
+        m_scrollAnimation->setEndValue(qBound(0, endValue, m_scroll_maximum));
+        m_scrollAnimation->start();
+    }
+    else
+    {
+        scroll(qBound(0, endValue, m_scroll_maximum));
+    }
 }
 
 bool SkinnedListWidget::event(QEvent *e)
@@ -331,7 +349,8 @@ void SkinnedListWidget::updateList(int flags)
         if(m_row_count >= m_model->lineCount())
         {
             m_firstLine = 0;
-            emit positionChanged(0,0);
+            m_row_offset = 0;
+            setScrollPosition(0, 0);
         }
         else if(m_firstLine + m_row_count >= m_model->lineCount())
         {
@@ -341,32 +360,36 @@ void SkinnedListWidget::updateList(int flags)
                 restoreFirstVisible();
             }
             if(m_firstLine + m_row_count >= m_model->lineCount())
+            {
                 m_firstLine = qMax(0, m_model->lineCount() - m_row_count);
-            emit positionChanged(m_firstLine, m_firstLine);
+            }
+            m_row_offset = 0;
+            setScrollPosition(m_firstLine * m_drawer.rowHeight(), m_model->lineCount() * m_drawer.rowHeight() - viewportHeight());
         }
         else if((m_lineCount > 0) && (m_lineCount != m_model->lineCount()) &&
                 m_firstItem && m_model->itemAtLine(m_firstLine) != m_firstItem)
         {
             restoreFirstVisible();
-            emit positionChanged(m_firstLine, m_model->lineCount() - m_row_count);
+            m_row_offset = 0;
+            setScrollPosition(m_firstLine * m_drawer.rowHeight(), m_model->lineCount() * m_drawer.rowHeight() - viewportHeight());
         }
         else
         {
-            emit positionChanged(m_firstLine, m_model->lineCount() - m_row_count);
+            setScrollPosition(m_firstLine * m_drawer.rowHeight() - m_row_offset, m_model->lineCount() * m_drawer.rowHeight() - viewportHeight());
         }
 
         m_firstItem = m_model->isEmpty() ? nullptr : m_model->itemAtLine(m_firstLine);
         m_lineCount = m_model->lineCount();
-        items = m_model->itemsAtLines(m_firstLine, m_row_count);
+        items = m_model->itemsAtLines(m_firstLine, m_row_count + 2);
 
-        while(m_rows.count() < qMin(m_row_count, items.count()))
+        while(m_rows.count() < qMin(m_row_count + 2, items.count()))
             m_rows << new SkinnedListWidgetRow;
-        while(m_rows.count() > qMin(m_row_count, items.count()))
+        while(m_rows.count() > qMin(m_row_count + 2, items.count()))
             delete m_rows.takeFirst();
     }
     else
     {
-        items = m_model->itemsAtLines(m_firstLine, m_row_count);
+        items = m_model->itemsAtLines(m_firstLine, m_row_count + 2);
     }
 
     if(flags & PlayListModel::STRUCTURE)
@@ -449,6 +472,27 @@ void SkinnedListWidget::updateList(int flags)
     update();
 }
 
+void SkinnedListWidget::scroll(int y)
+{
+    if(m_model->lineCount() <= m_row_count)
+        return;
+
+    if(m_smooth_scrolling)
+    {
+        m_firstLine = y / m_drawer.rowHeight();
+        m_row_offset = m_firstLine * m_drawer.rowHeight() - y;
+    }
+    else
+    {
+        if(y == m_scroll_maximum) //show last line
+            m_firstLine = m_model->lineCount() - m_row_count;
+        else
+            m_firstLine = y / m_drawer.rowHeight();
+        m_row_offset = 0;
+    }
+    updateList(PlayListModel::STRUCTURE);
+}
+
 void SkinnedListWidget::autoscroll()
 {
     SimpleSelection sel = m_model->getSelection(m_model->trackIndexAtLine(m_pressedLine));
@@ -500,6 +544,7 @@ void SkinnedListWidget::setModel(PlayListModel *selected, PlayListModel *previou
     m_model = selected;
     m_lineCount = m_model->lineCount();
     m_firstItem = nullptr;
+    m_row_offset = 0;
 
     if(m_model->property("first_visible").isValid())
     {
@@ -521,6 +566,7 @@ void SkinnedListWidget::setViewPosition(int sc)
     if(m_model->lineCount() <= m_row_count)
            return;
     m_firstLine = sc;
+    m_row_offset = 0;
     updateList(PlayListModel::STRUCTURE);
 }
 
@@ -659,6 +705,13 @@ int SkinnedListWidget::viewportHeight() const
     return qMax(0, h);
 }
 
+void SkinnedListWidget::setScrollPosition(int value, int maximum)
+{
+    m_scroll_value = value;
+    m_scroll_maximum = maximum;
+    emit scrollPositionChanged(value, maximum);
+}
+
 void SkinnedListWidget::mouseMoveEvent(QMouseEvent *e)
 {    
     if(e->buttons() == Qt::LeftButton)
@@ -729,9 +782,10 @@ void SkinnedListWidget::mouseReleaseEvent(QMouseEvent *e)
 int SkinnedListWidget::lineAt(int y) const
 {
     y -= m_header->isVisible() ? m_header->height() : 0;
+    y -= m_row_offset;
     for(int i = 0; i < qMin(m_row_count, m_model->lineCount() - m_firstLine); ++i)
     {
-        if ((y >= i * m_drawer.rowHeight()) && (y <= (i+1) * m_drawer.rowHeight()))
+        if((y >= i * m_drawer.rowHeight()) && (y <= (i+1) * m_drawer.rowHeight()))
             return m_firstLine + i;
     }
     return -1;
@@ -758,8 +812,14 @@ void SkinnedListWidget::recenterTo(int index)
             return;
 
         if (m_firstLine + m_row_count < line + 1)
+        {
             m_firstLine = qMin(m_model->lineCount() - m_row_count, line - m_row_count / 2);
+            m_row_offset = 0;
+        }
         else if (m_firstLine > line)
+        {
             m_firstLine = qMax(line - m_row_count / 2, 0);
+            m_row_offset = 0;
+        }
     }
 }
