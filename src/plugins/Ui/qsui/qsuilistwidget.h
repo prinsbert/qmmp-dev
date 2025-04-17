@@ -102,7 +102,7 @@ private:
     void dropEvent(QDropEvent *event) override;
     void dragLeaveEvent(QDragLeaveEvent *) override;
     void dragMoveEvent(QDragMoveEvent *event) override;
-    void contextMenuEvent (QContextMenuEvent * event) override;
+    void contextMenuEvent(QContextMenuEvent * event) override;
     bool event(QEvent *e) override;
     void recenterTo(int index);
     /*!

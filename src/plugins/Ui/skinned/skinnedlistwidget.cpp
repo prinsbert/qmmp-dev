@@ -606,12 +606,7 @@ const QString SkinnedListWidget::getExtraString(PlayListItem *item)
 
 bool SkinnedListWidget::updateRowCount()
 {
-    int h = height();
-    if(m_header->isVisibleTo(this))
-        h -= m_header->requiredHeight();
-    if(m_hslider->isVisibleTo(this))
-        h -= m_hslider->height();
-    int row_count = qMax(0, h / m_drawer.rowHeight());
+    int row_count = viewportHeight() / m_drawer.rowHeight();
     if(m_row_count != row_count)
     {
         m_row_count = row_count;
@@ -652,6 +647,16 @@ void SkinnedListWidget::restoreFirstVisible()
             }
         }
     }
+}
+
+int SkinnedListWidget::viewportHeight() const
+{
+    int h = height();
+    if(m_header->isVisibleTo(this))
+        h -= m_header->requiredHeight();
+    if(m_hslider->isVisibleTo(this))
+        h -= m_hslider->height();
+    return qMax(0, h);
 }
 
 void SkinnedListWidget::mouseMoveEvent(QMouseEvent *e)
