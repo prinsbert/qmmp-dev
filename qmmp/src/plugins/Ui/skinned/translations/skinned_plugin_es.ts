@@ -1084,147 +1084,152 @@
         <translation>Modalidad de Columna Única</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="308"/>
+        <location filename="../forms/skinnedsettings.ui" line="294"/>
+        <source>Use smooth scrolling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="315"/>
         <source>Show splitters</source>
         <translation>Mostrar divisores</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="315"/>
+        <location filename="../forms/skinnedsettings.ui" line="322"/>
         <source>Alternate splitter color</source>
         <translation>Color alternativo de divisor</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="415"/>
+        <location filename="../forms/skinnedsettings.ui" line="422"/>
         <source>Colors</source>
         <translation>Colores</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="421"/>
+        <location filename="../forms/skinnedsettings.ui" line="428"/>
         <source>Playlist Colors</source>
         <translation>Colores de Listas de Reproducción</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="427"/>
+        <location filename="../forms/skinnedsettings.ui" line="434"/>
         <source>Use skin colors</source>
         <translation>Utilizar colores de piel</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="545"/>
+        <location filename="../forms/skinnedsettings.ui" line="552"/>
         <source>Background #2:</source>
         <translation>Fondo #2:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="609"/>
+        <location filename="../forms/skinnedsettings.ui" line="616"/>
         <source>Highlighted background:</source>
         <translation>Fondo resaltado:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="500"/>
+        <location filename="../forms/skinnedsettings.ui" line="507"/>
         <source>Normal text:</source>
         <translation>Texto normal:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="763"/>
+        <location filename="../forms/skinnedsettings.ui" line="770"/>
         <source>Splitter:</source>
         <translation>Divisor:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="577"/>
+        <location filename="../forms/skinnedsettings.ui" line="584"/>
         <source>Current text:</source>
         <translation>Texto actual:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="641"/>
+        <location filename="../forms/skinnedsettings.ui" line="648"/>
         <source>Highlighted text:</source>
         <translation>Texto resaltado:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="813"/>
+        <location filename="../forms/skinnedsettings.ui" line="820"/>
         <source>Current track background:</source>
         <translation>Fondo de la pista actual</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="871"/>
+        <location filename="../forms/skinnedsettings.ui" line="878"/>
         <source>Override current track background</source>
         <translation>Anular el fondo de la pista actual</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="778"/>
+        <location filename="../forms/skinnedsettings.ui" line="785"/>
         <source>Group background:</source>
         <translation>Fondo del Grupo:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="878"/>
+        <location filename="../forms/skinnedsettings.ui" line="885"/>
         <source>Override group background</source>
         <translation>Anular fondo de grupo</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="700"/>
+        <location filename="../forms/skinnedsettings.ui" line="707"/>
         <source>Group text:</source>
         <translation>Texto del Grupo:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="455"/>
+        <location filename="../forms/skinnedsettings.ui" line="462"/>
         <source>Background #1:</source>
         <translation>Fondo #1:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="691"/>
+        <location filename="../forms/skinnedsettings.ui" line="698"/>
         <source>Load skin colors</source>
         <translation>Cargar colores de piel</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="904"/>
+        <location filename="../forms/skinnedsettings.ui" line="911"/>
         <source>Fonts</source>
         <translation>Tipografías</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="958"/>
+        <location filename="../forms/skinnedsettings.ui" line="965"/>
         <source>Playlist:</source>
         <translation>Lista de Reproducción:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="994"/>
+        <location filename="../forms/skinnedsettings.ui" line="1001"/>
         <source>Groups:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1021"/>
+        <location filename="../forms/skinnedsettings.ui" line="1028"/>
         <source>Extra group row:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1048"/>
+        <location filename="../forms/skinnedsettings.ui" line="1055"/>
         <source>Column headers:</source>
         <translation>Cabeceras de columna:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="916"/>
+        <location filename="../forms/skinnedsettings.ui" line="923"/>
         <source>Player:</source>
         <translation>Reproductor</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="938"/>
-        <location filename="../forms/skinnedsettings.ui" line="980"/>
-        <location filename="../forms/skinnedsettings.ui" line="1061"/>
+        <location filename="../forms/skinnedsettings.ui" line="945"/>
+        <location filename="../forms/skinnedsettings.ui" line="987"/>
+        <location filename="../forms/skinnedsettings.ui" line="1068"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="142"/>
-        <location filename="../forms/skinnedsettings.ui" line="945"/>
-        <location filename="../forms/skinnedsettings.ui" line="987"/>
-        <location filename="../forms/skinnedsettings.ui" line="1068"/>
+        <location filename="../forms/skinnedsettings.ui" line="952"/>
+        <location filename="../forms/skinnedsettings.ui" line="994"/>
+        <location filename="../forms/skinnedsettings.ui" line="1075"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1103"/>
+        <location filename="../forms/skinnedsettings.ui" line="1110"/>
         <source>Reset fonts</source>
         <translation>Restaurar tipografías</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1112"/>
+        <location filename="../forms/skinnedsettings.ui" line="1119"/>
         <source>Use bitmap font if available</source>
         <translation>Usar tipografías de mapa de bits si es posible</translation>
     </message>
@@ -1271,7 +1276,7 @@
         <translation>Mostrar Canción</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="294"/>
+        <location filename="../forms/skinnedsettings.ui" line="301"/>
         <source>Show protocol</source>
         <translation>Mostrar protocolo</translation>
     </message>
@@ -1291,27 +1296,27 @@
         <translation>Alinear número de canciones</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="301"/>
+        <location filename="../forms/skinnedsettings.ui" line="308"/>
         <source>Show anchor</source>
         <translation>Mostrar anclaje</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="363"/>
+        <location filename="../forms/skinnedsettings.ui" line="370"/>
         <source>Show popup information</source>
         <translation>Mostrar información en ventana emergente</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="375"/>
+        <location filename="../forms/skinnedsettings.ui" line="382"/>
         <source>Edit template</source>
         <translation>Editar la plantilla</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="331"/>
+        <location filename="../forms/skinnedsettings.ui" line="338"/>
         <source>Playlist separator:</source>
         <translation>Separador de listas de reproducción</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="322"/>
+        <location filename="../forms/skinnedsettings.ui" line="329"/>
         <source>Show &apos;New Playlist&apos; button</source>
         <translation>Mostrar botón &apos;Nueva Lista de Reproducción&apos;</translation>
     </message>

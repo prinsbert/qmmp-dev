@@ -1084,147 +1084,152 @@
         <translation>Λειτουργία μονής στήλης</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="308"/>
+        <location filename="../forms/skinnedsettings.ui" line="294"/>
+        <source>Use smooth scrolling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="315"/>
         <source>Show splitters</source>
         <translation>Εμφάνιση διαχωριστών</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="315"/>
+        <location filename="../forms/skinnedsettings.ui" line="322"/>
         <source>Alternate splitter color</source>
         <translation>Εναλλαγή χρώματος διαχωριστή</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="415"/>
+        <location filename="../forms/skinnedsettings.ui" line="422"/>
         <source>Colors</source>
         <translation>Χρώματα</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="421"/>
+        <location filename="../forms/skinnedsettings.ui" line="428"/>
         <source>Playlist Colors</source>
         <translation>Χρώματα λίστας αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="427"/>
+        <location filename="../forms/skinnedsettings.ui" line="434"/>
         <source>Use skin colors</source>
         <translation>Χρήση των χρωμάτων του θέματος</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="545"/>
+        <location filename="../forms/skinnedsettings.ui" line="552"/>
         <source>Background #2:</source>
         <translation>Παρασκήνιο #2:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="609"/>
+        <location filename="../forms/skinnedsettings.ui" line="616"/>
         <source>Highlighted background:</source>
         <translation>Τονισμένο παρασκήνιο:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="500"/>
+        <location filename="../forms/skinnedsettings.ui" line="507"/>
         <source>Normal text:</source>
         <translation>Κανονικό κείμενο:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="763"/>
+        <location filename="../forms/skinnedsettings.ui" line="770"/>
         <source>Splitter:</source>
         <translation>Διαχωριστής:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="577"/>
+        <location filename="../forms/skinnedsettings.ui" line="584"/>
         <source>Current text:</source>
         <translation>Τρέχον κείμενο:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="641"/>
+        <location filename="../forms/skinnedsettings.ui" line="648"/>
         <source>Highlighted text:</source>
         <translation>Τονισμένο κείμενο:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="813"/>
+        <location filename="../forms/skinnedsettings.ui" line="820"/>
         <source>Current track background:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="871"/>
+        <location filename="../forms/skinnedsettings.ui" line="878"/>
         <source>Override current track background</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="778"/>
+        <location filename="../forms/skinnedsettings.ui" line="785"/>
         <source>Group background:</source>
         <translation>Παρασκήνιο ομάδας:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="878"/>
+        <location filename="../forms/skinnedsettings.ui" line="885"/>
         <source>Override group background</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="700"/>
+        <location filename="../forms/skinnedsettings.ui" line="707"/>
         <source>Group text:</source>
         <translation>Κείμενο ομάδας:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="455"/>
+        <location filename="../forms/skinnedsettings.ui" line="462"/>
         <source>Background #1:</source>
         <translation>Παρασκήνιο #1:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="691"/>
+        <location filename="../forms/skinnedsettings.ui" line="698"/>
         <source>Load skin colors</source>
         <translation>Φόρτωση των χρωμάτων του θέματος</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="904"/>
+        <location filename="../forms/skinnedsettings.ui" line="911"/>
         <source>Fonts</source>
         <translation>Γραμματοσειρές</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="958"/>
+        <location filename="../forms/skinnedsettings.ui" line="965"/>
         <source>Playlist:</source>
         <translation>Λίστα αναπαραγωγής:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="994"/>
+        <location filename="../forms/skinnedsettings.ui" line="1001"/>
         <source>Groups:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1021"/>
+        <location filename="../forms/skinnedsettings.ui" line="1028"/>
         <source>Extra group row:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1048"/>
+        <location filename="../forms/skinnedsettings.ui" line="1055"/>
         <source>Column headers:</source>
         <translation>Επικεφαλίδες στηλών:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="916"/>
+        <location filename="../forms/skinnedsettings.ui" line="923"/>
         <source>Player:</source>
         <translation>Αναπαραγωγέας:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="938"/>
-        <location filename="../forms/skinnedsettings.ui" line="980"/>
-        <location filename="../forms/skinnedsettings.ui" line="1061"/>
+        <location filename="../forms/skinnedsettings.ui" line="945"/>
+        <location filename="../forms/skinnedsettings.ui" line="987"/>
+        <location filename="../forms/skinnedsettings.ui" line="1068"/>
         <source>???</source>
         <translation>;;;</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="142"/>
-        <location filename="../forms/skinnedsettings.ui" line="945"/>
-        <location filename="../forms/skinnedsettings.ui" line="987"/>
-        <location filename="../forms/skinnedsettings.ui" line="1068"/>
+        <location filename="../forms/skinnedsettings.ui" line="952"/>
+        <location filename="../forms/skinnedsettings.ui" line="994"/>
+        <location filename="../forms/skinnedsettings.ui" line="1075"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1103"/>
+        <location filename="../forms/skinnedsettings.ui" line="1110"/>
         <source>Reset fonts</source>
         <translation>Επαναφορά γραμματοσειρών</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1112"/>
+        <location filename="../forms/skinnedsettings.ui" line="1119"/>
         <source>Use bitmap font if available</source>
         <translation>Χρήση γραμματοσειράς δυφιοαπεικόνισης αν είναι διαθέσιμη</translation>
     </message>
@@ -1271,7 +1276,7 @@
         <translation>Εμφάνιση τραγουδιού</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="294"/>
+        <location filename="../forms/skinnedsettings.ui" line="301"/>
         <source>Show protocol</source>
         <translation>Εμφάνιση πρωτοκόλλου</translation>
     </message>
@@ -1291,27 +1296,27 @@
         <translation>Ευθυγράμμιση αριθμών τραγουδιού</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="301"/>
+        <location filename="../forms/skinnedsettings.ui" line="308"/>
         <source>Show anchor</source>
         <translation>Εμφάνιση άγκυρας</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="363"/>
+        <location filename="../forms/skinnedsettings.ui" line="370"/>
         <source>Show popup information</source>
         <translation>Εμφάνιση αναδυόμενων πληροφοριών</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="375"/>
+        <location filename="../forms/skinnedsettings.ui" line="382"/>
         <source>Edit template</source>
         <translation>Επεξεργασία πρότυπου</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="331"/>
+        <location filename="../forms/skinnedsettings.ui" line="338"/>
         <source>Playlist separator:</source>
         <translation>Διαχωριστικό λίστας αναπαραγωγής:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="322"/>
+        <location filename="../forms/skinnedsettings.ui" line="329"/>
         <source>Show &apos;New Playlist&apos; button</source>
         <translation>Εμφάνιση του κουμπιού «Νέα λίστα αναπαραγωγής»</translation>
     </message>
