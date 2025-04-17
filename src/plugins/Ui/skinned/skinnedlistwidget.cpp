@@ -538,6 +538,7 @@ void SkinnedListWidget::setModel(PlayListModel *selected, PlayListModel *previou
     if(previous)
     {
         previous->setProperty("first_visible", m_firstLine);
+        previous->setProperty("row_offset", m_row_offset);
         disconnect(previous, nullptr, this, nullptr); //disconnect previous model
         disconnect(previous, nullptr, m_header, nullptr);
     }
@@ -545,16 +546,17 @@ void SkinnedListWidget::setModel(PlayListModel *selected, PlayListModel *previou
     m_model = selected;
     m_lineCount = m_model->lineCount();
     m_firstItem = nullptr;
-    m_row_offset = 0;
 
     if(m_model->property("first_visible").isValid())
     {
         m_firstLine = m_model->property("first_visible").toInt();
+        m_row_offset = m_model->property("row_offset").toInt();
         updateList(PlayListModel::STRUCTURE);
     }
     else
     {
         m_firstLine = 0;
+        m_row_offset = 0;
         updateList(PlayListModel::STRUCTURE | PlayListModel::CURRENT);
     }
     connect(m_model, &PlayListModel::scrollToRequest, this, &SkinnedListWidget::scrollTo);
