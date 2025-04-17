@@ -343,6 +343,7 @@ void SkinnedListWidget::updateList(int flags)
         recenterTo(m_model->currentIndex());
 
     QList<PlayListItem *> items;
+    int playListHeight = m_model->lineCount() * m_drawer.rowHeight();
 
     if(flags & PlayListModel::STRUCTURE || flags & PlayListModel::CURRENT)
     {
@@ -364,18 +365,18 @@ void SkinnedListWidget::updateList(int flags)
                 m_firstLine = qMax(0, m_model->lineCount() - m_row_count);
             }
             m_row_offset = 0;
-            setScrollPosition(m_firstLine * m_drawer.rowHeight(), m_model->lineCount() * m_drawer.rowHeight() - viewportHeight());
+            setScrollPosition(m_firstLine * m_drawer.rowHeight(), playListHeight - viewportHeight());
         }
         else if((m_lineCount > 0) && (m_lineCount != m_model->lineCount()) &&
                 m_firstItem && m_model->itemAtLine(m_firstLine) != m_firstItem)
         {
             restoreFirstVisible();
             m_row_offset = 0;
-            setScrollPosition(m_firstLine * m_drawer.rowHeight(), m_model->lineCount() * m_drawer.rowHeight() - viewportHeight());
+            setScrollPosition(m_firstLine * m_drawer.rowHeight(), playListHeight - viewportHeight());
         }
         else
         {
-            setScrollPosition(m_firstLine * m_drawer.rowHeight() - m_row_offset, m_model->lineCount() * m_drawer.rowHeight() - viewportHeight());
+            setScrollPosition(m_firstLine * m_drawer.rowHeight() - m_row_offset, playListHeight - viewportHeight());
         }
 
         m_firstItem = m_model->isEmpty() ? nullptr : m_model->itemAtLine(m_firstLine);

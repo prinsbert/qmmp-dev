@@ -420,6 +420,7 @@ void QSUiListWidget::updateList(int flags)
 
     QList<PlayListItem *> items;
     int count = m_filterMode ? m_filteredItems.count() : m_model->lineCount();
+    int playListHeight = count * m_drawer.rowHeight();
 
     if(flags & PlayListModel::STRUCTURE || flags & PlayListModel::CURRENT)
     {
@@ -444,7 +445,7 @@ void QSUiListWidget::updateList(int flags)
                 m_firstLine = qMax(0, count - m_row_count);
             }
             m_row_offset = 0;
-            m_scrollBar->setMaximum(count * m_drawer.rowHeight() - viewportHeight());
+            m_scrollBar->setMaximum(playListHeight - viewportHeight());
             m_scrollBar->setValue(m_firstLine * m_drawer.rowHeight());
         }
         else if(!m_filterMode && (m_lineCount > 0) && (m_lineCount != m_model->lineCount()) &&
@@ -452,12 +453,12 @@ void QSUiListWidget::updateList(int flags)
         {
             restoreFirstVisible();
             m_row_offset = 0;
-            m_scrollBar->setMaximum(count * m_drawer.rowHeight() - viewportHeight());
+            m_scrollBar->setMaximum(playListHeight - viewportHeight());
             m_scrollBar->setValue(m_firstLine * m_drawer.rowHeight());
         }
         else
         {
-            m_scrollBar->setMaximum(count * m_drawer.rowHeight() - viewportHeight());
+            m_scrollBar->setMaximum(playListHeight - viewportHeight());
             m_scrollBar->setValue(m_firstLine * m_drawer.rowHeight() - m_row_offset);
         }
         m_scrollBar->blockSignals(false);
@@ -478,7 +479,7 @@ void QSUiListWidget::updateList(int flags)
         while(m_rows.count() > qMin(m_row_count + 2, items.count()))
             delete m_rows.takeFirst();
 
-        m_scrollBar->setVisible(count * m_drawer.rowHeight() > viewportHeight());
+        m_scrollBar->setVisible(playListHeight > viewportHeight());
     }
     else
     {
