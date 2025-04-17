@@ -76,7 +76,13 @@ signals:
     void doubleClicked();
     void positionChanged(int, int); //current position, maximum value
 
-protected:
+private slots:
+    void updateSkin();
+    void autoscroll();
+    void updateRepeatIndicator();
+    void scrollTo(int index);
+
+private:
     void paintEvent(QPaintEvent *) override;
     void mouseDoubleClickEvent(QMouseEvent *) override;
     void mousePressEvent(QMouseEvent *) override;
@@ -92,19 +98,6 @@ protected:
     void dragMoveEvent(QDragMoveEvent *event) override;
     void contextMenuEvent (QContextMenuEvent * event) override;
     bool event(QEvent *e) override;
-
-private slots:
-    void updateSkin();
-    void autoscroll();
-    void updateRepeatIndicator();
-    void scrollTo(int index);
-
-private:
-    enum ScrollDirection
-    {
-        NONE = 0, TOP, DOWN
-    };
-
     void recenterTo(int index);
     /*!
      * Returns string with queue number or(and) repeate flag for the item number \b i.
@@ -113,6 +106,10 @@ private:
     bool updateRowCount();
     void restoreFirstVisible();
 
+    enum ScrollDirection
+    {
+        NONE = 0, TOP, DOWN
+    };
     bool m_update = false;
     int m_pressedLine = -1, m_dropLine = -1, m_anchorLine = -1;
     QMenu *m_menu = nullptr;
