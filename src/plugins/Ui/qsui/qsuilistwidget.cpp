@@ -101,6 +101,7 @@ void QSUiListWidget::readSettings()
             m_popupWidget = nullptr;
         }
     }
+    m_scrollBar->setSingleStep(m_smooth_scrolling ? m_drawer.rowHeight() : 1);
 
     m_update = true;
 
