@@ -162,7 +162,8 @@ void QSUiListWidget::setModel(PlayListModel *selected, PlayListModel *previous)
 
     if(previous)
     {
-        previous->setProperty("first_visible", m_firstLine);
+        previous->setProperty("scrollbar_maximum", m_scrollBar->maximum());
+        previous->setProperty("scrollbar_value", m_scrollBar->value());
         disconnect(previous, nullptr, this, nullptr); //disconnect previous model
         disconnect(previous, nullptr, m_header, nullptr);
     }
@@ -171,14 +172,15 @@ void QSUiListWidget::setModel(PlayListModel *selected, PlayListModel *previous)
     m_lineCount = m_model->lineCount();
     m_firstItem = nullptr;
 
-    if(m_model->property("first_visible").isValid())
+    if(m_model->property("scrollbar_value").isValid())
     {
-        m_firstLine = m_model->property("first_visible").toInt();
+        m_scrollBar->setMaximum(m_model->property("scrollbar_maximum").toInt());
+        m_scrollBar->setValue(m_model->property("scrollbar_value").toInt());
         updateList(PlayListModel::STRUCTURE);
     }
     else
     {
-        m_firstLine = 0;
+        m_scrollBar->setValue(0);
         updateList(PlayListModel::STRUCTURE | PlayListModel::CURRENT);
     }
     connect(m_model, &PlayListModel::scrollToRequest, this, &QSUiListWidget::scrollTo);
