@@ -123,7 +123,6 @@ private:
     QMenu *m_menu = nullptr;
     PlayListModel *m_model;
     int m_row_count = 0, m_firstLine = 0, m_lineCount = 0; //visible rows, first visible index, total item count
-    int m_row_offset = 0;
     PlayListItem *m_firstItem = nullptr; //first visible item
     /*!
      * Scroll direction that is performing in current moment.
