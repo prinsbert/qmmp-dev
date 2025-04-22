@@ -947,10 +947,9 @@ int QSUiListWidget::lineAt(int y) const
         if(row->rect.top() <= y && y <= row->rect.bottom())
         {
             if(!m_filterMode)
-            {
                 return row->line;
-            }
-            else if(row->line >= 0 && row->line < m_filteredItems.count())
+
+            if(row->line >= 0 && row->line < m_filteredItems.count())
             {
                 const PlayListItem *item = m_filteredItems.at(row->line);
                 return m_model->findLine(item);
