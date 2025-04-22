@@ -214,7 +214,7 @@ public:
     /*!
      * Finds line for item \b item. Returns -1 if line for this item is not available.
      */
-    int findLine(PlayListItem *item) const;
+    int findLine(const PlayListItem *item) const;
     /*!
      * Finds line for track with index \b trackIndex. Returns -1 if the line for this track is not available.
      */

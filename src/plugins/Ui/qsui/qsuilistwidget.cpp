@@ -407,8 +407,11 @@ void QSUiListWidget::updateList(int flags)
     m_hslider->setValue(m_header->offset());
     m_hslider->setVisible(m_header->maxScrollValue() > 0);
 
-    if(updateRowCount())
+    if(m_viewportHeight != viewportHeight())
+    {
+        m_viewportHeight = viewportHeight();
         flags |= PlayListModel::STRUCTURE;
+    }
 
     if(flags & PlayListModel::STRUCTURE && m_filterMode)
     {
@@ -422,29 +425,29 @@ void QSUiListWidget::updateList(int flags)
     int count = m_filterMode ? m_filteredItems.count() : m_model->lineCount();
     int playListHeight = count * m_drawer.rowHeight();
     int firstLine = m_scrollBar->value() / m_drawer.rowHeight();
-    int lineCount = viewportHeight() / m_drawer.rowHeight() + 2;
+    int lineCount = m_viewportHeight / m_drawer.rowHeight() + 2;
 
     if(flags & PlayListModel::STRUCTURE || flags & PlayListModel::CURRENT)
     {
         m_scrollBar->blockSignals(true);
-        if(viewportHeight() >= playListHeight)
+        if(m_viewportHeight >= playListHeight)
         {
             firstLine = 0;
             lineCount = count;
             m_scrollBar->setMaximum(0);
             m_scrollBar->setValue(0);
         }
-        else if(viewportHeight() < playListHeight && m_scrollBar->value() == 0)
+        else if(m_viewportHeight < playListHeight && m_scrollBar->value() == 0)
         {
             firstLine = m_scrollBar->value() / m_drawer.rowHeight();
-            lineCount = viewportHeight() / m_drawer.rowHeight() + 2;
-            m_scrollBar->setMaximum(playListHeight - viewportHeight());
+            lineCount = m_viewportHeight / m_drawer.rowHeight() + 2;
+            m_scrollBar->setMaximum(playListHeight - m_viewportHeight);
         }
         else
         {
             firstLine = m_scrollBar->value() / m_drawer.rowHeight();
-            lineCount = viewportHeight() / m_drawer.rowHeight() + 2;
-            m_scrollBar->setMaximum(playListHeight - viewportHeight());
+            lineCount = m_viewportHeight / m_drawer.rowHeight() + 2;
+            m_scrollBar->setMaximum(playListHeight - m_viewportHeight);
         }
 
 
@@ -495,7 +498,7 @@ void QSUiListWidget::updateList(int flags)
         while(m_rows.count() > qMin(lineCount, items.count()))
             delete m_rows.takeFirst();
 
-        m_scrollBar->setVisible(playListHeight > viewportHeight());
+        m_scrollBar->setVisible(playListHeight > m_viewportHeight);
     }
     else
     {
@@ -798,17 +801,6 @@ const QString QSUiListWidget::getExtraString(PlayListItem *item)
     return extra_string.trimmed(); //remove white space
 }
 
-bool QSUiListWidget::updateRowCount()
-{
-    int row_count = qMax(0, viewportHeight() / m_drawer.rowHeight());
-    if(m_row_count != row_count)
-    {
-        m_row_count = row_count;
-        return true;
-    }
-    return false;
-}
-
 void QSUiListWidget::restoreFirstVisible()
 {
     if(m_firstLine < m_model->lineCount() && m_firstItem == m_model->itemAtLine(m_firstLine))
@@ -948,25 +940,22 @@ void QSUiListWidget::mouseReleaseEvent(QMouseEvent *e)
 
 int QSUiListWidget::lineAt(int y) const
 {
-    //y -= m_header->isVisible() ? m_header->height() : 0;
-    //y -= m_row_offset;
-
-//    if(m_filterMode)
-//    {
-//        for(int i = 0; i < qMin(m_row_count, m_filteredItems.count() - m_firstLine); ++i)
-//        {
-//            if((y >= i * m_drawer.rowHeight()) && (y <= (i+1) * m_drawer.rowHeight()))
-//                return m_model->findLine(m_filteredItems.at(m_firstLine + i));
-//        }
-//    }
-//    else
-//    {
-        for(QSUiListWidgetRow *row : std::as_const(m_rows))
+    for(QSUiListWidgetRow *row : std::as_const(m_rows))
+    {
+        if(row->rect.top() <= y && y <= row->rect.bottom())
         {
-            if(row->rect.top() <= y && y <= row->rect.bottom())
+            if(!m_filterMode)
+            {
                 return row->line;
+            }
+            else if(row->line >= 0 && row->line < m_filteredItems.count())
+            {
+                const PlayListItem *item = m_filteredItems.at(row->line);
+                return m_model->findLine(item);
+            }
         }
-//    }
+    }
+
     return -1;
 }
 
