@@ -379,7 +379,7 @@ QList<PlayListItem *> PlayListModel::itemsAtLines(int pos, int count) const
     return m_container->itemsAtLines(pos, count);
 }
 
-int PlayListModel::findLine(PlayListItem *item) const
+int PlayListModel::findLine(const PlayListItem *item) const
 {
     if(!item)
         return -1;

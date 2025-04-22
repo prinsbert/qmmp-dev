@@ -109,7 +109,6 @@ private:
      * Returns string with queue number or(and) repeate flag for the \b item.
      */
     const QString getExtraString(PlayListItem *item);
-    bool updateRowCount();
     void restoreFirstVisible();
     void updateScrollBars();
     int viewportHeight() const;
@@ -123,6 +122,7 @@ private:
     QMenu *m_menu = nullptr;
     PlayListModel *m_model;
     int m_row_count = 0, m_firstLine = 0, m_lineCount = 0; //visible rows, first visible index, total item count
+    int m_viewportHeight = 0;
     PlayListItem *m_firstItem = nullptr; //first visible item
     /*!
      * Scroll direction that is performing in current moment.
