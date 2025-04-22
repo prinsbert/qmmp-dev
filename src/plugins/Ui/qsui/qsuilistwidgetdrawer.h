@@ -44,6 +44,7 @@ struct QSUiListWidgetRow
     int numberColumnWidth = 0;
     int lengthColumnWidth = 0;
     int trackStateColumn = 0;
+    int line = 0;
     int subIndex = 0;
     bool alternateColor = false;
     enum
