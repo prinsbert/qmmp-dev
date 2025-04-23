@@ -137,7 +137,7 @@ void QSUiKeyboardManager::processUp()
 
     if(m_listWidget->anchorLine() < first_visible)
     {
-        m_listWidget->setViewPosition(m_listWidget->firstVisibleLine() - 1);
+        m_listWidget->setViewPosition(m_listWidget->model()->firstSelectedLine());
     }
 }
 
@@ -223,7 +223,7 @@ void QSUiKeyboardManager::processDown()
 
     if(m_listWidget->anchorLine() > last_visible)
     {
-        m_listWidget->setViewPosition (m_listWidget->firstVisibleLine() + 1);
+        m_listWidget->setViewPosition(m_listWidget->model()->lastSelectedLine(), true);
     }
 }
 
