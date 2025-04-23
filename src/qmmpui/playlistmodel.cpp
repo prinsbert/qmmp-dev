@@ -701,22 +701,22 @@ void PlayListModel::showDetailsForCurrent(QWidget *parent)
     }
 }
 
-int PlayListModel::firstSelectedUpper(int trackIndex)
+int PlayListModel::firstSelectedLine() const
 {
-    for(int i = trackIndex - 1; i >= 0; i--)
+    for(int i = 0; i < m_container->lineCount(); i++)
     {
-        if(m_container->track(i)->isSelected())
-             return i;
+        if(m_container->itemAtLine(i)->isSelected())
+            return i;
     }
     return -1;
 }
 
-int PlayListModel::firstSelectedLower(int trackIndex)
+int PlayListModel::lastSelectedLine() const
 {
-    for(int i = trackIndex + 1; i < trackCount(); i++)
+    for(int i = m_container->lineCount() - 1; i >= 0; i--)
     {
-        if(m_container->track(i)->isSelected())
-             return i;
+        if(m_container->itemAtLine(i)->isSelected())
+            return i;
     }
     return -1;
 }
@@ -836,11 +836,6 @@ QList<PlayListTrack *> PlayListModel::tracks() const
 {
     return m_container->tracks();
 }
-
-//QList<PlayListItem *> PlayListModel::items() const
-//{
-//    return m_container->items();
-//}
 
 void PlayListModel::addToQueue()
 {
