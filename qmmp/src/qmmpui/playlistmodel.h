@@ -220,15 +220,15 @@ public:
      */
     int findLine(int trackIndex) const;
     /*!
-     * Return sub-index of the line \b lineIndex.
+     * Returns sub-index of the line \b lineIndex.
      */
     int subIndexOfLine(int lineIndex) const;
     /*!
-     * Return track index of the line \b lineIndex. Returns -1 if the line does not contain track.
+     * Returns track index of the line \b lineIndex. Returns -1 if the line does not contain track.
      */
     int trackIndexAtLine(int lineIndex) const;
     /*!
-     * Return \b true if the line \b lineIndex should be painted using alternate color. Otherwise returns \b false.
+     * Returns \b true if the line \b lineIndex should be painted using alternate color. Otherwise returns \b false.
      */
     bool alternateColor(int lineIndex) const;
     /*!
@@ -283,13 +283,13 @@ public:
      */
     QList<PlayListTrack *> tracks() const;
     /*!
-     * Returns number of first track index that selected upper the \b trackIndex track.
+     * Returns a number of the first line. Returns -1 if the playlist does not contain selected lines.
      */
-    int firstSelectedUpper(int trackIndex);
+    int firstSelectedLine() const;
     /*!
-     * Returns number of first track that selected lower the \b trackIndex track.
+     * Returns a number of the first line. Returns -1 if the playlist does not contain selected lines.
      */
-    int firstSelectedLower(int trackIndex);
+    int lastSelectedLine() const;
     /*!
      * Returns total duration in milliseconds of all songs.
      */
@@ -307,7 +307,7 @@ public:
     /*!
      * Saves current songs to the playlist with \b f_name name.
      */
-    void savePlaylist(const QString& f_name);
+    void savePlaylist(const QString &f_name);
     /*!
      * Returns \b true if the file loader thread is active; otherwise returns \b false.
      */
