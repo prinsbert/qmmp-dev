@@ -60,6 +60,7 @@ public:
      * Returns index of the first visible line.
      */
     int firstVisibleLine() const;
+    int subIndexOfLine(int line) const;
 
     int anchorLine() const;
     void setAnchorLine(int index);
@@ -72,7 +73,7 @@ public slots:
     void setModel(PlayListModel *selected, PlayListModel *previous);
     void readSettings();
     void updateList(int flags);
-    void setViewPosition(int sc);
+    void setViewPosition(int sc, bool bottom = false);
     void scroll(int y);
     void setFilterString(const QString &str = QString());
     void clear();
@@ -112,6 +113,7 @@ private:
     void restoreFirstVisible();
     void updateScrollBars();
     int viewportHeight() const;
+    int lastVisibleLine() const;
 
     enum ScrollDirection
     {

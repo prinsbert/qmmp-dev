@@ -111,12 +111,35 @@ void QSUiListWidget::readSettings()
 
 int QSUiListWidget::visibleRows() const
 {
-    return m_row_count;
+    int top = m_header->isVisibleTo(this) ?  m_header->geometry().bottom() : 0;
+    int bottom = m_hslider->isVisibleTo(this) ? m_hslider->geometry().top() : height();
+    int count = 0;
+
+    for(QSUiListWidgetRow *row : std::as_const(m_rows))
+    {
+        if(row->rect.top() >= top && row->rect.bottom() <= bottom)
+            count++;
+    }
+
+    return count;
 }
 
 int QSUiListWidget::firstVisibleLine() const
 {
-    return m_firstLine;
+    int top = m_header->isVisibleTo(this) ?  m_header->requiredHeight() : 0;
+
+    for(QSUiListWidgetRow *row : std::as_const(m_rows))
+    {
+        if(row->rect.top() >= top)
+            return row->line;
+    }
+
+    return -1;
+}
+
+int QSUiListWidget::subIndexOfLine(int line) const
+{
+    return m_filterMode ? 0 : m_model->subIndexOfLine(line);
 }
 
 int QSUiListWidget::anchorLine() const
@@ -634,12 +657,12 @@ void QSUiListWidget::scrollTo(int index)
     }
 }
 
-void QSUiListWidget::setViewPosition(int sc)
-{
-    if(m_model->lineCount() <= m_row_count)
-        return;
-    m_firstLine = sc;
-    updateList(PlayListModel::STRUCTURE);
+void QSUiListWidget::setViewPosition(int sc, bool bottom)
+{   
+    if(bottom)
+        scroll((sc + 1) * m_drawer.rowHeight() - viewportHeight());
+    else
+        scroll(sc * m_drawer.rowHeight());
 }
 
 void QSUiListWidget::scroll(int y)
@@ -870,6 +893,19 @@ int QSUiListWidget::viewportHeight() const
     return qMax(h, 0);
 }
 
+int QSUiListWidget::lastVisibleLine() const
+{
+    int bottom = m_hslider->isVisibleTo(this) ? m_hslider->geometry().top() : height();
+
+    for(int i = m_rows.count() - 1; i >= 0; i--)
+    {
+        if(m_rows[i]->rect.bottom() <= bottom)
+            return i;
+    }
+
+    return -1;
+}
+
 void QSUiListWidget::mouseMoveEvent(QMouseEvent *e)
 {
     if(m_filterMode)
@@ -968,27 +1004,25 @@ PlayListTrack *QSUiListWidget::trackAt(int y) const
 
 void QSUiListWidget::contextMenuEvent(QContextMenuEvent * event)
 {
-    if (menu())
+    if(menu())
         menu()->exec(event->globalPos());
 }
 
 void QSUiListWidget::recenterTo(int index)
 {
-    if (m_row_count && index >= 0 && !m_filterMode)
+    if(viewportHeight() > 0 && index >= 0 && !m_filterMode)
     {
         int line = m_model->findLine(index);
-        if (line < 0)
+        if(line < 0)
             return;
 
-        if (m_firstLine + m_row_count < line + 1)
+        if((line + 1) * m_drawer.rowHeight() > m_scrollBar->value() + viewportHeight())
         {
-            m_firstLine = qMin(m_model->lineCount() - m_row_count, line - m_row_count / 2);
-            //m_row_offset = 0;
+            m_scrollBar->setValue(qMin(m_scrollBar->maximum(), line * m_drawer.rowHeight() - viewportHeight() / 2));
         }
-        else if (m_firstLine > line)
+        else if(line * m_drawer.rowHeight() < m_scrollBar->value())
         {
-            m_firstLine = qMax(line - m_row_count / 2, 0);
-            //m_row_offset = 0;
+            m_scrollBar->setValue(qMax(line * m_drawer.rowHeight() - viewportHeight() / 2, 0));
         }
     }
 }
