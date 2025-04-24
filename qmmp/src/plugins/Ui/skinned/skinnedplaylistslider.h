@@ -38,7 +38,7 @@ public slots:
     void setPos(int pos, int max);
 
 signals:
-    void sliderMoved (int);
+    void sliderMoveRequest(int);
 
 private slots:
     void updateSkin();
@@ -51,7 +51,6 @@ private:
     void mouseMoveEvent(QMouseEvent*) override;
 
     Skin *m_skin;
-    int m_old;
     bool m_moving = false, m_pressed = false;
     int m_press_pos = 0;
     int m_min = 0, m_max = 0, m_value = 0, m_pos = 0;

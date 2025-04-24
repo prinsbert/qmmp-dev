@@ -39,14 +39,14 @@ SkinnedPlayListSlider::~SkinnedPlayListSlider()
 void SkinnedPlayListSlider::paintEvent(QPaintEvent *)
 {
     int sy = (height() - 58) / 29;
-    int p=int(ceil(double(m_value - m_min) * (height() - 18) / (m_max - m_min)));
+    int p = int(ceil(double(m_value - m_min) * (height() - 18) / (m_max - m_min)));
     QPainter paint(this);
-    paint.drawPixmap(0,0,m_skin->getPlPart(Skin::PL_RFILL));
-    paint.drawPixmap(0,29,m_skin->getPlPart(Skin::PL_RFILL));
+    paint.drawPixmap(0, 0, m_skin->getPlPart(Skin::PL_RFILL));
+    paint.drawPixmap(0, 29, m_skin->getPlPart(Skin::PL_RFILL));
 
-    for (int i = 0; i < sy; i++)
+    for(int i = 0; i < sy; i++)
     {
-        paint.drawPixmap(0,58+i*29,m_skin->getPlPart(Skin::PL_RFILL));
+        paint.drawPixmap(0, 58 + i * 29, m_skin->getPlPart(Skin::PL_RFILL));
     }
     if(m_pressed)
         paint.drawPixmap(5 * m_skin->ratio(), p, m_skin->getButton(Skin::PL_BT_SCROLL_P));
@@ -62,16 +62,15 @@ void SkinnedPlayListSlider::mousePressEvent(QMouseEvent *e)
     m_press_pos = e->position().y();
     if(m_pos < e->position().y() && e->position().y() < m_pos + 18 * m_skin->ratio())
     {
-        m_press_pos = e->position().y()-m_pos;
+        m_press_pos = e->position().y() - m_pos;
     }
     else
     {
-        m_value = convert(qMax(qMin(height() - 18 * m_skin->ratio(), qRound(e->position().y()) - 9 * m_skin->ratio()), 0));
+        int value = convert(qMax(qMin(height() - 18 * m_skin->ratio(), qRound(e->position().y()) - 9 * m_skin->ratio()), 0));
         m_press_pos = 9 * m_skin->ratio();
-        if(m_value != m_old)
+        if(m_value != value)
         {
-            emit sliderMoved(m_value);
-            m_old = m_value;
+            emit sliderMoveRequest(value);
         }
     }
     update();
@@ -91,16 +90,14 @@ void SkinnedPlayListSlider::mouseMoveEvent(QMouseEvent* e)
         int po = e->position().y();
         po = po - m_press_pos;
 
-        if(0 <= po && po <= height() - 18*m_skin->ratio())
+        if(0 <= po && po <= height() - 18 * m_skin->ratio())
         {
-            m_value = convert(po);
-            update();
-            if(m_value != m_old)
-            {
+            int value = convert(po);
 
-                m_old = m_value;
-                emit sliderMoved(m_value);
-            }
+            if(m_value != value)
+                emit sliderMoveRequest(value);
+
+            update();
         }
     }
 }
@@ -109,8 +106,6 @@ void SkinnedPlayListSlider::setPos(int p, int max)
 {
     m_max = max;
     m_value = p;
-    if(m_moving)
-        return;
     update();
 }
 
@@ -122,5 +117,5 @@ void SkinnedPlayListSlider::updateSkin()
 
 int SkinnedPlayListSlider::convert(int p)
 {
-    return int(floor(double(m_max-m_min) * (p) / (height() - 18 * m_skin->ratio()) + m_min));
+    return int(floor(double(m_max - m_min) * (p) / (height() - 18 * m_skin->ratio()) + m_min));
 }
