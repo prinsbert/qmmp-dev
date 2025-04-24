@@ -71,7 +71,7 @@ public slots:
     void readSettings();
     void updateList(int flags);
     void scroll(int y);
-    void setViewPosition(int sc);
+    void setViewPosition(int sc, bool bottom = false);
     void setModel(PlayListModel *selected, PlayListModel *previous = nullptr);
 
 signals:
@@ -92,22 +92,21 @@ private:
     void mouseReleaseEvent(QMouseEvent *) override;
     void resizeEvent(QResizeEvent *) override;
     void wheelEvent(QWheelEvent *) override;
-    int lineAt(int y) const;
-    PlayListTrack *trackAt(int y) const;
     void dragEnterEvent(QDragEnterEvent *event) override;
     void dropEvent(QDropEvent *event) override;
     void dragLeaveEvent(QDragLeaveEvent *) override;
     void dragMoveEvent(QDragMoveEvent *event) override;
     void contextMenuEvent(QContextMenuEvent * event) override;
     bool event(QEvent *e) override;
+    int lineAt(int y) const;
+    PlayListTrack *trackAt(int y) const;
     void recenterTo(int index);
     /*!
      * Returns string with queue number or(and) repeate flag for the item number \b i.
      */
     const QString getExtraString(PlayListItem *item);
-    bool updateRowCount();
-    void restoreFirstVisible();
     int viewportHeight() const;
+    int lastVisibleLine() const;
     void setScrollPosition(int value, int maximum);
 
     enum ScrollDirection
@@ -118,8 +117,8 @@ private:
     int m_pressedLine = -1, m_dropLine = -1, m_anchorLine = -1;
     QMenu *m_menu = nullptr;
     PlayListModel *m_model;
-    int m_row_count = 0, m_firstLine = 0, m_lineCount = 0; //visible rows, first visible index, total item count
-    int m_row_offset = 0;
+    int m_lineCount = 0; //total lines count
+    int m_viewportHeight = 0;
     int m_scroll_value = 0, m_scroll_maximum = 0; //scrollbar values
     PlayListItem *m_firstItem = nullptr; //first visible item
     Skin *m_skin;

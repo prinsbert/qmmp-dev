@@ -69,7 +69,7 @@ bool SkinnedKeyboardManager::handleKeyRelease (QKeyEvent*)
     return false;
 }
 
-void SkinnedKeyboardManager::keyUp (QKeyEvent * ke)
+void SkinnedKeyboardManager::keyUp(QKeyEvent * ke)
 {
     QList<int> lines = m_listWidget->model()->selectedLines();
 
@@ -145,7 +145,7 @@ void SkinnedKeyboardManager::keyUp (QKeyEvent * ke)
 
     if(m_listWidget->anchorLine() < first_visible)
     {
-        m_listWidget->setViewPosition(m_listWidget->firstVisibleLine() - 1);
+        m_listWidget->setViewPosition(m_listWidget->model()->firstSelectedLine());
     }
 }
 
@@ -225,7 +225,7 @@ void SkinnedKeyboardManager::keyDown(QKeyEvent * ke)
 
     if(m_listWidget->anchorLine() > last_visible)
     {
-        m_listWidget->setViewPosition (m_listWidget->firstVisibleLine() + 1);
+        m_listWidget->setViewPosition(m_listWidget->model()->lastSelectedLine(), true);
     }
 }
 
