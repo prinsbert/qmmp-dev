@@ -84,7 +84,7 @@ void QSUiListWidget::readSettings()
     QSettings settings;
     settings.beginGroup(u"Simple"_s);
     m_show_protocol = settings.value(u"pl_show_protocol"_s, false).toBool();
-    m_smooth_scrolling = settings.value(u"pl_smooth_scrolling"_s, false).toBool();
+    m_smooth_scrolling = settings.value(u"pl_smooth_scrolling"_s, true).toBool();
     bool show_popup = settings.value(u"pl_show_popup"_s, false).toBool();
 
     m_header->readSettings();
