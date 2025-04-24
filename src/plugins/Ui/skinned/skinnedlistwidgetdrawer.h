@@ -44,6 +44,7 @@ struct SkinnedListWidgetRow
     int numberColumnWidth = 0;
     int lengthColumnWidth = 0;
     int trackStateColumn = 0;
+    int line = 0;
     int subIndex = 0;
     bool alternateColor = false;
     enum
@@ -87,7 +88,7 @@ public:
     void drawSeparator(QPainter *painter, SkinnedListWidgetRow *row, bool rtl);
     void drawMultiLineSeparator(QPainter *painter, SkinnedListWidgetRow *row, bool rtl);
     void drawTrack(QPainter *painter, SkinnedListWidgetRow *row, bool rtl);
-    void drawDropLine(QPainter *painter, int row_number, int width, int header_height);
+    void drawDropLine(QPainter *painter, int y, int width);
 
 private:
     enum Font

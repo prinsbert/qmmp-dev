@@ -109,12 +109,30 @@ void SkinnedListWidget::readSettings()
 
 int SkinnedListWidget::visibleRows() const
 {
-    return m_row_count;
+    int top = m_header->isVisibleTo(this) ?  m_header->geometry().bottom() : 0;
+    int bottom = m_hslider->isVisibleTo(this) ? m_hslider->geometry().top() : height();
+    int count = 0;
+
+    for(SkinnedListWidgetRow *row : std::as_const(m_rows))
+    {
+        if(row->rect.top() >= top && row->rect.bottom() <= bottom)
+            count++;
+    }
+
+    return count;
 }
 
 int SkinnedListWidget::firstVisibleLine() const
 {
-    return m_firstLine;
+    int top = m_header->isVisibleTo(this) ?  m_header->requiredHeight() : 0;
+
+    for(SkinnedListWidgetRow *row : std::as_const(m_rows))
+    {
+        if(row->rect.top() >= top)
+            return row->line;
+    }
+
+    return -1;
 }
 
 int SkinnedListWidget::anchorLine() const
@@ -148,7 +166,7 @@ void SkinnedListWidget::paintEvent(QPaintEvent *)
     const int linesPerGroup = m_model->linesPerGroup();
 
     painter.setClipRect(5, 0, width() - 9, height());
-    painter.translate(rtl ? m_header->offset() : -m_header->offset(), m_row_offset);
+    painter.translate(rtl ? m_header->offset() : -m_header->offset(), 0);
 
     for(int i = 0; i < m_rows.size(); ++i)
     {
@@ -174,8 +192,8 @@ void SkinnedListWidget::paintEvent(QPaintEvent *)
     //draw drop line
     if(m_dropLine >= 0)
     {
-        m_drawer.drawDropLine(&painter, m_dropLine - m_firstLine, width(),
-                              m_header->isVisible() ? m_header->height() : 0);
+        m_drawer.drawDropLine(&painter, m_dropLine * m_drawer.rowHeight() - m_scroll_value +
+                              (m_header->isVisible() ? m_header->height() : 0), width());
     }
 }
 
@@ -278,7 +296,7 @@ void SkinnedListWidget::resizeEvent(QResizeEvent *e)
 
 void SkinnedListWidget::wheelEvent(QWheelEvent *e)
 {
-    if(m_model->lineCount() <= m_row_count)
+    if(m_hslider->underMouse() || m_model->lineCount() * m_drawer.rowHeight() <= viewportHeight())
         return;
 
     //40*3 TODO: add step to config
@@ -336,61 +354,60 @@ void SkinnedListWidget::updateList(int flags)
     m_hslider->setVisible(m_header->maxScrollValue() > 0);
     m_hslider->setPos(m_header->offset(), m_header->maxScrollValue());
 
-    if(updateRowCount())
+    if(m_viewportHeight != viewportHeight())
+    {
+        m_viewportHeight = viewportHeight();
         flags |= PlayListModel::STRUCTURE;
+    }
 
     if(flags & PlayListModel::CURRENT)
         recenterTo(m_model->currentIndex());
 
     QList<PlayListItem *> items;
-    int playListHeight = m_model->lineCount() * m_drawer.rowHeight();
+    int count = m_model->lineCount();
+    int playListHeight = count * m_drawer.rowHeight();
+    int firstLine = m_scroll_value / m_drawer.rowHeight();
+    int lineCount = m_viewportHeight / m_drawer.rowHeight() + 2;
 
     if(flags & PlayListModel::STRUCTURE || flags & PlayListModel::CURRENT)
     {
-        if(m_row_count >= m_model->lineCount())
+        if(m_viewportHeight >= playListHeight)
         {
-            m_firstLine = 0;
-            m_row_offset = 0;
+            firstLine = 0;
+            lineCount = count;
             setScrollPosition(0, 0);
         }
-        else if(m_firstLine + m_row_count >= m_model->lineCount())
+        else if(m_viewportHeight < playListHeight && m_scroll_value == 0)
         {
-            //try to restore first visible first
-            if((m_lineCount > 0) && (m_lineCount != m_model->lineCount()) && m_firstItem)
-            {
-                restoreFirstVisible();
-            }
-            if(m_firstLine + m_row_count >= m_model->lineCount())
-            {
-                m_firstLine = qMax(0, m_model->lineCount() - m_row_count);
-            }
-            m_row_offset = 0;
-            setScrollPosition(m_firstLine * m_drawer.rowHeight(), playListHeight - viewportHeight());
+            setScrollPosition(0, playListHeight - m_viewportHeight);
         }
-        else if((m_lineCount > 0) && (m_lineCount != m_model->lineCount()) &&
-                m_firstItem && m_model->itemAtLine(m_firstLine) != m_firstItem)
+        else if(m_firstItem && m_model->itemAtLine(firstLine) != m_firstItem &&
+                m_lineCount < m_model->lineCount())
         {
-            restoreFirstVisible();
-            m_row_offset = 0;
-            setScrollPosition(m_firstLine * m_drawer.rowHeight(), playListHeight - viewportHeight());
+            //restore first visible
+            firstLine = m_model->findLine(m_firstItem);
+            setScrollPosition(firstLine * m_drawer.rowHeight(), playListHeight - m_viewportHeight);
         }
         else
         {
-            setScrollPosition(m_firstLine * m_drawer.rowHeight() - m_row_offset, playListHeight - viewportHeight());
+            setScrollPosition(qBound(0, m_scroll_value, playListHeight - m_viewportHeight),
+                              playListHeight - m_viewportHeight);
+            firstLine = m_scroll_value / m_drawer.rowHeight();
+
         }
 
-        m_firstItem = m_model->isEmpty() ? nullptr : m_model->itemAtLine(m_firstLine);
+        m_firstItem = m_model->isEmpty() ? nullptr : m_model->itemAtLine(firstLine);
         m_lineCount = m_model->lineCount();
-        items = m_model->itemsAtLines(m_firstLine, m_row_count + 2);
+        items = m_model->itemsAtLines(firstLine, lineCount);
 
-        while(m_rows.count() < qMin(m_row_count + 2, items.count()))
+        while(m_rows.count() < qMin(lineCount, items.count()))
             m_rows << new SkinnedListWidgetRow;
-        while(m_rows.count() > qMin(m_row_count + 2, items.count()))
+        while(m_rows.count() > qMin(lineCount, items.count()))
             delete m_rows.takeFirst();
     }
     else
     {
-        items = m_model->itemsAtLines(m_firstLine, m_row_count + 2);
+        items = m_model->itemsAtLines(firstLine, lineCount);
     }
 
     if(flags & PlayListModel::STRUCTURE)
@@ -414,15 +431,16 @@ void SkinnedListWidget::updateList(int flags)
         SkinnedListWidgetRow *row = m_rows[i];
         row->autoResize = m_header->hasAutoResizeColumn();
         row->trackStateColumn = trackStateColumn;
-        row->subIndex = m_model->subIndexOfLine(m_firstLine + i);
-        row->alternateColor = m_model->alternateColor(m_firstLine + i);
+        row->line = firstLine + i;
+        row->subIndex = m_model->subIndexOfLine(row->line);
+        row->alternateColor = m_model->alternateColor(row->line);
 
         if(items[i]->isSelected())
             row->flags |= SkinnedListWidgetRow::SELECTED;
         else
             row->flags &= ~SkinnedListWidgetRow::SELECTED;
 
-        if(i == (m_anchorLine - m_firstLine))
+        if(i == (m_anchorLine - firstLine))
             row->flags |= SkinnedListWidgetRow::ANCHOR;
                 else
             row->flags &= ~SkinnedListWidgetRow::ANCHOR;
@@ -459,7 +477,7 @@ void SkinnedListWidget::updateList(int flags)
         int rect_h = m_drawer.rowHeight() - 1;
         int rect_x = rtl ? (width() - rect_w - 5) : 5;
         int rect_y = (m_header->isVisibleTo(this) ? m_header->height() : 0) + i * m_drawer.rowHeight();
-
+        rect_y += firstLine * m_drawer.rowHeight() - m_scroll_value;
 
         if((row->flags & SkinnedListWidgetRow::GROUP) && linesPerGroup > 1)
         {
@@ -475,22 +493,15 @@ void SkinnedListWidget::updateList(int flags)
 
 void SkinnedListWidget::scroll(int y)
 {
-    if(m_model->lineCount() <= m_row_count)
+    if(m_model->lineCount() * m_drawer.rowHeight() <= viewportHeight())
         return;
 
-    if(m_smooth_scrolling)
+    if(!m_smooth_scrolling && y != m_scroll_maximum)
     {
-        m_firstLine = y / m_drawer.rowHeight();
-        m_row_offset = m_firstLine * m_drawer.rowHeight() - y;
+        y = y - y % m_drawer.rowHeight();
     }
-    else
-    {
-        if(y == m_scroll_maximum) //show last line
-            m_firstLine = m_model->lineCount() - m_row_count;
-        else
-            m_firstLine = y / m_drawer.rowHeight();
-        m_row_offset = 0;
-    }
+
+    m_scroll_value = qBound(0, y, m_scroll_maximum);
     updateList(PlayListModel::STRUCTURE);
 }
 
@@ -503,17 +514,19 @@ void SkinnedListWidget::autoscroll()
 
     if(m_scroll_direction == DOWN)
     {
-        int line = m_firstLine + m_row_count;
-        if(line < m_model->lineCount())
-            m_firstLine++;
+        int line = lastVisibleLine() + 1;
+        int y = (line + 1) * m_drawer.rowHeight() - viewportHeight();
+        m_scroll_value = qBound(0, y, m_scroll_maximum);
         m_model->moveTracks(m_model->trackIndexAtLine(m_pressedLine), m_model->trackIndexAtLine(line));
         m_pressedLine = line;
     }
-    else if(m_scroll_direction == TOP && m_firstLine > 0)
+    else if(m_scroll_direction == TOP && firstVisibleLine() > 0)
     {
-        m_firstLine--;
-        m_model->moveTracks(m_model->trackIndexAtLine(m_pressedLine), m_model->trackIndexAtLine(m_firstLine));
-        m_pressedLine = m_firstLine;
+        int line = firstVisibleLine() - 1;
+        int y = line * m_drawer.rowHeight();
+        m_scroll_value = qBound(0, y, m_scroll_maximum);
+        m_model->moveTracks(m_model->trackIndexAtLine(m_pressedLine), m_model->trackIndexAtLine(line));
+        m_pressedLine = line;
     }
 
     updateList(PlayListModel::STRUCTURE);
@@ -526,7 +539,7 @@ void SkinnedListWidget::updateRepeatIndicator()
 
 void SkinnedListWidget::scrollTo(int index)
 {
-    if(m_row_count)
+    if(viewportHeight() > 0)
     {
         recenterTo(index);
         updateList(PlayListModel::STRUCTURE);
@@ -537,8 +550,8 @@ void SkinnedListWidget::setModel(PlayListModel *selected, PlayListModel *previou
 {
     if(previous)
     {
-        previous->setProperty("first_visible", m_firstLine);
-        previous->setProperty("row_offset", m_row_offset);
+        previous->setProperty("scrollbar_maximum", m_scroll_maximum);
+        previous->setProperty("scrollbar_value", m_scroll_value);
         disconnect(previous, nullptr, this, nullptr); //disconnect previous model
         disconnect(previous, nullptr, m_header, nullptr);
     }
@@ -547,16 +560,15 @@ void SkinnedListWidget::setModel(PlayListModel *selected, PlayListModel *previou
     m_lineCount = m_model->lineCount();
     m_firstItem = nullptr;
 
-    if(m_model->property("first_visible").isValid())
+    if(m_model->property("scrollbar_value").isValid())
     {
-        m_firstLine = m_model->property("first_visible").toInt();
-        m_row_offset = m_model->property("row_offset").toInt();
+        m_scroll_maximum = m_model->property("scrollbar_maximum").toInt();
+        m_scroll_value = m_model->property("scrollbar_value").toInt();
         updateList(PlayListModel::STRUCTURE);
     }
     else
     {
-        m_firstLine = 0;
-        m_row_offset = 0;
+        m_scroll_value = 0;
         updateList(PlayListModel::STRUCTURE | PlayListModel::CURRENT);
     }
     connect(m_model, &PlayListModel::scrollToRequest, this, &SkinnedListWidget::scrollTo);
@@ -564,12 +576,17 @@ void SkinnedListWidget::setModel(PlayListModel *selected, PlayListModel *previou
     connect(m_model, &PlayListModel::sortingByColumnFinished, m_header, &SkinnedPlayListHeader::showSortIndicator);
 }
 
-void SkinnedListWidget::setViewPosition(int sc)
+void SkinnedListWidget::setViewPosition(int sc, bool bottom)
 {
-    if(m_model->lineCount() <= m_row_count)
-           return;
-    m_firstLine = sc;
-    m_row_offset = 0;
+    if(m_model->lineCount() * m_drawer.rowHeight() <= viewportHeight())
+        return;
+
+    int y = sc * m_drawer.rowHeight();
+
+    if(bottom)
+        y = y + m_drawer.rowHeight() - viewportHeight();
+
+    m_scroll_value = qBound(0, y, m_scroll_maximum);
     updateList(PlayListModel::STRUCTURE);
 }
 
@@ -595,7 +612,7 @@ void SkinnedListWidget::dropEvent(QDropEvent *event)
 
         int index = lineAt(event->position().y());
         if(index < 0)
-            index = qMin(m_firstLine + m_row_count, m_model->lineCount());
+            index = qMin(lastVisibleLine(), m_model->lineCount());
 
         if(event->mimeData()->hasUrls())
         {
@@ -621,13 +638,13 @@ void SkinnedListWidget::dragMoveEvent(QDragMoveEvent *event)
 {
     int index = lineAt(event->position().y());
     if(index < 0)
-        index = qMin(m_firstLine + m_row_count, m_model->lineCount());
+        index = qMin(visibleRows(), m_model->lineCount());
     if(index != m_dropLine)
     {
         m_dropLine = index;
         update();
     }
-    if(event->mimeData()->hasFormat(u"text/uri-list"_s))
+    if (event->mimeData()->hasFormat(u"text/uri-list"_s))
         event->acceptProposedAction();
 }
 
@@ -653,51 +670,6 @@ const QString SkinnedListWidget::getExtraString(PlayListItem *item)
     return extra_string.trimmed(); //remove white space
 }
 
-bool SkinnedListWidget::updateRowCount()
-{
-    int row_count = viewportHeight() / m_drawer.rowHeight();
-    if(m_row_count != row_count)
-    {
-        m_row_count = row_count;
-        return true;
-    }
-    return false;
-}
-
-void SkinnedListWidget::restoreFirstVisible()
-{
-    if(m_firstLine < m_model->lineCount() && m_firstItem == m_model->itemAtLine(m_firstLine))
-        return;
-
-    int delta = m_model->lineCount() - m_lineCount;
-
-    //try to find and restore first visible line index
-    if(delta > 0)
-    {
-        int from = qMin(m_model->lineCount() - 1, m_firstLine + 1);
-        for(int i = from; i <= qMin(m_model->lineCount() - 1, m_firstLine + delta); ++i)
-        {
-            if(m_model->itemAtLine(i) == m_firstItem)
-            {
-                m_firstLine = i;
-                break;
-            }
-        }
-    }
-    else
-    {
-        int from = qMin(m_model->lineCount() - 1, m_firstLine - 1);
-        for(int i = from; i >= qMax(0, m_firstLine + delta); --i)
-        {
-            if(m_model->itemAtLine(i) == m_firstItem)
-            {
-                m_firstLine = i;
-                break;
-            }
-        }
-    }
-}
-
 int SkinnedListWidget::viewportHeight() const
 {
     int h = height();
@@ -706,6 +678,19 @@ int SkinnedListWidget::viewportHeight() const
     if(m_hslider->isVisibleTo(this))
         h -= m_hslider->height();
     return qMax(0, h);
+}
+
+int SkinnedListWidget::lastVisibleLine() const
+{
+    int bottom = m_hslider->isVisibleTo(this) ? m_hslider->geometry().top() : height();
+
+    for(int i = m_rows.count() - 1; i >= 0; i--)
+    {
+        if(m_rows[i]->rect.bottom() <= bottom)
+            return m_rows[i]->line;
+    }
+
+    return -1;
 }
 
 void SkinnedListWidget::setScrollPosition(int value, int maximum)
@@ -742,13 +727,13 @@ void SkinnedListWidget::mouseMoveEvent(QMouseEvent *e)
             SimpleSelection sel = m_model->getSelection(m_model->trackIndexAtLine(m_pressedLine));
             if(sel.count() > 1 && m_scroll_direction == TOP)
             {
-                if(sel.top == 0 || sel.top == m_model->trackIndexAtLine(m_firstLine))
+                if(sel.top == 0 || sel.top == m_model->trackIndexAtLine(firstVisibleLine()))
                     return;
             }
             else if(sel.count() > 1 && m_scroll_direction == DOWN)
             {
                 if(sel.bottom == m_model->trackIndexAtLine(m_model->lineCount() - 1) ||
-                        sel.bottom == m_model->trackIndexAtLine(m_firstLine + m_row_count))
+                        sel.bottom == m_model->trackIndexAtLine(lastVisibleLine()))
                     return;
             }
             m_model->moveTracks(m_model->trackIndexAtLine(m_pressedLine),
@@ -784,13 +769,14 @@ void SkinnedListWidget::mouseReleaseEvent(QMouseEvent *e)
 
 int SkinnedListWidget::lineAt(int y) const
 {
-    y -= m_header->isVisible() ? m_header->height() : 0;
-    y -= m_row_offset;
-    for(int i = 0; i < qMin(m_row_count, m_model->lineCount() - m_firstLine); ++i)
+    for(SkinnedListWidgetRow *row : std::as_const(m_rows))
     {
-        if((y >= i * m_drawer.rowHeight()) && (y <= (i+1) * m_drawer.rowHeight()))
-            return m_firstLine + i;
+        int lines = row->rect.height() / m_drawer.rowHeight() + 1;
+
+        if(row->rect.top() <= y && y <= row->rect.top() + lines * m_drawer.rowHeight())
+            return row->line;
     }
+
     return -1;
 }
 
@@ -808,21 +794,19 @@ void SkinnedListWidget::contextMenuEvent(QContextMenuEvent * event)
 
 void SkinnedListWidget::recenterTo(int index)
 {
-    if(m_row_count && index >= 0)
+    if(viewportHeight() > 0 && index >= 0)
     {
         int line = m_model->findLine(index);
-        if (line < 0)
+        if(line < 0)
             return;
 
-        if (m_firstLine + m_row_count < line + 1)
+        if((line + 1) * m_drawer.rowHeight() > m_scroll_value + viewportHeight())
         {
-            m_firstLine = qMin(m_model->lineCount() - m_row_count, line - m_row_count / 2);
-            m_row_offset = 0;
+             m_scroll_value = qMin(m_scroll_maximum, line * m_drawer.rowHeight() - viewportHeight() / 2);
         }
-        else if (m_firstLine > line)
+        else if(line * m_drawer.rowHeight() < m_scroll_value)
         {
-            m_firstLine = qMax(line - m_row_count / 2, 0);
-            m_row_offset = 0;
+            m_scroll_value = qMax(line * m_drawer.rowHeight() - viewportHeight() / 2, 0);
         }
     }
 }
