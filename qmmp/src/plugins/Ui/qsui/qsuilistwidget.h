@@ -123,7 +123,7 @@ private:
     int m_pressedLine = -1, m_dropLine = -1, m_anchorLine = -1;
     QMenu *m_menu = nullptr;
     PlayListModel *m_model;
-    int m_row_count = 0, m_firstLine = 0, m_lineCount = 0; //visible rows, first visible index, total item count
+    int m_lineCount = 0; //total lines count
     int m_viewportHeight = 0;
     PlayListItem *m_firstItem = nullptr; //first visible item
     /*!
