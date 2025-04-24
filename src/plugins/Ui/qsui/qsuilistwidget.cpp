@@ -179,7 +179,6 @@ void QSUiListWidget::setModel(PlayListModel *selected, PlayListModel *previous)
     if(m_filterMode)
     {
         m_filterMode = false;
-        m_firstLine = 0;
         m_filteredItems.clear();
     }
 
@@ -365,7 +364,7 @@ void QSUiListWidget::resizeEvent(QResizeEvent *e)
 
 void QSUiListWidget::wheelEvent(QWheelEvent *e)
 {
-    if(m_hslider->underMouse() || m_model->lineCount() <= m_row_count)
+    if(m_hslider->underMouse() || m_model->lineCount() * m_drawer.rowHeight() <= viewportHeight())
         return;
 
     //40*3 TODO: add step to config
@@ -601,17 +600,23 @@ void QSUiListWidget::autoscroll()
 
     if(m_scroll_direction == DOWN)
     {
-        int line = m_firstLine + m_row_count;
-        if(line < m_model->lineCount())
-            m_firstLine++;
+        int line = lastVisibleLine() + 1;
+        int y = (line + 1) * m_drawer.rowHeight() - viewportHeight();
+        m_scrollBar->blockSignals(true);
+        m_scrollBar->setValue(qBound(0, y, m_scrollBar->maximum()));
+        m_scrollBar->blockSignals(false);
         m_model->moveTracks(m_model->trackIndexAtLine(m_pressedLine), m_model->trackIndexAtLine(line));
         m_pressedLine = line;
     }
-    else if(m_scroll_direction == TOP && m_firstLine > 0)
+    else if(m_scroll_direction == TOP && firstVisibleLine() > 0)
     {
-        m_firstLine--;
-        m_model->moveTracks(m_model->trackIndexAtLine(m_pressedLine), m_model->trackIndexAtLine(m_firstLine));
-        m_pressedLine = m_firstLine;
+        int line = firstVisibleLine() - 1;
+        int y = line * m_drawer.rowHeight();
+        m_scrollBar->blockSignals(true);
+        m_scrollBar->setValue(qBound(0, y, m_scrollBar->maximum()));
+        m_scrollBar->blockSignals(false);
+        m_model->moveTracks(m_model->trackIndexAtLine(m_pressedLine), m_model->trackIndexAtLine(line));
+        m_pressedLine = line;
     }
 
     updateList(PlayListModel::STRUCTURE);
@@ -624,7 +629,7 @@ void QSUiListWidget::updateRepeatIndicator()
 
 void QSUiListWidget::scrollTo(int index)
 {
-    if(m_row_count && !m_filterMode)
+    if(viewportHeight() > 0 && !m_filterMode)
     {
         recenterTo(index);
         updateList(PlayListModel::STRUCTURE);
@@ -674,7 +679,6 @@ void QSUiListWidget::setFilterString(const QString &str)
     {
         m_filterMode = true;
     }
-    m_firstLine = 0;
     updateList(PlayListModel::STRUCTURE);
 }
 
@@ -876,13 +880,13 @@ void QSUiListWidget::mouseMoveEvent(QMouseEvent *e)
             SimpleSelection sel = m_model->getSelection(m_model->trackIndexAtLine(m_pressedLine));
             if(sel.count() > 1 && m_scroll_direction == TOP)
             {
-                if(sel.top == 0 || sel.top == m_model->trackIndexAtLine(m_firstLine))
+                if(sel.top == 0 || sel.top == m_model->trackIndexAtLine(firstVisibleLine()))
                     return;
             }
             else if(sel.count() > 1 && m_scroll_direction == DOWN)
             {
                 if(sel.bottom == m_model->trackIndexAtLine(m_model->lineCount() - 1) ||
-                        sel.bottom == m_model->trackIndexAtLine(m_firstLine + m_row_count))
+                        sel.bottom == m_model->trackIndexAtLine(lastVisibleLine()))
                     return;
             }
             m_model->moveTracks(m_model->trackIndexAtLine(m_pressedLine),
