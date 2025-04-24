@@ -207,7 +207,7 @@ void SkinnedSettings::readSettings()
     QSettings settings;
     settings.beginGroup("Skinned"_L1);
     //playlist
-    m_ui->smoothScrollingCheckBox->setChecked(settings.value(u"pl_smooth_scrolling"_s, false).toBool());
+    m_ui->smoothScrollingCheckBox->setChecked(settings.value(u"pl_smooth_scrolling"_s, true).toBool());
     m_ui->protocolCheckBox->setChecked(settings.value ("pl_show_protocol"_L1, false).toBool());
     m_ui->numbersCheckBox->setChecked(settings.value("pl_show_numbers"_L1, true).toBool());
     m_ui->lengthsCheckBox->setChecked(settings.value("pl_show_lengths"_L1, true).toBool());
