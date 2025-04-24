@@ -499,6 +499,8 @@ void SkinnedListWidget::scroll(int y)
     if(!m_smooth_scrolling && y != m_scroll_maximum)
     {
         y = y - y % m_drawer.rowHeight();
+        if(y == m_scroll_value)
+            return;
     }
 
     m_scroll_value = qBound(0, y, m_scroll_maximum);
