@@ -83,7 +83,7 @@ void SkinnedListWidget::readSettings()
     QSettings settings;
     settings.beginGroup("Skinned"_L1);
     m_show_protocol = settings.value("pl_show_protocol"_L1, false).toBool();
-    m_smooth_scrolling = settings.value(u"pl_smooth_scrolling"_s, false).toBool();
+    m_smooth_scrolling = settings.value(u"pl_smooth_scrolling"_s, true).toBool();
     bool show_popup = settings.value("pl_show_popup"_L1, false).toBool();
 
     m_header->readSettings();
