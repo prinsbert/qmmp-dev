@@ -476,6 +476,8 @@ void QSUiListWidget::updateList(int flags)
         else
         {
             m_scrollBar->setMaximum(playListHeight - m_viewportHeight);
+            m_scrollBar->setValue(qBound(0, m_scrollBar->value(), m_scrollBar->maximum()));
+            firstLine = m_scrollBar->value() / m_drawer.rowHeight();
         }
 
         m_scrollBar->blockSignals(false);
