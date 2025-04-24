@@ -195,16 +195,16 @@ cmake ./ -DCMAKE_INSTALL_LIBDIR=lib64
 
 /usr/bin/qmmp - исполняемый файл
 /usr/share/qmmp - общие файлы и каталоги
-/usr/lib/qmmp-2.2/CommandLineOptions - расширения командной строки
-/usr/lib/qmmp-2.2/Effect - модули эффектов
-/usr/lib/qmmp-2.2/FileDialogs - файловые диалоги
-/usr/lib/qmmp-2.2/General - модули общего назначения
-/usr/lib/qmmp-2.2/Input - входные модули (декодеры)
-/usr/lib/qmmp-2.2/Output - модули вывода
-/usr/lib/qmmp-2.2/PlayListFormats - форматы плейлистов
-/usr/lib/qmmp-2.2/Transports - транспортные модули
-/usr/lib/qmmp-2.2/Ui - интерфейсы пользователя
-/usr/lib/qmmp-2.2/Visual - модули визуализации
+/usr/lib/qmmp-2.3/CommandLineOptions - расширения командной строки
+/usr/lib/qmmp-2.3/Effect - модули эффектов
+/usr/lib/qmmp-2.3/FileDialogs - файловые диалоги
+/usr/lib/qmmp-2.3/General - модули общего назначения
+/usr/lib/qmmp-2.3/Input - входные модули (декодеры)
+/usr/lib/qmmp-2.3/Output - модули вывода
+/usr/lib/qmmp-2.3/PlayListFormats - форматы плейлистов
+/usr/lib/qmmp-2.3/Transports - транспортные модули
+/usr/lib/qmmp-2.3/Ui - интерфейсы пользователя
+/usr/lib/qmmp-2.3/Visual - модули визуализации
 /usr/lib/libqmmp.so* - библиотека ядра плеера
 /usr/lib/libqmmpui.so* - библиотека пользовательского интерфейса
 /usr/include/qmmp - заголовочные файлы для ядра плеера
