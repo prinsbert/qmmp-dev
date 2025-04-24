@@ -137,11 +137,6 @@ int QSUiListWidget::firstVisibleLine() const
     return -1;
 }
 
-int QSUiListWidget::subIndexOfLine(int line) const
-{
-    return m_filterMode ? 0 : m_model->subIndexOfLine(line);
-}
-
 int QSUiListWidget::anchorLine() const
 {
     return m_anchorLine;

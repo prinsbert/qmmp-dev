@@ -60,7 +60,6 @@ public:
      * Returns index of the first visible line.
      */
     int firstVisibleLine() const;
-    int subIndexOfLine(int line) const;
 
     int anchorLine() const;
     void setAnchorLine(int index);
