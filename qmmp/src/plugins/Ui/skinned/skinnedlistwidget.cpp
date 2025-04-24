@@ -270,7 +270,7 @@ void SkinnedListWidget::mousePressEvent(QMouseEvent *e)
         else //ShiftModifier released
         {
             m_anchorLine = m_pressedLine;
-            if ((Qt::ControlModifier & e->modifiers()))
+            if((Qt::ControlModifier & e->modifiers()))
             {
                 m_model->setSelected(item, !item->isSelected());
             }
@@ -646,7 +646,7 @@ void SkinnedListWidget::dragMoveEvent(QDragMoveEvent *event)
         m_dropLine = index;
         update();
     }
-    if (event->mimeData()->hasFormat(u"text/uri-list"_s))
+    if(event->mimeData()->hasFormat(u"text/uri-list"_s))
         event->acceptProposedAction();
 }
 
@@ -658,10 +658,10 @@ const QString SkinnedListWidget::getExtraString(PlayListItem *item)
     QString extra_string;
     PlayListTrack *track = static_cast<PlayListTrack *>(item);
 
-    if (m_show_protocol && track->path().contains(u"://"_s))
+    if(m_show_protocol && track->path().contains(u"://"_s))
         extra_string = QLatin1Char('[') + track->path().split(u"://"_s).constFirst() + QLatin1Char(']');
 
-    if (track->isQueued())
+    if(track->isQueued())
         extra_string += QLatin1Char('|') + QString::number(track->queuedIndex() + 1) + QLatin1Char('|');
 
     if(m_model->currentTrack() == track && m_ui_settings->isRepeatableTrack())
@@ -706,9 +706,9 @@ void SkinnedListWidget::mouseMoveEvent(QMouseEvent *e)
 {    
     if(e->buttons() == Qt::LeftButton)
     {
-        if (m_prev_y > e->position().y())
+        if(m_prev_y > e->position().y())
             m_scroll_direction = TOP;
-        else if (m_prev_y < e->position().y())
+        else if(m_prev_y < e->position().y())
             m_scroll_direction = DOWN;
         else
             m_scroll_direction = NONE;
@@ -790,7 +790,7 @@ PlayListTrack *SkinnedListWidget::trackAt(int y) const
 
 void SkinnedListWidget::contextMenuEvent(QContextMenuEvent * event)
 {
-    if (menu())
+    if(menu())
         menu()->exec(event->globalPos());
 }
 
