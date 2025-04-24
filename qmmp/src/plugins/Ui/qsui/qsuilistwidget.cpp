@@ -247,8 +247,8 @@ void QSUiListWidget::paintEvent(QPaintEvent *)
     //draw drop line
     if(m_dropLine >= 0)
     {
-        m_drawer.drawDropLine(&painter, m_dropLine - m_firstLine, width(),
-                              m_header->isVisible() ? m_header->height() : 0);
+        m_drawer.drawDropLine(&painter, m_dropLine * m_drawer.rowHeight() - m_scrollBar->value() +
+                              (m_header->isVisible() ? m_header->height() : 0), width());
     }
 }
 
@@ -464,47 +464,21 @@ void QSUiListWidget::updateList(int flags)
         }
         else if(m_viewportHeight < playListHeight && m_scrollBar->value() == 0)
         {
-            firstLine = m_scrollBar->value() / m_drawer.rowHeight();
-            lineCount = m_viewportHeight / m_drawer.rowHeight() + 2;
             m_scrollBar->setMaximum(playListHeight - m_viewportHeight);
+        }
+        else if(!m_filterMode && m_firstItem && m_model->itemAtLine(firstLine) != m_firstItem &&
+                m_lineCount < m_model->lineCount())
+        {
+            //restore first visible
+            firstLine = m_model->findLine(m_firstItem);
+            m_scrollBar->setMaximum(playListHeight - m_viewportHeight);
+            m_scrollBar->setValue(firstLine * m_drawer.rowHeight());
         }
         else
         {
-            firstLine = m_scrollBar->value() / m_drawer.rowHeight();
-            lineCount = m_viewportHeight / m_drawer.rowHeight() + 2;
             m_scrollBar->setMaximum(playListHeight - m_viewportHeight);
         }
 
-
-        /*else if(m_firstLine + m_row_count >= count)
-        {
-            //try to restore first visible first
-            if(!m_filterMode && (m_lineCount > 0) &&
-                    (m_lineCount != m_model->lineCount()) && m_firstItem)
-            {
-                restoreFirstVisible();
-            }
-            if(m_firstLine + m_row_count >= count)
-            {
-                m_firstLine = qMax(0, count - m_row_count);
-            }
-            m_row_offset = 0;
-            m_scrollBar->setMaximum(playListHeight - viewportHeight());
-            m_scrollBar->setValue(m_firstLine * m_drawer.rowHeight());
-        }
-        else if(!m_filterMode && (m_lineCount > 0) && (m_lineCount != m_model->lineCount()) &&
-                m_firstItem && m_model->itemAtLine(m_firstLine) != m_firstItem)
-        {
-            restoreFirstVisible();
-            m_row_offset = 0;
-            m_scrollBar->setMaximum(playListHeight - viewportHeight());
-            m_scrollBar->setValue(m_firstLine * m_drawer.rowHeight());
-        }
-        else
-        {
-            m_scrollBar->setMaximum(playListHeight - viewportHeight());
-            m_scrollBar->setValue(m_firstLine * m_drawer.rowHeight() - m_row_offset);
-        }*/
         m_scrollBar->blockSignals(false);
 
         if(m_filterMode)
@@ -513,7 +487,7 @@ void QSUiListWidget::updateList(int flags)
         }
         else
         {
-            m_firstItem = m_model->isEmpty() ? nullptr : m_model->itemAtLine(m_firstLine);
+            m_firstItem = m_model->isEmpty() ? nullptr : m_model->itemAtLine(firstLine);
             m_lineCount = m_model->lineCount();
             items = m_model->itemsAtLines(firstLine, lineCount);
         }
@@ -658,11 +632,19 @@ void QSUiListWidget::scrollTo(int index)
 }
 
 void QSUiListWidget::setViewPosition(int sc, bool bottom)
-{   
+{
+    if(m_model->lineCount() * m_drawer.rowHeight() <= viewportHeight())
+        return;
+
+    int y = sc * m_drawer.rowHeight();
+
     if(bottom)
-        scroll((sc + 1) * m_drawer.rowHeight() - viewportHeight());
-    else
-        scroll(sc * m_drawer.rowHeight());
+        y = y + m_drawer.rowHeight() - viewportHeight();
+
+    m_scrollBar->blockSignals(true);
+    m_scrollBar->setValue(qBound(0, y, m_scrollBar->maximum()));
+    m_scrollBar->blockSignals(false);
+    updateList(PlayListModel::STRUCTURE);
 }
 
 void QSUiListWidget::scroll(int y)
@@ -670,19 +652,11 @@ void QSUiListWidget::scroll(int y)
     if(m_model->lineCount() * m_drawer.rowHeight() <= viewportHeight())
         return;
 
-//    if(m_smooth_scrolling)
-//    {
-//        m_firstLine = y / m_drawer.rowHeight();
-//        //m_row_offset = m_firstLine * m_drawer.rowHeight() - y;
-//    }
-//    else
-//    {
-//        if(y == m_scrollBar->maximum()) //show last line
-//            m_firstLine = m_model->lineCount() - m_row_count;
-//        else
-//            m_firstLine = y / m_drawer.rowHeight();
-//        //m_row_offset = 0;
-//    }
+    if(!m_smooth_scrolling && y != m_scrollBar->maximum())
+    {
+        y = y - y % m_drawer.rowHeight();
+    }
+
     m_scrollBar->setValue(qBound(0, y, m_scrollBar->maximum()));
     updateList(PlayListModel::STRUCTURE);
 }
@@ -794,7 +768,7 @@ void QSUiListWidget::dragMoveEvent(QDragMoveEvent *event)
 {
     int index = lineAt(event->position().y());
     if(index < 0)
-        index = qMin(m_firstLine + m_row_count, m_model->lineCount());
+        index = qMin(visibleRows(), m_model->lineCount());
     if(index != m_dropLine)
     {
         m_dropLine = index;
@@ -824,40 +798,6 @@ const QString QSUiListWidget::getExtraString(PlayListItem *item)
         extra_string += u"|S|"_s;
 
     return extra_string.trimmed(); //remove white space
-}
-
-void QSUiListWidget::restoreFirstVisible()
-{
-    if(m_firstLine < m_model->lineCount() && m_firstItem == m_model->itemAtLine(m_firstLine))
-        return;
-
-    int delta = m_model->lineCount() - m_lineCount;
-
-    //try to find and restore first visible line index
-    if(delta > 0)
-    {
-        int from = qMin(m_model->lineCount() - 1, m_firstLine + 1);
-        for(int i = from; i <= qMin(m_model->lineCount() - 1, m_firstLine + delta); ++i)
-        {
-            if(m_model->itemAtLine(i) == m_firstItem)
-            {
-                m_firstLine = i;
-                break;
-            }
-        }
-    }
-    else
-    {
-        int from = qMin(m_model->lineCount() - 1, m_firstLine - 1);
-        for(int i = from; i >= qMax(0, m_firstLine + delta); --i)
-        {
-            if(m_model->itemAtLine(i) == m_firstItem)
-            {
-                m_firstLine = i;
-                break;
-            }
-        }
-    }
 }
 
 void QSUiListWidget::updateScrollBars()
@@ -891,19 +831,6 @@ int QSUiListWidget::viewportHeight() const
         h -= m_hslider->height();
 
     return qMax(h, 0);
-}
-
-int QSUiListWidget::lastVisibleLine() const
-{
-    int bottom = m_hslider->isVisibleTo(this) ? m_hslider->geometry().top() : height();
-
-    for(int i = m_rows.count() - 1; i >= 0; i--)
-    {
-        if(m_rows[i]->rect.bottom() <= bottom)
-            return i;
-    }
-
-    return -1;
 }
 
 void QSUiListWidget::mouseMoveEvent(QMouseEvent *e)
@@ -980,7 +907,9 @@ int QSUiListWidget::lineAt(int y) const
 {
     for(QSUiListWidgetRow *row : std::as_const(m_rows))
     {
-        if(row->rect.top() <= y && y <= row->rect.bottom())
+        int lines = row->rect.height() / m_drawer.rowHeight() + 1;
+
+        if(row->rect.top() <= y && y <= row->rect.top() + lines * m_drawer.rowHeight())
         {
             if(!m_filterMode)
                 return row->line;

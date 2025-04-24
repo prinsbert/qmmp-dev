@@ -97,23 +97,22 @@ private:
     void resizeEvent(QResizeEvent *) override;
     void wheelEvent(QWheelEvent *) override;
     void showEvent(QShowEvent *) override;
-    int lineAt(int y) const;
-    PlayListTrack *trackAt(int y) const;
     void dragEnterEvent(QDragEnterEvent *event) override;
     void dropEvent(QDropEvent *event) override;
     void dragLeaveEvent(QDragLeaveEvent *) override;
     void dragMoveEvent(QDragMoveEvent *event) override;
     void contextMenuEvent(QContextMenuEvent * event) override;
     bool event(QEvent *e) override;
+
+    int lineAt(int y) const;
+    PlayListTrack *trackAt(int y) const;
     void recenterTo(int index);
     /*!
      * Returns string with queue number or(and) repeate flag for the \b item.
      */
     const QString getExtraString(PlayListItem *item);
-    void restoreFirstVisible();
     void updateScrollBars();
     int viewportHeight() const;
-    int lastVisibleLine() const;
 
     enum ScrollDirection
     {

@@ -606,9 +606,8 @@ void QSUiListWidgetDrawer::drawTrack(QPainter *painter, QSUiListWidgetRow *row, 
     }
 }
 
-void QSUiListWidgetDrawer::drawDropLine(QPainter *painter, int row_number, int width, int header_height)
+void QSUiListWidgetDrawer::drawDropLine(QPainter *painter, int y, int width)
 {
     painter->setPen(m_current);
-    painter->drawLine (5, header_height + row_number * m_row_height,
-                       width - 5 , header_height + row_number * m_row_height);
+    painter->drawLine(5, y, width - 5 , y);
 }

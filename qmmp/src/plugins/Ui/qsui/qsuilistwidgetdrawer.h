@@ -89,7 +89,7 @@ public:
     void drawSeparator(QPainter *painter, QSUiListWidgetRow *row, bool rtl);
     void drawMultiLineSeparator(QPainter *painter, QSUiListWidgetRow *row, bool rtl);
     void drawTrack(QPainter *painter, QSUiListWidgetRow *row, bool rtl);
-    void drawDropLine(QPainter *painter, int row_number, int width, int header_height);
+    void drawDropLine(QPainter *painter, int y, int width);
 
 private:
 
