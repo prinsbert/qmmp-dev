@@ -742,7 +742,7 @@ void QSUiListWidget::dropEvent(QDropEvent *event)
 
         int index = lineAt(event->position().y());
         if(index < 0)
-            index = qMin(m_firstLine + m_row_count, m_model->lineCount());
+            index = qMin(lastVisibleLine(), m_model->lineCount());
 
         if(event->mimeData()->hasUrls())
         {
@@ -833,6 +833,19 @@ int QSUiListWidget::viewportHeight() const
     return qMax(h, 0);
 }
 
+int QSUiListWidget::lastVisibleLine() const
+{
+    int bottom = m_hslider->isVisibleTo(this) ? m_hslider->geometry().top() : height();
+
+    for(int i = m_rows.count() - 1; i >= 0; i--)
+    {
+        if(m_rows[i]->rect.bottom() <= bottom)
+            return m_rows[i]->line;
+    }
+
+    return -1;
+}
+
 void QSUiListWidget::mouseMoveEvent(QMouseEvent *e)
 {
     if(m_filterMode)
@@ -920,6 +933,7 @@ int QSUiListWidget::lineAt(int y) const
                 return m_model->findLine(item);
             }
         }
+
     }
 
     return -1;

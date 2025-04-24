@@ -113,6 +113,7 @@ private:
     const QString getExtraString(PlayListItem *item);
     void updateScrollBars();
     int viewportHeight() const;
+    int lastVisibleLine() const;
 
     enum ScrollDirection
     {
