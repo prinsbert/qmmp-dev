@@ -10,7 +10,7 @@
 ;-------------------------------
 ;Defines
  
-   !define QMMP_VERSION "2.2.4-1"
+   !define QMMP_VERSION "2.2.5"
    !define WIN64 "1"
    !define QMMP_DEF_PROGS_KEY "Software\Clients\Media\Qmmp"
    !define QMMP_UNINSTALL_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\Qmmp"

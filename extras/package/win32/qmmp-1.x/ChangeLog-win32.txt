@@ -4,6 +4,11 @@ LEGEND
 [-] Bug fix
 [!] Enhancement
 
+1.7.5
+[*] qmmp-1.7.5
+[*] libsidplayfp-2.13.0
+[*] curl-8.13.0
+
 1.7.4-1
 [-] fixed FLAC support
 [!] improved installer translation
