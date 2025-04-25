@@ -1,3 +1,9 @@
+qmmp (1.7.5-1ubuntu1~noble0) noble; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Fri, 25 Apr 2025 17:28:55 +0300
+
 qmmp (1.7.4-1ubuntu1~noble1) noble; urgency=medium
 
   * Fixed pkg-config file.
