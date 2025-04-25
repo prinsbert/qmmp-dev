@@ -302,7 +302,7 @@
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="94"/>
-        <location filename="../forms/configdialog.ui" line="996"/>
+        <location filename="../forms/configdialog.ui" line="1002"/>
         <source>Audio</source>
         <translation>Audio</translation>
     </message>
@@ -334,7 +334,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="242"/>
         <location filename="../forms/configdialog.ui" line="267"/>
-        <location filename="../forms/configdialog.ui" line="710"/>
+        <location filename="../forms/configdialog.ui" line="716"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -482,128 +482,128 @@
         <translation>Rekursive Suchtiefe:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="632"/>
+        <location filename="../forms/configdialog.ui" line="638"/>
         <source>URL Dialog</source>
         <translation>URL-Dialog</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="638"/>
+        <location filename="../forms/configdialog.ui" line="644"/>
         <source>Auto-paste URL from clipboard</source>
         <translation>URL aus Zwischenablage automatisch einfügen</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="648"/>
+        <location filename="../forms/configdialog.ui" line="654"/>
         <source>CUE Editor</source>
         <translation>CUE-Editor</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="654"/>
+        <location filename="../forms/configdialog.ui" line="660"/>
         <source>Use system font</source>
         <translation>Systemschriftart verwenden</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="675"/>
+        <location filename="../forms/configdialog.ui" line="681"/>
         <source>Font:</source>
         <translation>Schriftart:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="700"/>
+        <location filename="../forms/configdialog.ui" line="706"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="739"/>
+        <location filename="../forms/configdialog.ui" line="745"/>
         <source>Proxy</source>
         <translation>Proxyserver</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="751"/>
+        <location filename="../forms/configdialog.ui" line="757"/>
         <source>Enable proxy usage</source>
         <translation>Proxyserver verwenden</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="758"/>
+        <location filename="../forms/configdialog.ui" line="764"/>
         <source>Proxy type:</source>
         <translation>Proxy-Typ:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="768"/>
+        <location filename="../forms/configdialog.ui" line="774"/>
         <source>Proxy host name:</source>
         <translation>Name des Proxyservers:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="785"/>
+        <location filename="../forms/configdialog.ui" line="791"/>
         <source>Proxy port:</source>
         <translation>Port:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="802"/>
+        <location filename="../forms/configdialog.ui" line="808"/>
         <source>Use authentication with proxy</source>
         <translation>Authentisierung verwenden</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="809"/>
+        <location filename="../forms/configdialog.ui" line="815"/>
         <source>Proxy user name:</source>
         <translation>Benutzername:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="826"/>
+        <location filename="../forms/configdialog.ui" line="832"/>
         <source>Proxy password:</source>
         <translation>Proxy-Passwort:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="866"/>
+        <location filename="../forms/configdialog.ui" line="872"/>
         <source>Replay Gain</source>
         <translation>Wiedergabeverstärkung</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="872"/>
+        <location filename="../forms/configdialog.ui" line="878"/>
         <source>Replay Gain mode:</source>
         <translation>Wiedergabeverstärkungsmodus:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="889"/>
+        <location filename="../forms/configdialog.ui" line="895"/>
         <source>Preamp:</source>
         <translation>Vorverstärkung:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="921"/>
-        <location filename="../forms/configdialog.ui" line="966"/>
+        <location filename="../forms/configdialog.ui" line="927"/>
+        <location filename="../forms/configdialog.ui" line="972"/>
         <source>dB</source>
         <translation>dB</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="934"/>
+        <location filename="../forms/configdialog.ui" line="940"/>
         <source>Default gain:</source>
         <translation>Standardverstärkung:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="986"/>
+        <location filename="../forms/configdialog.ui" line="992"/>
         <source>Use  peak info to prevent clipping</source>
         <translation>Spitzenwertinformationen verwenden, um Signalübersteuerungen zu verhindern</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1002"/>
+        <location filename="../forms/configdialog.ui" line="1008"/>
         <source>Buffer size:</source>
         <translation>Puffergröße:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1028"/>
+        <location filename="../forms/configdialog.ui" line="1034"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1061"/>
+        <location filename="../forms/configdialog.ui" line="1067"/>
         <source>Use software volume control</source>
         <translation>Softwaregesteuerte Lautstärkeregelung verwenden</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1101"/>
+        <location filename="../forms/configdialog.ui" line="1107"/>
         <source>Use two passes for equalizer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1044"/>
+        <location filename="../forms/configdialog.ui" line="1050"/>
         <source>Volume adjustment step:</source>
         <translation>Lautstärken-Anpassungschritt:</translation>
     </message>
@@ -618,12 +618,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1068"/>
+        <location filename="../forms/configdialog.ui" line="1074"/>
         <source>Output bit depth:</source>
         <translation>Ausgabebittiefe</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1009"/>
+        <location filename="../forms/configdialog.ui" line="1015"/>
         <source>Use dithering</source>
         <translation>Dithering verwenden</translation>
     </message>
@@ -1359,7 +1359,7 @@
     <name>PlayListManager</name>
     <message>
         <location filename="../playlistmanager.cpp" line="177"/>
-        <location filename="../playlistmanager.cpp" line="319"/>
+        <location filename="../playlistmanager.cpp" line="322"/>
         <source>Playlist</source>
         <translation>Wiedergabeliste</translation>
     </message>

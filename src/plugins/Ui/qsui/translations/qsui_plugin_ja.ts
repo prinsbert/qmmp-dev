@@ -1121,7 +1121,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="917"/>
+        <location filename="../qsuimainwindow.cpp" line="909"/>
         <source>Qmmp</source>
         <translation>QMMP</translation>
     </message>
@@ -1439,7 +1439,7 @@
         <translation>動作</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="938"/>
+        <location filename="../qsuimainwindow.cpp" line="930"/>
         <source>&amp;New PlayList</source>
         <translation>新しいプレイリスト(&amp;N)</translation>
     </message>

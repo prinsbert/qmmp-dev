@@ -4,42 +4,42 @@
 <context>
     <name>DecoderMpegFactory</name>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="178"/>
+        <location filename="../decodermpegfactory.cpp" line="177"/>
         <source>MPEG Plugin</source>
         <translation>Πρόσθετο MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="181"/>
+        <location filename="../decodermpegfactory.cpp" line="180"/>
         <source>MPEG Files</source>
         <translation>Αρχεία MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="417"/>
+        <location filename="../decodermpegfactory.cpp" line="416"/>
         <source>About MPEG Audio Plugin</source>
         <translation>Σχετικά με το πρόσθετο ήχου MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="418"/>
+        <location filename="../decodermpegfactory.cpp" line="417"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
         <translation>MPEG 1.0/2.0/2.5 στρώση 1/2/3 αποκωδικοποιητής ήχου</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="419"/>
+        <location filename="../decodermpegfactory.cpp" line="418"/>
         <source>Compiled against:</source>
         <translation>Μεταγλωττίστηκε χρησιμοποιώντας:</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="428"/>
+        <location filename="../decodermpegfactory.cpp" line="427"/>
         <source>mpg123, API version: %1</source>
         <translation>mpg123, API έκδοση: %1</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="432"/>
+        <location filename="../decodermpegfactory.cpp" line="431"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="433"/>
+        <location filename="../decodermpegfactory.cpp" line="432"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation>Ο πηγαίος κώδικας έχει βασιστεί στα έργα mq3 και madplay</translation>
     </message>
