@@ -83,7 +83,7 @@ ConfigDialog::ConfigDialog (QWidget *parent) : QDialog (parent)
     updateGroupSettings();
     //connections
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
-    connect(m_ui->linesPerGroupComboBox, &QComboBox::currentIndexChanged, this, &ConfigDialog::updateGroupSettings);
+    connect(m_ui->linesPerGroupComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConfigDialog::updateGroupSettings);
 #else
     connect(m_ui->linesPerGroupComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updateGroupSettings()));
 #endif
