@@ -70,9 +70,7 @@ ConfigDialog::ConfigDialog (QWidget *parent) : QDialog (parent)
     m_ui->bitDepthComboBox->addItem(u"16"_s, Qmmp::PCM_S16LE);
     m_ui->bitDepthComboBox->addItem(u"24"_s, Qmmp::PCM_S24LE);
     m_ui->bitDepthComboBox->addItem(u"32"_s, Qmmp::PCM_S32LE);
-#ifndef Q_OS_WIN
     m_ui->bitDepthComboBox->addItem(u"32 (float)"_s, Qmmp::PCM_FLOAT);
-#endif
     m_ui->proxyTypeComboBox->addItem(tr("HTTP"), QmmpSettings::HTTP_PROXY);
     m_ui->proxyTypeComboBox->addItem(tr("SOCKS5"), QmmpSettings::SOCKS5_PROXY);
     m_ui->portLineEdit->setValidator(new QIntValidator(0, 65535, this));
