@@ -21,6 +21,7 @@
 #ifndef OUTPUTDIRECTSOUND_H
 #define OUTPUTDIRECTSOUND_H
 
+#include <QPair>
 #include <stdio.h>
 #include <windows.h>
 #include <ksmedia.h>
@@ -65,15 +66,8 @@ private:
     IDirectSound8 *m_ds = nullptr;
     IDirectSoundBuffer *m_primaryBuffer = nullptr;
     IDirectSoundBuffer8 *m_dsBuffer = nullptr;
-    DWORD m_dsBufferAt = 0;
-
-    typedef struct
-    {
-        Qmmp::ChannelPosition pos;
-        DWORD chan_mask;
-    } DSoundChannels;
-
-    static DSoundChannels m_dsound_pos[10];
+    DWORD m_dsBufferAt = 0;    
+    static QList< QPair<Qmmp::ChannelPosition, DWORD> > m_dsound_pos; //channel position, mask
     qint64 m_latency = 0;
     qint32 m_bytesPerSecond = 0;
     bool m_reset = false;
