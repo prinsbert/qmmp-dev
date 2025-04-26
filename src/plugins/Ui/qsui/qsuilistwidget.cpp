@@ -340,7 +340,7 @@ void QSUiListWidget::wheelEvent(QWheelEvent *e)
             ((m_firstLine == m_model->lineCount() - m_row_count) && e->angleDelta().y() < 0))
         return;
 
-    m_firstLine -= e->angleDelta().y() * m_drawer.rowHeight() * qApp->wheelScrollLines() / 120;
+    m_firstLine -= e->angleDelta().y() * qApp->wheelScrollLines() / 120;
     if(m_firstLine < 0)
         m_firstLine = 0;
 
