@@ -119,16 +119,25 @@ bool OutputWASAPI::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat fo
     {
         wfex.Format.wBitsPerSample = 16;
         wfex.Samples.wValidBitsPerSample = 16;
+        wfex.SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
     }
     else if(format == Qmmp::PCM_S24LE)
     {
         wfex.Format.wBitsPerSample  = 32;
         wfex.Samples.wValidBitsPerSample = 24;
+        wfex.SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
     }
     else if(format == Qmmp::PCM_S32LE)
     {
         wfex.Format.wBitsPerSample  = 32;
         wfex.Samples.wValidBitsPerSample = 32;
+        wfex.SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
+    }
+    else if(format == Qmmp::PCM_FLOAT)
+    {
+        wfex.Format.wBitsPerSample  = 32;
+        wfex.Samples.wValidBitsPerSample = 32;
+        wfex.SubFormat = KSDATAFORMAT_SUBTYPE_IEEE_FLOAT;
     }
     else
     {
@@ -153,7 +162,6 @@ bool OutputWASAPI::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat fo
     }
 
     wfex.dwChannelMask = mask;
-    wfex.SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
 
     AUDCLNT_SHAREMODE mode = m_exclusive ? AUDCLNT_SHAREMODE_EXCLUSIVE :  AUDCLNT_SHAREMODE_SHARED;
     DWORD streamFlags = 0;
