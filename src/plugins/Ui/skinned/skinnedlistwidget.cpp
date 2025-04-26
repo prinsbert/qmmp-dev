@@ -299,8 +299,7 @@ void SkinnedListWidget::wheelEvent(QWheelEvent *e)
     if(m_hslider->underMouse() || m_model->lineCount() * m_drawer.rowHeight() <= viewportHeight())
         return;
 
-    //40*3 TODO: add step to config
-    int delta = e->angleDelta().y() * m_drawer.rowHeight() / 40;
+    int delta = e->angleDelta().y() * m_drawer.rowHeight() * qApp->wheelScrollLines() / 120;
     int endValue = m_scroll_value - delta;
 
     if(m_smooth_scrolling)
