@@ -33,7 +33,7 @@
 
 OutputDirectSound *OutputDirectSound::instance = nullptr;
 VolumeDirectSound *OutputDirectSound::volumeControl = nullptr;
-OutputDirectSound::DSoundChannels OutputDirectSound::m_dsound_pos[10]  = {
+QList< QPair<Qmmp::ChannelPosition, DWORD> > OutputDirectSound::m_dsound_pos = {
    {Qmmp::CHAN_FRONT_LEFT, SPEAKER_FRONT_LEFT},
    {Qmmp::CHAN_FRONT_RIGHT, SPEAKER_FRONT_RIGHT},
    {Qmmp::CHAN_FRONT_CENTER, SPEAKER_FRONT_CENTER},
@@ -42,8 +42,7 @@ OutputDirectSound::DSoundChannels OutputDirectSound::m_dsound_pos[10]  = {
    {Qmmp::CHAN_REAR_RIGHT, SPEAKER_BACK_RIGHT},
    {Qmmp::CHAN_REAR_CENTER, SPEAKER_BACK_CENTER},
    {Qmmp::CHAN_SIDE_LEFT, SPEAKER_SIDE_LEFT},
-   {Qmmp::CHAN_SIDE_RIGHT, SPEAKER_BACK_RIGHT},
-   {Qmmp::CHAN_NULL, 0}
+   {Qmmp::CHAN_SIDE_RIGHT, SPEAKER_BACK_RIGHT}
 };
 
 OutputDirectSound::OutputDirectSound() : Output()
@@ -123,16 +122,14 @@ bool OutputDirectSound::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForm
 
     //generate channel order
     ChannelMap out_map;
-    int i = 0;
     DWORD mask = 0;
-    while(m_dsound_pos[i].pos != Qmmp::CHAN_NULL)
+    for(const QPair<Qmmp::ChannelPosition, DWORD> &pos : std::as_const(m_dsound_pos))
     {
-        if(map.contains(m_dsound_pos[i].pos))
+        if(map.contains(pos.first))
         {
-            mask |= m_dsound_pos[i].chan_mask;
-            out_map << m_dsound_pos[i].pos;
+            out_map << pos.first;
+            mask |= pos.second;
         }
-        i++;
     }
 
     wfex.dwChannelMask = mask;
