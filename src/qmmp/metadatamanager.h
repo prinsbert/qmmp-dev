@@ -27,6 +27,7 @@
 #include <QDir>
 #include <QRecursiveMutex>
 #include <QRegularExpression>
+#include <QCache>
 #include "trackinfo.h"
 #include "metadatamodel.h"
 
@@ -123,14 +124,13 @@ private:
 
     struct CoverCacheItem
     {
-        QString url;
         QString coverPath;
         QImage coverImage;
     };
 
     QFileInfoList findCoverFiles(QDir dir, int depth) const;
     CoverCacheItem *createCoverCacheItem(const QString &url) const;
-    mutable QList<CoverCacheItem *> m_cover_cache;
+    mutable QCache<QString, CoverCacheItem> *m_cover_cache;
     QmmpSettings *m_settings;
     mutable QRecursiveMutex m_mutex;
 
