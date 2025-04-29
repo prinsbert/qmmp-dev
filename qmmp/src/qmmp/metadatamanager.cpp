@@ -31,16 +31,18 @@
 #include "qmmpsettings.h"
 #include "metadatamanager.h"
 
-#define COVER_CACHE_SIZE 10
+#define COVER_CACHE_SIZE 20
 
 MetaDataManager* MetaDataManager::m_instance = nullptr;
 
-MetaDataManager::MetaDataManager() : m_settings(QmmpSettings::instance())
+MetaDataManager::MetaDataManager() :
+    m_cover_cache(new QCache<QString, CoverCacheItem>(COVER_CACHE_SIZE)),
+    m_settings(QmmpSettings::instance())
 {}
 
 MetaDataManager::~MetaDataManager()
 {
-    clearCoverCache();
+    delete m_cover_cache;
 }
 
 QList<TrackInfo *> MetaDataManager::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *ignoredPaths) const
@@ -186,35 +188,29 @@ bool MetaDataManager::supports(const QString &fileName) const
 QImage MetaDataManager::getCover(const QString &url) const
 {
     QMutexLocker locker(&m_mutex);
-    for(int i = 0; i < m_cover_cache.size(); ++i)
-    {
-        if(m_cover_cache[i]->url == url)
-            return m_cover_cache[i]->coverImage;
-    }
+    CoverCacheItem *item = m_cover_cache->object(url);
 
-    m_cover_cache << createCoverCacheItem(url);
+    if(item)
+        return item->coverImage;
 
-    while(m_cover_cache.size() > COVER_CACHE_SIZE)
-        delete m_cover_cache.takeFirst();
+    if(m_cover_cache->insert(url, createCoverCacheItem(url)))
+        return m_cover_cache->object(url)->coverImage;
 
-    return m_cover_cache.last()->coverImage;
+    return QImage();
 }
 
 QString MetaDataManager::getCoverPath(const QString &url) const
 {
     QMutexLocker locker(&m_mutex);
-    for(int i = 0; i < m_cover_cache.size(); ++i)
-    {
-        if(m_cover_cache[i]->url == url)
-            return m_cover_cache[i]->coverPath;
-    }
+    CoverCacheItem *item = m_cover_cache->object(url);
 
-    m_cover_cache << createCoverCacheItem(url);
+    if(item)
+        return item->coverPath;
 
-    while(m_cover_cache.size() > COVER_CACHE_SIZE)
-        delete m_cover_cache.takeFirst();
+    if(m_cover_cache->insert(url, createCoverCacheItem(url)))
+        return m_cover_cache->object(url)->coverPath;
 
-    return m_cover_cache.last()->coverPath;
+    return QString();
 }
 
 QString MetaDataManager::findCoverFile(const QString &fileName) const
@@ -263,7 +259,7 @@ QFileInfoList MetaDataManager::findCoverFiles(QDir dir, int depth) const
 MetaDataManager::CoverCacheItem *MetaDataManager::createCoverCacheItem(const QString &url) const
 {
     CoverCacheItem *item = new CoverCacheItem;
-    item->url = url;
+
     if(!url.contains(u"://"_s) && m_settings->useCoverFiles())
         item->coverPath = findCoverFile(url);
 
@@ -290,8 +286,7 @@ MetaDataManager::CoverCacheItem *MetaDataManager::createCoverCacheItem(const QSt
 void MetaDataManager::clearCoverCache()
 {
     QMutexLocker locker(&m_mutex);
-    qDeleteAll(m_cover_cache);
-    m_cover_cache.clear();
+    m_cover_cache->clear();
 }
 
 void MetaDataManager::prepareForAnotherThread()
