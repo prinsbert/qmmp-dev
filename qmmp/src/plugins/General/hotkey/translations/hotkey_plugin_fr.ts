@@ -14,7 +14,7 @@
         <translation>Appuyez sur la combinaison de touches que vous voulez assigner</translation>
     </message>
     <message>
-        <location filename="../hotkeydialog.ui" line="52"/>
+        <location filename="../hotkeydialog.cpp" line="35"/>
         <source>Clear</source>
         <translation>Effacer</translation>
     </message>

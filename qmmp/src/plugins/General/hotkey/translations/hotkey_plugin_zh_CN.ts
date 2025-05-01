@@ -14,7 +14,7 @@
         <translation>请按您想指派的组合键</translation>
     </message>
     <message>
-        <location filename="../hotkeydialog.ui" line="52"/>
+        <location filename="../hotkeydialog.cpp" line="35"/>
         <source>Clear</source>
         <translation>清除</translation>
     </message>

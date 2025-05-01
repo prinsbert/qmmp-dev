@@ -14,7 +14,7 @@
         <translation>Pulsar a combinación de teclas que queres asignar</translation>
     </message>
     <message>
-        <location filename="../hotkeydialog.ui" line="52"/>
+        <location filename="../hotkeydialog.cpp" line="35"/>
         <source>Clear</source>
         <translation>Despexar</translation>
     </message>
