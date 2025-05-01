@@ -90,8 +90,6 @@ private slots:
     void savePlayList();
     void loadPlayList();
     void showEqualizer();
-    void forward();
-    void backward();
     void showMetaData();
     void setDockWidgetsBlocked(bool blocked);
     void setToolBarsBlocked(bool blocked);

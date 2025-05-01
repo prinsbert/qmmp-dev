@@ -84,8 +84,6 @@ private slots:
     void showState(Qmmp::State state);
     void showMetaData();
     void showSettings();
-    void forward();
-    void backward();
     void restoreWindowTitle();
 
 private:

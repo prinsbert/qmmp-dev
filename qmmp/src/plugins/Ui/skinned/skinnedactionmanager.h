@@ -47,6 +47,12 @@ public:
         PREVIOUS,
         NEXT,
         PLAY_PAUSE,
+        SEEK_FORWARD_10,
+        SEEK_FORWARD_30,
+        SEEK_FORWARD_60,
+        SEEK_BACKWARD_10,
+        SEEK_BACKWARD_30,
+        SEEK_BACKWARD_60,
         JUMP,
 
         REPEAT_ALL,

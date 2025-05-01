@@ -65,8 +65,6 @@
 #include "ui_qsuimainwindow.h"
 #include "qsuiequalizer.h"
 
-#define KEY_OFFSET 10000
-
 QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent), m_ui(new Ui::QSUiMainWindow)
 {
     m_ui->setupUi(this);
@@ -633,16 +631,15 @@ void QSUiMainWindow::createActions()
     m_tab_menu->addAction(ACTION(QSUiActionManager::PL_RENAME));
     m_tab_menu->addAction(ACTION(QSUiActionManager::PL_CLOSE));
     //seeking
-    QAction *forwardAction = new QAction(this);
-    forwardAction->setShortcut(QKeySequence(Qt::Key_Right));
-    connect(forwardAction, &QAction::triggered, this, &QSUiMainWindow::forward);
-    QAction *backwardAction = new QAction(this);
-    backwardAction->setShortcut(QKeySequence(Qt::Key_Left));
-    connect(backwardAction, &QAction::triggered, this, &QSUiMainWindow::backward);
+    SET_ACTION(QSUiActionManager::SEEK_FORWARD_10, this, [this] { m_core->seekRelative(10000); } );
+    SET_ACTION(QSUiActionManager::SEEK_FORWARD_30, this, [this] { m_core->seekRelative(30000); } );
+    SET_ACTION(QSUiActionManager::SEEK_FORWARD_60, this, [this] { m_core->seekRelative(60000); } );
+    SET_ACTION(QSUiActionManager::SEEK_BACKWARD_10, this, [this] { m_core->seekRelative(-10000); } );
+    SET_ACTION(QSUiActionManager::SEEK_BACKWARD_30, this, [this] { m_core->seekRelative(-30000); } );
+    SET_ACTION(QSUiActionManager::SEEK_BACKWARD_60, this, [this] { m_core->seekRelative(-60000); } );
     //application menu
     SET_ACTION(QSUiActionManager::APPLICATION_MENU, this, &QSUiMainWindow::showAppMenu);
 
-    addActions({ forwardAction, backwardAction });
     addActions(QSUiActionManager::instance()->actions());
     addActions(m_key_manager->actions());
 }
@@ -833,16 +830,6 @@ void QSUiMainWindow::showEqualizer()
 {
     QSUiEqualizer equalizer(this);
     equalizer.exec();
-}
-
-void QSUiMainWindow::forward()
-{
-    m_core->seek(m_core->elapsed() + KEY_OFFSET);
-}
-
-void QSUiMainWindow::backward()
-{
-    m_core->seek(qMax(qint64(0), m_core->elapsed() - KEY_OFFSET));
 }
 
 void QSUiMainWindow::showMetaData()
