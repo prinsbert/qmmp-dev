@@ -28,7 +28,11 @@
 GeneralProperties HotkeyFactory::properties() const
 {
     GeneralProperties properties;
+#ifdef QMMP_WS_X11
+    properties.name = tr("X11 Hotkey Plugin");
+#else
     properties.name = tr("Global Hotkey Plugin");
+#endif
     properties.shortName = "hotkey"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
