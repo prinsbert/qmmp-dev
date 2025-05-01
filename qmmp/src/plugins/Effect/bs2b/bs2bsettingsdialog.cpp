@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #include <QSettings>
+#include <QPushButton>
 #include <bs2b/bs2b.h>
 #include <qmmp/qmmp.h>
 #include "ui_bs2bsettingsdialog.h"
@@ -35,6 +36,21 @@ Bs2bSettingsDialog::Bs2bSettingsDialog(QWidget *parent)
     m_level = settings.value(u"bs2b/level"_s, BS2B_DEFAULT_CLEVEL).toUInt();
     m_ui->feedSlider->setValue(m_level >> 16);
     m_ui->freqSlider->setValue(m_level & 0xffff);
+
+    connect(m_ui->buttonBox->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, [this] {
+        m_ui->feedSlider->setValue(BS2B_DEFAULT_CLEVEL >> 16);
+        m_ui->freqSlider->setValue(BS2B_DEFAULT_CLEVEL & 0xffff);
+    });
+
+    connect(m_ui->buttonBox->addButton(tr("C.Moy"), QDialogButtonBox::ResetRole), &QPushButton::clicked, this, [this] {
+        m_ui->feedSlider->setValue(BS2B_CMOY_CLEVEL >> 16);
+        m_ui->freqSlider->setValue(BS2B_CMOY_CLEVEL & 0xffff);
+    });
+
+    connect(m_ui->buttonBox->addButton(tr("J. Meier"), QDialogButtonBox::ResetRole), &QPushButton::clicked, this, [this] {
+        m_ui->feedSlider->setValue(BS2B_JMEIER_CLEVEL >> 16);
+        m_ui->freqSlider->setValue(BS2B_JMEIER_CLEVEL & 0xffff);
+    });
 }
 
 Bs2bSettingsDialog::~Bs2bSettingsDialog()
@@ -68,22 +84,4 @@ void Bs2bSettingsDialog::on_feedSlider_valueChanged(int value)
     m_ui->feedLabel->setText(tr("%1 dB").arg((double)value / 10));
     if (Bs2bPlugin::instance())
         Bs2bPlugin::instance()->setCrossfeedLevel(m_ui->feedSlider->value() << 16 | m_ui->freqSlider->value());
-}
-
-void Bs2bSettingsDialog::on_defaultButton_pressed()
-{
-    m_ui->feedSlider->setValue(BS2B_DEFAULT_CLEVEL >> 16);
-    m_ui->freqSlider->setValue(BS2B_DEFAULT_CLEVEL & 0xffff);
-}
-
-void Bs2bSettingsDialog::on_cmButton_pressed ()
-{
-    m_ui->feedSlider->setValue(BS2B_CMOY_CLEVEL >> 16);
-    m_ui->freqSlider->setValue(BS2B_CMOY_CLEVEL & 0xffff);
-}
-
-void Bs2bSettingsDialog::on_jmButton_pressed ()
-{
-    m_ui->feedSlider->setValue(BS2B_JMEIER_CLEVEL >> 16);
-    m_ui->freqSlider->setValue(BS2B_JMEIER_CLEVEL & 0xffff);
 }

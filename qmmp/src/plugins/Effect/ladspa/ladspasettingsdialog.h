@@ -45,7 +45,7 @@ public slots:
 private slots:
     void on_loadButton_clicked();
     void on_unloadButton_clicked();
-    void on_configureButton_clicked();
+    void onConfigureButtonClicked();
 
 private:
     void updateRunningPlugins();
