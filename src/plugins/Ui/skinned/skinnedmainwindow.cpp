@@ -52,8 +52,6 @@
 #include "windowsystem.h"
 #include "skinnedactionmanager.h"
 
-#define KEY_OFFSET 10000
-
 SkinnedMainWindow::SkinnedMainWindow(QWidget *parent) : QMainWindow(parent)
 {
 #ifdef QMMP_WS_X11
