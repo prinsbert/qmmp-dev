@@ -39,9 +39,6 @@ public:
 
     ~LADSPASettingsDialog();
 
-public slots:
-    virtual void accept() override;
-
 private slots:
     void on_loadButton_clicked();
     void on_unloadButton_clicked();

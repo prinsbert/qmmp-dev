@@ -141,11 +141,6 @@ void LADSPASettingsDialog::onConfigureButtonClicked()
     dialog->deleteLater();
 }
 
-void LADSPASettingsDialog::accept()
-{
-    QDialog::accept();
-}
-
 void LADSPASettingsDialog::updateRunningPlugins()
 {
     m_ui->runningListWidget->clear();
