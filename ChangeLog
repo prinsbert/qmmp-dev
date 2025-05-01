@@ -1,6 +1,10 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 1.7.6
+* using system scroll settings for playlists
+* added support for float pcm format in the dsound and wasapi plugins
+
 Version 1.7.5
 * fixed build without mpg123 or libmad
 * fixed plugin path in the pkg-config file
