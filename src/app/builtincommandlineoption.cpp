@@ -143,11 +143,11 @@ QString BuiltinCommandLineOption::executeCommand(int id, const QStringList &args
         player->play();
         break;
     case STOP:
-        core->stop();
+        player->stop();
         break;
     case PAUSE:
         if(core->state() == Qmmp::Playing)
-            core->pause();
+            player->pause();
         break;
     case NEXT:
         player->next();
@@ -161,7 +161,7 @@ QString BuiltinCommandLineOption::executeCommand(int id, const QStringList &args
         break;
     case PLAY_PAUSE:
         if (core->state() == Qmmp::Playing)
-            core->pause();
+            player->pause();
         else
             player->play();
         break;
@@ -233,7 +233,7 @@ void BuiltinCommandLineOption::addPendingPaths()
 
     if(core->state() != Qmmp::Stopped)
     {
-        core->stop();
+        MediaPlayer::instance()->stop();
         qApp->processEvents(); //receive stop signal
     }
 

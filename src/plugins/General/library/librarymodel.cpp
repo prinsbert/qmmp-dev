@@ -331,7 +331,7 @@ void LibraryModel::replace(const QModelIndexList &indexes)
 
     if(play)
     {
-        core->stop();
+        MediaPlayer::instance()->stop();
         MediaPlayer::instance()->play();
     }
 }

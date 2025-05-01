@@ -102,10 +102,10 @@ void MediaKeys::onKeyPressed(const QString &in0, const QString &in1)
         if (core->state() == Qmmp::Stopped)
             player->play();
         else if (core->state() != Qmmp::FatalError)
-            core->pause();
+            player->pause();
     }
     else if(in1 == "Pause"_L1)
-        core->pause();
+        player->pause();
     else if(in1 == "Stop"_L1)
         player->stop();
     else if(in1 == "Previous"_L1)

@@ -68,8 +68,8 @@ StatusIcon::StatusIcon(QObject *parent) : QObject(parent)
     QIcon previousIcon = QApplication::style()->standardIcon(QStyle::SP_MediaSkipBackward);
     QIcon exitIcon = QIcon::fromTheme(u"application-exit"_s);
     m_menu->addAction(playIcon, tr("Play"), m_player, &MediaPlayer::play);
-    m_menu->addAction(pauseIcon, tr("Pause"), m_core, &SoundCore::pause);
-    m_menu->addAction(stopIcon, tr("Stop"), m_core, &SoundCore::stop);
+    m_menu->addAction(pauseIcon, tr("Pause"), m_player, &MediaPlayer::pause);
+    m_menu->addAction(stopIcon, tr("Stop"), m_player, &MediaPlayer::stop);
     m_menu->addSeparator();
     m_menu->addAction(nextIcon, tr("Next"), m_player, &MediaPlayer::next);
     m_menu->addAction(previousIcon, tr("Previous"), m_player, &MediaPlayer::previous);
@@ -77,8 +77,8 @@ StatusIcon::StatusIcon(QObject *parent) : QObject(parent)
     m_menu->addAction(exitIcon, tr("Exit"), UiHelper::instance(), &UiHelper::exit);
     m_tray->setContextMenu(m_menu);
     m_tray->show();
-    connect (m_core, &SoundCore::trackInfoChanged, this, &StatusIcon::showMetaData);
-    connect (m_core, &SoundCore::stateChanged, this, &StatusIcon::setState);
+    connect(m_core, &SoundCore::trackInfoChanged, this, &StatusIcon::showMetaData);
+    connect(m_core, &SoundCore::stateChanged, this, &StatusIcon::setState);
     setState(m_core->state()); //update state
     if (m_core->state() == Qmmp::Playing) //show test message
         QTimer::singleShot(1500, this, &StatusIcon::showMetaData);
@@ -162,6 +162,6 @@ void StatusIcon::trayActivated(QSystemTrayIcon::ActivationReason reason)
         if (SoundCore::instance()->state() == Qmmp::Stopped)
             m_player->play();
         else
-            m_core->pause();
+            m_player->pause();
     }
 }

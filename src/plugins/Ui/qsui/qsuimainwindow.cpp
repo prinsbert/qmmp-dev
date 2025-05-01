@@ -389,7 +389,7 @@ void QSUiMainWindow::jumpTo()
 void QSUiMainWindow::playPause()
 {
     if (m_core->state() == Qmmp::Playing)
-        m_core->pause();
+        m_player->pause();
     else
         m_player->play();
 }
@@ -485,7 +485,7 @@ void QSUiMainWindow::createActions()
     //playback
     SET_ACTION(QSUiActionManager::PREVIOUS, m_player, &MediaPlayer::previous);
     SET_ACTION(QSUiActionManager::PLAY, m_player, &MediaPlayer::play);
-    SET_ACTION(QSUiActionManager::PAUSE, m_core, &SoundCore::pause);
+    SET_ACTION(QSUiActionManager::PAUSE, m_player, &MediaPlayer::pause);
     SET_ACTION(QSUiActionManager::STOP, m_player, &MediaPlayer::stop);
     SET_ACTION(QSUiActionManager::NEXT, m_player, &MediaPlayer::next);
     SET_ACTION(QSUiActionManager::EJECT, this, &QSUiMainWindow::playFiles);

@@ -239,7 +239,7 @@ void QSUiKeyboardManager::processEnter()
     QList<int> rows = m_listWidget->model()->selectedTrackIndexes();
     if(rows.isEmpty())
         return;
-    SoundCore::instance()->stop();
+    MediaPlayer::instance()->stop();
     PlayListManager::instance()->activatePlayList(m_listWidget->model());
     m_listWidget->model()->setCurrent(rows.constFirst());
     MediaPlayer::instance()->play();

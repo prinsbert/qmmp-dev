@@ -280,7 +280,7 @@ void UiHelper::replaceAndPlay(const QStringList &paths)
     if(paths.isEmpty())
         return;
 
-    SoundCore::instance()->stop();
+    MediaPlayer::instance()->stop();
     PlayListModel *pl = PlayListManager::instance()->selectedPlayList();
     PlayListManager::instance()->activatePlayList(pl);
     pl->clear();

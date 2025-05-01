@@ -181,13 +181,13 @@ bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message
                 player->stop();
                 break;
             case Hotkey::PAUSE:
-                core->pause();
+                player->pause();
                 break;
             case Hotkey::PLAY_PAUSE:
                 if (core->state() == Qmmp::Stopped)
                     player->play();
                 else if (core->state() != Qmmp::FatalError)
-                    core->pause();
+                    player->pause();
                 break;
             case Hotkey::NEXT:
                 player->next();
