@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #include <QKeyEvent>
+#include <QPushButton>
 #include "ui_shortcutdialog.h"
 #include "shortcutdialog.h"
 
@@ -27,6 +28,8 @@ ShortcutDialog::ShortcutDialog(const QString &key, QWidget *parent)
 {
     m_ui->setupUi(this);
     m_ui->keyLineEdit->setText(key);
+    QPushButton *button = m_ui->buttonBox->addButton(tr("Clear"), QDialogButtonBox::ResetRole);
+    connect(button, &QPushButton::clicked, m_ui->keyLineEdit, &QLineEdit::clear);
 
     //buttons should not catch keys
     for(QAbstractButton *button : m_ui->buttonBox->buttons())

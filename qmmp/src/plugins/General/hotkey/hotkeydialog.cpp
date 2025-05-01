@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #include <QKeyEvent>
+#include <QPushButton>
 #include "hotkeymanager.h"
 #include "ui_hotkeydialog.h"
 #include "hotkeydialog.h"
@@ -30,6 +31,9 @@ HotkeyDialog::HotkeyDialog(quint32 key, quint32 mod, QWidget *parent)
     m_key = key;
     m_modifiers = mod;
     m_ui->keyLineEdit->setText(HotkeyManager::getKeyString(m_key, m_modifiers));
+
+    QPushButton *button = m_ui->buttonBox->addButton(tr("Clear"), QDialogButtonBox::ResetRole);
+    connect(button, &QPushButton::clicked, m_ui->keyLineEdit, &QLineEdit::clear);
 }
 
 HotkeyDialog::~HotkeyDialog()
