@@ -59,13 +59,7 @@ public:
     inline SkinnedDisplay *mainDisplay() const {  return m_display; };
 
 public slots:
-    void previous();
-    void play();
-    void pause();
     void playPause();
-    void stop();
-    void next();
-    void replay();
     void jumpToTrack();
     void toggleVisibility();
     void showAndRaise();

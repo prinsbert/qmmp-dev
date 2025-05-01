@@ -76,6 +76,10 @@ public slots:
      */
     void stop();
     /*!
+     *  Pauses/resumes playback
+     */
+    void pause();
+    /*!
      * Sets next playlist item for playing.
      */
     void next();

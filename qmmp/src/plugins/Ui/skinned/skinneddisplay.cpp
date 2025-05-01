@@ -50,6 +50,8 @@ SkinnedDisplay::SkinnedDisplay(SkinnedMainWindow *parent) : PixmapWidget (parent
     setPixmap(skin()->getMain());
     setCursor(skin()->getCursor(Skin::CUR_NORMAL));
     m_mw = parent;
+    m_core = SoundCore::instance();
+    MediaPlayer *player = MediaPlayer::instance();
 
     m_timeIndicatorModel = new SkinnedTimeIndicatorModel(this);
     m_titlebar = new SkinnedTitleBar(m_timeIndicatorModel, this);
@@ -57,23 +59,23 @@ SkinnedDisplay::SkinnedDisplay(SkinnedMainWindow *parent) : PixmapWidget (parent
     m_titlebar->setActive(true);
     m_previous = new SkinnedButton (this, Skin::BT_PREVIOUS_N, Skin::BT_PREVIOUS_P, Skin::CUR_NORMAL);
     m_previous->setToolTip(tr("Previous"));
-    connect(m_previous, &SkinnedButton::clicked, parent, &SkinnedMainWindow::previous);
+    connect(m_previous, &SkinnedButton::clicked, player, &MediaPlayer::previous);
 
     m_play = new SkinnedButton(this, Skin::BT_PLAY_N, Skin::BT_PLAY_P, Skin::CUR_NORMAL);
     m_play->setToolTip(tr("Play"));
-    connect(m_play, &SkinnedButton::clicked, parent, &SkinnedMainWindow::play);
+    connect(m_play, &SkinnedButton::clicked, player, &MediaPlayer::play);
     m_pause = new SkinnedButton (this, Skin::BT_PAUSE_N,Skin::BT_PAUSE_P, Skin::CUR_NORMAL);
     m_pause->setToolTip(tr("Pause"));
-    connect(m_pause,&SkinnedButton::clicked, parent, &SkinnedMainWindow::pause);
+    connect(m_pause, &SkinnedButton::clicked, m_core, &SoundCore::pause);
     m_stop = new SkinnedButton(this, Skin::BT_STOP_N, Skin::BT_STOP_P, Skin::CUR_NORMAL);
     m_stop->setToolTip(tr("Stop"));
-    connect(m_stop,&SkinnedButton::clicked, parent, &SkinnedMainWindow::stop);
+    connect(m_stop, &SkinnedButton::clicked, m_core, &SoundCore::stop);
     m_next = new SkinnedButton(this, Skin::BT_NEXT_N, Skin::BT_NEXT_P, Skin::CUR_NORMAL);
     m_next->setToolTip(tr("Next"));
-    connect(m_next,&SkinnedButton::clicked, parent, &SkinnedMainWindow::next);
+    connect(m_next, &SkinnedButton::clicked, player, &MediaPlayer::next);
     m_eject = new SkinnedButton(this, Skin::BT_EJECT_N, Skin::BT_EJECT_P, Skin::CUR_NORMAL);
     m_eject->setToolTip(tr("Play files"));
-    connect(m_eject,&SkinnedButton::clicked, parent, &SkinnedMainWindow::playFiles);
+    connect(m_eject, &SkinnedButton::clicked, parent, &SkinnedMainWindow::playFiles);
     m_vis = new SkinnedVisualization (this);
 
     m_eqButton = new SkinnedToggleButton(this, Skin::BT_EQ_ON_N,Skin::BT_EQ_ON_P, Skin::BT_EQ_OFF_N,Skin::BT_EQ_OFF_P);
@@ -112,7 +114,7 @@ SkinnedDisplay::SkinnedDisplay(SkinnedMainWindow *parent) : PixmapWidget (parent
 
     m_timeIndicator = new SkinnedTimeIndicator(m_timeIndicatorModel, this);
     m_aboutWidget = new QWidget(this);
-    m_core = SoundCore::instance();
+
     connect(m_core, &SoundCore::elapsedChanged, this, &SkinnedDisplay::setTime);
     connect(m_core, &SoundCore::bitrateChanged, m_kbps, &SymbolDisplay::displayNum);
     connect(m_core, &SoundCore::audioParametersChanged, this, &SkinnedDisplay::onAudioPatametersChanged);
