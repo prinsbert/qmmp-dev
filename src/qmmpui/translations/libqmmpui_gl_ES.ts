@@ -1411,7 +1411,7 @@
         <translation>Pulsar a combinación de teclas que queres asignar</translation>
     </message>
     <message>
-        <location filename="../forms/shortcutdialog.ui" line="52"/>
+        <location filename="../shortcutdialog.cpp" line="31"/>
         <source>Clear</source>
         <translation>Despexar</translation>
     </message>

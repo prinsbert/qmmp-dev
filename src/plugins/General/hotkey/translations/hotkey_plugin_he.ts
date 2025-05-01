@@ -14,7 +14,7 @@
         <translation>הזן את צירוף המקש אשר ברצונך להקצות</translation>
     </message>
     <message>
-        <location filename="../hotkeydialog.ui" line="52"/>
+        <location filename="../hotkeydialog.cpp" line="35"/>
         <source>Clear</source>
         <translation>טהר</translation>
     </message>

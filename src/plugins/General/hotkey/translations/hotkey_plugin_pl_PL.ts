@@ -14,7 +14,7 @@
         <translation>Wciśnij kombinację klawiszy, którą chcesz przypisać</translation>
     </message>
     <message>
-        <location filename="../hotkeydialog.ui" line="52"/>
+        <location filename="../hotkeydialog.cpp" line="35"/>
         <source>Clear</source>
         <translation>Wyczyść</translation>
     </message>

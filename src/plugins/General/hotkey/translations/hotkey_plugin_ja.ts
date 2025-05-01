@@ -14,7 +14,7 @@
         <translation>割り当てたいキーの組み合わせを押します</translation>
     </message>
     <message>
-        <location filename="../hotkeydialog.ui" line="52"/>
+        <location filename="../hotkeydialog.cpp" line="35"/>
         <source>Clear</source>
         <translation>消去</translation>
     </message>

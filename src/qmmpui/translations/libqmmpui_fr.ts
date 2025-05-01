@@ -1411,7 +1411,7 @@
         <translation>Appuyer sur la combinaison de touches que vous voulez assigner</translation>
     </message>
     <message>
-        <location filename="../forms/shortcutdialog.ui" line="52"/>
+        <location filename="../shortcutdialog.cpp" line="31"/>
         <source>Clear</source>
         <translation>Effacer</translation>
     </message>

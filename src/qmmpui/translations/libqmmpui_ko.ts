@@ -1411,7 +1411,7 @@
         <translation>할당하려는 키 조합을 누르십시오</translation>
     </message>
     <message>
-        <location filename="../forms/shortcutdialog.ui" line="52"/>
+        <location filename="../shortcutdialog.cpp" line="31"/>
         <source>Clear</source>
         <translation>지우기</translation>
     </message>

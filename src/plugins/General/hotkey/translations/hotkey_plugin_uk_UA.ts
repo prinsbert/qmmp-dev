@@ -14,7 +14,7 @@
         <translation>Натисніть клавіші, які Ви бажаєте призначити</translation>
     </message>
     <message>
-        <location filename="../hotkeydialog.ui" line="52"/>
+        <location filename="../hotkeydialog.cpp" line="35"/>
         <source>Clear</source>
         <translation>Очистити</translation>
     </message>

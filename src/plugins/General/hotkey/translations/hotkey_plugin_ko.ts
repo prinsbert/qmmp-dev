@@ -14,7 +14,7 @@
         <translation>할당하려는 키 조합을 누르십시오</translation>
     </message>
     <message>
-        <location filename="../hotkeydialog.ui" line="52"/>
+        <location filename="../hotkeydialog.cpp" line="35"/>
         <source>Clear</source>
         <translation>지우기</translation>
     </message>

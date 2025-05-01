@@ -14,7 +14,7 @@
         <translation>Нажмите клавиши, сочетание которых вы хотите использовать</translation>
     </message>
     <message>
-        <location filename="../hotkeydialog.ui" line="52"/>
+        <location filename="../hotkeydialog.cpp" line="35"/>
         <source>Clear</source>
         <translation>Очистить</translation>
     </message>

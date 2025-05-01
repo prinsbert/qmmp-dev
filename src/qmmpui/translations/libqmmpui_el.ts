@@ -1411,7 +1411,7 @@
         <translation>Πιέστε το συνδυασμό πλήκτρων που θέλετε να αναθέσετε</translation>
     </message>
     <message>
-        <location filename="../forms/shortcutdialog.ui" line="52"/>
+        <location filename="../shortcutdialog.cpp" line="31"/>
         <source>Clear</source>
         <translation>Καθαρισμός</translation>
     </message>
