@@ -205,10 +205,10 @@ bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message
                 core->volumeDown();
                 break;
             case Hotkey::FORWARD:
-                core->seek(core->elapsed() + 5000);
+                core->seekRelative(5000);
                 break;
             case Hotkey::REWIND:
-                core->seek(qMax(qint64(0), core->elapsed() - 5000));
+                core->seekRelative(-5000);
                 break;
             case Hotkey::JUMP_TO_TRACK:
                 UiHelper::instance()->jumpToTrack();
