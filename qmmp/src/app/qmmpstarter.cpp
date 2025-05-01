@@ -388,7 +388,7 @@ void QMMPStarter::savePosition()
                       QmmpUiSettings::instance()->resumeOnStartup());
     settings.setValue(u"resume_playback_time"_s, m_core->duration() > 0 ? m_core->elapsed() : 0);
     settings.endGroup();
-    m_core->stop();
+    m_player->stop();
 }
 
 void QMMPStarter::commitData(QSessionManager &manager)

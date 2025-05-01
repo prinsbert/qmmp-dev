@@ -66,10 +66,10 @@ SkinnedDisplay::SkinnedDisplay(SkinnedMainWindow *parent) : PixmapWidget (parent
     connect(m_play, &SkinnedButton::clicked, player, &MediaPlayer::play);
     m_pause = new SkinnedButton (this, Skin::BT_PAUSE_N,Skin::BT_PAUSE_P, Skin::CUR_NORMAL);
     m_pause->setToolTip(tr("Pause"));
-    connect(m_pause, &SkinnedButton::clicked, m_core, &SoundCore::pause);
+    connect(m_pause, &SkinnedButton::clicked, player, &MediaPlayer::pause);
     m_stop = new SkinnedButton(this, Skin::BT_STOP_N, Skin::BT_STOP_P, Skin::CUR_NORMAL);
     m_stop->setToolTip(tr("Stop"));
-    connect(m_stop, &SkinnedButton::clicked, m_core, &SoundCore::stop);
+    connect(m_stop, &SkinnedButton::clicked, player, &MediaPlayer::stop);
     m_next = new SkinnedButton(this, Skin::BT_NEXT_N, Skin::BT_NEXT_P, Skin::CUR_NORMAL);
     m_next->setToolTip(tr("Next"));
     connect(m_next, &SkinnedButton::clicked, player, &MediaPlayer::next);

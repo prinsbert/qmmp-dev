@@ -251,13 +251,13 @@ void Player2Object::OpenUri(const QString &in0)
 void Player2Object::Pause()
 {
     if(m_core->state() == Qmmp::Playing)
-        m_core->pause();
+        m_player->pause();
 }
 
 void Player2Object::Play()
 {
     if(m_core->state() == Qmmp::Paused)
-        m_core->pause();
+        m_player->pause();
     else if(m_core->state() != Qmmp::Playing && m_core->state() != Qmmp::Buffering)
         m_player->play();
 }
@@ -265,7 +265,7 @@ void Player2Object::Play()
 void Player2Object::PlayPause()
 {
     if(m_core->state() == Qmmp::Playing || m_core->state() == Qmmp::Paused)
-        m_core->pause();
+        m_player->pause();
     else if(m_core->state() != Qmmp::Playing && m_core->state() != Qmmp::Buffering)
         m_player->play();
 }
@@ -289,7 +289,7 @@ void Player2Object::SetPosition(const QDBusObjectPath &TrackId, qlonglong Positi
 
 void Player2Object::Stop()
 {
-    m_core->stop();
+    m_player->stop();
 }
 
 void Player2Object::emitPropertiesChanged()
@@ -352,7 +352,7 @@ void Player2Object::playTrack(const QList<PlayListTrack *> &tracks)
     disconnect(m_pl_manager->currentPlayList(), &PlayListModel::tracksAdded, this, &Player2Object::playTrack);
     if(!m_pl_manager->currentPlayList()->setCurrent(tracks.constFirst()))
         return;
-    m_core->stop();
+    m_player->stop();
     m_player->play();
 }
 

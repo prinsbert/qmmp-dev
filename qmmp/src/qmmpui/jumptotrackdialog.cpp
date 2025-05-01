@@ -135,7 +135,7 @@ void JumpToTrackDialog::jumpTo(const QModelIndex &index)
     int selected = m_proxyModel->mapToSource(index).row();
     PlayListTrack *track = m_model->findTrack(selected);
     m_model->setCurrent(track);
-    SoundCore::instance()->stop();
+    MediaPlayer::instance()->stop();
     m_pl_manager->activatePlayList(m_model);
     MediaPlayer::instance()->play();
 }

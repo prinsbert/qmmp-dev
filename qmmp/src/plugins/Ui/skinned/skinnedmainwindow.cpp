@@ -110,8 +110,8 @@ SkinnedMainWindow::SkinnedMainWindow(QWidget *parent) : QMainWindow(parent)
     connect(m_playlist, &SkinnedPlayList::next, m_player, &MediaPlayer::next);
     connect(m_playlist, &SkinnedPlayList::prev, m_player, &MediaPlayer::previous);
     connect(m_playlist, &SkinnedPlayList::play, m_player, &MediaPlayer::play);
-    connect(m_playlist, &SkinnedPlayList::pause, m_core, &SoundCore::pause);
-    connect(m_playlist, &SkinnedPlayList::stop, m_core, &SoundCore::stop);
+    connect(m_playlist, &SkinnedPlayList::pause, m_player, &MediaPlayer::pause);
+    connect(m_playlist, &SkinnedPlayList::stop, m_player, &MediaPlayer::stop);
     connect(m_playlist, &SkinnedPlayList::eject, this, &SkinnedMainWindow::playFiles);
     connect(m_playlist, &SkinnedPlayList::loadPlaylist, this, &SkinnedMainWindow::loadPlaylist);
     connect(m_playlist, &SkinnedPlayList::savePlaylist, this, &SkinnedMainWindow::savePlaylist);
@@ -380,7 +380,7 @@ void SkinnedMainWindow::createActions()
 
     m_mainMenu = new QMenu(this);
     m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PLAY, m_player, &MediaPlayer::play));
-    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PAUSE, m_core, &SoundCore::pause));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PAUSE, m_player, &MediaPlayer::pause));
     m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::STOP, m_player, &MediaPlayer::stop));
     m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PREVIOUS, this, &MediaPlayer::previous));
     m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::NEXT, this, &MediaPlayer::next));
