@@ -22,27 +22,32 @@
 <context>
     <name>HotkeyFactory</name>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="31"/>
+        <location filename="../hotkeyfactory.cpp" line="32"/>
+        <source>X11 Hotkey Plugin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hotkeyfactory.cpp" line="34"/>
         <source>Global Hotkey Plugin</source>
         <translation>全局熱鍵插件</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="57"/>
+        <location filename="../hotkeyfactory.cpp" line="61"/>
         <source>About Global Hotkey Plugin</source>
         <translation>關於全局熱鍵插件</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="58"/>
+        <location filename="../hotkeyfactory.cpp" line="62"/>
         <source>Qmmp Global Hotkey Plugin</source>
         <translation>Qmmp 全局熱鍵插件</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="59"/>
+        <location filename="../hotkeyfactory.cpp" line="63"/>
         <source>This plugin adds support for multimedia keys or global key combinations</source>
         <translation>此插件支援添加多媒體熱鍵與全局熱鍵</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="60"/>
+        <location filename="../hotkeyfactory.cpp" line="64"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

@@ -65,396 +65,446 @@
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
+        <source>+10 seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedactionmanager.cpp" line="45"/>
+        <source>Right</source>
+        <translation type="unfinished">Δεξιά</translation>
+    </message>
+    <message>
+        <location filename="../skinnedactionmanager.cpp" line="46"/>
+        <source>+30 seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedactionmanager.cpp" line="46"/>
+        <source>Ctrl+Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedactionmanager.cpp" line="47"/>
+        <source>+60 seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedactionmanager.cpp" line="48"/>
+        <source>-10 seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedactionmanager.cpp" line="48"/>
+        <source>Left</source>
+        <translation type="unfinished">Αριστερά</translation>
+    </message>
+    <message>
+        <location filename="../skinnedactionmanager.cpp" line="49"/>
+        <source>-30 seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedactionmanager.cpp" line="49"/>
+        <source>Ctrl+Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedactionmanager.cpp" line="50"/>
+        <source>-60 seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedactionmanager.cpp" line="51"/>
         <source>&amp;Jump to Track</source>
         <translation>&amp;Μεταπήδηση σε κομμάτι</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="45"/>
+        <location filename="../skinnedactionmanager.cpp" line="51"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="46"/>
+        <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>&amp;Repeat Playlist</source>
         <translation>&amp;Επανάληψη λίστας αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="46"/>
+        <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>R</source>
         <translation>R</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="47"/>
+        <location filename="../skinnedactionmanager.cpp" line="53"/>
         <source>&amp;Repeat Track</source>
         <translation>&amp;Επανάληψη κομματιού</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="47"/>
+        <location filename="../skinnedactionmanager.cpp" line="53"/>
         <source>Ctrl+R</source>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="48"/>
+        <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>&amp;Shuffle</source>
         <translation>&amp;Ανακάτεμα</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="48"/>
+        <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>S</source>
         <translation>S</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="49"/>
+        <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>&amp;No Playlist Advance</source>
         <translation>&amp;Χωρίς προχώρηση της λίστας αναπαραγωγής </translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="49"/>
+        <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="50"/>
+        <location filename="../skinnedactionmanager.cpp" line="56"/>
         <source>&amp;Stop After Selected</source>
         <translation>&amp;Διακοπή μετά το επιλεγμένο</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="50"/>
+        <location filename="../skinnedactionmanager.cpp" line="56"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="51"/>
+        <location filename="../skinnedactionmanager.cpp" line="57"/>
         <source>&amp;Transit between playlists</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="52"/>
+        <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>&amp;Clear Queue</source>
         <translation>&amp;Καθαρισμός ουράς αναμονής</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="52"/>
+        <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>Alt+Q</source>
         <translation>Alt+Q</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="54"/>
+        <location filename="../skinnedactionmanager.cpp" line="60"/>
         <source>Show Playlist</source>
         <translation>Εμφάνιση της λίστας αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="54"/>
+        <location filename="../skinnedactionmanager.cpp" line="60"/>
         <source>Alt+E</source>
         <translation>Alt+E</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="55"/>
+        <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>Show Equalizer</source>
         <translation>Εμφάνιση ισοσταθμιστή</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="55"/>
+        <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>Alt+G</source>
         <translation>Alt+G</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="56"/>
+        <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>Always on Top</source>
         <translation>Πάντα στο προσκήνιο</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="57"/>
+        <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>Put on All Workspaces</source>
         <translation>Τοποθέτηση σε όλες τις επιφάνειες εργασίας</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="58"/>
+        <location filename="../skinnedactionmanager.cpp" line="64"/>
         <source>Double Size</source>
         <translation>Διπλασιασμός μεγέθους</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="58"/>
+        <location filename="../skinnedactionmanager.cpp" line="64"/>
         <source>Meta+D</source>
         <translation>Meta+D</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="59"/>
+        <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>Anti-aliasing</source>
         <translation>Εξομάλυνση για γραμματοσειρές</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="61"/>
+        <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>Volume &amp;+</source>
         <translation>Ένταση &amp;+</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="61"/>
+        <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="62"/>
+        <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>Volume &amp;-</source>
         <translation>Ένταση &amp;-</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="62"/>
+        <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>9</source>
         <translation>9</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="63"/>
+        <location filename="../skinnedactionmanager.cpp" line="69"/>
         <source>&amp;Mute</source>
         <translation>&amp;Σίγαση</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="63"/>
+        <location filename="../skinnedactionmanager.cpp" line="69"/>
         <source>M</source>
         <translation>M</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="65"/>
+        <location filename="../skinnedactionmanager.cpp" line="71"/>
         <source>&amp;Add File</source>
         <translation>&amp;Προσθήκη αρχείου</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="65"/>
+        <location filename="../skinnedactionmanager.cpp" line="71"/>
         <source>F</source>
         <translation>F</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="66"/>
+        <location filename="../skinnedactionmanager.cpp" line="72"/>
         <source>&amp;Add Directory</source>
         <translation>&amp;Προσθήκη καταλόγου</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="66"/>
+        <location filename="../skinnedactionmanager.cpp" line="72"/>
         <source>D</source>
         <translation>D</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="67"/>
+        <location filename="../skinnedactionmanager.cpp" line="73"/>
         <source>&amp;Add Url</source>
         <translation>&amp;Προσθήκη Url</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="67"/>
+        <location filename="../skinnedactionmanager.cpp" line="73"/>
         <source>U</source>
         <translation>U</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="68"/>
+        <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>&amp;Remove Selected</source>
         <translation>&amp;Αφαίρεση επιλεγμένων</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="68"/>
+        <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>Del</source>
         <translation>Del</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="69"/>
+        <location filename="../skinnedactionmanager.cpp" line="75"/>
         <source>&amp;Remove All</source>
         <translation>&amp;Αφαίρεση όλων</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="70"/>
+        <location filename="../skinnedactionmanager.cpp" line="76"/>
         <source>&amp;Remove Unselected</source>
         <translation>&amp;Αφαίρεση των μη επιλεγμένων</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="71"/>
+        <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>Remove unavailable files</source>
         <translation>Αφαίρεση των μη διαθέσιμων αρχείων</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="72"/>
+        <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>Remove duplicates</source>
         <translation>Αφαίρεση διπλότυπων</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="73"/>
+        <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>Refresh</source>
         <translation>Ανανέωση</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="74"/>
+        <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>&amp;Queue Toggle</source>
         <translation>&amp;Εναλλαγή ουράς αναμονής</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="74"/>
+        <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>Q</source>
         <translation>Q</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="75"/>
+        <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>Invert Selection</source>
         <translation>Αντιστροφή επιλογής</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="76"/>
+        <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>&amp;Select None</source>
         <translation>&amp;Επιλογή κανενός</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="77"/>
+        <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>&amp;Select All</source>
         <translation>&amp;Επιλογή όλων</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="77"/>
+        <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>Ctrl+A</source>
         <translation>Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="78"/>
+        <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>&amp;View Track Details</source>
         <translation>&amp;Προβολή λεπτομερειών κομματιού</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="78"/>
+        <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>Alt+I</source>
         <translation>Alt+I</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="79"/>
+        <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>&amp;New List</source>
         <translation>&amp;Νέα λίστα</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="79"/>
+        <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>Ctrl+T</source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="80"/>
+        <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>&amp;Delete List</source>
         <translation>&amp;Διαγραφή λίστας</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="80"/>
+        <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="81"/>
+        <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>&amp;Load List</source>
         <translation>&amp;Φόρτωση λίστας</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="81"/>
+        <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>O</source>
         <translation>O</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="82"/>
+        <location filename="../skinnedactionmanager.cpp" line="88"/>
         <source>&amp;Save List</source>
         <translation>&amp;Αποθήκευση λίστας</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="82"/>
+        <location filename="../skinnedactionmanager.cpp" line="88"/>
         <source>Shift+S</source>
         <translation>Shift+S</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="83"/>
+        <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>&amp;Rename List</source>
         <translation>&amp;Μετονομασία λίστας</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="83"/>
+        <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>F2</source>
         <translation>F2</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="84"/>
+        <location filename="../skinnedactionmanager.cpp" line="90"/>
         <source>&amp;Select Next Playlist</source>
         <translation>&amp;Επιλογή επόμενης λίστας αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="84"/>
+        <location filename="../skinnedactionmanager.cpp" line="90"/>
         <source>Ctrl+PgDown</source>
         <translation>Ctrl+PgDown</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="85"/>
+        <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>&amp;Select Previous Playlist</source>
         <translation>&amp;Επιλογή προηγούμενης λίστας αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="85"/>
+        <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>Ctrl+PgUp</source>
         <translation>Ctrl+PgUp</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="86"/>
+        <location filename="../skinnedactionmanager.cpp" line="92"/>
         <source>&amp;Show Playlists</source>
         <translation>&amp;Εμφάνιση λιστών αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="86"/>
+        <location filename="../skinnedactionmanager.cpp" line="92"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="87"/>
+        <location filename="../skinnedactionmanager.cpp" line="93"/>
         <source>&amp;Group Tracks</source>
         <translation>&amp;Ομαδοποίηση κομματιών</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="87"/>
+        <location filename="../skinnedactionmanager.cpp" line="93"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="88"/>
+        <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>&amp;Show Column Headers</source>
         <translation>&amp;Εμφάνιση επικεφαλίδων στηλών</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="88"/>
+        <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>Ctrl+H</source>
         <translation>Ctrl+H</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="89"/>
+        <location filename="../skinnedactionmanager.cpp" line="95"/>
         <source>Show &amp;Tab Bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="89"/>
+        <location filename="../skinnedactionmanager.cpp" line="95"/>
         <source>Alt+T</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="91"/>
+        <location filename="../skinnedactionmanager.cpp" line="97"/>
         <source>&amp;Settings</source>
         <translation>&amp;Ρυθμίσεις</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="91"/>
+        <location filename="../skinnedactionmanager.cpp" line="97"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="92"/>
+        <location filename="../skinnedactionmanager.cpp" line="98"/>
         <source>&amp;About</source>
         <translation>&amp;Σχετικά</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="93"/>
+        <location filename="../skinnedactionmanager.cpp" line="99"/>
         <source>&amp;About Qt</source>
         <translation>&amp;Σχετικά με την Qt</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="94"/>
+        <location filename="../skinnedactionmanager.cpp" line="100"/>
         <source>&amp;Exit</source>
         <translation>&amp;Έξοδος</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="94"/>
+        <location filename="../skinnedactionmanager.cpp" line="100"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
@@ -462,87 +512,87 @@
 <context>
     <name>SkinnedDisplay</name>
     <message>
-        <location filename="../skinneddisplay.cpp" line="59"/>
+        <location filename="../skinneddisplay.cpp" line="61"/>
         <source>Previous</source>
         <translation>Προηγούμενο</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="63"/>
+        <location filename="../skinneddisplay.cpp" line="65"/>
         <source>Play</source>
         <translation>Αναπαραγωγή</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="66"/>
+        <location filename="../skinneddisplay.cpp" line="68"/>
         <source>Pause</source>
         <translation>Παύση</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="69"/>
+        <location filename="../skinneddisplay.cpp" line="71"/>
         <source>Stop</source>
         <translation>Διακοπή</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="72"/>
+        <location filename="../skinneddisplay.cpp" line="74"/>
         <source>Next</source>
         <translation>Επόμενο</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="75"/>
+        <location filename="../skinneddisplay.cpp" line="77"/>
         <source>Play files</source>
         <translation>Αναπαραγωγή αρχείων</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="80"/>
+        <location filename="../skinneddisplay.cpp" line="82"/>
         <source>Equalizer</source>
         <translation>Ισοσταθμιστής</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="82"/>
+        <location filename="../skinneddisplay.cpp" line="84"/>
         <source>Playlist</source>
         <translation>Λίστα αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="85"/>
+        <location filename="../skinneddisplay.cpp" line="87"/>
         <source>Repeat playlist</source>
         <translation>Επανάληψη λίστας αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="87"/>
+        <location filename="../skinneddisplay.cpp" line="89"/>
         <source>Shuffle</source>
         <translation>Ανακάτεμα</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="97"/>
+        <location filename="../skinneddisplay.cpp" line="99"/>
         <source>Volume</source>
         <translation>Ένταση</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="103"/>
+        <location filename="../skinneddisplay.cpp" line="105"/>
         <source>Balance</source>
         <translation>Ισορροπία</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="290"/>
+        <location filename="../skinneddisplay.cpp" line="292"/>
         <source>Volume: %1%</source>
         <translation>Ένταση: %1%</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="294"/>
+        <location filename="../skinneddisplay.cpp" line="296"/>
         <source>Balance: %1% right</source>
         <translation>Ισορροπία: %1 % δεξιά</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="296"/>
+        <location filename="../skinneddisplay.cpp" line="298"/>
         <source>Balance: %1% left</source>
         <translation>Ισορροπία: %1 % αριστερά</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="298"/>
+        <location filename="../skinneddisplay.cpp" line="300"/>
         <source>Balance: center</source>
         <translation>Ισορροπία: κέντρο</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="304"/>
+        <location filename="../skinneddisplay.cpp" line="306"/>
         <source>Seek to: %1</source>
         <translation>Αναζήτηση σε: %1</translation>
     </message>
@@ -720,37 +770,37 @@
 <context>
     <name>SkinnedMainWindow</name>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="358"/>
+        <location filename="../skinnedmainwindow.cpp" line="314"/>
         <source>Appearance</source>
         <translation>Εμφάνιση</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="359"/>
+        <location filename="../skinnedmainwindow.cpp" line="315"/>
         <source>Shortcuts</source>
         <translation>Συντομεύσεις</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="433"/>
+        <location filename="../skinnedmainwindow.cpp" line="389"/>
         <source>View</source>
         <translation>Προβολή</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="442"/>
+        <location filename="../skinnedmainwindow.cpp" line="398"/>
         <source>Playlist</source>
         <translation>Λίστα αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="461"/>
+        <location filename="../skinnedmainwindow.cpp" line="417"/>
         <source>Audio</source>
         <translation>Ήχος</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="469"/>
+        <location filename="../skinnedmainwindow.cpp" line="425"/>
         <source>Tools</source>
         <translation>Εργαλεία</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="541"/>
+        <location filename="../skinnedmainwindow.cpp" line="496"/>
         <source>Qmmp</source>
         <translation>Qmmp</translation>
     </message>
@@ -758,123 +808,123 @@
 <context>
     <name>SkinnedPlayList</name>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="56"/>
+        <location filename="../skinnedplaylist.cpp" line="57"/>
         <source>Playlist</source>
         <translation>Λίστα αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="193"/>
+        <location filename="../skinnedplaylist.cpp" line="198"/>
         <source>&amp;Copy Selection To</source>
         <translation>&amp;Αντιγραφή επιλογής σε</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="218"/>
+        <location filename="../skinnedplaylist.cpp" line="223"/>
         <source>Sort List</source>
         <translation>Ταξινόμηση λίστας</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="221"/>
-        <location filename="../skinnedplaylist.cpp" line="261"/>
+        <location filename="../skinnedplaylist.cpp" line="226"/>
+        <location filename="../skinnedplaylist.cpp" line="266"/>
         <source>By Title</source>
         <translation>Ανά τίτλο</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="224"/>
-        <location filename="../skinnedplaylist.cpp" line="264"/>
+        <location filename="../skinnedplaylist.cpp" line="229"/>
+        <location filename="../skinnedplaylist.cpp" line="269"/>
         <source>By Album</source>
         <translation>Ανά άλμπουμ</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="227"/>
-        <location filename="../skinnedplaylist.cpp" line="267"/>
+        <location filename="../skinnedplaylist.cpp" line="232"/>
+        <location filename="../skinnedplaylist.cpp" line="272"/>
         <source>By Artist</source>
         <translation>Ανά καλλιτέχνη</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="230"/>
-        <location filename="../skinnedplaylist.cpp" line="270"/>
+        <location filename="../skinnedplaylist.cpp" line="235"/>
+        <location filename="../skinnedplaylist.cpp" line="275"/>
         <source>By Album Artist</source>
         <translation>Ανά καλλιτέχνη άλμπουμ</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="233"/>
-        <location filename="../skinnedplaylist.cpp" line="273"/>
+        <location filename="../skinnedplaylist.cpp" line="238"/>
+        <location filename="../skinnedplaylist.cpp" line="278"/>
         <source>By Filename</source>
         <translation>Ανά όνομα αρχείου</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="236"/>
-        <location filename="../skinnedplaylist.cpp" line="276"/>
+        <location filename="../skinnedplaylist.cpp" line="241"/>
+        <location filename="../skinnedplaylist.cpp" line="281"/>
         <source>By Path + Filename</source>
         <translation>Ανά διαδρομή + όνομα αρχείου</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="239"/>
-        <location filename="../skinnedplaylist.cpp" line="279"/>
+        <location filename="../skinnedplaylist.cpp" line="244"/>
+        <location filename="../skinnedplaylist.cpp" line="284"/>
         <source>By Date</source>
         <translation>Ανά ημερομηνία</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="242"/>
-        <location filename="../skinnedplaylist.cpp" line="282"/>
+        <location filename="../skinnedplaylist.cpp" line="247"/>
+        <location filename="../skinnedplaylist.cpp" line="287"/>
         <source>By Track Number</source>
         <translation>Ανά αριθμό κομματιού</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="245"/>
-        <location filename="../skinnedplaylist.cpp" line="285"/>
+        <location filename="../skinnedplaylist.cpp" line="250"/>
+        <location filename="../skinnedplaylist.cpp" line="290"/>
         <source>By Disc Number</source>
         <translation>Ανά αριθμό δίσκου</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="248"/>
-        <location filename="../skinnedplaylist.cpp" line="288"/>
+        <location filename="../skinnedplaylist.cpp" line="253"/>
+        <location filename="../skinnedplaylist.cpp" line="293"/>
         <source>By File Creation Date</source>
         <translation>Ανά ημερομηνία δημιουργίας του αρχείου </translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="251"/>
-        <location filename="../skinnedplaylist.cpp" line="291"/>
+        <location filename="../skinnedplaylist.cpp" line="256"/>
+        <location filename="../skinnedplaylist.cpp" line="296"/>
         <source>By File Modification Date</source>
         <translation>Ανά ημερομηνία τροποποίησης του αρχείου </translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="254"/>
+        <location filename="../skinnedplaylist.cpp" line="259"/>
         <source>By Group</source>
         <translation>Ανά ομάδα</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="259"/>
+        <location filename="../skinnedplaylist.cpp" line="264"/>
         <source>Sort Selection</source>
         <translation>Ταξινόμηση επιλογής</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="296"/>
+        <location filename="../skinnedplaylist.cpp" line="301"/>
         <source>Randomize List</source>
         <translation>Τυχαία ταξινόμηση της λίστας</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="298"/>
+        <location filename="../skinnedplaylist.cpp" line="303"/>
         <source>Reverse List</source>
         <translation>Αντιστροφή ταξινόμησης της λίστας</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="306"/>
+        <location filename="../skinnedplaylist.cpp" line="311"/>
         <source>Actions</source>
         <translation>Ενέργειες</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <location filename="../skinnedplaylist.cpp" line="581"/>
         <source>Rename Playlist</source>
         <translation>Μετονομασία της λίστας αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <location filename="../skinnedplaylist.cpp" line="581"/>
         <source>Playlist name:</source>
         <translation>Όνομα λίστας αναπαραγωγής:</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="597"/>
+        <location filename="../skinnedplaylist.cpp" line="602"/>
         <source>&amp;New PlayList</source>
         <translation>&amp;Νέα λίστα αναπαραγωγής</translation>
     </message>

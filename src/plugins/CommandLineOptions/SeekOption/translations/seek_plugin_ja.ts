@@ -18,5 +18,10 @@
         <source>Seek backwards</source>
         <translation>後ろへ走査</translation>
     </message>
+    <message>
+        <location filename="../seekoption.cpp" line="64"/>
+        <source>Invalid position specified</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
