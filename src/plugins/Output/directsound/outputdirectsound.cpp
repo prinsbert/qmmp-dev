@@ -100,16 +100,25 @@ bool OutputDirectSound::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForm
     {
         wfex.Format.wBitsPerSample = 16;
         wfex.Samples.wValidBitsPerSample = 16;
+        wfex.SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
     }
     else if(format == Qmmp::PCM_S24LE)
     {
         wfex.Format.wBitsPerSample  = 32;
         wfex.Samples.wValidBitsPerSample = 24;
+        wfex.SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
     }
     else if(format == Qmmp::PCM_S32LE)
     {
         wfex.Format.wBitsPerSample  = 32;
         wfex.Samples.wValidBitsPerSample = 32;
+        wfex.SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
+    }
+    else if(format == Qmmp::PCM_FLOAT)
+    {
+        wfex.Format.wBitsPerSample  = 32;
+        wfex.Samples.wValidBitsPerSample = 32;
+        wfex.SubFormat = KSDATAFORMAT_SUBTYPE_IEEE_FLOAT;
     }
     else
     {
@@ -136,7 +145,6 @@ bool OutputDirectSound::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForm
     }
 
     wfex.dwChannelMask = mask;
-    wfex.SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
 
     if((result = m_primaryBuffer->SetFormat((WAVEFORMATEX*)&wfex)) != DS_OK)
     {
