@@ -56,6 +56,10 @@ protected:
      * Reimplements \b QWidget::keyPressEvent(QKeyEvent *event)
      */
     virtual void keyPressEvent(QKeyEvent *event) override;
+    /*!
+     * Reimplements \b QWidget::keyPressEvent(QKeyEvent *event)
+     */
+    virtual void showEvent(QShowEvent *event) override;
 
 private:
     Ui::ShortcutDialog *m_ui;

@@ -27,10 +27,8 @@ ShortcutDialog::ShortcutDialog(const QString &key, QWidget *parent)
 {
     m_ui->setupUi(this);
     m_ui->keyLineEdit->setText(key);
-
-    //buttons should not catch keys
-    for(QAbstractButton *button : m_ui->buttonBox->buttons())
-        button->setFocusPolicy(Qt::NoFocus);
+    connect(this, &QDialog::accepted, this, [this] { releaseKeyboard(); });
+    connect(this, &QDialog::rejected, this, [this] { releaseKeyboard(); });
 }
 
 ShortcutDialog::~ShortcutDialog()
@@ -60,6 +58,12 @@ void ShortcutDialog::keyPressEvent(QKeyEvent *event)
     QKeySequence seq(event->keyCombination());
     m_ui->keyLineEdit->setText(seq.toString());
     QWidget::keyPressEvent(event);
+}
+
+void ShortcutDialog::showEvent(QShowEvent *event)
+{
+    Q_UNUSED(event);
+    grabKeyboard();
 }
 
 QString ShortcutDialog::key() const
