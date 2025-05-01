@@ -22,27 +22,32 @@
 <context>
     <name>HotkeyFactory</name>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="31"/>
+        <location filename="../hotkeyfactory.cpp" line="32"/>
+        <source>X11 Hotkey Plugin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hotkeyfactory.cpp" line="34"/>
         <source>Global Hotkey Plugin</source>
         <translation>전역 단축키 플러그인</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="57"/>
+        <location filename="../hotkeyfactory.cpp" line="61"/>
         <source>About Global Hotkey Plugin</source>
         <translation>전역 단축키 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="58"/>
+        <location filename="../hotkeyfactory.cpp" line="62"/>
         <source>Qmmp Global Hotkey Plugin</source>
         <translation>Qmmp 전역 단축키 플러그인</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="59"/>
+        <location filename="../hotkeyfactory.cpp" line="63"/>
         <source>This plugin adds support for multimedia keys or global key combinations</source>
         <translation>이 플러그인은 멀티미디어 키 또는 전역 키 조합에 대한 지원을 추가합니다</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="60"/>
+        <location filename="../hotkeyfactory.cpp" line="64"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

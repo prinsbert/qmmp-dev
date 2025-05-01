@@ -574,396 +574,446 @@
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="49"/>
+        <source>+10 seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="49"/>
+        <source>Right</source>
+        <translation type="unfinished">Sağ</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="50"/>
+        <source>+30 seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="50"/>
+        <source>Ctrl+Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="51"/>
+        <source>+60 seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="52"/>
+        <source>-10 seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="52"/>
+        <source>Left</source>
+        <translation type="unfinished">Sol</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="53"/>
+        <source>-30 seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="53"/>
+        <source>Ctrl+Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="54"/>
+        <source>-60 seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="55"/>
         <source>&amp;Jump to Track</source>
         <translation>&amp;Parçaya Atla</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="49"/>
+        <location filename="../qsuiactionmanager.cpp" line="55"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="50"/>
+        <location filename="../qsuiactionmanager.cpp" line="56"/>
         <source>&amp;Play Files</source>
         <translation>&amp;Dosyaları Oynat</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="50"/>
+        <location filename="../qsuiactionmanager.cpp" line="56"/>
         <source>E</source>
         <translation>E</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="51"/>
+        <location filename="../qsuiactionmanager.cpp" line="57"/>
         <source>&amp;Record</source>
         <translation>&amp;Kayda geçir</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="52"/>
+        <location filename="../qsuiactionmanager.cpp" line="58"/>
         <source>&amp;Repeat Playlist</source>
         <translation>&amp;Çalma Listesi Tekrarla</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="52"/>
+        <location filename="../qsuiactionmanager.cpp" line="58"/>
         <source>R</source>
         <translation>R</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="53"/>
+        <location filename="../qsuiactionmanager.cpp" line="59"/>
         <source>&amp;Repeat Track</source>
         <translation>&amp;Parçayı Tekrarla</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="53"/>
+        <location filename="../qsuiactionmanager.cpp" line="59"/>
         <source>Ctrl+R</source>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="54"/>
+        <location filename="../qsuiactionmanager.cpp" line="60"/>
         <source>&amp;Shuffle</source>
         <translation>&amp;Karıştırılmış</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="54"/>
+        <location filename="../qsuiactionmanager.cpp" line="60"/>
         <source>S</source>
         <translation>S</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="55"/>
+        <location filename="../qsuiactionmanager.cpp" line="61"/>
         <source>&amp;No Playlist Advance</source>
         <translation>&amp;Çalma Listesi İlerlemesi Yok</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="55"/>
+        <location filename="../qsuiactionmanager.cpp" line="61"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="56"/>
+        <location filename="../qsuiactionmanager.cpp" line="62"/>
         <source>&amp;Transit between playlists</source>
         <translation>&amp;Çalma listeleri arasında geçiş</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="57"/>
+        <location filename="../qsuiactionmanager.cpp" line="63"/>
         <source>&amp;Stop After Selected</source>
         <translation>&amp;Seçildikten Sonra Durdur</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="57"/>
+        <location filename="../qsuiactionmanager.cpp" line="63"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="58"/>
+        <location filename="../qsuiactionmanager.cpp" line="64"/>
         <source>&amp;Clear Queue</source>
         <translation>&amp;Kuyruğu Temizle</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="58"/>
+        <location filename="../qsuiactionmanager.cpp" line="64"/>
         <source>Alt+Q</source>
         <translation>Alt+Q</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="60"/>
+        <location filename="../qsuiactionmanager.cpp" line="66"/>
         <source>Always on Top</source>
         <translation>Her zaman en Üstte</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="61"/>
+        <location filename="../qsuiactionmanager.cpp" line="67"/>
         <source>Put on All Workspaces</source>
         <translation>Tüm Çalışma Alanlarında Takının</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="67"/>
+        <location filename="../qsuiactionmanager.cpp" line="73"/>
         <source>Show Tabs</source>
         <translation>Sekmeleri Göster</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="68"/>
+        <location filename="../qsuiactionmanager.cpp" line="74"/>
         <source>Block Floating Panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="69"/>
+        <location filename="../qsuiactionmanager.cpp" line="75"/>
         <source>Block Toolbars</source>
         <translation>Araç Çubuklarını Engelle</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="71"/>
+        <location filename="../qsuiactionmanager.cpp" line="77"/>
         <source>Volume &amp;+</source>
         <translation>Ses &amp;+</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="71"/>
+        <location filename="../qsuiactionmanager.cpp" line="77"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="72"/>
+        <location filename="../qsuiactionmanager.cpp" line="78"/>
         <source>Volume &amp;-</source>
         <translation>Ses &amp;-</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="72"/>
+        <location filename="../qsuiactionmanager.cpp" line="78"/>
         <source>9</source>
         <translation>9</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="73"/>
+        <location filename="../qsuiactionmanager.cpp" line="79"/>
         <source>&amp;Mute</source>
         <translation>&amp;Sesi Kısık</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="73"/>
+        <location filename="../qsuiactionmanager.cpp" line="79"/>
         <source>M</source>
         <translation>M</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="75"/>
+        <location filename="../qsuiactionmanager.cpp" line="81"/>
         <source>&amp;Add File</source>
         <translation>&amp;Dosya Ekle</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="75"/>
+        <location filename="../qsuiactionmanager.cpp" line="81"/>
         <source>F</source>
         <translation>F</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="76"/>
+        <location filename="../qsuiactionmanager.cpp" line="82"/>
         <source>&amp;Add Directory</source>
         <translation>&amp;Dizin Ekle</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="76"/>
+        <location filename="../qsuiactionmanager.cpp" line="82"/>
         <source>D</source>
         <translation>D</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="77"/>
+        <location filename="../qsuiactionmanager.cpp" line="83"/>
         <source>&amp;Add Url</source>
         <translation>&amp;Url Ekle</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="77"/>
+        <location filename="../qsuiactionmanager.cpp" line="83"/>
         <source>U</source>
         <translation>U</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="78"/>
+        <location filename="../qsuiactionmanager.cpp" line="84"/>
         <source>&amp;Remove Selected</source>
         <translation>&amp;Seçileni Kaldır</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="78"/>
+        <location filename="../qsuiactionmanager.cpp" line="84"/>
         <source>Del</source>
         <translation>Del</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="79"/>
+        <location filename="../qsuiactionmanager.cpp" line="85"/>
         <source>&amp;Remove All</source>
         <translation>&amp;Hepsini Kaldır</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="80"/>
+        <location filename="../qsuiactionmanager.cpp" line="86"/>
         <source>&amp;Remove Unselected</source>
         <translation>&amp;Seçilmemişleri Kaldır</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="81"/>
+        <location filename="../qsuiactionmanager.cpp" line="87"/>
         <source>Remove unavailable files</source>
         <translation>Kullanılamaz dosyaları kaldırın</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="82"/>
+        <location filename="../qsuiactionmanager.cpp" line="88"/>
         <source>Remove duplicates</source>
         <translation>Çifteleri Kaldır</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="83"/>
+        <location filename="../qsuiactionmanager.cpp" line="89"/>
         <source>Refresh</source>
         <translation>Tazele</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="84"/>
+        <location filename="../qsuiactionmanager.cpp" line="90"/>
         <source>&amp;Queue Toggle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="84"/>
+        <location filename="../qsuiactionmanager.cpp" line="90"/>
         <source>Q</source>
         <translation>Q</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="85"/>
+        <location filename="../qsuiactionmanager.cpp" line="91"/>
         <source>Invert Selection</source>
         <translation>Seçimi Tersine Çevir</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="86"/>
+        <location filename="../qsuiactionmanager.cpp" line="92"/>
         <source>&amp;Select None</source>
         <translation>&amp;Hiçbirini Seçme</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="87"/>
+        <location filename="../qsuiactionmanager.cpp" line="93"/>
         <source>&amp;Select All</source>
         <translation>&amp;Hepsini Seç</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="87"/>
+        <location filename="../qsuiactionmanager.cpp" line="93"/>
         <source>Ctrl+A</source>
         <translation>Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="88"/>
+        <location filename="../qsuiactionmanager.cpp" line="94"/>
         <source>&amp;View Track Details</source>
         <translation>&amp;Parça Detaylarını Göster</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="88"/>
+        <location filename="../qsuiactionmanager.cpp" line="94"/>
         <source>Alt+I</source>
         <translation>Alt+I</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="89"/>
+        <location filename="../qsuiactionmanager.cpp" line="95"/>
         <source>&amp;New List</source>
         <translation>&amp;Yeni Liste</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="89"/>
+        <location filename="../qsuiactionmanager.cpp" line="95"/>
         <source>Ctrl+T</source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="90"/>
+        <location filename="../qsuiactionmanager.cpp" line="96"/>
         <source>&amp;Delete List</source>
         <translation>&amp;Listeyi Sil</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="90"/>
+        <location filename="../qsuiactionmanager.cpp" line="96"/>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="91"/>
+        <location filename="../qsuiactionmanager.cpp" line="97"/>
         <source>&amp;Load List</source>
         <translation>&amp;Liste Yükle</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="91"/>
+        <location filename="../qsuiactionmanager.cpp" line="97"/>
         <source>O</source>
         <translation>O</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="92"/>
+        <location filename="../qsuiactionmanager.cpp" line="98"/>
         <source>&amp;Save List</source>
         <translation>&amp;Listeyi Kaydet</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="92"/>
+        <location filename="../qsuiactionmanager.cpp" line="98"/>
         <source>Shift+S</source>
         <translation>Shift+S</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="93"/>
+        <location filename="../qsuiactionmanager.cpp" line="99"/>
         <source>&amp;Rename List</source>
         <translation>&amp;Listeyi Yeniden Adlandır</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="93"/>
+        <location filename="../qsuiactionmanager.cpp" line="99"/>
         <source>F2</source>
         <translation>F2</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="94"/>
+        <location filename="../qsuiactionmanager.cpp" line="100"/>
         <source>&amp;Select Next Playlist</source>
         <translation>Sonraki Çalma Listesi Seç</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="94"/>
+        <location filename="../qsuiactionmanager.cpp" line="100"/>
         <source>Ctrl+PgDown</source>
         <translation>Ctrl+PgDown</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="95"/>
+        <location filename="../qsuiactionmanager.cpp" line="101"/>
         <source>&amp;Select Previous Playlist</source>
         <translation>Önceki Çalma Listesi Seç</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="95"/>
+        <location filename="../qsuiactionmanager.cpp" line="101"/>
         <source>Ctrl+PgUp</source>
         <translation>Ctrl+PgUp</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="96"/>
+        <location filename="../qsuiactionmanager.cpp" line="102"/>
         <source>&amp;Group Tracks</source>
         <translation>&amp;Grup Parçaları</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="96"/>
+        <location filename="../qsuiactionmanager.cpp" line="102"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="97"/>
+        <location filename="../qsuiactionmanager.cpp" line="103"/>
         <source>&amp;Show Column Headers</source>
         <translation>&amp;Sütun Başlıklarını Göster</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="97"/>
+        <location filename="../qsuiactionmanager.cpp" line="103"/>
         <source>Ctrl+H</source>
         <translation>Ctrl+H</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="99"/>
+        <location filename="../qsuiactionmanager.cpp" line="105"/>
         <source>&amp;Equalizer</source>
         <translation>&amp;Ekolayzır</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="99"/>
+        <location filename="../qsuiactionmanager.cpp" line="105"/>
         <source>Ctrl+E</source>
         <translation>Ctrl+E</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="100"/>
+        <location filename="../qsuiactionmanager.cpp" line="106"/>
         <source>&amp;Settings</source>
         <translation>&amp;Ayarlar</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="100"/>
+        <location filename="../qsuiactionmanager.cpp" line="106"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="101"/>
+        <location filename="../qsuiactionmanager.cpp" line="107"/>
         <source>Application Menu</source>
         <translation>Uygulama Menüsü</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="102"/>
+        <location filename="../qsuiactionmanager.cpp" line="108"/>
         <source>&amp;About Ui</source>
         <translation>&amp;UI Hakkında</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="103"/>
+        <location filename="../qsuiactionmanager.cpp" line="109"/>
         <source>&amp;About</source>
         <translation>&amp;Hakkında</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="104"/>
+        <location filename="../qsuiactionmanager.cpp" line="110"/>
         <source>&amp;About Qt</source>
         <translation>&amp;Qt Hakkında</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="105"/>
+        <location filename="../qsuiactionmanager.cpp" line="111"/>
         <source>&amp;Exit</source>
         <translation>&amp;Çıkış</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="105"/>
+        <location filename="../qsuiactionmanager.cpp" line="111"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="310"/>
+        <location filename="../qsuiactionmanager.cpp" line="316"/>
         <source>Toolbar</source>
         <translation>Araç çubuğu</translation>
     </message>
@@ -1126,7 +1176,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="922"/>
+        <location filename="../qsuimainwindow.cpp" line="909"/>
         <source>Qmmp</source>
         <translation>Qmmp</translation>
     </message>
@@ -1273,183 +1323,183 @@
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="259"/>
-        <location filename="../qsuimainwindow.cpp" line="296"/>
+        <location filename="../qsuimainwindow.cpp" line="294"/>
         <source>Rename Playlist</source>
         <translation>Çalma Listesi Yeniden Adlandır</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="87"/>
+        <location filename="../qsuimainwindow.cpp" line="85"/>
         <source>&amp;Copy Selection To</source>
         <translation>&amp;Seçimi Şuraya Kopyala</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="296"/>
+        <location filename="../qsuimainwindow.cpp" line="294"/>
         <source>Playlist name:</source>
         <translation>Çalma Listesi adı:</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="336"/>
+        <location filename="../qsuimainwindow.cpp" line="334"/>
         <source>Appearance</source>
         <translation>Dış görünüş</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="337"/>
+        <location filename="../qsuimainwindow.cpp" line="335"/>
         <source>Shortcuts</source>
         <translation>Kısayollar</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="416"/>
+        <location filename="../qsuimainwindow.cpp" line="414"/>
         <source>Menu Bar</source>
         <translation>Menü Çubuğu</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="435"/>
+        <location filename="../qsuimainwindow.cpp" line="433"/>
         <source>Add new playlist</source>
         <translation>Yeni çalma listesi ekle</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="441"/>
+        <location filename="../qsuimainwindow.cpp" line="439"/>
         <source>Show all tabs</source>
         <translation>Tüm sekmeleri göster</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="468"/>
+        <location filename="../qsuimainwindow.cpp" line="466"/>
         <source>Ctrl+0</source>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="474"/>
+        <location filename="../qsuimainwindow.cpp" line="472"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="479"/>
+        <location filename="../qsuimainwindow.cpp" line="477"/>
         <source>Position</source>
         <translation>Konum</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="481"/>
+        <location filename="../qsuimainwindow.cpp" line="479"/>
         <source>Volume</source>
         <translation>Ses</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="483"/>
+        <location filename="../qsuimainwindow.cpp" line="481"/>
         <source>Balance</source>
         <translation>Denge</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="486"/>
+        <location filename="../qsuimainwindow.cpp" line="484"/>
         <source>Quick Search</source>
         <translation>Hızlı Arama</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="545"/>
+        <location filename="../qsuimainwindow.cpp" line="543"/>
         <source>Edit Toolbars</source>
         <translation>Araç Çubuklarını Düzenle</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="546"/>
+        <location filename="../qsuimainwindow.cpp" line="544"/>
         <source>Edit Statusbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="548"/>
+        <location filename="../qsuimainwindow.cpp" line="546"/>
         <source>Sort List</source>
         <translation>Listeyi Sınıflandır</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="550"/>
-        <location filename="../qsuimainwindow.cpp" line="566"/>
+        <location filename="../qsuimainwindow.cpp" line="548"/>
+        <location filename="../qsuimainwindow.cpp" line="564"/>
         <source>By Title</source>
         <translation>Başlığa Göre</translation>
     </message>
     <message>
+        <location filename="../qsuimainwindow.cpp" line="549"/>
+        <location filename="../qsuimainwindow.cpp" line="565"/>
+        <source>By Album</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="550"/>
+        <location filename="../qsuimainwindow.cpp" line="566"/>
+        <source>By Artist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qsuimainwindow.cpp" line="551"/>
         <location filename="../qsuimainwindow.cpp" line="567"/>
-        <source>By Album</source>
+        <source>By Album Artist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="552"/>
         <location filename="../qsuimainwindow.cpp" line="568"/>
-        <source>By Artist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qsuimainwindow.cpp" line="553"/>
-        <location filename="../qsuimainwindow.cpp" line="569"/>
-        <source>By Album Artist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qsuimainwindow.cpp" line="554"/>
-        <location filename="../qsuimainwindow.cpp" line="570"/>
         <source>By Filename</source>
         <translation>Dosya Adına Göre</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="555"/>
-        <location filename="../qsuimainwindow.cpp" line="571"/>
+        <location filename="../qsuimainwindow.cpp" line="553"/>
+        <location filename="../qsuimainwindow.cpp" line="569"/>
         <source>By Path + Filename</source>
         <translation>Dosya Yolu + Dosya Adına Göre</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="556"/>
-        <location filename="../qsuimainwindow.cpp" line="572"/>
+        <location filename="../qsuimainwindow.cpp" line="554"/>
+        <location filename="../qsuimainwindow.cpp" line="570"/>
         <source>By Date</source>
         <translation>Tarihe Göre</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="557"/>
-        <location filename="../qsuimainwindow.cpp" line="573"/>
+        <location filename="../qsuimainwindow.cpp" line="555"/>
+        <location filename="../qsuimainwindow.cpp" line="571"/>
         <source>By Track Number</source>
         <translation>Parça Numarasına Göre</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="558"/>
-        <location filename="../qsuimainwindow.cpp" line="574"/>
+        <location filename="../qsuimainwindow.cpp" line="556"/>
+        <location filename="../qsuimainwindow.cpp" line="572"/>
         <source>By Disc Number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="559"/>
-        <location filename="../qsuimainwindow.cpp" line="575"/>
+        <location filename="../qsuimainwindow.cpp" line="557"/>
+        <location filename="../qsuimainwindow.cpp" line="573"/>
         <source>By File Creation Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="560"/>
-        <location filename="../qsuimainwindow.cpp" line="576"/>
+        <location filename="../qsuimainwindow.cpp" line="558"/>
+        <location filename="../qsuimainwindow.cpp" line="574"/>
         <source>By File Modification Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="561"/>
+        <location filename="../qsuimainwindow.cpp" line="559"/>
         <source>By Group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="564"/>
+        <location filename="../qsuimainwindow.cpp" line="562"/>
         <source>Sort Selection</source>
         <translation>Seçilenleri Sınıflandır</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="580"/>
+        <location filename="../qsuimainwindow.cpp" line="578"/>
         <source>Randomize List</source>
         <translation>Rastgele Listele</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="582"/>
+        <location filename="../qsuimainwindow.cpp" line="580"/>
         <source>Reverse List</source>
         <translation>Listeyi Ters Çevir</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="623"/>
+        <location filename="../qsuimainwindow.cpp" line="621"/>
         <source>Actions</source>
         <translation>Eylemler</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="943"/>
+        <location filename="../qsuimainwindow.cpp" line="930"/>
         <source>&amp;New PlayList</source>
         <translation>&amp;Yeni Çalma Listesi</translation>
     </message>

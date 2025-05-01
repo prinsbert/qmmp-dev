@@ -22,27 +22,32 @@
 <context>
     <name>HotkeyFactory</name>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="31"/>
+        <location filename="../hotkeyfactory.cpp" line="32"/>
+        <source>X11 Hotkey Plugin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hotkeyfactory.cpp" line="34"/>
         <source>Global Hotkey Plugin</source>
         <translation>Πρόσθετο καθολικών συντομεύσεων</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="57"/>
+        <location filename="../hotkeyfactory.cpp" line="61"/>
         <source>About Global Hotkey Plugin</source>
         <translation>Σχετικά με το πρόσθετο καθολικών συντομεύσεων</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="58"/>
+        <location filename="../hotkeyfactory.cpp" line="62"/>
         <source>Qmmp Global Hotkey Plugin</source>
         <translation>Qmmp πρόσθετο καθολικών συντομεύσεων</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="59"/>
+        <location filename="../hotkeyfactory.cpp" line="63"/>
         <source>This plugin adds support for multimedia keys or global key combinations</source>
         <translation>Αυτό το πρόσθετο προσθέτει υποστήριξη για συνδυασμό πλήκτρων πληκτρολογίου ή πολυμέσων</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="60"/>
+        <location filename="../hotkeyfactory.cpp" line="64"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>

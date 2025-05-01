@@ -22,27 +22,32 @@
 <context>
     <name>HotkeyFactory</name>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="31"/>
+        <location filename="../hotkeyfactory.cpp" line="32"/>
+        <source>X11 Hotkey Plugin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hotkeyfactory.cpp" line="34"/>
         <source>Global Hotkey Plugin</source>
         <translation>Módulo de atajos de teclado global</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="57"/>
+        <location filename="../hotkeyfactory.cpp" line="61"/>
         <source>About Global Hotkey Plugin</source>
         <translation>Acerca del módulo de atajos de teclado global</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="58"/>
+        <location filename="../hotkeyfactory.cpp" line="62"/>
         <source>Qmmp Global Hotkey Plugin</source>
         <translation>Módulo de atajos de teclado global para Qmmp</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="59"/>
+        <location filename="../hotkeyfactory.cpp" line="63"/>
         <source>This plugin adds support for multimedia keys or global key combinations</source>
         <translation>Este módulo añade soporte para teclas multimedia o combinaciones de teclas globales</translation>
     </message>
     <message>
-        <location filename="../hotkeyfactory.cpp" line="60"/>
+        <location filename="../hotkeyfactory.cpp" line="64"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Escrito por: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
