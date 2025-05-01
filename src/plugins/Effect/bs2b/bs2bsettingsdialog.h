@@ -45,9 +45,6 @@ public slots:
 private slots:
     void on_freqSlider_valueChanged(int value);
     void on_feedSlider_valueChanged(int value);
-    void on_defaultButton_pressed();
-    void on_cmButton_pressed();
-    void on_jmButton_pressed();
 
 private:
     Ui::Bs2bSettingsDialog *m_ui;

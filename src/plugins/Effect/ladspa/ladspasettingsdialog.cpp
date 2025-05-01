@@ -26,6 +26,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QIcon>
+#include <QPushButton>
 #include <qmmp/qmmp.h>
 #include "ui_ladspasettingsdialog.h"
 #include "ladspaslider.h"
@@ -40,7 +41,10 @@ LADSPASettingsDialog::LADSPASettingsDialog(QWidget *parent)
     m_ui->setupUi(this);
     m_ui->loadButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowRight));
     m_ui->unloadButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowLeft));
-    m_ui->configureButton->setIcon(QIcon::fromTheme(u"configure"_s));
+
+    QPushButton *configureButton = m_ui->buttonBox->addButton(tr("Configure"), QDialogButtonBox::ActionRole);
+    configureButton->setIcon(QIcon::fromTheme(u"configure"_s));
+    connect(configureButton, &QPushButton::clicked, this, &LADSPASettingsDialog::onConfigureButtonClicked);
 
     m_model = new QStandardItemModel(0, 2, this);
     m_model->setHeaderData(0, Qt::Horizontal, tr("UID"));
@@ -90,7 +94,7 @@ void LADSPASettingsDialog::on_unloadButton_clicked()
     }
 }
 
-void LADSPASettingsDialog::on_configureButton_clicked()
+void LADSPASettingsDialog::onConfigureButtonClicked()
 {
     LADSPAHost *l = LADSPAHost::instance();
     QModelIndex index = m_ui->runningListWidget->currentIndex ();
