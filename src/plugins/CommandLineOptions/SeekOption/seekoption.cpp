@@ -46,12 +46,10 @@ QString SeekOption::executeCommand(int id, const QStringList &args, const QStrin
     Q_UNUSED(cwd);
 
     SoundCore *core = SoundCore::instance();
-    if(core->state() != Qmmp::Playing && core->duration())
-        return QString();
-    if(args.isEmpty())
+    if(args.isEmpty() || core->state() != Qmmp::Playing || core->duration() <= 0)
         return QString();
 
-    int seek_pos = -1;
+    qint64 seek_pos = -1;
     int elapsed = core->elapsed() / 1000;
 
     static const QRegularExpression seek_regexp1(u"^([0-9]{1,4})$"_s);
@@ -62,6 +60,9 @@ QString SeekOption::executeCommand(int id, const QStringList &args, const QStrin
         seek_pos = match.captured(1).toInt();
     else if((match = seek_regexp2.match(args.constFirst())).hasMatch())
         seek_pos = match.captured(1).toInt() * 60 + match.captured(2).toInt();
+
+    if(seek_pos < 0)
+        return tr("Invalid position specified");
 
     switch (id) {
     case SEEK: //seek absolute
@@ -76,10 +77,7 @@ QString SeekOption::executeCommand(int id, const QStringList &args, const QStrin
         break;
     }
 
-    qCDebug(plugin, "position = %d", seek_pos);
-
-    if(seek_pos >= 0 && seek_pos < core->duration())
-        core->seek(seek_pos * 1000);
+    core->seek(qBound(qint64(0), seek_pos * 1000, core->duration()));
 
     return QString();
 }
