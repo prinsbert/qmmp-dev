@@ -107,11 +107,11 @@ SkinnedMainWindow::SkinnedMainWindow(QWidget *parent) : QMainWindow(parent)
     Visual::add(m_vis);
     //connections
     connect(m_player, &MediaPlayer::playbackFinished, this, &SkinnedMainWindow::restoreWindowTitle);
-    connect(m_playlist, &SkinnedPlayList::next, this, &SkinnedMainWindow::next);
-    connect(m_playlist, &SkinnedPlayList::prev, this, &SkinnedMainWindow::previous);
-    connect(m_playlist, &SkinnedPlayList::play, this, &SkinnedMainWindow::play);
+    connect(m_playlist, &SkinnedPlayList::next, m_player, &MediaPlayer::next);
+    connect(m_playlist, &SkinnedPlayList::prev, m_player, &MediaPlayer::previous);
+    connect(m_playlist, &SkinnedPlayList::play, m_player, &MediaPlayer::play);
     connect(m_playlist, &SkinnedPlayList::pause, m_core, &SoundCore::pause);
-    connect(m_playlist, &SkinnedPlayList::stop, this, &SkinnedMainWindow::stop);
+    connect(m_playlist, &SkinnedPlayList::stop, m_core, &SoundCore::stop);
     connect(m_playlist, &SkinnedPlayList::eject, this, &SkinnedMainWindow::playFiles);
     connect(m_playlist, &SkinnedPlayList::loadPlaylist, this, &SkinnedMainWindow::loadPlaylist);
     connect(m_playlist, &SkinnedPlayList::savePlaylist, this, &SkinnedMainWindow::savePlaylist);
@@ -132,38 +132,6 @@ SkinnedMainWindow::SkinnedMainWindow(QWidget *parent) : QMainWindow(parent)
     m_pl_manager->currentPlayList()->doCurrentVisibleRequest();
     if(m_startHidden && m_uiHelper->visibilityControl())
         toggleVisibility();
-}
-
-void SkinnedMainWindow::play()
-{
-    m_player->play();
-}
-
-void SkinnedMainWindow::replay()
-{
-    stop();
-    m_pl_manager->activatePlayList(m_pl_manager->selectedPlayList());
-    play();
-}
-
-void SkinnedMainWindow::pause()
-{
-    m_core->pause();
-}
-
-void SkinnedMainWindow::stop()
-{
-    m_player->stop();
-}
-
-void SkinnedMainWindow::next()
-{
-    m_player->next();
-}
-
-void SkinnedMainWindow::previous()
-{
-    m_player->previous();
 }
 
 void SkinnedMainWindow::showState(Qmmp::State state)
@@ -411,11 +379,11 @@ void SkinnedMainWindow::createActions()
     SET_ACTION(SkinnedActionManager::PL_ADD_URL, this, &SkinnedMainWindow::addUrl);
 
     m_mainMenu = new QMenu(this);
-    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PLAY, this, &SkinnedMainWindow::play));
-    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PAUSE, this, &SkinnedMainWindow::pause));
-    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::STOP, this, &SkinnedMainWindow::stop));
-    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PREVIOUS, this, &SkinnedMainWindow::previous));
-    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::NEXT, this, &SkinnedMainWindow::next));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PLAY, m_player, &MediaPlayer::play));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PAUSE, m_core, &SoundCore::pause));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::STOP, m_player, &MediaPlayer::stop));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PREVIOUS, this, &MediaPlayer::previous));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::NEXT, this, &MediaPlayer::next));
     m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PLAY_PAUSE, this, &SkinnedMainWindow::playPause));
     m_mainMenu->addSeparator();
     m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::JUMP, this, &SkinnedMainWindow::jumpToTrack));
@@ -503,9 +471,9 @@ void SkinnedMainWindow::savePlaylist()
 void SkinnedMainWindow::playPause()
 {
     if(m_core->state() == Qmmp::Playing)
-        m_core->pause();
+        m_player->pause();
     else
-        play();
+        m_player->play();
 }
 
 void SkinnedMainWindow::jumpToTrack()

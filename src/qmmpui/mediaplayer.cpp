@@ -109,6 +109,11 @@ void MediaPlayer::stop()
     m_skips = 0;
 }
 
+void MediaPlayer::pause()
+{
+    m_core->pause();
+}
+
 void MediaPlayer::next()
 {
     bool playNext = m_core->state() != Qmmp::Stopped;

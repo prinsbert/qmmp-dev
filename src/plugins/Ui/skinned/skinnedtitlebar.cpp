@@ -23,6 +23,7 @@
 #include <QMouseEvent>
 #include <QMenu>
 #include <QSettings>
+#include <qmmpui/mediaplayer.h>
 #include "symboldisplay.h"
 #include "skin.h"
 #include "skinnedbutton.h"
@@ -42,14 +43,14 @@ SkinnedTitleBar::SkinnedTitleBar(SkinnedTimeIndicatorModel *model, QWidget *pare
     setPixmap(skin()->getTitleBar(Skin::TITLEBAR_A));
     m_mw = qobject_cast<SkinnedMainWindow*>(parent->parent());
     //buttons
-    m_menu = new SkinnedButton(this,Skin::BT_MENU_N,Skin::BT_MENU_P, Skin::CUR_MAINMENU);
+    m_menu = new SkinnedButton(this, Skin::BT_MENU_N, Skin::BT_MENU_P, Skin::CUR_MAINMENU);
     connect(m_menu, &SkinnedButton::clicked, this, &SkinnedTitleBar::showMainMenu);
-    m_menu->move(6,3);
-    m_minimize = new SkinnedButton(this,Skin::BT_MINIMIZE_N,Skin::BT_MINIMIZE_P, Skin::CUR_MIN);
+    m_menu->move(6, 3);
+    m_minimize = new SkinnedButton(this, Skin::BT_MINIMIZE_N, Skin::BT_MINIMIZE_P, Skin::CUR_MIN);
     connect(m_minimize, &SkinnedButton::clicked, m_mw, &SkinnedMainWindow::showMinimized);
-    m_shade = new SkinnedButton(this,Skin::BT_SHADE1_N,Skin::BT_SHADE1_P, Skin::CUR_WINBUT);
+    m_shade = new SkinnedButton(this, Skin::BT_SHADE1_N, Skin::BT_SHADE1_P, Skin::CUR_WINBUT);
     connect(m_shade, &SkinnedButton::clicked, this, &SkinnedTitleBar::shade);
-    m_close = new SkinnedButton(this,Skin::BT_CLOSE_N,Skin::BT_CLOSE_P, Skin::CUR_CLOSE);
+    m_close = new SkinnedButton(this, Skin::BT_CLOSE_N,Skin::BT_CLOSE_P, Skin::CUR_CLOSE);
     connect(m_close, &SkinnedButton::clicked, m_mw, &SkinnedMainWindow::close);
     setActive(false);
     QSettings settings;
@@ -157,11 +158,12 @@ void SkinnedTitleBar::shade()
         connect(m_currentTime, &SymbolDisplay::mouseClicked, m_model, &SkinnedTimeIndicatorModel::toggleElapsed);
         m_control = new SkinnedTitleBarControl(this);
         m_control->show();
-        connect(m_control, &SkinnedTitleBarControl::nextClicked, m_mw, &SkinnedMainWindow::next);
-        connect(m_control, &SkinnedTitleBarControl::previousClicked, m_mw, &SkinnedMainWindow::previous);
-        connect(m_control, &SkinnedTitleBarControl::playClicked, m_mw, &SkinnedMainWindow::play);
-        connect(m_control, &SkinnedTitleBarControl::pauseClicked, m_mw, &SkinnedMainWindow::pause);
-        connect(m_control, &SkinnedTitleBarControl::stopClicked, m_mw, &SkinnedMainWindow::stop);
+        MediaPlayer *player = MediaPlayer::instance();
+        connect(m_control, &SkinnedTitleBarControl::nextClicked, player, &MediaPlayer::next);
+        connect(m_control, &SkinnedTitleBarControl::previousClicked, player, &MediaPlayer::previous);
+        connect(m_control, &SkinnedTitleBarControl::playClicked, player, &MediaPlayer::play);
+        connect(m_control, &SkinnedTitleBarControl::pauseClicked, player, &MediaPlayer::pause);
+        connect(m_control, &SkinnedTitleBarControl::stopClicked, player, &MediaPlayer::stop);
         connect(m_control, &SkinnedTitleBarControl::ejectClicked, m_mw, &SkinnedMainWindow::playFiles);
         m_visual = new ShadedVisual(this);
         Visual::add(m_visual);

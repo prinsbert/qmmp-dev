@@ -32,6 +32,7 @@
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/uihelper.h>
 #include <qmmpui/qmmpuisettings.h>
+#include <qmmpui/mediaplayer.h>
 #include <qmmp/soundcore.h>
 #include "dock.h"
 #include "skin.h"
@@ -101,7 +102,11 @@ SkinnedPlayList::SkinnedPlayList(PlayListManager *manager, SkinnedMainWindow *pa
     m_current_time = new SymbolDisplay(this, 6);
     m_keyboardManager = new SkinnedKeyboardManager(m_listWidget);
 
-    connect(m_listWidget, &SkinnedListWidget::doubleClicked, parent, &SkinnedMainWindow::replay);
+    connect(m_listWidget, &SkinnedListWidget::doubleClicked, this, [this] {
+        MediaPlayer::instance()->stop();
+        m_pl_manager->activatePlayList(m_pl_manager->selectedPlayList());
+        MediaPlayer::instance()->play();
+    });
 
     connect(m_plslider, &SkinnedPlayListSlider::sliderMoveRequest, m_listWidget, &SkinnedListWidget::scroll);
     connect(m_listWidget, &SkinnedListWidget::scrollPositionChanged, m_plslider, &SkinnedPlayListSlider::setPos);
