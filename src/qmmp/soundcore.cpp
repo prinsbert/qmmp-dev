@@ -121,6 +121,13 @@ void SoundCore::seek(qint64 pos)
         m_engine->seek(pos);
 }
 
+void SoundCore::seekRelative(qint64 offset)
+{
+    qint64 d = duration();
+    if(d > 0)
+        seek(qBound(0, elapsed() + offset, d));
+}
+
 bool SoundCore::nextTrackAccepted() const
 {
     return m_nextState == SAME_ENGINE;

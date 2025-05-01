@@ -146,17 +146,7 @@ void SkinnedMainWindow::replay()
     play();
 }
 
-void SkinnedMainWindow::forward()
-{
-    m_core->seek(m_core->elapsed() + KEY_OFFSET);
-}
-
-void SkinnedMainWindow::backward()
-{
-    m_core->seek(qMax(qint64(0), m_core->elapsed() - KEY_OFFSET));
-}
-
-void SkinnedMainWindow::pause(void)
+void SkinnedMainWindow::pause()
 {
     m_core->pause();
 }
@@ -475,15 +465,14 @@ void SkinnedMainWindow::createActions()
     m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::ABOUT_QT, qApp, &QApplication::aboutQt));
     m_mainMenu->addSeparator();
     m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::QUIT, m_uiHelper, &UiHelper::exit));
+    //seeking
+    SET_ACTION(SkinnedActionManager::SEEK_FORWARD_10, this, [this] { m_core->seekRelative(10000); } );
+    SET_ACTION(SkinnedActionManager::SEEK_FORWARD_30, this, [this] { m_core->seekRelative(30000); } );
+    SET_ACTION(SkinnedActionManager::SEEK_FORWARD_60, this, [this] { m_core->seekRelative(60000); } );
+    SET_ACTION(SkinnedActionManager::SEEK_BACKWARD_10, this, [this] { m_core->seekRelative(-10000); } );
+    SET_ACTION(SkinnedActionManager::SEEK_BACKWARD_30, this, [this] { m_core->seekRelative(-30000); } );
+    SET_ACTION(SkinnedActionManager::SEEK_BACKWARD_60, this, [this] { m_core->seekRelative(-60000); } );
 
-    QAction *forward = new QAction(this);
-    forward->setShortcut(QKeySequence(Qt::Key_Right));
-    connect(forward, &QAction::triggered, this, &SkinnedMainWindow::forward);
-    QAction *backward = new QAction(this);
-    backward->setShortcut(QKeySequence(Qt::Key_Left));
-    connect(backward, &QAction::triggered, this, &SkinnedMainWindow::backward);
-
-    Dock::instance()->addActions(QList<QAction*>() << forward << backward);
     Dock::instance()->addActions(SkinnedActionManager::instance()->actions());
 }
 
