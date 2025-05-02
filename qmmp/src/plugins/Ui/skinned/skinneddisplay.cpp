@@ -314,7 +314,7 @@ void SkinnedDisplay::updatePosition()
 
 void SkinnedDisplay::wheelEvent(QWheelEvent *e)
 {
-    m_core->changeVolume(e->angleDelta().y() / 10);
+    m_core->changeVolume(e->angleDelta().y() * QmmpSettings::instance()->volumeStep() / 120);
 }
 
 bool SkinnedDisplay::isRepeatable() const
