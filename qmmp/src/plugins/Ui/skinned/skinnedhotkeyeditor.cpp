@@ -42,11 +42,11 @@ void SkinnedHotkeyEditor::on_changeShortcutButton_clicked()
     SkinnedShortcutItem *item = dynamic_cast<SkinnedShortcutItem *>(m_ui->shortcutTreeWidget->currentItem());
     if(!item)
         return;
-    ShortcutDialog editor(item->action()->shortcut().toString(), this);
+    ShortcutDialog editor(item->action()->shortcut(), this);
     if(editor.exec() == QDialog::Accepted)
     {
         item->action()->setShortcut(editor.key());
-        item->setText(1, item->action()->shortcut().toString());
+        item->setText(1, item->action()->shortcut().toString(QKeySequence::NativeText));
     }
 }
 

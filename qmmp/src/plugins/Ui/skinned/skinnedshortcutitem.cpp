@@ -25,7 +25,7 @@
 SkinnedShortcutItem::SkinnedShortcutItem(QTreeWidgetItem *parent, int type) :
     QTreeWidgetItem(parent, {
                     SkinnedActionManager::instance()->action(type)->text().remove(QLatin1Char('&')),
-                    SkinnedActionManager::instance()->action(type)->shortcut().toString() })
+                    SkinnedActionManager::instance()->action(type)->shortcut().toString(QKeySequence::NativeText) })
 {
     m_action = SkinnedActionManager::instance()->action(type);
     setIcon(0, m_action->icon());

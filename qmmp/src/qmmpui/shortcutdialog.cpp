@@ -23,11 +23,11 @@
 #include "ui_shortcutdialog.h"
 #include "shortcutdialog.h"
 
-ShortcutDialog::ShortcutDialog(const QString &key, QWidget *parent)
-        : QDialog(parent), m_ui(new Ui::ShortcutDialog)
+ShortcutDialog::ShortcutDialog(const QKeySequence &key, QWidget *parent)
+        : QDialog(parent), m_ui(new Ui::ShortcutDialog), m_key(key)
 {
     m_ui->setupUi(this);
-    m_ui->keyLineEdit->setText(key);
+    m_ui->keyLineEdit->setText(key.toString(QKeySequence::NativeText));
     QPushButton *button = m_ui->buttonBox->addButton(tr("Clear"), QDialogButtonBox::ResetRole);
     connect(button, &QPushButton::clicked, m_ui->keyLineEdit, &QLineEdit::clear);
     connect(this, &QDialog::accepted, this, [this] { releaseKeyboard(); });
@@ -55,11 +55,12 @@ void ShortcutDialog::keyPressEvent(QKeyEvent *event)
     case 0:
     case Qt::Key_unknown:
         m_ui->keyLineEdit->clear();
+        m_key = QKeySequence();
         QWidget::keyPressEvent(event);
         return;
     }
-    QKeySequence seq(event->keyCombination());
-    m_ui->keyLineEdit->setText(seq.toString());
+    m_key = QKeySequence(event->keyCombination());
+    m_ui->keyLineEdit->setText(m_key.toString(QKeySequence::NativeText));
     QWidget::keyPressEvent(event);
 }
 
@@ -69,7 +70,7 @@ void ShortcutDialog::showEvent(QShowEvent *event)
     grabKeyboard();
 }
 
-QString ShortcutDialog::key() const
+QKeySequence ShortcutDialog::key() const
 {
-    return m_ui->keyLineEdit->text();
+    return m_key;
 }

@@ -43,11 +43,11 @@ void QSUiHotkeyEditor::on_changeShortcutButton_clicked()
     QSUiShortcutItem *item = dynamic_cast<QSUiShortcutItem *> (m_ui->shortcutTreeWidget->currentItem());
     if(!item)
         return;
-    ShortcutDialog editor(item->action()->shortcut().toString(), this);
+    ShortcutDialog editor(item->action()->shortcut(), this);
     if(editor.exec() == QDialog::Accepted)
     {
         item->action()->setShortcut(editor.key());
-        item->setText(1, item->action()->shortcut().toString());
+        item->setText(1, item->action()->shortcut().toString(QKeySequence::NativeText));
     }
 }
 

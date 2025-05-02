@@ -41,7 +41,7 @@ public:
      * \param key Initial shortcut string.
      * \param parent Parent object.
      */
-    explicit ShortcutDialog(const QString &key, QWidget *parent = nullptr);
+    explicit ShortcutDialog(const QKeySequence &key, QWidget *parent = nullptr);
     /*!
      * Destructor
      */
@@ -49,7 +49,7 @@ public:
     /*!
      * Returns assigned shortcut.
      */
-    QString key() const;
+    QKeySequence key() const;
 
 protected:
     /*!
@@ -63,6 +63,7 @@ protected:
 
 private:
     Ui::ShortcutDialog *m_ui;
+    QKeySequence m_key;
 
 };
 

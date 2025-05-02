@@ -25,14 +25,15 @@
 
 QSUiShortcutItem::QSUiShortcutItem(QTreeWidgetItem *parent, int type) :
     QTreeWidgetItem(parent, { QSUiActionManager::instance()->action(type)->text().remove(QLatin1Char('&')),
-                    QSUiActionManager::instance()->action(type)->shortcut().toString() })
+                    QSUiActionManager::instance()->action(type)->shortcut().toString(QKeySequence::NativeText) })
 {
     m_action = QSUiActionManager::instance()->action(type);
     setIcon(0, m_action->icon());
 }
 
 QSUiShortcutItem::QSUiShortcutItem(QTreeWidgetItem *parent, QDockWidget *w) :
-    QTreeWidgetItem(parent, { w->toggleViewAction()->text().remove(QLatin1Char('&')), w->toggleViewAction()->shortcut().toString() })
+    QTreeWidgetItem(parent, { w->toggleViewAction()->text().remove(QLatin1Char('&')),
+                    w->toggleViewAction()->shortcut().toString(QKeySequence::NativeText) })
 {
     m_action = w->toggleViewAction();
 }
