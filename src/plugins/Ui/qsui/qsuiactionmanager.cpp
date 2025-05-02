@@ -45,16 +45,16 @@ QSUiActionManager::QSUiActionManager(QObject *parent) :
         { STOP, createAction(tr("&Stop"), u"stop"_s, tr("V"), u"media-playback-stop"_s) },
         { PREVIOUS, createAction(tr("&Previous"), u"previous"_s, tr("Z"), u"media-skip-backward"_s) },
         { NEXT, createAction(tr("&Next"), u"next"_s, tr("B"), u"media-skip-forward"_s) },
-        { PLAY_PAUSE, createAction(tr("&Play/Pause"), u"play_pause"_s, tr("Space"), u"media-playback-start"_s) },
-        { SEEK_FORWARD_10, createAction(tr("+10 seconds"), u"seek_forward_10"_s, u"Right"_s, u"media-seek-forward"_s) },
-        { SEEK_FORWARD_30, createAction(tr("+30 seconds"), u"seek_forward_30"_s, tr("Ctrl+Right"), u"media-seek-forward"_s) },
-        { SEEK_FORWARD_60, createAction(tr("+60 seconds"), u"seek_forward_60"_s, QString(), u"media-seek-forward"_s) },
-        { SEEK_BACKWARD_10, createAction(tr("-10 seconds"), u"seek_backward_10"_s, u"Left"_s, u"media-seek-backward"_s) },
-        { SEEK_BACKWARD_30, createAction(tr("-30 seconds"), u"seek_backward_20"_s, tr("Ctrl+Left"), u"media-seek-backward"_s) },
-        { SEEK_BACKWARD_60, createAction(tr("-60 seconds"), u"seek_backward_30"_s, QString(), u"media-seek-backward"_s) },
+        { PLAY_PAUSE, createAction(tr("&Play/Pause"), u"play_pause"_s, Qt::Key_Space, u"media-playback-start"_s) },
+        { SEEK_FORWARD_10, createAction(tr("+10 seconds"), u"seek_forward_10"_s, Qt::Key_Right, u"media-seek-forward"_s) },
+        { SEEK_FORWARD_30, createAction(tr("+30 seconds"), u"seek_forward_30"_s, Qt::CTRL | Qt::Key_Right, u"media-seek-forward"_s) },
+        { SEEK_FORWARD_60, createAction(tr("+60 seconds"), u"seek_forward_60"_s, QKeySequence(), u"media-seek-forward"_s) },
+        { SEEK_BACKWARD_10, createAction(tr("-10 seconds"), u"seek_backward_10"_s, Qt::Key_Left, u"media-seek-backward"_s) },
+        { SEEK_BACKWARD_30, createAction(tr("-30 seconds"), u"seek_backward_20"_s, Qt::CTRL | Qt::Key_Left, u"media-seek-backward"_s) },
+        { SEEK_BACKWARD_60, createAction(tr("-60 seconds"), u"seek_backward_30"_s, QKeySequence(), u"media-seek-backward"_s) },
         { JUMP, createAction(tr("&Jump to Track"), u"jump"_s, tr("J"), u"go-up"_s) },
         { EJECT, createAction(tr("&Play Files"), u"eject"_s, tr("E"), u"media-eject"_s) },
-        { RECORD, createAction2(tr("&Record"), u"record"_s, QString(), u"media-record"_s) },
+        { RECORD, createAction2(tr("&Record"), u"record"_s, QKeySequence(), u"media-record"_s) },
         { REPEAT_ALL, createAction2(tr("&Repeat Playlist"), u"repeate_playlist"_s, tr("R"), u"media-playlist-repeat"_s) },
         { REPEAT_TRACK, createAction2(tr("&Repeat Track"), u"repeate_track"_s, tr("Ctrl+R"), u"media-repeat-single"_s) },
         { SHUFFLE, createAction2(tr("&Shuffle"), u"shuffle"_s, tr("S"), u"media-playlist-shuffle"_s) },
@@ -82,9 +82,9 @@ QSUiActionManager::QSUiActionManager(QObject *parent) :
         { PL_ADD_DIRECTORY, createAction(tr("&Add Directory"), u"add_dir"_s, tr("D"), u"folder"_s) },
         { PL_ADD_URL, createAction(tr("&Add Url"), u"add_url"_s, tr("U"), u"network-server"_s) },
         { PL_REMOVE_SELECTED, createAction(tr("&Remove Selected"), u"remove_selected"_s, tr("Del"), u"edit-delete"_s) },
-        { PL_REMOVE_ALL, createAction(tr("&Remove All"), u"remove_all"_s, QString(), u"edit-clear"_s) },
-        { PL_REMOVE_UNSELECTED, createAction(tr("&Remove Unselected"), u"remove_unselected"_s, QString(), u"edit-delete"_s) },
-        { PL_REMOVE_INVALID, createAction(tr("Remove unavailable files"), u"remove_invalid"_s, QString(), u"dialog-error"_s) },
+        { PL_REMOVE_ALL, createAction(tr("&Remove All"), u"remove_all"_s, QKeySequence(), u"edit-clear"_s) },
+        { PL_REMOVE_UNSELECTED, createAction(tr("&Remove Unselected"), u"remove_unselected"_s, QKeySequence(), u"edit-delete"_s) },
+        { PL_REMOVE_INVALID, createAction(tr("Remove unavailable files"), u"remove_invalid"_s, QKeySequence(), u"dialog-error"_s) },
         { PL_REMOVE_DUPLICATES, createAction(tr("Remove duplicates"), u"remove_duplicates"_s) },
         { PL_REFRESH, createAction(tr("Refresh"), u"refresh"_s, u"F5"_s, u"view-refresh"_s) },
         { PL_ENQUEUE, createAction(tr("&Queue Toggle"), u"enqueue"_s, tr("Q")) },
@@ -104,7 +104,7 @@ QSUiActionManager::QSUiActionManager(QObject *parent) :
         //other
         { EQUALIZER, createAction(tr("&Equalizer"), u"equalizer"_s, tr("Ctrl+E")) },
         { SETTINGS, createAction(tr("&Settings"), u"show_settings"_s, tr("Ctrl+P"), u"configure"_s) },
-        { APPLICATION_MENU, createAction(tr("Application Menu"), u"app_menu"_s, QString(), u"format-justify-fill"_s) },
+        { APPLICATION_MENU, createAction(tr("Application Menu"), u"app_menu"_s, QKeySequence(), u"format-justify-fill"_s) },
         { ABOUT_UI, createAction(tr("&About Ui"), u"about_ui"_s) },
         { ABOUT, createAction(tr("&About"), u"about"_s) },
         { ABOUT_QT, createAction(tr("&About Qt"), u"about_qt"_s) },
@@ -148,11 +148,11 @@ QSUiActionManager* QSUiActionManager::instance()
     return m_instance;
 }
 
-QAction *QSUiActionManager::createAction(const QString &name, const QString &confKey, const QString &key, const QString &iconName)
+QAction *QSUiActionManager::createAction(const QString &name, const QString &confKey, const QKeySequence &key, const QString &iconName)
 {
     QAction *action = new QAction(name, this);
     action->setShortcutVisibleInContextMenu(true);
-    action->setShortcut(m_settings->value(confKey, key).toString());
+    action->setShortcut(QKeySequence(m_settings->value(confKey, key.toString()).toString(), QKeySequence::PortableText));
     action->setObjectName(confKey);
     action->setProperty("defaultShortcut", key);
     if(iconName.isEmpty())
@@ -166,7 +166,7 @@ QAction *QSUiActionManager::createAction(const QString &name, const QString &con
     return action;
 }
 
-QAction *QSUiActionManager::createAction2(const QString &name, const QString &confKey, const QString &key, const QString &iconName)
+QAction *QSUiActionManager::createAction2(const QString &name, const QString &confKey, const QKeySequence &key, const QString &iconName)
 {
     QAction *action = createAction(name, confKey, key, iconName);
     action->setCheckable(true);
@@ -196,13 +196,13 @@ void QSUiActionManager::saveActions()
 
     for(const QAction *action : std::as_const(m_actions))
     {
-        settings.setValue(action->objectName(), action->shortcut());
+        settings.setValue(action->objectName(), action->shortcut().toString());
     }
 
     auto it = m_dockWidgets.cbegin();
     while(it != m_dockWidgets.cend())
     {
-        settings.setValue(it.value().first, it.key()->toggleViewAction()->shortcut());
+        settings.setValue(it.value().first, it.key()->toggleViewAction()->shortcut().toString());
         ++it;
     }
 
@@ -213,7 +213,7 @@ void QSUiActionManager::resetShortcuts()
 {
     for(QAction *action : std::as_const(m_actions))
     {
-        action->setShortcut(action->property("defaultShortcut").toString());
+        action->setShortcut(action->property("defaultShortcut").value<QKeySequence>());
     }
 
     auto it = m_dockWidgets.cbegin();
@@ -224,14 +224,14 @@ void QSUiActionManager::resetShortcuts()
     }
 }
 
-void QSUiActionManager::registerAction(int id, QAction *action, const QString &confKey, const QString &key)
+void QSUiActionManager::registerAction(int id, QAction *action, const QString &confKey, const QKeySequence &key)
 {
     if(m_actions.value(id))
         qCFatal(plugin) << "invalid action id";
 
     QSettings settings;
     settings.beginGroup(u"SimpleUiShortcuts"_s);
-    action->setShortcut(settings.value(confKey, key).toString());
+    action->setShortcut(QKeySequence(settings.value(confKey, key.toString()).toString(), QKeySequence::PortableText));
     action->setProperty("defaultShortcut", key);
     action->setObjectName(confKey);
     action->setShortcutVisibleInContextMenu(true);
@@ -251,13 +251,13 @@ void QSUiActionManager::registerWidget(int id, QWidget *w, const QString &text, 
     m_actions[id] = action;
 }
 
-void QSUiActionManager::registerDockWidget(QDockWidget *w, const QString &confKey, const QString &key)
+void QSUiActionManager::registerDockWidget(QDockWidget *w, const QString &confKey, const QKeySequence &key)
 {
     QSettings settings;
     settings.beginGroup(u"SimpleUiShortcuts"_s);
-    w->toggleViewAction()->setShortcut(settings.value(confKey, key).toString());
+    w->toggleViewAction()->setShortcut(QKeySequence(settings.value(confKey, key.toString()).toString(), QKeySequence::PortableText));
     settings.endGroup();
-    m_dockWidgets.insert(w, std::make_pair(confKey, key));
+    m_dockWidgets.insert(w, std::make_pair(confKey, key.toString()));
 }
 
 void QSUiActionManager::removeDockWidget(QDockWidget *w)

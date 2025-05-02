@@ -241,6 +241,6 @@ void FileOpsSettingsDialog::on_tableWidget_itemDoubleClicked(QTableWidgetItem *i
 {
     ShortcutDialog *dialog = new ShortcutDialog(item->text(), this);
     if(m_ui->tableWidget->column(item) == 3 && dialog->exec() == QDialog::Accepted)
-        item->setText(dialog->key());
+        item->setText(dialog->key().toString());
     dialog->deleteLater();
 }

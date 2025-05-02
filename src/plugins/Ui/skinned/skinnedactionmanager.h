@@ -114,9 +114,9 @@ public:
     static SkinnedActionManager *instance();
 
 private:
-    QAction *createAction(const QString &name, const QString &confKey, const QString &key = QString(),
+    QAction *createAction(const QString &name, const QString &confKey, const QKeySequence &key = QKeySequence(),
                           const QString &iconName = QString());
-    QAction *createAction2(const QString &name, const QString &confKey, const QString &key = QString());
+    QAction *createAction2(const QString &name, const QString &confKey, const QKeySequence &key = QKeySequence());
     void readStates();
     void saveStates();
 

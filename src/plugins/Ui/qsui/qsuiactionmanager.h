@@ -136,9 +136,9 @@ public:
     bool hasDockWidgets() const;
     void saveActions();
     void resetShortcuts();
-    void registerAction(int id, QAction *action, const QString &confKey, const QString &key = QString());
+    void registerAction(int id, QAction *action, const QString &confKey, const QKeySequence &key = QKeySequence());
     void registerWidget(int id, QWidget *w, const QString &text, const QString &name);
-    void registerDockWidget(QDockWidget *w, const QString &confKey, const QString &key);
+    void registerDockWidget(QDockWidget *w, const QString &confKey, const QKeySequence &key);
     void removeDockWidget(QDockWidget *w);
     QToolBar *createToolBar(const ToolBarInfo &info, QWidget *parent);
     void updateToolBar(QToolBar *toolBar, const ToolBarInfo &info);
@@ -149,9 +149,9 @@ public:
     static QSUiActionManager* instance();
 
 private:
-    QAction *createAction(const QString &name, const QString &confKey, const QString &key = QString(),
+    QAction *createAction(const QString &name, const QString &confKey, const QKeySequence &key = QKeySequence(),
                           const QString &iconName = QString());
-    QAction *createAction2(const QString &name, const QString &confKey, const QString &key = QString(),
+    QAction *createAction2(const QString &name, const QString &confKey, const QKeySequence &key = QKeySequence(),
                            const QString &iconName = QString());
     void readStates();
     void saveStates();

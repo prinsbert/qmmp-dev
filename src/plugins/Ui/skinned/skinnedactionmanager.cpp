@@ -41,13 +41,13 @@ SkinnedActionManager::SkinnedActionManager(QObject *parent) :
         { STOP, createAction(tr("&Stop"), u"stop"_s, tr("V"), u"media-playback-stop"_s) },
         { PREVIOUS, createAction(tr("&Previous"), u"previous"_s, tr("Z"), u"media-skip-backward"_s) },
         { NEXT, createAction(tr("&Next"), u"next"_s, tr("B"), u"media-skip-forward"_s) },
-        { PLAY_PAUSE, createAction(tr("&Play/Pause"), u"play_pause"_s, tr("Space")) },
-        { SEEK_FORWARD_10, createAction(tr("+10 seconds"), u"seek_forward_10"_s, u"Right"_s, u"media-seek-forward"_s) },
-        { SEEK_FORWARD_30, createAction(tr("+30 seconds"), u"seek_forward_30"_s, tr("Ctrl+Right"), u"media-seek-forward"_s) },
-        { SEEK_FORWARD_60, createAction(tr("+60 seconds"), u"seek_forward_60"_s, QString(), u"media-seek-forward"_s) },
-        { SEEK_BACKWARD_10, createAction(tr("-10 seconds"), u"seek_backward_10"_s, u"Left"_s, u"media-seek-backward"_s) },
-        { SEEK_BACKWARD_30, createAction(tr("-30 seconds"), u"seek_backward_20"_s, tr("Ctrl+Left"), u"media-seek-backward"_s) },
-        { SEEK_BACKWARD_60, createAction(tr("-60 seconds"), u"seek_backward_30"_s, QString(), u"media-seek-backward"_s) },
+        { PLAY_PAUSE, createAction(tr("&Play/Pause"), u"play_pause"_s, Qt::Key_Space ) },
+        { SEEK_FORWARD_10, createAction(tr("+10 seconds"), u"seek_forward_10"_s, Qt::Key_Right, u"media-seek-forward"_s) },
+        { SEEK_FORWARD_30, createAction(tr("+30 seconds"), u"seek_forward_30"_s, Qt::CTRL | Qt::Key_Right, u"media-seek-forward"_s) },
+        { SEEK_FORWARD_60, createAction(tr("+60 seconds"), u"seek_forward_60"_s, QKeySequence(), u"media-seek-forward"_s) },
+        { SEEK_BACKWARD_10, createAction(tr("-10 seconds"), u"seek_backward_10"_s, Qt::Key_Left, u"media-seek-backward"_s) },
+        { SEEK_BACKWARD_30, createAction(tr("-30 seconds"), u"seek_backward_20"_s, Qt::CTRL | Qt::Key_Left, u"media-seek-backward"_s) },
+        { SEEK_BACKWARD_60, createAction(tr("-60 seconds"), u"seek_backward_30"_s, QKeySequence(), u"media-seek-backward"_s) },
         { JUMP, createAction(tr("&Jump to Track"), u"jump"_s, tr("J"), u"go-up"_s) },
         { REPEAT_ALL, createAction2(tr("&Repeat Playlist"), u"repeate_playlist"_s, tr("R")) },
         { REPEAT_TRACK, createAction2(tr("&Repeat Track"), u"repeate_track"_s, tr("Ctrl+R")) },
@@ -72,9 +72,9 @@ SkinnedActionManager::SkinnedActionManager(QObject *parent) :
         { PL_ADD_DIRECTORY, createAction(tr("&Add Directory"), u"add_dir"_s, tr("D"), u"folder"_s) },
         { PL_ADD_URL, createAction(tr("&Add Url"), u"add_url"_s, tr("U"), u"network-server"_s) },
         { PL_REMOVE_SELECTED, createAction(tr("&Remove Selected"), u"remove_selected"_s, tr("Del"), u"edit-delete"_s) },
-        { PL_REMOVE_ALL, createAction(tr("&Remove All"), u"remove_all"_s, QString(), u"edit-clear"_s) },
-        { PL_REMOVE_UNSELECTED, createAction(tr("&Remove Unselected"), u"remove_unselected"_s, QString(), u"edit-delete"_s) },
-        { PL_REMOVE_INVALID, createAction(tr("Remove unavailable files"), u"remove_invalid"_s, QString(), u"dialog-error"_s) },
+        { PL_REMOVE_ALL, createAction(tr("&Remove All"), u"remove_all"_s, QKeySequence(), u"edit-clear"_s) },
+        { PL_REMOVE_UNSELECTED, createAction(tr("&Remove Unselected"), u"remove_unselected"_s, QKeySequence(), u"edit-delete"_s) },
+        { PL_REMOVE_INVALID, createAction(tr("Remove unavailable files"), u"remove_invalid"_s, QKeySequence(), u"dialog-error"_s) },
         { PL_REMOVE_DUPLICATES, createAction(tr("Remove duplicates"), u"remove_duplicates"_s) },
         { PL_REFRESH, createAction(tr("Refresh"), u"refresh"_s, u"F5"_s, u"view-refresh"_s) },
         { PL_ENQUEUE, createAction(tr("&Queue Toggle"), u"enqueue"_s, tr("Q")) },
@@ -129,11 +129,11 @@ SkinnedActionManager *SkinnedActionManager::instance()
     return m_instance;
 }
 
-QAction *SkinnedActionManager::createAction(const QString &name, const QString &confKey, const QString &key, const QString &iconName)
+QAction *SkinnedActionManager::createAction(const QString &name, const QString &confKey, const QKeySequence &key, const QString &iconName)
 {
     QAction *action = new QAction(name, this);
     action->setShortcutVisibleInContextMenu(true);
-    action->setShortcut(m_settings->value(confKey, key).toString());
+    action->setShortcut(QKeySequence(m_settings->value(confKey, key.toString()).toString(), QKeySequence::PortableText));
     action->setProperty("defaultShortcut", key);
     action->setObjectName(confKey);
     if(iconName.isEmpty())
@@ -145,7 +145,7 @@ QAction *SkinnedActionManager::createAction(const QString &name, const QString &
     return action;
 }
 
-QAction *SkinnedActionManager::createAction2(const QString &name, const QString &confKey, const QString &key)
+QAction *SkinnedActionManager::createAction2(const QString &name, const QString &confKey, const QKeySequence &key)
 {
     QAction *action = createAction(name, confKey, key);
     action->setCheckable(true);
@@ -174,7 +174,7 @@ void SkinnedActionManager::saveActions()
     QSettings settings;
     for(const QAction *action : std::as_const(m_actions))
     {
-        settings.setValue(QStringLiteral("SkinnedShortcuts/") + action->objectName(), action->shortcut());
+        settings.setValue(QStringLiteral("SkinnedShortcuts/") + action->objectName(), action->shortcut().toString());
     }
 }
 
@@ -182,6 +182,6 @@ void SkinnedActionManager::resetShortcuts()
 {
     for(QAction *action : std::as_const(m_actions))
     {
-        action->setShortcut(action->property("defaultShortcut").toString());
+        action->setShortcut(action->property("defaultShortcut").value<QKeySequence>());
     }
 }
