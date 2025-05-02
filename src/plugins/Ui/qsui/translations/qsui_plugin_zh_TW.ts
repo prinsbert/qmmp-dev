@@ -1883,7 +1883,7 @@
 <context>
     <name>VolumeSlider</name>
     <message>
-        <location filename="../volumeslider.cpp" line="110"/>
+        <location filename="../volumeslider.cpp" line="111"/>
         <source>%1: %2%</source>
         <translation>%1: %2%</translation>
     </message>

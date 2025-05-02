@@ -1099,299 +1099,309 @@
         <translation>皮膚</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="55"/>
+        <location filename="../forms/skinnedsettings.ui" line="57"/>
         <source>Add...</source>
         <translation>新增...</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="72"/>
+        <location filename="../forms/skinnedsettings.ui" line="74"/>
         <source>Refresh</source>
         <translation>重新整理</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="103"/>
+        <location filename="../forms/skinnedsettings.ui" line="102"/>
+        <source>Skin install path:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="127"/>
+        <source>Random skin on every startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="141"/>
         <source>Main Window</source>
         <translation>主視窗</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="109"/>
+        <location filename="../forms/skinnedsettings.ui" line="147"/>
         <source>Hide on close</source>
         <translation>關閉時隱藏</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="116"/>
+        <location filename="../forms/skinnedsettings.ui" line="154"/>
         <source>Start hidden</source>
         <translation>以隱藏狀態開始</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="123"/>
+        <location filename="../forms/skinnedsettings.ui" line="161"/>
         <source>Use skin cursors</source>
         <translation>使用皮膚游標</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="261"/>
+        <location filename="../forms/skinnedsettings.ui" line="299"/>
         <source>Single Column Mode</source>
         <translation>單列模式</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="294"/>
+        <location filename="../forms/skinnedsettings.ui" line="332"/>
         <source>Use smooth scrolling</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="315"/>
+        <location filename="../forms/skinnedsettings.ui" line="353"/>
         <source>Show splitters</source>
         <translation>顯示分離器</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="322"/>
+        <location filename="../forms/skinnedsettings.ui" line="360"/>
         <source>Alternate splitter color</source>
         <translation>替換分離器顏色</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="422"/>
+        <location filename="../forms/skinnedsettings.ui" line="460"/>
         <source>Colors</source>
         <translation>色彩</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="428"/>
+        <location filename="../forms/skinnedsettings.ui" line="466"/>
         <source>Playlist Colors</source>
         <translation>播放清單顏色</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="434"/>
+        <location filename="../forms/skinnedsettings.ui" line="472"/>
         <source>Use skin colors</source>
         <translation>使用皮膚色彩</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="552"/>
+        <location filename="../forms/skinnedsettings.ui" line="590"/>
         <source>Background #2:</source>
         <translation>背景 #2:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="616"/>
+        <location filename="../forms/skinnedsettings.ui" line="654"/>
         <source>Highlighted background:</source>
         <translation>突出顯示的背景：</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="507"/>
+        <location filename="../forms/skinnedsettings.ui" line="545"/>
         <source>Normal text:</source>
         <translation>普通文字：</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="770"/>
+        <location filename="../forms/skinnedsettings.ui" line="808"/>
         <source>Splitter:</source>
         <translation>分離器：</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="584"/>
+        <location filename="../forms/skinnedsettings.ui" line="622"/>
         <source>Current text:</source>
         <translation>目前文字：</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="648"/>
+        <location filename="../forms/skinnedsettings.ui" line="686"/>
         <source>Highlighted text:</source>
         <translation>突出顯示的文字：</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="820"/>
+        <location filename="../forms/skinnedsettings.ui" line="858"/>
         <source>Current track background:</source>
         <translation>目前曲目背景：</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="878"/>
+        <location filename="../forms/skinnedsettings.ui" line="916"/>
         <source>Override current track background</source>
         <translation>強制使用目前曲目背景</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="785"/>
+        <location filename="../forms/skinnedsettings.ui" line="823"/>
         <source>Group background:</source>
         <translation>組背景：</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="885"/>
+        <location filename="../forms/skinnedsettings.ui" line="923"/>
         <source>Override group background</source>
         <translation>強制使用群組背景</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="707"/>
+        <location filename="../forms/skinnedsettings.ui" line="745"/>
         <source>Group text:</source>
         <translation>組文字：</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="462"/>
+        <location filename="../forms/skinnedsettings.ui" line="500"/>
         <source>Background #1:</source>
         <translation>背景 #1:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="698"/>
+        <location filename="../forms/skinnedsettings.ui" line="736"/>
         <source>Load skin colors</source>
         <translation>載入皮膚色彩</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="911"/>
+        <location filename="../forms/skinnedsettings.ui" line="949"/>
         <source>Fonts</source>
         <translation>字體</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="965"/>
+        <location filename="../forms/skinnedsettings.ui" line="1003"/>
         <source>Playlist:</source>
         <translation>播放清單：</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1001"/>
+        <location filename="../forms/skinnedsettings.ui" line="1039"/>
         <source>Groups:</source>
         <translation>組別：</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1028"/>
+        <location filename="../forms/skinnedsettings.ui" line="1066"/>
         <source>Extra group row:</source>
         <translation>額外組行：</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1055"/>
+        <location filename="../forms/skinnedsettings.ui" line="1093"/>
         <source>Column headers:</source>
         <translation>列標題：</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="923"/>
+        <location filename="../forms/skinnedsettings.ui" line="961"/>
         <source>Player:</source>
         <translation>播放器：</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="945"/>
-        <location filename="../forms/skinnedsettings.ui" line="987"/>
-        <location filename="../forms/skinnedsettings.ui" line="1068"/>
+        <location filename="../forms/skinnedsettings.ui" line="983"/>
+        <location filename="../forms/skinnedsettings.ui" line="1025"/>
+        <location filename="../forms/skinnedsettings.ui" line="1106"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="142"/>
-        <location filename="../forms/skinnedsettings.ui" line="952"/>
-        <location filename="../forms/skinnedsettings.ui" line="994"/>
-        <location filename="../forms/skinnedsettings.ui" line="1075"/>
+        <location filename="../forms/skinnedsettings.ui" line="180"/>
+        <location filename="../forms/skinnedsettings.ui" line="990"/>
+        <location filename="../forms/skinnedsettings.ui" line="1032"/>
+        <location filename="../forms/skinnedsettings.ui" line="1113"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1110"/>
+        <location filename="../forms/skinnedsettings.ui" line="1148"/>
         <source>Reset fonts</source>
         <translation>重置字體</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1119"/>
+        <location filename="../forms/skinnedsettings.ui" line="1157"/>
         <source>Use bitmap font if available</source>
         <translation>若有可用的點陣字型，則使用。</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="132"/>
+        <location filename="../forms/skinnedsettings.ui" line="170"/>
         <source>Window title format:</source>
         <translation>視窗標題格式：</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="97"/>
+        <location filename="../forms/skinnedsettings.ui" line="135"/>
         <source>General</source>
         <translation>常規</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="154"/>
+        <location filename="../forms/skinnedsettings.ui" line="192"/>
         <source>Transparency</source>
         <translation>透明度</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="160"/>
+        <location filename="../forms/skinnedsettings.ui" line="198"/>
         <source>Main window</source>
         <translation>主視窗</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="183"/>
-        <location filename="../forms/skinnedsettings.ui" line="207"/>
-        <location filename="../forms/skinnedsettings.ui" line="231"/>
+        <location filename="../forms/skinnedsettings.ui" line="221"/>
+        <location filename="../forms/skinnedsettings.ui" line="245"/>
+        <location filename="../forms/skinnedsettings.ui" line="269"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="190"/>
+        <location filename="../forms/skinnedsettings.ui" line="228"/>
         <source>Equalizer</source>
         <translation>均衡器</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="214"/>
+        <location filename="../forms/skinnedsettings.ui" line="252"/>
         <source>Playlist</source>
         <translation>播放清單</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="255"/>
+        <location filename="../forms/skinnedsettings.ui" line="293"/>
         <source>Song Display</source>
         <translation>歌曲顯示</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="301"/>
+        <location filename="../forms/skinnedsettings.ui" line="339"/>
         <source>Show protocol</source>
         <translation>顯示協定</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="274"/>
+        <location filename="../forms/skinnedsettings.ui" line="312"/>
         <source>Show song lengths</source>
         <translation>顯示歌曲長度</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="267"/>
+        <location filename="../forms/skinnedsettings.ui" line="305"/>
         <source>Show song numbers</source>
         <translation>顯示歌曲編號</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="284"/>
+        <location filename="../forms/skinnedsettings.ui" line="322"/>
         <source>Align song numbers</source>
         <translation>對齊歌曲編號</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="308"/>
+        <location filename="../forms/skinnedsettings.ui" line="346"/>
         <source>Show anchor</source>
         <translation>顯示錨點</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="370"/>
+        <location filename="../forms/skinnedsettings.ui" line="408"/>
         <source>Show popup information</source>
         <translation>顯示彈出訊息</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="382"/>
+        <location filename="../forms/skinnedsettings.ui" line="420"/>
         <source>Edit template</source>
         <translation>編輯模板</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="338"/>
+        <location filename="../forms/skinnedsettings.ui" line="376"/>
         <source>Playlist separator:</source>
         <translation>播放清單分隔符：</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="329"/>
+        <location filename="../forms/skinnedsettings.ui" line="367"/>
         <source>Show &apos;New Playlist&apos; button</source>
         <translation>顯示“新播放清單”按鈕</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="81"/>
+        <location filename="../skinnedsettings.cpp" line="84"/>
         <source>Select Skin Files</source>
         <translation>選擇皮膚檔案</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="82"/>
+        <location filename="../skinnedsettings.cpp" line="85"/>
         <source>Skin files</source>
         <translation>皮膚檔案</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="165"/>
+        <location filename="../skinnedsettings.cpp" line="154"/>
         <source>Default skin</source>
         <translation>預設皮膚</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="174"/>
+        <location filename="../skinnedsettings.cpp" line="163"/>
         <source>Unarchived skin %1</source>
         <translation>未壓縮皮膚 %1</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="174"/>
+        <location filename="../skinnedsettings.cpp" line="163"/>
         <source>Archived skin %1</source>
         <translation>壓縮皮膚 %1</translation>
     </message>
