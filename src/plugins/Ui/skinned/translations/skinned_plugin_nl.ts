@@ -66,52 +66,42 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>+10 seconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../skinnedactionmanager.cpp" line="45"/>
-        <source>Right</source>
-        <translation type="unfinished">Rechts</translation>
+        <translation>+10 seconden</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>+30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+30 seconden</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>Ctrl+Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+pijltje rechts</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>+60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+60 seconden</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>-10 seconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../skinnedactionmanager.cpp" line="48"/>
-        <source>Left</source>
-        <translation type="unfinished">Links</translation>
+        <translation>-10 seconden</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>-30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-30 seconden</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>Ctrl+Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+pijltje links</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>-60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-60 seconden</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
@@ -1111,12 +1101,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="102"/>
         <source>Skin install path:</source>
-        <translation type="unfinished"></translation>
+        <translation>Thema-installatielocatie:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="127"/>
         <source>Random skin on every startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Willekeurig thema kiezen tijdens opstarten</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="141"/>

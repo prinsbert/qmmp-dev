@@ -575,52 +575,42 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="49"/>
         <source>+10 seconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qsuiactionmanager.cpp" line="49"/>
-        <source>Right</source>
-        <translation type="unfinished">Rechts</translation>
+        <translation>+10 seconden</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="50"/>
         <source>+30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+30 seconden</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="50"/>
         <source>Ctrl+Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+pijltje rechts</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="51"/>
         <source>+60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+ 60 seconden</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="52"/>
         <source>-10 seconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qsuiactionmanager.cpp" line="52"/>
-        <source>Left</source>
-        <translation type="unfinished">Links</translation>
+        <translation>-10 seconden</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="53"/>
         <source>-30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-30 seconden</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="53"/>
         <source>Ctrl+Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+pijltje links</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="54"/>
         <source>-60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-60 seconden</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="55"/>
