@@ -62,22 +62,22 @@
         <translation>&lt;</translation>
     </message>
     <message>
-        <location filename="../ladspasettingsdialog.ui" line="94"/>
+        <location filename="../ladspasettingsdialog.cpp" line="45"/>
         <source>Configure</source>
         <translation>調整</translation>
     </message>
     <message>
-        <location filename="../ladspasettingsdialog.cpp" line="46"/>
+        <location filename="../ladspasettingsdialog.cpp" line="50"/>
         <source>UID</source>
         <translation>UID</translation>
     </message>
     <message>
-        <location filename="../ladspasettingsdialog.cpp" line="47"/>
+        <location filename="../ladspasettingsdialog.cpp" line="51"/>
         <source>Name</source>
         <translation>局名</translation>
     </message>
     <message>
-        <location filename="../ladspasettingsdialog.cpp" line="131"/>
+        <location filename="../ladspasettingsdialog.cpp" line="135"/>
         <source>This LADSPA plugin has no user controls</source>
         <translation>この LADSPA プラグインにユーザーが制御できる部分はありません</translation>
     </message>

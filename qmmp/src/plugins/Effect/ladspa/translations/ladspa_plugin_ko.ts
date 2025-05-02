@@ -62,22 +62,22 @@
         <translation>&lt;</translation>
     </message>
     <message>
-        <location filename="../ladspasettingsdialog.ui" line="94"/>
+        <location filename="../ladspasettingsdialog.cpp" line="45"/>
         <source>Configure</source>
         <translation>구성하기</translation>
     </message>
     <message>
-        <location filename="../ladspasettingsdialog.cpp" line="46"/>
+        <location filename="../ladspasettingsdialog.cpp" line="50"/>
         <source>UID</source>
         <translation>UID</translation>
     </message>
     <message>
-        <location filename="../ladspasettingsdialog.cpp" line="47"/>
+        <location filename="../ladspasettingsdialog.cpp" line="51"/>
         <source>Name</source>
         <translation>이름</translation>
     </message>
     <message>
-        <location filename="../ladspasettingsdialog.cpp" line="131"/>
+        <location filename="../ladspasettingsdialog.cpp" line="135"/>
         <source>This LADSPA plugin has no user controls</source>
         <translation>이 LADSPA 플러그인에는 사용자 컨트롤이 없습니다</translation>
     </message>

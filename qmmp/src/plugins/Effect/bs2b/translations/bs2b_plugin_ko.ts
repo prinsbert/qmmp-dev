@@ -9,38 +9,33 @@
         <translation>BS2B 플러그인 설정</translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.ui" line="32"/>
+        <location filename="../bs2bsettingsdialog.ui" line="29"/>
         <source>Crossfeed level</source>
         <translation>Crossfeed 레벨</translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.ui" line="45"/>
-        <location filename="../bs2bsettingsdialog.ui" line="59"/>
+        <location filename="../bs2bsettingsdialog.ui" line="42"/>
+        <location filename="../bs2bsettingsdialog.ui" line="56"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.ui" line="71"/>
-        <source>Default</source>
-        <translation>기본값</translation>
-    </message>
-    <message>
-        <location filename="../bs2bsettingsdialog.ui" line="78"/>
+        <location filename="../bs2bsettingsdialog.cpp" line="45"/>
         <source>C.Moy</source>
         <translation>C.Moy</translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.ui" line="85"/>
+        <location filename="../bs2bsettingsdialog.cpp" line="50"/>
         <source>J. Meier</source>
         <translation>J. Meier</translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.cpp" line="61"/>
+        <location filename="../bs2bsettingsdialog.cpp" line="77"/>
         <source>%1 Hz, %2 us</source>
         <translation>%1 Hz, %2 us</translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.cpp" line="68"/>
+        <location filename="../bs2bsettingsdialog.cpp" line="84"/>
         <source>%1 dB</source>
         <translation>%1 dB</translation>
     </message>

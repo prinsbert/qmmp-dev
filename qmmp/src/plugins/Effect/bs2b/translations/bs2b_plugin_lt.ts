@@ -9,38 +9,33 @@
         <translation type="unfinished">BS2B įskiepio nustatymai</translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.ui" line="32"/>
+        <location filename="../bs2bsettingsdialog.ui" line="29"/>
         <source>Crossfeed level</source>
         <translation type="unfinished">Suliejimo nustatymai</translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.ui" line="45"/>
-        <location filename="../bs2bsettingsdialog.ui" line="59"/>
+        <location filename="../bs2bsettingsdialog.ui" line="42"/>
+        <location filename="../bs2bsettingsdialog.ui" line="56"/>
         <source>-</source>
         <translation type="unfinished">-</translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.ui" line="71"/>
-        <source>Default</source>
-        <translation type="unfinished">Numatytas</translation>
-    </message>
-    <message>
-        <location filename="../bs2bsettingsdialog.ui" line="78"/>
+        <location filename="../bs2bsettingsdialog.cpp" line="45"/>
         <source>C.Moy</source>
         <translation type="unfinished">C.Moy</translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.ui" line="85"/>
+        <location filename="../bs2bsettingsdialog.cpp" line="50"/>
         <source>J. Meier</source>
         <translation type="unfinished">J. Meier</translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.cpp" line="61"/>
+        <location filename="../bs2bsettingsdialog.cpp" line="77"/>
         <source>%1 Hz, %2 us</source>
         <translation type="unfinished">%1 Hz, %2 us</translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.cpp" line="68"/>
+        <location filename="../bs2bsettingsdialog.cpp" line="84"/>
         <source>%1 dB</source>
         <translation type="unfinished">%1 dB</translation>
     </message>

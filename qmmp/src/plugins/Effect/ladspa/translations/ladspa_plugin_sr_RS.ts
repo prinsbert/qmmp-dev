@@ -62,22 +62,22 @@
         <translation type="unfinished">&lt;</translation>
     </message>
     <message>
-        <location filename="../ladspasettingsdialog.ui" line="94"/>
+        <location filename="../ladspasettingsdialog.cpp" line="45"/>
         <source>Configure</source>
         <translation type="unfinished">Подеси</translation>
     </message>
     <message>
-        <location filename="../ladspasettingsdialog.cpp" line="46"/>
+        <location filename="../ladspasettingsdialog.cpp" line="50"/>
         <source>UID</source>
         <translation type="unfinished">уид</translation>
     </message>
     <message>
-        <location filename="../ladspasettingsdialog.cpp" line="47"/>
+        <location filename="../ladspasettingsdialog.cpp" line="51"/>
         <source>Name</source>
         <translation type="unfinished">име</translation>
     </message>
     <message>
-        <location filename="../ladspasettingsdialog.cpp" line="131"/>
+        <location filename="../ladspasettingsdialog.cpp" line="135"/>
         <source>This LADSPA plugin has no user controls</source>
         <translation type="unfinished">Овај ЛАДСПА прикључак нема корисничких контрола</translation>
     </message>
