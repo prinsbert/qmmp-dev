@@ -58,6 +58,12 @@ private:
     void createActions();
     void readSettings();
 
+    enum SkinPath
+    {
+        UserConfigPath = 0,
+        UserDataPath
+    };
+
     Ui::SkinnedSettings *m_ui;
     QString m_currentSkinPath;
     Skin *m_skin;
