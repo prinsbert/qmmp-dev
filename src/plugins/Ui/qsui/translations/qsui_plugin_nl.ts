@@ -568,11 +568,6 @@
         <translation>Afs&amp;pelen/Pauzeren</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="48"/>
-        <source>Space</source>
-        <translation>Spatiebalk</translation>
-    </message>
-    <message>
         <location filename="../qsuiactionmanager.cpp" line="49"/>
         <source>+10 seconds</source>
         <translation>+10 seconden</translation>
@@ -581,11 +576,6 @@
         <location filename="../qsuiactionmanager.cpp" line="50"/>
         <source>+30 seconds</source>
         <translation>+30 seconden</translation>
-    </message>
-    <message>
-        <location filename="../qsuiactionmanager.cpp" line="50"/>
-        <source>Ctrl+Right</source>
-        <translation>Ctrl+pijltje rechts</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="51"/>
@@ -601,11 +591,6 @@
         <location filename="../qsuiactionmanager.cpp" line="53"/>
         <source>-30 seconds</source>
         <translation>-30 seconden</translation>
-    </message>
-    <message>
-        <location filename="../qsuiactionmanager.cpp" line="53"/>
-        <source>Ctrl+Left</source>
-        <translation>Ctrl+pijltje links</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="54"/>

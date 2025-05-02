@@ -59,11 +59,6 @@
         <translation>&amp;Odtwarzaj/Wstrzymaj</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="44"/>
-        <source>Space</source>
-        <translation>Spacja</translation>
-    </message>
-    <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>+10 seconds</source>
         <translation>+10 sekund</translation>
@@ -72,11 +67,6 @@
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>+30 seconds</source>
         <translation>+30 sekund</translation>
-    </message>
-    <message>
-        <location filename="../skinnedactionmanager.cpp" line="46"/>
-        <source>Ctrl+Right</source>
-        <translation>Ctrl+Prawy</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
@@ -92,11 +82,6 @@
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>-30 seconds</source>
         <translation>-30 sekund</translation>
-    </message>
-    <message>
-        <location filename="../skinnedactionmanager.cpp" line="49"/>
-        <source>Ctrl+Left</source>
-        <translation>Ctrl+Lewy</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>

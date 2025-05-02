@@ -569,11 +569,6 @@
         <translation type="unfinished">&amp;Groti/Pristabdyti</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="48"/>
-        <source>Space</source>
-        <translation type="unfinished">Tarpas</translation>
-    </message>
-    <message>
         <location filename="../qsuiactionmanager.cpp" line="49"/>
         <source>+10 seconds</source>
         <translation type="unfinished"></translation>
@@ -581,11 +576,6 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="50"/>
         <source>+30 seconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qsuiactionmanager.cpp" line="50"/>
-        <source>Ctrl+Right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -601,11 +591,6 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="53"/>
         <source>-30 seconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qsuiactionmanager.cpp" line="53"/>
-        <source>Ctrl+Left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

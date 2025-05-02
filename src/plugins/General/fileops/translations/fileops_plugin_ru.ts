@@ -127,7 +127,7 @@
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="99"/>
-        <location filename="../fileopssettingsdialog.cpp" line="222"/>
+        <location filename="../fileopssettingsdialog.cpp" line="225"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
@@ -144,42 +144,42 @@
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="144"/>
-        <location filename="../fileopssettingsdialog.cpp" line="155"/>
+        <location filename="../fileopssettingsdialog.cpp" line="158"/>
         <source>File name pattern:</source>
         <translation>Формат имени файла:</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="127"/>
+        <location filename="../fileopssettingsdialog.cpp" line="130"/>
         <source>New action</source>
         <translation>Новое действие</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="184"/>
+        <location filename="../fileopssettingsdialog.cpp" line="187"/>
         <source>Command:</source>
         <translation>Команда:</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="219"/>
+        <location filename="../fileopssettingsdialog.cpp" line="222"/>
         <source>Copy</source>
         <translation>Копировать</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="220"/>
+        <location filename="../fileopssettingsdialog.cpp" line="223"/>
         <source>Rename</source>
         <translation>Переименовать</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="221"/>
+        <location filename="../fileopssettingsdialog.cpp" line="224"/>
         <source>Move</source>
         <translation>Переместить</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="223"/>
+        <location filename="../fileopssettingsdialog.cpp" line="226"/>
         <source>Execute</source>
         <translation>Выполнить</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="235"/>
+        <location filename="../fileopssettingsdialog.cpp" line="238"/>
         <source>Choose a directory</source>
         <translation>Выберите каталог</translation>
     </message>
