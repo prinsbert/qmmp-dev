@@ -123,7 +123,7 @@
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="99"/>
-        <location filename="../fileopssettingsdialog.cpp" line="222"/>
+        <location filename="../fileopssettingsdialog.cpp" line="225"/>
         <source>Remove</source>
         <translation>Kaldır</translation>
     </message>
@@ -140,42 +140,42 @@
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="144"/>
-        <location filename="../fileopssettingsdialog.cpp" line="155"/>
+        <location filename="../fileopssettingsdialog.cpp" line="158"/>
         <source>File name pattern:</source>
         <translation>Dosya adı deseni:</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="127"/>
+        <location filename="../fileopssettingsdialog.cpp" line="130"/>
         <source>New action</source>
         <translation>Yeni eylem</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="184"/>
+        <location filename="../fileopssettingsdialog.cpp" line="187"/>
         <source>Command:</source>
         <translation>Komut:</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="219"/>
+        <location filename="../fileopssettingsdialog.cpp" line="222"/>
         <source>Copy</source>
         <translation>Kopyala</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="220"/>
+        <location filename="../fileopssettingsdialog.cpp" line="223"/>
         <source>Rename</source>
         <translation>Yeniden adlandır</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="221"/>
+        <location filename="../fileopssettingsdialog.cpp" line="224"/>
         <source>Move</source>
         <translation>Taşı</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="223"/>
+        <location filename="../fileopssettingsdialog.cpp" line="226"/>
         <source>Execute</source>
         <translation>Yürüt</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="235"/>
+        <location filename="../fileopssettingsdialog.cpp" line="238"/>
         <source>Choose a directory</source>
         <translation>Dizin seç</translation>
     </message>

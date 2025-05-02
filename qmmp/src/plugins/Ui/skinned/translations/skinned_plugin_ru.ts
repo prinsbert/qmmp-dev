@@ -59,11 +59,6 @@
         <translation>&amp;Играть/пауза</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="44"/>
-        <source>Space</source>
-        <translation>Пробел</translation>
-    </message>
-    <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>+10 seconds</source>
         <translation>+10 секунд</translation>
@@ -72,11 +67,6 @@
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>+30 seconds</source>
         <translation>+30 секунд</translation>
-    </message>
-    <message>
-        <location filename="../skinnedactionmanager.cpp" line="46"/>
-        <source>Ctrl+Right</source>
-        <translation>Ctrl+Right</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
@@ -92,11 +82,6 @@
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>-30 seconds</source>
         <translation>-30 секунд</translation>
-    </message>
-    <message>
-        <location filename="../skinnedactionmanager.cpp" line="49"/>
-        <source>Ctrl+Left</source>
-        <translation>Ctrl+Left</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>

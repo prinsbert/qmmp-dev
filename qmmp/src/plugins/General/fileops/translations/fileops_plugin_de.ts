@@ -125,7 +125,7 @@
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="99"/>
-        <location filename="../fileopssettingsdialog.cpp" line="222"/>
+        <location filename="../fileopssettingsdialog.cpp" line="225"/>
         <source>Remove</source>
         <translation>Entfernen</translation>
     </message>
@@ -142,42 +142,42 @@
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="144"/>
-        <location filename="../fileopssettingsdialog.cpp" line="155"/>
+        <location filename="../fileopssettingsdialog.cpp" line="158"/>
         <source>File name pattern:</source>
         <translation>Dateinamensmuster:</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="127"/>
+        <location filename="../fileopssettingsdialog.cpp" line="130"/>
         <source>New action</source>
         <translation>Neue Aktion</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="184"/>
+        <location filename="../fileopssettingsdialog.cpp" line="187"/>
         <source>Command:</source>
         <translation>Befehl:</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="219"/>
+        <location filename="../fileopssettingsdialog.cpp" line="222"/>
         <source>Copy</source>
         <translation>Kopieren</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="220"/>
+        <location filename="../fileopssettingsdialog.cpp" line="223"/>
         <source>Rename</source>
         <translation>Umbenennen</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="221"/>
+        <location filename="../fileopssettingsdialog.cpp" line="224"/>
         <source>Move</source>
         <translation>Verschieben</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="223"/>
+        <location filename="../fileopssettingsdialog.cpp" line="226"/>
         <source>Execute</source>
         <translation>Ausführen</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="235"/>
+        <location filename="../fileopssettingsdialog.cpp" line="238"/>
         <source>Choose a directory</source>
         <translation>Ein Verzeichnis wählen</translation>
     </message>

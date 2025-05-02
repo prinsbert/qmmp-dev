@@ -59,11 +59,6 @@
         <translation type="unfinished">П&amp;усти/паузирај</translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="44"/>
-        <source>Space</source>
-        <translation type="unfinished">Размак</translation>
-    </message>
-    <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>+10 seconds</source>
         <translation type="unfinished"></translation>
@@ -71,11 +66,6 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>+30 seconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../skinnedactionmanager.cpp" line="46"/>
-        <source>Ctrl+Right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -91,11 +81,6 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>-30 seconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../skinnedactionmanager.cpp" line="49"/>
-        <source>Ctrl+Left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -568,11 +568,6 @@
         <translation>&amp;Воспр/приост</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="48"/>
-        <source>Space</source>
-        <translation>Пробел</translation>
-    </message>
-    <message>
         <location filename="../qsuiactionmanager.cpp" line="49"/>
         <source>+10 seconds</source>
         <translation>+10 секунд</translation>
@@ -581,11 +576,6 @@
         <location filename="../qsuiactionmanager.cpp" line="50"/>
         <source>+30 seconds</source>
         <translation>+30 секунд</translation>
-    </message>
-    <message>
-        <location filename="../qsuiactionmanager.cpp" line="50"/>
-        <source>Ctrl+Right</source>
-        <translation>Ctrl+Right</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="51"/>
@@ -601,11 +591,6 @@
         <location filename="../qsuiactionmanager.cpp" line="53"/>
         <source>-30 seconds</source>
         <translation>-30 секунд</translation>
-    </message>
-    <message>
-        <location filename="../qsuiactionmanager.cpp" line="53"/>
-        <source>Ctrl+Left</source>
-        <translation>Ctrl+Left</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="54"/>

@@ -123,7 +123,7 @@
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="99"/>
-        <location filename="../fileopssettingsdialog.cpp" line="222"/>
+        <location filename="../fileopssettingsdialog.cpp" line="225"/>
         <source>Remove</source>
         <translation>刪除</translation>
     </message>
@@ -140,42 +140,42 @@
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="144"/>
-        <location filename="../fileopssettingsdialog.cpp" line="155"/>
+        <location filename="../fileopssettingsdialog.cpp" line="158"/>
         <source>File name pattern:</source>
         <translation>檔名方案：</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="127"/>
+        <location filename="../fileopssettingsdialog.cpp" line="130"/>
         <source>New action</source>
         <translation>新動作</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="184"/>
+        <location filename="../fileopssettingsdialog.cpp" line="187"/>
         <source>Command:</source>
         <translation>命令：</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="219"/>
+        <location filename="../fileopssettingsdialog.cpp" line="222"/>
         <source>Copy</source>
         <translation>復制</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="220"/>
+        <location filename="../fileopssettingsdialog.cpp" line="223"/>
         <source>Rename</source>
         <translation>重命名</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="221"/>
+        <location filename="../fileopssettingsdialog.cpp" line="224"/>
         <source>Move</source>
         <translation>移動</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="223"/>
+        <location filename="../fileopssettingsdialog.cpp" line="226"/>
         <source>Execute</source>
         <translation>執行</translation>
     </message>
     <message>
-        <location filename="../fileopssettingsdialog.cpp" line="235"/>
+        <location filename="../fileopssettingsdialog.cpp" line="238"/>
         <source>Choose a directory</source>
         <translation>選取一個目錄</translation>
     </message>
