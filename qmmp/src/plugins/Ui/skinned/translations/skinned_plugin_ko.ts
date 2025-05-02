@@ -69,11 +69,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedactionmanager.cpp" line="45"/>
-        <source>Right</source>
-        <translation type="unfinished">오른쪽</translation>
-    </message>
-    <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>+30 seconds</source>
         <translation type="unfinished"></translation>
@@ -92,11 +87,6 @@
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>-10 seconds</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../skinnedactionmanager.cpp" line="48"/>
-        <source>Left</source>
-        <translation type="unfinished">왼쪽</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>

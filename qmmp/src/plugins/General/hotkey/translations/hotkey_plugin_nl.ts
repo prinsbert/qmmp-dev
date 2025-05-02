@@ -24,7 +24,7 @@
     <message>
         <location filename="../hotkeyfactory.cpp" line="32"/>
         <source>X11 Hotkey Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>X11-sneltoetsplug-in</translation>
     </message>
     <message>
         <location filename="../hotkeyfactory.cpp" line="34"/>

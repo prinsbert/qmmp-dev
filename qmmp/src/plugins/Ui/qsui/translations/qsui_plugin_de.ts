@@ -578,11 +578,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="49"/>
-        <source>Right</source>
-        <translation type="unfinished">Rechts</translation>
-    </message>
-    <message>
         <location filename="../qsuiactionmanager.cpp" line="50"/>
         <source>+30 seconds</source>
         <translation type="unfinished"></translation>
@@ -601,11 +596,6 @@
         <location filename="../qsuiactionmanager.cpp" line="52"/>
         <source>-10 seconds</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qsuiactionmanager.cpp" line="52"/>
-        <source>Left</source>
-        <translation type="unfinished">Links</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="53"/>
