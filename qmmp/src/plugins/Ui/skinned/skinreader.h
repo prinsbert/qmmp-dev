@@ -38,7 +38,7 @@ public:
 
     ~SkinReader();
 
-    void loadSkins(const QStringList &paths);
+    void loadSkins();
     const QStringList &skins() const;
     const QPixmap getPreview(const QString &skinPath) const;
 
@@ -46,8 +46,10 @@ public:
     static QPixmap getPixmapFromDirectory(const QString &name, const QString &path);
     static QString unpackedSkinPath();
     static QString defaultSkinPath();
+    static QStringList findSkins();
 
 private:
+    static QStringList skinPaths();
     static void untar(const QString &from, const QString &to, bool preview);
     static void unzip(const QString &from, const QString &to,  bool preview);
 
