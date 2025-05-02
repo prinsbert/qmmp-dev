@@ -230,7 +230,7 @@ void SkinnedSettings::readSettings()
     if(!QFile::exists(m_currentSkinPath))
         m_currentSkinPath = SkinReader::defaultSkinPath();
     m_ui->randomSkinCheckBox->setChecked(settings.value("random_skin"_L1).toBool());
-    m_ui->skinPathComboBox->setCurrentIndex(settings.value("config_path_for_skins"_L1, true).toBool() ? 0 : 1);
+    m_ui->skinPathComboBox->setCurrentIndex(settings.value("config_path_for_skins"_L1, true).toBool() ? UserConfigPath : UserDataPath);
     //view
     m_ui->skinCursorsCheckBox->setChecked(settings.value("skin_cursors"_L1, false).toBool());
     m_ui->hiddenCheckBox->setChecked(settings.value("start_hidden"_L1, false).toBool());
@@ -298,7 +298,7 @@ void SkinnedSettings::writeSettings()
     //skins
     settings.setValue("skin_path"_L1, m_currentSkinPath);
     settings.setValue("random_skin"_L1, m_ui->randomSkinCheckBox->isChecked());
-    settings.setValue("config_path_for_skins"_L1, m_ui->skinPathComboBox->currentIndex() == 0);
+    settings.setValue("config_path_for_skins"_L1, m_ui->skinPathComboBox->currentIndex() == UserConfigPath);
     settings.endGroup();
 }
 
