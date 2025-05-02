@@ -42,12 +42,10 @@ SkinnedActionManager::SkinnedActionManager(QObject *parent) :
         { PREVIOUS, createAction(tr("&Previous"), u"previous"_s, tr("Z"), u"media-skip-backward"_s) },
         { NEXT, createAction(tr("&Next"), u"next"_s, tr("B"), u"media-skip-forward"_s) },
         { PLAY_PAUSE, createAction(tr("&Play/Pause"), u"play_pause"_s, tr("Space")) },
-        //: Keyboard key name
-        { SEEK_FORWARD_10, createAction(tr("+10 seconds"), u"seek_forward_10"_s, tr("Right", "key"), u"media-seek-forward"_s) },
+        { SEEK_FORWARD_10, createAction(tr("+10 seconds"), u"seek_forward_10"_s, u"Right"_s, u"media-seek-forward"_s) },
         { SEEK_FORWARD_30, createAction(tr("+30 seconds"), u"seek_forward_30"_s, tr("Ctrl+Right"), u"media-seek-forward"_s) },
         { SEEK_FORWARD_60, createAction(tr("+60 seconds"), u"seek_forward_60"_s, QString(), u"media-seek-forward"_s) },
-        //: Keyboard key name
-        { SEEK_BACKWARD_10, createAction(tr("-10 seconds"), u"seek_backward_10"_s, tr("Left", "key"), u"media-seek-backward"_s) },
+        { SEEK_BACKWARD_10, createAction(tr("-10 seconds"), u"seek_backward_10"_s, u"Left"_s, u"media-seek-backward"_s) },
         { SEEK_BACKWARD_30, createAction(tr("-30 seconds"), u"seek_backward_20"_s, tr("Ctrl+Left"), u"media-seek-backward"_s) },
         { SEEK_BACKWARD_60, createAction(tr("-60 seconds"), u"seek_backward_30"_s, QString(), u"media-seek-backward"_s) },
         { JUMP, createAction(tr("&Jump to Track"), u"jump"_s, tr("J"), u"go-up"_s) },
