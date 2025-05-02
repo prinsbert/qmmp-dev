@@ -44,10 +44,11 @@ SkinReader::SkinReader(QObject *parent)
 SkinReader::~SkinReader()
 {}
 
-void SkinReader::loadSkins(const QStringList &paths)
+void SkinReader::loadSkins()
 {
     m_skins.clear();
     m_previewHash.clear();
+    QStringList paths = skinPaths();
     QFileInfoList infoList;
     //find all file and directories
     for(const QString &path : std::as_const(paths))
@@ -192,6 +193,48 @@ QString SkinReader::unpackedSkinPath()
 QString SkinReader::defaultSkinPath()
 {
     return QStringLiteral(":/glare");
+}
+
+QStringList SkinReader::findSkins()
+{
+    static const QStringList filters = {
+        u"*.tgz"_s, u"*.tar.gz"_s, u"*.tar.bz2"_s, u"*.zip"_s, u"*.wsz"_s
+    };
+
+    QStringList paths = skinPaths();
+    QStringList skins;
+    QFileInfoList infoList;
+    //find all file and directories
+    for(const QString &path : std::as_const(paths))
+    {
+        QDir dir(path);
+        dir.setSorting(QDir::Name);
+        infoList << dir.entryInfoList(filters, QDir::Files | QDir::Hidden | QDir::Dirs | QDir::NoDotAndDotDot);
+        infoList << dir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
+    }
+
+    for(const QFileInfo &info : std::as_const(infoList))
+        skins << info.canonicalFilePath();
+
+    return skins;
+}
+
+QStringList SkinReader::skinPaths()
+{
+    QStringList paths = {
+        Qmmp::configDir() + QStringLiteral("/skins"),
+    #if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
+        qApp->applicationDirPath() + QStringLiteral("/skins")
+    #else
+        Qmmp::userDataPath() + QStringLiteral("/skins"),
+        Qmmp::dataPath() + QStringLiteral("/skins"),
+        //1.x version compatibility
+        QDir(qApp->applicationDirPath() +  QStringLiteral("/../share/qmmp-1/skins")).absolutePath()
+    #endif
+    };
+
+    paths.removeDuplicates();
+    return paths;
 }
 
 #if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)

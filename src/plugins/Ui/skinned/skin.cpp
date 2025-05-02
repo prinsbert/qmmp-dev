@@ -29,6 +29,7 @@
 #include <QAction>
 #include <QTextStream>
 #include <QStringList>
+#include <QRandomGenerator>
 #ifdef Q_OS_WIN
 #include <QApplication>
 #endif
@@ -40,23 +41,36 @@
 
 Skin *Skin::m_instance = nullptr;
 
-Skin::Skin(QObject *parent) : QObject (parent)
+Skin::Skin(QObject *parent) : QObject(parent)
 {
     m_instance = this;
     QSettings settings;
     QString path = settings.value("Skinned/skin_path"_L1, SkinReader::defaultSkinPath()).toString();
-#ifdef Q_OS_WIN
-    if(Qmmp::isPortable())
-        path.prepend(QApplication::applicationDirPath() + QLatin1Char('/'));
-#endif
     m_double_size = settings.value("Skinned/double_size"_L1, false).toBool();
     m_antialiasing = settings.value("Skinned/antialiasing"_L1, false).toBool();
     ACTION(SkinnedActionManager::WM_DOUBLE_SIZE)->setChecked(m_double_size);
     ACTION(SkinnedActionManager::WM_ANTIALIASING)->setChecked(m_antialiasing);
-    setSkin(QDir::cleanPath(path), false);
     /* skin directories */
     QDir::root().mkpath(Qmmp::userDataPath() + u"/skins"_s);
     QDir::root().mkpath(Qmmp::configDir() + u"/skins"_s);
+
+    if(!settings.value("Skinned/random_skin"_L1).toBool())
+    {
+        setSkin(QDir::cleanPath(path), false);
+    }
+    else //random skin
+    {
+        QStringList skins = SkinReader::findSkins();
+        if(!skins.isEmpty())
+        {
+            int i = QRandomGenerator::global()->bounded(skins.size());
+            setSkin(skins.at(i), true);
+        }
+        else
+        {
+            setSkin(QDir::cleanPath(path), false);
+        }
+    }
 }
 
 Skin::~Skin()

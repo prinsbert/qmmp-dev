@@ -143,21 +143,7 @@ void SkinnedSettings::createActions()
 
 void SkinnedSettings::loadSkins()
 {
-    QStringList skinPaths = {
-        Qmmp::configDir() + QStringLiteral("/skins"),
-#if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
-        qApp->applicationDirPath() + QStringLiteral("/skins")
-#else
-        Qmmp::userDataPath() + QStringLiteral("/skins"),
-        Qmmp::dataPath() + QStringLiteral("/skins"),
-        //1.x version compatibility
-        QDir(qApp->applicationDirPath() +  QStringLiteral("/../share/qmmp-1/skins")).absolutePath()
-#endif
-    };
-
-    skinPaths.removeDuplicates();
-
-    m_reader->loadSkins(skinPaths);
+    m_reader->loadSkins();
     m_ui->listWidget->clear();
 
     //default skin
