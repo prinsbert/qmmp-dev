@@ -68,7 +68,7 @@ FileOps::FileOps(QObject *parent) : QObject(parent)
         {
             QAction *action = new QAction(name, this);
             action->setData(data);
-            action->setShortcut(settings.value(QStringLiteral("hotkey_%1").arg(i)).toString());
+            action->setShortcut(QKeySequence(settings.value(QStringLiteral("hotkey_%1").arg(i)).toString(), QKeySequence::PortableText));
             connect(action, &QAction::triggered, this, &FileOps::execAction);
             UiHelper::instance()->addAction(action, UiHelper::PLAYLIST_MENU);
         }

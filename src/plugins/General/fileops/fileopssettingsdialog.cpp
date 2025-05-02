@@ -59,7 +59,9 @@ FileOpsSettingsDialog::FileOpsSettingsDialog(QWidget *parent)
         nameItem->setData(CommandRole, settings.value(QStringLiteral("command_%1").arg(i)).toString());
 
         QTableWidgetItem *hotkeyItem = new QTableWidgetItem();
-        hotkeyItem->setText(settings.value(QStringLiteral("hotkey_%1").arg(i)).toString());
+        QKeySequence key(settings.value(QStringLiteral("hotkey_%1").arg(i)).toString(), QKeySequence::PortableText);
+        hotkeyItem->setText(key.toString(QKeySequence::NativeText));
+        hotkeyItem->setData(Qt::UserRole, key);
         hotkeyItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
         m_ui->tableWidget->setCellWidget(i, 0, checkBox);
@@ -108,7 +110,8 @@ void FileOpsSettingsDialog::accept()
         else
             settings.setValue(QStringLiteral("pattern_%1").arg(i), item->data(PatternRole).toString());
 
-        settings.setValue(QStringLiteral("hotkey_%1").arg(i), m_ui->tableWidget->item(i, 3)->text());
+        QTableWidgetItem *shortcutItem = m_ui->tableWidget->item(i, 3);
+        settings.setValue(QStringLiteral("hotkey_%1").arg(i), shortcutItem->data(Qt::UserRole).value<QKeySequence>().toString());
     }
     settings.endGroup();
     QDialog::accept();
@@ -239,8 +242,11 @@ void FileOpsSettingsDialog::on_destButton_clicked()
 
 void FileOpsSettingsDialog::on_tableWidget_itemDoubleClicked(QTableWidgetItem *item)
 {
-    ShortcutDialog *dialog = new ShortcutDialog(item->text(), this);
-    if(m_ui->tableWidget->column(item) == 3 && dialog->exec() == QDialog::Accepted)
-        item->setText(dialog->key().toString());
+    ShortcutDialog *dialog = new ShortcutDialog(item->data(Qt::UserRole).value<QKeySequence>(), this);
+    if(item->column() == 3 && dialog->exec() == QDialog::Accepted)
+    {
+        item->setText(dialog->key().toString(QKeySequence::NativeText));
+        item->setData(Qt::UserRole, dialog->key());
+    }
     dialog->deleteLater();
 }
