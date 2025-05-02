@@ -30,6 +30,7 @@ ShortcutDialog::ShortcutDialog(const QKeySequence &key, QWidget *parent)
     m_ui->keyLineEdit->setText(key.toString(QKeySequence::NativeText));
     QPushButton *button = m_ui->buttonBox->addButton(tr("Clear"), QDialogButtonBox::ResetRole);
     connect(button, &QPushButton::clicked, m_ui->keyLineEdit, &QLineEdit::clear);
+    connect(button, &QPushButton::clicked, this, [this] { m_key = QKeySequence(); });
     connect(this, &QDialog::accepted, this, [this] { releaseKeyboard(); });
     connect(this, &QDialog::rejected, this, [this] { releaseKeyboard(); });
 }
@@ -42,7 +43,7 @@ ShortcutDialog::~ShortcutDialog()
 void ShortcutDialog::keyPressEvent(QKeyEvent *event)
 {
     int key = event->key();
-    switch (key)
+    switch(key)
     {
     case Qt::Key_Shift:
     case Qt::Key_Control:
