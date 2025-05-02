@@ -48,6 +48,9 @@ SkinnedSettings::SkinnedSettings(QWidget *parent) : QWidget(parent), m_ui(new Ui
     connect(m_ui->extraRowFontButton, &QToolButton::clicked, this, [this] { selectFont(m_ui->extraRowFontLabel); });
     connect(m_ui->headerFontButton, &QToolButton::clicked, this, [this] { selectFont(m_ui->headerFontLabel); });
 
+    m_ui->skinPathComboBox->addItem(Qmmp::configDir() + QStringLiteral("/skins"));
+    m_ui->skinPathComboBox->addItem(Qmmp::userDataPath() + QStringLiteral("/skins"));
+
     readSettings();
     loadSkins();
     loadFonts();
@@ -83,7 +86,7 @@ void SkinnedSettings::on_skinInstallButton_clicked()
     for(const QString &path : std::as_const(files))
     {
         QFile file(path);
-        file.copy(Qmmp::configDir() + u"/skins/"_s + QFileInfo(path).fileName());
+        file.copy(m_ui->skinPathComboBox->currentText() + QLatin1Char('/') + QFileInfo(path).fileName());
     }
     loadSkins();
 }
@@ -222,11 +225,14 @@ void SkinnedSettings::readSettings()
     m_ui->mwTransparencySlider->setValue(100 - settings.value("mw_opacity"_L1, 1.0).toDouble()*100);
     m_ui->eqTransparencySlider->setValue(100 - settings.value("eq_opacity"_L1, 1.0).toDouble()*100);
     m_ui->plTransparencySlider->setValue(100 - settings.value("pl_opacity"_L1, 1.0).toDouble()*100);
-    //view
-    m_ui->skinCursorsCheckBox->setChecked(settings.value("skin_cursors"_L1, false).toBool());
+    //skins
     m_currentSkinPath = settings.value("skin_path"_L1, SkinReader::defaultSkinPath()).toString();
     if(!QFile::exists(m_currentSkinPath))
         m_currentSkinPath = SkinReader::defaultSkinPath();
+    m_ui->randomSkinCheckBox->setChecked(settings.value("random_skin"_L1).toBool());
+    m_ui->skinPathComboBox->setCurrentIndex(settings.value("config_path_for_skins"_L1, true).toBool() ? 0 : 1);
+    //view
+    m_ui->skinCursorsCheckBox->setChecked(settings.value("skin_cursors"_L1, false).toBool());
     m_ui->hiddenCheckBox->setChecked(settings.value("start_hidden"_L1, false).toBool());
     m_ui->hideOnCloseCheckBox->setChecked(settings.value("hide_on_close"_L1, false).toBool());
     m_ui->windowTitleLineEdit->setText(settings.value("window_title_format"_L1, u"%if(%p,%p - %t,%t)"_s).toString());
@@ -267,7 +273,6 @@ void SkinnedSettings::writeSettings()
     settings.setValue("pl_opacity"_L1, 1.0 - (double)m_ui->plTransparencySlider->value()/100);
     settings.setValue("bitmap_font"_L1, m_ui->useBitmapCheckBox->isChecked());
     settings.setValue("skin_cursors"_L1, m_ui->skinCursorsCheckBox->isChecked());
-    settings.setValue("skin_path"_L1, m_currentSkinPath);
     settings.setValue("start_hidden"_L1, m_ui->hiddenCheckBox->isChecked());
     settings.setValue("hide_on_close"_L1, m_ui->hideOnCloseCheckBox->isChecked());
     settings.setValue("window_title_format"_L1, m_ui->windowTitleLineEdit->text());
@@ -290,6 +295,10 @@ void SkinnedSettings::writeSettings()
     settings.setValue("pl_current_bg_color"_L1, m_ui->plCurrentTrackBgColor->colorName());
     settings.setValue("pl_override_group_bg"_L1, m_ui->plOverrideGroupBgCheckBox->isChecked());
     settings.setValue("pl_override_current_bg"_L1, m_ui->plOverrideCurrentBgCheckBox->isChecked());
+    //skins
+    settings.setValue("skin_path"_L1, m_currentSkinPath);
+    settings.setValue("random_skin"_L1, m_ui->randomSkinCheckBox->isChecked());
+    settings.setValue("config_path_for_skins"_L1, m_ui->skinPathComboBox->currentIndex() == 0);
     settings.endGroup();
 }
 
