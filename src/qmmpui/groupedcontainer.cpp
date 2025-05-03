@@ -52,15 +52,18 @@ void GroupedContainer::addTrack(PlayListTrack *track)
             m_groups[i]->m_trackList.append(track);
             m_groups[i]->m_title2.clear();
             m_tracks.insert(lastIndex + 1, track);
+            track->m_track_index = lastIndex + 1;
             m_update = true;
             return;
         }
     }
+    //create new group
     PlayListGroup *group = new PlayListGroup(track->groupName());
     group->m_trackList.append(track);
     group->m_title2.clear();
     m_tracks.append(track);
     m_groups.append(group);
+    track->m_track_index = m_tracks.count() - 1;
 
     if(!m_update)
     {
