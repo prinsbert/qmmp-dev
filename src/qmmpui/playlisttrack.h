@@ -89,7 +89,6 @@ public:
     bool isGroup() const override;
     /*!
      * Returns the index of the track.
-     * Default implementation returns -1.
      */
     int trackIndex() const override;
     /*!
