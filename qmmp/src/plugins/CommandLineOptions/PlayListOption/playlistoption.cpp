@@ -109,7 +109,7 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
         int pl_id = args.isEmpty() ? pl_manager->currentPlayListIndex() : args.constFirst().toInt() - 1;
         PlayListModel *model = pl_manager->playListAt(pl_id);
         if(!model)
-            return tr("Invalid playlist ID") + QChar::LineFeed;
+            return tr("Invalid playlist ID");
         for(int i = 0; i < model->trackCount(); ++i)
         {
             PlayListTrack *track = model->track(i);
@@ -125,17 +125,17 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
     case PL_PLAY:
     {
         if(args.count() > 2 || args.isEmpty())
-            return tr("Invalid number of arguments") + QChar::LineFeed;
+            return tr("Invalid number of arguments");
 
         int pl_id = (args.count() == 1) ? pl_manager->currentPlayListIndex() : args.constFirst().toInt() - 1;
         int track_number = (args.count() == 1) ? args.constFirst().toInt() - 1 : args.at(1).toInt() - 1;
         PlayListModel *model = pl_manager->playListAt(pl_id);
         if(!model)
-            return tr("Invalid playlist ID") + QChar::LineFeed;
+            return tr("Invalid playlist ID");
 
         PlayListTrack *track = model->findTrack(track_number);
         if(!track)
-            return tr("Invalid track ID") + QChar::LineFeed;
+            return tr("Invalid track ID");
         player->stop();
         pl_manager->activatePlayList(model);
         pl_manager->selectPlayList(model);
