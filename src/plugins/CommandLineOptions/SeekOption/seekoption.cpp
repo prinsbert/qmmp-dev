@@ -61,7 +61,7 @@ QString SeekOption::executeCommand(int id, const QStringList &args, const QStrin
         seek_pos = match.captured(1).toInt() * 60 + match.captured(2).toInt();
 
     if(seek_pos < 0)
-        return tr("Invalid position specified") + QChar::LineFeed;
+        return tr("Invalid position specified");
 
     switch (id) {
     case SEEK: //seek absolute

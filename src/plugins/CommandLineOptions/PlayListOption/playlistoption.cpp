@@ -97,9 +97,9 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
         for(int i = 0; i <  names.count(); ++i)
         {
             if(i == pl_manager->currentPlayListIndex())
-                out += QStringLiteral("%1. %2 [*]\n").arg(i+1).arg(names.at(i));
+                out += QStringLiteral("%1. %2 [*]\n").arg(i + 1).arg(names.at(i));
             else
-                out += QStringLiteral("%1. %2\n").arg(i+1).arg(names.at(i));
+                out += QStringLiteral("%1. %2\n").arg(i + 1).arg(names.at(i));
         }
     }
         break;
@@ -116,7 +116,9 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
             out += QStringLiteral("%1. %2").arg(track->trackIndex() + 1).arg(formatter.format(track));
             if(i == model->currentIndex())
                 out += u" [*]"_s;
-            out += QChar::LineFeed;
+
+            if(i != model->trackCount() - 1)
+                out += QChar::LineFeed;
         }
     }
         break;
@@ -168,7 +170,7 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
         int pl_id= args.isEmpty() ? pl_manager->currentPlayListIndex() : args.constFirst().toInt() - 1;
         PlayListModel *model = pl_manager->playListAt(pl_id);
         if(!model)
-            return tr("Invalid playlist ID") + QChar::LineFeed;
+            return tr("Invalid playlist ID");
         model->clear();
     }
         break;
@@ -182,7 +184,7 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
         out += u"SHUFFLE:             "_s + boolToText(ui_settings->isShuffle()) + QChar::LineFeed;
         out += u"REPEAT PLAYLIST:     "_s + boolToText(ui_settings->isRepeatableList()) + QChar::LineFeed;
         out += u"REPEAT TRACK:        "_s + boolToText(ui_settings->isRepeatableTrack()) + QChar::LineFeed;
-        out += u"NO PLAYLIST ADVANCE: "_s + boolToText(ui_settings->isNoPlayListAdvance()) + QChar::LineFeed;
+        out += u"NO PLAYLIST ADVANCE: "_s + boolToText(ui_settings->isNoPlayListAdvance());
         break;
     default:
         ;
