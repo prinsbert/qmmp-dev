@@ -427,7 +427,7 @@ void QMMPStarter::writeCommand()
     m_socket->flush();
     //reading answer
     while(m_socket->waitForReadyRead(1500))
-        cout << m_socket->readAll().constData();
+        cout << m_socket->readAll().trimmed().constData() << endl;
 
 #ifndef Q_OS_WIN
     if (argString.isEmpty())
