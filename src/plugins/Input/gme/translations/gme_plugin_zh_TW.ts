@@ -6,7 +6,7 @@
     <message>
         <location filename="../decodergmefactory.cpp" line="37"/>
         <source>GME Plugin</source>
-        <translation>GME 外掛</translation>
+        <translation>GME 插件</translation>
     </message>
     <message>
         <location filename="../decodergmefactory.cpp" line="42"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../gmesettingsdialog.ui" line="14"/>
         <source>GME Plugin Settings</source>
-        <translation>GME 外掛設定</translation>
+        <translation>GME 插件設定</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="34"/>

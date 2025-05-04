@@ -26,7 +26,7 @@
     <message>
         <location filename="../copypaste.cpp" line="45"/>
         <source>&amp;Paste</source>
-        <translation>貼上(&amp;P)</translation>
+        <translation>暫停</translation>
     </message>
     <message>
         <location filename="../copypaste.cpp" line="46"/>

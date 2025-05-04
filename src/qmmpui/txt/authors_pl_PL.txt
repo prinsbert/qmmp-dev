@@ -6,7 +6,7 @@ Byli programiści:
 
     Artur Guzik <aguzik88@gmail.com> - wtyczka powiadamiania kde4, ulepszenia ikony w zasobniku
     Vladimir Kuznetsov <vovanec@gmail.com> - wygląd i wiele ulepszeń
-    Yuriy Zhuravlev <stalkerg@gmail.com>  - wtyczki JACK i OSS 
+    Yuriy Zhuravlev <stalkerg@gmail.com>  - wtyczki JACK i OSS
 
 Grafika:
 

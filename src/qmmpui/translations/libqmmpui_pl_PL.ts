@@ -1059,7 +1059,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="334"/>
         <source>kbps</source>
-        <translation>kbps</translation>
+        <translation>kb/s</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="335"/>

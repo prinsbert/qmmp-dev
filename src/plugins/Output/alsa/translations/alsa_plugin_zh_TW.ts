@@ -69,7 +69,7 @@
     <message>
         <location filename="../outputalsafactory.cpp" line="31"/>
         <source>ALSA Plugin</source>
-        <translation>ALSA 外掛</translation>
+        <translation>ALSA插件</translation>
     </message>
     <message>
         <location filename="../outputalsafactory.cpp" line="55"/>

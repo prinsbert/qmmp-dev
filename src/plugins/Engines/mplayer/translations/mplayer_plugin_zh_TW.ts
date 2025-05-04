@@ -6,7 +6,7 @@
     <message>
         <location filename="../mplayerenginefactory.cpp" line="33"/>
         <source>Mplayer Plugin</source>
-        <translation>Mplayer 外掛</translation>
+        <translation>Mplayer插件</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="36"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../mplayerenginefactory.cpp" line="73"/>
         <source>About MPlayer Plugin</source>
-        <translation>關於 Mplayer 外掛</translation>
+        <translation>關於 Mplayer插件</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="74"/>
         <source>Qmmp MPlayer Plugin</source>
-        <translation>Qmmp Mplayer 外掛</translation>
+        <translation>Qmmp Mplayer插件</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="75"/>

@@ -6,7 +6,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="177"/>
         <source>MPEG Plugin</source>
-        <translation>MPEG 外掛</translation>
+        <translation>MPEG 插件</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="180"/>

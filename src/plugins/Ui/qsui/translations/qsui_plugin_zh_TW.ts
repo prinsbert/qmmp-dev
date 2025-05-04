@@ -540,7 +540,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="46"/>
         <source>&amp;Previous</source>
-        <translation>上一個(&amp;P)</translation>
+        <translation>上一個</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="46"/>
@@ -685,7 +685,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="71"/>
         <source>Volume &amp;+</source>
-        <translation>音量增加(&amp;+)</translation>
+        <translation>音量增加</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="71"/>
@@ -695,7 +695,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="72"/>
         <source>Volume &amp;-</source>
-        <translation>音量降低(&amp;-)</translation>
+        <translation>音量降低</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="72"/>
@@ -725,7 +725,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="76"/>
         <source>&amp;Add Directory</source>
-        <translation>新增目錄(&amp;D)</translation>
+        <translation>新增目錄</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="76"/>
@@ -735,7 +735,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="77"/>
         <source>&amp;Add Url</source>
-        <translation>新增網址(&amp;U)</translation>
+        <translation>新增網址</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="77"/>
@@ -820,7 +820,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="89"/>
         <source>&amp;New List</source>
-        <translation>新增列表(&amp;T)</translation>
+        <translation>新增列表</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="89"/>
@@ -1229,7 +1229,7 @@
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="214"/>
         <source>&amp;Add Directory</source>
-        <translation>新增目錄(&amp;D)</translation>
+        <translation>新增目錄</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="219"/>
@@ -1441,7 +1441,7 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="930"/>
         <source>&amp;New PlayList</source>
-        <translation>新增播放列表(&amp;N)</translation>
+        <translation>新增播放列表</translation>
     </message>
 </context>
 <context>

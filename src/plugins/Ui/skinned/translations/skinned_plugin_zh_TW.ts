@@ -26,7 +26,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>&amp;Stop</source>
-        <translation>停止（&amp;S）</translation>
+        <translation>停止</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="41"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>&amp;Previous</source>
-        <translation>上一個(&amp;P)</translation>
+        <translation>上一個</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
@@ -186,7 +186,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>Volume &amp;+</source>
-        <translation>音量增加(&amp;+)</translation>
+        <translation>音量增加</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="61"/>
@@ -196,7 +196,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>Volume &amp;-</source>
-        <translation>音量降低(&amp;-)</translation>
+        <translation>音量降低</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="62"/>
@@ -226,7 +226,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="66"/>
         <source>&amp;Add Directory</source>
-        <translation>新增目錄(&amp;D)</translation>
+        <translation>新增目錄</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="66"/>
@@ -236,7 +236,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>&amp;Add Url</source>
-        <translation>新增網址(&amp;U)</translation>
+        <translation>新增網址</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="67"/>
@@ -321,7 +321,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>&amp;New List</source>
-        <translation>新增列表(&amp;T)</translation>
+        <translation>新增列表</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="79"/>
@@ -876,7 +876,7 @@
     <message>
         <location filename="../skinnedplaylist.cpp" line="597"/>
         <source>&amp;New PlayList</source>
-        <translation>新增播放列表(&amp;N)</translation>
+        <translation>新增播放列表</translation>
     </message>
 </context>
 <context>

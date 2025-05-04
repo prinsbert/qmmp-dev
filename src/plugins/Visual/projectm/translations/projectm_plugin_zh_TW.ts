@@ -26,7 +26,7 @@
     <message>
         <location filename="../projectm4widget.cpp" line="166"/>
         <source>&amp;Previous Preset</source>
-        <translation>上一邊框形式(&amp;P)</translation>
+        <translation>上一邊框形式</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="166"/>
@@ -138,7 +138,7 @@
         <location filename="../projectmwidget.cpp" line="150"/>
         <location filename="../projectmwidget.cpp" line="162"/>
         <source>&amp;Previous Preset</source>
-        <translation>上一邊框形式(&amp;P)</translation>
+        <translation>上一邊框形式</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="150"/>

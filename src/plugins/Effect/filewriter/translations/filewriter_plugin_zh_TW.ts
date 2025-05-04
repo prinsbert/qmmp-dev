@@ -6,17 +6,17 @@
     <message>
         <location filename="../effectfilewriterfactory.cpp" line="30"/>
         <source>File Writer Plugin</source>
-        <translation>檔案寫入外掛</translation>
+        <translation>檔案寫入插件</translation>
     </message>
     <message>
         <location filename="../effectfilewriterfactory.cpp" line="50"/>
         <source>About File Writer Plugin</source>
-        <translation>關於檔案寫入外掛</translation>
+        <translation>關於檔案寫入插件</translation>
     </message>
     <message>
         <location filename="../effectfilewriterfactory.cpp" line="51"/>
         <source>Qmmp File Writer Plugin</source>
-        <translation>Qmmp 檔案寫入外掛</translation>
+        <translation>Qmmp 檔案寫入插件</translation>
     </message>
     <message>
         <location filename="../effectfilewriterfactory.cpp" line="52"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../filewritersettingsdialog.ui" line="14"/>
         <source>File Writer Plugin Settings</source>
-        <translation>檔案寫入外掛設定</translation>
+        <translation>檔案寫入插件設定</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="29"/>

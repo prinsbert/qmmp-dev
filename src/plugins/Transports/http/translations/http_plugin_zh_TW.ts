@@ -6,7 +6,7 @@
     <message>
         <location filename="../httpinputfactory.cpp" line="33"/>
         <source>HTTP Plugin</source>
-        <translation>HTTP 外掛</translation>
+        <translation>HTTP插件</translation>
     </message>
     <message>
         <location filename="../httpinputfactory.cpp" line="52"/>

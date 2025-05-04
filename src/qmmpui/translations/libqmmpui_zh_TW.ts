@@ -288,7 +288,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="67"/>
         <source>Plugins</source>
-        <translation>外掛</translation>
+        <translation>插件</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="76"/>
