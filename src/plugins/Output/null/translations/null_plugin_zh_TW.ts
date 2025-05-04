@@ -6,17 +6,17 @@
     <message>
         <location filename="../outputnullfactory.cpp" line="30"/>
         <source>Null Plugin</source>
-        <translation>Null 外掛</translation>
+        <translation>Null插件</translation>
     </message>
     <message>
         <location filename="../outputnullfactory.cpp" line="55"/>
         <source>About Null Output Plugin</source>
-        <translation>關於 Null Output 外掛</translation>
+        <translation>關於 Null Output插件</translation>
     </message>
     <message>
         <location filename="../outputnullfactory.cpp" line="56"/>
         <source>Qmmp Null Output Plugin</source>
-        <translation>Qmmp Null Output 外掛</translation>
+        <translation>Qmmp Null Output插件</translation>
     </message>
     <message>
         <location filename="../outputnullfactory.cpp" line="57"/>

@@ -44,7 +44,7 @@
     <message>
         <location filename="../decodercuefactory.cpp" line="38"/>
         <source>CUE Plugin</source>
-        <translation>CUE 外掛</translation>
+        <translation>CUE 插件</translation>
     </message>
     <message>
         <location filename="../decodercuefactory.cpp" line="41"/>

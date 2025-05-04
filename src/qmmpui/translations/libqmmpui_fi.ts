@@ -36,7 +36,7 @@
     <message>
         <location filename="../aboutdialog.cpp" line="69"/>
         <source>Qt-based Multimedia Player (Qmmp)</source>
-        <translation>Qt-pohjainen multimediasoitin (Qmmp)</translation>
+        <translation>Qt-multimediasoitin (Qmmp)</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="72"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../aboutdialog.cpp" line="79"/>
         <source>(c) %1-%2 Qmmp Development Team</source>
-        <translation>(c) %1-%2 Qmmp kehitysryhmä</translation>
+        <translation>(c) %1-%2 Qmmp Development Team</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="84"/>
@@ -81,12 +81,12 @@
     <message>
         <location filename="../aboutdialog.cpp" line="126"/>
         <source>Output plugins:</source>
-        <translation>Laajennukset:</translation>
+        <translation>Ulostulon laajennukset:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="73"/>
         <source>Qt version: %1 (compiled with %2)</source>
-        <translation>Qt versio: %1 (tehty %2)</translation>
+        <translation>Qt-versio: %1 (tehty %2)</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="74"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../aboutdialog.cpp" line="120"/>
         <source>General plugins:</source>
-        <translation>Yleiset liitännäiset:</translation>
+        <translation>Yleiset laajennukset:</translation>
     </message>
 </context>
 <context>
@@ -288,7 +288,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="67"/>
         <source>Plugins</source>
-        <translation>Liitännäiset</translation>
+        <translation>Laajennukset</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="76"/>
@@ -304,7 +304,7 @@
         <location filename="../forms/configdialog.ui" line="94"/>
         <location filename="../forms/configdialog.ui" line="1002"/>
         <source>Audio</source>
-        <translation>Ääni</translation>
+        <translation>Audio</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="153"/>
@@ -319,7 +319,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="159"/>
         <source>Load metadata from files</source>
-        <translation>Lataa metatiedot tiedostoista</translation>
+        <translation>Lataa tiedostojen metatiedot</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="176"/>
@@ -341,7 +341,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="169"/>
         <source>Read tags while loading a playlist</source>
-        <translation>Lue tunnisteet ladatessasi soittolistaa</translation>
+        <translation>Lue tunnisteet soittolistaa ladatessa</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="193"/>
@@ -397,7 +397,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="336"/>
         <source>Auto-save playlist when modified</source>
-        <translation>Tallenna soittolista automaattisesti muokkauksen yhteydessä</translation>
+        <translation>Tallenna autom. soittolista muokatessa</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="343"/>
@@ -406,13 +406,13 @@
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="396"/>
-        <location filename="../configdialog.cpp" line="345"/>
+        <location filename="../configdialog.cpp" line="343"/>
         <source>Preferences</source>
         <translation>Asetukset</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="413"/>
-        <location filename="../configdialog.cpp" line="348"/>
+        <location filename="../configdialog.cpp" line="346"/>
         <source>Information</source>
         <translation>Tiedot</translation>
     </message>
@@ -489,12 +489,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="644"/>
         <source>Auto-paste URL from clipboard</source>
-        <translation>Liitä leikepöydältä URL automaattisesti</translation>
+        <translation>Liitä URL autom. leikepöydältä</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="654"/>
         <source>CUE Editor</source>
-        <translation>CUE -editori</translation>
+        <translation>CUE-editori</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="660"/>
@@ -580,7 +580,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="992"/>
         <source>Use  peak info to prevent clipping</source>
-        <translation>Käytä tietoja estääksesi huippujen leikkaamisen</translation>
+        <translation>Käytä piikkitietoja ja estä huippujen leikkaantuminen</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1008"/>
@@ -660,210 +660,210 @@
     <message>
         <location filename="../configdialog.cpp" line="69"/>
         <source>Disabled</source>
-        <translation>Pois käytöstä</translation>
+        <translation>Pois</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="76"/>
+        <location filename="../configdialog.cpp" line="74"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="77"/>
+        <location filename="../configdialog.cpp" line="75"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="208"/>
+        <location filename="../configdialog.cpp" line="206"/>
         <source>Transports</source>
         <translation>Liikenne</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="219"/>
+        <location filename="../configdialog.cpp" line="217"/>
         <source>Decoders</source>
         <translation>Purkajat</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="230"/>
+        <location filename="../configdialog.cpp" line="228"/>
         <source>Engines</source>
         <translation>Moottorit</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="242"/>
+        <location filename="../configdialog.cpp" line="240"/>
         <source>Effects</source>
         <translation>Tehosteet</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="253"/>
+        <location filename="../configdialog.cpp" line="251"/>
         <source>Visualization</source>
         <translation>Visualisointi</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="265"/>
+        <location filename="../configdialog.cpp" line="263"/>
         <source>General</source>
         <translation>Yleiset</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="276"/>
+        <location filename="../configdialog.cpp" line="274"/>
         <source>Output</source>
         <translation>Ulostulo</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="287"/>
+        <location filename="../configdialog.cpp" line="285"/>
         <source>File Dialogs</source>
         <translation>Tiedostoikkunat</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="299"/>
+        <location filename="../configdialog.cpp" line="297"/>
         <source>User Interfaces</source>
         <translation>Käyttöliittymät</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="358"/>
+        <location filename="../configdialog.cpp" line="356"/>
         <source>&lt;Autodetect&gt;</source>
         <translation>&lt;Autodetect&gt;</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="359"/>
+        <location filename="../configdialog.cpp" line="357"/>
         <source>Brazilian Portuguese</source>
         <translation>Brasilian portugali</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="360"/>
+        <location filename="../configdialog.cpp" line="358"/>
         <source>Chinese Simplified</source>
         <translation>Kiina yksinkertaistettu</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="361"/>
+        <location filename="../configdialog.cpp" line="359"/>
         <source>Chinese Traditional</source>
         <translation>Kiina perinteinen</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="362"/>
+        <location filename="../configdialog.cpp" line="360"/>
         <source>Czech</source>
         <translation>Tšekki</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="363"/>
+        <location filename="../configdialog.cpp" line="361"/>
         <source>Dutch</source>
         <translation>Hollanti</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="364"/>
+        <location filename="../configdialog.cpp" line="362"/>
         <source>English</source>
         <translation>Englanti</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="365"/>
+        <location filename="../configdialog.cpp" line="363"/>
         <source>French</source>
         <translation>Ranska</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="366"/>
+        <location filename="../configdialog.cpp" line="364"/>
         <source>Galician</source>
         <translation>Galician</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="367"/>
+        <location filename="../configdialog.cpp" line="365"/>
         <source>German</source>
         <translation>Saksa</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="368"/>
+        <location filename="../configdialog.cpp" line="366"/>
         <source>Greek</source>
         <translation>Kreikka</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="369"/>
+        <location filename="../configdialog.cpp" line="367"/>
         <source>Hebrew</source>
         <translation>Heprea</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="370"/>
+        <location filename="../configdialog.cpp" line="368"/>
         <source>Hungarian</source>
         <translation>Unkari</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="371"/>
+        <location filename="../configdialog.cpp" line="369"/>
         <source>Indonesian</source>
         <translation>Indonesia</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="372"/>
+        <location filename="../configdialog.cpp" line="370"/>
         <source>Italian</source>
         <translation>Italia</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="373"/>
+        <location filename="../configdialog.cpp" line="371"/>
         <source>Japanese</source>
         <translation>Japani</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="374"/>
+        <location filename="../configdialog.cpp" line="372"/>
         <source>Kazakh</source>
         <translation>Kazakstan</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="375"/>
+        <location filename="../configdialog.cpp" line="373"/>
         <source>Korean</source>
         <translation>Korea</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="376"/>
+        <location filename="../configdialog.cpp" line="374"/>
         <source>Lithuanian</source>
         <translation>Liettua</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="377"/>
+        <location filename="../configdialog.cpp" line="375"/>
         <source>Polish</source>
         <translation>Puola</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="378"/>
+        <location filename="../configdialog.cpp" line="376"/>
         <source>Portuguese</source>
         <translation>Portugali</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="379"/>
+        <location filename="../configdialog.cpp" line="377"/>
         <source>Russian</source>
         <translation>Venäjä</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="380"/>
+        <location filename="../configdialog.cpp" line="378"/>
         <source>Serbian</source>
         <translation>Serbia</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="381"/>
+        <location filename="../configdialog.cpp" line="379"/>
         <source>Slovak</source>
         <translation>Slovakia</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="382"/>
+        <location filename="../configdialog.cpp" line="380"/>
         <source>Swedish</source>
         <translation>Ruotsi</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="383"/>
+        <location filename="../configdialog.cpp" line="381"/>
         <source>Spanish</source>
         <translation>Espanja</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="384"/>
+        <location filename="../configdialog.cpp" line="382"/>
         <source>Turkish</source>
         <translation>Turkki</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="385"/>
+        <location filename="../configdialog.cpp" line="383"/>
         <source>Ukrainian</source>
         <translation>Ukraina</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="386"/>
+        <location filename="../configdialog.cpp" line="384"/>
         <source>Serbian (Ijekavian)</source>
         <translation>Serbia (Ijekavian)</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="387"/>
+        <location filename="../configdialog.cpp" line="385"/>
         <source>Serbian (Ekavian)</source>
         <translation>Serbia (Ekavian) </translation>
     </message>
@@ -906,12 +906,12 @@
     <message>
         <location filename="../coverviewer.cpp" line="35"/>
         <source>&amp;Save As...</source>
-        <translation>&amp;Tallenna nimellä...</translation>
+        <translation>&amp;Tallenna...</translation>
     </message>
     <message>
         <location filename="../coverviewer.cpp" line="68"/>
         <source>Save Cover As</source>
-        <translation>Tallenna kansikuva nimellä</translation>
+        <translation>Tallenna kansi...</translation>
     </message>
     <message>
         <location filename="../coverviewer.cpp" line="70"/>
@@ -1044,7 +1044,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="312"/>
         <source>Disc number</source>
-        <translation>Levyn numero</translation>
+        <translation>Levynumero</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="331"/>
@@ -1170,7 +1170,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="29"/>
         <source>Album Artist</source>
-        <translation>Albumin Artisti</translation>
+        <translation>Albumin artisti</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="32"/>
@@ -1180,12 +1180,12 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="33"/>
         <source>Track Number</source>
-        <translation>Kappalenumero</translation>
+        <translation>Kappale nro.</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="34"/>
         <source>Two-digit Track Number</source>
-        <translation>Kahden merkkin kappalenumero</translation>
+        <translation>Kaksimekkinen kappale nro.</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="38"/>
@@ -1236,7 +1236,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="68"/>
         <source>Parent Directory Path</source>
-        <translation>Ylätason kansion polku</translation>
+        <translation>Ylätason kansiopolku</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="70"/>
@@ -1410,7 +1410,7 @@
     <message>
         <location filename="../forms/shortcutdialog.ui" line="29"/>
         <source>Press the key combination you want to assign</source>
-        <translation>Paina näppäinyhdistelmä, jonka haluat käyttöön</translation>
+        <translation>Paina näppäinyhdistelmää, jota haluat käyttää</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="52"/>
@@ -1517,7 +1517,7 @@
     <message>
         <location filename="../uihelper.cpp" line="142"/>
         <source>Select one or more files to open</source>
-        <translation>Valitse yksi tai useampi tiedosto avausta varten</translation>
+        <translation>Valitse yksi tai useampi avattava tiedosto</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="154"/>
@@ -1533,7 +1533,7 @@
         <location filename="../uihelper.cpp" line="178"/>
         <location filename="../uihelper.cpp" line="202"/>
         <source>Playlist Files</source>
-        <translation>Soittolistatiedostot</translation>
+        <translation>Soittolistoja</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="180"/>
@@ -1551,7 +1551,7 @@
         <source>%1 already exists.
 Do you want to replace it?</source>
         <translation>%1 on jo olemassa.
-Haluatko korvata sen?</translation>
+Haluatko korvata?</translation>
     </message>
 </context>
 <context>

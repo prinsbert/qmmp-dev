@@ -27,22 +27,22 @@
     <message>
         <location filename="../historyfactory.cpp" line="31"/>
         <source>Listening History Plugin</source>
-        <translation>聆聽歷史外掛程式</translation>
+        <translation>聆聽歷史插件程式</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="51"/>
         <source>About Listening History Plugin</source>
-        <translation>關於聆聽歷史外掛程式</translation>
+        <translation>關於聆聽歷史插件程式</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="52"/>
         <source>Qmmp Listening History Plugin</source>
-        <translation>Qmmp 聆聽歷史外掛程式</translation>
+        <translation>Qmmp聆聽歷史插件程式</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="53"/>
         <source>This plugin collects information about listened tracks</source>
-        <translation>這個外掛程式會收集關於聆聽音軌的資訊</translation>
+        <translation>這個插件程式會收集關於聆聽音軌的資訊</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="54"/>
@@ -55,7 +55,7 @@
     <message>
         <location filename="../historysettingsdialog.ui" line="14"/>
         <source>Listening History Plugin Settings</source>
-        <translation>聆聽歷史外掛程式設定</translation>
+        <translation>聆聽歷史插件程式設定</translation>
     </message>
     <message>
         <location filename="../historysettingsdialog.ui" line="31"/>

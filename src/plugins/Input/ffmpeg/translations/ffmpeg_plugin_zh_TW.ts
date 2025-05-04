@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderffmpegfactory.cpp" line="144"/>
         <source>FFmpeg Plugin</source>
-        <translation>FFmpeg 外掛</translation>
+        <translation>FFmpeg 插件</translation>
     </message>
     <message>
         <location filename="../decoderffmpegfactory.cpp" line="150"/>

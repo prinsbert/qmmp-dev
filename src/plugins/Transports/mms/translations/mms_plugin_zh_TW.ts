@@ -6,7 +6,7 @@
     <message>
         <location filename="../mmsinputfactory.cpp" line="32"/>
         <source>MMS Plugin</source>
-        <translation>MMS 外掛</translation>
+        <translation>MMS插件</translation>
     </message>
     <message>
         <location filename="../mmsinputfactory.cpp" line="51"/>

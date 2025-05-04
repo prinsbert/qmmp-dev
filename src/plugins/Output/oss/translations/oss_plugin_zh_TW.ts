@@ -54,7 +54,7 @@
     <message>
         <location filename="../outputossfactory.cpp" line="36"/>
         <source>OSS Plugin</source>
-        <translation>OSS 外掛</translation>
+        <translation>OSS插件</translation>
     </message>
     <message>
         <location filename="../outputossfactory.cpp" line="55"/>

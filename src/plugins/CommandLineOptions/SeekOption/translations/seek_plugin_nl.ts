@@ -18,5 +18,10 @@
         <source>Seek backwards</source>
         <translation>Terugspoelen</translation>
     </message>
+    <message>
+        <location filename="../seekoption.cpp" line="65"/>
+        <source>Invalid position specified</source>
+        <translation>Ongeldige positie</translation>
+    </message>
 </context>
 </TS>

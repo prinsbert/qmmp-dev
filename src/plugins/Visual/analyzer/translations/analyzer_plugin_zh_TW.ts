@@ -155,7 +155,7 @@
     <message>
         <location filename="../visualanalyzerfactory.cpp" line="49"/>
         <source>About Analyzer Visual Plugin</source>
-        <translation>關於可視化解析器外掛</translation>
+        <translation>關於可視化解析器插件</translation>
     </message>
     <message>
         <location filename="../visualanalyzerfactory.cpp" line="50"/>

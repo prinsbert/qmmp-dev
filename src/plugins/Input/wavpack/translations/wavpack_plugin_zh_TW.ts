@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="38"/>
         <source>WavPack Plugin</source>
-        <translation>WavPack 外掛</translation>
+        <translation>WavPack插件</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="40"/>
