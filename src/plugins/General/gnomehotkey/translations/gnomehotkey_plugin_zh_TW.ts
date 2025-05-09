@@ -21,7 +21,7 @@
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="52"/>
         <source>This plugin adds support of the GNOME/Cinnamon hotkeys</source>
-        <translation>該插件添加了對 GNOME/Cinnamon 熱鍵的支持</translation>
+        <translation>該插件添加了對 GNOME/Cinnamon熱鍵的支持</translation>
     </message>
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="53"/>

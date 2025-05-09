@@ -203,7 +203,7 @@
     <message>
         <location filename="../visualprojectmfactory.cpp" line="52"/>
         <source>This plugin adds projectM visualization</source>
-        <translation>此插件添加 ProjectM 可視化</translation>
+        <translation>此插件添加 ProjectM可視化</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="53"/>

@@ -520,7 +520,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="44"/>
         <source>&amp;Pause</source>
-        <translation>貼上(&amp;P)</translation>
+        <translation>暫停</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="44"/>

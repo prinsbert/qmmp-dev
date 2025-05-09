@@ -26,7 +26,7 @@
     <message>
         <location filename="../mplayerenginefactory.cpp" line="75"/>
         <source>This plugin uses MPlayer as backend</source>
-        <translation>此插件使用 Mplayer 後端</translation>
+        <translation>此插件使用 Mplayer後端</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="76"/>

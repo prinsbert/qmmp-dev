@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="39"/>
         <source>XMP Plugin</source>
-        <translation>XMP 外掛</translation>
+        <translation>XMP 插件</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="54"/>
