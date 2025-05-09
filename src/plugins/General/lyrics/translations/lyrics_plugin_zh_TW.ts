@@ -39,7 +39,7 @@
     <message>
         <location filename="../lyricsfactory.cpp" line="69"/>
         <source>Qmmp Lyrics Plugin</source>
-        <translation>Qmmp 歌詞插件</translation>
+        <translation>Qmmp歌詞插件</translation>
     </message>
     <message>
         <location filename="../lyricsfactory.cpp" line="70"/>

@@ -16,7 +16,7 @@
     <message>
         <location filename="../decodergmefactory.cpp" line="101"/>
         <source>About GME Audio Plugin</source>
-        <translation>關於 Game 音頻文件</translation>
+        <translation>關於 Game 音頻插件</translation>
     </message>
     <message>
         <location filename="../decodergmefactory.cpp" line="102"/>
