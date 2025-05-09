@@ -7,6 +7,7 @@ Version 2.2.6
 * fixed seeking from command-line
 * fixed support for special keys in the shortcut editor dialog 
 * fixed track index calculation
+* fixed Chinese Traditional translation (Edouard.J.K Li)
 
 Version 2.2.5
 * fixed build without mpg123 or libmad
