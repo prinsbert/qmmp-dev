@@ -6,17 +6,17 @@
     <message>
         <location filename="../scrobblerfactory.cpp" line="31"/>
         <source>Scrobbler Plugin</source>
-        <translation>Scrobbler 外掛</translation>
+        <translation>Scrobbler 插件</translation>
     </message>
     <message>
         <location filename="../scrobblerfactory.cpp" line="51"/>
         <source>About Scrobbler Plugin</source>
-        <translation>關於 Scrobbler 外掛</translation>
+        <translation>關於 Scrobbler 插件</translation>
     </message>
     <message>
         <location filename="../scrobblerfactory.cpp" line="52"/>
         <source>Qmmp AudioScrobbler Plugin</source>
-        <translation>Qmmp Scrobbler 外掛</translation>
+        <translation>Qmmp Scrobbler 插件</translation>
     </message>
     <message>
         <location filename="../scrobblerfactory.cpp" line="53"/>

@@ -61,32 +61,32 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>+10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+10 sek</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>+30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+30 sek</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>+60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+60 sek</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>-10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-10 sek</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>-30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-30 sek</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>-60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-60 sek</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
@@ -1071,7 +1071,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="24"/>
         <source>Skins</source>
-        <translation>Skinit</translation>
+        <translation>Ulkoasut</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="57"/>
@@ -1086,12 +1086,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="102"/>
         <source>Skin install path:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ulkoasun asennuspolku:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="127"/>
         <source>Random skin on every startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Satunnainen ulkoasu joka käynnistyksellä</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="141"/>
@@ -1358,12 +1358,12 @@
     <message>
         <location filename="../skinnedsettings.cpp" line="84"/>
         <source>Select Skin Files</source>
-        <translation>Valitse skinitiedostot</translation>
+        <translation>Valitse ulkoasut</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="85"/>
         <source>Skin files</source>
-        <translation>Skinitiedostot</translation>
+        <translation>Ulkoasut</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="154"/>

@@ -71,17 +71,17 @@
         <translation>%1 - %2</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="354"/>
+        <location filename="../librarymodel.cpp" line="356"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="354"/>
+        <location filename="../librarymodel.cpp" line="356"/>
         <source>Unable to connect to database</source>
         <translation>Er kan geen verbinding met de databank worden gemaakt</translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="375"/>
+        <location filename="../librarymodel.cpp" line="377"/>
         <source>%n day(s)</source>
         <translation>
             <numerusform>%n dag</numerusform>
@@ -89,7 +89,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="376"/>
+        <location filename="../librarymodel.cpp" line="378"/>
         <source>%n hour(s)</source>
         <translation>
             <numerusform>%n uur</numerusform>
@@ -97,7 +97,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="377"/>
+        <location filename="../librarymodel.cpp" line="379"/>
         <source>%n minute(s)</source>
         <translation>
             <numerusform>%n minuut</numerusform>
@@ -105,7 +105,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="378"/>
+        <location filename="../librarymodel.cpp" line="380"/>
         <source>%n second(s)</source>
         <translation>
             <numerusform>%n seconde</numerusform>
@@ -113,45 +113,45 @@
         </translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="382"/>
+        <location filename="../librarymodel.cpp" line="384"/>
         <source>%1 %2 %3 %4</source>
         <comment>days hours minutes seconds</comment>
         <translation>%1 %2 %3 %4</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="384"/>
+        <location filename="../librarymodel.cpp" line="386"/>
         <source>%1 %2 %3</source>
         <comment>hours minutes seconds</comment>
         <translation>%1 %2 %3</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="386"/>
+        <location filename="../librarymodel.cpp" line="388"/>
         <source>%1 %2</source>
         <comment>minutes seconds</comment>
         <translation>%1 %2</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="389"/>
+        <location filename="../librarymodel.cpp" line="391"/>
         <source>Number of tracks: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Aantal nummers: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="390"/>
+        <location filename="../librarymodel.cpp" line="392"/>
         <source>Number of albums: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Aantal albums: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="391"/>
+        <location filename="../librarymodel.cpp" line="393"/>
         <source>Number of artists: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Aantal artiesten: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="392"/>
+        <location filename="../librarymodel.cpp" line="394"/>
         <source>Total duration: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Totale duur: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="395"/>
+        <location filename="../librarymodel.cpp" line="397"/>
         <source>Library Information</source>
         <translation>Verzamelingsinformatie</translation>
     </message>

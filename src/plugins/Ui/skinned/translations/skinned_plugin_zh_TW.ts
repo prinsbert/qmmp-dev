@@ -6,7 +6,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>&amp;Play</source>
-        <translation>播放(&amp;)</translation>
+        <translation>播放</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>&amp;Pause</source>
-        <translation>貼上(&amp;P)</translation>
+        <translation>暫停</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="40"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>&amp;Stop</source>
-        <translation>停止（&amp;S）</translation>
+        <translation>停止</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="41"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>&amp;Previous</source>
-        <translation>上一個(&amp;P)</translation>
+        <translation>上一曲</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>&amp;Next</source>
-        <translation>下一個</translation>
+        <translation>下一曲</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="43"/>
@@ -91,7 +91,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
         <source>&amp;Jump to Track</source>
-        <translation>跳到軌道</translation>
+        <translation>跳至軌道(&amp;J)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
@@ -466,12 +466,12 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="98"/>
         <source>&amp;About</source>
-        <translation>關於(&amp;A)</translation>
+        <translation>關於</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="99"/>
         <source>&amp;About Qt</source>
-        <translation>關於 Qt(&amp;Q)</translation>
+        <translation>關於Qt</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="100"/>
@@ -694,7 +694,7 @@
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
         <source>Restore Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>恢復預設值</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>
@@ -1121,7 +1121,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="332"/>
         <source>Use smooth scrolling</source>
-        <translation type="unfinished"></translation>
+        <translation>使用平滑滾動</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="353"/>

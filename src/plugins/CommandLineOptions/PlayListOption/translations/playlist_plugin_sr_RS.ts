@@ -55,18 +55,18 @@
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="112"/>
-        <location filename="../playlistoption.cpp" line="132"/>
-        <location filename="../playlistoption.cpp" line="171"/>
+        <location filename="../playlistoption.cpp" line="134"/>
+        <location filename="../playlistoption.cpp" line="173"/>
         <source>Invalid playlist ID</source>
         <translation>Неисправан ИД листе нумера</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="126"/>
+        <location filename="../playlistoption.cpp" line="128"/>
         <source>Invalid number of arguments</source>
         <translation>Неисправан број аргумената</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="136"/>
+        <location filename="../playlistoption.cpp" line="138"/>
         <source>Invalid track ID</source>
         <translation>Неисправан ИД нумере</translation>
     </message>
