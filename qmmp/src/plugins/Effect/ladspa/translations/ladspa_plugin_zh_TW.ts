@@ -6,7 +6,7 @@
     <message>
         <location filename="../effectladspafactory.cpp" line="30"/>
         <source>LADSPA Plugin</source>
-        <translation>LADSPA 外掛</translation>
+        <translation>LADSPA 插件</translation>
     </message>
     <message>
         <location filename="../effectladspafactory.cpp" line="49"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../ladspasettingsdialog.ui" line="14"/>
         <source>LADSPA Plugin Catalog</source>
-        <translation>LADSPA 外掛目錄</translation>
+        <translation>LADSPA 插件目錄</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="52"/>
@@ -79,7 +79,7 @@
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="135"/>
         <source>This LADSPA plugin has no user controls</source>
-        <translation>此 LADSPA 外掛無使用者控制項</translation>
+        <translation>此 LADSPA 插件無使用者控制項</translation>
     </message>
 </context>
 </TS>

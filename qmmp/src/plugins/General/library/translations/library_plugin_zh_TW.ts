@@ -71,83 +71,83 @@
         <translation>%1 - %2</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="354"/>
+        <location filename="../librarymodel.cpp" line="356"/>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="354"/>
+        <location filename="../librarymodel.cpp" line="356"/>
         <source>Unable to connect to database</source>
         <translation>無法連接至數據庫</translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="375"/>
+        <location filename="../librarymodel.cpp" line="377"/>
         <source>%n day(s)</source>
         <translation>
             <numerusform>%n 日</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="376"/>
+        <location filename="../librarymodel.cpp" line="378"/>
         <source>%n hour(s)</source>
         <translation>
             <numerusform>%n 小時</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="377"/>
+        <location filename="../librarymodel.cpp" line="379"/>
         <source>%n minute(s)</source>
         <translation>
             <numerusform>%n 分鐘</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="378"/>
+        <location filename="../librarymodel.cpp" line="380"/>
         <source>%n second(s)</source>
         <translation>
             <numerusform>%n 秒</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="382"/>
+        <location filename="../librarymodel.cpp" line="384"/>
         <source>%1 %2 %3 %4</source>
         <comment>days hours minutes seconds</comment>
         <translation>%1天 %2小時 %3分 %4秒</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="384"/>
+        <location filename="../librarymodel.cpp" line="386"/>
         <source>%1 %2 %3</source>
         <comment>hours minutes seconds</comment>
         <translation>%1小時 %2分 %3秒</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="386"/>
+        <location filename="../librarymodel.cpp" line="388"/>
         <source>%1 %2</source>
         <comment>minutes seconds</comment>
         <translation>%1分 %2秒</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="389"/>
+        <location filename="../librarymodel.cpp" line="391"/>
         <source>Number of tracks: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>曲目數量：&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="390"/>
+        <location filename="../librarymodel.cpp" line="392"/>
         <source>Number of albums: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>專輯數量：&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="391"/>
+        <location filename="../librarymodel.cpp" line="393"/>
         <source>Number of artists: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>藝人數量：&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="392"/>
+        <location filename="../librarymodel.cpp" line="394"/>
         <source>Total duration: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>總播放時間：&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="395"/>
+        <location filename="../librarymodel.cpp" line="397"/>
         <source>Library Information</source>
         <translation>媒體庫信息</translation>
     </message>

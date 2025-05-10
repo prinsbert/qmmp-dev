@@ -31,12 +31,12 @@
     <message>
         <location filename="../taskbarfactory.cpp" line="53"/>
         <source>Based on QtWinExtras module of the Qt Toolkit</source>
-        <translation>基於 Qt 工具組的 QtWinExtras 模組</translation>
+        <translation>基於 Qt工具組的QtWinExtras模組</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="54"/>
         <source>QtWinExtras developers:</source>
-        <translation>QtWinExtras 開發者：</translation>
+        <translation>QtWinExtras開發者：</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="55"/>

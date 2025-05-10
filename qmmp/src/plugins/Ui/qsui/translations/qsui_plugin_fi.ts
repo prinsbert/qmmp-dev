@@ -570,32 +570,32 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="49"/>
         <source>+10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+10 sek</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="50"/>
         <source>+30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+30 sek</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="51"/>
         <source>+60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+60 sek</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="52"/>
         <source>-10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-10 sek</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="53"/>
         <source>-30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-30 sek</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="54"/>
         <source>-60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-60 sek</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="55"/>
@@ -1323,153 +1323,153 @@
         <translation>Pikanäppäimet</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="414"/>
+        <location filename="../qsuimainwindow.cpp" line="415"/>
         <source>Menu Bar</source>
         <translation>Valikkopalkki</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="433"/>
+        <location filename="../qsuimainwindow.cpp" line="434"/>
         <source>Add new playlist</source>
         <translation>Lisää uusi soittolista</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="439"/>
+        <location filename="../qsuimainwindow.cpp" line="440"/>
         <source>Show all tabs</source>
         <translation>Näytä kaikki välilehdet</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="466"/>
+        <location filename="../qsuimainwindow.cpp" line="467"/>
         <source>Ctrl+0</source>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="472"/>
+        <location filename="../qsuimainwindow.cpp" line="473"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="477"/>
+        <location filename="../qsuimainwindow.cpp" line="478"/>
         <source>Position</source>
         <translation>Sijainti</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="479"/>
+        <location filename="../qsuimainwindow.cpp" line="480"/>
         <source>Volume</source>
         <translation>Voimakkuus:</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="481"/>
+        <location filename="../qsuimainwindow.cpp" line="482"/>
         <source>Balance</source>
         <translation>Tasapaino</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="484"/>
+        <location filename="../qsuimainwindow.cpp" line="485"/>
         <source>Quick Search</source>
         <translation>Pikahaku</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="543"/>
+        <location filename="../qsuimainwindow.cpp" line="544"/>
         <source>Edit Toolbars</source>
         <translation>Muokkaa työkalupalkkeja</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="544"/>
+        <location filename="../qsuimainwindow.cpp" line="545"/>
         <source>Edit Statusbar</source>
         <translation>Muokkaa tilapalkkia</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="546"/>
+        <location filename="../qsuimainwindow.cpp" line="547"/>
         <source>Sort List</source>
         <translation>Järjestä lista</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="548"/>
-        <location filename="../qsuimainwindow.cpp" line="564"/>
+        <location filename="../qsuimainwindow.cpp" line="549"/>
+        <location filename="../qsuimainwindow.cpp" line="565"/>
         <source>By Title</source>
         <translation>Nimi</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="549"/>
-        <location filename="../qsuimainwindow.cpp" line="565"/>
+        <location filename="../qsuimainwindow.cpp" line="550"/>
+        <location filename="../qsuimainwindow.cpp" line="566"/>
         <source>By Album</source>
         <translation>Albumi</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="550"/>
-        <location filename="../qsuimainwindow.cpp" line="566"/>
+        <location filename="../qsuimainwindow.cpp" line="551"/>
+        <location filename="../qsuimainwindow.cpp" line="567"/>
         <source>By Artist</source>
         <translation>Artisti</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="551"/>
-        <location filename="../qsuimainwindow.cpp" line="567"/>
+        <location filename="../qsuimainwindow.cpp" line="552"/>
+        <location filename="../qsuimainwindow.cpp" line="568"/>
         <source>By Album Artist</source>
         <translation>Albumin artisti</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="552"/>
-        <location filename="../qsuimainwindow.cpp" line="568"/>
+        <location filename="../qsuimainwindow.cpp" line="553"/>
+        <location filename="../qsuimainwindow.cpp" line="569"/>
         <source>By Filename</source>
         <translation>Tiedostonimellä</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="553"/>
-        <location filename="../qsuimainwindow.cpp" line="569"/>
+        <location filename="../qsuimainwindow.cpp" line="554"/>
+        <location filename="../qsuimainwindow.cpp" line="570"/>
         <source>By Path + Filename</source>
         <translation>Polku + tiedostonimi</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="554"/>
-        <location filename="../qsuimainwindow.cpp" line="570"/>
+        <location filename="../qsuimainwindow.cpp" line="555"/>
+        <location filename="../qsuimainwindow.cpp" line="571"/>
         <source>By Date</source>
         <translation>Päivä</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="555"/>
-        <location filename="../qsuimainwindow.cpp" line="571"/>
+        <location filename="../qsuimainwindow.cpp" line="556"/>
+        <location filename="../qsuimainwindow.cpp" line="572"/>
         <source>By Track Number</source>
         <translation>Raidan numero</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="556"/>
-        <location filename="../qsuimainwindow.cpp" line="572"/>
+        <location filename="../qsuimainwindow.cpp" line="557"/>
+        <location filename="../qsuimainwindow.cpp" line="573"/>
         <source>By Disc Number</source>
         <translation>Levyn numero</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="557"/>
-        <location filename="../qsuimainwindow.cpp" line="573"/>
+        <location filename="../qsuimainwindow.cpp" line="558"/>
+        <location filename="../qsuimainwindow.cpp" line="574"/>
         <source>By File Creation Date</source>
         <translation>Tiedoston luontipäivä</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="558"/>
-        <location filename="../qsuimainwindow.cpp" line="574"/>
+        <location filename="../qsuimainwindow.cpp" line="559"/>
+        <location filename="../qsuimainwindow.cpp" line="575"/>
         <source>By File Modification Date</source>
         <translation>Tiedoston muutospäivä</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="559"/>
+        <location filename="../qsuimainwindow.cpp" line="560"/>
         <source>By Group</source>
         <translation>Ryhmä</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="562"/>
+        <location filename="../qsuimainwindow.cpp" line="563"/>
         <source>Sort Selection</source>
         <translation>Järjestä valinta</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="578"/>
+        <location filename="../qsuimainwindow.cpp" line="579"/>
         <source>Randomize List</source>
         <translation>Sekoita lista</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="580"/>
+        <location filename="../qsuimainwindow.cpp" line="581"/>
         <source>Reverse List</source>
         <translation>Käänteinen lista</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="621"/>
+        <location filename="../qsuimainwindow.cpp" line="622"/>
         <source>Actions</source>
         <translation>Toiminnot</translation>
     </message>
