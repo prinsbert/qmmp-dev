@@ -79,7 +79,7 @@ bool OutputALSA::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat form
 
     /* load settings from config */
     QSettings settings;
-    settings.beginGroup("ALSA");
+    settings.beginGroup("ALSA"_L1);
     uint buffer_time = settings.value(u"buffer_time"_s, 500).toUInt()*1000;
     uint period_time = settings.value(u"period_time"_s, 100).toUInt()*1000;
     bool use_pause =  settings.value(u"use_snd_pcm_pause"_s, false).toBool();
