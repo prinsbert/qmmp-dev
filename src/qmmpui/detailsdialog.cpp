@@ -205,7 +205,10 @@ void DetailsDialog::updatePage()
     }
 
     m_ui->pageLabel->setText(tr("%1/%2").arg(m_page + 1).arg(m_tracks.count()));
-    m_info = *m_tracks.at(m_page);
+    if(m_page >= 0 && m_page < m_tracks.count())
+        m_info = *m_tracks.at(m_page);
+    else
+        m_info.clear();
 
     setWindowTitle(m_info.path().section(QLatin1Char('/'),-1));
     m_ui->pathEdit->setText(m_info.path());
