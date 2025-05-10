@@ -457,8 +457,8 @@ VolumePipeWire::VolumePipeWire()
 VolumePipeWire::~VolumePipeWire()
 {
     QSettings settings;
-    settings.setValue("OutputPipeWire/left_volume", m_volume.left);
-    settings.setValue("OutputPipeWire/right_volume", m_volume.right);
+    settings.setValue("OutputPipeWire/left_volume"_L1, m_volume.left);
+    settings.setValue("OutputPipeWire/right_volume"_L1, m_volume.right);
     OutputPipeWire::volumeControl = nullptr;
 }
 
