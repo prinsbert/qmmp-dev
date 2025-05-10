@@ -809,7 +809,6 @@ void QSUiMainWindow::writeSettings()
     settings.setValue(u"Simple/mw_geometry"_s, saveGeometry());
     settings.setValue(u"Simple/mw_state"_s, saveState());
     settings.setValue(u"Simple/always_on_top"_s, ACTION(QSUiActionManager::WM_ALLWAYS_ON_TOP)->isChecked());
-    settings.setValue(u"Simple/show_analyzer"_s, ACTION(QSUiActionManager::UI_ANALYZER)->isChecked());
     settings.setValue(u"Simple/show_tabs"_s, ACTION(QSUiActionManager::UI_SHOW_TABS)->isChecked());
     settings.setValue(u"Simple/block_dockwidgets"_s, ACTION(QSUiActionManager::UI_BLOCK_DOCKWIDGETS)->isChecked());
     settings.setValue(u"Simple/block_toolbars"_s, ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS)->isChecked());
