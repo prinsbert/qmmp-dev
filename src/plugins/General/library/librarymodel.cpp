@@ -339,6 +339,8 @@ void LibraryModel::replace(const QModelIndexList &indexes)
 void LibraryModel::showTrackInformation(const QModelIndexList &indexes, QWidget *parent)
 {
     QList<PlayListTrack *> tracks = getTracks(indexes);
+    if(tracks.isEmpty())
+        return;
 
     DetailsDialog *dialog = new DetailsDialog(tracks, parent);
     dialog->setAttribute(Qt::WA_DeleteOnClose, true);
