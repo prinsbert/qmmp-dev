@@ -380,8 +380,8 @@ void SkinnedMainWindow::createActions()
     m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PLAY, m_player, &MediaPlayer::play));
     m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PAUSE, m_player, &MediaPlayer::pause));
     m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::STOP, m_player, &MediaPlayer::stop));
-    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PREVIOUS, this, &MediaPlayer::previous));
-    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::NEXT, this, &MediaPlayer::next));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PREVIOUS, m_player, &MediaPlayer::previous));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::NEXT, m_player, &MediaPlayer::next));
     m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PLAY_PAUSE, this, &SkinnedMainWindow::playPause));
     m_mainMenu->addSeparator();
     m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::JUMP, this, &SkinnedMainWindow::jumpToTrack));
