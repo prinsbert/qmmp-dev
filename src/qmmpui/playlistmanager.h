@@ -21,7 +21,7 @@
 #define PLAYLISTMANAGER_H
 
 #include <QObject>
-#include <QHash>
+#include <QMap>
 #include <qmmp/qmmp.h>
 #include "playlistheadermodel.h"
 #include "playlistmodel.h"
@@ -277,8 +277,8 @@ private:
     void readPlayLists();
 
     static PlayListManager* m_instance;
-    static const QHash<QString, Qmmp::MetaData> m_metaKeys;
-    static const QHash<QString, Qmmp::TrackProperty> m_propKeys;
+    static const QMap<QString, Qmmp::MetaData> m_metaKeys;
+    static const QMap<QString, Qmmp::TrackProperty> m_propKeys;
     QList<PlayListModel *> m_models;
     PlayListModel *m_current = nullptr;
     PlayListModel *m_selected = nullptr;
