@@ -34,7 +34,7 @@ using namespace Qt::Literals::StringLiterals;
 PlayListManager *PlayListManager::m_instance = nullptr;
 
 //key names
-const QHash<QString, Qmmp::MetaData> PlayListManager::m_metaKeys = {
+const QMap<QString, Qmmp::MetaData> PlayListManager::m_metaKeys = {
     { u"title"_s, Qmmp::TITLE },
     { u"artist"_s, Qmmp::ARTIST },
     { u"albumartist"_s, Qmmp::ALBUMARTIST },
@@ -47,7 +47,7 @@ const QHash<QString, Qmmp::MetaData> PlayListManager::m_metaKeys = {
     { u"disk"_s, Qmmp::DISCNUMBER }
 };
 
-const QHash<QString, Qmmp::TrackProperty> PlayListManager::m_propKeys = {
+const QMap<QString, Qmmp::TrackProperty> PlayListManager::m_propKeys = {
     { u"bitrate"_s, Qmmp::BITRATE },
     { u"samplerate"_s, Qmmp::SAMPLERATE },
     { u"channels"_s, Qmmp::CHANNELS },
@@ -361,13 +361,13 @@ void PlayListManager::writePlayLists()
         {
             plFile.write(QStringLiteral("file=%1\n").arg(t->path()).toUtf8());
 
-            for(QHash<QString, Qmmp::MetaData>::const_iterator it = m_metaKeys.constBegin(); it != m_metaKeys.constEnd(); ++it)
+            for(QMap<QString, Qmmp::MetaData>::const_iterator it = m_metaKeys.constBegin(); it != m_metaKeys.constEnd(); ++it)
             {
                 if(!(value = t->value(it.value())).isEmpty())
                     plFile.write(QStringLiteral("%1=%2\n").arg(it.key(), value).toUtf8());
             }
 
-            for(QHash<QString, Qmmp::TrackProperty>::const_iterator it = m_propKeys.constBegin(); it != m_propKeys.constEnd(); ++it)
+            for(QMap<QString, Qmmp::TrackProperty>::const_iterator it = m_propKeys.constBegin(); it != m_propKeys.constEnd(); ++it)
             {
                 if(!(value = t->value(it.value())).isEmpty())
                     plFile.write(QStringLiteral("%1=%2\n").arg(it.key(), value).toLatin1());
