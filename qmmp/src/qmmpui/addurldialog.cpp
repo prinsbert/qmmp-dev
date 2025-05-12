@@ -22,6 +22,7 @@
 #include <QDir>
 #include <QMessageBox>
 #include <QClipboard>
+#include <QPushButton>
 #include <qmmp/qmmpsettings.h>
 #include <qmmp/metadatamanager.h>
 #include <qmmp/qmmp.h>
@@ -40,6 +41,10 @@ AddUrlDialog::AddUrlDialog(QWidget *parent) : QDialog(parent), m_ui(new Ui::AddU
     m_ui->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
     setAttribute(Qt::WA_QuitOnClose, false);
+
+    m_addButton = m_ui->buttonBox->addButton(tr("&Add"), QDialogButtonBox::AcceptRole);
+    m_addButton->setIcon(QIcon::fromTheme(u"list-add"_s));
+
     QSettings settings;
     m_history = settings.value(u"URLDialog/history"_s).toStringList();
     m_ui->urlComboBox->addItems(m_history);
@@ -68,12 +73,12 @@ AddUrlDialog::~AddUrlDialog()
 
 QPointer<AddUrlDialog> AddUrlDialog::m_instance = nullptr;
 
-void AddUrlDialog::popup(QWidget* parent, PlayListModel* model)
+void AddUrlDialog::popup(QWidget *parent, PlayListModel *m)
 {
     if (!m_instance)
     {
         m_instance = new AddUrlDialog(parent);
-        m_instance->setModel(model);
+        m_instance->setModel(m);
     }
     m_instance->show();
     m_instance->raise();
@@ -88,13 +93,13 @@ void AddUrlDialog::onFinished(bool ok, const QString &message)
     else
     {
         QMessageBox::warning(this, tr("Error"), message);
-        m_ui->addButton->setEnabled(true);
+        m_addButton->setEnabled(true);
     }
 }
 
 void AddUrlDialog::accept()
 {
-    m_ui->addButton->setEnabled(false);
+    m_addButton->setEnabled(false);
     if(m_ui->urlComboBox->currentText().isEmpty())
     {
          QDialog::accept();

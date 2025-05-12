@@ -27,6 +27,7 @@
 
 class QNetworkAccessManager;
 class QNetworkReply;
+class QPushButton;
 class PlayListModel;
 class PlayListDownloader;
 
@@ -41,7 +42,7 @@ class AddUrlDialog : public QDialog
 {
     Q_OBJECT
 public:
-    static void popup(QWidget* parent ,PlayListModel*);
+    static void popup(QWidget* parent, PlayListModel *m);
 
 private slots:
     void onFinished(bool ok, const QString &message);
@@ -50,12 +51,13 @@ private:
     explicit AddUrlDialog(QWidget *parent);
     ~AddUrlDialog();
     void accept() override;
-    void setModel(PlayListModel*);
+    void setModel(PlayListModel *m);
     void addToHistory(const QString &path);
     static QPointer<AddUrlDialog> m_instance;
     Ui::AddUrlDialog *m_ui;
     PlayListModel *m_model;
     PlayListDownloader *m_downloader;
     QStringList m_history;
+    QPushButton *m_addButton;
 };
 #endif //ADDURLDIALOG_P_H
