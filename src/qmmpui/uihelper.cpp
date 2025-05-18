@@ -266,6 +266,11 @@ void UiHelper::showMainWindow()
 
 void UiHelper::exit()
 {
+    //send non-spontaneous close event
+    //for all windows
+    for(QWidget *widget : qApp->topLevelWidgets())
+        widget->close();
+
     qApp->closeAllWindows();
     qApp->quit();
 }
