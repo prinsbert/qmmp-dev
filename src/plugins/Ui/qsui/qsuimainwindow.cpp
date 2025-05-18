@@ -395,17 +395,18 @@ void QSUiMainWindow::playPause()
         m_player->play();
 }
 
-void QSUiMainWindow::closeEvent(QCloseEvent *)
+void QSUiMainWindow::closeEvent(QCloseEvent *e)
 {
     if(!m_hideOnClose || !m_uiHelper->visibilityControl())
         m_uiHelper->exit();
-
+    QMainWindow::closeEvent(e);
 }
 
-void QSUiMainWindow::hideEvent(QHideEvent *)
+void QSUiMainWindow::hideEvent(QHideEvent *e)
 {
     writeSettings();
     m_wasMaximized = isMaximized();
+    QMainWindow::hideEvent(e);
 }
 
 QMenu *QSUiMainWindow::createPopupMenu()
