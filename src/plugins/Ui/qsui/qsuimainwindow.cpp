@@ -413,10 +413,8 @@ QMenu *QSUiMainWindow::createPopupMenu()
 {
     QMenu *menu = QMainWindow::createPopupMenu();
     menu->addSeparator();
-    QAction *menuBarAction = menu->addAction(tr("Menu Bar"));
-    menuBarAction->setCheckable(true);
-    menuBarAction->setChecked(menuBar()->isVisible());
-    connect(menuBarAction, &QAction::toggled, menuBar(), &QMenuBar::setVisible);
+    menu->addAction(m_menuBarAction);
+    m_menuBarAction->setChecked(menuBar()->isVisible());
     return menu;
 }
 
@@ -639,6 +637,10 @@ void QSUiMainWindow::createActions()
     connect(backwardAction, &QAction::triggered, this, &QSUiMainWindow::backward);
     //application menu
     SET_ACTION(QSUiActionManager::APPLICATION_MENU, this, &QSUiMainWindow::showAppMenu);
+    //menu bar
+    m_menuBarAction = new QAction(tr("Menu Bar"), this);
+    m_menuBarAction->setCheckable(true);
+    connect(m_menuBarAction, &QAction::triggered, menuBar(), &QMenuBar::setVisible);
 
     addActions({ forwardAction, backwardAction });
     addActions(QSUiActionManager::instance()->actions());
@@ -706,7 +708,8 @@ void QSUiMainWindow::readSettings()
     else
     {
         restoreGeometry(settings.value(u"mw_geometry"_s).toByteArray());
-        menuBar()->setVisible(settings.value(u"show_menubar"_s, true).toBool());
+        m_menuBarAction->setChecked(settings.value(u"show_menubar"_s, true).toBool());
+        menuBar()->setVisible(m_menuBarAction->isChecked());
 
         QByteArray wstate = settings.value(u"mw_state"_s).toByteArray();
         if(wstate.isEmpty())
@@ -813,7 +816,7 @@ void QSUiMainWindow::writeSettings()
     settings.setValue(u"Simple/show_tabs"_s, ACTION(QSUiActionManager::UI_SHOW_TABS)->isChecked());
     settings.setValue(u"Simple/block_dockwidgets"_s, ACTION(QSUiActionManager::UI_BLOCK_DOCKWIDGETS)->isChecked());
     settings.setValue(u"Simple/block_toolbars"_s, ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS)->isChecked());
-    settings.setValue(u"Simple/show_menubar"_s, menuBar()->isVisible());
+    settings.setValue(u"Simple/show_menubar"_s, m_menuBarAction->isChecked() );
 }
 
 void QSUiMainWindow::savePlayList()
