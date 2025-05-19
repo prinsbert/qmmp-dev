@@ -122,6 +122,7 @@ private:
     QMenu *m_tab_menu;
     QMenu *m_copySelectedMenu;
     QAction *m_newPlayListAction = nullptr;
+    QAction *m_menuBarAction = nullptr;
     VolumeSlider *m_volumeSlider, *m_balanceSlider;
     QSUiQuickSearch *m_quickSearch;
     QSUiKeyboardManager *m_key_manager;
