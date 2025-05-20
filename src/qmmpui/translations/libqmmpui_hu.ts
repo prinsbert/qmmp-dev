@@ -987,127 +987,127 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="257"/>
+        <location filename="../detailsdialog.cpp" line="260"/>
         <source>Cover</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="283"/>
+        <location filename="../detailsdialog.cpp" line="286"/>
         <source>Lyrics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="303"/>
+        <location filename="../detailsdialog.cpp" line="306"/>
         <source>Title</source>
         <translation>Cím</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="304"/>
+        <location filename="../detailsdialog.cpp" line="307"/>
         <source>Artist</source>
         <translation>Előadó</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="305"/>
+        <location filename="../detailsdialog.cpp" line="308"/>
         <source>Album artist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="306"/>
+        <location filename="../detailsdialog.cpp" line="309"/>
         <source>Album</source>
         <translation>Album</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="307"/>
+        <location filename="../detailsdialog.cpp" line="310"/>
         <source>Comment</source>
         <translation>Megjegyzés</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="308"/>
+        <location filename="../detailsdialog.cpp" line="311"/>
         <source>Genre</source>
         <translation>Műfaj</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="309"/>
+        <location filename="../detailsdialog.cpp" line="312"/>
         <source>Composer</source>
         <translation>Szerző</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="310"/>
+        <location filename="../detailsdialog.cpp" line="313"/>
         <source>Year</source>
         <translation>Év</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="311"/>
+        <location filename="../detailsdialog.cpp" line="314"/>
         <source>Track</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="312"/>
+        <location filename="../detailsdialog.cpp" line="315"/>
         <source>Disc number</source>
         <translation>Lemezszám</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="331"/>
+        <location filename="../detailsdialog.cpp" line="334"/>
         <source>Duration</source>
         <translation>Időtartam</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="334"/>
+        <location filename="../detailsdialog.cpp" line="337"/>
         <source>Bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="334"/>
+        <location filename="../detailsdialog.cpp" line="337"/>
         <source>kbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="335"/>
+        <location filename="../detailsdialog.cpp" line="338"/>
         <source>Sample rate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="335"/>
+        <location filename="../detailsdialog.cpp" line="338"/>
         <source>Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="336"/>
+        <location filename="../detailsdialog.cpp" line="339"/>
         <source>Channels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="337"/>
+        <location filename="../detailsdialog.cpp" line="340"/>
         <source>Sample size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="337"/>
+        <location filename="../detailsdialog.cpp" line="340"/>
         <source>bits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="338"/>
+        <location filename="../detailsdialog.cpp" line="341"/>
         <source>Format name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="339"/>
+        <location filename="../detailsdialog.cpp" line="342"/>
         <source>File size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="339"/>
+        <location filename="../detailsdialog.cpp" line="342"/>
         <source>KiB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="383"/>
+        <location filename="../detailsdialog.cpp" line="386"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="383"/>
+        <location filename="../detailsdialog.cpp" line="386"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>

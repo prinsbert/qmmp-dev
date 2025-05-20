@@ -6,7 +6,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>&amp;Play</source>
-        <translation>播放(&amp;)</translation>
+        <translation>播放</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
@@ -371,7 +371,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>&amp;Select Next Playlist</source>
-        <translation>選擇下一個播放列表(&amp;PgDn)</translation>
+        <translation>選擇下一個播放列表</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="84"/>
@@ -381,7 +381,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>&amp;Select Previous Playlist</source>
-        <translation>選擇上一個播放列表(&amp;PgUp)</translation>
+        <translation>選擇上一個播放列表</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="85"/>
@@ -391,7 +391,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>&amp;Show Playlists</source>
-        <translation>顯示播放列表(&amp;P)</translation>
+        <translation>顯示播放列表</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="86"/>
@@ -441,12 +441,12 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="92"/>
         <source>&amp;About</source>
-        <translation>關於(&amp;A)</translation>
+        <translation>關於</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="93"/>
         <source>&amp;About Qt</source>
-        <translation>關於 Qt(&amp;Q)</translation>
+        <translation>關於 Qt</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="94"/>
