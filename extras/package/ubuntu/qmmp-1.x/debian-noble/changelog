@@ -1,3 +1,9 @@
+qmmp (1.7.6-1ubuntu1~noble0) noble; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Tue, 20 May 2025 20:55:52 +0300
+
 qmmp (1.7.5-1ubuntu1~noble0) noble; urgency=medium
 
   * New upstream release.
