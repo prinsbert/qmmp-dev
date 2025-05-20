@@ -157,7 +157,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="915"/>
         <source>Waveform Seekbar Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Colori barra di progresso selezionabile della forma d&apos;onda</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="921"/>
@@ -168,7 +168,7 @@
         <location filename="../forms/qsuisettings.ui" line="1010"/>
         <source>RMS:</source>
         <extracomment>Root mean square</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Val.eff:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1055"/>
@@ -389,7 +389,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="1358"/>
         <source>Show tab list menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra menu dell&apos;elenco di schede</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1365"/>
@@ -1179,7 +1179,7 @@
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="135"/>
         <source>Waveform Seek Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra di progresso selezionabile della forma d&apos;onda</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="149"/>
@@ -1691,7 +1691,7 @@
         <location filename="../qsuiwaveformseekbar.cpp" line="338"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Val.eff</translation>
     </message>
 </context>
 <context>

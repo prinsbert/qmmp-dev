@@ -195,7 +195,7 @@
     <message>
         <location filename="../librarywidget.cpp" line="51"/>
         <source>&amp;Add to Playlist</source>
-        <translation>添加到播放列表(&amp;A)</translation>
+        <translation>添加到播放列表</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="52"/>

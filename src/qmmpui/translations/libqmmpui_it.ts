@@ -86,22 +86,22 @@
     <message>
         <location filename="../aboutdialog.cpp" line="73"/>
         <source>Qt version: %1 (compiled with %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Versione di Qt: %1 (compilato con %2)</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="74"/>
         <source>Qt platform: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Piattaforma di Qt: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="75"/>
         <source>System: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistema: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="76"/>
         <source>Build ABI: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ABI di compilazione: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="113"/>

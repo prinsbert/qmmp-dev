@@ -510,7 +510,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="43"/>
         <source>&amp;Play</source>
-        <translation>播放(&amp;)</translation>
+        <translation>播放</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="43"/>
@@ -1148,7 +1148,7 @@
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="55"/>
         <source>&amp;Playback</source>
-        <translation>播放(&amp;P)</translation>
+        <translation>回放</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="60"/>

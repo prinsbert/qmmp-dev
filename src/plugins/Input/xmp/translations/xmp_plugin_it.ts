@@ -142,7 +142,7 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="109"/>
         <source>Emulate sample loop bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Emula il bug del loop di esempio</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="116"/>
