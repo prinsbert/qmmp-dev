@@ -44,12 +44,12 @@ List of the third-party libraries.
   mingw-libgnurx      2.5.1      https://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      https://libcddb.sourceforge.net/
   ffmpeg              7.1.1      https://ffmpeg.org/
-  libxmp              4.6.2      https://github.com/libxmp/libxmp
+  libxmp              4.6.3      https://github.com/libxmp/libxmp
   libgme              0.6.4      https://github.com/libgme/game-music-emu
   musepack            r475       https://www.musepack.net/
   glew                2.2.0      https://glew.sourceforge.net/
   projectm            2.1.0      https://projectm.sourceforge.net/
-  libsidplayfp        2.13.0     https://sourceforge.net/projects/sidplay-residfp/
+  libsidplayfp        2.14.0     https://sourceforge.net/projects/sidplay-residfp/
   enca                1.19       https://cihar.com/software/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
   librcd              0.1.14     https://github.com/RusXMMS/librcd
