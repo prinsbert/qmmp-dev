@@ -5,6 +5,7 @@ Version 1.7.6
 * using system scroll settings for playlists
 * using stable order for keys in the playlists.txt file
 * added support for float PCM format in the dsound and wasapi plugins
+* fixed seeking from command-line
 * fixed compatibility with Qt 5.12
 * fixed seeking from command-line
 * fixed support for special keys in the shortcut editor dialog 
