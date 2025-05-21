@@ -122,17 +122,12 @@
         <translation>추가할 URL 입력</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="55"/>
+        <location filename="../addurldialog.cpp" line="45"/>
         <source>&amp;Add</source>
         <translation>추가(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="62"/>
-        <source>&amp;Cancel</source>
-        <translation>취소(&amp;C)</translation>
-    </message>
-    <message>
-        <location filename="../addurldialog.cpp" line="90"/>
+        <location filename="../addurldialog.cpp" line="95"/>
         <source>Error</source>
         <translation>오류</translation>
     </message>
