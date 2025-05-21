@@ -122,17 +122,12 @@
         <translation>输入URL来添加</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="55"/>
+        <location filename="../addurldialog.cpp" line="45"/>
         <source>&amp;Add</source>
         <translation>添加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="62"/>
-        <source>&amp;Cancel</source>
-        <translation>取消(&amp;C)</translation>
-    </message>
-    <message>
-        <location filename="../addurldialog.cpp" line="90"/>
+        <location filename="../addurldialog.cpp" line="95"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>

@@ -122,17 +122,12 @@
         <translation>Wpisz URL do dodania</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="55"/>
+        <location filename="../addurldialog.cpp" line="45"/>
         <source>&amp;Add</source>
         <translation>Dod&amp;aj</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="62"/>
-        <source>&amp;Cancel</source>
-        <translation>A&amp;nuluj</translation>
-    </message>
-    <message>
-        <location filename="../addurldialog.cpp" line="90"/>
+        <location filename="../addurldialog.cpp" line="95"/>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>

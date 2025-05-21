@@ -122,17 +122,12 @@
         <translation>Voer een url in</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="55"/>
+        <location filename="../addurldialog.cpp" line="45"/>
         <source>&amp;Add</source>
         <translation>&amp;Toevoegen</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="62"/>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Annuleren</translation>
-    </message>
-    <message>
-        <location filename="../addurldialog.cpp" line="90"/>
+        <location filename="../addurldialog.cpp" line="95"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
