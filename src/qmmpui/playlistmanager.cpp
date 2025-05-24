@@ -310,7 +310,14 @@ void PlayListManager::readPlayLists()
             else if (key == "length"_L1)
                 tracks.last()->setDuration(value.toInt() * 1000);
             else if((metaKey = m_metaKeys.value(key, Qmmp::UNKNOWN)) != Qmmp::UNKNOWN)
+            {
+                if(metaKey == Qmmp::COMMENT)
+                {
+                    value.replace(QStringLiteral("\\n"), QStringLiteral("\n"));
+                    value.replace(QStringLiteral("\\r"), QStringLiteral("\r"));
+                }
                 tracks.last()->setValue(metaKey, value);
+            }
             else if((propKey = m_propKeys.value(key, Qmmp::UNKNOWN_PROPERTY)) != Qmmp::UNKNOWN_PROPERTY)
                 tracks.last()->setValue(propKey, value);
         }
@@ -364,7 +371,15 @@ void PlayListManager::writePlayLists()
             for(QMap<QString, Qmmp::MetaData>::const_iterator it = m_metaKeys.constBegin(); it != m_metaKeys.constEnd(); ++it)
             {
                 if(!(value = t->value(it.value())).isEmpty())
+                {
+                    if(it.value() == Qmmp::COMMENT)
+                    {
+                        value.replace(QChar::LineFeed, QStringLiteral("\\n"));
+                        value.replace(QChar::CarriageReturn, QStringLiteral("\\r"));
+                    }
+
                     plFile.write(QStringLiteral("%1=%2\n").arg(it.key(), value).toUtf8());
+                }
             }
 
             for(QMap<QString, Qmmp::TrackProperty>::const_iterator it = m_propKeys.constBegin(); it != m_propKeys.constEnd(); ++it)
