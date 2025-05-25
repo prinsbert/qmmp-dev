@@ -23,6 +23,7 @@
 #include <QStyleOptionSlider>
 #include <QStyle>
 #include <QToolTip>
+#include <qmmp/qmmpsettings.h>
 #include <math.h>
 #include "volumeslider.h"
 
@@ -88,7 +89,7 @@ void VolumeSlider::mouseReleaseEvent(QMouseEvent *event)
 void VolumeSlider::wheelEvent(QWheelEvent *event)
 {
     setSliderDown(true);
-    QSlider::setValue(value() + event->angleDelta().y() / 20);
+    QSlider::setValue(value() + event->angleDelta().y() * QmmpSettings::instance()->volumeStep() / 120);
     setSliderDown(false);
 }
 

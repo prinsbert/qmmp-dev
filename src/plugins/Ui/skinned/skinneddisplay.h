@@ -84,7 +84,7 @@ private slots:
     void onAudioPatametersChanged(const AudioParameters &p);
 
 private:
-    void wheelEvent(QWheelEvent *) override;
+    void wheelEvent(QWheelEvent *e) override;
     void mousePressEvent(QMouseEvent*) override;
     void updatePositions();
     void updateMask();
