@@ -21,6 +21,7 @@
 #include <QApplication>
 #include <QSettings>
 #include <QMenu>
+#include <QTimer>
 #include <qmmp/soundcore.h>
 #include <qmmpui/mediaplayer.h>
 #include <qmmpui/playlistmanager.h>
@@ -97,9 +98,13 @@ SkinnedDisplay::SkinnedDisplay(SkinnedMainWindow *parent) : PixmapWidget (parent
 
     m_volumeBar = new SkinnedVolumeBar(this);
     m_volumeBar->setToolTip(tr("Volume"));
+    m_volumeDisplayTimer = new QTimer(this);
+    m_volumeDisplayTimer->setSingleShot(true);
+    m_volumeDisplayTimer->setInterval(1000);
     connect(m_volumeBar, &SkinnedVolumeBar::sliderMoved, this, &SkinnedDisplay::displayVolume);
     connect(m_volumeBar, &SkinnedVolumeBar::sliderPressed, this, &SkinnedDisplay::displayVolume);
     connect(m_volumeBar, &SkinnedVolumeBar::sliderReleased, m_text, &SkinnedTextScroller::clear);
+    connect(m_volumeDisplayTimer, &QTimer::timeout, m_text, &SkinnedTextScroller::clear);
 
     m_balanceBar = new SkinnedBalanceBar(this);
     m_balanceBar->setToolTip(tr("Balance"));
@@ -315,6 +320,8 @@ void SkinnedDisplay::updatePosition()
 void SkinnedDisplay::wheelEvent(QWheelEvent *e)
 {
     m_core->changeVolume(e->angleDelta().y() * QmmpSettings::instance()->volumeStep() / 120);
+    m_text->setText(tr("Volume: %1%").arg(m_core->volume()));
+    m_volumeDisplayTimer->start();
 }
 
 bool SkinnedDisplay::isRepeatable() const

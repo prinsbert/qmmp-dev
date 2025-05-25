@@ -25,6 +25,7 @@
 #include <qmmp/audioparameters.h>
 #include "pixmapwidget.h"
 
+class QTimer;
 class SkinnedTimeIndicator;
 class SkinnedTimeIndicatorModel;
 class SkinnedPositionBar;
@@ -117,6 +118,7 @@ private:
     SkinnedTitleBar *m_titlebar;
     SoundCore *m_core;
     QWidget *m_aboutWidget;
+    QTimer *m_volumeDisplayTimer;
 };
 
 #endif
