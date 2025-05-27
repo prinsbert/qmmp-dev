@@ -1,6 +1,13 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 2.2.7
+* added display of volume when adjusting it with the mouse wheel in the
+  skinned user interface
+* fixed support for multi-line comments when saving and restoring a
+  playlist
+* fixed volume adjustment step when using mouse wheel
+
 Version 2.2.6
 * using system scroll settings for playlists
 * using stable order for keys in the playlists.txt file
