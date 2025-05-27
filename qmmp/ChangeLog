@@ -1,8 +1,35 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 2.2.7
+* added display of volume when adjusting it with the mouse wheel in the
+  skinned user interface
+* fixed support for multi-line comments when saving and restoring a
+  playlist
+* fixed volume adjustment step when using mouse wheel
+
+Version 2.2.6
+* using system scroll settings for playlists
+* using stable order for keys in the playlists.txt file
+* added support for float PCM format in the dsound and wasapi plugins
+* fixed seeking from command-line
+* fixed support for special keys in the shortcut editor dialog 
+* fixed track index calculation
+* fixed saving of the simple user interface settings when projectM
+  visualization is enabled
+* fixed possible crash in the library plugin
+* fixed Chinese Traditional translation (Edouard.J.K Li)
+
+Version 2.2.5
+* fixed build without mpg123 or libmad
+* fixed plugin path in the pkg-config file
+* fixed "device not open" warning on first startup
+* fixed skins installation
+* fixed config dialog layout
+
 Version 2.2.4
 * added support for embedded cover art images in the mpris plugin
+* added .ogg extension for more plugins
 * fixed build with ProjectM 4.0 or higher
 * fixed build with Qt 6.9
 * fixed build with TagLib 2.0
