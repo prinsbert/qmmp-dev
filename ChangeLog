@@ -2,11 +2,13 @@ Changelog of Qt-based Multimedia Player
 --------------
 
 Version 1.7.7
+* added kwin rules for KDE6
 * added display of volume when adjusting it with the mouse wheel in the
   skinned user interface
 * fixed support for multi-line comments when saving and restoring a
   playlist
 * fixed volume adjustment step when using mouse wheel
+* fixed some clazy analyzer warnings
 
 Version 1.7.6
 * using system scroll settings for playlists
