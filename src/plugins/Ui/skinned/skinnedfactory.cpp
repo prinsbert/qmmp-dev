@@ -42,13 +42,14 @@ QObject *SkinnedFactory::SkinnedFactory::create()
 #ifdef QMMP_WS_X11
     if(qgetenv("XDG_CURRENT_DESKTOP") == "KDE")
     {
-        QString kwinScript = Qmmp::dataPath() + u"/scripts/kwin.sh"_s;
-        if(!QFile::exists(kwinScript))
-            kwinScript = qApp->applicationDirPath() + u"/../src/plugins/Ui/skinned/kwin.sh"_s;
-        if(QFile::exists(kwinScript))
+        QString scriptName = (qgetenv("KDE_SESSION_VERSION") == "6") ? u"kwin6.sh"_s : u"kwin.sh"_s;
+        QString scriptPath = QStringLiteral("%1/scripts/%2").arg(Qmmp::dataPath(), scriptName);
+        if(!QFile::exists(scriptPath))
+            scriptPath = QStringLiteral("%1/../src/plugins/Ui/skinned/scripts/%2").arg(qApp->applicationDirPath(), scriptName);
+        if(QFile::exists(scriptPath))
         {
             qCDebug(plugin, "adding kwin rules...");
-            QProcess::execute(QStringLiteral("sh"), QStringList() << QFileInfo(kwinScript).canonicalFilePath());
+            QProcess::execute(QStringLiteral("sh"), QStringList() << QFileInfo(scriptPath).canonicalFilePath());
         }
     }
 #endif
