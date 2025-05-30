@@ -45,7 +45,7 @@ QObject *SkinnedFactory::SkinnedFactory::create()
         QString scriptName = (qgetenv("KDE_SESSION_VERSION") == "6") ? u"kwin6.sh"_s : u"kwin.sh"_s;
         QString scriptPath = QStringLiteral("%1/scripts/%2").arg(Qmmp::dataPath(), scriptName);
         if(!QFile::exists(scriptPath))
-            scriptPath = QStringLiteral("%1/../src/plugins/Ui/skinned/%2").arg(qApp->applicationDirPath(), scriptName);
+            scriptPath = QStringLiteral("%1/../src/plugins/Ui/skinned/scripts/%2").arg(qApp->applicationDirPath(), scriptName);
         if(QFile::exists(scriptPath))
         {
             qCDebug(plugin, "adding kwin rules...");
