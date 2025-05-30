@@ -118,7 +118,7 @@ LIBS += $$QMMPUI_LIB
 
 unix {
     target.path = $$PLUGIN_DIR/Ui
-    scripts.files = scripts/kwin.sh
+    scripts.files = scripts/kwin.sh scripts/kwin6.sh
     scripts.path = $$DATA_DIR/qmmp$${APP_NAME_SUFFIX}/scripts
     INSTALLS += target
     PKGCONFIG += x11
