@@ -23,7 +23,7 @@ while [ $i -le $count ];
 do
 	# find qmmp window rule in KWin
     match=`kreadconfig6 --file kwinrulesrc --group $i --key wmclass`
-    if [ "${match}" = "qmmp" ]; then
+    if [ "${match}" = "Qmmp" ]; then
         found=$i
         break
     fi
