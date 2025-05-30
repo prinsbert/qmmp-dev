@@ -493,7 +493,7 @@ void HistoryWindow::on_historyTreeWidget_customContextMenuRequested(const QPoint
         QString path = item->data(1, PathRole).toString();
         QMenu menu(this);
         menu.addAction(QIcon::fromTheme(u"list-add"_s),tr("Add to Playlist"), this, [=] { PlayListManager::instance()->addPath(path); } );
-        menu.addAction(QIcon::fromTheme(u"dialog-information"_s), tr("&View Track Details"), [=] { showInformation(item); });
+        menu.addAction(QIcon::fromTheme(u"dialog-information"_s), tr("&View Track Details"), this, [=] { showInformation(item); });
         menu.addSeparator();
         menu.addAction(QIcon::fromTheme(u"edit-delete"_s), tr("Remove from History"), this, [=] { removeTrack(item); } );
         menu.exec(m_ui->historyTreeWidget->viewport()->mapToGlobal(pos));
