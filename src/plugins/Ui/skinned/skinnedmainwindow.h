@@ -55,8 +55,8 @@ public:
     ~SkinnedMainWindow() = default;
 
     inline SkinnedPlayList *playlist() const { return m_playlist; }
-    inline QMenu *menu() const { return m_mainMenu; };
-    inline SkinnedDisplay *mainDisplay() const {  return m_display; };
+    inline QMenu *menu() const { return m_mainMenu; }
+    inline SkinnedDisplay *mainDisplay() const {  return m_display; }
 
 public slots:
     void previous();
