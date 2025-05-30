@@ -42,7 +42,7 @@ MediaKeys::MediaKeys(QObject *parent) : QObject(parent)
                                      u"org.gnome.SettingsDaemon.MediaKeys"_s,
                                      QDBusConnection::sessionBus(), this);
 
-    QDBusPendingReply<> reply = grabMediaPlayerKeys(QCoreApplication::applicationName(), QDateTime::currentDateTime().toSecsSinceEpoch());
+    QDBusPendingReply<> reply = grabMediaPlayerKeys(QCoreApplication::applicationName(), QDateTime::currentSecsSinceEpoch());
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &MediaKeys::onRegisterFinished);
 }
