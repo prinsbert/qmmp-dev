@@ -27,8 +27,6 @@
 #include <qmmp/buffer.h>
 #include <math.h>
 #include <stdlib.h>
-#include "fft.h"
-#include "inlines.h"
 #include "qsuivisualization.h"
 
 QSUIVisualization::QSUIVisualization(QWidget *parent) : Visual (parent)
@@ -77,7 +75,12 @@ void QSUIVisualization::setCover(const QImage &img)
 
 void QSUIVisualization::timeout()
 {
-    if(takeData(m_buffer))
+    if(m_drawer && m_drawer->useFFT() && takeFFTData(m_buffer))
+    {
+        process();
+        update();
+    }
+    else if(takeData(m_buffer))
     {
         process();
         update();
@@ -399,6 +402,11 @@ void QSUiScope::readSettings()
     settings.endGroup();
 }
 
+bool QSUiScope::useFFT() const
+{
+    return false;
+}
+
 QSUiVisualDrawer::~QSUiVisualDrawer()
 {}
 
@@ -440,9 +448,6 @@ void QSUiAnalyzer::process(float *buffer, int width, int height)
         gradient.setColorAt(1.0, m_color1);
         m_brush = QBrush(gradient);
     }
-    short dest[256];
-
-    calc_freq(dest, buffer);
 
     double y_scale = (double) 1.25 * m_rows / log(256);
 
@@ -453,22 +458,20 @@ void QSUiAnalyzer::process(float *buffer, int width, int height)
 
         if(m_x_scale[i] == m_x_scale[i + 1])
         {
-            y = dest[i];
+            y = static_cast<int>(buffer[i]) >> 8; //256
         }
         for (int k = m_x_scale[i]; k < m_x_scale[i + 1]; k++)
         {
-            y = qMax(dest[k], y);
+            y = qMax((static_cast<int>(buffer[i]) >> 8), y);
         }
 
-        y >>= 7; //256
-
+        y >>= 7; //128
 
         if (y)
         {
             magnitude = int(log (y) * y_scale);
             magnitude = qBound(0, magnitude, m_rows);
         }
-
 
         m_intern_vis_data[i] -= m_analyzer_falloff * m_rows / 15;
         m_intern_vis_data[i] = magnitude > m_intern_vis_data[i] ? magnitude : m_intern_vis_data[i];
@@ -540,4 +543,9 @@ void QSUiAnalyzer::readSettings()
         m_analyzerType = Cells;
 
     settings.endGroup();
+}
+
+bool QSUiAnalyzer::useFFT() const
+{
+    return true;
 }

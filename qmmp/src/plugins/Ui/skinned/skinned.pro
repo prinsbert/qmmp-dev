@@ -41,8 +41,6 @@ HEADERS += \
     skinnedvolumebar.h \
     pixmapwidget.h \
     dock.h \
-    inlines.h \
-    fft.h \
     monostereo.h \
     symboldisplay.h \
     skinreader.h \
@@ -92,7 +90,6 @@ SOURCES += \
     skinnedvolumebar.cpp \
     pixmapwidget.cpp \
     dock.cpp \
-    fft.c \
     monostereo.cpp \
     symboldisplay.cpp \
     skinreader.cpp \

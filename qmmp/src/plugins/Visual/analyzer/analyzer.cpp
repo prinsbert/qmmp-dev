@@ -27,14 +27,12 @@
 #include <stdlib.h>
 #include <qmmp/buffer.h>
 #include <qmmp/output.h>
-#include "fft.h"
-#include "inlines.h"
 #include "analyzer.h"
 
 Analyzer::Analyzer(QWidget *parent) : Visual (parent)
 {
     setWindowTitle (tr("Qmmp Analyzer"));
-    setMinimumSize(2*300-30,105);
+    setMinimumSize(2 * 300 - 30, 105);
     m_timer = new QTimer (this);
     connect(m_timer, &QTimer::timeout, this, &Analyzer::timeout);
 
@@ -73,7 +71,7 @@ void Analyzer::clear()
 
 void Analyzer::timeout()
 {
-    if(takeData(m_left_buffer, m_right_buffer))
+    if(takeFFTData(m_left_buffer, m_right_buffer))
     {
         process();
         update();
@@ -199,10 +197,6 @@ void Analyzer::mousePressEvent(QMouseEvent *e)
 
 void Analyzer::process()
 {
-    static fft_state *state = nullptr;
-    if (!state)
-        state = fft_init();
-
     int rows = (height() - 2) / m_cell_size.height();
     int cols = (width() - 2) / m_cell_size.width() / 2;
 
@@ -221,12 +215,6 @@ void Analyzer::process()
             m_x_scale[i] = pow(pow(255.0, 1.0 / m_cols), i);
     }
 
-    short dest_l[256];
-    short dest_r[256];
-
-    calc_freq (dest_l, m_left_buffer);
-    calc_freq (dest_r, m_right_buffer);
-
     double y_scale = (double) 1.25 * m_rows / log(256);
 
     for (int i = 0; i < m_cols; i++)
@@ -239,16 +227,16 @@ void Analyzer::process()
 
         if(m_x_scale[i] == m_x_scale[i + 1])
         {
-            yl = dest_l[i];
-            yr = dest_r[i];
+            yl = static_cast<int>(m_left_buffer[i]) >> 8; //256
+            yr = static_cast<int>(m_right_buffer[i]) >> 8;
         }
         for (int k = m_x_scale[i]; k < m_x_scale[i + 1]; k++)
         {
-            yl = qMax(dest_l[k], yl);
-            yr = qMax(dest_r[k], yr);
+            yl = qMax(static_cast<int>(m_left_buffer[i]) >> 8, yl);
+            yr = qMax(static_cast<int>(m_right_buffer[i]) >> 8, yr);
         }
 
-        yl >>= 7; //256
+        yl >>= 7; //128
         yr >>= 7;
 
         if (yl)

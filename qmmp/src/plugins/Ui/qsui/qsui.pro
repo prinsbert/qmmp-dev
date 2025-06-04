@@ -20,7 +20,6 @@ SOURCES += \
     aboutqsuidialog.cpp \
     qsuifactory.cpp \
     qsuisettings.cpp \
-    fft.c \
     qsuishortcutitem.cpp \
     qsuitabwidget.cpp \
     qsuitabbar.cpp \
@@ -52,8 +51,6 @@ HEADERS += \
     aboutqsuidialog.h \
     qsuifactory.h \
     qsuisettings.h \
-    fft.h \
-    inlines.h \
     qsuishortcutitem.h \
     qsuitabwidget.h \
     qsuitabbar.h \

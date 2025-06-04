@@ -5,7 +5,6 @@ SET(libanalyzer_SRCS
     analyzercolorwidget.cpp
     analyzersettingsdialog.cpp
     visualanalyzerfactory.cpp
-    fft.c
     analyzersettingsdialog.ui
     translations/translations.qrc
 )

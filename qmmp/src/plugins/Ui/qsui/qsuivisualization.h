@@ -92,6 +92,7 @@ public:
     virtual void draw(QPainter *p, int offset) = 0;
     virtual void clear() = 0;
     virtual void readSettings() = 0;
+    virtual bool useFFT() const = 0;
 };
 
 class QSUiScope : public QSUiVisualDrawer
@@ -104,6 +105,7 @@ public:
     void draw(QPainter *p, int offset) override;
     void clear() override;
     void readSettings() override;
+    bool useFFT() const override;
 
 private:
     int m_width = 0;
@@ -125,6 +127,7 @@ public:
     void draw(QPainter *p, int offset) override;
     void clear() override;
     void readSettings() override;
+    bool useFFT() const override;
 
 private:
     enum AnalyzerType

@@ -2,6 +2,7 @@ include(../../qmmp.pri)
 HEADERS += \
     buffer.h \
     decoder.h \
+    fft.h \
     output.h \
     outputfactory.h \
     equ/iir_cfs.h \
@@ -46,6 +47,7 @@ HEADERS += \
     qmmptextcodec.h
 SOURCES += recycler.cpp \
     decoder.cpp \
+    fft.c \
     output.cpp \
     equ/iir.c \
     equ/iir_cfs.c \

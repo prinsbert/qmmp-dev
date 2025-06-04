@@ -31,7 +31,6 @@ set(libqsui_SRCS
     qsuitoolbareditor.cpp
     qsuistatusbareditor.cpp
     volumeslider.cpp
-    fft.c
     forms/qsuimainwindow.ui
     forms/qsuipopupsettings.ui
     forms/qsuisettings.ui

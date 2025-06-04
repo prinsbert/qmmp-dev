@@ -28,9 +28,11 @@
 #include "qmmp_export.h"
 
 #define QMMP_VISUAL_NODE_SIZE 512 //samples
+#define QMMP_VISUAL_FFT_SIZE 256 //samples
 
 class VisualFactory;
 class VisualBuffer;
+typedef struct _struct_fft_state fft_state;
 
 /*! @brief The Visual class provides the base interface class of visualizations.
  *  @author Ilya Kotov <forkotov02@ya.ru>
@@ -127,17 +129,26 @@ signals:
 protected:
     /*!
      * QWidget's close event. Reimplementation should call base function.
-     * @param event QCloseEvent insatance.
+     * @param event QCloseEvent instance.
      */
     virtual void closeEvent (QCloseEvent *event) override;
     /*!
      * Takes visualization data. Caller should allocate \b QMMP_VISUAL_NODE_SIZE
-     * bytes for each channel. If buffer for right channel is not specified,
+     * samples for each channel. If buffer for right channel is not specified,
      * this function will average data from left and right channels.
      * @param left Left channel buffer.
      * @param right Right channel buffer.
      */
     bool takeData(float *left, float *right = nullptr);
+    /*!
+     * Takes visualization data prepared for spectrum analyzer using FFT.
+     * Caller should allocate \b QMMP_VISUAL_FFT_SIZE
+     * points for each channel. If buffer for right channel is not specified,
+     * this function will average data from left and right channels.
+     * @param left Left channel buffer.
+     * @param right Right channel buffer.
+     */
+    bool takeFFTData(float *left, float *right = nullptr);
 
 private:
     static void createVisualization(VisualFactory *factory, QWidget *parent);
@@ -150,6 +161,10 @@ private:
     static QObject *m_receiver;
     static const char *m_member;
     static VisualBuffer m_buffer;
+
+    fft_state *m_state = nullptr;
+    float *m_left_fft = nullptr, *m_right_fft = nullptr;
+    float *m_tmp_data = nullptr;
 };
 
 #endif

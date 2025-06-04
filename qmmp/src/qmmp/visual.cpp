@@ -29,6 +29,7 @@
 #include <QPluginLoader>
 #include <QTranslator>
 #include <QTimer>
+#include "fft.h"
 #include "statehandler.h"
 #include "visualfactory.h"
 #include "visualbuffer_p.h"
@@ -42,6 +43,10 @@ Visual::Visual(QWidget *parent, Qt::WindowFlags f) : QWidget(parent, f)
 
 Visual::~Visual()
 {
+    fft_close(m_state);
+    delete [] m_left_fft;
+    delete [] m_right_fft;
+    delete [] m_tmp_data;
     qCDebug(core) << Q_FUNC_INFO;
 }
 
@@ -81,6 +86,55 @@ bool Visual::takeData(float *left, float *right)
         {
             for(int i = 0; i < QMMP_VISUAL_NODE_SIZE; ++i)
                 left[i] = qBound(-1.0f, (node->data[0][i] + node->data[1][i]) / 2, 1.0f);
+        }
+    }
+    m_buffer.mutex()->unlock();
+    return node != nullptr;
+}
+
+bool Visual::takeFFTData(float *left, float *right)
+{
+    m_buffer.mutex()->lock();
+    VisualNode *node = m_buffer.take();
+    if(node)
+    {
+        if(!m_state)
+            m_state = fft_init();
+
+        if(left && right)
+        {
+            if(!m_left_fft)
+                m_left_fft = new float[QMMP_VISUAL_FFT_SIZE + 1];
+
+            if(!m_right_fft)
+                m_right_fft = new float[QMMP_VISUAL_FFT_SIZE + 1];
+
+            fft_perform(node->data[0], m_left_fft, m_state);
+            fft_perform(node->data[1],  m_right_fft, m_state);
+
+            for(int i = 0; i < QMMP_VISUAL_FFT_SIZE; i++)
+            {
+                left[i] = sqrt(m_left_fft[i + 1]);
+                right[i] = sqrt(m_right_fft[i + 1]);
+            }
+        }
+        else if(left && !right)
+        {
+            if(!m_left_fft)
+                m_left_fft = new float[QMMP_VISUAL_FFT_SIZE + 1];
+
+            if(!m_tmp_data)
+                m_tmp_data = new float[QMMP_VISUAL_NODE_SIZE];
+
+            for(int i = 0; i < QMMP_VISUAL_NODE_SIZE; ++i)
+                m_tmp_data[i] = qBound(-1.0f, (node->data[0][i] + node->data[1][i]) / 2, 1.0f);
+
+            fft_perform(m_tmp_data, m_left_fft, m_state);
+
+            for(int i = 0; i < QMMP_VISUAL_FFT_SIZE; i++)
+            {
+                left[i] = sqrt(m_left_fft[i + 1]);
+            }
         }
     }
     m_buffer.mutex()->unlock();

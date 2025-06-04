@@ -67,8 +67,8 @@ private:
     double m_peaks_falloff;
     double m_analyzer_falloff;
     bool m_show_peaks;
-    float m_left_buffer[QMMP_VISUAL_NODE_SIZE];
-    float m_right_buffer[QMMP_VISUAL_NODE_SIZE];
+    float m_left_buffer[QMMP_VISUAL_FFT_SIZE];
+    float m_right_buffer[QMMP_VISUAL_FFT_SIZE];
     int m_cols = 0, m_rows = 0;
     bool m_update = false;
     bool m_running = false;

@@ -35,7 +35,8 @@ public:
     virtual void clear() = 0;
     virtual bool process(float *l) = 0;
     virtual void draw(QPainter *) = 0;
-    virtual const QString name() = 0;
+    virtual QString name() = 0;
+    virtual bool useFFT() const = 0;
 };
 
 class Skin;
@@ -95,18 +96,17 @@ private:
     bool m_running = false;
 };
 
-namespace mainvisual
-{
-class Analyzer : public SkinnedVisualBase
+class SkinnedAnalyzer : public SkinnedVisualBase
 {
 public:
-    Analyzer();
-    virtual ~Analyzer() = default;
+    SkinnedAnalyzer();
+    virtual ~SkinnedAnalyzer() = default;
 
     void clear() override;
     bool process(float *l) override;
     void draw(QPainter *p) override;
-    const QString name() override;
+    QString name() override;
+    bool useFFT() const override;
 
 private:
     QSize m_size;
@@ -120,21 +120,21 @@ private:
     Skin *m_skin;
 };
 
-class Scope : public SkinnedVisualBase
+class SkinnedScope : public SkinnedVisualBase
 {
 public:
-    Scope();
-    virtual ~Scope() = default;
+    SkinnedScope();
+    virtual ~SkinnedScope() = default;
     void clear() override;
     bool process(float *l) override;
     void draw(QPainter *p) override;
-    const QString name() override;
+    QString name() override;
+    bool useFFT() const override;
 
 private:
     int m_intern_vis_data[76];
     Skin *m_skin;
     int m_ratio;
 };
-}
 
 #endif
