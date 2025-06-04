@@ -22,7 +22,6 @@
 #include <math.h>
 #include "skin.h"
 #include "skinnedvisualization.h"
-#include "inlines.h"
 #include "shadedvisual.h"
 
 ShadedVisual::ShadedVisual(QWidget *parent) : Visual(parent)
