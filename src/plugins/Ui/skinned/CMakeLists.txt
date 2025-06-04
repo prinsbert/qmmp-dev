@@ -1,8 +1,7 @@
 project(skinned)
 
 set(skinned_SRCS
-    fft.c
-    cursorimage.cpp
+	cursorimage.cpp
 	dock.cpp
 	monostereo.cpp
 	pixmapwidget.cpp
@@ -49,14 +48,14 @@ set(skinned_SRCS
 	skinreader.cpp
 	symboldisplay.cpp
 	windowsystem.cpp
-    forms/skinnedsettings.ui
-    forms/skinnedpreseteditor.ui
-    forms/skinnedplaylistbrowser.ui
-    forms/skinnedpopupsettings.ui
-    forms/skinnedhotkeyeditor.ui
-    glare/glare.qrc
-    resources/resources.qrc
-    translations/translations.qrc
+	forms/skinnedsettings.ui
+	forms/skinnedpreseteditor.ui
+	forms/skinnedplaylistbrowser.ui
+	forms/skinnedpopupsettings.ui
+	forms/skinnedhotkeyeditor.ui
+	glare/glare.qrc
+	resources/resources.qrc
+	translations/translations.qrc
 )
 
 set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_AUTOUIC_SEARCH_PATHS} ${CMAKE_CURRENT_SOURCE_DIR}/forms)

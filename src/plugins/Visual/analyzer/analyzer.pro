@@ -5,13 +5,10 @@ TARGET = $$PLUGINS_PREFIX/Visual/analyzer
 HEADERS += analyzer.h \
            analyzercolorwidget.h \
            analyzersettingsdialog.h \
-           fft.h \
-           visualanalyzerfactory.h \
-           inlines.h
+           visualanalyzerfactory.h
 SOURCES += analyzer.cpp \
            analyzercolorwidget.cpp \
            analyzersettingsdialog.cpp \
-           fft.c \
            visualanalyzerfactory.cpp
 
 FORMS += \

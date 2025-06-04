@@ -27,8 +27,6 @@
 #include <math.h>
 #include <stdlib.h>
 #include "skin.h"
-#include "fft.h"
-#include "inlines.h"
 #include "skinnedvisualization.h"
 
 SkinnedVisualization *SkinnedVisualization::m_instance = nullptr;
@@ -36,7 +34,7 @@ SkinnedVisualization *SkinnedVisualization::m_instance = nullptr;
 SkinnedVisualization *SkinnedVisualization::instance()
 {
     if(!m_instance)
-         qCFatal(plugin) << "this object is not created!";
+        qCFatal(plugin) << "this object is not created!";
     return m_instance;
 }
 
@@ -87,20 +85,20 @@ void SkinnedVisualization::clear()
 
 void SkinnedVisualization::timeout()
 {
-    if(m_vis && takeData(m_buffer))
+    if(m_vis && (m_vis->useFFT() ? takeFFTData(m_buffer) : takeData(m_buffer)))
     {
         m_vis->process(m_buffer);
         m_pixmap = m_bg;
         QPainter p(&m_pixmap);
-        m_vis->draw (&p);
+        m_vis->draw(&p);
         update();
     }
 }
 
 void SkinnedVisualization::paintEvent (QPaintEvent *)
 {
-    QPainter painter (this);
-    painter.drawPixmap (0,0, m_pixmap);
+    QPainter painter(this);
+    painter.drawPixmap(0, 0, m_pixmap);
 }
 
 void SkinnedVisualization::hideEvent (QHideEvent *)
@@ -124,9 +122,9 @@ void SkinnedVisualization::mousePressEvent (QMouseEvent *e)
 
     m_pixmap = m_bg;
     if(!m_vis)
-        setVisual(new mainvisual::Analyzer);
+        setVisual(new SkinnedAnalyzer);
     else if(m_vis->name() == "Analyzer"_L1)
-        setVisual(new mainvisual::Scope);
+        setVisual(new SkinnedScope);
     else if(m_vis->name() == "Scope"_L1)
         setVisual(nullptr);
 
@@ -352,20 +350,18 @@ void SkinnedVisualization::readSettings()
     QAction *act = m_fpsGroup->checkedAction ();
     m_timer->setInterval (act ? 1000 / act->data().toInt() : 25);
     if(vis_name == "Analyzer"_L1)
-        setVisual(new mainvisual::Analyzer);
+        setVisual(new SkinnedAnalyzer);
     else if(vis_name == "Scope"_L1)
-        setVisual(new mainvisual::Scope);
+        setVisual(new SkinnedScope);
     else
         setVisual(nullptr);
     resize(76 * m_ratio, 16 * m_ratio);
     update();
 }
 
-using namespace mainvisual;
-
-Analyzer::Analyzer()
+SkinnedAnalyzer::SkinnedAnalyzer()
 {
-    Analyzer::clear();
+    SkinnedAnalyzer::clear();
     m_skin = Skin::instance();
     m_size = QSize(76 * m_skin->ratio(), 16 * m_skin->ratio());
 
@@ -379,7 +375,7 @@ Analyzer::Analyzer()
     m_mode = settings.value("vis_analyzer_mode"_L1, 0).toInt();
 }
 
-void Analyzer::clear()
+void SkinnedAnalyzer::clear()
 {
     for(int i = 0; i < 75; ++i)
     {
@@ -388,13 +384,8 @@ void Analyzer::clear()
     }
 }
 
-bool Analyzer::process(float *l)
+bool SkinnedAnalyzer::process(float *l)
 {
-    static fft_state *state = nullptr;
-    if(!state)
-        state = fft_init();
-    short dest[256];
-
     static const int xscale_long[] =
     {
         0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
@@ -410,8 +401,6 @@ bool Analyzer::process(float *l)
         36, 47, 62, 82, 107, 141, 184, 255
     };
 
-    calc_freq (dest, l);
-
     const double y_scale = 3.60673760222;   /* 20.0 / log(256) */
     int max = m_lines ? 75 : 19, y, j;
 
@@ -421,19 +410,17 @@ bool Analyzer::process(float *l)
         {
             for(j = xscale_long[i], y = 0; j < xscale_long[i + 1]; j++)
             {
-                if(dest[j] > y)
-                    y = dest[j];
+                y = qMax(static_cast<int>(l[i]) >> 8, y); //256
             }
         }
         else
         {
             for(j = xscale_short[i], y = 0; j < xscale_short[i + 1]; j++)
             {
-                if(dest[j] > y)
-                    y = dest[j];
+                y = qMax(static_cast<int>(l[i]) >> 8, y);
             }
         }
-        y >>= 7;
+        y >>= 7; //128
         int magnitude = 0;
         if(y != 0)
         {
@@ -455,7 +442,7 @@ bool Analyzer::process(float *l)
     return true;
 }
 
-void Analyzer::draw (QPainter *p)
+void SkinnedAnalyzer::draw (QPainter *p)
 {
     int r = m_skin->ratio();
     if(m_lines)
@@ -509,25 +496,30 @@ void Analyzer::draw (QPainter *p)
         }
 }
 
-const QString Analyzer::name()
+QString SkinnedAnalyzer::name()
 {
     return u"Analyzer"_s;
 }
 
-Scope::Scope()
+bool SkinnedAnalyzer::useFFT() const
 {
-    Scope::clear();
+    return true;
+}
+
+SkinnedScope::SkinnedScope()
+{
+    SkinnedScope::clear();
     m_skin = Skin::instance();
     m_ratio = m_skin->ratio();
 }
 
-void Scope::clear()
+void SkinnedScope::clear()
 {
     for(int i = 0; i < 76; ++i)
         m_intern_vis_data[i] = 5;
 }
 
-bool Scope::process(float *l)
+bool SkinnedScope::process(float *l)
 {
     int step = (QMMP_VISUAL_NODE_SIZE << 8) / 76;
     int pos = 0;
@@ -541,7 +533,7 @@ bool Scope::process(float *l)
     return true;
 }
 
-void Scope::draw(QPainter *p)
+void SkinnedScope::draw(QPainter *p)
 {
     for(int i = 0; i < 75; ++i)
     {
@@ -556,7 +548,12 @@ void Scope::draw(QPainter *p)
         m_intern_vis_data[i] = 0;
 }
 
-const QString Scope::name()
+QString SkinnedScope::name()
 {
     return u"Scope"_s;
+}
+
+bool SkinnedScope::useFFT() const
+{
+    return false;
 }

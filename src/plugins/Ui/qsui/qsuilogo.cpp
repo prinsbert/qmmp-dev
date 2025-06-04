@@ -23,7 +23,6 @@
 #include <QTimer>
 #include <cmath>
 #include <qmmp/qmmp.h>
-#include "inlines.h"
 #include "qsuilogo.h"
 
 QSUiLogo::QSUiLogo(QWidget *parent) : Visual(parent)

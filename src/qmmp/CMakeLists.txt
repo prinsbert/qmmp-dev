@@ -33,6 +33,7 @@ set(libqmmp_SRCS
     output.cpp
     outputwriter.cpp
     trackinfo.cpp
+    fft.c
     equ/iir.c
     equ/iir_cfs.c
     equ/iir_fpu.c
