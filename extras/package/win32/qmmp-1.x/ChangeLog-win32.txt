@@ -4,6 +4,12 @@ LEGEND
 [-] Bug fix
 [!] Enhancement
 
+1.7.7
+[*] qmmp-1.7.7
+[*] qt-5.15.17
+[*] curl-8.14.1
+[*] mpg123-8.33.0
+
 1.7.6
 [*] qmmp-1.7.6
 [*] libsidplayfp-2.14.0
