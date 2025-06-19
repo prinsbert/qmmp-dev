@@ -334,9 +334,8 @@ void SkinReader::untar(const QString &from, const QString &to, bool preview)
                 name = str.contains(QLatin1Char('/')) ? str.section(QLatin1Char('/'), -1).toLower() : str.toLower();
 
             QFile file(to + QLatin1Char('/') + name);
-            file.open(QIODevice::WriteOnly);
-            file.write(array);
-            file.close();
+            if(file.open(QIODevice::WriteOnly))
+                file.write(array);
         }
     }
 }

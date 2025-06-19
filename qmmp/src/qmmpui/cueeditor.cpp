@@ -133,8 +133,10 @@ void CueEditor::on_loadButton_clicked()
     {
         m_lastDir = QFileInfo(path).absoluteDir().path();
         QFile file(path);
-        file.open(QIODevice::ReadOnly);
-        m_ui->plainTextEdit->setPlainText(QString::fromUtf8(file.readAll()));
+        if(file.open(QIODevice::ReadOnly))
+            m_ui->plainTextEdit->setPlainText(QString::fromUtf8(file.readAll()));
+        else
+            m_ui->plainTextEdit->clear();
     }
 }
 
@@ -157,7 +159,9 @@ void CueEditor::on_saveAsButton_clicked()
         data.append(QChar::LineFeed);
 
         QFile file(path);
-        file.open(QIODevice::WriteOnly);
-        file.write(data.toUtf8());
+        if(file.open(QIODevice::WriteOnly))
+            file.write(data.toUtf8());
+        else
+            qCWarning(core) << "unable to save cue file; error:" << file.errorString();
     }
 }
