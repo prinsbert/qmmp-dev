@@ -316,9 +316,9 @@ void MainDisplay::updatePosition()
     m_core->seek(m_posbar->value());
 }
 
-void MainDisplay::wheelEvent (QWheelEvent *e)
+void MainDisplay::wheelEvent(QWheelEvent *e)
 {
-    m_core->changeVolume(e->delta()/10);
+    m_core->changeVolume(e->delta()* QmmpSettings::instance()->volumeStep() / 120);
 }
 
 bool MainDisplay::isRepeatable() const

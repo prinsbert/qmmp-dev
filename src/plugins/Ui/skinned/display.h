@@ -74,8 +74,8 @@ signals:
     void shuffleToggled(bool);
 
 protected:
-    void wheelEvent(QWheelEvent *);
-    void mousePressEvent(QMouseEvent*);
+    void wheelEvent(QWheelEvent *e);
+    void mousePressEvent(QMouseEvent*e);
 
 private slots:
     void updateSkin();

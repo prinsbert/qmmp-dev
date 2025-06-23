@@ -24,6 +24,7 @@
 #include <QStyle>
 #include <QToolTip>
 #include <math.h>
+#include <qmmp/qmmpsettings.h>
 #include "volumeslider.h"
 
 VolumeSlider::VolumeSlider(QWidget *parent) : QSlider(Qt::Horizontal, parent)
@@ -67,14 +68,14 @@ void VolumeSlider::mousePressEvent (QMouseEvent *event)
 
 void VolumeSlider::mouseReleaseEvent (QMouseEvent *event)
 {
-    setSliderDown (false);
+    setSliderDown(false);
     QSlider::mouseReleaseEvent(event);
 }
 
 void VolumeSlider::wheelEvent(QWheelEvent *event)
 {
     setSliderDown(true);
-    setValue(value() + event->delta() / 20);
+    setValue(value() + event->delta() * QmmpSettings::instance()->volumeStep() / 120);
     setSliderDown(false);
 }
 
