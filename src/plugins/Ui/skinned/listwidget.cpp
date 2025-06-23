@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2025 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -266,7 +266,7 @@ void ListWidget::wheelEvent (QWheelEvent *e)
     if ((m_first == 0 && e->delta() > 0) ||
             ((m_first == m_model->count() - m_row_count) && e->delta() < 0))
         return;
-    m_first -= e->delta()/40;  //40*3 TODO: add step to config
+    m_first -= e->delta() * qApp->wheelScrollLines() / 120;
     if (m_first < 0)
         m_first = 0;
 
