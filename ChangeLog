@@ -18,7 +18,6 @@ Version 1.7.6
 * added support for float PCM format in the dsound and wasapi plugins
 * fixed seeking from command-line
 * fixed compatibility with Qt 5.12
-* fixed seeking from command-line
 * fixed support for special keys in the shortcut editor dialog 
 * fixed track index calculation
 * fixed possible crash in the library plugin
