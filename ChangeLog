@@ -1,6 +1,15 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 0.12.22
+* added support for float PCM format in the dsound and wasapi plugins
+* using system scroll settings for playlists
+* fixed seeking from command-line
+* fixed support for multi-line comments when saving and restoring a
+  playlist
+* fixed volume adjustment step when using mouse wheel
+* fixed frequencies of the all spectrum analyzers
+
 Version 0.12.21
 * added simple WildMidi config validation
 * added icon for the 'Repeat track' action
