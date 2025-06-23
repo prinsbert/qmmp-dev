@@ -9,6 +9,8 @@ Version 1.7.7
   playlist
 * fixed volume adjustment step when using mouse wheel
 * fixed some clazy analyzer warnings
+* fixed frequencies of the all spectrum analyzers
+* fixed handling of the file open errors
 
 Version 1.7.6
 * using system scroll settings for playlists
