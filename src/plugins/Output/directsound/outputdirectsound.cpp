@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2014-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2014-2025 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -105,22 +105,32 @@ bool OutputDirectSound::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForm
     {
         wfex.Format.wBitsPerSample = 16;
         wfex.Samples.wValidBitsPerSample = 16;
+        wfex.SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
     }
     else if(format == Qmmp::PCM_S24LE)
     {
         wfex.Format.wBitsPerSample  = 32;
         wfex.Samples.wValidBitsPerSample = 24;
+        wfex.SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
     }
     else if(format == Qmmp::PCM_S32LE)
     {
         wfex.Format.wBitsPerSample  = 32;
         wfex.Samples.wValidBitsPerSample = 32;
+        wfex.SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
+    }
+    else if(format == Qmmp::PCM_FLOAT)
+    {
+        wfex.Format.wBitsPerSample  = 32;
+        wfex.Samples.wValidBitsPerSample = 32;
+        wfex.SubFormat = KSDATAFORMAT_SUBTYPE_IEEE_FLOAT;
     }
     else
     {
         format = Qmmp::PCM_S16LE;
         wfex.Format.wBitsPerSample  = 16;
         wfex.Samples.wValidBitsPerSample = 16;
+        wfex.SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
     }
 
     wfex.Format.nBlockAlign     = (wfex.Format.wBitsPerSample / 8) * wfex.Format.nChannels;
@@ -141,7 +151,6 @@ bool OutputDirectSound::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForm
     }
 
     wfex.dwChannelMask = mask;
-    wfex.SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
 
     if((result = m_primaryBuffer->SetFormat((WAVEFORMATEX*)&wfex)) != DS_OK)
     {
