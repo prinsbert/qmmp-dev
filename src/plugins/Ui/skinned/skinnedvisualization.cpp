@@ -413,35 +413,31 @@ bool Analyzer::process(float *l)
     calc_freq (dest, l);
 
     const double y_scale = 3.60673760222;   /* 20.0 / log(256) */
-    int max = m_lines ? 75 : 19, y, j;
+    int max = m_lines ? 75 : 19;
 
     for(int i = 0; i < max; i++)
     {
+        int y = 0;
+
         if(m_lines)
         {
-            for(j = xscale_long[i], y = 0; j < xscale_long[i + 1]; j++)
+            for(int j = xscale_long[i]; j < xscale_long[i + 1]; j++)
             {
-                if(dest[j] > y)
-                    y = dest[j];
+                y = qMax(dest[j] >> 7, y); //128
             }
         }
         else
         {
-            for(j = xscale_short[i], y = 0; j < xscale_short[i + 1]; j++)
+            for(int j = xscale_short[i]; j < xscale_short[i + 1]; j++)
             {
-                if(dest[j] > y)
-                    y = dest[j];
+                y = qMax(dest[j] >> 7, y);
             }
         }
-        y >>= 7;
+
         int magnitude = 0;
-        if(y != 0)
+        if(y > 0)
         {
-            magnitude = int(log (y) * y_scale);
-            if(magnitude > 15)
-                magnitude = 15;
-            if(magnitude < 0)
-                magnitude = 0;
+            magnitude = qBound(0, int(log(y) * y_scale), 15);
         }
 
         m_intern_vis_data[i] -= m_analyzer_falloff;

@@ -218,7 +218,14 @@ void Analyzer::process()
         m_x_scale = new int[m_cols + 1] { 0 };
 
         for(int i = 0; i < m_cols + 1; ++i)
-            m_x_scale[i] = pow(pow(255.0, 1.0 / m_cols), i);
+        {
+            m_x_scale[i] = powf(255.0, float(i) / m_cols);
+            if(i > 0)
+            {
+                if(m_x_scale[i - 1] >= m_x_scale[i]) //avoid several bars in a row with the same frequency
+                    m_x_scale[i] = qMin(m_x_scale[i - 1] + 1, m_cols);
+            }
+        }
     }
 
     short dest_l[256];
@@ -229,7 +236,7 @@ void Analyzer::process()
 
     double y_scale = (double) 1.25 * m_rows / log(256);
 
-    for (int i = 0; i < m_cols; i++)
+    for(int i = 0; i < m_cols; i++)
     {
         int j = m_cols * 2 - i - 1; //mirror index
         short yl = 0;
@@ -239,27 +246,22 @@ void Analyzer::process()
 
         if(m_x_scale[i] == m_x_scale[i + 1])
         {
-            yl = dest_l[i];
-            yr = dest_r[i];
+            yl = dest_l[m_x_scale[i]] >> 7; //128
+            yr = dest_r[m_x_scale[i]] >> 7;
         }
-        for (int k = m_x_scale[i]; k < m_x_scale[i + 1]; k++)
+        for(int k = m_x_scale[i]; k < m_x_scale[i + 1]; k++)
         {
-            yl = qMax(dest_l[k], yl);
-            yr = qMax(dest_r[k], yr);
+            yl = qMax(dest_l[k] >> 7, yl);
+            yr = qMax(dest_l[k] >> 7, yr);
         }
 
-        yl >>= 7; //256
-        yr >>= 7;
-
-        if (yl)
+        if(yl > 0)
         {
-            magnitude_l = int(log (yl) * y_scale);
-            magnitude_l = qBound(0, magnitude_l, m_rows);
+            magnitude_l = qBound(0, int(log(yl) * y_scale), m_rows);
         }
-        if (yr)
+        if(yr > 0)
         {
-            magnitude_r = int(log (yr) * y_scale);
-            magnitude_r = qBound(0, magnitude_r, m_rows);
+            magnitude_r = qBound(0, int(log(yr) * y_scale), m_rows);
         }
 
         m_intern_vis_data[i] -= m_analyzer_falloff * m_rows / 15;
