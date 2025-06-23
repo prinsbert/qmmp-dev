@@ -402,33 +402,31 @@ bool SkinnedAnalyzer::process(float *l)
     };
 
     const double y_scale = 3.60673760222;   /* 20.0 / log(256) */
-    int max = m_lines ? 75 : 19, y, j;
+    int max = m_lines ? 75 : 19;
 
     for(int i = 0; i < max; i++)
     {
+        int y = 0;
+
         if(m_lines)
         {
-            for(j = xscale_long[i], y = 0; j < xscale_long[i + 1]; j++)
+            for(int j = xscale_long[i]; j < xscale_long[i + 1]; j++)
             {
-                y = qMax(static_cast<int>(l[i]) >> 8, y); //256
+                y = qMax(static_cast<int>(l[j]) >> 15, y); //32768
             }
         }
         else
         {
-            for(j = xscale_short[i], y = 0; j < xscale_short[i + 1]; j++)
+            for(int j = xscale_short[i]; j < xscale_short[i + 1]; j++)
             {
-                y = qMax(static_cast<int>(l[i]) >> 8, y);
+                y = qMax(static_cast<int>(l[j]) >> 15, y);
             }
         }
-        y >>= 7; //128
+
         int magnitude = 0;
-        if(y != 0)
+        if(y > 0)
         {
-            magnitude = int(log (y) * y_scale);
-            if(magnitude > 15)
-                magnitude = 15;
-            if(magnitude < 0)
-                magnitude = 0;
+            magnitude = qBound(0, int(log(y) * y_scale), 15);
         }
 
         m_intern_vis_data[i] -= m_analyzer_falloff;
