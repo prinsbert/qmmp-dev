@@ -336,7 +336,8 @@ void StreamWindow::closeEvent(QCloseEvent *)
 
      //save icecast directory
     QFile file(Qmmp::configDir() + u"/streambrowser/icecast.xml"_s);
-    file.open(QIODevice::WriteOnly);
+    if(!file.open(QIODevice::WriteOnly))
+        return;
     QXmlStreamWriter writer(&file);
     writer.setAutoFormatting(true);
     writer.writeStartDocument();
@@ -356,7 +357,8 @@ void StreamWindow::closeEvent(QCloseEvent *)
     file.close();
     //save favorites
     QFile file2(Qmmp::configDir() + u"/streambrowser/favorites.xml"_s);
-    file2.open(QIODevice::WriteOnly);
+    if(!file2.open(QIODevice::WriteOnly))
+        return;
     QXmlStreamWriter writer2(&file2);
     writer2.setAutoFormatting(true);
     writer2.writeStartDocument();
