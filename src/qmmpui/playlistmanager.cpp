@@ -307,7 +307,14 @@ void PlayListManager::readPlayLists()
             else if (key == "length")
                 tracks.last()->setDuration(value.toInt() * 1000);
             else if((metaKey = m_metaKeys.value(key, Qmmp::UNKNOWN)) != Qmmp::UNKNOWN)
+            {
+                if(metaKey == Qmmp::COMMENT)
+                {
+                    value.replace("\\n", "\n");
+                    value.replace("\\r", "\r");
+                }
                 tracks.last()->setValue(metaKey, value);
+            }
             else if((propKey = m_propKeys.value(key, Qmmp::UNKNOWN_PROPERTY)) != Qmmp::UNKNOWN_PROPERTY)
                 tracks.last()->setValue(propKey, value);
         }
@@ -363,7 +370,14 @@ void PlayListManager::writePlayLists()
             foreach(Qmmp::MetaData metaKey, m_metaKeys.values())
             {
                 if(!(value = t->value(metaKey)).isEmpty())
+                {
+                    if(metaKey == Qmmp::COMMENT)
+                    {
+                        value.replace("\n", "\\n");
+                        value.replace("\r", "\\r");
+                    }
                     tmpFile.write(QString("%1=%2\n").arg(m_metaKeys.key(metaKey)).arg(value).toUtf8());
+                }
             }
 
             foreach(Qmmp::TrackProperty propKey, m_propKeys.values())
