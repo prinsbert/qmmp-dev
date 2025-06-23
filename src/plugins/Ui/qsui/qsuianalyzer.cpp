@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2012-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2012-2025 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -144,7 +144,14 @@ void QSUiAnalyzer::process()
             m_intern_vis_data[i] = 0;
         }
         for(int i = 0; i < m_cols + 1; ++i)
-            m_x_scale[i] = pow(pow(255.0, 1.0 / m_cols), i);
+        {
+            m_x_scale[i] = powf(255.0, float(i) / m_cols);
+            if(i > 0)
+            {
+                if(m_x_scale[i - 1] >= m_x_scale[i]) //avoid several bars in a row with the same frequency
+                    m_x_scale[i] = qMin(m_x_scale[i - 1] + 1, m_cols);
+            }
+        }
     }
     short dest[256];
     short y;
@@ -161,7 +168,7 @@ void QSUiAnalyzer::process()
 
         if(m_x_scale[i] == m_x_scale[i + 1])
         {
-            y = dest[i];
+            y = dest[m_x_scale[i]];
         }
         for (k = m_x_scale[i]; k < m_x_scale[i + 1]; k++)
         {
