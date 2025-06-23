@@ -440,7 +440,14 @@ void QSUiAnalyzer::process(float *buffer, int width, int height)
         m_x_scale = new int[m_cols + 1] { 0 };
 
         for(int i = 0; i < m_cols + 1; ++i)
-            m_x_scale[i] = pow(pow(255.0, 1.0 / m_cols), i);
+        {
+            m_x_scale[i] = powf(255.0, float(i) / m_cols);
+            if(i > 0)
+            {
+                if(m_x_scale[i - 1] >= m_x_scale[i]) //avoid several bars in a row with the same frequency
+                    m_x_scale[i] = qMin(m_x_scale[i - 1] + 1, m_cols);
+            }
+        }
 
         QLinearGradient gradient(0, 0, 0, m_height);
         gradient.setColorAt(0.33, m_color3);
@@ -451,26 +458,23 @@ void QSUiAnalyzer::process(float *buffer, int width, int height)
 
     double y_scale = (double) 1.25 * m_rows / log(256);
 
-    for (int i = 0; i < m_cols; i++)
+    for(int i = 0; i < m_cols; i++)
     {
         short y = 0;
         int magnitude = 0;
 
         if(m_x_scale[i] == m_x_scale[i + 1])
         {
-            y = static_cast<int>(buffer[i]) >> 8; //256
+            y = static_cast<int>(buffer[m_x_scale[i]]) >> 15;
         }
         for (int k = m_x_scale[i]; k < m_x_scale[i + 1]; k++)
         {
-            y = qMax((static_cast<int>(buffer[i]) >> 8), y);
+            y = qMax((static_cast<int>(buffer[k]) >> 15), y); //32768
         }
 
-        y >>= 7; //128
-
-        if (y)
+        if(y > 0)
         {
-            magnitude = int(log (y) * y_scale);
-            magnitude = qBound(0, magnitude, m_rows);
+            magnitude = qBound(0, int(log(y) * y_scale), m_rows);
         }
 
         m_intern_vis_data[i] -= m_analyzer_falloff * m_rows / 15;
