@@ -243,8 +243,8 @@ void Analyzer::process()
         }
         for(int k = m_x_scale[i]; k < m_x_scale[i + 1]; k++)
         {
-            yl = qMax(dest_l[k] >> 7, yl);
-            yr = qMax(dest_l[k] >> 7, yr);
+            yl = qMax(short(dest_l[k] >> 7), yl);
+            yr = qMax(short(dest_l[k] >> 7), yr);
         }
 
         if(yl > 0)

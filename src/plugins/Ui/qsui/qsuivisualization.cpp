@@ -445,7 +445,7 @@ void QSUiAnalyzer::process(float *buffer, int width, int height)
 
     for(int i = 0; i < m_cols; i++)
     {
-        short y = 0;
+        int y = 0;
         int magnitude = 0;
 
         if(m_x_scale[i] == m_x_scale[i + 1])
