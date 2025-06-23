@@ -21,6 +21,6 @@
 #ifndef CURSORIMAGE_H
 #define CURSORIMAGE_H
 
-QCursor createCursor(QString path);
+QCursor createCursor(const QString &path);
 
 #endif

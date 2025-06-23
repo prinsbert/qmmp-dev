@@ -57,7 +57,8 @@ QSUiLogo::QSUiLogo(QWidget *parent) : Visual(parent)
     };
 
     QFile file(u":/ascii_logo.txt"_s);
-    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
 
     while(!file.atEnd())
     {

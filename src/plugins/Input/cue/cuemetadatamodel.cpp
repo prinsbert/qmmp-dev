@@ -69,7 +69,9 @@ QString CUEMetaDataModel::cue() const
     }
 
     QFile file(m_cueFilePath);
-    file.open(QIODevice::ReadOnly);
+    if(!file.open(QIODevice::ReadOnly))
+        return QString();
+
     QByteArray data = file.readAll();
 
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
@@ -108,7 +110,11 @@ void CUEMetaDataModel::setCue(const QString &content)
     }
 
     QFile file(m_cueFilePath);
-    file.open(QIODevice::WriteOnly);
+    if(!file.open(QIODevice::WriteOnly))
+    {
+        qCWarning(plugin, "unable to write cue file, error: %s", qPrintable(file.errorString()));
+        return;
+    }
     file.write(m_codec->fromUnicode(content));
 }
 

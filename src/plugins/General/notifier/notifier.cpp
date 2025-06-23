@@ -141,9 +141,8 @@ void Notifier::showMetaData()
             continue;
 
         QFile file(path);
-        file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate);
-        file.write(data);
-        file.close();
+        if(file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate))
+            file.write(data);
     }
 }
 

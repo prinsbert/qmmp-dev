@@ -27,18 +27,21 @@
 #include <QBitmap>
 #include "cursorimage.h"
 
-QCursor createCursor(QString path)
+QCursor createCursor(const QString &path)
 {
-	if (path.isEmpty())
+    if(path.isEmpty())
         return QCursor();
 	
 	// read file headers
-	QFile curFile(path);
-	curFile.open(QIODevice::ReadOnly);
-	QDataStream curStream(&curFile);
-	curStream.setByteOrder(QDataStream::LittleEndian);
-	
-	struct {
+    QFile curFile(path);
+
+    if(!curFile.open(QIODevice::ReadOnly))
+        return QCursor();
+
+    QDataStream curStream(&curFile);
+    curStream.setByteOrder(QDataStream::LittleEndian);
+
+    struct {
 		quint16 zero;
 		quint16 type;
 		quint16 icons;

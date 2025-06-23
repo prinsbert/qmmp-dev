@@ -389,12 +389,18 @@ void SkinnedEqWidget::loadPreset(const QString &name)
 
 void SkinnedEqWidget::importWinampEQF()
 {
-    char header[31];
-
     QString path = FileDialog::getOpenFileName(this, tr("Import Preset"), QDir::homePath(), u"Winamp EQF (*.q1)"_s);
+    if(path.isEmpty())
+        return;
 
     QFile file(path);
-    file.open(QIODevice::ReadOnly);
+    if(!file.open(QIODevice::ReadOnly))
+    {
+        qCWarning(plugin) << "unable to open preset file; error:" << file.errorString();
+        return;
+    }
+
+    char header[31];
     file.read(header, 31);
     if (QString::fromLatin1(header).contains(u"Winamp EQ library file v1.1"_s))
     {
