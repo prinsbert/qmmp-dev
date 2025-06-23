@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2025 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -74,7 +74,7 @@ QString SeekOption::executeCommand(int id, const QStringList &args)
     }
 
     qDebug("SeekOption: position = %d", seek_pos);
-    core->seek(qBount(qint64(0), seek_pos * 1000, core->duration());
+    core->seek(qBound(qint64(0), qint64(seek_pos) * 1000, core->duration()));
 
     return QString();
 }
