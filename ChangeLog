@@ -2,7 +2,7 @@ Changelog of Qt-based Multimedia Player
 --------------
 
 Version 2.2.7
-* added kwin rules for KDE6
+* added KWin rules for KDE6
 * added display of volume when adjusting it with the mouse wheel in the
   skinned user interface
 * fixed support for multi-line comments when saving and restoring a
