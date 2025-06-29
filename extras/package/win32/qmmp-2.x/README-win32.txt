@@ -30,7 +30,7 @@ List of the third-party libraries.
   7-Zip               24.08      https://www.7-zip.org/
   taglib              2.0.2      https://taglib.github.io/
   libmad              0.15.1b    https://www.underbit.com/products/mad/
-  libogg              1.3.5      https://www.vorbis.com/
+  libogg              1.3.6      https://www.vorbis.com/
   libvorbis           1.3.7      https://www.vorbis.com/
   flac                1.4.3      https://xiph.org/flac/index.html
   wavpack             5.8.1      https://www.wavpack.com/
