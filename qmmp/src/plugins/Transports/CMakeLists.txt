@@ -1,4 +1,4 @@
-set(USE_CURL TRUE CACHE BOOL "enable/disable curl-based http plugin")
+option(USE_CURL "enable/disable curl-based http plugin" ON)
 
 if(USE_CURL)
     add_subdirectory(http)

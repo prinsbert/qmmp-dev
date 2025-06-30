@@ -1,5 +1,5 @@
-set(USE_YTB TRUE CACHE BOOL "enable/disable youtube plugin")
-set(USE_MMS TRUE CACHE BOOL "enable/disable mms plugin")
+option(USE_YTB "enable/disable youtube plugin" ON)
+option(USE_MMS "enable/disable mms plugin" ON)
 
 if(USE_YTB)
     add_subdirectory(ytb)

@@ -1,4 +1,4 @@
-set(USE_ENCA TRUE CACHE BOOL "enable/disable libenca support")
+option(USE_ENCA "enable/disable libenca support" ON)
 include(FindPkgConfig)
 pkg_search_module(ENCA enca>=1.9 IMPORTED_TARGET)
 pkg_search_module(TAGLIB taglib>=1.12 IMPORTED_TARGET)

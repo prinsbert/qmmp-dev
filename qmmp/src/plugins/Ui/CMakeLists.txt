@@ -1,5 +1,5 @@
-set(USE_SKINNED TRUE CACHE BOOL "enable/disable skinned user interface")
-set(USE_QSUI TRUE CACHE BOOL "enable/disable simple user interface (qsui)")
+option(USE_SKINNED "enable/disable skinned user interface" ON)
+option(USE_QSUI    "enable/disable simple user interface (qsui)" ON)
 
 if(USE_SKINNED AND SKINNED_AVAILABLE)
     add_subdirectory(skinned)
