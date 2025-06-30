@@ -1,4 +1,4 @@
-option(USE_CURL "enable/disable curl-based http plugin" ON)
+option(USE_CURL "curl-based http plugin" ON)
 
 if(USE_CURL)
     add_subdirectory(http)

@@ -1,5 +1,5 @@
-option(USE_ANALYZER "enable/disable analyzer plugin" ON)
-option(USE_PROJECTM "enable/disable projectm plugin" ON)
+option(USE_ANALYZER "analyzer plugin" ON)
+option(USE_PROJECTM "projectm plugin" ON)
 
 if(USE_ANALYZER)
     add_subdirectory(analyzer)
