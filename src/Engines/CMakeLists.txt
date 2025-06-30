@@ -1,4 +1,4 @@
-option(USE_FFVIDEO "enable/disable FFmpeg video plugin" ON)
+option(USE_FFVIDEO "FFmpeg video plugin" ON)
 
 if(USE_FFVIDEO)
     add_subdirectory(ffvideo)

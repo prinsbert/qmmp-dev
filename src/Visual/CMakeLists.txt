@@ -1,4 +1,4 @@
-option(USE_GOOM "enable/disable goom plugin" ON)
+option(USE_GOOM "goom plugin" ON)
 
 if(USE_GOOM)
     add_subdirectory(goom)
