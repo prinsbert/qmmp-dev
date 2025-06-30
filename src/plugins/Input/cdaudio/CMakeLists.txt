@@ -3,7 +3,7 @@ project(libcdaudio)
 # libcdaudio
 pkg_check_modules(CDIO libcdio>=1.0.0 libcdio_cdda libcdio_paranoia IMPORTED_TARGET)
 
-set(USE_LIBCDDB TRUE CACHE BOOL "enable/disable CDDB support using libcddb")
+option(USE_LIBCDDB "enable/disable CDDB support using libcddb" ON)
 
 if(USE_LIBCDDB AND CDIO_FOUND)
     pkg_check_modules(CDDB libcddb IMPORTED_TARGET)

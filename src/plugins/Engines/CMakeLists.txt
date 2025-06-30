@@ -1,4 +1,4 @@
-set(USE_MPLAYER TRUE CACHE BOOL "enable/disable mplayer support")
+option(USE_MPLAYER "enable/disable mplayer support" ON)
 
 if(USE_MPLAYER)
     add_subdirectory(mplayer)

@@ -1,5 +1,5 @@
-set(USE_QMMP_DIALOG TRUE CACHE BOOL "enable/disable Qmmp file dialog")
-set(USE_TWO_PANEL_DIALOG TRUE CACHE BOOL "enable/disable Two-panel file dialog")
+option(USE_QMMP_DIALOG "enable/disable Qmmp file dialog" ON)
+option(USE_TWO_PANEL_DIALOG "enable/disable Two-panel file dialog" ON)
 
 if(USE_QMMP_DIALOG)
     add_subdirectory(QmmpFileDialog)

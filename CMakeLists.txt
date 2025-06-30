@@ -96,8 +96,8 @@ else(SVN_VERSION)
 endif(SVN_VERSION)
 
 set(PLUGIN_DIR "${CMAKE_INSTALL_LIBDIR}/qmmp-${QMMP_VERSION_MAJOR}.${QMMP_VERSION_MINOR}" CACHE STRING "plugin path")
-set(USE_SKINNED TRUE CACHE BOOL "enable/disable standard skinned user interface")
-set(USE_DIR_ASSOC TRUE CACHE BOOL "enable/disable inode/directory mime type association")
+option(USE_SKINNED "enable/disable standard skinned user interface" ON)
+option(USE_DIR_ASSOC "enable/disable inode/directory mime type association" ON)
 #set(APP_NAME_SUFFIX "-1")
 
 get_target_property(QtGui_enabled_features Qt6::Gui QT_ENABLED_PUBLIC_FEATURES)

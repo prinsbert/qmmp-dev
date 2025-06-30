@@ -12,7 +12,7 @@ if(USE_MPG123)
     pkg_search_module(MPG123 libmpg123>=1.13.0 IMPORTED_TARGET)
 endif(USE_MPG123)
 
-set(USE_LIBRCD FALSE CACHE BOOL "enable/disable charset detection for ID3v1/2 tags using librcd")
+option(USE_LIBRCD "enable/disable charset detection for ID3v1/2 tags using librcd" OFF)
 
 if(USE_LIBRCD)
     check_include_file_cxx(librcd.h LIBRCD_HEADER_FOUND)
