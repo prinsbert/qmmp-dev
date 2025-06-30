@@ -297,7 +297,7 @@
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="94"/>
-        <location filename="../forms/configdialog.ui" line="1002"/>
+        <location filename="../forms/configdialog.ui" line="1016"/>
         <source>Audio</source>
         <translation>오디오</translation>
     </message>
@@ -329,7 +329,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="242"/>
         <location filename="../forms/configdialog.ui" line="267"/>
-        <location filename="../forms/configdialog.ui" line="716"/>
+        <location filename="../forms/configdialog.ui" line="730"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -379,246 +379,254 @@
         <translation>다음으로 파일 제한:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="313"/>
-        <location filename="../forms/configdialog.ui" line="588"/>
+        <location filename="../forms/configdialog.ui" line="306"/>
+        <location filename="../forms/configdialog.ui" line="323"/>
+        <location filename="../forms/configdialog.ui" line="591"/>
+        <location filename="../forms/configdialog.ui" line="605"/>
+        <source>A list of file masks separated by comma.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/configdialog.ui" line="316"/>
+        <location filename="../forms/configdialog.ui" line="598"/>
         <source>Exclude files:</source>
         <translation>제외 파일:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="330"/>
+        <location filename="../forms/configdialog.ui" line="336"/>
         <source>Miscellaneous</source>
         <translation>기타</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="336"/>
+        <location filename="../forms/configdialog.ui" line="342"/>
         <source>Auto-save playlist when modified</source>
         <translation>수정 시 재생목록 자동 저장</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="343"/>
+        <location filename="../forms/configdialog.ui" line="349"/>
         <source>Clear previous playlist when opening new one</source>
         <translation>새 재생목록을 열 때 이전 재생목록 지우기</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="396"/>
+        <location filename="../forms/configdialog.ui" line="402"/>
         <location filename="../configdialog.cpp" line="339"/>
         <source>Preferences</source>
         <translation>기본 설정</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="413"/>
+        <location filename="../forms/configdialog.ui" line="419"/>
         <location filename="../configdialog.cpp" line="342"/>
         <source>Information</source>
         <translation>정보</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="459"/>
+        <location filename="../forms/configdialog.ui" line="465"/>
         <source>Description</source>
         <translation>설명</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="464"/>
+        <location filename="../forms/configdialog.ui" line="470"/>
         <source>Filename</source>
         <translation>파일이름</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="476"/>
+        <location filename="../forms/configdialog.ui" line="482"/>
         <source>Look and Feel</source>
         <translation>사용자 환경</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="482"/>
+        <location filename="../forms/configdialog.ui" line="488"/>
         <source>Language:</source>
         <translation>언어:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="515"/>
+        <location filename="../forms/configdialog.ui" line="521"/>
         <source>Display average bitrate</source>
         <translation>평균 비트레이트 화면표시</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="525"/>
+        <location filename="../forms/configdialog.ui" line="531"/>
         <source>Playback</source>
         <translation>플레이백</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="531"/>
+        <location filename="../forms/configdialog.ui" line="537"/>
         <source>Continue playback on startup</source>
         <translation>시작 시 플레이백 계속</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="538"/>
+        <location filename="../forms/configdialog.ui" line="544"/>
         <source>Determine file type by content</source>
         <translation>콘텐츠별로 파일 유형 결정</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="545"/>
+        <location filename="../forms/configdialog.ui" line="551"/>
         <source>Add files from command line to this playlist:</source>
         <translation>명령줄에서 이 재생목록에 파일 추가:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="562"/>
+        <location filename="../forms/configdialog.ui" line="568"/>
         <source>Cover Image Retrieve</source>
         <translation>표지 이미지 검색하기</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="568"/>
+        <location filename="../forms/configdialog.ui" line="574"/>
         <source>Use separate image files</source>
         <translation>별도의 이미지 파일 사용</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="578"/>
+        <location filename="../forms/configdialog.ui" line="584"/>
         <source>Include files:</source>
         <translation>포함 파일:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="600"/>
+        <location filename="../forms/configdialog.ui" line="614"/>
         <source>Recursive search depth:</source>
         <translation>되부름 검색 깊이:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="638"/>
+        <location filename="../forms/configdialog.ui" line="652"/>
         <source>URL Dialog</source>
         <translation>URL 대화상자</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="644"/>
+        <location filename="../forms/configdialog.ui" line="658"/>
         <source>Auto-paste URL from clipboard</source>
         <translation>클립보드에서 URL 자동 붙여넣기</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="654"/>
+        <location filename="../forms/configdialog.ui" line="668"/>
         <source>CUE Editor</source>
         <translation>CUE 편집기</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="660"/>
+        <location filename="../forms/configdialog.ui" line="674"/>
         <source>Use system font</source>
         <translation>시스템 글꼴 사용</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="681"/>
+        <location filename="../forms/configdialog.ui" line="695"/>
         <source>Font:</source>
         <translation>글꼴:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="706"/>
+        <location filename="../forms/configdialog.ui" line="720"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="745"/>
+        <location filename="../forms/configdialog.ui" line="759"/>
         <source>Proxy</source>
         <translation>프록시</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="757"/>
+        <location filename="../forms/configdialog.ui" line="771"/>
         <source>Enable proxy usage</source>
         <translation>프록시 사용 활성화</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="764"/>
+        <location filename="../forms/configdialog.ui" line="778"/>
         <source>Proxy type:</source>
         <translation>프록시 유형:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="774"/>
+        <location filename="../forms/configdialog.ui" line="788"/>
         <source>Proxy host name:</source>
         <translation>프록시 호스트 이름:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="791"/>
+        <location filename="../forms/configdialog.ui" line="805"/>
         <source>Proxy port:</source>
         <translation>프록시 포트:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="808"/>
+        <location filename="../forms/configdialog.ui" line="822"/>
         <source>Use authentication with proxy</source>
         <translation>프록시와 함께 인증 사용</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="815"/>
+        <location filename="../forms/configdialog.ui" line="829"/>
         <source>Proxy user name:</source>
         <translation>프록시 사용자 이름:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="832"/>
+        <location filename="../forms/configdialog.ui" line="846"/>
         <source>Proxy password:</source>
         <translation>프록시 암호:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="872"/>
+        <location filename="../forms/configdialog.ui" line="886"/>
         <source>Replay Gain</source>
         <translation>Replay 게인</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="878"/>
+        <location filename="../forms/configdialog.ui" line="892"/>
         <source>Replay Gain mode:</source>
         <translation>Replay 게인 모드:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="895"/>
+        <location filename="../forms/configdialog.ui" line="909"/>
         <source>Preamp:</source>
         <translation>프리앰프:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="927"/>
-        <location filename="../forms/configdialog.ui" line="972"/>
+        <location filename="../forms/configdialog.ui" line="941"/>
+        <location filename="../forms/configdialog.ui" line="986"/>
         <source>dB</source>
         <translation>dB</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="940"/>
+        <location filename="../forms/configdialog.ui" line="954"/>
         <source>Default gain:</source>
         <translation>기본 게인:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="992"/>
+        <location filename="../forms/configdialog.ui" line="1006"/>
         <source>Use  peak info to prevent clipping</source>
         <translation>피크 정보를 사용하여 클리핑 방지</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1008"/>
+        <location filename="../forms/configdialog.ui" line="1022"/>
         <source>Buffer size:</source>
         <translation>버퍼 크기:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1034"/>
+        <location filename="../forms/configdialog.ui" line="1048"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1067"/>
+        <location filename="../forms/configdialog.ui" line="1081"/>
         <source>Use software volume control</source>
         <translation>소프트웨어 볼륨 컨트롤 사용</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1107"/>
+        <location filename="../forms/configdialog.ui" line="1121"/>
         <source>Use two passes for equalizer</source>
         <translation>이퀄라이저에 2패스 사용</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1050"/>
+        <location filename="../forms/configdialog.ui" line="1064"/>
         <source>Volume adjustment step:</source>
         <translation>볼륨 조절 단계:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="350"/>
+        <location filename="../forms/configdialog.ui" line="356"/>
         <source>Skip already existing tracks when adding</source>
         <translation>추가할 때 기존 트랙 건너뛰기</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="357"/>
+        <location filename="../forms/configdialog.ui" line="363"/>
         <source>Stop playback after removing of current track</source>
         <translation>현재 트랙 제거 후 플레이백 중지</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1074"/>
+        <location filename="../forms/configdialog.ui" line="1088"/>
         <source>Output bit depth:</source>
         <translation>출력 비트 깊이:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1015"/>
+        <location filename="../forms/configdialog.ui" line="1029"/>
         <source>Use dithering</source>
         <translation>디더링 사용</translation>
     </message>
@@ -944,12 +952,12 @@
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="131"/>
-        <location filename="../cueeditor.cpp" line="150"/>
+        <location filename="../cueeditor.cpp" line="152"/>
         <source>CUE Files</source>
         <translation>CUE 파일</translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="148"/>
+        <location filename="../cueeditor.cpp" line="150"/>
         <source>Save CUE File</source>
         <translation>CUE 파일 저장</translation>
     </message>
@@ -1354,7 +1362,7 @@
     <name>PlayListManager</name>
     <message>
         <location filename="../playlistmanager.cpp" line="177"/>
-        <location filename="../playlistmanager.cpp" line="322"/>
+        <location filename="../playlistmanager.cpp" line="329"/>
         <source>Playlist</source>
         <translation>재생목록</translation>
     </message>

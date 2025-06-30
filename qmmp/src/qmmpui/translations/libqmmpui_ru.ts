@@ -297,7 +297,7 @@
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="94"/>
-        <location filename="../forms/configdialog.ui" line="1002"/>
+        <location filename="../forms/configdialog.ui" line="1016"/>
         <source>Audio</source>
         <translation>Аудио</translation>
     </message>
@@ -329,7 +329,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="242"/>
         <location filename="../forms/configdialog.ui" line="267"/>
-        <location filename="../forms/configdialog.ui" line="716"/>
+        <location filename="../forms/configdialog.ui" line="730"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -379,246 +379,254 @@
         <translation>Ограничить выбор файлов до:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="313"/>
-        <location filename="../forms/configdialog.ui" line="588"/>
+        <location filename="../forms/configdialog.ui" line="306"/>
+        <location filename="../forms/configdialog.ui" line="323"/>
+        <location filename="../forms/configdialog.ui" line="591"/>
+        <location filename="../forms/configdialog.ui" line="605"/>
+        <source>A list of file masks separated by comma.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/configdialog.ui" line="316"/>
+        <location filename="../forms/configdialog.ui" line="598"/>
         <source>Exclude files:</source>
         <translation>Исключить файлы:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="330"/>
+        <location filename="../forms/configdialog.ui" line="336"/>
         <source>Miscellaneous</source>
         <translation>Разное</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="336"/>
+        <location filename="../forms/configdialog.ui" line="342"/>
         <source>Auto-save playlist when modified</source>
         <translation>Автоматически сохранять список после изменения</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="343"/>
+        <location filename="../forms/configdialog.ui" line="349"/>
         <source>Clear previous playlist when opening new one</source>
         <translation>Очищать предыдущий список при открытии нового</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="396"/>
+        <location filename="../forms/configdialog.ui" line="402"/>
         <location filename="../configdialog.cpp" line="339"/>
         <source>Preferences</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="413"/>
+        <location filename="../forms/configdialog.ui" line="419"/>
         <location filename="../configdialog.cpp" line="342"/>
         <source>Information</source>
         <translation>Информация</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="459"/>
+        <location filename="../forms/configdialog.ui" line="465"/>
         <source>Description</source>
         <translation>Описание</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="464"/>
+        <location filename="../forms/configdialog.ui" line="470"/>
         <source>Filename</source>
         <translation>Имя файла</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="476"/>
+        <location filename="../forms/configdialog.ui" line="482"/>
         <source>Look and Feel</source>
         <translation>Параметры интерфейса</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="482"/>
+        <location filename="../forms/configdialog.ui" line="488"/>
         <source>Language:</source>
         <translation>Язык:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="515"/>
+        <location filename="../forms/configdialog.ui" line="521"/>
         <source>Display average bitrate</source>
         <translation>Отображать среднюю битовую частоту</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="525"/>
+        <location filename="../forms/configdialog.ui" line="531"/>
         <source>Playback</source>
         <translation>Воспроизведение</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="531"/>
+        <location filename="../forms/configdialog.ui" line="537"/>
         <source>Continue playback on startup</source>
         <translation>Продолжить воспроизведение после запуска</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="538"/>
+        <location filename="../forms/configdialog.ui" line="544"/>
         <source>Determine file type by content</source>
         <translation>Определять тип файла по содержимому</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="545"/>
+        <location filename="../forms/configdialog.ui" line="551"/>
         <source>Add files from command line to this playlist:</source>
         <translation>Добавлять файлы из командной строки в этот список:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="562"/>
+        <location filename="../forms/configdialog.ui" line="568"/>
         <source>Cover Image Retrieve</source>
         <translation>Поиск обложки альбома</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="568"/>
+        <location filename="../forms/configdialog.ui" line="574"/>
         <source>Use separate image files</source>
         <translation>Использовать отдельные файлы с изображениями</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="578"/>
+        <location filename="../forms/configdialog.ui" line="584"/>
         <source>Include files:</source>
         <translation>Включить файлы:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="600"/>
+        <location filename="../forms/configdialog.ui" line="614"/>
         <source>Recursive search depth:</source>
         <translation>Глубина рекурсивного поиска:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="638"/>
+        <location filename="../forms/configdialog.ui" line="652"/>
         <source>URL Dialog</source>
         <translation>URL-диалог</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="644"/>
+        <location filename="../forms/configdialog.ui" line="658"/>
         <source>Auto-paste URL from clipboard</source>
         <translation>Автоматически вставлять URL из буфера обмена</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="654"/>
+        <location filename="../forms/configdialog.ui" line="668"/>
         <source>CUE Editor</source>
         <translation>Редактор CUE</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="660"/>
+        <location filename="../forms/configdialog.ui" line="674"/>
         <source>Use system font</source>
         <translation>Использовать системный шрифт</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="681"/>
+        <location filename="../forms/configdialog.ui" line="695"/>
         <source>Font:</source>
         <translation>Шрифт:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="706"/>
+        <location filename="../forms/configdialog.ui" line="720"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="745"/>
+        <location filename="../forms/configdialog.ui" line="759"/>
         <source>Proxy</source>
         <translation>Прокси</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="757"/>
+        <location filename="../forms/configdialog.ui" line="771"/>
         <source>Enable proxy usage</source>
         <translation>Использовать прокси</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="764"/>
+        <location filename="../forms/configdialog.ui" line="778"/>
         <source>Proxy type:</source>
         <translation>Тип прокси:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="774"/>
+        <location filename="../forms/configdialog.ui" line="788"/>
         <source>Proxy host name:</source>
         <translation>Прокси сервер:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="791"/>
+        <location filename="../forms/configdialog.ui" line="805"/>
         <source>Proxy port:</source>
         <translation>Прокси порт:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="808"/>
+        <location filename="../forms/configdialog.ui" line="822"/>
         <source>Use authentication with proxy</source>
         <translation>Использовать авторизацию на прокси</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="815"/>
+        <location filename="../forms/configdialog.ui" line="829"/>
         <source>Proxy user name:</source>
         <translation>Имя пользователя прокси:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="832"/>
+        <location filename="../forms/configdialog.ui" line="846"/>
         <source>Proxy password:</source>
         <translation>Пароль прокси:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="872"/>
+        <location filename="../forms/configdialog.ui" line="886"/>
         <source>Replay Gain</source>
         <translation>Выравнивание громкости (Replay Gain)</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="878"/>
+        <location filename="../forms/configdialog.ui" line="892"/>
         <source>Replay Gain mode:</source>
         <translation>Режим Replay Gain:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="895"/>
+        <location filename="../forms/configdialog.ui" line="909"/>
         <source>Preamp:</source>
         <translation>Предусиление:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="927"/>
-        <location filename="../forms/configdialog.ui" line="972"/>
+        <location filename="../forms/configdialog.ui" line="941"/>
+        <location filename="../forms/configdialog.ui" line="986"/>
         <source>dB</source>
         <translation>дБ</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="940"/>
+        <location filename="../forms/configdialog.ui" line="954"/>
         <source>Default gain:</source>
         <translation>Усиление по умолчанию:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="992"/>
+        <location filename="../forms/configdialog.ui" line="1006"/>
         <source>Use  peak info to prevent clipping</source>
         <translation>Использовать пиковое значение для предотвращения срезания</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1008"/>
+        <location filename="../forms/configdialog.ui" line="1022"/>
         <source>Buffer size:</source>
         <translation>Размер буфера:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1034"/>
+        <location filename="../forms/configdialog.ui" line="1048"/>
         <source>ms</source>
         <translation>мс</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1067"/>
+        <location filename="../forms/configdialog.ui" line="1081"/>
         <source>Use software volume control</source>
         <translation>Использовать программную регулировку громкости</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1107"/>
+        <location filename="../forms/configdialog.ui" line="1121"/>
         <source>Use two passes for equalizer</source>
         <translation>Использовать два прохода для эквалайзера</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1050"/>
+        <location filename="../forms/configdialog.ui" line="1064"/>
         <source>Volume adjustment step:</source>
         <translation>Шаг регулировки громкости:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="350"/>
+        <location filename="../forms/configdialog.ui" line="356"/>
         <source>Skip already existing tracks when adding</source>
         <translation>Пропустить существующие дорожки при добавлении</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="357"/>
+        <location filename="../forms/configdialog.ui" line="363"/>
         <source>Stop playback after removing of current track</source>
         <translation>Остановить воспроизведение после удаления текущей дорожки</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1074"/>
+        <location filename="../forms/configdialog.ui" line="1088"/>
         <source>Output bit depth:</source>
         <translation>Разрядность вывода:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1015"/>
+        <location filename="../forms/configdialog.ui" line="1029"/>
         <source>Use dithering</source>
         <translation>Использовать дитеринг</translation>
     </message>
@@ -944,12 +952,12 @@
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="131"/>
-        <location filename="../cueeditor.cpp" line="150"/>
+        <location filename="../cueeditor.cpp" line="152"/>
         <source>CUE Files</source>
         <translation>Файлы CUE</translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="148"/>
+        <location filename="../cueeditor.cpp" line="150"/>
         <source>Save CUE File</source>
         <translation>Сохранить CUE-файл</translation>
     </message>
@@ -1354,7 +1362,7 @@
     <name>PlayListManager</name>
     <message>
         <location filename="../playlistmanager.cpp" line="177"/>
-        <location filename="../playlistmanager.cpp" line="322"/>
+        <location filename="../playlistmanager.cpp" line="329"/>
         <source>Playlist</source>
         <translation>Список</translation>
     </message>
