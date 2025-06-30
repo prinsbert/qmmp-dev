@@ -16,7 +16,7 @@ Description:
 
 Requirements:
 - Qt >= 6.2 (qtbase and qttools for build)
-- qmmp 2.2.x
+- qmmp 2.3.x
 - taglib >= 1.12
 - libmodplug >= 0.8.4 (optional)
 - libsamplerate >= 0.1.2 (optional)
