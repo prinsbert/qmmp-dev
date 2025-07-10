@@ -32,7 +32,6 @@
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/detailsdialog.h>
 #include "historywindow.h"
-#include "dateinputdialog.h"
 #include "progressbaritemdelegate.h"
 #include "ui_historywindow.h"
 
@@ -465,22 +464,6 @@ void HistoryWindow::on_lastMonthButton_clicked()
     t.setDate(QDate(t.date().year(), t.date().month(), 1)); ;
     m_ui->fromDateEdit->setDateTime(t);
     on_executeButton_clicked();
-}
-
-void HistoryWindow::on_fromButton_clicked()
-{
-    DateInputDialog d(this);
-    d.setSelectedDate(m_ui->fromDateEdit->date());
-    if(d.exec() == QDialog::Accepted)
-        m_ui->fromDateEdit->setDate(d.selectedDate());
-}
-
-void HistoryWindow::on_toButton_clicked()
-{
-    DateInputDialog d(this);
-    d.setSelectedDate(m_ui->toDateEdit->date());
-    if(d.exec() == QDialog::Accepted)
-        m_ui->toDateEdit->setDate(d.selectedDate());
 }
 
 void HistoryWindow::on_historyTreeWidget_itemDoubleClicked(QTreeWidgetItem *item, int)

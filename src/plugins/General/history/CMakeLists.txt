@@ -5,11 +5,9 @@ set(libhistory_SRCS
     history.cpp
     historyfactory.cpp
     historysettingsdialog.cpp
-    historywindow.cpp
     progressbaritemdelegate.cpp
     historysettingsdialog.ui
     dateinputdialog.ui
-    historywindow.ui
     translations/translations.qrc
 )
 
