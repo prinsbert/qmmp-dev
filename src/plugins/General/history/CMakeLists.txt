@@ -1,13 +1,13 @@
 project(libhistory)
 
 set(libhistory_SRCS
-    dateinputdialog.cpp
     history.cpp
     historyfactory.cpp
     historysettingsdialog.cpp
     progressbaritemdelegate.cpp
+    historywindow.cpp
     historysettingsdialog.ui
-    dateinputdialog.ui
+    historywindow.ui
     translations/translations.qrc
 )
 
