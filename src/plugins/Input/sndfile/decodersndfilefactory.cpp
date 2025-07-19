@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2024 by Ilya Kotov                                 *
+ *   Copyright (C) 2007-2025 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -96,7 +96,7 @@ bool DecoderSndFileFactory::canDecode(QIODevice *input) const
     }
     else if(!memcmp(buf, "FORM", 4))
     {
-        if(!memcmp(buf + 8, "AIFF", 4))
+        if(!memcmp(buf + 8, "AIFF", 4) || !memcmp(buf + 8, "AIFC", 4))
             return true;
         if(!memcmp(buf + 8, "8SVX", 4))
             return true;
