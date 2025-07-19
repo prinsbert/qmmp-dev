@@ -37,9 +37,9 @@ if(USE_MPC AND TAGLIB_FOUND)
     add_subdirectory(mpc)
 endif(USE_MPC AND TAGLIB_FOUND)
 
-if(USE_SNDFILE)
+if(USE_SNDFILE AND TAGLIB_FOUND)
    add_subdirectory(sndfile)
-endif(USE_SNDFILE)
+endif(USE_SNDFILE AND TAGLIB_FOUND)
 
 if(USE_WAVPACK)
     add_subdirectory(wavpack)
