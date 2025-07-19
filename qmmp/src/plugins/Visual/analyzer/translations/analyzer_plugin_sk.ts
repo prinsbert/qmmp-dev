@@ -4,89 +4,89 @@
 <context>
     <name>Analyzer</name>
     <message>
-        <location filename="../analyzer.cpp" line="36"/>
+        <location filename="../analyzer.cpp" line="34"/>
         <source>Qmmp Analyzer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="320"/>
+        <location filename="../analyzer.cpp" line="310"/>
         <source>Peaks</source>
         <translation>Špičky</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="323"/>
+        <location filename="../analyzer.cpp" line="313"/>
         <source>Refresh Rate</source>
         <translation>Obnovovacia frekvencia</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="326"/>
+        <location filename="../analyzer.cpp" line="316"/>
         <source>50 fps</source>
         <translation>50 fps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="327"/>
+        <location filename="../analyzer.cpp" line="317"/>
         <source>25 fps</source>
         <translation>25 fps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="328"/>
+        <location filename="../analyzer.cpp" line="318"/>
         <source>10 fps</source>
         <translation>10 fps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="329"/>
+        <location filename="../analyzer.cpp" line="319"/>
         <source>5 fps</source>
         <translation>5 fps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="336"/>
+        <location filename="../analyzer.cpp" line="326"/>
         <source>Analyzer Falloff</source>
         <translation>Pokles analyzéra</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="339"/>
-        <location filename="../analyzer.cpp" line="353"/>
+        <location filename="../analyzer.cpp" line="329"/>
+        <location filename="../analyzer.cpp" line="343"/>
         <source>Slowest</source>
         <translation>Najpomaljšie</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="340"/>
-        <location filename="../analyzer.cpp" line="354"/>
+        <location filename="../analyzer.cpp" line="330"/>
+        <location filename="../analyzer.cpp" line="344"/>
         <source>Slow</source>
         <translation>Pomaly</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="341"/>
-        <location filename="../analyzer.cpp" line="355"/>
+        <location filename="../analyzer.cpp" line="331"/>
+        <location filename="../analyzer.cpp" line="345"/>
         <source>Medium</source>
         <translation>Stredne</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="342"/>
-        <location filename="../analyzer.cpp" line="356"/>
+        <location filename="../analyzer.cpp" line="332"/>
+        <location filename="../analyzer.cpp" line="346"/>
         <source>Fast</source>
         <translation>Rýchlo</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="343"/>
-        <location filename="../analyzer.cpp" line="357"/>
+        <location filename="../analyzer.cpp" line="333"/>
+        <location filename="../analyzer.cpp" line="347"/>
         <source>Fastest</source>
         <translation>Najrýchlejšie</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="350"/>
+        <location filename="../analyzer.cpp" line="340"/>
         <source>Peaks Falloff</source>
         <translation>Pokles špičiek</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="365"/>
-        <location filename="../analyzer.cpp" line="367"/>
+        <location filename="../analyzer.cpp" line="355"/>
+        <location filename="../analyzer.cpp" line="357"/>
         <source>&amp;Full Screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="365"/>
-        <location filename="../analyzer.cpp" line="367"/>
+        <location filename="../analyzer.cpp" line="355"/>
+        <location filename="../analyzer.cpp" line="357"/>
         <source>F</source>
         <translation>F</translation>
     </message>

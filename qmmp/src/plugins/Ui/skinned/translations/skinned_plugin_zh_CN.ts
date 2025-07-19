@@ -487,87 +487,88 @@
 <context>
     <name>SkinnedDisplay</name>
     <message>
-        <location filename="../skinneddisplay.cpp" line="61"/>
+        <location filename="../skinneddisplay.cpp" line="62"/>
         <source>Previous</source>
         <translation>上一个</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="65"/>
+        <location filename="../skinneddisplay.cpp" line="66"/>
         <source>Play</source>
         <translation>播放</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="68"/>
+        <location filename="../skinneddisplay.cpp" line="69"/>
         <source>Pause</source>
         <translation>暂停</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="71"/>
+        <location filename="../skinneddisplay.cpp" line="72"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="74"/>
+        <location filename="../skinneddisplay.cpp" line="75"/>
         <source>Next</source>
         <translation>下一首</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="77"/>
+        <location filename="../skinneddisplay.cpp" line="78"/>
         <source>Play files</source>
         <translation>播放文件</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="82"/>
+        <location filename="../skinneddisplay.cpp" line="83"/>
         <source>Equalizer</source>
         <translation>均衡器</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="84"/>
+        <location filename="../skinneddisplay.cpp" line="85"/>
         <source>Playlist</source>
         <translation>播放列表</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="87"/>
+        <location filename="../skinneddisplay.cpp" line="88"/>
         <source>Repeat playlist</source>
         <translation>重复播放列表</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="89"/>
+        <location filename="../skinneddisplay.cpp" line="90"/>
         <source>Shuffle</source>
         <translation>乱序</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="99"/>
+        <location filename="../skinneddisplay.cpp" line="100"/>
         <source>Volume</source>
         <translation>音量</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="105"/>
+        <location filename="../skinneddisplay.cpp" line="110"/>
         <source>Balance</source>
         <translation>平衡</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="292"/>
+        <location filename="../skinneddisplay.cpp" line="297"/>
+        <location filename="../skinneddisplay.cpp" line="323"/>
         <source>Volume: %1%</source>
         <translation>音量：%1%</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="296"/>
+        <location filename="../skinneddisplay.cpp" line="301"/>
         <source>Balance: %1% right</source>
         <translation>平衡：%1% 右</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="298"/>
+        <location filename="../skinneddisplay.cpp" line="303"/>
         <source>Balance: %1% left</source>
         <translation>平衡：%1% 左</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="300"/>
+        <location filename="../skinneddisplay.cpp" line="305"/>
         <source>Balance: center</source>
         <translation>平衡：居中</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="306"/>
+        <location filename="../skinneddisplay.cpp" line="311"/>
         <source>Seek to: %1</source>
         <translation>搜寻到：%1</translation>
     </message>
@@ -626,7 +627,7 @@
         <translation>预设 #</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="394"/>
+        <location filename="../skinnedeqwidget.cpp" line="392"/>
         <source>Import Preset</source>
         <translation>导入预设</translation>
     </message>
@@ -639,47 +640,47 @@
         <translation>皮肤化用户界面</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="61"/>
+        <location filename="../skinnedfactory.cpp" line="62"/>
         <source>About Qmmp Skinned User Interface</source>
         <translation>关于Qmmp皮肤化用户界面</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="62"/>
+        <location filename="../skinnedfactory.cpp" line="63"/>
         <source>Qmmp Skinned User Interface</source>
         <translation>Qmmp皮肤化用户界面</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="63"/>
+        <location filename="../skinnedfactory.cpp" line="64"/>
         <source>Simple user interface with Winamp-2.x/XMMS skins support</source>
         <translation>支持Winamp-2.x/XMMS皮肤的简单用户界面</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="64"/>
+        <location filename="../skinnedfactory.cpp" line="65"/>
         <source>Written by:</source>
         <translation>作者：</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="65"/>
+        <location filename="../skinnedfactory.cpp" line="66"/>
         <source>Vladimir Kuznetsov &lt;vovanec@gmail.com&gt;</source>
         <translation>Vladimir Kuznetsov &lt;vovanec@gmail.com&gt;</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="66"/>
+        <location filename="../skinnedfactory.cpp" line="67"/>
         <source>Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="67"/>
+        <location filename="../skinnedfactory.cpp" line="68"/>
         <source>Artwork:</source>
         <translation>艺术制作</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="68"/>
+        <location filename="../skinnedfactory.cpp" line="69"/>
         <source>Andrey Adreev &lt;andreev00@gmail.com&gt;</source>
         <translation>Andrey Adreev &lt;andreev00@gmail.com&gt;</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="69"/>
+        <location filename="../skinnedfactory.cpp" line="70"/>
         <source>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1397,132 +1398,132 @@
 <context>
     <name>SkinnedVisualization</name>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="211"/>
+        <location filename="../skinnedvisualization.cpp" line="209"/>
         <source>Visualization Mode</source>
         <translation>可视化模式</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="214"/>
+        <location filename="../skinnedvisualization.cpp" line="212"/>
         <source>Analyzer</source>
         <translation>分析器</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="215"/>
+        <location filename="../skinnedvisualization.cpp" line="213"/>
         <source>Scope</source>
         <translation>示波器</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="216"/>
+        <location filename="../skinnedvisualization.cpp" line="214"/>
         <source>Off</source>
         <translation>关闭</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="223"/>
+        <location filename="../skinnedvisualization.cpp" line="221"/>
         <source>Analyzer Mode</source>
         <translation>分析模式</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="226"/>
+        <location filename="../skinnedvisualization.cpp" line="224"/>
         <source>Normal</source>
         <translation>标准</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="227"/>
+        <location filename="../skinnedvisualization.cpp" line="225"/>
         <source>Fire</source>
         <translation>火花</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="228"/>
+        <location filename="../skinnedvisualization.cpp" line="226"/>
         <source>Vertical Lines</source>
         <translation>垂直线</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="229"/>
+        <location filename="../skinnedvisualization.cpp" line="227"/>
         <source>Lines</source>
         <translation>线形</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="230"/>
+        <location filename="../skinnedvisualization.cpp" line="228"/>
         <source>Bars</source>
         <translation>条形</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="243"/>
+        <location filename="../skinnedvisualization.cpp" line="241"/>
         <source>Peaks</source>
         <translation>峰</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="247"/>
+        <location filename="../skinnedvisualization.cpp" line="245"/>
         <source>Refresh Rate</source>
         <translation>刷新率</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="250"/>
+        <location filename="../skinnedvisualization.cpp" line="248"/>
         <source>50 fps</source>
         <translation>50 fps</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="251"/>
+        <location filename="../skinnedvisualization.cpp" line="249"/>
         <source>25 fps</source>
         <translation>25 帧每秒</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="252"/>
+        <location filename="../skinnedvisualization.cpp" line="250"/>
         <source>10 fps</source>
         <translation>10 帧每秒</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="253"/>
+        <location filename="../skinnedvisualization.cpp" line="251"/>
         <source>5 fps</source>
         <translation>5 帧每秒</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="260"/>
+        <location filename="../skinnedvisualization.cpp" line="258"/>
         <source>Analyzer Falloff</source>
         <translation>分析器坠落</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="263"/>
-        <location filename="../skinnedvisualization.cpp" line="277"/>
+        <location filename="../skinnedvisualization.cpp" line="261"/>
+        <location filename="../skinnedvisualization.cpp" line="275"/>
         <source>Slowest</source>
         <translation>最慢</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="264"/>
-        <location filename="../skinnedvisualization.cpp" line="278"/>
+        <location filename="../skinnedvisualization.cpp" line="262"/>
+        <location filename="../skinnedvisualization.cpp" line="276"/>
         <source>Slow</source>
         <translation>慢</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="265"/>
-        <location filename="../skinnedvisualization.cpp" line="279"/>
+        <location filename="../skinnedvisualization.cpp" line="263"/>
+        <location filename="../skinnedvisualization.cpp" line="277"/>
         <source>Medium</source>
         <translation>中等</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="266"/>
-        <location filename="../skinnedvisualization.cpp" line="280"/>
+        <location filename="../skinnedvisualization.cpp" line="264"/>
+        <location filename="../skinnedvisualization.cpp" line="278"/>
         <source>Fast</source>
         <translation>快</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="267"/>
-        <location filename="../skinnedvisualization.cpp" line="281"/>
+        <location filename="../skinnedvisualization.cpp" line="265"/>
+        <location filename="../skinnedvisualization.cpp" line="279"/>
         <source>Fastest</source>
         <translation>最快</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="274"/>
+        <location filename="../skinnedvisualization.cpp" line="272"/>
         <source>Peaks Falloff</source>
         <translation>顶峰坠落</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="287"/>
+        <location filename="../skinnedvisualization.cpp" line="285"/>
         <source>Background</source>
         <translation>背景</translation>
     </message>
     <message>
-        <location filename="../skinnedvisualization.cpp" line="288"/>
+        <location filename="../skinnedvisualization.cpp" line="286"/>
         <source>Transparent</source>
         <translation>透明</translation>
     </message>

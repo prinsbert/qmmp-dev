@@ -405,107 +405,107 @@
 <context>
     <name>QSUIVisualization</name>
     <message>
-        <location filename="../qsuivisualization.cpp" line="125"/>
+        <location filename="../qsuivisualization.cpp" line="128"/>
         <source>Cover</source>
         <translation type="unfinished">כיסוי</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="128"/>
+        <location filename="../qsuivisualization.cpp" line="131"/>
         <source>Visualization Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="131"/>
+        <location filename="../qsuivisualization.cpp" line="134"/>
         <source>Analyzer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="132"/>
+        <location filename="../qsuivisualization.cpp" line="135"/>
         <source>Scope</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="139"/>
+        <location filename="../qsuivisualization.cpp" line="142"/>
         <source>Analyzer Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="141"/>
+        <location filename="../qsuivisualization.cpp" line="144"/>
         <source>Cells</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="142"/>
+        <location filename="../qsuivisualization.cpp" line="145"/>
         <source>Lines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="150"/>
+        <location filename="../qsuivisualization.cpp" line="153"/>
         <source>Peaks</source>
         <translation type="unfinished">שיאים</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="153"/>
+        <location filename="../qsuivisualization.cpp" line="156"/>
         <source>Refresh Rate</source>
         <translation type="unfinished">שיעור רענון</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="156"/>
+        <location filename="../qsuivisualization.cpp" line="159"/>
         <source>50 fps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="157"/>
+        <location filename="../qsuivisualization.cpp" line="160"/>
         <source>25 fps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="158"/>
+        <location filename="../qsuivisualization.cpp" line="161"/>
         <source>10 fps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="159"/>
+        <location filename="../qsuivisualization.cpp" line="162"/>
         <source>5 fps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="166"/>
+        <location filename="../qsuivisualization.cpp" line="169"/>
         <source>Analyzer Falloff</source>
         <translation type="unfinished">נפילת מאבחן</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="169"/>
-        <location filename="../qsuivisualization.cpp" line="183"/>
+        <location filename="../qsuivisualization.cpp" line="172"/>
+        <location filename="../qsuivisualization.cpp" line="186"/>
         <source>Slowest</source>
         <translation type="unfinished">הכי איטי</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="170"/>
-        <location filename="../qsuivisualization.cpp" line="184"/>
+        <location filename="../qsuivisualization.cpp" line="173"/>
+        <location filename="../qsuivisualization.cpp" line="187"/>
         <source>Slow</source>
         <translation type="unfinished">איטי</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="171"/>
-        <location filename="../qsuivisualization.cpp" line="185"/>
+        <location filename="../qsuivisualization.cpp" line="174"/>
+        <location filename="../qsuivisualization.cpp" line="188"/>
         <source>Medium</source>
         <translation type="unfinished">רגיל</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="172"/>
-        <location filename="../qsuivisualization.cpp" line="186"/>
+        <location filename="../qsuivisualization.cpp" line="175"/>
+        <location filename="../qsuivisualization.cpp" line="189"/>
         <source>Fast</source>
         <translation type="unfinished">מהיר</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="173"/>
-        <location filename="../qsuivisualization.cpp" line="187"/>
+        <location filename="../qsuivisualization.cpp" line="176"/>
+        <location filename="../qsuivisualization.cpp" line="190"/>
         <source>Fastest</source>
         <translation type="unfinished">הכי מהיר</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="180"/>
+        <location filename="../qsuivisualization.cpp" line="183"/>
         <source>Peaks Falloff</source>
         <translation type="unfinished">נפילת שיאים</translation>
     </message>
