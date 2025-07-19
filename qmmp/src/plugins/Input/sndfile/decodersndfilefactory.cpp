@@ -25,7 +25,11 @@
 #define ENABLE_SNDFILE_WINDOWS_PROTOTYPES 1
 #endif
 #include <sndfile.h>
+#include <taglib/aifffile.h>
+#include <taglib/wavfile.h>
+#include <taglib/tfilestream.h>
 #include "decoder_sndfile.h"
+#include "sndfilemetadatamodel.h"
 #include "decodersndfilefactory.h"
 
 #ifndef WAVE_FORMAT_PCM
@@ -36,6 +40,37 @@
 #define WAVE_FORMAT_ALAW 0x0006
 #define WAVE_FORMAT_MULAW 0x0007
 #define WAVE_FORMAT_EXTENSIBLE 0xfffe
+
+inline QMap<Qmmp::MetaData, QString> id3v2toMetaData(TagLib::ID3v2::Tag *tag)
+{
+    QMap<Qmmp::MetaData, QString> metaData = {
+        { Qmmp::ARTIST, TStringToQString(tag->artist()) },
+        { Qmmp::ALBUM, TStringToQString(tag->album()) },
+        { Qmmp::COMMENT, TStringToQString(tag->comment()) },
+        { Qmmp::GENRE, TStringToQString(tag->genre()) },
+        { Qmmp::TITLE, TStringToQString(tag->title()) },
+        { Qmmp::YEAR, QString::number(tag->year()) },
+        { Qmmp::TRACK, QString::number(tag->track()) }
+    };
+
+    if(!tag->frameListMap()["TPE2"].isEmpty())
+    {
+        TagLib::String albumArtist = tag->frameListMap()["TPE2"].front()->toString();
+        metaData.insert(Qmmp::ALBUMARTIST, TStringToQString(albumArtist));
+    }
+    if(!tag->frameListMap()["TCOM"].isEmpty())
+    {
+        TagLib::String composer = tag->frameListMap()["TCOM"].front()->toString();
+        metaData.insert(Qmmp::COMPOSER, TStringToQString(composer));
+    }
+    if(!tag->frameListMap()["TPOS"].isEmpty())
+    {
+        TagLib::String disc = tag->frameListMap()["TPOS"].front()->toString();
+        metaData.insert(Qmmp::DISCNUMBER, TStringToQString(disc));
+    }
+
+    return metaData;
+}
 
 // DecoderSndFileFactory
 bool DecoderSndFileFactory::canDecode(QIODevice *input) const
@@ -94,7 +129,7 @@ bool DecoderSndFileFactory::canDecode(QIODevice *input) const
     }
     else if(!memcmp(buf, "FORM", 4))
     {
-        if(!memcmp(buf + 8, "AIFF", 4))
+        if(!memcmp(buf + 8, "AIFF", 4) || !memcmp(buf + 8, "AIFC", 4))
             return true;
         if(!memcmp(buf + 8, "8SVX", 4))
             return true;
@@ -141,6 +176,57 @@ QList<TrackInfo *> DecoderSndFileFactory::createPlayList(const QString &path, Tr
     if(parts == TrackInfo::Parts())
         return QList<TrackInfo*>() << info;
 
+    TagLib::FileStream stream(QStringToFileName(path), true);
+
+    //AIFF and WAVE are supported by TagLib
+    if(TagLib::RIFF::AIFF::File::isSupported(&stream))
+    {
+        TagLib::RIFF::AIFF::File file(&stream);
+
+        if((parts & TrackInfo::MetaData) && file.tag() && !file.tag()->isEmpty())
+            info->setValues(id3v2toMetaData(file.tag()));
+
+        if((parts & TrackInfo::Properties) && file.audioProperties())
+        {
+            info->setValue(Qmmp::BITRATE, file.audioProperties()->bitrate());
+            info->setValue(Qmmp::SAMPLERATE, file.audioProperties()->sampleRate());
+            info->setValue(Qmmp::CHANNELS, file.audioProperties()->channels());
+            info->setValue(Qmmp::BITS_PER_SAMPLE, file.audioProperties()->bitsPerSample());
+            if(file.audioProperties()->isAiffC() && !file.audioProperties()->compressionName().isEmpty())
+                info->setValue(Qmmp::FORMAT_NAME, QStringLiteral("AIFF-C (%1)").arg(TStringToQString(file.audioProperties()->compressionName())));
+            else if(file.audioProperties()->isAiffC())
+                info->setValue(Qmmp::FORMAT_NAME, u"AIFF-C"_s); //unknown compression
+            else
+                info->setValue(Qmmp::FORMAT_NAME, u"AIFF"_s);
+            info->setDuration(file.audioProperties()->lengthInMilliseconds());
+        }
+
+        return { info };
+    }
+
+    if(TagLib::RIFF::WAV::File::isSupported(&stream))
+    {
+        TagLib::RIFF::WAV::File file(&stream);
+
+        if((parts & TrackInfo::MetaData) && file.ID3v2Tag() && !file.ID3v2Tag()->isEmpty())
+            info->setValues(id3v2toMetaData(file.ID3v2Tag()));
+
+        if((parts & TrackInfo::Properties) && file.audioProperties())
+        {
+            info->setValue(Qmmp::BITRATE, file.audioProperties()->bitrate());
+            info->setValue(Qmmp::SAMPLERATE, file.audioProperties()->sampleRate());
+            info->setValue(Qmmp::CHANNELS, file.audioProperties()->channels());
+            info->setValue(Qmmp::BITS_PER_SAMPLE, file.audioProperties()->bitsPerSample());
+            SF_FORMAT_INFO format_info = { (file.audioProperties()->format()) << 16 & SF_FORMAT_TYPEMASK, nullptr, nullptr };
+            sf_command(nullptr, SFC_GET_FORMAT_INFO, &format_info, sizeof(format_info));
+            info->setValue(Qmmp::FORMAT_NAME, QString::fromLatin1(format_info.name));
+            info->setDuration(file.audioProperties()->lengthInMilliseconds());
+        }
+
+        return { info };
+    }
+
+    //fallback
     SF_INFO snd_info;
     SNDFILE *sndfile = nullptr;
     memset(&snd_info, 0, sizeof(snd_info));
@@ -208,12 +294,12 @@ QList<TrackInfo *> DecoderSndFileFactory::createPlayList(const QString &path, Tr
     }
 
     sf_close(sndfile);
-    return QList<TrackInfo *>() << info;
+    return { info };
 }
 
-MetaDataModel* DecoderSndFileFactory::createMetaDataModel(const QString&, bool)
+MetaDataModel* DecoderSndFileFactory::createMetaDataModel(const QString &path, bool readOnly)
 {
-    return nullptr;
+    return new SndFileMetaDataModel(path, readOnly);
 }
 
 QDialog *DecoderSndFileFactory::createSettings(QWidget *)

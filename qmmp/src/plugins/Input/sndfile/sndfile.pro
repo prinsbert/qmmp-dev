@@ -3,19 +3,21 @@ include(../../plugins.pri)
 TARGET = $$PLUGINS_PREFIX/Input/sndfile
 
 HEADERS += decodersndfilefactory.h \
-           decoder_sndfile.h
+           decoder_sndfile.h \
+           sndfilemetadatamodel.h
 
 SOURCES += decoder_sndfile.cpp \
-           decodersndfilefactory.cpp
+           decodersndfilefactory.cpp \
+           sndfilemetadatamodel.cpp
 
 RESOURCES = translations/translations.qrc
 
 unix {
     target.path = $$PLUGIN_DIR/Input
     INSTALLS += target
-    PKGCONFIG += sndfile
+    PKGCONFIG += taglib sndfile
 }
 
 win32 {
-    LIBS += -lsndfile -lflac -lvorbisenc -lvorbis -logg
+    LIBS += -ltag.dll -lsndfile -lflac -lvorbisenc -lvorbis -logg
 }
