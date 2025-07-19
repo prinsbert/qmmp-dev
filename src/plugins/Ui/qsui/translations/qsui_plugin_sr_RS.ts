@@ -405,107 +405,107 @@
 <context>
     <name>QSUIVisualization</name>
     <message>
-        <location filename="../qsuivisualization.cpp" line="125"/>
+        <location filename="../qsuivisualization.cpp" line="128"/>
         <source>Cover</source>
         <translation type="unfinished">Омот</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="128"/>
+        <location filename="../qsuivisualization.cpp" line="131"/>
         <source>Visualization Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="131"/>
+        <location filename="../qsuivisualization.cpp" line="134"/>
         <source>Analyzer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="132"/>
+        <location filename="../qsuivisualization.cpp" line="135"/>
         <source>Scope</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="139"/>
+        <location filename="../qsuivisualization.cpp" line="142"/>
         <source>Analyzer Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="141"/>
+        <location filename="../qsuivisualization.cpp" line="144"/>
         <source>Cells</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="142"/>
+        <location filename="../qsuivisualization.cpp" line="145"/>
         <source>Lines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="150"/>
+        <location filename="../qsuivisualization.cpp" line="153"/>
         <source>Peaks</source>
         <translation type="unfinished">Врхови</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="153"/>
+        <location filename="../qsuivisualization.cpp" line="156"/>
         <source>Refresh Rate</source>
         <translation type="unfinished">Фреквенција</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="156"/>
+        <location filename="../qsuivisualization.cpp" line="159"/>
         <source>50 fps</source>
         <translation type="unfinished">50 fps</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="157"/>
+        <location filename="../qsuivisualization.cpp" line="160"/>
         <source>25 fps</source>
         <translation type="unfinished">25 fps</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="158"/>
+        <location filename="../qsuivisualization.cpp" line="161"/>
         <source>10 fps</source>
         <translation type="unfinished">10 fps</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="159"/>
+        <location filename="../qsuivisualization.cpp" line="162"/>
         <source>5 fps</source>
         <translation type="unfinished">5 fps</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="166"/>
+        <location filename="../qsuivisualization.cpp" line="169"/>
         <source>Analyzer Falloff</source>
         <translation type="unfinished">Падање анализатора</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="169"/>
-        <location filename="../qsuivisualization.cpp" line="183"/>
+        <location filename="../qsuivisualization.cpp" line="172"/>
+        <location filename="../qsuivisualization.cpp" line="186"/>
         <source>Slowest</source>
         <translation type="unfinished">Најспорије</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="170"/>
-        <location filename="../qsuivisualization.cpp" line="184"/>
+        <location filename="../qsuivisualization.cpp" line="173"/>
+        <location filename="../qsuivisualization.cpp" line="187"/>
         <source>Slow</source>
         <translation type="unfinished">Споро</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="171"/>
-        <location filename="../qsuivisualization.cpp" line="185"/>
+        <location filename="../qsuivisualization.cpp" line="174"/>
+        <location filename="../qsuivisualization.cpp" line="188"/>
         <source>Medium</source>
         <translation type="unfinished">Умерено</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="172"/>
-        <location filename="../qsuivisualization.cpp" line="186"/>
+        <location filename="../qsuivisualization.cpp" line="175"/>
+        <location filename="../qsuivisualization.cpp" line="189"/>
         <source>Fast</source>
         <translation type="unfinished">Брзо</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="173"/>
-        <location filename="../qsuivisualization.cpp" line="187"/>
+        <location filename="../qsuivisualization.cpp" line="176"/>
+        <location filename="../qsuivisualization.cpp" line="190"/>
         <source>Fastest</source>
         <translation type="unfinished">Најбрже</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="180"/>
+        <location filename="../qsuivisualization.cpp" line="183"/>
         <source>Peaks Falloff</source>
         <translation type="unfinished">Падање врхова</translation>
     </message>

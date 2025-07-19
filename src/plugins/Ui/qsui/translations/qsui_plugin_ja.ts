@@ -405,107 +405,107 @@
 <context>
     <name>QSUIVisualization</name>
     <message>
-        <location filename="../qsuivisualization.cpp" line="125"/>
+        <location filename="../qsuivisualization.cpp" line="128"/>
         <source>Cover</source>
         <translation>カバー画像</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="128"/>
+        <location filename="../qsuivisualization.cpp" line="131"/>
         <source>Visualization Mode</source>
         <translation>視覚効果モード</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="131"/>
+        <location filename="../qsuivisualization.cpp" line="134"/>
         <source>Analyzer</source>
         <translation>スペクトルアナライザー</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="132"/>
+        <location filename="../qsuivisualization.cpp" line="135"/>
         <source>Scope</source>
         <translation>オシロスコープ</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="139"/>
+        <location filename="../qsuivisualization.cpp" line="142"/>
         <source>Analyzer Mode</source>
         <translation>アナライザーモード</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="141"/>
+        <location filename="../qsuivisualization.cpp" line="144"/>
         <source>Cells</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="142"/>
+        <location filename="../qsuivisualization.cpp" line="145"/>
         <source>Lines</source>
         <translation>線</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="150"/>
+        <location filename="../qsuivisualization.cpp" line="153"/>
         <source>Peaks</source>
         <translation>峰</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="153"/>
+        <location filename="../qsuivisualization.cpp" line="156"/>
         <source>Refresh Rate</source>
         <translation>リフレッシュレート</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="156"/>
+        <location filename="../qsuivisualization.cpp" line="159"/>
         <source>50 fps</source>
         <translation>50 fps</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="157"/>
+        <location filename="../qsuivisualization.cpp" line="160"/>
         <source>25 fps</source>
         <translation>25 fps</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="158"/>
+        <location filename="../qsuivisualization.cpp" line="161"/>
         <source>10 fps</source>
         <translation>10 フレーム毎秒</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="159"/>
+        <location filename="../qsuivisualization.cpp" line="162"/>
         <source>5 fps</source>
         <translation>5 フレーム毎秒</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="166"/>
+        <location filename="../qsuivisualization.cpp" line="169"/>
         <source>Analyzer Falloff</source>
         <translation>アナライザー減衰速度</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="169"/>
-        <location filename="../qsuivisualization.cpp" line="183"/>
+        <location filename="../qsuivisualization.cpp" line="172"/>
+        <location filename="../qsuivisualization.cpp" line="186"/>
         <source>Slowest</source>
         <translation>さらに遅く</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="170"/>
-        <location filename="../qsuivisualization.cpp" line="184"/>
+        <location filename="../qsuivisualization.cpp" line="173"/>
+        <location filename="../qsuivisualization.cpp" line="187"/>
         <source>Slow</source>
         <translation>遅く</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="171"/>
-        <location filename="../qsuivisualization.cpp" line="185"/>
+        <location filename="../qsuivisualization.cpp" line="174"/>
+        <location filename="../qsuivisualization.cpp" line="188"/>
         <source>Medium</source>
         <translation>平凡な音質</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="172"/>
-        <location filename="../qsuivisualization.cpp" line="186"/>
+        <location filename="../qsuivisualization.cpp" line="175"/>
+        <location filename="../qsuivisualization.cpp" line="189"/>
         <source>Fast</source>
         <translation>速く</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="173"/>
-        <location filename="../qsuivisualization.cpp" line="187"/>
+        <location filename="../qsuivisualization.cpp" line="176"/>
+        <location filename="../qsuivisualization.cpp" line="190"/>
         <source>Fastest</source>
         <translation>さらに速く</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="180"/>
+        <location filename="../qsuivisualization.cpp" line="183"/>
         <source>Peaks Falloff</source>
         <translation>ピーク減衰速度</translation>
     </message>

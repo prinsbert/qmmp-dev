@@ -2,14 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="sk">
 <context>
-    <name>DateInputDialog</name>
-    <message>
-        <location filename="../dateinputdialog.ui" line="14"/>
-        <source>Select Date</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>History</name>
     <message>
         <location filename="../history.cpp" line="57"/>
@@ -67,7 +59,7 @@
     <name>HistoryWindow</name>
     <message>
         <location filename="../historywindow.ui" line="14"/>
-        <location filename="../historywindow.ui" line="110"/>
+        <location filename="../historywindow.ui" line="104"/>
         <source>History</source>
         <translation type="unfinished"></translation>
     </message>
@@ -82,111 +74,111 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.ui" line="52"/>
+        <location filename="../historywindow.ui" line="49"/>
         <source>To:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.ui" line="69"/>
+        <location filename="../historywindow.ui" line="63"/>
         <source>Last week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.ui" line="76"/>
+        <location filename="../historywindow.ui" line="70"/>
         <source>Last month</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.ui" line="83"/>
+        <location filename="../historywindow.ui" line="77"/>
         <source>Execute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.ui" line="129"/>
+        <location filename="../historywindow.ui" line="123"/>
         <source>Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.ui" line="134"/>
-        <location filename="../historywindow.ui" line="183"/>
+        <location filename="../historywindow.ui" line="128"/>
+        <location filename="../historywindow.ui" line="177"/>
         <source>Song</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.ui" line="143"/>
+        <location filename="../historywindow.ui" line="137"/>
         <source>Distribution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.ui" line="156"/>
+        <location filename="../historywindow.ui" line="150"/>
         <source>Day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.ui" line="161"/>
-        <location filename="../historywindow.ui" line="188"/>
-        <location filename="../historywindow.ui" line="215"/>
-        <location filename="../historywindow.ui" line="242"/>
+        <location filename="../historywindow.ui" line="155"/>
+        <location filename="../historywindow.ui" line="182"/>
+        <location filename="../historywindow.ui" line="209"/>
+        <location filename="../historywindow.ui" line="236"/>
         <source>Play counts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.ui" line="170"/>
+        <location filename="../historywindow.ui" line="164"/>
         <source>Top Songs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.ui" line="197"/>
+        <location filename="../historywindow.ui" line="191"/>
         <source>Top Artists</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.ui" line="210"/>
+        <location filename="../historywindow.ui" line="204"/>
         <source>Artist</source>
         <translation>Interprét</translation>
     </message>
     <message>
-        <location filename="../historywindow.ui" line="224"/>
+        <location filename="../historywindow.ui" line="218"/>
         <source>Top Genres</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.ui" line="237"/>
+        <location filename="../historywindow.ui" line="231"/>
         <source>Genre</source>
         <translation>Žáner</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="130"/>
+        <location filename="../historywindow.cpp" line="129"/>
         <source>dd MMMM yyyy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="131"/>
+        <location filename="../historywindow.cpp" line="130"/>
         <source>hh:mm:ss</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="198"/>
+        <location filename="../historywindow.cpp" line="197"/>
         <source>MM-yyyy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="199"/>
+        <location filename="../historywindow.cpp" line="198"/>
         <source>dd MMMM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="499"/>
+        <location filename="../historywindow.cpp" line="482"/>
         <source>Add to Playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="500"/>
+        <location filename="../historywindow.cpp" line="483"/>
         <source>&amp;View Track Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="502"/>
+        <location filename="../historywindow.cpp" line="485"/>
         <source>Remove from History</source>
         <translation type="unfinished"></translation>
     </message>
