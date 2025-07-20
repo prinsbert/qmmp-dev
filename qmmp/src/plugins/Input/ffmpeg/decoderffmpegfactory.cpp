@@ -23,6 +23,7 @@
 #include <QFileInfo>
 #include <QSet>
 #include <qmmp/cueparser.h>
+#include <taglib/taglib.h>
 extern "C"{
 #include <libavformat/avformat.h>
 #include <libavcodec/avcodec.h>
@@ -342,7 +343,8 @@ void DecoderFFmpegFactory::showAbout(QWidget *parent)
                        tr("Compiled against:") + QChar::LineFeed +
                        QStringLiteral("libavformat-%1.%2.%3\n"
                                       "libavcodec-%4.%5.%6\n"
-                                      "libavutil-%7.%8.%9")
+                                      "libavutil-%7.%8.%9\n"
+                                      "TagLib-%10.%11.%12")
                        .arg(LIBAVFORMAT_VERSION_MAJOR)
                        .arg(LIBAVFORMAT_VERSION_MINOR)
                        .arg(LIBAVFORMAT_VERSION_MICRO)
@@ -351,7 +353,10 @@ void DecoderFFmpegFactory::showAbout(QWidget *parent)
                        .arg(LIBAVCODEC_VERSION_MICRO)
                        .arg(LIBAVUTIL_VERSION_MAJOR)
                        .arg(LIBAVUTIL_VERSION_MINOR)
-                       .arg(LIBAVUTIL_VERSION_MICRO) + QChar::LineFeed +
+                       .arg(LIBAVUTIL_VERSION_MICRO)
+                       .arg(TAGLIB_MAJOR_VERSION)
+                       .arg(TAGLIB_MINOR_VERSION)
+                       .arg(TAGLIB_PATCH_VERSION) + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

@@ -22,6 +22,7 @@
 #include <QMessageBox>
 #include <archive.h>
 #include <archive_entry.h>
+#include <taglib/taglib.h>
 #include "decoder_archive.h"
 #include "archivetagreader.h"
 #include "archiveinputdevice.h"
@@ -166,7 +167,9 @@ void DecoderArchiveFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About Archive Reader Plugin"),
                        tr("Qmmp Archive Reader Plugin") + QChar::LineFeed +
-                       tr("Compiled against %1").arg(QString::fromLatin1(ARCHIVE_VERSION_STRING)) + QChar::LineFeed +
+                       tr("Compiled against:") + QChar::LineFeed +
+                       QStringLiteral("libarchive-") + QStringLiteral(ARCHIVE_VERSION_ONLY_STRING) + QChar::LineFeed +
+                       QStringLiteral("TagLib-%1.%2.%3\n").arg(TAGLIB_MAJOR_VERSION).arg(TAGLIB_MINOR_VERSION).arg(TAGLIB_PATCH_VERSION) +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

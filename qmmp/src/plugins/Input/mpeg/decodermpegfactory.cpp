@@ -424,13 +424,13 @@ void DecoderMpegFactory::showAbout(QWidget *parent)
                        .arg(QLatin1StringView(MAD_VERSION_EXTRA)) + QChar::LineFeed +
 #endif
 #ifdef WITH_MPG123
-                        tr("mpg123, API version: %1")
-                        .arg(MPG123_API_VERSION) + QChar::LineFeed +
+                       tr("mpg123, API version: %1")
+                       .arg(MPG123_API_VERSION) + QChar::LineFeed +
 #endif
-
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
-                        tr("Source code based on mq3 and madplay projects")
-                        );
+                       QStringLiteral("TagLib-%1.%2.%3\n").arg(TAGLIB_MAJOR_VERSION).arg(TAGLIB_MINOR_VERSION).arg(TAGLIB_PATCH_VERSION) +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
+                       tr("Source code based on mq3 and madplay projects")
+                       );
 }
 
 QString DecoderMpegFactory::translation() const

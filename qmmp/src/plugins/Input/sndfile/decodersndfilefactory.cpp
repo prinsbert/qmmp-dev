@@ -313,7 +313,9 @@ void DecoderSndFileFactory::showAbout(QWidget *parent)
     sf_command (nullptr, SFC_GET_LIB_VERSION, version, sizeof (version)) ;
     QMessageBox::about(parent, tr("About Sndfile Audio Plugin"),
                        tr("Qmmp Sndfile Audio Plugin") + QChar::LineFeed +
-                       tr("Compiled against %1").arg(QString::fromLatin1(version)) + QChar::LineFeed +
+                       tr("Compiled against:") + QChar::LineFeed +
+                       QString::fromLatin1(version) + QChar::LineFeed +
+                       QStringLiteral("TagLib-%1.%2.%3\n").arg(TAGLIB_MAJOR_VERSION).arg(TAGLIB_MINOR_VERSION).arg(TAGLIB_PATCH_VERSION) +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
