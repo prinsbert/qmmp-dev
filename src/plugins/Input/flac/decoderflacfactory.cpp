@@ -28,6 +28,7 @@
 #include <taglib/tmap.h>
 #include <taglib/tfilestream.h>
 #include <taglib/id3v2framefactory.h>
+#include <FLAC/export.h>
 #include <qmmp/cueparser.h>
 #include "decoder_flac.h"
 #include "flacmetadatamodel.h"
@@ -216,6 +217,9 @@ void DecoderFLACFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About FLAC Audio Plugin"),
                        tr("Qmmp FLAC Audio Plugin") + QChar::LineFeed +
+                       tr("Compiled against:") + QChar::LineFeed +
+                       tr("FLAC, API version: %1").arg(FLAC_API_VERSION_CURRENT) + QChar::LineFeed +
+                       QStringLiteral("TagLib-%1.%2.%3\n").arg(TAGLIB_MAJOR_VERSION).arg(TAGLIB_MINOR_VERSION).arg(TAGLIB_PATCH_VERSION) +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
