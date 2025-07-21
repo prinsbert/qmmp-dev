@@ -99,7 +99,7 @@ echo "    <file>thanks.txt</file>" >> $qrc_file
 echo "    <file>translators.txt</file>" >> $qrc_file
 echo "" >> $qrc_file
 
-for txt_file in `find ../src/qmmpui/txt -type f -name "authors_*"`
+for txt_file in `find ../src/qmmpui/txt -type f -name "authors_*" | sort`
 do
 	locale=`echo $txt_file | cut -d '_' -f 2,3 | cut -d '.' -f 1`
 	echo "Adding ${locale}"

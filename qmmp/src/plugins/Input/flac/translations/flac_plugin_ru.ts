@@ -26,12 +26,12 @@
     <message>
         <location filename="../decoderflacfactory.cpp" line="220"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>Собрано с библиотеками:</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="221"/>
         <source>FLAC, API version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>FLAC, версия API: %1</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="223"/>

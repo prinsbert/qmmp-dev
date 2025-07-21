@@ -26,7 +26,7 @@
     <message>
         <location filename="../decodersndfilefactory.cpp" line="316"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>Собрано с библиотеками:</translation>
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="319"/>
