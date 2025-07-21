@@ -4,32 +4,32 @@
 <context>
     <name>DecoderArchiveFactory</name>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="39"/>
+        <location filename="../decoderarchivefactory.cpp" line="40"/>
         <source>Archive Plugin</source>
         <translation>Archiv-Modul</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="41"/>
+        <location filename="../decoderarchivefactory.cpp" line="42"/>
         <source>Archives</source>
         <translation>Archive</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="167"/>
+        <location filename="../decoderarchivefactory.cpp" line="168"/>
         <source>About Archive Reader Plugin</source>
         <translation>Über Archiv-Lesermodul</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="168"/>
+        <location filename="../decoderarchivefactory.cpp" line="169"/>
         <source>Qmmp Archive Reader Plugin</source>
         <translation>Qmmp Archiv-Lesermodul</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="169"/>
-        <source>Compiled against %1</source>
-        <translation>Kompiliert gegen %1</translation>
+        <location filename="../decoderarchivefactory.cpp" line="170"/>
+        <source>Compiled against:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="170"/>
+        <location filename="../decoderarchivefactory.cpp" line="173"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Geschrieben von: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

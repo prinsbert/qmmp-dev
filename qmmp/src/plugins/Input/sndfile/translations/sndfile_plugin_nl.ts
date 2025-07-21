@@ -25,11 +25,11 @@
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="316"/>
-        <source>Compiled against %1</source>
-        <translation>Gebouwd met %1</translation>
+        <source>Compiled against:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="317"/>
+        <location filename="../decodersndfilefactory.cpp" line="319"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Auteur: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
