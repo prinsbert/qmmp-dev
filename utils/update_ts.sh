@@ -4,7 +4,7 @@ LOCALES='en ru uk_UA zh_CN zh_TW tr cs pt_BR pt de pl_PL fr it kk ko lt hu nl ja
 
 echo "Locales: ${LOCALES}"
 
-export QT_SELECT=5
+alias lupdate="/usr/lib/qt6/bin/lupdate"
 
 for tr_dir in `find ../src/ -type d -name "translations"`
 do

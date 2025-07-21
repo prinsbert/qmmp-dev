@@ -4,34 +4,34 @@
 <context>
     <name>DecoderArchiveFactory</name>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="39"/>
+        <location filename="../decoderarchivefactory.cpp" line="40"/>
         <source>Archive Plugin</source>
         <translation>Arquivo Plugin</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="41"/>
+        <location filename="../decoderarchivefactory.cpp" line="42"/>
         <source>Archives</source>
         <translation>Arquivos</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="167"/>
+        <location filename="../decoderarchivefactory.cpp" line="168"/>
         <source>About Archive Reader Plugin</source>
         <translation>Acerca do engadido de lector de arquivos</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="168"/>
+        <location filename="../decoderarchivefactory.cpp" line="169"/>
         <source>Qmmp Archive Reader Plugin</source>
         <translation>Qmmp Archive Reader Plugin
 
 Engadido lector arquivos Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="169"/>
-        <source>Compiled against %1</source>
-        <translation>Compilado con %1</translation>
+        <location filename="../decoderarchivefactory.cpp" line="170"/>
+        <source>Compiled against:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="170"/>
+        <location filename="../decoderarchivefactory.cpp" line="173"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Escrito por: LLya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
