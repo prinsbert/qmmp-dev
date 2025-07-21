@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderflacfactory.cpp" line="220"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebouwd met:</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="221"/>

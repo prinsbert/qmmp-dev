@@ -384,7 +384,7 @@
         <location filename="../forms/configdialog.ui" line="591"/>
         <location filename="../forms/configdialog.ui" line="605"/>
         <source>A list of file masks separated by comma.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista masek plików oddzielonych przecinkami.</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="316"/>

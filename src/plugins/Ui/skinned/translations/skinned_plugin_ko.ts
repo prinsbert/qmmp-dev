@@ -61,32 +61,32 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>+10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+10초</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>+30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+30초</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>+60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+60초</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>-10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-10초</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>-30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-30초</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>-60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-60초</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
@@ -695,7 +695,7 @@
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
         <source>Restore Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>기본값 복원</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>
@@ -1087,12 +1087,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="260"/>
         <source>Skin install path:</source>
-        <translation type="unfinished"></translation>
+        <translation>스킨 설치 경로:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="244"/>
         <source>Random skin on every startup</source>
-        <translation type="unfinished"></translation>
+        <translation>모든 시작 시 무작위 스킨</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="107"/>
@@ -1112,7 +1112,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="238"/>
         <source>Extra Skin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>추가 스킨 설정</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="251"/>
@@ -1127,7 +1127,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="341"/>
         <source>Use smooth scrolling</source>
-        <translation type="unfinished"></translation>
+        <translation>부드러운 스크롤 사용</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="362"/>
@@ -1202,12 +1202,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="829"/>
         <source>Override group background:</source>
-        <translation type="unfinished"></translation>
+        <translation>그룹 배경 재정의:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="874"/>
         <source>Override current track background:</source>
-        <translation type="unfinished"></translation>
+        <translation>현재 트랙 배경 재정의:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="938"/>

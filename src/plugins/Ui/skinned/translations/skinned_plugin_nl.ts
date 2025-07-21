@@ -1112,7 +1112,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="238"/>
         <source>Extra Skin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Aanvullende thema-instellingen</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="251"/>
@@ -1202,12 +1202,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="829"/>
         <source>Override group background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Andere groepsachtergrond:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="874"/>
         <source>Override current track background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Andere nummerachtergrond:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="938"/>
