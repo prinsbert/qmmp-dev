@@ -3,6 +3,7 @@ Changelog of Qt-based Multimedia Player
 
 Version 0.12.22
 * added support for float PCM format in the dsound and wasapi plugins
+* added AIFF-C support
 * using system scroll settings for playlists
 * fixed seeking from command-line
 * fixed support for multi-line comments when saving and restoring a
