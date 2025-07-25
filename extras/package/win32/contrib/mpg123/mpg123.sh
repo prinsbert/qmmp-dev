@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc https://www.mpg123.de/download/$NAME-$VERSION.tar.bz2
+    wget -nc https://sourceforge.net/projects/$NAME/files/$NAME/$VERSION/$NAME-$VERSION.tar.bz2
   ;;
   --install)
     cd temp
