@@ -1,7 +1,7 @@
 #!/bin/sh
 
 QMMP_VERSION=2.2.7
-UBUNTU_CODENAMES='jammy noble oracular plucky'
+UBUNTU_CODENAMES='jammy noble plucky'
 BUILD_ROOT=build-root
 
 

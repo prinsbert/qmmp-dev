@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PLUGIN_PACK_VERSION=1.7.2
-UBUNTU_CODENAMES='focal jammy noble oracular plucky'
+UBUNTU_CODENAMES='focal jammy noble plucky'
 BUILD_ROOT=build-root
 
 
