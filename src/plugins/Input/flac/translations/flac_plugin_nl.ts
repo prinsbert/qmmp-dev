@@ -31,7 +31,7 @@
     <message>
         <location filename="../decoderflacfactory.cpp" line="221"/>
         <source>FLAC, API version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>FLAC, api-versie: %1</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="223"/>
