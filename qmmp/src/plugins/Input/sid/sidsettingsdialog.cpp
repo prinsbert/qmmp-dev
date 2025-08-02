@@ -40,7 +40,7 @@ SidSettingsDialog::SidSettingsDialog(SidDatabase *db, QWidget *parent) : QDialog
 
     m_ui->sampleRateComboBox->addItem(tr("44100 Hz"), 44100);
     m_ui->sampleRateComboBox->addItem(tr("48000 Hz"), 48000);
-    int i = m_ui->sampleRateComboBox->findData(settings.value(u"sample_rate"_s, 44100).toInt());
+    int i = m_ui->sampleRateComboBox->findData(settings.value(u"sample_rate"_s, 48000).toInt());
     m_ui->sampleRateComboBox->setCurrentIndex(i);
 
     m_ui->emuComboBox->addItem(u"ReSID"_s, u"resid"_s);
