@@ -17,7 +17,7 @@ option(USE_TRACKCHANGE    "track change plugin" ON)
 option(USE_COPYPASTE      "copy/paste change plugin" ON)
 option(USE_HISTORY        "history plugin" ON)
 option(USE_SLEEPINHIBITOR "sleep mode inhibition plugin" ON)
-option(USE_LIBRARY        "media library plugin")
+option(USE_LIBRARY        "media library plugin" ON)
 option(USE_TASKBAR        "taskbar plugin (Windows)" ON)
 option(USE_RDETECT        "rdetect plugin (Windows)" ON)
 
