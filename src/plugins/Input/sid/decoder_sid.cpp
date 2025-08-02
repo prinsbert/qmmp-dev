@@ -112,7 +112,7 @@ bool DecoderSID::initialize()
     rs->create(m_player->info().maxsids());
 
     SidConfig cfg = m_player->config();
-    cfg.frequency    = settings.value(u"sample_rate"_s, 44100).toInt();
+    cfg.frequency    = settings.value(u"sample_rate"_s, 48000).toInt();
     int sm = settings.value(u"resampling_method"_s, SidConfig::INTERPOLATE).toInt();
     cfg.samplingMethod = (SidConfig::sampling_method_t) sm;
     cfg.playback     = SidConfig::STEREO;
@@ -132,7 +132,7 @@ bool DecoderSID::initialize()
         return false;
     }
 
-    configure(44100, 2);
+    configure(cfg.frequency, 2);
     m_length_in_bytes = audioParameters().sampleRate() *
             audioParameters().frameSize() * m_length;
     qCDebug(plugin, "initialize succes");
