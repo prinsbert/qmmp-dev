@@ -1,6 +1,11 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 2.2.8
+* added AIFF-C support
+* added libsidplayfp 2.15 support
+* using 48 kHz sample rate by default in the sid plugin
+
 Version 2.2.7
 * added KWin rules for KDE6
 * added display of volume when adjusting it with the mouse wheel in the
