@@ -190,7 +190,6 @@ PRINT_SUMMARY ("WavPack support ......................." USE_WAVPACK WAVPACK_FOU
 PRINT_SUMMARY ("FFmpeg support ........................" USE_FFMPEG FFMPEG_FOUND)
 PRINT_SUMMARY ("AAC support ..........................." USE_AAC FAAD_FOUND)
 PRINT_SUMMARY ("CUE sheet support ....................." USE_CUE 1)
-PRINT_SUMMARY ("Mplayer support ......................." USE_MPLAYER 1)
 PRINT_SUMMARY ("CD Audio support ......................" USE_CDA CDIO_FOUND)
 PRINT_SUMMARY ("Midi support .........................." USE_MIDI WILDMIDI_FOUND)
 PRINT_SUMMARY ("Game music support ...................." USE_GME GME_FOUND)
