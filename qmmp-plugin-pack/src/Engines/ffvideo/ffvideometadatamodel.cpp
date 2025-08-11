@@ -74,6 +74,9 @@ QList<MetaDataItem> FFVideoMetaDataModel::extraProperties() const
 #else
          ep << MetaDataItem(tr("Audio channels"), c->channels);
 #endif
+         const AVCodec *codec = avcodec_find_decoder(c->codec_id);
+         if(codec)
+            ep << MetaDataItem(tr("Audio format"), QString::fromLatin1(codec->name));
     }
 
     if(videoIndex >= 0)
@@ -81,6 +84,9 @@ QList<MetaDataItem> FFVideoMetaDataModel::extraProperties() const
          AVCodecParameters *c = m_in->streams[videoIndex]->codecpar;
          ep << MetaDataItem(tr("Video size"), QStringLiteral("%1x%2").arg(c->width).arg(c->height));
          ep << MetaDataItem(tr("Video bitrate"), qint64(c->bit_rate / 1000), tr("kbps"));
+         const AVCodec *codec = avcodec_find_decoder(c->codec_id);
+         if(codec)
+            ep << MetaDataItem(tr("Video format"), QString::fromLatin1(codec->name));
     }
     return ep;
 }
