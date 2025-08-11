@@ -11,5 +11,4 @@ SUBDIRS += Input \
            Ui \
            CommandLineOptions
 
-unix:SUBDIRS += Engines
 
