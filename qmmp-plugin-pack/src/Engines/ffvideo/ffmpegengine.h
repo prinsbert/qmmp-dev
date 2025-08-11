@@ -83,7 +83,6 @@ private:
     FFVideoDecoder *m_decoder;
     bool m_done, m_finish, m_user_stop;
     qint64 m_seekTime;
-    QSharedPointer<TrackInfo> m_trackInfo;
 };
 
 

@@ -165,8 +165,7 @@ void FFmpegEngine::onStopRequest()
 void FFmpegEngine::run()
 {
     AVPacket *pkt = av_packet_alloc();
-    mutex()->lock ();
-    m_trackInfo.clear();
+    mutex()->lock();
     if(m_decoders.isEmpty())
     {
         mutex()->unlock ();
@@ -365,17 +364,18 @@ void FFmpegEngine::sendMetaData()
     if(!m_decoder || m_inputs.isEmpty())
         return;
     QString path = m_inputs.value(m_decoder)->path();
-    if (QFile::exists(path)) //send metadata for local files only
+    if(QFile::exists(path)) //send metadata for local files only
     {
         QList<TrackInfo *> list = m_factory->createPlayList(path, TrackInfo::AllParts, nullptr);
-        if (!list.isEmpty())
+        if(!list.isEmpty())
         {
             TrackInfo *info = list.takeFirst();
             info->setValue(Qmmp::DECODER, m_factory->properties().shortName);
             info->setValue(Qmmp::FILE_SIZE, QFileInfo(path).size());
             StateHandler::instance()->dispatch(*info);
-            m_trackInfo = QSharedPointer<TrackInfo>(info);
-            while (!list.isEmpty())
+            delete info;
+
+            while(!list.isEmpty())
                 delete list.takeFirst();
         }
     }
