@@ -10,6 +10,6 @@ set(libmplayer_SRCS
 )
 
 add_library(mplayer MODULE ${libmplayer_SRCS})
-target_link_libraries(mplayer PRIVATE Qt6::Widgets libqmmp)
+target_link_libraries(mplayer PRIVATE Qt6::Widgets PkgConfig::QMMP)
 install(TARGETS mplayer DESTINATION ${PLUGIN_DIR}/Engines)
 

@@ -139,6 +139,8 @@ PRINT_SUMMARY ("ModPlug plugin .................." USE_MODPLUG MODPLUG_FOUND)
 MESSAGE("")
 MESSAGE("Engines:")
 PRINT_SUMMARY ("FFmpeg video plugin ............." USE_FFVIDEO FFMPEG_FOUND)
+PRINT_SUMMARY ("Mplayer video plugin ............" USE_MPLAYER 1)
+PRINT_SUMMARY ("Mpv video plugin ................" USE_MPV MPV_FOUND)
 
 MESSAGE("")
 MESSAGE("Effect Plugins:")
