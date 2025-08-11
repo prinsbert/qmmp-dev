@@ -162,7 +162,10 @@ QList<TrackInfo *> MpvEngineFactory::createPlayList(const QString &path, TrackIn
 #else
             info->setValue(Qmmp::CHANNELS, c->channels);
 #endif
-            info->setValue(Qmmp::BITS_PER_SAMPLE, av_get_bytes_per_sample(static_cast<AVSampleFormat>(c->format)) * 8);
+            if(c->bits_per_raw_sample > 0)
+                info->setValue(Qmmp::BITS_PER_SAMPLE, c->bits_per_raw_sample);
+            else
+                info->setValue(Qmmp::BITS_PER_SAMPLE, av_get_bytes_per_sample(static_cast<AVSampleFormat>(c->format)) * 8);
             info->setDuration(in->duration * 1000 / AV_TIME_BASE);
 
             const AVCodec *codec = avcodec_find_decoder(c->codec_id);
