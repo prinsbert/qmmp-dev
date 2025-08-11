@@ -14,22 +14,22 @@
         <translation>FFmpeg Biçimleri</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="341"/>
+        <location filename="../decoderffmpegfactory.cpp" line="344"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation>FFmpeg Ses Eklentisi Hakkında</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="342"/>
+        <location filename="../decoderffmpegfactory.cpp" line="345"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation>Qmmp FFmpeg Ses Eklentisi</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="343"/>
+        <location filename="../decoderffmpegfactory.cpp" line="346"/>
         <source>Compiled against:</source>
         <translation>Dayanarak derlendi</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="360"/>
+        <location filename="../decoderffmpegfactory.cpp" line="363"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Yazan: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

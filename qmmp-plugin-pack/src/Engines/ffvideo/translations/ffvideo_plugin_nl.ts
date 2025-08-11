@@ -14,22 +14,22 @@
         <translation>Videobestanden</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="161"/>
+        <location filename="../ffvideofactory.cpp" line="191"/>
         <source>About FFVideo Plugin</source>
         <translation>Over FFVideo-plug-in</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="162"/>
+        <location filename="../ffvideofactory.cpp" line="192"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
         <translation>Een op FFmpeg gebaseerde videoplug-in voor Qmmp</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="163"/>
+        <location filename="../ffvideofactory.cpp" line="193"/>
         <source>Compiled against:</source>
         <translation>Gebouwd met</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="172"/>
+        <location filename="../ffvideofactory.cpp" line="202"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Auteur: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
-        <location filename="../ffvideometadatamodel.cpp" line="83"/>
+        <location filename="../ffvideometadatamodel.cpp" line="86"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
@@ -80,14 +80,24 @@
         <translation>Audiokanalen</translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="82"/>
+        <location filename="../ffvideometadatamodel.cpp" line="79"/>
+        <source>Audio format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ffvideometadatamodel.cpp" line="85"/>
         <source>Video size</source>
         <translation>Videogrootte</translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="83"/>
+        <location filename="../ffvideometadatamodel.cpp" line="86"/>
         <source>Video bitrate</source>
         <translation>Videobitsnelheid</translation>
+    </message>
+    <message>
+        <location filename="../ffvideometadatamodel.cpp" line="89"/>
+        <source>Video format</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
