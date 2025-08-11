@@ -11,6 +11,8 @@ Description:
 - Sample Rate Converter - resampler based on libsamplerate library
 - Goom - audio visualization based on goom project
 - FFVideo - video playback engine based on FFmpeg library
+- Mplayer - video playback using mplayer
+- Mpv - video playback using mpv
 - Ytb - audio playback from YouTube (uses yt-dlp)
 - MMS - MMS protocol support (uses libmms library)
 
@@ -22,6 +24,7 @@ Requirements:
 - libsamplerate >= 0.1.2 (optional)
 - ffmpeg >= 3.4 (optional)
 - libmms >= 0.4 (optional)
+- libmpv (optional)
 - yt-dlp (latest version, optional)
 - cmake >= 3.18.0 (for build only)
 
@@ -41,7 +44,8 @@ by running the following command:
 cmake ./ -DUSE_MODPLUG:BOOL=FALSE
 
 Available options:
-- USE_FFAP, USE_MODPLUG, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_YTB, USE_MMS (plugins)
+- USE_FFAP, USE_MODPLUG, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_MPLAYER, USE_MPV,
+  USE_YTB, USE_MMS (plugins)
 
 Also you can use ccmake to change plugin configuration.
 By default program will be installed in /usr/local. You can change default path by running:
