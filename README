@@ -56,7 +56,6 @@ Other features:
 - MP3, Vorbis, AAC, AAC+ streams support
 - MPRIS
 - removable device detection (via UDisks)
-- video playback via Mplayer
 - lyrics
 - cover art support
 - CUE sheet support
@@ -135,7 +134,7 @@ cmake ./ -DUSE_JACK:BOOL=FALSE
 Available options:
 - USE_CURL (transports);
 - USE_MAD, USE_MPG123, USE_FLAC, USE_VORBIS, USE_MPC, USE_XMP, USE_SNDFILE, USE_WAVPACK, USE_FFMPEG, USE_AAC, USE_CUE,
-  USE_MPLAYER, USE_CDA, USE_MIDI, USE_GME, USE_OPUS, USE_SID, USE_ARCHIVE (decoders);
+  USE_CDA, USE_MIDI, USE_GME, USE_OPUS, USE_SID, USE_ARCHIVE (decoders);
 - USE_ALSA, USE_OSS, USE_JACK, USE_PULSE, USE_PIPEWIRE, USE_NULL, USE_OSS4, USE_WAVEOUT, UDE_DSOUND, USE_QTMULTIMEDIA,
   USE_WASAPI, USE_SHOUT (output plugins);
 - USE_SOXR, USE_BS2B, USE_LADSPA, USE_CROSSFADE, USE_STEREO, USE_FILEWRITER, USE_MONOTOSTEREO (effects);
