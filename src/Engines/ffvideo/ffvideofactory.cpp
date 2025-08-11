@@ -122,10 +122,33 @@ QList<TrackInfo *> FFVideoFactory::createPlayList(const QString &path, TrackInfo
 
     if(parts & TrackInfo::Properties)
     {
-        int idx = av_find_best_stream(in, AVMEDIA_TYPE_AUDIO, -1, -1, nullptr, 0);
-        if(idx >= 0)
+        int videoIndex = av_find_best_stream(in, AVMEDIA_TYPE_VIDEO, -1, -1, nullptr, 0);
+        int audioIndex = av_find_best_stream(in, AVMEDIA_TYPE_AUDIO, -1, -1, nullptr, 0);
+
+        //select default stream for audio
+        for(unsigned int i = 0; i < in->nb_streams; ++i)
         {
-            AVCodecParameters *c = in->streams[idx]->codecpar;
+            if(in->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_AUDIO &&
+                    in->streams[i]->disposition & AV_DISPOSITION_DEFAULT)
+            {
+                audioIndex = i;
+                break;
+            }
+        }
+
+        QStringList codecs;
+
+        if(videoIndex >= 0)
+        {
+            AVCodecParameters *c = in->streams[videoIndex]->codecpar;
+            const AVCodec *codec = avcodec_find_decoder(c->codec_id);
+            if(codec)
+                codecs << QString::fromLatin1(codec->name);
+        }
+
+        if(audioIndex >= 0)
+        {
+            AVCodecParameters *c = in->streams[audioIndex]->codecpar;
             info->setValue(Qmmp::BITRATE, int(c->bit_rate) / 1000);
             info->setValue(Qmmp::SAMPLERATE, c->sample_rate);
 #if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59,37,100)) //ffmpeg-5.1
@@ -133,12 +156,19 @@ QList<TrackInfo *> FFVideoFactory::createPlayList(const QString &path, TrackInfo
 #else
             info->setValue(Qmmp::CHANNELS, c->channels);
 #endif
-
-            info->setValue(Qmmp::BITS_PER_SAMPLE, c->bits_per_raw_sample);
-
-            //info->setValue(Qmmp::FORMAT_NAME, QString::fromLatin1(avcodec_get_name(c->codec_id)));
+            if(c->bits_per_raw_sample > 0)
+                info->setValue(Qmmp::BITS_PER_SAMPLE, c->bits_per_raw_sample);
+            else
+                info->setValue(Qmmp::BITS_PER_SAMPLE, av_get_bytes_per_sample(static_cast<AVSampleFormat>(c->format)) * 8);
             info->setDuration(in->duration * 1000 / AV_TIME_BASE);
+
+            const AVCodec *codec = avcodec_find_decoder(c->codec_id);
+            if(codec)
+                codecs << QString::fromLatin1(codec->name);
         }
+
+        info->setValue(Qmmp::FORMAT_NAME, codecs.join(QLatin1Char('+')));
+        info->setValue(Qmmp::DECODER, u"ffvideo"_s);
     }
 
     avformat_close_input(&in);
