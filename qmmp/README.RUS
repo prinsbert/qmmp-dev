@@ -56,7 +56,6 @@ Qmmp - Qt-based multimedia player
 - поддержка потоков MP3, Vorbis, AAC, AAC+
 - MPRIS
 - автоопределение съёмных устройств (с помощью UDisks)
-- воспроизведение видео с помощью Mplayer-а
 - получение текстов песен
 - просмотр обложек
 - поддержка CUE
@@ -133,7 +132,7 @@ cmake ./ -DUSE_JACK:BOOL=FALSE
 Доступные опции:
 - USE_CURL (транспортные модули);
 - USE_MAD, USE_MPG123, USE_FLAC, USE_VORBIS, USE_MPC, USE_XMP, USE_SNDFILE, USE_WAVPACK, USE_FFMPEG, USE_AAC, USE_CUE,
-  USE_MPLAYER, USE_CDA, USE_MIDI, USE_GME, USE_OPUS, USE_SID, USE_ARCHIVE (декодеры);
+  USE_CDA, USE_MIDI, USE_GME, USE_OPUS, USE_SID, USE_ARCHIVE (декодеры);
 - USE_ALSA, USE_OSS, USE_JACK, USE_PULSE, USE_PIPEWIRE, USE_NULL, USE_OSS4, USE_WAVEOUT, USE_DSOUND, USE_QTMULTIMEDIA,
   USE_WASAPI, USE_SHOUT (модули  вывода);
 - USE_SOXR, USE_BS2B, USE_LADSPA, USE_CROSSFADE, USE_STEREO, USE_FILEWRITER, USE_MONOTOSTEREO (эффекты);

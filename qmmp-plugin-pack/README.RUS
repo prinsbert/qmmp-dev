@@ -11,6 +11,8 @@ Qmmp Plugin Pack
 - Sample Rate Converter - преобразователь частоты дискретизации с использованием библиотеки libsamplerate
 - Goom - визуализация на базе проекта goom
 - FFVideo - воспроизведение видео с использованием библиотеки FFmpeg
+- Mplayer - воспроизведение видео с использованием mplayer
+- Mpv - воспроизведение видео с использованием mpv
 - Ytb - воспроизведение аудио с YouTube (используется yt-dlp)
 - MMS - поддержка протокола MMS (используется библиотека libmms)
 
@@ -22,6 +24,7 @@ Qmmp Plugin Pack
 - libsamplerate >= 0.1.2 (опционально)
 - ffmpeg >= 3.4 (опционально)
 - libmms >= 0.4 (опционально)
+- libmpv (опционально)
 - yt-dlp (последняя версия, опционально)
 - cmake >= 3.18.0 (только для сборки)
 
@@ -40,7 +43,8 @@ make install
 cmake ./ -DUSE_USE_MODPLUG:BOOL=FALSE
 
 Доступные опции:
-- USE_FFAP, USE_MODPLUG, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_YTB, USE_MMS (модули)
+- USE_FFAP, USE_MODPLUG, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_MPLAYER, USE_MPV,
+  USE_YTB, USE_MMS (модули)
 
 Также вы можете использовать ccmake для изменения конфигурации модулей.
 По умолчанию программа будет установлена в /usr/local. Вы можете изменить этот путь командой:
