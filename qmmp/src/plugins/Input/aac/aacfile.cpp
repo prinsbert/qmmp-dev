@@ -243,7 +243,7 @@ void AACFile::parseADTS()
 
 void AACFile::parseID3v2(const QByteArray &data)
 {
-    ID3v2Tag taglib_tag(data);
+    AACID3v2Tag taglib_tag(data);
     if (taglib_tag.isEmpty())
         return;
 
@@ -262,12 +262,12 @@ void AACFile::parseID3v2(const QByteArray &data)
     m_metaData.insert(Qmmp::TRACK, QString::number(taglib_tag.track()));
 }
 
-ID3v2Tag::ID3v2Tag(const QByteArray &array) : TagLib::ID3v2::Tag(), m_buf(array)
+AACID3v2Tag::AACID3v2Tag(const QByteArray &array) : TagLib::ID3v2::Tag(), m_buf(array)
 {
     read();
 }
 
-void ID3v2Tag::read ()
+void AACID3v2Tag::read()
 {
     if(TagLib::ID3v2::Header::size() > (uint)m_buf.size())
         return;

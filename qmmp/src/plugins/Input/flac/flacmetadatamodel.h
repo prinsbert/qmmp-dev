@@ -50,11 +50,11 @@ private:
     TagLib::FileStream *m_stream = nullptr;
 };
 
-class VorbisCommentModel : public TagModel
+class FLACVorbisCommentModel : public TagModel
 {
 public:
-    VorbisCommentModel(TagLib::Ogg::XiphComment *tag, TagLib::File *file);
-    ~VorbisCommentModel();
+    FLACVorbisCommentModel(TagLib::Ogg::XiphComment *tag, TagLib::File *file);
+    ~FLACVorbisCommentModel();
     QString name() const override;
     QString value(Qmmp::MetaData key) const override;
     void setValue(Qmmp::MetaData key, const QString &value) override;

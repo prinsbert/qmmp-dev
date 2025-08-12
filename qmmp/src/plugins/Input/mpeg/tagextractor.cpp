@@ -47,7 +47,7 @@ QMap<Qmmp::MetaData, QString> TagExtractor::id3v2tag() const
     if (offset < 0)
         return QMap<Qmmp::MetaData, QString>();
 
-    ID3v2Tag tag(&array, offset);
+    MpegID3v2Tag tag(&array, offset);
     if (tag.isEmpty())
         return QMap<Qmmp::MetaData, QString>();
 
@@ -130,7 +130,7 @@ QByteArray TagExtractor::detectCharset(const TagLib::Tag *tag)
     return "UTF-8";
 }
 
-ID3v2Tag::ID3v2Tag(QByteArray *array, long offset) : TagLib::ID3v2::Tag(),
+MpegID3v2Tag::MpegID3v2Tag(QByteArray *array, long offset) : TagLib::ID3v2::Tag(),
     m_offset(offset)
 {
     m_buf = new QBuffer(array);
@@ -138,12 +138,12 @@ ID3v2Tag::ID3v2Tag(QByteArray *array, long offset) : TagLib::ID3v2::Tag(),
     read();
 }
 
-ID3v2Tag::~ID3v2Tag()
+MpegID3v2Tag::~MpegID3v2Tag()
 {
     delete m_buf;
 }
 
-void ID3v2Tag::read ()
+void MpegID3v2Tag::read ()
 {
     m_buf->seek(m_offset);
     uint to_read = TagLib::ID3v2::Header::size();
