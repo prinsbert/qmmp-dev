@@ -34,7 +34,7 @@ OpusMetaDataModel::OpusMetaDataModel(const QString &path, bool readOnly):
 {
     m_stream = new TagLib::FileStream(QStringToFileName(path), readOnly);
     m_file = new TagLib::Ogg::Opus::File(m_stream);
-    m_tags << new VorbisCommentModel(m_file);
+    m_tags << new OpusVorbisCommentModel(m_file);
 }
 
 OpusMetaDataModel::~OpusMetaDataModel()
@@ -143,21 +143,21 @@ QString OpusMetaDataModel::lyrics() const
     return QString();
 }
 
-VorbisCommentModel::VorbisCommentModel(TagLib::Ogg::Opus::File *file) : TagModel(TagModel::Save)
+OpusVorbisCommentModel::OpusVorbisCommentModel(TagLib::Ogg::Opus::File *file) : TagModel(TagModel::Save)
 {
     m_file = file;
     m_tag = file->tag();
 }
 
-VorbisCommentModel::~VorbisCommentModel()
+OpusVorbisCommentModel::~OpusVorbisCommentModel()
 {}
 
-QString VorbisCommentModel::name() const
+QString OpusVorbisCommentModel::name() const
 {
     return u"Vorbis Comment"_s;
 }
 
-QString VorbisCommentModel::value(Qmmp::MetaData key) const
+QString OpusVorbisCommentModel::value(Qmmp::MetaData key) const
 {
     if(!m_tag)
         return QString();
@@ -196,7 +196,7 @@ QString VorbisCommentModel::value(Qmmp::MetaData key) const
     return QString();
 }
 
-void VorbisCommentModel::setValue(Qmmp::MetaData key, const QString &value)
+void OpusVorbisCommentModel::setValue(Qmmp::MetaData key, const QString &value)
 {
     if(!m_tag)
         return;
@@ -239,7 +239,7 @@ void VorbisCommentModel::setValue(Qmmp::MetaData key, const QString &value)
     }
 }
 
-void VorbisCommentModel::save()
+void OpusVorbisCommentModel::save()
 {
     if(m_file)
         m_file->save();

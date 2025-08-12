@@ -58,7 +58,7 @@ FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly) :
 
     if(m_file && m_file->isValid() && !path.startsWith(u"flac://"_s))
     {
-        m_tags << new VorbisCommentModel(m_tag, m_file);
+        m_tags << new FLACVorbisCommentModel(m_tag, m_file);
     }
 }
 
@@ -208,21 +208,21 @@ QString FLACMetaDataModel::lyrics() const
     return QString();
 }
 
-VorbisCommentModel::VorbisCommentModel(TagLib::Ogg::XiphComment *tag, TagLib::File *file) : TagModel(TagModel::Save)
+FLACVorbisCommentModel::FLACVorbisCommentModel(TagLib::Ogg::XiphComment *tag, TagLib::File *file) : TagModel(TagModel::Save)
 {
     m_file = file;
     m_tag = tag;
 }
 
-VorbisCommentModel::~VorbisCommentModel()
+FLACVorbisCommentModel::~FLACVorbisCommentModel()
 {}
 
-QString VorbisCommentModel::name() const
+QString FLACVorbisCommentModel::name() const
 {
     return u"Vorbis Comment"_s;
 }
 
-QString VorbisCommentModel::value(Qmmp::MetaData key) const
+QString FLACVorbisCommentModel::value(Qmmp::MetaData key) const
 {
     if(!m_tag)
         return QString();
@@ -261,7 +261,7 @@ QString VorbisCommentModel::value(Qmmp::MetaData key) const
     return QString();
 }
 
-void VorbisCommentModel::setValue(Qmmp::MetaData key, const QString &value)
+void FLACVorbisCommentModel::setValue(Qmmp::MetaData key, const QString &value)
 {
     if(!m_tag)
         return;
@@ -304,7 +304,7 @@ void VorbisCommentModel::setValue(Qmmp::MetaData key, const QString &value)
     }
 }
 
-void VorbisCommentModel::save()
+void FLACVorbisCommentModel::save()
 {
     if(m_file)
         m_file->save();

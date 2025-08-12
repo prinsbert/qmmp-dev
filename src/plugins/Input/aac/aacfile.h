@@ -65,10 +65,10 @@ private:
     QMap<Qmmp::MetaData, QString> m_metaData;
 };
 
-class ID3v2Tag : public TagLib::ID3v2::Tag
+class AACID3v2Tag : public TagLib::ID3v2::Tag
 {
 public:
-    explicit ID3v2Tag(const QByteArray &array);
+    explicit AACID3v2Tag(const QByteArray &array);
 
 protected:
     void read();

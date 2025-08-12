@@ -46,11 +46,11 @@ private:
     TagLib::FileStream *m_stream;
 };
 
-class VorbisCommentModel : public TagModel
+class OpusVorbisCommentModel : public TagModel
 {
 public:
-    explicit VorbisCommentModel(TagLib::Ogg::Opus::File *file);
-    ~VorbisCommentModel();
+    explicit OpusVorbisCommentModel(TagLib::Ogg::Opus::File *file);
+    ~OpusVorbisCommentModel();
     QString name() const override;
     QString value(Qmmp::MetaData key) const override;
     void setValue(Qmmp::MetaData key, const QString &value) override;
