@@ -9,84 +9,84 @@
         <translation>Qmmp Analizatorius</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="320"/>
+        <location filename="../analyzer.cpp" line="322"/>
         <source>Peaks</source>
         <translation>Pikai</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="323"/>
+        <location filename="../analyzer.cpp" line="325"/>
         <source>Refresh Rate</source>
         <translation>Arnaujinimo dažnis</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="326"/>
+        <location filename="../analyzer.cpp" line="328"/>
         <source>50 fps</source>
         <translation>50 kps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="327"/>
+        <location filename="../analyzer.cpp" line="329"/>
         <source>25 fps</source>
         <translation>25 kps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="328"/>
+        <location filename="../analyzer.cpp" line="330"/>
         <source>10 fps</source>
         <translation>10 kps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="329"/>
+        <location filename="../analyzer.cpp" line="331"/>
         <source>5 fps</source>
         <translation>5 kps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="336"/>
+        <location filename="../analyzer.cpp" line="338"/>
         <source>Analyzer Falloff</source>
         <translation type="unfinished">Analizatoriaus nukritimas</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="339"/>
-        <location filename="../analyzer.cpp" line="353"/>
+        <location filename="../analyzer.cpp" line="341"/>
+        <location filename="../analyzer.cpp" line="355"/>
         <source>Slowest</source>
         <translation>Lėčiausias</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="340"/>
-        <location filename="../analyzer.cpp" line="354"/>
+        <location filename="../analyzer.cpp" line="342"/>
+        <location filename="../analyzer.cpp" line="356"/>
         <source>Slow</source>
         <translation>Lėtas</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="341"/>
-        <location filename="../analyzer.cpp" line="355"/>
+        <location filename="../analyzer.cpp" line="343"/>
+        <location filename="../analyzer.cpp" line="357"/>
         <source>Medium</source>
         <translation>Vidutinis</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="342"/>
-        <location filename="../analyzer.cpp" line="356"/>
+        <location filename="../analyzer.cpp" line="344"/>
+        <location filename="../analyzer.cpp" line="358"/>
         <source>Fast</source>
         <translation>Greitas</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="343"/>
-        <location filename="../analyzer.cpp" line="357"/>
+        <location filename="../analyzer.cpp" line="345"/>
+        <location filename="../analyzer.cpp" line="359"/>
         <source>Fastest</source>
         <translation>Greičiausias</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="350"/>
+        <location filename="../analyzer.cpp" line="352"/>
         <source>Peaks Falloff</source>
         <translation type="unfinished">Pikų nukritimas</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="365"/>
         <location filename="../analyzer.cpp" line="367"/>
+        <location filename="../analyzer.cpp" line="369"/>
         <source>F</source>
         <translation>F</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="365"/>
         <location filename="../analyzer.cpp" line="367"/>
+        <location filename="../analyzer.cpp" line="369"/>
         <source>&amp;Full Screen</source>
         <translation>&amp;Visas  Ekranas</translation>
     </message>

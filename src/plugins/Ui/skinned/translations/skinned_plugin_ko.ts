@@ -462,87 +462,88 @@
 <context>
     <name>SkinnedDisplay</name>
     <message>
-        <location filename="../skinneddisplay.cpp" line="59"/>
+        <location filename="../skinneddisplay.cpp" line="60"/>
         <source>Previous</source>
         <translation>이전</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="63"/>
+        <location filename="../skinneddisplay.cpp" line="64"/>
         <source>Play</source>
         <translation>재생</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="66"/>
+        <location filename="../skinneddisplay.cpp" line="67"/>
         <source>Pause</source>
         <translation>일시중지</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="69"/>
+        <location filename="../skinneddisplay.cpp" line="70"/>
         <source>Stop</source>
         <translation>중지</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="72"/>
+        <location filename="../skinneddisplay.cpp" line="73"/>
         <source>Next</source>
         <translation>다음</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="75"/>
+        <location filename="../skinneddisplay.cpp" line="76"/>
         <source>Play files</source>
         <translation>파일 재생</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="80"/>
+        <location filename="../skinneddisplay.cpp" line="81"/>
         <source>Equalizer</source>
         <translation>이퀄라이저</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="82"/>
+        <location filename="../skinneddisplay.cpp" line="83"/>
         <source>Playlist</source>
         <translation>재생목록</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="85"/>
+        <location filename="../skinneddisplay.cpp" line="86"/>
         <source>Repeat playlist</source>
         <translation>재생목록 반복</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="87"/>
+        <location filename="../skinneddisplay.cpp" line="88"/>
         <source>Shuffle</source>
         <translation>순서섞기</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="97"/>
+        <location filename="../skinneddisplay.cpp" line="98"/>
         <source>Volume</source>
         <translation>볼륨</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="103"/>
+        <location filename="../skinneddisplay.cpp" line="108"/>
         <source>Balance</source>
         <translation>밸런스</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="290"/>
+        <location filename="../skinneddisplay.cpp" line="295"/>
+        <location filename="../skinneddisplay.cpp" line="321"/>
         <source>Volume: %1%</source>
         <translation>볼륨: %1%</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="294"/>
+        <location filename="../skinneddisplay.cpp" line="299"/>
         <source>Balance: %1% right</source>
         <translation>밸런스: %1% 오른쪽</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="296"/>
+        <location filename="../skinneddisplay.cpp" line="301"/>
         <source>Balance: %1% left</source>
         <translation>밸런스: %1% 왼쪽</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="298"/>
+        <location filename="../skinneddisplay.cpp" line="303"/>
         <source>Balance: center</source>
         <translation>밸런스: 중앙</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="304"/>
+        <location filename="../skinneddisplay.cpp" line="309"/>
         <source>Seek to: %1</source>
         <translation>찾기: %1</translation>
     </message>
@@ -601,7 +602,7 @@
         <translation>프리셋 #</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="394"/>
+        <location filename="../skinnedeqwidget.cpp" line="392"/>
         <source>Import Preset</source>
         <translation>프리셋 가져오기</translation>
     </message>
@@ -614,47 +615,47 @@
         <translation>스킨 사용자 인터페이스</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="61"/>
+        <location filename="../skinnedfactory.cpp" line="62"/>
         <source>About Qmmp Skinned User Interface</source>
         <translation>Qmmp 스킨 사용자 인터페이스 정보</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="62"/>
+        <location filename="../skinnedfactory.cpp" line="63"/>
         <source>Qmmp Skinned User Interface</source>
         <translation>Qmmp 스킨 사용자 인터페이스</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="63"/>
+        <location filename="../skinnedfactory.cpp" line="64"/>
         <source>Simple user interface with Winamp-2.x/XMMS skins support</source>
         <translation>Winamp-2.x/XMMS 스킨을 지원하는 단순한 사용자 인터페이스</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="64"/>
+        <location filename="../skinnedfactory.cpp" line="65"/>
         <source>Written by:</source>
         <translation>작성자:</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="65"/>
+        <location filename="../skinnedfactory.cpp" line="66"/>
         <source>Vladimir Kuznetsov &lt;vovanec@gmail.com&gt;</source>
         <translation>Vladimir Kuznetsov &lt;vovanec@gmail.com&gt;</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="66"/>
+        <location filename="../skinnedfactory.cpp" line="67"/>
         <source>Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="67"/>
+        <location filename="../skinnedfactory.cpp" line="68"/>
         <source>Artwork:</source>
         <translation>아트워크:</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="68"/>
+        <location filename="../skinnedfactory.cpp" line="69"/>
         <source>Andrey Adreev &lt;andreev00@gmail.com&gt;</source>
         <translation>Andrey Adreev &lt;andreev00@gmail.com&gt;</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="69"/>
+        <location filename="../skinnedfactory.cpp" line="70"/>
         <source>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</source>
         <translation>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</translation>
     </message>

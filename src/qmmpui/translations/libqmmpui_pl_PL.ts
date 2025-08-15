@@ -949,12 +949,12 @@
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="131"/>
-        <location filename="../cueeditor.cpp" line="150"/>
+        <location filename="../cueeditor.cpp" line="152"/>
         <source>CUE Files</source>
         <translation>Pliki CUE</translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="148"/>
+        <location filename="../cueeditor.cpp" line="150"/>
         <source>Save CUE File</source>
         <translation>Zapisz plik CUE</translation>
     </message>
@@ -1222,11 +1222,6 @@
         <translation>Długość | Format | Szybkość transmisji</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="63"/>
-        <source>Duration | Format | Bitrate | Sample rate </source>
-        <translation>Długość | Format | Szybkość transmisji | Częstotliwość próbkowania</translation>
-    </message>
-    <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>Year | Duration | Bitrate</source>
         <translation>Rok | Długość | Szybkość transmisji</translation>
@@ -1317,6 +1312,11 @@
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
         <translation>%if(%l,%l | ,)%{format} | %{bitrate} kb/s | %{samplerate} Hz</translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <source>Duration | Format | Bitrate | Sample rate</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
