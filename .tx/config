@@ -1,6 +1,18 @@
 [main]
 host = https://www.transifex.com
 
+[o:qmmp-development-team:p:qmmp-plugin-pack:r:mplayer]
+file_filter = src/Engines/mplayer/translations/mplayer_plugin_<lang>.ts
+source_lang = en
+source_file = src/Engines/mplayer/translations/mplayer_plugin_en.ts
+type = QT
+
+[o:qmmp-development-team:p:qmmp-plugin-pack:r:mpv]
+file_filter = src/Engines/mpv/translations/mpv_plugin_<lang>.ts
+source_lang = en
+source_file = src/Engines/mpv/translations/mpv_plugin_en.ts
+type = QT
+
 [o:qmmp-development-team:p:qmmp-plugin-pack:r:ffvideo]
 file_filter = src/Engines/ffvideo/translations/ffvideo_plugin_<lang>.ts
 source_lang = en
