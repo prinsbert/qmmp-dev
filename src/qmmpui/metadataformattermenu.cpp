@@ -60,7 +60,7 @@ MetaDataFormatterMenu::MetaDataFormatterMenu(Type type, QWidget *parent) :
     {
         addAction(tr("Duration"))->setData(u"%l"_s);
         addAction(tr("Duration | Format | Bitrate"))->setData(tr("%if(%l,%l | ,)%{format} | %{bitrate} kbps"));
-        addAction(tr("Duration | Format | Bitrate | Sample rate "))->setData(tr("%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz"));
+        addAction(tr("Duration | Format | Bitrate | Sample rate"))->setData(tr("%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz"));
         addAction(tr("Year | Duration | Bitrate"))->setData(tr("%y | %if(%l,%l | ,)%{bitrate} kbps"));
         addAction(tr("Condition"))->setData(u"%if(%p,%p - %a,%a)"_s);
     }
