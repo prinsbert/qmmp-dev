@@ -949,12 +949,12 @@
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="131"/>
-        <location filename="../cueeditor.cpp" line="150"/>
+        <location filename="../cueeditor.cpp" line="152"/>
         <source>CUE Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="148"/>
+        <location filename="../cueeditor.cpp" line="150"/>
         <source>Save CUE File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1271,13 +1271,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="64"/>
-        <source>%y | %if(%l,%l | ,)%{bitrate} kbps</source>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <source>Duration | Format | Bitrate | Sample rate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="63"/>
-        <source>Duration | Format | Bitrate | Sample rate </source>
+        <location filename="../metadataformattermenu.cpp" line="64"/>
+        <source>%y | %if(%l,%l | ,)%{bitrate} kbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

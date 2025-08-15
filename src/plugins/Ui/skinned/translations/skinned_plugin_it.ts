@@ -462,87 +462,88 @@
 <context>
     <name>SkinnedDisplay</name>
     <message>
-        <location filename="../skinneddisplay.cpp" line="59"/>
+        <location filename="../skinneddisplay.cpp" line="60"/>
         <source>Previous</source>
         <translation>Precedente</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="63"/>
+        <location filename="../skinneddisplay.cpp" line="64"/>
         <source>Play</source>
         <translation>Riproduci</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="66"/>
+        <location filename="../skinneddisplay.cpp" line="67"/>
         <source>Pause</source>
         <translation>Pausa</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="69"/>
+        <location filename="../skinneddisplay.cpp" line="70"/>
         <source>Stop</source>
         <translation>Ferma</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="72"/>
+        <location filename="../skinneddisplay.cpp" line="73"/>
         <source>Next</source>
         <translation>Successivo</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="75"/>
+        <location filename="../skinneddisplay.cpp" line="76"/>
         <source>Play files</source>
         <translation>Riproduci file</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="80"/>
+        <location filename="../skinneddisplay.cpp" line="81"/>
         <source>Equalizer</source>
         <translation>Equalizzatore</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="82"/>
+        <location filename="../skinneddisplay.cpp" line="83"/>
         <source>Playlist</source>
         <translation>Scaletta</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="85"/>
+        <location filename="../skinneddisplay.cpp" line="86"/>
         <source>Repeat playlist</source>
         <translation>Ripeti la scaletta</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="87"/>
+        <location filename="../skinneddisplay.cpp" line="88"/>
         <source>Shuffle</source>
         <translation>Ordine casuale</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="97"/>
+        <location filename="../skinneddisplay.cpp" line="98"/>
         <source>Volume</source>
         <translation>Volume</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="103"/>
+        <location filename="../skinneddisplay.cpp" line="108"/>
         <source>Balance</source>
         <translation>Bilanciamento</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="290"/>
+        <location filename="../skinneddisplay.cpp" line="295"/>
+        <location filename="../skinneddisplay.cpp" line="321"/>
         <source>Volume: %1%</source>
         <translation>Volume: %1%</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="294"/>
+        <location filename="../skinneddisplay.cpp" line="299"/>
         <source>Balance: %1% right</source>
         <translation>Bilanciamento: %1% a destra</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="296"/>
+        <location filename="../skinneddisplay.cpp" line="301"/>
         <source>Balance: %1% left</source>
         <translation>Bilanciamento: %1% a sinistra</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="298"/>
+        <location filename="../skinneddisplay.cpp" line="303"/>
         <source>Balance: center</source>
         <translation>Bilanciamento: centrale</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="304"/>
+        <location filename="../skinneddisplay.cpp" line="309"/>
         <source>Seek to: %1</source>
         <translation>Sposta a: %1</translation>
     </message>
@@ -601,7 +602,7 @@
         <translation>preimpostazione #</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="394"/>
+        <location filename="../skinnedeqwidget.cpp" line="392"/>
         <source>Import Preset</source>
         <translation>Importa preimpostazione</translation>
     </message>
@@ -614,47 +615,47 @@
         <translation>Interfaccia utente con temi</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="61"/>
+        <location filename="../skinnedfactory.cpp" line="62"/>
         <source>About Qmmp Skinned User Interface</source>
         <translation>Informazioni sull&apos;interfaccia utente per Qmmp con temi</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="62"/>
+        <location filename="../skinnedfactory.cpp" line="63"/>
         <source>Qmmp Skinned User Interface</source>
         <translation>Interfaccia utente per Qmmp con temi</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="63"/>
+        <location filename="../skinnedfactory.cpp" line="64"/>
         <source>Simple user interface with Winamp-2.x/XMMS skins support</source>
         <translation>Interfaccia utente semplice con supporto per i temi di Winamp-2.x/XMMS</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="64"/>
+        <location filename="../skinnedfactory.cpp" line="65"/>
         <source>Written by:</source>
         <translation>Autori:</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="65"/>
+        <location filename="../skinnedfactory.cpp" line="66"/>
         <source>Vladimir Kuznetsov &lt;vovanec@gmail.com&gt;</source>
         <translation>Vladimir Kuznetsov &lt;vovanec@gmail.com&gt;</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="66"/>
+        <location filename="../skinnedfactory.cpp" line="67"/>
         <source>Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="67"/>
+        <location filename="../skinnedfactory.cpp" line="68"/>
         <source>Artwork:</source>
         <translation>Grafica</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="68"/>
+        <location filename="../skinnedfactory.cpp" line="69"/>
         <source>Andrey Adreev &lt;andreev00@gmail.com&gt;</source>
         <translation>Andrey Adreev &lt;andreev00@gmail.com&gt;</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="69"/>
+        <location filename="../skinnedfactory.cpp" line="70"/>
         <source>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</source>
         <translation>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</translation>
     </message>

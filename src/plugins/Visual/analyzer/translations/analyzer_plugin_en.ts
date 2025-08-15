@@ -9,82 +9,82 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="312"/>
+        <location filename="../analyzer.cpp" line="314"/>
         <source>Peaks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="315"/>
+        <location filename="../analyzer.cpp" line="317"/>
         <source>Refresh Rate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="318"/>
+        <location filename="../analyzer.cpp" line="320"/>
         <source>50 fps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="319"/>
+        <location filename="../analyzer.cpp" line="321"/>
         <source>25 fps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="320"/>
+        <location filename="../analyzer.cpp" line="322"/>
         <source>10 fps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="321"/>
+        <location filename="../analyzer.cpp" line="323"/>
         <source>5 fps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="328"/>
+        <location filename="../analyzer.cpp" line="330"/>
         <source>Analyzer Falloff</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../analyzer.cpp" line="331"/>
-        <location filename="../analyzer.cpp" line="345"/>
-        <source>Slowest</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../analyzer.cpp" line="332"/>
-        <location filename="../analyzer.cpp" line="346"/>
-        <source>Slow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="333"/>
         <location filename="../analyzer.cpp" line="347"/>
-        <source>Medium</source>
+        <source>Slowest</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="334"/>
         <location filename="../analyzer.cpp" line="348"/>
-        <source>Fast</source>
+        <source>Slow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="335"/>
         <location filename="../analyzer.cpp" line="349"/>
+        <source>Medium</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../analyzer.cpp" line="336"/>
+        <location filename="../analyzer.cpp" line="350"/>
+        <source>Fast</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../analyzer.cpp" line="337"/>
+        <location filename="../analyzer.cpp" line="351"/>
         <source>Fastest</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="342"/>
+        <location filename="../analyzer.cpp" line="344"/>
         <source>Peaks Falloff</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="356"/>
+        <location filename="../analyzer.cpp" line="358"/>
         <source>&amp;Full Screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="356"/>
+        <location filename="../analyzer.cpp" line="358"/>
         <source>F</source>
         <translation type="unfinished"></translation>
     </message>

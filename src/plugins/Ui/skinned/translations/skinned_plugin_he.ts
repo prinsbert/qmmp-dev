@@ -462,87 +462,88 @@
 <context>
     <name>SkinnedDisplay</name>
     <message>
-        <location filename="../skinneddisplay.cpp" line="59"/>
+        <location filename="../skinneddisplay.cpp" line="60"/>
         <source>Previous</source>
         <translation type="unfinished">הקודם</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="63"/>
+        <location filename="../skinneddisplay.cpp" line="64"/>
         <source>Play</source>
         <translation type="unfinished">נגן</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="66"/>
+        <location filename="../skinneddisplay.cpp" line="67"/>
         <source>Pause</source>
         <translation type="unfinished">השהה</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="69"/>
+        <location filename="../skinneddisplay.cpp" line="70"/>
         <source>Stop</source>
         <translation type="unfinished">הפסק</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="72"/>
+        <location filename="../skinneddisplay.cpp" line="73"/>
         <source>Next</source>
         <translation type="unfinished">הבא</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="75"/>
+        <location filename="../skinneddisplay.cpp" line="76"/>
         <source>Play files</source>
         <translation type="unfinished">נגן קבצים</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="80"/>
+        <location filename="../skinneddisplay.cpp" line="81"/>
         <source>Equalizer</source>
         <translation type="unfinished">אקולייזר</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="82"/>
+        <location filename="../skinneddisplay.cpp" line="83"/>
         <source>Playlist</source>
         <translation type="unfinished">רשימת נגינה</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="85"/>
+        <location filename="../skinneddisplay.cpp" line="86"/>
         <source>Repeat playlist</source>
         <translation type="unfinished">חזור על רשימת נגינה</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="87"/>
+        <location filename="../skinneddisplay.cpp" line="88"/>
         <source>Shuffle</source>
         <translation type="unfinished">ערבב</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="97"/>
+        <location filename="../skinneddisplay.cpp" line="98"/>
         <source>Volume</source>
         <translation type="unfinished">עוצמת קול</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="103"/>
+        <location filename="../skinneddisplay.cpp" line="108"/>
         <source>Balance</source>
         <translation type="unfinished">איזון</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="290"/>
+        <location filename="../skinneddisplay.cpp" line="295"/>
+        <location filename="../skinneddisplay.cpp" line="321"/>
         <source>Volume: %1%</source>
         <translation type="unfinished">עצמת קול: %1%</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="294"/>
+        <location filename="../skinneddisplay.cpp" line="299"/>
         <source>Balance: %1% right</source>
         <translation type="unfinished">איזון: %1% ימינה</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="296"/>
+        <location filename="../skinneddisplay.cpp" line="301"/>
         <source>Balance: %1% left</source>
         <translation type="unfinished">איזון: %1% שמאלה</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="298"/>
+        <location filename="../skinneddisplay.cpp" line="303"/>
         <source>Balance: center</source>
         <translation type="unfinished">איזון: מרכז</translation>
     </message>
     <message>
-        <location filename="../skinneddisplay.cpp" line="304"/>
+        <location filename="../skinneddisplay.cpp" line="309"/>
         <source>Seek to: %1</source>
         <translation type="unfinished">מעבר אל: %1</translation>
     </message>
@@ -601,7 +602,7 @@
         <translation type="unfinished">קביעה מספר</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="394"/>
+        <location filename="../skinnedeqwidget.cpp" line="392"/>
         <source>Import Preset</source>
         <translation type="unfinished">ייבוא קביעות</translation>
     </message>
@@ -614,47 +615,47 @@
         <translation>ממשק משתמש מחושל</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="61"/>
+        <location filename="../skinnedfactory.cpp" line="62"/>
         <source>About Qmmp Skinned User Interface</source>
         <translation>אודות ממשק משתמש מחושל Qmmp</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="62"/>
+        <location filename="../skinnedfactory.cpp" line="63"/>
         <source>Qmmp Skinned User Interface</source>
         <translation>ממשק משתמש מחושל של Qmmp</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="63"/>
+        <location filename="../skinnedfactory.cpp" line="64"/>
         <source>Simple user interface with Winamp-2.x/XMMS skins support</source>
         <translation>ממשק משתמש פשוט עם תמיכה לסקינים של Winamp-2.x/XMMS</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="64"/>
+        <location filename="../skinnedfactory.cpp" line="65"/>
         <source>Written by:</source>
         <translation>חובר על ידי:</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="65"/>
+        <location filename="../skinnedfactory.cpp" line="66"/>
         <source>Vladimir Kuznetsov &lt;vovanec@gmail.com&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="66"/>
+        <location filename="../skinnedfactory.cpp" line="67"/>
         <source>Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="67"/>
+        <location filename="../skinnedfactory.cpp" line="68"/>
         <source>Artwork:</source>
         <translation>עבודת אמנות:</translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="68"/>
+        <location filename="../skinnedfactory.cpp" line="69"/>
         <source>Andrey Adreev &lt;andreev00@gmail.com&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedfactory.cpp" line="69"/>
+        <location filename="../skinnedfactory.cpp" line="70"/>
         <source>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</source>
         <translation type="unfinished"></translation>
     </message>
