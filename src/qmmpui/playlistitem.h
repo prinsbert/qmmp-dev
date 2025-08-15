@@ -64,6 +64,10 @@ public:
      */
     virtual QString formattedDuration() const = 0;
     /*!
+     * Returns the group name, intended for grouping (not for display).
+     */
+    virtual QString groupName() const = 0;
+    /*!
      * Returns \b true if the \b PlayListItem is group separator. Otherwise returns \b false.
      */
     virtual bool isGroup() const = 0;

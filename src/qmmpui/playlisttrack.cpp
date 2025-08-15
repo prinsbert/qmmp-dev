@@ -18,7 +18,6 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QApplication>
 #include <qmmp/metadatamanager.h>
 #include "qmmpuisettings.h"
 #include "metadatahelper_p.h"
@@ -96,11 +95,15 @@ void PlayListTrack::updateMetaData()
     qDeleteAll(list);
 }
 
-const QString &PlayListTrack::groupName()
+QString PlayListTrack::groupName() const
 {
-    if(m_group.isEmpty() || m_groupFormat != m_settings->groupFormat())
+    QString groupFormat = m_settings->groupFormat();
+    if(m_settings->groupExtraRowVisible())
+        groupFormat.append(m_settings->groupExtraRowFormat());
+
+    if(m_group.isEmpty() || m_groupFormat != groupFormat)
     {
-        m_groupFormat = m_settings->groupFormat();
+        m_groupFormat = groupFormat;
         formatGroup();
     }
     return m_group;
@@ -232,9 +235,9 @@ void PlayListTrack::formatTitle(int column) const
         if (m_formattedTitles[column].isEmpty())
             m_formattedTitles[column] = path();
     }
-    if (m_settings->convertUnderscore())
+    if(m_settings->convertUnderscore())
         m_formattedTitles[column].replace(QLatin1Char('_'), QChar::Space);
-    if (m_settings->convertTwenty())
+    if(m_settings->convertTwenty())
         m_formattedTitles[column].replace(u"%20"_s, u" "_s);
 }
 
@@ -242,14 +245,32 @@ void PlayListTrack::formatGroup() const
 {
     if(path().contains(u"://"_s) && !path().contains(QLatin1Char('#')))
     {
-        m_group = qApp->translate("PlayListTrack", "Streams");
+        m_group = QStringLiteral("Streams");
         return;
     }
-    m_group = m_helper->groupFormatter()->format(this);
+
+    //suitable for grouping
+    static const QList<Qmmp::MetaData> groupingKeys = {
+        Qmmp::ARTIST,
+        Qmmp::ALBUMARTIST,
+        Qmmp::ALBUM,
+        Qmmp::COMMENT,
+        Qmmp::GENRE,
+        Qmmp::COMPOSER,
+        Qmmp::YEAR,
+        Qmmp::DISCNUMBER
+    };
+
+    PlayListTrack track;
+
+    for(Qmmp::MetaData key : std::as_const(groupingKeys))
+        track.setValue(key, value(key));
+
+    m_group = m_helper->groupFormatter0()->format(track);
+
+    if(m_settings->groupExtraRowVisible())
+        m_group += m_helper->groupFormatter1()->format(track);
+
     if (m_group.isEmpty())
-        m_group = qApp->translate("PlayListTrack", "Empty group");
-    if (m_settings->convertUnderscore())
-        m_group.replace(QLatin1Char('_'), QChar::Space);
-    if (m_settings->convertTwenty())
-        m_group.replace(u"%20"_s, u" "_s);
+        m_group = QStringLiteral("Empty group");
 }

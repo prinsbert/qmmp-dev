@@ -25,16 +25,16 @@ MetaDataHelper *MetaDataHelper::m_instance = nullptr;
 MetaDataHelper::MetaDataHelper()
 {
     m_instance = this;
-    m_group_formatter = new MetaDataFormatter();
-    m_group_formatter2 = new MetaDataFormatter();
+    m_group_formatter0 = new MetaDataFormatter();
+    m_group_formatter1 = new MetaDataFormatter();
     m_title_formatters << new MetaDataFormatter();
 }
 
 MetaDataHelper::~MetaDataHelper()
 {
     m_instance = nullptr;
-    delete m_group_formatter;
-    delete m_group_formatter2;
+    delete m_group_formatter0;
+    delete m_group_formatter1;
     qDeleteAll(m_title_formatters);
     m_title_formatters.clear();
 }
@@ -51,14 +51,14 @@ void MetaDataHelper::setTitleFormats(const QStringList &titleFormats)
         m_title_formatters.at(i)->setPattern(titleFormats.at(i));
 }
 
-void MetaDataHelper::setGroupFormat(const QString &groupFormat)
+void MetaDataHelper::setGroupFormat0(const QString &groupFormat)
 {
-    m_group_formatter->setPattern(groupFormat);
+    m_group_formatter0->setPattern(groupFormat);
 }
 
-void MetaDataHelper::setGroupFormat2(const QString &groupFormat)
+void MetaDataHelper::setGroupFormat1(const QString &groupFormat)
 {
-    m_group_formatter2->setPattern(groupFormat);
+    m_group_formatter1->setPattern(groupFormat);
 }
 
 int MetaDataHelper::columnCount() const
@@ -71,14 +71,14 @@ const MetaDataFormatter *MetaDataHelper::titleFormatter(int index) const
     return m_title_formatters.at(index);
 }
 
-const MetaDataFormatter *MetaDataHelper::groupFormatter() const
+const MetaDataFormatter *MetaDataHelper::groupFormatter0() const
 {
-    return m_group_formatter;
+    return m_group_formatter0;
 }
 
-const MetaDataFormatter *MetaDataHelper::groupFormatter2() const
+const MetaDataFormatter *MetaDataHelper::groupFormatter1() const
 {
-    return m_group_formatter2;
+    return m_group_formatter1;
 }
 
 MetaDataHelper *MetaDataHelper::instance()

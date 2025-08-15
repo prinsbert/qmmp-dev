@@ -65,8 +65,8 @@ QmmpUiSettings::QmmpUiSettings(QObject *parent) : QObject(parent)
     s.endGroup();
     m_use_clipboard = s.value(u"URLDialog/use_clipboard"_s, false).toBool();
 
-    m_helper->setGroupFormat(m_group_format);
-    m_helper->setGroupFormat2(m_group_extra_row_format);
+    m_helper->setGroupFormat0(m_group_format);
+    m_helper->setGroupFormat1(m_group_extra_row_format);
 }
 
 QmmpUiSettings::~QmmpUiSettings()
@@ -168,7 +168,7 @@ void QmmpUiSettings::setGroupFormat(const QString &groupFormat)
     if(groupFormat != m_group_format)
     {
         m_group_format = groupFormat;
-        m_helper->setGroupFormat(m_group_format);
+        m_helper->setGroupFormat0(m_group_format);
         saveSettings(true);
     }
 }
@@ -178,7 +178,7 @@ void QmmpUiSettings::setGroupExtraRowFormat(const QString &extraRowFormat)
     if(m_group_extra_row_format != extraRowFormat)
     {
         m_group_extra_row_format = extraRowFormat;
-        m_helper->setGroupFormat2(m_group_extra_row_format);
+        m_helper->setGroupFormat1(m_group_extra_row_format);
         saveSettings(true);
     }
 }
