@@ -35,21 +35,21 @@ public:
     ~MetaDataHelper();
 
     void setTitleFormats(const QStringList &titleFormats);
-    void setGroupFormat(const QString &groupFormat);
-    void setGroupFormat2(const QString &groupFormat);
+    void setGroupFormat0(const QString &groupFormat);
+    void setGroupFormat1(const QString &groupFormat);
 
     int columnCount() const;
     const MetaDataFormatter *titleFormatter(int index) const;
-    const MetaDataFormatter *groupFormatter() const;
-    const MetaDataFormatter *groupFormatter2() const;
+    const MetaDataFormatter *groupFormatter0() const;
+    const MetaDataFormatter *groupFormatter1() const;
 
     static MetaDataHelper *instance();
 
 private:
     static MetaDataHelper *m_instance;
 
-    MetaDataFormatter *m_group_formatter;
-    MetaDataFormatter *m_group_formatter2;
+    MetaDataFormatter *m_group_formatter0;
+    MetaDataFormatter *m_group_formatter1;
     QList<MetaDataFormatter*> m_title_formatters;
 
 

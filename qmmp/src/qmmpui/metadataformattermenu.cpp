@@ -42,9 +42,9 @@ MetaDataFormatterMenu::MetaDataFormatterMenu(Type type, QWidget *parent) :
     addAction(tr("Composer"))->setData(u"%C"_s);
     addAction(tr("Disc Number"))->setData(u"%D"_s);
     addAction(tr("Year"))->setData(u"%y"_s);
+    addAction(tr("Duration"))->setData(u"%l"_s);
     if(type == TITLE_MENU || type == COLUMN_MENU)
     {
-        addAction(tr("Duration"))->setData(u"%l"_s);
         addAction(tr("File Name"))->setData(u"%f"_s);
         addAction(tr("File Path"))->setData(u"%F"_s);
         addAction(tr("Artist - Title"))->setData(u"%if(%p,%p - %t,%t)"_s);
@@ -58,10 +58,11 @@ MetaDataFormatterMenu::MetaDataFormatterMenu(Type type, QWidget *parent) :
     }
     else if(type == GROUP_EXTRA_ROW_MENU)
     {
-        addAction(tr("Duration"))->setData(u"%l"_s);
         addAction(tr("Duration | Format | Bitrate"))->setData(tr("%if(%l,%l | ,)%{format} | %{bitrate} kbps"));
-        addAction(tr("Duration | Format | Bitrate | Sample rate "))->setData(tr("%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz"));
+        addAction(tr("Duration | Format | Bitrate | Sample rate"))->setData(tr("%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz"));
+        addAction(tr("Duration | Format | Sample rate"))->setData(tr("%if(%l,%l | ,)%{format} | %{samplerate} Hz"));
         addAction(tr("Year | Duration | Bitrate"))->setData(tr("%y | %if(%l,%l | ,)%{bitrate} kbps"));
+        addAction(tr("Year | Duration | Sample rate"))->setData(tr("%y | %if(%l,%l | ,)%{samplerate} Hz"));
         addAction(tr("Condition"))->setData(u"%if(%p,%p - %a,%a)"_s);
     }
     addAction(tr("Parent Directory Name"))->setData(u"%dir(0)"_s);

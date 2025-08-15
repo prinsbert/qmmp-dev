@@ -18,11 +18,12 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <QApplication>
 #include "qmmpuisettings.h"
 #include "metadatahelper_p.h"
 #include "playlistgroup.h"
 
-PlayListGroup::PlayListGroup(const QString &name) : m_title(name)
+PlayListGroup::PlayListGroup(const QString &groupName) : m_groupName(groupName)
 {
     m_settings = QmmpUiSettings::instance();
     m_helper = MetaDataHelper::instance();
@@ -44,14 +45,19 @@ PlayListGroup::~PlayListGroup()
 QString PlayListGroup::formattedTitle(int line) const
 {
     if(line == 0)
-        return m_title;
+    {
+        if(m_title0.isEmpty())
+            m_title0 = formatTitle0();
+
+        return m_title0;
+    }
 
     if(line == 1)
     {
-        if(m_title2.isEmpty())
-            m_title2 = formatTitle2();
+        if(m_title1.isEmpty())
+            m_title1 = formatTitle1();
 
-        return m_title2;
+        return m_title1;
     }
 
     return QString();
@@ -59,10 +65,13 @@ QString PlayListGroup::formattedTitle(int line) const
 
 QStringList PlayListGroup::formattedTitles() const
 {
-    if(m_title2.isEmpty())
-        m_title2 = formatTitle2();
+    if(m_title0.isEmpty())
+        m_title0 = formatTitle0();
 
-    return { m_title, m_title2 };
+    if(m_title1.isEmpty())
+        m_title1 = formatTitle1();
+
+    return { m_title0, m_title1 };
 }
 
 bool PlayListGroup::contains(PlayListTrack *track) const
@@ -88,6 +97,11 @@ int PlayListGroup::count() const
 QString PlayListGroup::formattedDuration() const
 {
     return QString();
+}
+
+QString PlayListGroup::groupName() const
+{
+    return m_groupName;
 }
 
 bool PlayListGroup::isGroup() const
@@ -116,7 +130,34 @@ void PlayListGroup::setCover(const QImage &cover)
     m_cover = cover;
 }
 
-QString PlayListGroup::formatTitle2() const
+QString PlayListGroup::formatTitle0() const
+{
+    if(m_trackList.isEmpty())
+        return QString();
+
+    if(m_trackList.constFirst()->path().contains(u"://"_s) && !m_trackList.constFirst()->path().contains(QLatin1Char('#')))
+        return qApp->translate("PlayListGroup", "Streams");
+
+    qint64 duration = 0;
+    for(const PlayListTrack *t : std::as_const(m_trackList))
+        duration += t->duration();
+
+    TrackInfo info = *m_trackList.constFirst();
+    info.setDuration(duration);
+
+    QString title = m_helper->groupFormatter0()->format(info);
+    if(m_settings->convertUnderscore())
+        title.replace(QLatin1Char('_'), QChar::Space);
+    if(m_settings->convertTwenty())
+        title.replace(u"%20"_s, u" "_s);
+
+    if(title.isEmpty())
+        return qApp->translate("PlayListGroup", "Empty group");
+
+    return title;
+}
+
+QString PlayListGroup::formatTitle1() const
 {
     if(m_trackList.isEmpty() || m_trackList.constFirst()->properties().isEmpty())
         return QString();
@@ -128,5 +169,11 @@ QString PlayListGroup::formatTitle2() const
     TrackInfo info = *m_trackList.constFirst();
     info.setDuration(duration);
 
-    return m_helper->groupFormatter2()->format(info);
+    QString title = m_helper->groupFormatter1()->format(info);
+    if(m_settings->convertUnderscore())
+        title.replace(QLatin1Char('_'), QChar::Space);
+    if(m_settings->convertTwenty())
+        title.replace(u"%20"_s, u" "_s);
+
+    return title;
 }

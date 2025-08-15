@@ -43,10 +43,11 @@ void GroupedContainer::addTrack(PlayListTrack *track)
             lastIndex = firstIndex + m_groups[i]->count() - 1;
         }
 
-        if(track->groupName() == m_groups[i]->formattedTitle())
+        if(track->groupName() == m_groups[i]->groupName())
         {
             m_groups[i]->m_trackList.append(track);
-            m_groups[i]->m_title2.clear();
+            m_groups[i]->m_title0.clear();
+            m_groups[i]->m_title1.clear();
             m_tracks.insert(lastIndex + 1, track);
             track->m_track_index = lastIndex + 1;
             m_update = true;
@@ -56,7 +57,6 @@ void GroupedContainer::addTrack(PlayListTrack *track)
     //create new group
     PlayListGroup *group = new PlayListGroup(track->groupName());
     group->m_trackList.append(track);
-    group->m_title2.clear();
     m_tracks.append(track);
     m_groups.append(group);
     track->m_track_index = m_tracks.count() - 1;
@@ -97,11 +97,12 @@ int GroupedContainer::insertTrack(int index, PlayListTrack *track)
             lastIndex = firstIndex + m_groups[i]->count() - 1;
         }
 
-        if(track->groupName() == m_groups[i]->formattedTitle() &&
+        if(track->groupName() == m_groups[i]->groupName() &&
                 index >= firstIndex && index <= lastIndex + 1)
         {
             m_groups[i]->m_trackList.insert(index - firstIndex, track);
-            m_groups[i]->m_title2.clear();
+            m_groups[i]->m_title0.clear();
+            m_groups[i]->m_title1.clear();
             m_tracks.insert(index, track);
             m_update = true;
             return index;
@@ -117,7 +118,8 @@ void GroupedContainer::replaceTracks(const QList<PlayListTrack *> &tracks)
     for(PlayListGroup *g : std::as_const(m_groups))
     {
         g->m_trackList.clear();
-        g->m_title2.clear();
+        g->m_title0.clear();
+        g->m_title1.clear();
     }
     clear();
     addTracks(tracks);
@@ -197,7 +199,8 @@ void GroupedContainer::removeTrack(PlayListTrack *track)
         if((*it)->contains(track))
         {
             (*it)->m_trackList.removeAll(track);
-            (*it)->m_title2.clear();
+            (*it)->m_title0.clear();
+            (*it)->m_title1.clear();
             m_tracks.removeAll(track);
             removeFromQueue(track);
             if((*it)->isEmpty())
@@ -292,7 +295,8 @@ QList<PlayListTrack *> GroupedContainer::takeAllTracks()
     for(PlayListGroup *g : std::as_const(m_groups))
     {
         g->m_trackList.clear();
-        g->m_title2.clear();
+        g->m_title0.clear();
+        g->m_title1.clear();
     }
     clear();
     return tracks;

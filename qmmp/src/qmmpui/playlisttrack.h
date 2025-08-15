@@ -82,7 +82,7 @@ public:
     /*!
      * Returns name of the parent group.
      */
-    const QString &groupName();
+    QString groupName() const override;
     /*!
      * Returns \b false.
      */
@@ -130,7 +130,7 @@ private:
     mutable QString m_formattedLength;
     mutable QString m_group;
     mutable QStringList m_titleFormats;
-    QString m_groupFormat;
+    mutable QString m_groupFormat;
     QmmpUiSettings *m_settings;
     int m_refCount = 0;
     bool m_sheduledForDeletion = false;

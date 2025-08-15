@@ -40,7 +40,7 @@ public:
      * Constructor.
      * @param formattedTitle Title of the group.
      */
-    explicit PlayListGroup(const QString &formattedTitle);
+    explicit PlayListGroup(const QString &groupName);
     /*!
      * Object destructor.
      */
@@ -76,6 +76,8 @@ public:
      *  Returns formatted length of the item.
      */
     QString formattedDuration() const override;
+
+    QString groupName() const override;
     /*!
      * Returns \b true.
      */
@@ -98,11 +100,13 @@ public:
     void setCover(const QImage &cover);
 
 private:
-    QString formatTitle2() const;
+    QString formatTitle0() const;
+    QString formatTitle1() const;
 
     QList<PlayListTrack *> m_trackList; //A list of tracks
-    QString m_title;
-    mutable QString m_title2;
+    mutable QString m_title0;
+    mutable QString m_title1;
+    QString m_groupName;
 
     bool m_isCoverLoaded = false;
     QImage m_cover;
