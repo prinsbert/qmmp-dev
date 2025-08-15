@@ -585,7 +585,7 @@ private slots:
      */
     void prepareForShufflePlaying(bool yes);
     /*!
-     * Enabled/Disabled groped mode
+     * Enabled/Disabled grouped mode
      * @param enabled State of the groups (\b true - enabled, \b false - disabled)
      */
     void prepareGroups(bool enabled);
