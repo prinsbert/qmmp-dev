@@ -1209,8 +1209,7 @@
         <translation>Композитор</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="47"/>
-        <location filename="../metadataformattermenu.cpp" line="61"/>
+        <location filename="../metadataformattermenu.cpp" line="45"/>
         <source>Duration</source>
         <translation>Тривалість</translation>
     </message>
@@ -1220,13 +1219,8 @@
         <translation>Виконавець — Альбом</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <location filename="../metadataformattermenu.cpp" line="61"/>
         <source>Duration | Format | Bitrate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../metadataformattermenu.cpp" line="63"/>
-        <source>Duration | Format | Bitrate | Sample rate </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1235,42 +1229,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="68"/>
+        <location filename="../metadataformattermenu.cpp" line="65"/>
+        <source>Year | Duration | Sample rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="65"/>
+        <source>%y | %if(%l,%l | ,)%{samplerate} Hz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="69"/>
         <source>Parent Directory Path</source>
         <translation>Шлях до батьківської теки</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="70"/>
+        <location filename="../metadataformattermenu.cpp" line="71"/>
         <source>Bitrate</source>
         <translation>Швидкість потоку</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="71"/>
+        <location filename="../metadataformattermenu.cpp" line="72"/>
         <source>Sample Rate</source>
         <translation>Частота дискретизації</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="72"/>
+        <location filename="../metadataformattermenu.cpp" line="73"/>
         <source>Number of Channels</source>
         <translation>Частота каналів</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="73"/>
+        <location filename="../metadataformattermenu.cpp" line="74"/>
         <source>Sample Size</source>
         <translation>Розрядність</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="74"/>
+        <location filename="../metadataformattermenu.cpp" line="75"/>
         <source>Format</source>
         <translation>Формат</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="75"/>
+        <location filename="../metadataformattermenu.cpp" line="76"/>
         <source>Decoder</source>
         <translation>Декодувальник</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="78"/>
+        <location filename="../metadataformattermenu.cpp" line="79"/>
         <source>File Size</source>
         <translation>Розмір файлу</translation>
     </message>
@@ -1297,7 +1301,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="51"/>
         <location filename="../metadataformattermenu.cpp" line="57"/>
-        <location filename="../metadataformattermenu.cpp" line="65"/>
+        <location filename="../metadataformattermenu.cpp" line="66"/>
         <source>Condition</source>
         <translation>Умова</translation>
     </message>
@@ -1312,13 +1316,28 @@
         <translation>Виконавець - [Рік] Альбом</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <location filename="../metadataformattermenu.cpp" line="61"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <source>Duration | Format | Bitrate | Sample rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <source>Duration | Format | Sample rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <source>%if(%l,%l | ,)%{format} | %{samplerate} Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1327,7 +1346,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="67"/>
+        <location filename="../metadataformattermenu.cpp" line="68"/>
         <source>Parent Directory Name</source>
         <translation>Ім&apos;я батьківської теки</translation>
     </message>
@@ -1338,6 +1357,19 @@
         <location filename="../playlistdownloader.cpp" line="123"/>
         <source>Unsupported playlist format</source>
         <translation>Формат грайлиста не підтримується</translation>
+    </message>
+</context>
+<context>
+    <name>PlayListGroup</name>
+    <message>
+        <location filename="../playlistgroup.cpp" line="139"/>
+        <source>Streams</source>
+        <translation type="unfinished">Мережеві-потоки</translation>
+    </message>
+    <message>
+        <location filename="../playlistgroup.cpp" line="155"/>
+        <source>Empty group</source>
+        <translation type="unfinished">Порожня група</translation>
     </message>
 </context>
 <context>
@@ -1365,19 +1397,6 @@
         <location filename="../playlistmanager.cpp" line="329"/>
         <source>Playlist</source>
         <translation>Грайлист</translation>
-    </message>
-</context>
-<context>
-    <name>PlayListTrack</name>
-    <message>
-        <location filename="../playlisttrack.cpp" line="245"/>
-        <source>Streams</source>
-        <translation>Мережеві-потоки</translation>
-    </message>
-    <message>
-        <location filename="../playlisttrack.cpp" line="250"/>
-        <source>Empty group</source>
-        <translation>Порожня група</translation>
     </message>
 </context>
 <context>

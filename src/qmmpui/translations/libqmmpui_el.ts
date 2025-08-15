@@ -1209,8 +1209,7 @@
         <translation>Συνθέτης</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="47"/>
-        <location filename="../metadataformattermenu.cpp" line="61"/>
+        <location filename="../metadataformattermenu.cpp" line="45"/>
         <source>Duration</source>
         <translation>Διάρκεια</translation>
     </message>
@@ -1220,13 +1219,8 @@
         <translation>Καλλιτέχνης - Δίσκος</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <location filename="../metadataformattermenu.cpp" line="61"/>
         <source>Duration | Format | Bitrate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../metadataformattermenu.cpp" line="63"/>
-        <source>Duration | Format | Bitrate | Sample rate </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1235,42 +1229,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="68"/>
+        <location filename="../metadataformattermenu.cpp" line="65"/>
+        <source>Year | Duration | Sample rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="65"/>
+        <source>%y | %if(%l,%l | ,)%{samplerate} Hz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="69"/>
         <source>Parent Directory Path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="70"/>
+        <location filename="../metadataformattermenu.cpp" line="71"/>
         <source>Bitrate</source>
         <translation>Ρυθμός bit</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="71"/>
+        <location filename="../metadataformattermenu.cpp" line="72"/>
         <source>Sample Rate</source>
         <translation>Ρυθμός δειγματοληψίας</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="72"/>
+        <location filename="../metadataformattermenu.cpp" line="73"/>
         <source>Number of Channels</source>
         <translation>Αριθμός καναλιών</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="73"/>
+        <location filename="../metadataformattermenu.cpp" line="74"/>
         <source>Sample Size</source>
         <translation>Μέγεθος δειγματοληψίας</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="74"/>
+        <location filename="../metadataformattermenu.cpp" line="75"/>
         <source>Format</source>
         <translation>Μορφή</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="75"/>
+        <location filename="../metadataformattermenu.cpp" line="76"/>
         <source>Decoder</source>
         <translation>Αποκωδικοποιητής</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="78"/>
+        <location filename="../metadataformattermenu.cpp" line="79"/>
         <source>File Size</source>
         <translation>Μέγεθος αρχείου</translation>
     </message>
@@ -1297,7 +1301,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="51"/>
         <location filename="../metadataformattermenu.cpp" line="57"/>
-        <location filename="../metadataformattermenu.cpp" line="65"/>
+        <location filename="../metadataformattermenu.cpp" line="66"/>
         <source>Condition</source>
         <translation>Συνθήκη</translation>
     </message>
@@ -1312,13 +1316,28 @@
         <translation>Καλλιτέχνης - [Έτος] Δίσκος</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <location filename="../metadataformattermenu.cpp" line="61"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <source>Duration | Format | Bitrate | Sample rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <source>Duration | Format | Sample rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <source>%if(%l,%l | ,)%{format} | %{samplerate} Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1327,7 +1346,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="67"/>
+        <location filename="../metadataformattermenu.cpp" line="68"/>
         <source>Parent Directory Name</source>
         <translation>Όνομα γονικού καταλόγου</translation>
     </message>
@@ -1338,6 +1357,19 @@
         <location filename="../playlistdownloader.cpp" line="123"/>
         <source>Unsupported playlist format</source>
         <translation>Μη υποστηριζόμενη μορφή λίστας αναπαραγωγής</translation>
+    </message>
+</context>
+<context>
+    <name>PlayListGroup</name>
+    <message>
+        <location filename="../playlistgroup.cpp" line="139"/>
+        <source>Streams</source>
+        <translation type="unfinished">Ροές</translation>
+    </message>
+    <message>
+        <location filename="../playlistgroup.cpp" line="155"/>
+        <source>Empty group</source>
+        <translation type="unfinished">Κενή ομάδα</translation>
     </message>
 </context>
 <context>
@@ -1365,19 +1397,6 @@
         <location filename="../playlistmanager.cpp" line="329"/>
         <source>Playlist</source>
         <translation>Λίστα αναπαραγωγής</translation>
-    </message>
-</context>
-<context>
-    <name>PlayListTrack</name>
-    <message>
-        <location filename="../playlisttrack.cpp" line="245"/>
-        <source>Streams</source>
-        <translation>Ροές</translation>
-    </message>
-    <message>
-        <location filename="../playlisttrack.cpp" line="250"/>
-        <source>Empty group</source>
-        <translation>Κενή ομάδα</translation>
     </message>
 </context>
 <context>
