@@ -1209,8 +1209,7 @@
         <translation>Compositore</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="47"/>
-        <location filename="../metadataformattermenu.cpp" line="61"/>
+        <location filename="../metadataformattermenu.cpp" line="45"/>
         <source>Duration</source>
         <translation>Durata</translation>
     </message>
@@ -1220,14 +1219,9 @@
         <translation>Artista - album</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <location filename="../metadataformattermenu.cpp" line="61"/>
         <source>Duration | Format | Bitrate</source>
         <translation>Durata | Formato | Bit per secondo</translation>
-    </message>
-    <message>
-        <location filename="../metadataformattermenu.cpp" line="63"/>
-        <source>Duration | Format | Bitrate | Sample rate </source>
-        <translation>Durata | Formato | Bit per secondo | Campionamento</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
@@ -1235,42 +1229,52 @@
         <translation>Anno | Durata | Bit per secondo</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="68"/>
+        <location filename="../metadataformattermenu.cpp" line="65"/>
+        <source>Year | Duration | Sample rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="65"/>
+        <source>%y | %if(%l,%l | ,)%{samplerate} Hz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="69"/>
         <source>Parent Directory Path</source>
         <translation>Percorso cartella superiore</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="70"/>
+        <location filename="../metadataformattermenu.cpp" line="71"/>
         <source>Bitrate</source>
         <translation>bit al secondo</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="71"/>
+        <location filename="../metadataformattermenu.cpp" line="72"/>
         <source>Sample Rate</source>
         <translation>Campionamento</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="72"/>
+        <location filename="../metadataformattermenu.cpp" line="73"/>
         <source>Number of Channels</source>
         <translation>Numero di canali</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="73"/>
+        <location filename="../metadataformattermenu.cpp" line="74"/>
         <source>Sample Size</source>
         <translation>Dimensione campione</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="74"/>
+        <location filename="../metadataformattermenu.cpp" line="75"/>
         <source>Format</source>
         <translation>Formato</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="75"/>
+        <location filename="../metadataformattermenu.cpp" line="76"/>
         <source>Decoder</source>
         <translation>Decodificatore</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="78"/>
+        <location filename="../metadataformattermenu.cpp" line="79"/>
         <source>File Size</source>
         <translation>Dimensione file</translation>
     </message>
@@ -1297,7 +1301,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="51"/>
         <location filename="../metadataformattermenu.cpp" line="57"/>
-        <location filename="../metadataformattermenu.cpp" line="65"/>
+        <location filename="../metadataformattermenu.cpp" line="66"/>
         <source>Condition</source>
         <translation>Condizione</translation>
     </message>
@@ -1312,14 +1316,29 @@
         <translation>Artista - [anno] album</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <location filename="../metadataformattermenu.cpp" line="61"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps</source>
         <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
         <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <source>Duration | Format | Bitrate | Sample rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <source>Duration | Format | Sample rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <source>%if(%l,%l | ,)%{format} | %{samplerate} Hz</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
@@ -1327,7 +1346,7 @@
         <translation>%y | %if(%l,%l | ,)%{bitrate} kbps</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="67"/>
+        <location filename="../metadataformattermenu.cpp" line="68"/>
         <source>Parent Directory Name</source>
         <translation>Nome della cartella superiore</translation>
     </message>
@@ -1338,6 +1357,19 @@
         <location filename="../playlistdownloader.cpp" line="123"/>
         <source>Unsupported playlist format</source>
         <translation>Formato di scaletta non supportato</translation>
+    </message>
+</context>
+<context>
+    <name>PlayListGroup</name>
+    <message>
+        <location filename="../playlistgroup.cpp" line="139"/>
+        <source>Streams</source>
+        <translation type="unfinished">Flussi</translation>
+    </message>
+    <message>
+        <location filename="../playlistgroup.cpp" line="155"/>
+        <source>Empty group</source>
+        <translation type="unfinished">Gruppo vuoto</translation>
     </message>
 </context>
 <context>
@@ -1365,19 +1397,6 @@
         <location filename="../playlistmanager.cpp" line="329"/>
         <source>Playlist</source>
         <translation>Scaletta</translation>
-    </message>
-</context>
-<context>
-    <name>PlayListTrack</name>
-    <message>
-        <location filename="../playlisttrack.cpp" line="245"/>
-        <source>Streams</source>
-        <translation>Flussi</translation>
-    </message>
-    <message>
-        <location filename="../playlisttrack.cpp" line="250"/>
-        <source>Empty group</source>
-        <translation>Gruppo vuoto</translation>
     </message>
 </context>
 <context>
