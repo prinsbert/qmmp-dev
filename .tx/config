@@ -1,12 +1,6 @@
 [main]
 host = https://www.transifex.com
 
-[o:qmmp-development-team:p:qmmp:r:mplayer]
-file_filter = src/plugins/Engines/mplayer/translations/mplayer_plugin_<lang>.ts
-source_lang = en
-source_file = src/plugins/Engines/mplayer/translations/mplayer_plugin_en.ts
-type = QT
-
 [o:qmmp-development-team:p:qmmp:r:skinned]
 file_filter = src/plugins/Ui/skinned/translations/skinned_plugin_<lang>.ts
 source_lang = en
