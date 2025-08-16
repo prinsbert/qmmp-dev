@@ -58,7 +58,7 @@ public:
      * Returns \b true if the group contains track \b track.
      * Otherwise returns \b false.
      */
-    bool contains(PlayListTrack *track) const;
+    bool contains(const PlayListTrack *track) const;
     /*!
      * Returns \b true if the group is empty.
      * Otherwise returns \b false.
@@ -98,6 +98,8 @@ public:
      * Sets cover image for all group.
      */
     void setCover(const QImage &cover);
+
+    void updateMetaData();
 
 private:
     QString formatTitle0() const;

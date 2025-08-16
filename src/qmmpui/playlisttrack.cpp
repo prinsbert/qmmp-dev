@@ -81,6 +81,7 @@ void PlayListTrack::updateMetaData(const TrackInfo *info)
     setPath(info->path());
     m_formattedTitles.clear();
     m_formattedLength.clear();
+    m_group.clear();
     formatGroup();
 }
 
