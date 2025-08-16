@@ -473,12 +473,6 @@ QList<PlayListItem *> PlayListModel::findTracks(const QString &str) const
     return items;
 }
 
-//void PlayListModel::setSelected(int index, bool selected)
-//{
-//    m_container->setSelected(index, selected);
-//    emit listChanged(SELECTION);
-//}
-
 void PlayListModel::setSelected(PlayListItem *item, bool selected)
 {
     if(item)
@@ -836,11 +830,6 @@ QList<PlayListTrack *> PlayListModel::tracks() const
 {
     return m_container->tracks();
 }
-
-//QList<PlayListItem *> PlayListModel::items() const
-//{
-//    return m_container->items();
-//}
 
 void PlayListModel::addToQueue()
 {
