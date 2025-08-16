@@ -110,6 +110,7 @@
     <message>
         <location filename="../videowindow.cpp" line="46"/>
         <location filename="../videowindow.cpp" line="51"/>
+        <location filename="../videowindow.cpp" line="70"/>
         <source>&amp;Pause</source>
         <translation>&amp;Павза</translation>
     </message>
@@ -142,6 +143,16 @@
         <location filename="../videowindow.cpp" line="54"/>
         <source>F</source>
         <translation>F</translation>
+    </message>
+    <message>
+        <location filename="../videowindow.cpp" line="75"/>
+        <source>&amp;Resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../videowindow.cpp" line="80"/>
+        <source>&amp;Play</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
