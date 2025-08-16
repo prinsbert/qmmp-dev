@@ -309,6 +309,17 @@ PlayListGroup* PlayListModel::group(int index) const
     return m_container->group(index);
 }
 
+PlayListGroup *PlayListModel::group(const PlayListTrack *track) const
+{
+    for(int i = 0; i < m_container->groupCount(); ++i)
+    {
+        if(m_container->group(i)->contains(track))
+            return m_container->group(i);
+    }
+
+    return nullptr;
+}
+
 int PlayListModel::currentIndex() const
 {
     return m_current;

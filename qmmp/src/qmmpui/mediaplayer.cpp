@@ -260,9 +260,15 @@ void MediaPlayer::updateMetaData()
     qCDebug(core) << "== end of metadata ==";
 
     PlayListModel *pl = m_pl_manager->currentPlayList();
-    if (pl->currentTrack() && pl->currentTrack()->path() == info.path())
+    PlayListTrack *currentTrack = pl->currentTrack();
+    if(currentTrack && currentTrack->path() == info.path())
     {
-        pl->currentTrack()->updateMetaData(&info);
+        currentTrack->updateMetaData(&info);
+        PlayListGroup *group = pl->group(currentTrack);
+        //update group titles
+        if(group && group->tracks().constFirst() == currentTrack)
+            group->updateMetaData();
+
         pl->updateMetaData();
     }
 }

@@ -74,7 +74,7 @@ QStringList PlayListGroup::formattedTitles() const
     return { m_title0, m_title1 };
 }
 
-bool PlayListGroup::contains(PlayListTrack *track) const
+bool PlayListGroup::contains(const PlayListTrack *track) const
 {
     return m_trackList.contains(track);
 }
@@ -128,6 +128,12 @@ void PlayListGroup::setCover(const QImage &cover)
 {
     m_isCoverLoaded = true;
     m_cover = cover;
+}
+
+void PlayListGroup::updateMetaData()
+{
+    m_title0.clear();
+    m_title1.clear();
 }
 
 QString PlayListGroup::formatTitle0() const
