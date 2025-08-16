@@ -43,12 +43,12 @@ VideoWindow::VideoWindow(QWidget *parent) :
     m_core = SoundCore::instance();
     m_menu = new QMenu(this);
 #if QT_VERSION < QT_VERSION_CHECK(6, 3, 0)
-    m_menu->addAction(QIcon::fromTheme(u"media-playback-pause"_s), tr("&Pause"), m_core, &SoundCore::pause, tr("Space"));
+    QAction *togglePauseAction = m_menu->addAction(QIcon::fromTheme(u"media-playback-pause"_s), tr("&Pause"), m_core, &SoundCore::pause, tr("Space"));
     m_menu->addAction(QIcon::fromTheme(u"media-playback-stop"_s), tr("&Stop"), m_core, &SoundCore::stop, tr("V"));
     m_menu->addSeparator();
     m_menu->addAction(tr("&Fullscreen"), this, &VideoWindow::setFullScreen, tr("F"))->setCheckable(true);
 #else
-    m_menu->addAction(QIcon::fromTheme(u"media-playback-pause"_s), tr("&Pause"), tr("Space"), m_core, &SoundCore::pause);
+    QAction *togglePauseAction = m_menu->addAction(QIcon::fromTheme(u"media-playback-pause"_s), tr("&Pause"), tr("Space"), m_core, &SoundCore::pause);
     m_menu->addAction(QIcon::fromTheme(u"media-playback-stop"_s), tr("&Stop"), tr("V"), m_core, &SoundCore::stop);
     m_menu->addSeparator();
     m_menu->addAction(tr("&Fullscreen"), tr("F"), this, &VideoWindow::setFullScreen)->setCheckable(true);
@@ -62,6 +62,24 @@ VideoWindow::VideoWindow(QWidget *parent) :
     backwardAction->setShortcut(QKeySequence(Qt::Key_Left));
     connect(backwardAction, &QAction::triggered, this, &VideoWindow::backward);
     addActions({ forwardAction, backwardAction });
+
+    connect(m_core, &SoundCore::stateChanged, this, [togglePauseAction] (Qmmp::State state) {
+        if(state == Qmmp::Playing || state == Qmmp::Buffering)
+        {
+            togglePauseAction->setIcon(QIcon::fromTheme(u"media-playback-pause"_s));
+            togglePauseAction->setText(tr("&Pause"));
+        }
+        else if(state == Qmmp::Paused)
+        {
+            togglePauseAction->setIcon(QIcon::fromTheme(u"media-playback-start"_s));
+            togglePauseAction->setText(tr("&Resume"));
+        }
+        else
+        {
+            togglePauseAction->setIcon(QIcon::fromTheme(u"media-playback-start"_s));
+            togglePauseAction->setText(tr("&Play"));
+        }
+    });
 }
 
 void VideoWindow::addImage(const QImage &img)
