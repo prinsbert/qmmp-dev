@@ -175,8 +175,11 @@ MpegFileTagModel::MpegFileTagModel(bool using_rusxmms, TagLib::MPEG::File *file,
     if(m_type == TagLib::MPEG::File::ID3v1)
     {
         m_tag = m_file->ID3v1Tag();
-        if((codecName = settings.value(u"ID3v1_encoding"_s, u"ISO-8859-1"_s).toByteArray()).isEmpty())
+        if((codecName = settings.value(u"ID3v1_encoding"_s, u"locale"_s).toByteArray()).isEmpty())
             codecName = "ISO-8859-1";
+
+        if(codecName == "locale"_ba && !m_using_rusxmms)
+            codecName = TagExtractor::charsetForLocale();
     }
     else if(m_type == TagLib::MPEG::File::ID3v2)
     {

@@ -244,7 +244,9 @@ QList<TrackInfo *> DecoderMpegFactory::createPlayList(const QString &path, Track
             switch ((uint) tag_array[i])
             {
             case MpegSettingsDialog::ID3v1:
-                codecName = settings.value(u"ID3v1_encoding"_s, u"ISO-8859-1"_s).toByteArray();
+                codecName = settings.value(u"ID3v1_encoding"_s, u"locale"_s).toByteArray();
+                if(codecName == "locale"_ba && !m_using_rusxmms)
+                    codecName = TagExtractor::charsetForLocale();
                 tag = fileRef.ID3v1Tag();
                 break;
             case MpegSettingsDialog::ID3v2:
