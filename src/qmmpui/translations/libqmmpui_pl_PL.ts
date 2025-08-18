@@ -1362,12 +1362,12 @@
 <context>
     <name>PlayListGroup</name>
     <message>
-        <location filename="../playlistgroup.cpp" line="139"/>
+        <location filename="../playlistgroup.cpp" line="145"/>
         <source>Streams</source>
         <translation type="unfinished">Strumienie</translation>
     </message>
     <message>
-        <location filename="../playlistgroup.cpp" line="155"/>
+        <location filename="../playlistgroup.cpp" line="161"/>
         <source>Empty group</source>
         <translation type="unfinished">Pusta grupa</translation>
     </message>
