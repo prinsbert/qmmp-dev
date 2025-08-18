@@ -85,6 +85,15 @@ void PlayListTrack::updateMetaData(const TrackInfo *info)
     formatGroup();
 }
 
+void PlayListTrack::updateMetaData(const QMap<Qmmp::MetaData, QString> &metaData)
+{
+    setValues(metaData);
+    m_formattedTitles.clear();
+    m_formattedLength.clear();
+    m_group.clear();
+    formatGroup();
+}
+
 void PlayListTrack::updateMetaData()
 {
     QList<TrackInfo *> list = MetaDataManager::instance()->createPlayList(path());
