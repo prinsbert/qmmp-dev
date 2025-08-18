@@ -14,32 +14,32 @@
         <translation>MPEG-Dateien</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="416"/>
+        <location filename="../decodermpegfactory.cpp" line="418"/>
         <source>About MPEG Audio Plugin</source>
         <translation>Über MPEG-Audiomodul</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="417"/>
+        <location filename="../decodermpegfactory.cpp" line="419"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="418"/>
+        <location filename="../decodermpegfactory.cpp" line="420"/>
         <source>Compiled against:</source>
         <translation>Kompiliert gegen:</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="427"/>
+        <location filename="../decodermpegfactory.cpp" line="429"/>
         <source>mpg123, API version: %1</source>
         <translation>mpg123, API-Version: %1</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="431"/>
+        <location filename="../decodermpegfactory.cpp" line="433"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Geschrieben von: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="432"/>
+        <location filename="../decodermpegfactory.cpp" line="434"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation>Basiert auf Code von den mq3- und madplay-Projekten</translation>
     </message>
@@ -168,6 +168,11 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="343"/>
         <source>Try to detect encoding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpegsettingsdialog.cpp" line="32"/>
+        <source>Detect by Locale</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
