@@ -75,6 +75,8 @@ public:
      *  @param info Track information.
      */
     void updateMetaData(const TrackInfo *info);
+
+    void updateMetaData(const QMap<Qmmp::MetaData, QString> &metaData);
     /*!
      * Gets new metadata from file (works for local files only).
      */

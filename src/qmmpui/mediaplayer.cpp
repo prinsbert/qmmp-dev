@@ -223,6 +223,7 @@ void MediaPlayer::processState(Qmmp::State state)
         break;
     case Qmmp::Stopped:
         m_finishTimer->start();
+        restoreMetaData(m_pl_manager->currentPlayList()->currentTrack());
         break;
     default:
         ;
@@ -263,13 +264,9 @@ void MediaPlayer::updateMetaData()
     PlayListTrack *currentTrack = pl->currentTrack();
     if(currentTrack && currentTrack->path() == info.path())
     {
+        saveMetaData(currentTrack);
         currentTrack->updateMetaData(&info);
-        PlayListGroup *group = pl->group(currentTrack);
-        //update group titles
-        if(group && group->tracks().constFirst() == currentTrack)
-            group->updateMetaData();
-
-        pl->updateMetaData();
+        updatePlayListMetaData(currentTrack);
     }
 }
 
@@ -277,4 +274,43 @@ void MediaPlayer::onCurrentTrackRemoved()
 {
     if(m_settings->stopAfterRemovingOfCurrentTrack())
         m_core->stop();
+}
+
+void MediaPlayer::saveMetaData(const PlayListTrack *track)
+{
+    if(!track)
+        return;
+
+    m_savedUrl = track->path();
+    m_savedMetaData = track->metaData();
+}
+
+void MediaPlayer::restoreMetaData(PlayListTrack *track)
+{
+    if(!track)
+        return;
+
+    if(m_savedUrl.contains(u"://"_s) && !m_savedUrl.contains(QLatin1Char('#')) && m_savedUrl == track->path() &&
+            !m_savedMetaData.value(Qmmp::TITLE).isEmpty())
+    {
+        track->updateMetaData(m_savedMetaData);
+        updatePlayListMetaData(track);
+
+        m_savedMetaData.clear();
+        m_savedUrl.clear();
+    }
+}
+
+void MediaPlayer::updatePlayListMetaData(PlayListTrack *track)
+{
+    if(!track)
+        return;
+
+    PlayListModel *pl = m_pl_manager->currentPlayList();
+    PlayListGroup *group = pl->group(track);
+    //update group titles
+    if(group && group->tracks().constFirst() == track)
+        group->updateMetaData();
+
+    pl->updateMetaData();
 }

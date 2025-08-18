@@ -96,12 +96,17 @@ private slots:
     void onCurrentTrackRemoved();
 
 private:
+    void saveMetaData(const PlayListTrack *track);
+    void restoreMetaData(PlayListTrack *track);
+    void updatePlayListMetaData(PlayListTrack *track);
+
     QmmpUiSettings *m_settings;
     PlayListManager *m_pl_manager;
     SoundCore *m_core;
     static MediaPlayer* m_instance;
     int m_skips = 0;
-    QString m_nextUrl;
+    QString m_nextUrl, m_savedUrl;
+    QMap<Qmmp::MetaData, QString> m_savedMetaData;
     QTimer *m_finishTimer;
 };
 
