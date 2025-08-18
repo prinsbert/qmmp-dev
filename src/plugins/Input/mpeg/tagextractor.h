@@ -45,6 +45,7 @@ public:
     QMap<Qmmp::MetaData, QString> id3v2tag() const;
     static void setForceUtf8(bool enabled);
     static QByteArray detectCharset(const TagLib::Tag *tag);
+    static QByteArray charsetForLocale();
 
 private:
     QMap<Qmmp::MetaData, QString> m_tag;
