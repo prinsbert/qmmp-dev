@@ -76,7 +76,7 @@ public:
      */
     void updateMetaData(const TrackInfo *info);
 
-    void updateMetaData(const QMap<Qmmp::MetaData, QString> &metaData);
+    void updateMetaData(const TrackInfo &info);
     /*!
      * Gets new metadata from file (works for local files only).
      */

@@ -265,7 +265,7 @@ void MediaPlayer::updateMetaData()
     if(currentTrack && currentTrack->path() == info.path())
     {
         saveMetaData(currentTrack);
-        currentTrack->updateMetaData(&info);
+        currentTrack->updateMetaData(info);
         updatePlayListMetaData(currentTrack);
     }
 }
@@ -281,8 +281,7 @@ void MediaPlayer::saveMetaData(const PlayListTrack *track)
     if(!track)
         return;
 
-    m_savedUrl = track->path();
-    m_savedMetaData = track->metaData();
+    m_savedInfo = *track;
 }
 
 void MediaPlayer::restoreMetaData(PlayListTrack *track)
@@ -290,14 +289,15 @@ void MediaPlayer::restoreMetaData(PlayListTrack *track)
     if(!track)
         return;
 
-    if(m_savedUrl.contains(u"://"_s) && !m_savedUrl.contains(QLatin1Char('#')) && m_savedUrl == track->path() &&
-            !m_savedMetaData.value(Qmmp::TITLE).isEmpty())
+    //restore initial metadata for streams
+    if(m_savedInfo.path().contains(u"://"_s) && !m_savedInfo.path().contains(QLatin1Char('#')) &&
+            m_savedInfo.path() == track->path() &&
+            !m_savedInfo.value(Qmmp::TITLE).isEmpty())
     {
-        track->updateMetaData(m_savedMetaData);
+        m_savedInfo.clear(TrackInfo::Properties | TrackInfo::ReplayGainInfo); //restore displaying metadata only
+        track->updateMetaData(m_savedInfo);
         updatePlayListMetaData(track);
-
-        m_savedMetaData.clear();
-        m_savedUrl.clear();
+        m_savedInfo.clear();
     }
 }
 
