@@ -349,7 +349,7 @@ void QmmpAudioEngine::run()
     StateHandler::instance()->dispatch(m_decoder->totalTime());
     StateHandler::instance()->dispatch(Qmmp::Playing);
 
-    while (!m_done && !m_finish)
+    while(!m_done && !m_finish)
     {
         mutex()->lock ();
         //seek
@@ -382,7 +382,7 @@ void QmmpAudioEngine::run()
             if(StateHandler::instance()->dispatch(info))
                 m_trackInfo = QSharedPointer<TrackInfo>(new TrackInfo(info));
         }
-        //wait more data
+        //wait for more data
         if(m_inputs[m_decoder]->isWaiting())
         {
             mutex()->unlock();
