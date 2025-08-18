@@ -105,8 +105,8 @@ private:
     SoundCore *m_core;
     static MediaPlayer* m_instance;
     int m_skips = 0;
-    QString m_nextUrl, m_savedUrl;
-    QMap<Qmmp::MetaData, QString> m_savedMetaData;
+    QString m_nextUrl;
+    TrackInfo m_savedInfo;
     QTimer *m_finishTimer;
 };
 
