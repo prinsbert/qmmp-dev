@@ -5,6 +5,7 @@ Version 2.2.8
 * added AIFF-C support
 * added libsidplayfp 2.15 support
 * using 48 kHz sample rate by default in the sid plugin
+* using https in the stream browser plugin
 
 Version 2.2.7
 * added KWin rules for KDE6
