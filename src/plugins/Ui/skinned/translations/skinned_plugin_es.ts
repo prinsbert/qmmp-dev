@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es">
+<TS version="2.1" language="es_ES">
 <context>
     <name>SkinnedActionManager</name>
     <message>
@@ -61,7 +61,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>Space</source>
-        <translation>Espacio</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>&amp;Shuffle</source>
-        <translation>&amp;Revolver</translation>
+        <translation>&amp;Aleatorio</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
@@ -670,7 +670,7 @@
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
         <source>Reset</source>
-        <translation>Restaurar</translation>
+        <translation type="unfinished">Restaurar</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>
@@ -1052,7 +1052,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="55"/>
         <source>Add...</source>
-        <translation>Añadir</translation>
+        <translation>Añadir...</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="72"/>
@@ -1140,26 +1140,6 @@
         <translation>Texto resaltado:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="813"/>
-        <source>Current track background:</source>
-        <translation>Fondo de la pista actual</translation>
-    </message>
-    <message>
-        <location filename="../forms/skinnedsettings.ui" line="871"/>
-        <source>Override current track background</source>
-        <translation>Anular el fondo de la pista actual</translation>
-    </message>
-    <message>
-        <location filename="../forms/skinnedsettings.ui" line="778"/>
-        <source>Group background:</source>
-        <translation>Fondo del Grupo:</translation>
-    </message>
-    <message>
-        <location filename="../forms/skinnedsettings.ui" line="878"/>
-        <source>Override group background</source>
-        <translation>Anular fondo de grupo</translation>
-    </message>
-    <message>
         <location filename="../forms/skinnedsettings.ui" line="700"/>
         <source>Group text:</source>
         <translation>Texto del Grupo:</translation>
@@ -1187,12 +1167,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="994"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupos:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1021"/>
         <source>Extra group row:</source>
-        <translation type="unfinished"></translation>
+        <translation>Columna extra de grupo:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1048"/>
@@ -1202,7 +1182,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="916"/>
         <source>Player:</source>
-        <translation>Reproductor</translation>
+        <translation>Reproductor:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="938"/>
@@ -1218,6 +1198,26 @@
         <location filename="../forms/skinnedsettings.ui" line="1068"/>
         <source>...</source>
         <translation>...</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="778"/>
+        <source>Group background:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="813"/>
+        <source>Current track background:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="871"/>
+        <source>Override current track background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="878"/>
+        <source>Override group background</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1103"/>
@@ -1309,7 +1309,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="331"/>
         <source>Playlist separator:</source>
-        <translation>Separador de listas de reproducción</translation>
+        <translation>Separador de listas de reproducción:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="322"/>
@@ -1329,7 +1329,7 @@
     <message>
         <location filename="../skinnedsettings.cpp" line="165"/>
         <source>Default skin</source>
-        <translation type="unfinished"></translation>
+        <translation>Piel por defecto</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="174"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es">
+<TS version="2.1" language="es_ES">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -81,37 +81,37 @@
     <message>
         <location filename="../aboutdialog.cpp" line="126"/>
         <source>Output plugins:</source>
-        <translation>Módulos de salida: </translation>
+        <translation>Módulos de salida:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="73"/>
         <source>Qt version: %1 (compiled with %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Versión Qt: %1 (compilado con %2)</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="74"/>
         <source>Qt platform: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Plataforma Qt: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="75"/>
         <source>System: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistama: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="76"/>
         <source>Build ABI: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Construcción ABI: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="113"/>
         <source>Visual plugins:</source>
-        <translation>Módulos visuales: </translation>
+        <translation>Módulos visuales:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="120"/>
         <source>General plugins:</source>
-        <translation>Módulos generales: </translation>
+        <translation>Módulos generales:</translation>
     </message>
 </context>
 <context>
@@ -129,7 +129,7 @@
     <message>
         <location filename="../forms/addurldialog.ui" line="62"/>
         <source>&amp;Cancel</source>
-        <translation>&amp;Cancelar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../addurldialog.cpp" line="90"/>
@@ -160,7 +160,7 @@
     <message>
         <location filename="../forms/columneditor.ui" line="76"/>
         <source>Format:</source>
-        <translation>Formato</translation>
+        <translation>Formato:</translation>
     </message>
     <message>
         <location filename="../forms/columneditor.ui" line="64"/>
@@ -346,27 +346,27 @@
     <message>
         <location filename="../forms/configdialog.ui" line="193"/>
         <source>Group Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo del grupo</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="202"/>
         <source>Group size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño del grupo:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="219"/>
         <source>Show dividing line</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar linea de división</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="251"/>
         <source>Extra row format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato extra de columna:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="276"/>
         <source>Show extra row</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar columna extra</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="283"/>
@@ -459,7 +459,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="545"/>
         <source>Add files from command line to this playlist:</source>
-        <translation>Añadir archivos desde consola hacia lista de reproducción</translation>
+        <translation>Añadir archivos desde consola hacia lista de reproducción:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="562"/>
@@ -499,7 +499,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="660"/>
         <source>Use system font</source>
-        <translation>Usar tipografía del sistema </translation>
+        <translation>Usar tipografía del sistema</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="681"/>
@@ -529,12 +529,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="774"/>
         <source>Proxy host name:</source>
-        <translation>Nombre del servidor proxy: </translation>
+        <translation>Nombre del servidor proxy:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="791"/>
         <source>Proxy port:</source>
-        <translation>Puerto del proxy: </translation>
+        <translation>Puerto del proxy:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="808"/>
@@ -605,7 +605,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="1050"/>
         <source>Volume adjustment step:</source>
-        <translation>Paso de ajuste de volúmen</translation>
+        <translation>Paso de ajuste de volúmen:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="350"/>
@@ -620,7 +620,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="1074"/>
         <source>Output bit depth:</source>
-        <translation>Salida de profundidad de bits</translation>
+        <translation>Salida de profundidad de bits:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1015"/>
@@ -630,22 +630,22 @@
     <message>
         <location filename="../configdialog.cpp" line="63"/>
         <source>1 row</source>
-        <translation type="unfinished"></translation>
+        <translation>1 columna</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="64"/>
         <source>3 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>3 columnas</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="65"/>
         <source>4 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>4 columnas</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="66"/>
         <source>5 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>5 columnas</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="67"/>
@@ -1221,12 +1221,17 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>Duration | Format | Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Duración | Formato | Tasa de bits</translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <source>Duration | Format | Bitrate | Sample rate</source>
+        <translation>Duración | Formato | Tasa de bits | Frecuencia de muestreo</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>Year | Duration | Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Año | Duración | Tasa de bits</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="68"/>
@@ -1308,22 +1313,17 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../metadataformattermenu.cpp" line="63"/>
-        <source>Duration | Format | Bitrate | Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>%y | %if(%l,%l | ,)%{bitrate} kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>%y | %if(%l,%l | ,)%{bitrate} kbps</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="67"/>
@@ -1384,7 +1384,7 @@
     <message>
         <location filename="../qmmpuisettings.cpp" line="39"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../qmmpuisettings.cpp" line="64"/>
@@ -1498,7 +1498,7 @@
     <message>
         <location filename="../forms/templateeditor.ui" line="39"/>
         <source>Reset</source>
-        <translation>Restaurar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/templateeditor.ui" line="46"/>
@@ -1567,7 +1567,7 @@ Do you want to replace it?</source>
     <message>
         <location filename="../forms/winfileassocpage.ui" line="43"/>
         <source>Media files handled by Qmmp:</source>
-        <translation>Archivos de medios gestionados por Qmmp</translation>
+        <translation>Archivos de medios gestionados por Qmmp:</translation>
     </message>
     <message>
         <location filename="../forms/winfileassocpage.ui" line="17"/>

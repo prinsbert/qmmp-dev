@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es">
+<TS version="2.1" language="es_ES">
 <context>
     <name>BuiltinCommandLineOption</name>
     <message>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="51"/>
         <source>Display Jump to Track dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar diálogo  Saltar a pista</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="52"/>
@@ -104,7 +104,7 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="480"/>
         <source>Options:</source>
-        <translation>Opciones: </translation>
+        <translation>Opciones:</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="486"/>
@@ -124,7 +124,7 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="489"/>
         <source>Print debugging messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar mensajes de depuración</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="490"/>
