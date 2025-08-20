@@ -1316,7 +1316,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>Duration | Format | Bitrate | Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>持續時間 | 格式 | 位元率 | 取樣率</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
