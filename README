@@ -3,7 +3,7 @@ Qmmp Plugin Pack
 Plugin pack is a set of extra plugins for Qmmp.
 Official home page: https://qmmp.ylsoftware.com/plugins.php
 Development: https://sourceforge.net/projects/qmmp-dev/
-Translation: https://www.transifex.com/qmmp-development-team/
+Translation: https://explore.transifex.com/qmmp-development-team/
 
 Description:
 - FFap - enhanced Monkey's Audio (APE) decoder (24-bit samples and embedded cue support)

@@ -3,7 +3,7 @@ Qmmp Plugin Pack
 Набор дополнительных модулей для Qmmp.
 Официальная домашняя страница: https://qmmp.ylsoftware.com/plugins.php
 Разработка: https://sourceforge.net/projects/qmmp-dev/
-Перевод: https://www.transifex.com/qmmp-development-team/
+Перевод: https://explore.transifex.com/qmmp-development-team/
 
 Список модулей:
 - FFap - улучшенный декодер Monkey's Audio (APE) (поддержка 24-х бит и встроенного cue)
