@@ -1,3 +1,9 @@
+qmmp (2.2.8-1ubuntu1~plucky0) plucky; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Thu, 21 Aug 2025 12:47:22 +0300
+
 qmmp (2.2.7-1ubuntu1~plucky0) plucky; urgency=medium
 
   * New upstream release.

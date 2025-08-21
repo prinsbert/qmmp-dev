@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=1.7.7
+QMMP_VERSION=1.7.8
 UBUNTU_CODENAMES='focal jammy noble plucky'
 BUILD_ROOT=build-root
 
