@@ -75,14 +75,17 @@ public:
      *  @param info Track information.
      */
     void updateMetaData(const TrackInfo *info);
-
+    /*!
+     *  Updates current metadata.
+     *  @param info Track information.
+     */
     void updateMetaData(const TrackInfo &info);
     /*!
      * Gets new metadata from file (works for local files only).
      */
     void updateMetaData();
     /*!
-     * Returns name of the parent group.
+     * Returns internal name of the parent group.
      */
     QString groupName() const override;
     /*!

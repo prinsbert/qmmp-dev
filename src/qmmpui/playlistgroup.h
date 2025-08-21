@@ -38,7 +38,7 @@ class QMMPUI_EXPORT PlayListGroup : public PlayListItem
 public:
     /*!
      * Constructor.
-     * @param formattedTitle Title of the group.
+     * @param groupName Internal name of the group.
      */
     explicit PlayListGroup(const QString &groupName);
     /*!
@@ -76,7 +76,9 @@ public:
      *  Returns formatted length of the item.
      */
     QString formattedDuration() const override;
-
+    /*!
+     *  Returns internal group name. This name is intended for grouping only.
+     */
     QString groupName() const override;
     /*!
      * Returns \b true.
@@ -98,7 +100,9 @@ public:
      * Sets cover image for all group.
      */
     void setCover(const QImage &cover);
-
+    /*!
+     * Updates all group titles.
+     */
     void updateMetaData();
 
 private:
