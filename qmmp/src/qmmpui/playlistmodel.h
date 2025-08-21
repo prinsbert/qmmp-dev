@@ -143,7 +143,9 @@ public:
      * Returns the group with the index \b index or \b nullptr if group doesn't exist.
      */
     PlayListGroup *group(int index) const;
-
+    /*!
+     * Returns the group which contains track \b track or \b nullptr if group doesn't exist.
+     */
     PlayListGroup *group(const PlayListTrack *track) const;
     /*!
      * Returns index of the current track or -1 if model is empty.
