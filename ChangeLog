@@ -6,6 +6,7 @@ Version 1.7.8
 * added libsidplayfp 2.15 support
 * using 48 kHz sample rate by default in the sid plugin
 * using https in the stream browser plugin
+* updated Spanish translation (mad-soft)
 
 Version 1.7.7
 * added KWin rules for KDE6
