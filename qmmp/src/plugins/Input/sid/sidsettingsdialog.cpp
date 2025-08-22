@@ -51,7 +51,7 @@ SidSettingsDialog::SidSettingsDialog(SidDatabase *db, QWidget *parent) : QDialog
     m_ui->fastResampligCheckBox->setChecked(settings.value(u"fast_resampling"_s, false).toBool());
 
     m_ui->resamplingComboBox->addItem(u"Interpolate"_s, SidConfig::INTERPOLATE);
-    m_ui->resamplingComboBox->addItem(u"Resample interpolate"_s, SidConfig::RESAMPLE_INTERPOLATE);
+    m_ui->resamplingComboBox->addItem(u"Resample Interpolate"_s, SidConfig::RESAMPLE_INTERPOLATE);
     i = m_ui->resamplingComboBox->findData(settings.value(u"resampling_method"_s, SidConfig::INTERPOLATE).toInt());
     m_ui->resamplingComboBox->setCurrentIndex(i);
 
