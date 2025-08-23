@@ -166,18 +166,18 @@
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="36"/>
-        <source>Nearest neighbor</source>
-        <translation>Vicino più prossimo</translation>
+        <source>Nearest Neighbor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../xmpsettingsdialog.cpp" line="38"/>
+        <source>Cubic Spline</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="37"/>
         <source>Linear</source>
         <translation>Lineare</translation>
-    </message>
-    <message>
-        <location filename="../xmpsettingsdialog.cpp" line="38"/>
-        <source>Cubic spline</source>
-        <translation>Spline cubica</translation>
     </message>
 </context>
 </TS>
