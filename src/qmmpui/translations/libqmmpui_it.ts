@@ -384,7 +384,7 @@
         <location filename="../forms/configdialog.ui" line="591"/>
         <location filename="../forms/configdialog.ui" line="605"/>
         <source>A list of file masks separated by comma.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un elenco di maschere di file separate da virgola.</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="316"/>
@@ -896,7 +896,7 @@
     <message>
         <location filename="../covereditor.cpp" line="34"/>
         <source>External File</source>
-        <translation type="unfinished"></translation>
+        <translation>File esterno</translation>
     </message>
     <message>
         <location filename="../covereditor.cpp" line="35"/>
@@ -1231,12 +1231,12 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="65"/>
         <source>Year | Duration | Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Anno | Durata | Campionamento</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="65"/>
         <source>%y | %if(%l,%l | ,)%{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%y | %if(%l,%l | ,)%{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="69"/>
@@ -1328,17 +1328,17 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>Duration | Format | Bitrate | Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Durata | Formato | Bit per secondo | Campionamento</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>Duration | Format | Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Durata | Formato | Campionamento</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>%if(%l,%l | ,)%{format} | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
@@ -1364,12 +1364,12 @@
     <message>
         <location filename="../playlistgroup.cpp" line="145"/>
         <source>Streams</source>
-        <translation type="unfinished">Flussi</translation>
+        <translation>Flussi</translation>
     </message>
     <message>
         <location filename="../playlistgroup.cpp" line="161"/>
         <source>Empty group</source>
-        <translation type="unfinished">Gruppo vuoto</translation>
+        <translation>Gruppo vuoto</translation>
     </message>
 </context>
 <context>

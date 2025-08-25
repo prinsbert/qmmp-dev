@@ -863,7 +863,7 @@
     <message>
         <location filename="../configdialog.cpp" line="380"/>
         <source>Serbian (Ijekavian)</source>
-        <translation>Serbski (i)jekawski</translation>
+        <translation>Serbski (ijekawski)</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="381"/>
@@ -896,7 +896,7 @@
     <message>
         <location filename="../covereditor.cpp" line="34"/>
         <source>External File</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik zewnętrzny</translation>
     </message>
     <message>
         <location filename="../covereditor.cpp" line="35"/>
@@ -1231,12 +1231,12 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="65"/>
         <source>Year | Duration | Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Rok | Długość | Próbkowanie</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="65"/>
         <source>%y | %if(%l,%l | ,)%{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%y | %if(%l,%l | ,)%{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="69"/>
@@ -1328,17 +1328,17 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>Duration | Format | Bitrate | Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Długość | Format | Przepływność | Próbkowanie</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>Duration | Format | Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Długość | Format | Próbkowanie</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>%if(%l,%l | ,)%{format} | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
@@ -1364,12 +1364,12 @@
     <message>
         <location filename="../playlistgroup.cpp" line="145"/>
         <source>Streams</source>
-        <translation type="unfinished">Strumienie</translation>
+        <translation>Strumienie</translation>
     </message>
     <message>
         <location filename="../playlistgroup.cpp" line="161"/>
         <source>Empty group</source>
-        <translation type="unfinished">Pusta grupa</translation>
+        <translation>Pusta grupa</translation>
     </message>
 </context>
 <context>

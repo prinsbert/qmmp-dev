@@ -173,7 +173,7 @@
     <message>
         <location filename="../mpegsettingsdialog.cpp" line="32"/>
         <source>Detect by Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Op basis van taal</translation>
     </message>
 </context>
 </TS>
