@@ -1,7 +1,5 @@
 project(libladspa)
 
-include(CheckIncludeFile)
-
 check_include_file(dlfcn.h DLFCN_H_FOUND)
 
 set(libladspa_SRCS

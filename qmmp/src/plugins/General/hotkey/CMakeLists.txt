@@ -1,7 +1,5 @@
 project(libhotkey)
 
-include(CheckIncludeFile)
-
 # xcb
 pkg_search_module(XCB xcb IMPORTED_TARGET)
 

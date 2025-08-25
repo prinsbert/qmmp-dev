@@ -1,7 +1,5 @@
 project(libwaveout)
 
-include(CheckIncludeFile)
-
 # Win32 waveout
 check_include_file(windows.h WINDOWS_H_FOUND)
 

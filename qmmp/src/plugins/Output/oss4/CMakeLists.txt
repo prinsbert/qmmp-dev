@@ -1,6 +1,5 @@
 project(liboss4)
 
-INCLUDE(CheckIncludeFile)
 INCLUDE(CheckCXXSourceCompiles)
 
 #oss4

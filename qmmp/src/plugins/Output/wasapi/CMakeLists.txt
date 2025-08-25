@@ -1,7 +1,5 @@
 project(libwasapi)
 
-include(CheckIncludeFile)
-
 # Windows Audio Session API
 check_include_file(Audioclient.h WASAPI_FOUND)
 
