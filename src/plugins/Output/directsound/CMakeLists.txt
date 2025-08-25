@@ -13,7 +13,7 @@ SET(libdirectsound_SRCS
 
 if(DSOUND_H_FOUND)
     add_library(directsound MODULE ${libdirectsound_SRCS})
-    target_link_libraries(directsound PRIVATE Qt6::Widgets libqmmp -ldxguid -lstrmiids -ldmoguids -lmsdmo -lole32 -loleaut32 -luuid -lgdi32 -ldsound)
+    target_link_libraries(directsound PRIVATE Qt6::Widgets libqmmp -ldxguid -lstrmiids -ldmoguids -lmsdmo -lole32 -loleaut32 -luuid -lgdi32 -ldsound -lksuser)
     install(TARGETS directsound DESTINATION ${PLUGIN_DIR}/Output)
 endif(DSOUND_H_FOUND)
 
