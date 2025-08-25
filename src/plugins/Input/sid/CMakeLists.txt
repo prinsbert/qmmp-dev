@@ -1,7 +1,5 @@
 project(libsid)
 
-include(CheckIncludeFile)
-
 # libsidplayfp
 pkg_search_module(SIDPLAYFP libsidplayfp>=1.0.3 IMPORTED_TARGET)
 

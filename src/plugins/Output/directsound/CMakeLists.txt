@@ -1,7 +1,5 @@
 project(libdirectsound)
 
-include(CheckIncludeFile)
-
 # Win32 DirectSound
 check_include_file(dsound.h DSOUND_H_FOUND)
 

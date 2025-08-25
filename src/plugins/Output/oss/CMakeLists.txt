@@ -1,7 +1,5 @@
 project(liboss)
 
-include(CheckIncludeFile)
-
 #OSS
 check_include_file(sys/soundcard.h SYS_SOUNDCARD_H_FOUND)
 if(SYS_SOUNDCARD_H_FOUND)
