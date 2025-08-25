@@ -61,32 +61,32 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>+10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+10 secondi</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>+30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+30 secondi</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>+60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+60 secondi</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>-10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-10 secondi</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>-30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-30 secondi</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>-60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-60 secondi</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
@@ -695,7 +695,7 @@
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
         <source>Restore Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>Ripristina ai valori predefiniti</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>
@@ -1087,12 +1087,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="260"/>
         <source>Skin install path:</source>
-        <translation type="unfinished"></translation>
+        <translation>Percorso di installazione del tema:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="244"/>
         <source>Random skin on every startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema casuale ad ogni avvio</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="107"/>
@@ -1112,7 +1112,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="238"/>
         <source>Extra Skin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazioni aggiuntive del tema</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="251"/>
@@ -1127,7 +1127,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="341"/>
         <source>Use smooth scrolling</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa scorrimento fluido</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="362"/>
@@ -1202,12 +1202,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="829"/>
         <source>Override group background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sovrascrivi lo sfondo di gruppo:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="874"/>
         <source>Override current track background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sovrascrivi lo sfondo della traccia attuale:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="938"/>

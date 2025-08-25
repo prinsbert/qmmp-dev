@@ -11,7 +11,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="45"/>
         <source>Monkey&apos;s Audio Files</source>
-        <translation>Tiedostot Monkey&apos;s Audio</translation>
+        <translation>Monkey&apos;s Audio tiedostot</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="150"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="152"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
-        <translation>Tämä laajennus tarjoaa tuen Monkey&apos;s Audio (APE)</translation>
+        <translation>Laajennus tarjoaa tuen Monkey&apos;s Audio (APE)</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="153"/>

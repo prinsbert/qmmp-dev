@@ -167,12 +167,12 @@
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest Neighbor</source>
-        <translation type="unfinished"></translation>
+        <translation>Методом ближайшего соседа</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="38"/>
         <source>Cubic Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Кубическими сплайнами</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="37"/>

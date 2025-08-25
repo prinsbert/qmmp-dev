@@ -6,27 +6,27 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="39"/>
         <source>XMP Plugin</source>
-        <translation>Estensione XMP</translation>
+        <translation>Plugin XMP</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="54"/>
         <source>Module Files</source>
-        <translation>File Module</translation>
+        <translation>File modulo</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="109"/>
         <source>About XMP Audio Plugin</source>
-        <translation>Informazioni sull&apos;estensione audio XMP</translation>
+        <translation>Info sul plugin audio XMP</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="110"/>
         <source>Qmmp XMP Audio Plugin</source>
-        <translation>Estensione audio XMP per Qmmp</translation>
+        <translation>Plugin audio XMP Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="112"/>
@@ -102,12 +102,12 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation>Impostazioni dell&apos;estensione XMP</translation>
+        <translation>Impostazioni estensione XMP</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="34"/>
         <source>Amplification factor:</source>
-        <translation>Fattore di amplificazione:</translation>
+        <translation>Fattore amplificazione:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="51"/>
@@ -117,7 +117,7 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation>Tipo di interpolazione:</translation>
+        <translation>Tipo interpolazione:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="78"/>
@@ -127,27 +127,27 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="85"/>
         <source>Use vblank timing</source>
-        <translation>Usa l&apos;intervallo vblank</translation>
+        <translation>Usa intervallo vblank</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="92"/>
         <source>Emulate Protracker 2.x FX9 bug</source>
-        <translation>Emula il bug di Protracker 2.x FX9</translation>
+        <translation>Emula bug Protracker 2.x FX9</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation>Frequenza di campionamento:</translation>
+        <translation>Frequenza campionamento:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="109"/>
         <source>Emulate sample loop bug</source>
-        <translation>Emula il bug del loop di esempio</translation>
+        <translation>Emula bug loop campione</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="116"/>
         <source>Use Paula mixer in Amiga modules</source>
-        <translation>Usa il mixer Paula nei moduli Amiga</translation>
+        <translation>Nei moduli Amiga usa il mixer Paula</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="33"/>
@@ -167,12 +167,12 @@
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest Neighbor</source>
-        <translation type="unfinished"></translation>
+        <translation>Più vicino</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="38"/>
         <source>Cubic Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Spline cubica</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="37"/>

@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru_RU">
+<TS version="2.1" language="ru">
 <context>
     <name>MpvEngineFactory</name>
     <message>
         <location filename="../mpvenginefactory.cpp" line="47"/>
         <source>MPV Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Модуль MPV</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="51"/>
         <source>Video Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы видео</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="198"/>
         <source>About MPV Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>О модуле MPV</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="199"/>
         <source>Qmmp MPV Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Модуль MPV для Qmmp</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="200"/>
         <source>This plugin uses mpv as backend</source>
-        <translation type="unfinished"></translation>
+        <translation>В этом модуле для воспроизведения используется MPV</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="201"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Разработчик: Илья Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -39,65 +39,65 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="50"/>
         <source>File size</source>
-        <translation type="unfinished"></translation>
+        <translation>Размер файла</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="50"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>КиБ</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="51"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Битовая частота</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="51"/>
         <location filename="../mpvmetadatamodel.cpp" line="70"/>
         <location filename="../mpvmetadatamodel.cpp" line="86"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>кбит/с</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="70"/>
         <source>Audio bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Битовая частота аудио</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
         <source>Audio sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Частота дискретизации аудио:</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Гц</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="73"/>
         <location filename="../mpvmetadatamodel.cpp" line="75"/>
         <source>Audio channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Аудио каналы</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="79"/>
         <source>Audio format</source>
-        <translation type="unfinished"></translation>
+        <translation>Формат аудио</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="85"/>
         <source>Video size</source>
-        <translation type="unfinished"></translation>
+        <translation>Размер видео</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="86"/>
         <source>Video bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Битовая частота видео</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="89"/>
         <source>Video format</source>
-        <translation type="unfinished"></translation>
+        <translation>Формат видео</translation>
     </message>
 </context>
 </TS>
