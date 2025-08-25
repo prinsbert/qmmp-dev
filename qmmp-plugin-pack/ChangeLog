@@ -1,6 +1,13 @@
 Changelog of Qmmp Plugin Pack
 --------------
 
+Version 2.3.0
+* ported to qmmp 2.3 API
+* added mms plugin
+* added mplayer plugin
+* added mpv plugin
+* changed context menu in the ffvideo plugin 
+
 Version 2.2.2
 * added Windows 64 bit support
 * fixed cmake warning
