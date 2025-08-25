@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fi_FI">
+<TS version="2.1" language="fi">
 <context>
     <name>MpvEngineFactory</name>
     <message>
         <location filename="../mpvenginefactory.cpp" line="47"/>
         <source>MPV Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>MPV Plugin</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="51"/>
         <source>Video Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Videotiedostot</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="198"/>
         <source>About MPV Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietoja MPV Plugin</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="199"/>
         <source>Qmmp MPV Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp MPV Plugin</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="200"/>
         <source>This plugin uses mpv as backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Tämä laajennus käyttää mpv:tä</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="201"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjoittanut: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -39,65 +39,65 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="50"/>
         <source>File size</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedostokoko</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="50"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="51"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Bittinopeus</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="51"/>
         <location filename="../mpvmetadatamodel.cpp" line="70"/>
         <location filename="../mpvmetadatamodel.cpp" line="86"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>kbps</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="70"/>
         <source>Audio bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Audio nopeus</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
         <source>Audio sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Audio taajuus</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="73"/>
         <location filename="../mpvmetadatamodel.cpp" line="75"/>
         <source>Audio channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Audiokanavat</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="79"/>
         <source>Audio format</source>
-        <translation type="unfinished"></translation>
+        <translation>Audio formaatti</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="85"/>
         <source>Video size</source>
-        <translation type="unfinished"></translation>
+        <translation>Videon koko</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="86"/>
         <source>Video bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Videon nopeus</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="89"/>
         <source>Video format</source>
-        <translation type="unfinished"></translation>
+        <translation>Videoformaatti</translation>
     </message>
 </context>
 </TS>

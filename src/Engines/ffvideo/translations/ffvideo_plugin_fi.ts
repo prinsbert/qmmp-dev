@@ -82,7 +82,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="79"/>
         <source>Audio format</source>
-        <translation type="unfinished"></translation>
+        <translation>Audio formaatti</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="85"/>
@@ -97,7 +97,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="89"/>
         <source>Video format</source>
-        <translation type="unfinished"></translation>
+        <translation>Videomuoto</translation>
     </message>
 </context>
 <context>
@@ -147,12 +147,12 @@
     <message>
         <location filename="../videowindow.cpp" line="75"/>
         <source>&amp;Resume</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Jatka</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="80"/>
         <source>&amp;Play</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Toista</translation>
     </message>
 </context>
 </TS>
