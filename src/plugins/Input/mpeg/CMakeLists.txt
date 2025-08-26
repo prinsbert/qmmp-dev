@@ -45,7 +45,6 @@ if(MPG123_FOUND)
 endif(MPG123_FOUND)
 
 if(MAD_FOUND OR MPG123_FOUND)
-    set(MPEG_FOUND TRUE CACHE INTERNAL "mpeg_found")
     add_library(mpeg MODULE ${libmpeg_SRCS})
     target_link_libraries(mpeg PRIVATE Qt6::Widgets libqmmp PkgConfig::TAGLIB ${LIBRCD_LDFLAGS})
     if(MAD_FOUND)
