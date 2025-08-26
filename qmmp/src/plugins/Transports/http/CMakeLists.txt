@@ -19,11 +19,10 @@ set(libhttp_SRCS
 
 if(CURL_FOUND)
     add_library(http MODULE ${libhttp_SRCS})
+    target_link_libraries(http PRIVATE Qt6::Widgets libqmmp PkgConfig::CURL)
 
     if(USE_ENCA AND ENCA_FOUND)
-        target_link_libraries(http PRIVATE Qt6::Widgets libqmmp PkgConfig::CURL PkgConfig::ENCA)
-    else(USE_ENCA AND ENCA_FOUND)
-        target_link_libraries(http PRIVATE Qt6::Widgets libqmmp PkgConfig::CURL)
+        target_link_libraries(http PRIVATE PkgConfig::ENCA)      
     endif(USE_ENCA AND ENCA_FOUND)
 
     install(TARGETS http DESTINATION ${PLUGIN_DIR}/Transports)

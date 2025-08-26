@@ -133,10 +133,10 @@ macro(PRINT_SUMMARY str USE FOUND)
     endif(${USE} AND ${FOUND})
 endmacro(PRINT_SUMMARY)
 
-if(UNIX)
-    add_custom_target (distclean @echo cleaning for source distribution)
 
-    add_custom_command(
+add_custom_target(distclean @echo cleaning for source distribution)
+
+add_custom_command(
     POST_BUILD
     COMMENT "distribution clean"
     COMMAND make
@@ -171,8 +171,6 @@ if(UNIX)
     ARGS -rf ${CMAKE_CURRENT_BINARY_DIR}/doc/html .qt config.tests
     TARGET  distclean
 )
-endif(UNIX)
-
 
 message("")
 message("Transports:")
