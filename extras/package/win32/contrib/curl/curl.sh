@@ -13,6 +13,7 @@ case $1 in
     cd temp
     tar xvzf $NAME-$VERSION.tar.gz
     cd $NAME-$VERSION
+    cat ../../curl-pkg-config-cleanup.patch | patch -p1
     cmake ./ -DCMAKE_INSTALL_PREFIX=${PREFIX} -G "MSYS Makefiles" -DZLIB_ROOT=${ZLIB_ROOT} \
     -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DBUILD_CURL_EXE=OFF -DCURL_USE_OPENSSL=ON \
     -DCURL_DISABLE_DICT=ON \
