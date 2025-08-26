@@ -24,10 +24,7 @@ contains(CONFIG, WITH_MPG123){
     DEFINES += WITH_MPG123
 }
 
-contains(CONFIG, WITH_LIBRCD){
-    LIBS += -lrcd
-    DEFINES += WITH_LIBRCD
-}
+contains(CONFIG, WITH_LIBRCD):DEFINES += WITH_LIBRCD
 
 FORMS += \
     mpegsettingsdialog.ui
@@ -40,10 +37,12 @@ unix {
     PKGCONFIG += taglib
     contains(CONFIG, WITH_MAD):PKGCONFIG += mad
     contains(CONFIG, WITH_MPG123):PKGCONFIG += libmpg123
+    contains(CONFIG, WITH_LIBRCD):PKGCONFIG += librcd
 }
 
 win32 {
     LIBS += -ltag.dll
     contains(CONFIG, WITH_MAD):LIBS += -lmad
     contains(CONFIG, WITH_MPG123):LIBS += -lmpg123.dll
+    contains(CONFIG, WITH_LIBRCD):LIBS += -lrcd
 }
