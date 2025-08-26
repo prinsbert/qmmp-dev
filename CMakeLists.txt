@@ -139,7 +139,7 @@ add_custom_target(distclean @echo cleaning for source distribution)
 add_custom_command(
     POST_BUILD
     COMMENT "distribution clean"
-    COMMAND make
+    COMMAND ${CMAKE_MAKE_PROGRAM}
     ARGS -C ${CMAKE_CURRENT_BINARY_DIR} clean
     COMMAND find
     ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "CMakeCache.txt" | xargs rm -rf
