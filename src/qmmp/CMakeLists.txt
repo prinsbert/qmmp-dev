@@ -8,7 +8,7 @@ set(libqmmp_DEFINES
 )
 
 if(NOT QMMP_VERSION_STABLE) #add svn revision
-    execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/svn_revision.sh
+    execute_process(COMMAND sh ${CMAKE_CURRENT_SOURCE_DIR}/svn_revision.sh
                     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
                     OUTPUT_VARIABLE SVN_REVISION
                    OUTPUT_STRIP_TRAILING_WHITESPACE)
