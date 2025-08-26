@@ -3,6 +3,12 @@ include(FindPkgConfig)
 include(CheckIncludeFile)
 pkg_search_module(ENCA enca>=1.9 IMPORTED_TARGET)
 pkg_search_module(TAGLIB taglib>=1.12 IMPORTED_TARGET)
+
+# disable "lib" prefix for plugins under Windows
+if(WIN32)
+    set(CMAKE_SHARED_MODULE_PREFIX "")
+endif()
+
 add_subdirectory(Input)
 add_subdirectory(Output)
 add_subdirectory(Visual)
