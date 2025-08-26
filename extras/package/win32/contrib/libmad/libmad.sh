@@ -20,6 +20,8 @@ case $1 in
     ./configure --prefix=$PREFIX --enable-accuracy --disable-debugging --enable-shared --disable-static --host=${MINGW_HOST}
     make -j${JOBS}
     make install
+    echo "prefix=${PREFIX}" > $PREFIX/lib/pkgconfig/mad.pc
+    cat ../../mad.pc.in >> $PREFIX/lib/pkgconfig/mad.pc
 
   ;;
   --clean)
