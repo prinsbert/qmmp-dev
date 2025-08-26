@@ -176,7 +176,7 @@ PRINT_SUMMARY ("MMS support ..........................." USE_MMS MMS_FOUND)
 
 message("")
 message("Input Plugins:")
-PRINT_SUMMARY ("MPEG support .........................." 1 MAD_FOUND OR MPG123_FOUND)
+PRINT_SUMMARY ("MPEG support .........................." 1 MPEG_DECODERS)
 PRINT_SUMMARY ("FLAC support .........................." USE_FLAC FLAC_FOUND)
 PRINT_SUMMARY ("Ogg Vorbis support ...................." USE_VORBIS VORBIS_FOUND)
 PRINT_SUMMARY ("Musepack support ......................" USE_MPC MPC_FOUND)
