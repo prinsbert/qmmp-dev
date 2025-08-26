@@ -1,0 +1,16 @@
+diff -U3 -r soxr-0.1.3-Source-old/src/CMakeLists.txt soxr-0.1.3-Source-new/src/CMakeLists.txt
+--- soxr-0.1.3-Source-old/src/CMakeLists.txt	2018-02-21 10:36:46 +0300
++++ soxr-0.1.3-Source-new/src/CMakeLists.txt	2025-08-26 14:34:00 +0300
+@@ -86,11 +86,10 @@
+   PUBLIC_HEADER "${PROJECT_NAME}.h")
+ if (BUILD_FRAMEWORK)
+   set_target_properties (${PROJECT_NAME} PROPERTIES FRAMEWORK TRUE)
+-elseif (NOT WIN32)
++endif ()
+   set (TARGET_PCS ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc)
+   configure_file (${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}.pc.in ${TARGET_PCS})
+   install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
+-endif ()
+ 
+ 
+ 

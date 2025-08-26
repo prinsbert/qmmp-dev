@@ -13,6 +13,7 @@ case $1 in
     cd temp
     tar xvJf $NAME-$VERSION-Source.tar.xz
     cd $NAME-$VERSION-Source
+    cat ../../soxr-pkg-config.patch | patch -p1
     cmake ./ -DCMAKE_INSTALL_PREFIX=${PREFIX} -G "MSYS Makefiles" \
     -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DBUILD_SHARED_LIBS=ON \
     -DCMAKE_BUILD_TYPE=Release
