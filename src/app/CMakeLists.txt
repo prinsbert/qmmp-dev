@@ -16,6 +16,7 @@ set_target_properties(qmmp PROPERTIES OUTPUT_NAME qmmp${APP_NAME_SUFFIX})
 
 if(WIN32)
     target_sources(qmmp PRIVATE qmmp.rc)
+    set_target_properties(qmmp PROPERTIES WIN32_EXECUTABLE TRUE)
 endif(WIN32)
 
 install(TARGETS qmmp DESTINATION ${CMAKE_INSTALL_BINDIR})
