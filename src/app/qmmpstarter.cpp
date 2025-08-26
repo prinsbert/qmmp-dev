@@ -287,7 +287,7 @@ void QMMPStarter::startPlayer()
     QStringList args = argString.split(u"|||"_s, Qt::SkipEmptyParts);
 
 #ifdef Q_OS_WIN
-    QIcon::setThemeSearchPaths(QStringList{ qApp->applicationDirPath() + u"/themes/"_s });
+    QIcon::setThemeSearchPaths(QStringList{ qApp->applicationDirPath() + u"/../share/themes/"_s });
     QIcon::setThemeName(u"oxygen"_s);
 #else
     //add extra theme path;
