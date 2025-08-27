@@ -19,7 +19,7 @@ fi
 
 SVN_PATH=/c/Program\ Files/SlikSvn/bin
 export PATH=${PATH}:${MINGW32_PATH}/bin:${QT6_PATH}/bin:${PREFIX}/bin:${SVN_PATH}
-export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig 
+export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig:${QT6_PATH}/lib/pkgconfig 
 
 export JOBS=4
 
@@ -75,28 +75,33 @@ download_plugins_svn()
 }
 
 build ()
-{ 
+{
+  QMMP_INSTALL_PREFIX=`dirs`/qmmp-distr 
   cd qmmp-${QMMP_VERSION}
   cmake . -G "MSYS Makefiles" -GNinja \
   -DCMAKE_BUILD_TYPE=Release \
-  -DUSE_LIBRCD=ON \
-  -DUSE_FILEWRITER=OFF \
-  -DUSE_DIR_ASSOC=OFF \
+  -DUSE_LIBRCD=ON -DUSE_FILEWRITER=OFF -DUSE_DIR_ASSOC=OFF \
   -DCMAKE_REQUIRED_INCLUDES=${PREFIX}/include \
   -DCMAKE_SYSTEM_LIBRARY_PATH=${PREFIX}/lib \
-  -DCMAKE_INSTALL_PREFIX=../qmmp-distr
+  -DCMAKE_INSTALL_PREFIX=${QMMP_INSTALL_PREFIX}
   cmake --build . -j${JOBS}
   cmake --install .
   cd ..
-  #cd qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
-  #qmake CONFIG+=release DISABLED_PLUGINS+=MODPLUG_PLUGIN INCLUDEPATH+=`dirs`/../qmmp-${QMMP_VERSION}/src QMAKE_LIBDIR+=`dirs`/../qmmp-${QMMP_VERSION}/bin
-  #mingw32-make -j${JOBS}
-  #cd ..
-  #cd qmmp-adplug-master
-  #qmake CONFIG+=release INCLUDEPATH+=`dirs`/../qmmp-${QMMP_VERSION}/src QMAKE_LIBDIR+=`dirs`/../qmmp-${QMMP_VERSION}/bin LIBS+=-lqmmp2 QT+=widgets CONFIG+=link_pkgconfig PKGCONFIG+=adplug \
-  #CONFIG+=hide_symbols
-  #mingw32-make -j${JOBS}
-  #cd ..
+  cd qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
+  PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${QMMP_INSTALL_PREFIX}/lib/pkgconfig  cmake . -G "MSYS Makefiles" -GNinja \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DUSE_YTB=OFF -DUSE_MMS=OFF -DUSE_FFAP=OFF -DUSE_FFVIDEO=OFF -DUSE_MPLAYER=OFF \
+  -DCMAKE_REQUIRED_INCLUDES=${PREFIX}/include \
+  -DCMAKE_SYSTEM_LIBRARY_PATH=${PREFIX}/lib \
+  -DCMAKE_INSTALL_PREFIX=${QMMP_INSTALL_PREFIX}
+  cmake --build . -j${JOBS}
+  cmake --install .
+  cd ..
+  cd qmmp-adplug-master
+  qmake CONFIG+=release INCLUDEPATH+=${QMMP_INSTALL_PREFIX}/include QMAKE_LIBDIR+=${QMMP_INSTALL_PREFIX}/lib LIBS+=-lqmmp2 QT+=widgets CONFIG+=link_pkgconfig PKGCONFIG+=adplug \
+  CONFIG+=hide_symbols
+  mingw32-make -j${JOBS}
+  cd ..
 }
 
 create_distr ()
@@ -116,7 +121,7 @@ create_distr ()
   #cp -v ../qmmp-${QMMP_VERSION}/bin/*.dll ./
   #cp -rv ../qmmp-${QMMP_VERSION}/bin/plugins ./
   #cp -rv ../qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}/bin/plugins ./
-  find . -type f -name *.a -delete
+  #find . -type f -name *.a -delete
   #find . -type d -name ".svn" | xargs rm -rf
   cp -v ../qmmp-${QMMP_VERSION}/ChangeLog ./ChangeLog.txt
   cp -v ../qmmp-${QMMP_VERSION}/ChangeLog.rus ./ChangeLog.rus.txt
@@ -204,12 +209,12 @@ case $1 in
   --install|--install-win64)
     cd tmp
     build
-    #create_distr
-    #find qmmp-distr -type f -name *.dll   | xargs strip -v
-    #find qmmp-distr -type f -name *.exe -not -name 7za.exe  | xargs strip -v
-    #if [ "$1" == "--install" ]; then
-    #  sed '/!define WIN64/d' -i ./qmmp-distr/qmmp.nsi
-    #fi 
+    create_distr
+    find qmmp-distr -type f -name *.dll   | xargs strip -v
+    find qmmp-distr -type f -name *.exe -not -name 7za.exe  | xargs strip -v
+    if [ "$1" == "--install" ]; then
+      sed '/!define WIN64/d' -i ./qmmp-distr/qmmp.nsi
+    fi 
   ;;
   --clean)
     cd tmp
