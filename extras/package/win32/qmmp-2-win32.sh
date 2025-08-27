@@ -204,12 +204,12 @@ case $1 in
   --install|--install-win64)
     cd tmp
     build
-    create_distr
-    find qmmp-distr -type f -name *.dll   | xargs strip -v
-    find qmmp-distr -type f -name *.exe -not -name 7za.exe  | xargs strip -v
-    if [ "$1" == "--install" ]; then
-      sed '/!define WIN64/d' -i ./qmmp-distr/qmmp.nsi
-    fi 
+    #create_distr
+    #find qmmp-distr -type f -name *.dll   | xargs strip -v
+    #find qmmp-distr -type f -name *.exe -not -name 7za.exe  | xargs strip -v
+    #if [ "$1" == "--install" ]; then
+    #  sed '/!define WIN64/d' -i ./qmmp-distr/qmmp.nsi
+    #fi 
   ;;
   --clean)
     cd tmp
