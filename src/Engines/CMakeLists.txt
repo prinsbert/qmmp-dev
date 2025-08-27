@@ -1,6 +1,6 @@
 option(USE_FFVIDEO "FFmpeg video plugin" ON)
 option(USE_MPLAYER "Mplayer video plugin" ON)
-option(USE_MPV     "Mpv video plugin" ON)
+option(USE_MPV     "MPV video plugin" ON)
 
 if(USE_FFVIDEO)
     add_subdirectory(ffvideo)

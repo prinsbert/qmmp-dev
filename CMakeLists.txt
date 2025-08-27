@@ -90,41 +90,43 @@ else(${USE} AND ${FOUND})
 endif(${USE} AND ${FOUND})
 ENDMACRO(PRINT_SUMMARY)
 
-if(UNIX)
-    ADD_CUSTOM_TARGET (distclean @echo cleaning for source distribution)
+add_custom_target(distclean @echo cleaning for source distribution)
 
-    ADD_CUSTOM_COMMAND(
-		POST_BUILD
-		COMMENT "distribution clean"
-		COMMAND make
-		ARGS -C ${CMAKE_CURRENT_BINARY_DIR} clean
-		COMMAND find
-		ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "CMakeCache.txt" | xargs rm -rf
-		COMMAND find
-		ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "CMakeFiles" | xargs rm -rf
-		COMMAND find
-		ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "Makefile" | xargs rm -rf
-		COMMAND find
-		ARGS ${CMAKE_CURRENT_BINARY_DIR} -name \"*.cmake\" | xargs rm -rf
-		COMMAND find
-		ARGS ${CMAKE_CURRENT_SOURCE_DIR} -name "*.qm" | xargs rm -rf
-		COMMAND find
-		ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "*.pc" | xargs rm -rf
-		COMMAND find
-		ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "*.depends" | xargs rm -rf
-		COMMAND find
-		ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "*.cxx_parameters" | xargs rm -rf
-		COMMAND find
-		ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "moc_*.cpp" | xargs rm -rf
-		COMMAND find
-		ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "*_automoc.cpp" | xargs rm -rf
-		COMMAND rm
-		ARGS -rf ${CMAKE_CURRENT_BINARY_DIR}/install_manifest.txt
-		COMMAND find
-		ARGS ${CMAKE_CURRENT_BINARY_DIR} -name *_automoc.dir | xargs rm -rf
-		TARGET  distclean
-    )
-endif(UNIX)
+add_custom_command(
+    POST_BUILD
+    COMMENT "distribution clean"
+    COMMAND ${CMAKE_MAKE_PROGRAM}
+    ARGS -C ${CMAKE_CURRENT_BINARY_DIR} clean
+    COMMAND find
+    ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "CMakeCache.txt" | xargs rm -rf
+    COMMAND find
+    ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "CMakeFiles" | xargs rm -rf
+    COMMAND find
+    ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "Makefile" | xargs rm -rf
+    COMMAND find
+    ARGS ${CMAKE_CURRENT_BINARY_DIR} -name \"*.cmake\" | xargs rm -rf
+    COMMAND find
+    ARGS ${CMAKE_CURRENT_SOURCE_DIR} -name "*.qm" | xargs rm -rf
+    COMMAND find
+    ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "*.pc" | xargs rm -rf
+    COMMAND find
+    ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "*.depends" | xargs rm -rf
+    COMMAND find
+    ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "*.cxx_parameters" | xargs rm -rf
+    COMMAND find
+    ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "moc_*.cpp" | xargs rm -rf
+    COMMAND find
+    ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "qrc_*.cxx" | xargs rm -rf
+    COMMAND find
+    ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "*_automoc.cpp" | xargs rm -rf
+    COMMAND rm
+    ARGS -rf ${CMAKE_CURRENT_BINARY_DIR}/install_manifest.txt
+    COMMAND find
+    ARGS ${CMAKE_CURRENT_BINARY_DIR} -name *_automoc.dir | xargs rm -rf
+    COMMAND rm
+    ARGS -rf ${CMAKE_CURRENT_BINARY_DIR}/doc/html .qt config.tests build.ninja .ninja_deps
+    TARGET  distclean
+)
 
 MESSAGE("")
 MESSAGE("Transports:")
