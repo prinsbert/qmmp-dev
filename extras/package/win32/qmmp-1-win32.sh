@@ -22,7 +22,7 @@ export SVN_PATH=/c/Program\ Files/SlikSvn/bin
 export PATH=${PATH}:${MINGW32_PATH}/bin:${QT5_PATH}/bin:${PREFIX}/bin:${SVN_PATH}
 export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig 
 
-export JOBS=2
+export JOBS=4
 
 
 download_qmmp_tarball()

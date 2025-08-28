@@ -20,7 +20,7 @@ else
 fi
 
 export STRIP=false
-export JOBS=2
+export JOBS=4
 
 export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig 
 
