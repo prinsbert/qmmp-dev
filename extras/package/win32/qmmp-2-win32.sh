@@ -117,12 +117,6 @@ create_distr ()
   cp -v ${PREFIX}/bin/7za.exe ./bin 
   cp -rv ../../themes ./share/    
   cp -rv ../../skins ./share/qmmp/
-  #cp -v ../qmmp-${QMMP_VERSION}/bin/*.exe ./
-  #cp -v ../qmmp-${QMMP_VERSION}/bin/*.dll ./
-  #cp -rv ../qmmp-${QMMP_VERSION}/bin/plugins ./
-  #cp -rv ../qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}/bin/plugins ./
-  #find . -type f -name *.a -delete
-  #find . -type d -name ".svn" | xargs rm -rf
   cp -v ../qmmp-${QMMP_VERSION}/ChangeLog ./ChangeLog.txt
   cp -v ../qmmp-${QMMP_VERSION}/ChangeLog.rus ./ChangeLog.rus.txt
   u2d ./ChangeLog.txt
