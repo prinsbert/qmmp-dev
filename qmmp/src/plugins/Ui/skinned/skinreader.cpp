@@ -223,11 +223,11 @@ QStringList SkinReader::skinPaths()
 {
     QStringList paths = {
         Qmmp::configDir() + QStringLiteral("/skins"),
+        Qmmp::dataPath() + QStringLiteral("/skins"),
     #if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
         qApp->applicationDirPath() + QStringLiteral("/skins")
     #else
         Qmmp::userDataPath() + QStringLiteral("/skins"),
-        Qmmp::dataPath() + QStringLiteral("/skins"),
         //1.x version compatibility
         QDir(qApp->applicationDirPath() +  QStringLiteral("/../share/qmmp-1/skins")).absolutePath()
     #endif
