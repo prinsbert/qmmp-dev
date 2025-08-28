@@ -98,7 +98,7 @@ build ()
   cmake --install .
   cd ..
   cd qmmp-adplug-master
-  qmake CONFIG+=release INCLUDEPATH+=${QMMP_INSTALL_PREFIX}/include QMAKE_LIBDIR+=${QMMP_INSTALL_PREFIX}/lib LIBS+=-lqmmp2 QT+=widgets CONFIG+=link_pkgconfig PKGCONFIG+=adplug \
+  qmake CONFIG+=release INCLUDEPATH+=${QMMP_INSTALL_PREFIX}/include QMAKE_LIBDIR+=${QMMP_INSTALL_PREFIX}/lib LIBS+=-lqmmp QT+=widgets CONFIG+=link_pkgconfig PKGCONFIG+=adplug \
   CONFIG+=hide_symbols
   mingw32-make -j${JOBS}
   cd ..
