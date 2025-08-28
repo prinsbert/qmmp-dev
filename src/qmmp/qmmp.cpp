@@ -165,11 +165,7 @@ void Qmmp::setUiLanguageID(const QString &code)
 
 QString Qmmp::dataPath()
 {
-#if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
-    return qApp->applicationDirPath();
-#else
     return QDir(QStringLiteral("%1/../share/qmmp" APP_NAME_SUFFIX).arg(qApp->applicationDirPath())).absolutePath();
-#endif
 }
 
 QString Qmmp::userDataPath()
