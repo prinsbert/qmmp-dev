@@ -5,8 +5,8 @@ Version 2.3.0
 * ported to qmmp 2.3 API
 * added mms plugin
 * added mplayer plugin
-* added mpv plugin
-* changed context menu in the ffvideo plugin 
+* added mpv plugin (experimental)
+* changed context menu in the ffvideo plugin
 
 Version 2.2.2
 * added Windows 64 bit support
