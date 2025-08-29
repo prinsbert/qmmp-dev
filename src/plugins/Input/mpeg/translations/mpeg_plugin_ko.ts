@@ -173,7 +173,7 @@
     <message>
         <location filename="../mpegsettingsdialog.cpp" line="32"/>
         <source>Detect by Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>로케일로 감지</translation>
     </message>
 </context>
 </TS>
