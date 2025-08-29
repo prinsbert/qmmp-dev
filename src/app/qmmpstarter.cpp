@@ -424,7 +424,7 @@ void QMMPStarter::readCommand()
     if(!out.isEmpty())
     {
         //writing answer
-        socket->write(out.toLocal8Bit());
+        socket->write(out.toUtf8());
         while(socket->waitForBytesWritten())
             socket->flush();
     }
