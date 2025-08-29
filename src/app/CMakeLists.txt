@@ -1,7 +1,5 @@
 project(app)
 
-include(UsePkgConfig)
-
 set(app_SRCS
     builtincommandlineoption.cpp
     main.cpp
@@ -16,7 +14,12 @@ set_target_properties(qmmp PROPERTIES OUTPUT_NAME qmmp${APP_NAME_SUFFIX})
 
 if(WIN32)
     target_sources(qmmp PRIVATE qmmp.rc)
-    set_target_properties(qmmp PROPERTIES WIN32_EXECUTABLE TRUE)
+    target_compile_definitions(qmmp PRIVATE QMMP_NO_CLI)
+    set_target_properties(qmmp PROPERTIES WIN32_EXECUTABLE TRUE)    
+    #cli version
+    add_executable(qmmp-cli ${app_SRCS})
+    target_link_libraries(qmmp-cli PRIVATE Qt6::Widgets Qt6::Network libqmmp libqmmpui)
+    install(TARGETS qmmp-cli DESTINATION ${CMAKE_INSTALL_BINDIR})
 endif(WIN32)
 
 install(TARGETS qmmp DESTINATION ${CMAKE_INSTALL_BINDIR})
