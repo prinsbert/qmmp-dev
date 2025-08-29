@@ -160,13 +160,13 @@ QMMPStarter::QMMPStarter() : QObject()
             if(!out.isEmpty())
             {
                 //show dialog with command line documentation under ms windows
-#ifdef Q_OS_WIN
+#ifdef QMMP_NO_CLI
                 stringstream tmp_stream;
                 tmp_stream.copyfmt(cout);
                 streambuf *old_stream = cout.rdbuf(tmp_stream.rdbuf());
 #endif
                 cout << qPrintable(out.trimmed()) << endl;
-#ifdef Q_OS_WIN
+#ifdef QMMP_NO_CLI
                 string text = tmp_stream.str();
                 QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromLocal8Bit(text.c_str()));
                 cout.rdbuf(old_stream); //restore old stream buffer
@@ -429,7 +429,7 @@ void QMMPStarter::writeCommand()
     while(m_socket->waitForReadyRead(1500))
         cout << m_socket->readAll().trimmed().constData() << endl;
 
-#ifndef Q_OS_WIN
+#ifndef QMMP_NO_CLI
     if (argString.isEmpty())
         printUsage();
 #endif
@@ -500,7 +500,7 @@ QString QMMPStarter::processCommandArgs(const QStringList &slist, const QString&
 void QMMPStarter::printUsage()
 {
 //show dialog with command line documentation under ms windows
-#ifdef Q_OS_WIN
+#ifdef QMMP_NO_CLI
     stringstream tmp_stream;
     tmp_stream.copyfmt(cout);
     streambuf* old_stream = cout.rdbuf(tmp_stream.rdbuf());
@@ -524,7 +524,7 @@ void QMMPStarter::printUsage()
     extraHelp << tr("Bug tracker: %1").arg(u"https://sourceforge.net/p/qmmp-dev/tickets"_s);
     for(const QString &line : std::as_const(extraHelp))
         cout << qPrintable(CommandLineManager::formatHelpString(line)) << endl;
-#ifdef Q_OS_WIN
+#ifdef QMMP_NO_CLI
     string text = tmp_stream.str();
     QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromLocal8Bit(text.c_str()));
     cout.rdbuf(old_stream); //restore old stream buffer
@@ -534,7 +534,7 @@ void QMMPStarter::printUsage()
 void QMMPStarter::printVersion()
 {
     //show dialog with qmmp version under ms windows
-#ifdef Q_OS_WIN
+#ifdef QMMP_NO_CLI
     stringstream tmp_stream;
     tmp_stream.copyfmt(cout);
     streambuf* old_stream = cout.rdbuf(tmp_stream.rdbuf());
@@ -542,7 +542,7 @@ void QMMPStarter::printVersion()
     cout << qPrintable(tr("QMMP version: %1").arg(Qmmp::strVersion())) << endl;
     cout << qPrintable(tr("Compiled with Qt version: %1").arg(QLatin1StringView(QT_VERSION_STR))) << endl;
     cout << qPrintable(tr("Using Qt version: %1").arg(QString::fromLatin1(qVersion()))) << endl;
-#ifdef Q_OS_WIN
+#ifdef QMMP_NO_CLI
     string text = tmp_stream.str();
     QMessageBox::information(nullptr, tr("Qmmp Version"), QString::fromLocal8Bit(text.c_str()));
     cout.rdbuf(old_stream); //restore old stream buffer
@@ -552,14 +552,14 @@ void QMMPStarter::printVersion()
 void QMMPStarter::printUserInterfaces()
 {
     //show dialog with qmmp version under ms windows
-#ifdef Q_OS_WIN
+#ifdef QMMP_NO_CLI
     stringstream tmp_stream;
     tmp_stream.copyfmt(cout);
     streambuf* old_stream = cout.rdbuf(tmp_stream.rdbuf());
 #endif
     for(const QString &name : UiLoader::names())
         cout << qPrintable(name) << endl;
-#ifdef Q_OS_WIN
+#ifdef QMMP_NO_CLI
     string text = tmp_stream.str();
     QMessageBox::information(nullptr, tr("User Interfaces"), QString::fromLocal8Bit(text.c_str()));
     cout.rdbuf(old_stream); //restore old stream buffer
