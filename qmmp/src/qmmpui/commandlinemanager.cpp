@@ -32,6 +32,11 @@
 #include "mediaplayer.h"
 #include "commandlinemanager.h"
 
+#ifdef Q_OS_WIN
+#undef qPrintable 
+#define qPrintable qUtf8Printable
+#endif
+
 QList<CommandLineHandler *> *CommandLineManager::m_options = nullptr;
 QHash<CommandLineHandler*, QString> *CommandLineManager::m_files = nullptr;
 
