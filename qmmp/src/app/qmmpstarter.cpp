@@ -148,7 +148,7 @@ QMMPStarter::QMMPStarter() : QObject()
     for(auto it = commands.cbegin(); it != commands.cend(); ++it)
     {
         CommandLineHandler::OptionFlags flags;
-        if(!m_option_manager->identify(it.key()) && !CommandLineManager::hasOption(it.key(), &flags) &&
+        if(m_option_manager->identify(it.key()) < 0 && !CommandLineManager::hasOption(it.key(), &flags) &&
                 it.key() != u"--no-start"_s && it.key() != u"--ui"_s)
         {
             cout << qPrintable(tr("Unknown command")) << endl;
