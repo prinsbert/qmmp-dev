@@ -55,7 +55,7 @@ FFmpegEngine::FFmpegEngine(EngineFactory *factory, QObject *parent)
 
 FFmpegEngine::~FFmpegEngine()
 {
-    stop();
+    FFmpegEngine::stop();
     delete m_audioBuffer;
     delete m_videoBuffer;
     if(!m_videoWindow.isNull())
