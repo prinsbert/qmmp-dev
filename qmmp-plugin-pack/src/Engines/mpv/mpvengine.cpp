@@ -59,7 +59,8 @@ bool MpvEngine::play()
     if(!m_ctx)
         initialize();
 
-    const char *cmd[] = { "loadfile", m_source->path().toLocal8Bit().constData(), nullptr };
+    QByteArray path = m_source->path().toLocal8Bit();
+    const char *cmd[] = { "loadfile", path.constData(), nullptr };
     mpv_command(m_ctx, cmd);
     return true;
 }
@@ -94,6 +95,7 @@ bool MpvEngine::initialize()
     mpv_observe_property(m_ctx, 0, "track-list", MPV_FORMAT_NODE);
     mpv_observe_property(m_ctx, 0, "chapter-list", MPV_FORMAT_NODE);
     mpv_set_wakeup_callback(m_ctx, MpvEngine::wakeup, this);
+    mpv_request_log_messages(m_ctx, "error");
 
     mpv_initialize(m_ctx);
 
@@ -179,6 +181,12 @@ void MpvEngine::processEvents()
 
         switch(event->event_id)
         {
+        case MPV_EVENT_LOG_MESSAGE:
+        {
+            mpv_event_property *prop = (mpv_event_property *)event->data;
+            qCDebug(plugin) << (char *)prop->data;
+            break;
+        }
         case MPV_EVENT_PROPERTY_CHANGE:
         {
             mpv_event_property *prop = (mpv_event_property *)event->data;
@@ -258,6 +266,7 @@ void MpvEngine::processEvents()
             }
             break;
         }
+
         default:
             ;
         }
