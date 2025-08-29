@@ -66,7 +66,7 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
         <source>Audio sample rate</source>
-        <translation>Частота дискретизации аудио:</translation>
+        <translation>Частота дискретизации аудио</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
