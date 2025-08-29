@@ -64,6 +64,10 @@
 int QMMPStarter::m_sigtermFd[2];
 #endif
 
+#ifdef Q_OS_WIN
+#undef qPrintable 
+#define qPrintable qUtf8Printable
+#endif
 
 using namespace std;
 
@@ -96,6 +100,7 @@ QMMPStarter::QMMPStarter() : QObject()
     QCoreApplication::setOrganizationName(configDirInfo.fileName());
     QSettings::setDefaultFormat(QSettings::IniFormat);
     QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, configDirInfo.canonicalPath());
+    SetConsoleOutputCP(CP_UTF8);
 #endif
 
     QTranslator *translator = new QTranslator(qApp);
@@ -168,7 +173,7 @@ QMMPStarter::QMMPStarter() : QObject()
                 cout << qPrintable(out.trimmed()) << endl;
 #ifdef QMMP_NO_CLI
                 string text = tmp_stream.str();
-                QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromLocal8Bit(text.c_str()));
+                QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromStdString(text));
                 cout.rdbuf(old_stream); //restore old stream buffer
 #endif
             }
@@ -509,7 +514,7 @@ void QMMPStarter::printUsage()
     cout << qPrintable(tr("Options:")) << endl;
     cout << "--------" << endl;
     for(const QString &line : m_option_manager->helpString())
-        cout << qPrintable(CommandLineManager::formatHelpString(line) ) << endl;
+        cout << qPrintable(CommandLineManager::formatHelpString(line)) << endl;
     CommandLineManager::printUsage();
     QStringList extraHelp;
     extraHelp << QStringLiteral("--ui <name>||") + tr("Start qmmp with the specified user interface");
@@ -526,7 +531,7 @@ void QMMPStarter::printUsage()
         cout << qPrintable(CommandLineManager::formatHelpString(line)) << endl;
 #ifdef QMMP_NO_CLI
     string text = tmp_stream.str();
-    QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromLocal8Bit(text.c_str()));
+    QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromStdString(text));
     cout.rdbuf(old_stream); //restore old stream buffer
 #endif
 }
@@ -544,7 +549,7 @@ void QMMPStarter::printVersion()
     cout << qPrintable(tr("Using Qt version: %1").arg(QString::fromLatin1(qVersion()))) << endl;
 #ifdef QMMP_NO_CLI
     string text = tmp_stream.str();
-    QMessageBox::information(nullptr, tr("Qmmp Version"), QString::fromLocal8Bit(text.c_str()));
+    QMessageBox::information(nullptr, tr("Qmmp Version"), QString::fromStdString(text));
     cout.rdbuf(old_stream); //restore old stream buffer
 #endif
 }
@@ -561,7 +566,7 @@ void QMMPStarter::printUserInterfaces()
         cout << qPrintable(name) << endl;
 #ifdef QMMP_NO_CLI
     string text = tmp_stream.str();
-    QMessageBox::information(nullptr, tr("User Interfaces"), QString::fromLocal8Bit(text.c_str()));
+    QMessageBox::information(nullptr, tr("User Interfaces"), QString::fromStdString(text));
     cout.rdbuf(old_stream); //restore old stream buffer
 #endif
 }
