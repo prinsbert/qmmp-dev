@@ -173,7 +173,7 @@ QMMPStarter::QMMPStarter() : QObject()
                 cout << qPrintable(out.trimmed()) << endl;
 #ifdef QMMP_NO_CLI
                 string text = tmp_stream.str();
-                QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromLocal8Bit(text.c_str()));
+                QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromStdString(text));
                 cout.rdbuf(old_stream); //restore old stream buffer
 #endif
             }
@@ -531,7 +531,7 @@ void QMMPStarter::printUsage()
         cout << qPrintable(CommandLineManager::formatHelpString(line)) << endl;
 #ifdef QMMP_NO_CLI
     string text = tmp_stream.str();
-    QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromLocal8Bit(text.c_str()));
+    QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromStdString(text));
     cout.rdbuf(old_stream); //restore old stream buffer
 #endif
 }
@@ -549,7 +549,7 @@ void QMMPStarter::printVersion()
     cout << qPrintable(tr("Using Qt version: %1").arg(QString::fromLatin1(qVersion()))) << endl;
 #ifdef QMMP_NO_CLI
     string text = tmp_stream.str();
-    QMessageBox::information(nullptr, tr("Qmmp Version"), QString::fromLocal8Bit(text.c_str()));
+    QMessageBox::information(nullptr, tr("Qmmp Version"), QString::fromStdString(text));
     cout.rdbuf(old_stream); //restore old stream buffer
 #endif
 }
@@ -566,7 +566,7 @@ void QMMPStarter::printUserInterfaces()
         cout << qPrintable(name) << endl;
 #ifdef QMMP_NO_CLI
     string text = tmp_stream.str();
-    QMessageBox::information(nullptr, tr("User Interfaces"), QString::fromLocal8Bit(text.c_str()));
+    QMessageBox::information(nullptr, tr("User Interfaces"), QString::fromStdString(text));
     cout.rdbuf(old_stream); //restore old stream buffer
 #endif
 }
