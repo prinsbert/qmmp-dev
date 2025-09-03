@@ -68,7 +68,6 @@ Other features:
 - ReplayGain support
 - sending listening history to Last.fm, Libre.fm and ListenBrainz
 - CDDB support
-- audio converter
 - stream browser
 - audio formats converter
 - external programs execution on track change
