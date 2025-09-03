@@ -25,6 +25,7 @@ Requirements:
 - ffmpeg >= 3.4 (optional)
 - libmms >= 0.4 (optional)
 - libmpv (optional)
+- mplayer (optional)
 - yt-dlp (latest version, optional)
 - cmake >= 3.18.0 (for build only)
 
