@@ -67,7 +67,6 @@ Other features:
 - ReplayGain support
 - Last.fm/Libre.fm scrobbler
 - CDDB support
-- audio converter
 - stream browser
 - audio formats converter
 - external programs execution on track change
