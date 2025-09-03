@@ -1,8 +1,0 @@
-# "Programm" is German, it's not a typo
-qmmp binary: spelling-error-in-binary Programm Program *
-# "apparence" is French, not a typo either
-qmmp binary: spelling-error-in-binary apparence appearance *
-# "lon" is the name of a contributor
-qmmp binary: spelling-error-in-binary lon long *
-# Not sure why this is detected
-qmmp: spelling-error-in-binary wtH with *libmpeg.so*
