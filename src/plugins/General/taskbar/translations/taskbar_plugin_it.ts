@@ -21,12 +21,12 @@
     <message>
         <location filename="../taskbarfactory.cpp" line="51"/>
         <source>This plugin adds support for progress indicator in the Windows taskbar</source>
-        <translation>Questa estensione aggiunge il supporto per l&apos;indicatore di progresso nella barra delle applicazioni di Windows</translation>
+        <translation>Questa estensione aggiunge il supporto per l&apos;indicatore di avanzamento nella barra delle applicazioni di Windows</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="53"/>

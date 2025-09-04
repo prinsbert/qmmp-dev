@@ -101,7 +101,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>&amp;Repeat Playlist</source>
-        <translation>&amp;Ripeti la scaletta</translation>
+        <translation>&amp;Ripeti playlist</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="52"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>&amp;No Playlist Advance</source>
-        <translation>&amp;Non avanzare nella scaletta</translation>
+        <translation>&amp;Non avanzare nella playlist</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="55"/>
@@ -151,7 +151,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="57"/>
         <source>&amp;Transit between playlists</source>
-        <translation>Passaggio &amp;tra scalette</translation>
+        <translation>Passaggio &amp;tra playlist</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="58"/>
@@ -166,7 +166,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="60"/>
         <source>Show Playlist</source>
-        <translation>Mostra scaletta</translation>
+        <translation>Mostra playlist</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="60"/>
@@ -316,7 +316,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>Invert Selection</source>
-        <translation>Inverti la selezione</translation>
+        <translation>Inverti selezione</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="82"/>
@@ -336,7 +336,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>&amp;View Track Details</source>
-        <translation>&amp;Vedi i dettagli della traccia</translation>
+        <translation>&amp;Vedi dettagli della traccia</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="84"/>
@@ -346,7 +346,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>&amp;New List</source>
-        <translation>&amp;Nuova lista</translation>
+        <translation>&amp;Nuovo elenco</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="85"/>
@@ -356,7 +356,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>&amp;Delete List</source>
-        <translation>&amp;Elimina lista</translation>
+        <translation>&amp;Elimina elenco</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="86"/>
@@ -366,7 +366,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>&amp;Load List</source>
-        <translation>Carica &amp;lista</translation>
+        <translation>Carica e&amp;lenco</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="87"/>
@@ -376,7 +376,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="88"/>
         <source>&amp;Save List</source>
-        <translation>&amp;Salva lista</translation>
+        <translation>&amp;Salva elenco</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="88"/>
@@ -386,7 +386,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>&amp;Rename List</source>
-        <translation>&amp;Rinomina lista</translation>
+        <translation>&amp;Rinomina elenco</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="89"/>
@@ -396,7 +396,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="90"/>
         <source>&amp;Select Next Playlist</source>
-        <translation>&amp;Seleziona la scaletta successiva</translation>
+        <translation>&amp;Seleziona playlist successiva</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="90"/>
@@ -406,7 +406,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>&amp;Select Previous Playlist</source>
-        <translation>&amp;Seleziona la scaletta precedente</translation>
+        <translation>&amp;Seleziona playlist precedente</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="91"/>
@@ -416,7 +416,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="92"/>
         <source>&amp;Show Playlists</source>
-        <translation>Mo&amp;stra scalette</translation>
+        <translation>Mo&amp;stra playlist</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="92"/>
@@ -524,12 +524,12 @@
     <message>
         <location filename="../skinneddisplay.cpp" line="85"/>
         <source>Playlist</source>
-        <translation>Scaletta</translation>
+        <translation>Playlist</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="88"/>
         <source>Repeat playlist</source>
-        <translation>Ripeti la scaletta</translation>
+        <translation>Ripeti playlist</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="90"/>
@@ -725,7 +725,7 @@
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
         <source>Playlist</source>
-        <translation>Scaletta</translation>
+        <translation>Playlist</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
@@ -763,7 +763,7 @@
     <message>
         <location filename="../skinnedmainwindow.cpp" line="398"/>
         <source>Playlist</source>
-        <translation>Scaletta</translation>
+        <translation>Playlist</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="417"/>
@@ -786,7 +786,7 @@
     <message>
         <location filename="../skinnedplaylist.cpp" line="57"/>
         <source>Playlist</source>
-        <translation>Scaletta</translation>
+        <translation>Playlist</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="198"/>
@@ -796,7 +796,7 @@
     <message>
         <location filename="../skinnedplaylist.cpp" line="223"/>
         <source>Sort List</source>
-        <translation>Riordina la lista</translation>
+        <translation>Ordina elenco</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="226"/>
@@ -872,17 +872,17 @@
     <message>
         <location filename="../skinnedplaylist.cpp" line="264"/>
         <source>Sort Selection</source>
-        <translation>Riordina la selezione</translation>
+        <translation>Ordina selezione</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="301"/>
         <source>Randomize List</source>
-        <translation>Mescola il contenuto della lista</translation>
+        <translation>Mescola il contenuto dell&apos;elenco</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="303"/>
         <source>Reverse List</source>
-        <translation>Inverti la lista</translation>
+        <translation>Inverti elenco</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="311"/>
@@ -892,17 +892,17 @@
     <message>
         <location filename="../skinnedplaylist.cpp" line="581"/>
         <source>Rename Playlist</source>
-        <translation>Rinomina scaletta</translation>
+        <translation>Rinomina playlists</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="581"/>
         <source>Playlist name:</source>
-        <translation>Nome della scaletta</translation>
+        <translation>Nome playlist</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="602"/>
         <source>&amp;New PlayList</source>
-        <translation>&amp;Nuova scaletta</translation>
+        <translation>&amp;Nuova playlist</translation>
     </message>
 </context>
 <context>
@@ -910,7 +910,7 @@
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="14"/>
         <source>Playlist Browser</source>
-        <translation>Browser della scaletta</translation>
+        <translation>Browser della playlist</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="31"/>
@@ -1147,7 +1147,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="475"/>
         <source>Playlist Colors</source>
-        <translation>Colori della scaletta</translation>
+        <translation>Colori playlist</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="481"/>
@@ -1212,12 +1212,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="938"/>
         <source>Fonts</source>
-        <translation>Caratteri</translation>
+        <translation>Tipi di carattere</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="992"/>
         <source>Playlist:</source>
-        <translation>Scaletta</translation>
+        <translation>Playlist:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1028"/>
@@ -1257,12 +1257,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1137"/>
         <source>Reset fonts</source>
-        <translation>Ripristina caratteri</translation>
+        <translation>Ripristina tipi di carattere</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1146"/>
         <source>Use bitmap font if available</source>
-        <translation>Usa carattere bitmap se disponibile</translation>
+        <translation>Usa tipo di carattere bitmap se disponibile</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="129"/>
@@ -1299,7 +1299,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="211"/>
         <source>Playlist</source>
-        <translation>Scaletta</translation>
+        <translation>Playlist</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="302"/>
@@ -1344,12 +1344,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="385"/>
         <source>Playlist separator:</source>
-        <translation>Separatore di scaletta:</translation>
+        <translation>Separatore di playlist:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="376"/>
         <source>Show &apos;New Playlist&apos; button</source>
-        <translation>Mostra pulsante «Nuova scaletta»</translation>
+        <translation>Mostra pulsante «Nuova playlist»</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="84"/>

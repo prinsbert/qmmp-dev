@@ -26,7 +26,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="420"/>
         <source>Compiled against:</source>
-        <translation>Compilato con:</translation>
+        <translation>Compilata con:</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="429"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="433"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="434"/>

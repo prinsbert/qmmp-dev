@@ -16,7 +16,7 @@
     <message>
         <location filename="../cuesettingsdialog.ui" line="35"/>
         <source>Load incorrect cue sheets if possible</source>
-        <translation>Carica file cue non corretti se possibile</translation>
+        <translation>Carica file CUE non corretti se possibile</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="45"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../decodercuefactory.cpp" line="83"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 </TS>

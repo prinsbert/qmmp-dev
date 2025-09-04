@@ -49,7 +49,7 @@
     <message>
         <location filename="../qmmpfiledialog.ui" line="147"/>
         <source>Files of type:</source>
-        <translation>Tipo brani:</translation>
+        <translation>File di tipo:</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="173"/>
@@ -63,12 +63,12 @@
         <location filename="../qmmpfiledialog.cpp" line="70"/>
         <location filename="../qmmpfiledialog.cpp" line="80"/>
         <source>Qmmp File Dialog</source>
-        <translation>Finestra di dialogo Qmmp</translation>
+        <translation>Finestra di dialogo di Qmmp</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.cpp" line="79"/>
         <source>About Qmmp File Dialog</source>
-        <translation>Informazioni sulla finestra di dialogo Qmmp</translation>
+        <translation>Informazioni sulla finestra di dialogo di Qmmp</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.cpp" line="81"/>
@@ -82,7 +82,7 @@ Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     <message>
         <location filename="../qmmpfiledialog.cpp" line="84"/>
         <source>Some code is copied from the Qt library</source>
-        <translation>Parti del codice sono riprese dalla libreria Qt</translation>
+        <translation>Parti di codice sono riprese dalla libreria Qt</translation>
     </message>
 </context>
 <context>
@@ -106,7 +106,8 @@ Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
         <location filename="../qmmpfiledialogimpl.cpp" line="465"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
-        <translation>%1 esiste già. Vuoi sostituirlo?</translation>
+        <translation>%1 esiste già.
+Vuoi sostituirlo?</translation>
     </message>
 </context>
 </TS>

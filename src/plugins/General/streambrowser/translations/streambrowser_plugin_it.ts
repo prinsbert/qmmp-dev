@@ -26,7 +26,7 @@
     <message>
         <location filename="../editstreamdialog.ui" line="64"/>
         <source>Bitrate:</source>
-        <translation>bit al secondo</translation>
+        <translation>Bit per secondo:</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="74"/>
@@ -72,7 +72,7 @@
     <message>
         <location filename="../streambrowserfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -123,7 +123,7 @@
         <location filename="../streamwindow.cpp" line="55"/>
         <location filename="../streamwindow.cpp" line="69"/>
         <source>Bitrate</source>
-        <translation>bit al secondo</translation>
+        <translation>Bit per secondo</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="55"/>
@@ -139,7 +139,7 @@
     <message>
         <location filename="../streamwindow.cpp" line="128"/>
         <source>&amp;Add to playlist</source>
-        <translation>&amp;Aggiungi alla scaletta</translation>
+        <translation>&amp;Aggiungi alla playlist</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="131"/>

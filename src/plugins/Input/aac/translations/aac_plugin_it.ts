@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderaacfactory.cpp" line="39"/>
         <source>AAC Plugin</source>
-        <translation>Plugin AAC</translation>
+        <translation>Estensione AAC</translation>
     </message>
     <message>
         <location filename="../decoderaacfactory.cpp" line="41"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../decoderaacfactory.cpp" line="105"/>
         <source>About AAC Audio Plugin</source>
-        <translation>Info sul plugin audio AAC</translation>
+        <translation>Informazioni sull&apos;estensione audio AAC</translation>
     </message>
     <message>
         <location filename="../decoderaacfactory.cpp" line="106"/>
         <source>Qmmp AAC Audio Plugin</source>
-        <translation>Plugin audio AAC Qmmp</translation>
+        <translation>Estensione audio AAC per Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderaacfactory.cpp" line="107"/>

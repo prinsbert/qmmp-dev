@@ -26,7 +26,7 @@
     <message>
         <location filename="../trackchangefactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -57,7 +57,7 @@
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="63"/>
         <source>Command to run when Qmmp reaches the end of the playlist</source>
-        <translation>Comando da eseguire quando Qmmp raggiunge la fine della scaletta</translation>
+        <translation>Comando da eseguire quando Qmmp raggiunge la fine della playlist</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="80"/>

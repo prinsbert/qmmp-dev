@@ -21,7 +21,7 @@
     <message>
         <location filename="../notifierfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="51"/>
         <source>Font:</source>
-        <translation>Carattere;</translation>
+        <translation>Tipo di carattere:</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="71"/>

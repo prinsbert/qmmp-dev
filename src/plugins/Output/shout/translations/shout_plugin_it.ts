@@ -21,12 +21,12 @@
     <message>
         <location filename="../outputshoutfactory.cpp" line="65"/>
         <source>Compiled against libshout-%1</source>
-        <translation>Compilato con libshout-%1</translation>
+        <translation>Compilata con libshout-%1</translation>
     </message>
     <message>
         <location filename="../outputshoutfactory.cpp" line="66"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
