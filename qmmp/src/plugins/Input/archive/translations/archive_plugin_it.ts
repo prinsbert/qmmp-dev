@@ -26,12 +26,12 @@
     <message>
         <location filename="../decoderarchivefactory.cpp" line="170"/>
         <source>Compiled against:</source>
-        <translation>Compilato con:</translation>
+        <translation>Compilata con:</translation>
     </message>
     <message>
         <location filename="../decoderarchivefactory.cpp" line="173"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 </TS>

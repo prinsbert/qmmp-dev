@@ -65,7 +65,7 @@
     <message>
         <location filename="../effectbs2bfactory.cpp" line="57"/>
         <source>Compiled against libbs2b-%1</source>
-        <translation>Compilato con libbs2b-%1</translation>
+        <translation>Compilata con libbs2b-%1</translation>
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="59"/>

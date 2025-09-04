@@ -36,6 +36,6 @@ Exec=qmmp --no-start --next
 
 # Translations
 Name[it]=Qmmp
-Comment[it]=Riproduttore audio basato su Qt (Qt-based Multimedia Player)
+Comment[it]=Riproduttore multimediale basato su Qt
 GenericName[it]=Riproduttore audio
 Icon[it]=qmmp

@@ -69,7 +69,7 @@
     <message>
         <location filename="../outputossfactory.cpp" line="57"/>
         <source>Written by: Yuriy Zhuravlev &lt;slalkerg@gmail.com&gt;</source>
-        <translation>Autori: Yuriy Zhuravlev &lt;slalkerg@gmail.com&gt;</translation>
+        <translation>Autore: Yuriy Zhuravlev &lt;slalkerg@gmail.com&gt;</translation>
     </message>
     <message>
         <location filename="../outputossfactory.cpp" line="58"/>

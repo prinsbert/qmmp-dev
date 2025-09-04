@@ -26,12 +26,12 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="193"/>
         <source>Compiled against:</source>
-        <translation>Compilato con:</translation>
+        <translation>Compilata con:</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="202"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
         <source>Bitrate</source>
-        <translation>bit al secondo</translation>
+        <translation>Bit al secondo</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="86"/>
         <source>Video bitrate</source>
-        <translation>bit al secondo video</translation>
+        <translation>Bit al secondo video</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="89"/>

@@ -84,7 +84,7 @@
     <message>
         <location filename="../outputalsafactory.cpp" line="57"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 </TS>

@@ -16,7 +16,7 @@
     <message>
         <location filename="../statusoption.cpp" line="32"/>
         <source>Print --nowplaying syntax</source>
-        <translation>Stampa la sintassi --nowplaying</translation>
+        <translation>Stampa la sintassi di --nowplaying</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="94"/>

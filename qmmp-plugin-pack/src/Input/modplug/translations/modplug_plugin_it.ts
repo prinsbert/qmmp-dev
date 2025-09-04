@@ -26,7 +26,7 @@
     <message>
         <location filename="../decodermodplugfactory.cpp" line="137"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodermodplugfactory.cpp" line="138"/>
@@ -290,7 +290,7 @@ too high may cause clipping!</source>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="700"/>
         <source>Fast playlist info</source>
-        <translation>Informazione rapida sulla scaletta</translation>
+        <translation>Informazione rapida sulla playlist</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="710"/>
