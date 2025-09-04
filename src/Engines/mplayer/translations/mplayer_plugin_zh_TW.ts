@@ -6,7 +6,7 @@
     <message>
         <location filename="../mplayerenginefactory.cpp" line="33"/>
         <source>Mplayer Plugin</source>
-        <translation>Mplayer 插件</translation>
+        <translation>Mplayer插件</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="36"/>
@@ -16,22 +16,22 @@
     <message>
         <location filename="../mplayerenginefactory.cpp" line="73"/>
         <source>About MPlayer Plugin</source>
-        <translation>關於 Mplayer 插件</translation>
+        <translation>關於 Mplayer插件</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="74"/>
         <source>Qmmp MPlayer Plugin</source>
-        <translation>Qmmp Mplayer 插件</translation>
+        <translation>Qmmp Mplayer插件</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="75"/>
         <source>This plugin uses MPlayer as backend</source>
-        <translation>此插件使用 Mplayer 後端</translation>
+        <translation>此插件使用 Mplayer後端</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="76"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>

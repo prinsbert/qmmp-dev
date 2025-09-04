@@ -21,8 +21,7 @@
     <message>
         <location filename="../mpvenginefactory.cpp" line="199"/>
         <source>Qmmp MPV Plugin</source>
-        <translation>Estensione MPV per Qmmp
-</translation>
+        <translation>Estensione MPV per Qmmp</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="200"/>
@@ -50,7 +49,7 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="51"/>
         <source>Bitrate</source>
-        <translation>bit al secondo</translation>
+        <translation>Bit al secondo</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="51"/>
