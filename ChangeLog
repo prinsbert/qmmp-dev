@@ -44,6 +44,7 @@ Version 2.3.0
 * fixed IPC messages charset
 * fixed issues with "--pl-help" and "--nowplaying-syntax" command-line
   options
+* fixed audio channel map for WMA
 
 Version 2.2.8
 * added AIFF-C support
