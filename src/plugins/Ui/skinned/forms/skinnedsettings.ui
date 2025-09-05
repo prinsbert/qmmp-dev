@@ -255,7 +255,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_6">
             <item>
-             <widget class="QLabel" name="label_17">
+             <widget class="QLabel" name="skinPathLabel">
               <property name="text">
                <string>Skin install path:</string>
               </property>

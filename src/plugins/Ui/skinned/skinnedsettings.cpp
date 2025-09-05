@@ -51,6 +51,11 @@ SkinnedSettings::SkinnedSettings(QWidget *parent) : QWidget(parent), m_ui(new Ui
     m_ui->skinPathComboBox->addItem(Qmmp::configDir() + QStringLiteral("/skins"));
     m_ui->skinPathComboBox->addItem(Qmmp::userDataPath() + QStringLiteral("/skins"));
 
+#if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
+    m_ui->skinPathComboBox->setVisible(false);
+    m_ui->skinPathLabel->setVisible(false);
+#endif
+
     readSettings();
     loadSkins();
     loadFonts();
