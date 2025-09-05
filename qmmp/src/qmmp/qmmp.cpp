@@ -59,7 +59,7 @@ QString Qmmp::configDir()
     }
 #else
     if(m_configDir.isEmpty())
-        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation),
+        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation),
                                            QCoreApplication::organizationName());
 
 #endif
@@ -147,7 +147,7 @@ QString Qmmp::systemLanguageID()
     if (!v.isEmpty())
         return QLocale(QString::fromLatin1(v)).name();
 #endif
-    return  QLocale::system().name();
+    return QLocale::system().name();
 }
 
 QString Qmmp::uiLanguageID()
@@ -189,6 +189,6 @@ bool Qmmp::isPortable()
 {
     if(m_appDir.isEmpty())
         m_appDir = QCoreApplication::applicationDirPath();
-    return QFile::exists(m_appDir + QStringLiteral("/qmmp_portable.txt"));
+    return QFile::exists(m_appDir + QStringLiteral("/../qmmp_portable.txt"));
 }
 #endif
