@@ -105,15 +105,17 @@ QString Qmmp::pluginPath()
     if(!path.isEmpty())
         return QString::fromLocal8Bit(path);
     QString fallbackPath = QStringLiteral("%1/../lib/qmmp-" STR(QMMP_VERSION_MAJOR) "." STR(QMMP_VERSION_MINOR)).arg(qApp->applicationDirPath());
-#ifdef QMMP_PLUGIN_DIR
+
+#if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
+    QDir dir(fallbackPath);
+#elif defined (QMMP_PLUGIN_DIR)
     QDir dir(QStringLiteral(QMMP_PLUGIN_DIR));
-#elif defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
-    QDir dir(qApp->applicationDirPath() + u"/plugins"_s);
+    if(!dir.exists())
+        dir = QDir(fallbackPath);
 #else
     QDir dir(fallbackPath);
 #endif
-    if(!dir.exists())
-        dir = QDir(fallbackPath);
+
     return dir.canonicalPath();
 }
 
