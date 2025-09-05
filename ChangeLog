@@ -7,6 +7,7 @@ Version 1.7.9
 * fixed IPC messages charset
 * fixed issues with "--pl-help" and "--nowplaying-syntax" command-line
   options
+* fixed audio channel map for WMA
 
 Version 1.7.8
 * added AIFF-C support
