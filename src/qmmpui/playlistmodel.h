@@ -148,6 +148,10 @@ public:
      */
     PlayListGroup *group(const PlayListTrack *track) const;
     /*!
+     * Returns a list of all playlist groups.
+     */
+    QList<PlayListGroup *> groups() const;
+    /*!
      * Returns index of the current track or -1 if model is empty.
      */
     int currentIndex() const;
@@ -236,7 +240,7 @@ public:
      */
     bool alternateColor(int lineIndex) const;
     /*!
-     * Returns the number of lines needed to draw the group.
+     * Returns a number of lines needed to draw the group.
      */
     int linesPerGroup() const;
     /*!
@@ -283,7 +287,7 @@ public:
      */
     QList<PlayListTrack *> selectedTracks() const;
     /*!
-     * Returns list of all \b PlayListTrack pointers.
+     * Returns a list of all \b PlayListTrack pointers.
      */
     QList<PlayListTrack *> tracks() const;
     /*!

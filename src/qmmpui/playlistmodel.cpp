@@ -320,6 +320,11 @@ PlayListGroup *PlayListModel::group(const PlayListTrack *track) const
     return nullptr;
 }
 
+QList<PlayListGroup *> PlayListModel::groups() const
+{
+    return m_container->groups();
+}
+
 int PlayListModel::currentIndex() const
 {
     return m_current;
