@@ -896,7 +896,7 @@
     <message>
         <location filename="../covereditor.cpp" line="34"/>
         <source>External File</source>
-        <translation type="unfinished"></translation>
+        <translation>Ulkoinen tiedosto</translation>
     </message>
     <message>
         <location filename="../covereditor.cpp" line="35"/>

@@ -1352,27 +1352,27 @@
         <translation>顯示“新播放清單”按鈕</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="84"/>
+        <location filename="../skinnedsettings.cpp" line="89"/>
         <source>Select Skin Files</source>
         <translation>選擇皮膚檔案</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="85"/>
+        <location filename="../skinnedsettings.cpp" line="90"/>
         <source>Skin files</source>
         <translation>皮膚檔案</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="154"/>
+        <location filename="../skinnedsettings.cpp" line="159"/>
         <source>Default skin</source>
         <translation>預設皮膚</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="163"/>
+        <location filename="../skinnedsettings.cpp" line="168"/>
         <source>Unarchived skin %1</source>
         <translation>未壓縮皮膚 %1</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="163"/>
+        <location filename="../skinnedsettings.cpp" line="168"/>
         <source>Archived skin %1</source>
         <translation>壓縮皮膚 %1</translation>
     </message>

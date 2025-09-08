@@ -1352,27 +1352,27 @@
         <translation>Montrer le bouton « Nouvelle liste »</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="84"/>
+        <location filename="../skinnedsettings.cpp" line="89"/>
         <source>Select Skin Files</source>
         <translation>Sélectionner les fichiers d&apos;un thème</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="85"/>
+        <location filename="../skinnedsettings.cpp" line="90"/>
         <source>Skin files</source>
         <translation>Fichiers d&apos;un thème</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="154"/>
+        <location filename="../skinnedsettings.cpp" line="159"/>
         <source>Default skin</source>
         <translation>Thème par défaut</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="163"/>
+        <location filename="../skinnedsettings.cpp" line="168"/>
         <source>Unarchived skin %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="163"/>
+        <location filename="../skinnedsettings.cpp" line="168"/>
         <source>Archived skin %1</source>
         <translation>Thème archivé %1</translation>
     </message>
