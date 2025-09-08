@@ -1352,27 +1352,27 @@
         <translation>Mostrar botão &apos;Nova lista de reprodução&apos;</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="84"/>
+        <location filename="../skinnedsettings.cpp" line="89"/>
         <source>Select Skin Files</source>
         <translation>Selecione os arquivos de tema</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="85"/>
+        <location filename="../skinnedsettings.cpp" line="90"/>
         <source>Skin files</source>
         <translation>Arquivos de tema</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="154"/>
+        <location filename="../skinnedsettings.cpp" line="159"/>
         <source>Default skin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="163"/>
+        <location filename="../skinnedsettings.cpp" line="168"/>
         <source>Unarchived skin %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="163"/>
+        <location filename="../skinnedsettings.cpp" line="168"/>
         <source>Archived skin %1</source>
         <translation type="unfinished"></translation>
     </message>
