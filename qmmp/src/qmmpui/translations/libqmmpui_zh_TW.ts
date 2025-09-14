@@ -1328,7 +1328,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>Duration | Format | Bitrate | Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>持續時間 | 格式 | 位元率 | 取樣率</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
@@ -1364,12 +1364,12 @@
     <message>
         <location filename="../playlistgroup.cpp" line="145"/>
         <source>Streams</source>
-        <translation type="unfinished">串流</translation>
+        <translation>串流</translation>
     </message>
     <message>
         <location filename="../playlistgroup.cpp" line="161"/>
         <source>Empty group</source>
-        <translation type="unfinished">清空群組</translation>
+        <translation>清空群組</translation>
     </message>
 </context>
 <context>
