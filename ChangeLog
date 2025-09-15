@@ -7,6 +7,13 @@ Version 2.3.0
 * added mplayer plugin
 * added mpv plugin (experimental)
 * changed context menu in the ffvideo plugin
+* updated Dutch translation (Heimen Stoffels)
+* updated Finnish translation (Kimmo Kujansuu)
+* updated Italian translation (Luigi Toscano)
+* updated Korean translation (Jung Hee Lee)
+* updated Polish translation (Marek Adamski)
+* updated Russian translation (Andrei Stepanov)
+* updated Chinese Traditional translation (Edouard.J.K Li)
 
 Version 2.2.2
 * added Windows 64 bit support
