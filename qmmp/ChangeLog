@@ -23,7 +23,7 @@ Version 2.3.0
   - added feature to detect id3v1 tags charset by system locale
 * added feature to reset streaming station name in playlist when playback
   is stopped
-* added support for id3v2 tags in the sndfile plugin  
+* added support for id3v2 tags in the sndfile plugin
 * added disambiguation for some hotkey names
 * added pkg-config support in the wildmidi plugin
 * added popup widget for date selection in the history plugin
@@ -45,6 +45,13 @@ Version 2.3.0
 * fixed issues with "--pl-help" and "--nowplaying-syntax" command-line
   options
 * fixed audio channel map for WMA
+* updated Dutch translation (Heimen Stoffels)
+* updated Finnish translation (Kimmo Kujansuu)
+* updated Italian translation (Luigi Toscano)
+* updated Korean translation (Jung Hee Lee)
+* updated Polish translation (Marek Adamski)
+* updated Russian translation (Andrei Stepanov)
+* updated Chinese Traditional translation (Edouard.J.K Li)
 
 Version 2.2.8
 * added AIFF-C support
