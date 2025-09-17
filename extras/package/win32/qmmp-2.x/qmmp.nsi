@@ -32,7 +32,7 @@
 ;General
 
   ;Name and file
-  Name "Qt-based Multimedia Player"
+  Name "Qt-based Multimedia Player ${QMMP_VERSION}"
 !ifdef WIN64
   OutFile "qmmp-${QMMP_VERSION}-win64.exe"
 !else
