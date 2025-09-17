@@ -29,6 +29,7 @@ case $1 in
     -DINCLUDE-PROJECTM-TEST:BOOL=OFF \
     -DCMAKE_CXX_FLAGS="-I${PREFIX}/include" \
     -DINCLUDE-NATIVE-PRESETS:BOOL=OFF \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
     -DCMAKE_SHARED_LINKER_FLAGS="-L${PREFIX}/lib"
     mingw32-make -j${JOBS}
     mingw32-make install

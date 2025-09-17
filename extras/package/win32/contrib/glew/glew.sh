@@ -14,7 +14,8 @@ case $1 in
     tar xvzf $NAME-$VERSION.tgz
     cd $NAME-$VERSION
     cd build
-    cmake ./cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DBUILD_UTILS=OFF -G "MSYS Makefiles"
+    cmake ./cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DBUILD_UTILS=OFF -G "MSYS Makefiles" \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 
     make
     make install
     cd ..
