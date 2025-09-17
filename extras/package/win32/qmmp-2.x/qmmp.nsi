@@ -195,6 +195,15 @@ Function .onInit
 !endif
 FunctionEnd
 
+;Metadata
+
+VIProductVersion $(QMMP_VERSION).0
+VIAddVersionKey /LANG=${LANG_ENGLISH} "CompanyName" "Qmmp Development Team"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "Qt-based Multimedia Player Installer"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" $(QMMP_VERSION)
+VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalCopyright" "Copyright (C) 2006-2025 Qmmp Development Team"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "ProductName" "Qmmp"
+
 ;--------------------------------
 
 ;Installer functions
