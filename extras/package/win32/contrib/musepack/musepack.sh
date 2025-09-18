@@ -19,7 +19,7 @@ case $1 in
     cat ../../disable-static.patch | patch -p1
     cat ../../extern-constants.patch | patch -p1
     cmake ./ -DCMAKE_INSTALL_PREFIX=$PREFIX -G "MSYS Makefiles" -DSHARED=ON -DBUILD_TOOLS=OFF \
-    -DCMAKE_COLOR_MAKEFILE:BOOL=OFF
+    -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     make -j${JOBS}
     make install
 

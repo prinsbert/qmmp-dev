@@ -16,6 +16,7 @@ case $1 in
     cat ../../soxr-pkg-config.patch | patch -p1
     cmake ./ -DCMAKE_INSTALL_PREFIX=${PREFIX} -G "MSYS Makefiles" \
     -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DBUILD_SHARED_LIBS=ON \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
     -DCMAKE_BUILD_TYPE=Release
     mingw32-make -j${JOBS}
     mingw32-make install
