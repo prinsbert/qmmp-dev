@@ -20,7 +20,8 @@ fi
 
 export SVN_PATH=/c/Program\ Files/SlikSvn/bin
 export PATH=${PATH}:${MINGW32_PATH}/bin:${QT5_PATH}/bin:${PREFIX}/bin:${SVN_PATH}
-export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig 
+export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
+export NO_COLOR=1 
 
 export JOBS=4
 

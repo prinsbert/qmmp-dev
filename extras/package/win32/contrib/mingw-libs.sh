@@ -32,7 +32,8 @@ fi
 export LDFLAGS="-lssp"
 export STRIP=false
 export JOBS=4
-export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig 
+export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
+export NO_COLOR=1 
 
 case $1 in
   --download)
