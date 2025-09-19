@@ -49,9 +49,9 @@ if(USE_UDISKS AND Qt6DBus_FOUND)
     add_subdirectory(udisks)
 endif(USE_UDISKS AND Qt6DBus_FOUND)
 
-if(USE_HOTKEY AND X11_FOUND)
+if(USE_HOTKEY AND (X11_FOUND OR WIN32))
     add_subdirectory(hotkey)
-endif(USE_HOTKEY AND X11_FOUND)
+endif(USE_HOTKEY AND (X11_FOUND OR WIN32))
 
 if(USE_FILEOPS)
     add_subdirectory(fileops)
