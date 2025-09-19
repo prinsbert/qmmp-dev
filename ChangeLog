@@ -45,6 +45,7 @@ Version 2.3.0
 * fixed issues with "--pl-help" and "--nowplaying-syntax" command-line
   options
 * fixed audio channel map for WMA
+* fixed retrieving song lyrics
 * updated Dutch translation (Heimen Stoffels)
 * updated Finnish translation (Kimmo Kujansuu)
 * updated Italian translation (Luigi Toscano)
