@@ -41,10 +41,10 @@ if(QMMP_VERSION_DATA)
         string(REGEX REPLACE ".*#define[ \t]+QMMP_VERSION_${item}[ \t]+([0-9]+).*"
         "\\1" QMMP_VERSION_${item} ${QMMP_VERSION_DATA})
     endforeach(item IN ITEMS MAJOR MINOR PATCH)
-   
+
     set(QMMP_VERSION "${QMMP_VERSION_MAJOR}.${QMMP_VERSION_MINOR}.${QMMP_VERSION_PATCH}")
     set(QMMP_SOVERSION "${QMMP_VERSION_MAJOR}")
-   
+
     if(QMMP_VERSION_STABLE)
        message(STATUS "Qmmp API version: ${QMMP_VERSION} (stable)")
     else(QMMP_VERSION_STABLE)

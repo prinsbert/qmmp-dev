@@ -18,7 +18,7 @@ if(XCB_FOUND)
     set(libhotkey_SRCS ${libhotkey_SRCS} hotkeymanager_x11.cpp)
 elseif(WIN32)
     set(libhotkey_SRCS ${libhotkey_SRCS} hotkeymanager_win.cpp)
-endif(WIN32)
+endif()
 
 if(XCB_FOUND OR WIN32)
     set_property(SOURCE hotkeymanager_x11.cpp PROPERTY SKIP_AUTOMOC ON)
