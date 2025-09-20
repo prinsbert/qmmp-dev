@@ -21,6 +21,7 @@ Requirements:
 - libsamplerate >= 0.1.2 (optional)
 - ffmpeg >= 3.4 (optional)
 - yt-dlp (latest version, optional)
+- tar, unzip, bzip2, gzip (optional)
 - cmake >= 3.16.0 (for build only)
 
 Attention! Plugin Pack build needs lrelease installed.
