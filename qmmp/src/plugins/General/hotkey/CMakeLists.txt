@@ -21,7 +21,6 @@ elseif(WIN32)
 endif()
 
 if(XCB_FOUND OR WIN32)
-    set_property(SOURCE hotkeymanager_x11.cpp PROPERTY SKIP_AUTOMOC ON)
     add_library(hotkey MODULE ${libhotkey_SRCS})
     target_link_libraries(hotkey PRIVATE Qt6::Widgets libqmmpui libqmmp)
     if(XCB_FOUND)
