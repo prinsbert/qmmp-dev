@@ -145,9 +145,9 @@ LyricsProvider *UltimateLyricsParser::provider(const QString &name) const
 QStringList UltimateLyricsParser::defaultProviders()
 {
     QStringList out;
-    out << "Encyclopaedia Metallum"
-        << "letras.mus.br"
-        << "darklyrics.com";
+    out << "letras.mus.br"
+        << "darklyrics.com"
+        << "lyricsmania.com";
 
     return out;
 }
