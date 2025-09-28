@@ -40,12 +40,17 @@ BufferDevice::~BufferDevice()
     }
 }
 
-void BufferDevice::setOffset(int offset)
+void BufferDevice::setOffset(qint64 offset)
 {
     m_offset = offset;
 }
 
-void BufferDevice::setSize(int size)
+qint64 BufferDevice::offset() const
+{
+    return m_offset;
+}
+
+void BufferDevice::setSize(qint64 size)
 {
     m_size = size;
 }
