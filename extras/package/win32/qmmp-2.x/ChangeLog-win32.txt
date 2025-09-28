@@ -4,6 +4,16 @@ LEGEND
 [-] Bug fix
 [!] Enhancement
 
+2.3.0
+[*] qmmp-2.3.0
+[*] qmmp-plugin-pack-2.3.0
+[*] curl-8.16.0
+[*] libsidplayfp-2.15.1
+[!] unified directory structure
+[!] installer executable metadata
+[!] show version in the installer
+[!] ffap was replaced by ffmpeg
+
 2.2.8
 [*] qmmp-2.2.8
 [*] taglib-2.1.1
