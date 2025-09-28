@@ -274,8 +274,14 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
             if(!m_ready)
             {
                 emit error();
+                m_buffer->stop();
             }
-            m_buffer->stop();
+            else
+            {
+                m_buffer->addData(m_getStreamReply->readAll());
+                if(!m_buffer->hasEnougthData())
+                    m_buffer->stop();
+            }
         }
         else
         {

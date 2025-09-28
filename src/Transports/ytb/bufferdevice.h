@@ -36,8 +36,9 @@ public:
     explicit BufferDevice(QObject *parent);
     ~BufferDevice();
 
-    void setOffset(int offset);
-    void setSize(int size);
+    void setOffset(qint64 offset);
+    qint64 offset() const;
+    void setSize(qint64 size);
     bool addData(const QByteArray &data);
     qint64 seekRequestPos() const;
     void clearRequestPos();
