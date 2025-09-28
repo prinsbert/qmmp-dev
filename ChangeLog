@@ -6,6 +6,8 @@ Version 2.3.0
 * added mms plugin
 * added mplayer plugin
 * added mpv plugin (experimental)
+* fixed playback stopping when connection was lost in the
+  ytb plugin
 * changed context menu in the ffvideo plugin
 * updated Dutch translation (Heimen Stoffels)
 * updated Finnish translation (Kimmo Kujansuu)
