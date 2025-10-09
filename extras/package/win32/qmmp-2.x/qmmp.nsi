@@ -11,6 +11,7 @@
 ;Defines
  
    !define QMMP_VERSION "2.3.0"
+   !define QMMP_PRODUCT_VERSION "${QMMP_VERSION}.0"
    !define WIN64 "1"
    !define QMMP_DEF_PROGS_KEY "Software\Clients\Media\Qmmp"
    !define QMMP_UNINSTALL_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\Qmmp"
@@ -197,7 +198,7 @@ FunctionEnd
 
 ;Metadata
 
-VIProductVersion $(QMMP_VERSION).0
+VIProductVersion "${QMMP_PRODUCT_VERSION}"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "CompanyName" "Qmmp Development Team"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "Qt-based Multimedia Player Installer"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" $(QMMP_VERSION)
