@@ -9,6 +9,7 @@ LEGEND
 [*] qmmp-plugin-pack-2.3.0
 [*] curl-8.16.0
 [*] libsidplayfp-2.15.1
+[*] mpg123-1.33.3
 [!] unified directory structure
 [!] installer executable metadata
 [!] show version in the installer
