@@ -150,7 +150,7 @@ create_distr ()
   mkdir -p ./lib/qt6/translations
   cp -v ${QT6_PATH}/translations/qtbase_??.qm ./lib/qt6/translations
   #mingw32 libs
-  for LIB_NAME in libgcc_s_dw2-1.dll libgcc_s_sjlj-1.dll libstdc++-6.dll libwinpthread-1.dll libgomp-1.dll libssp-0.dll
+  for LIB_NAME in libgcc_s_*-1.dll libstdc++-6.dll libwinpthread-1.dll libgomp-1.dll libssp-0.dll
   do
     cp -v ${MINGW32_PATH}/bin/${LIB_NAME} ./bin
   done
