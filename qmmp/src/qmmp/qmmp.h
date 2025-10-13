@@ -25,7 +25,7 @@
 #include "qmmp_export.h"
 
 #define QMMP_VERSION_MAJOR 2
-#define QMMP_VERSION_MINOR 3
+#define QMMP_VERSION_MINOR 4
 #define QMMP_VERSION_PATCH 0
 #define QMMP_VERSION_STABLE 0
 
