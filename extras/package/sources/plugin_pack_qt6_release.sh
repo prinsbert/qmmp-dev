@@ -9,7 +9,7 @@ cd cache
 
 echo "Receiving sources.."
 if [ ! -d "qmmp-plugin-pack-qt6-svn" ]; then
-svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-plugin-pack-2.2/ qmmp-plugin-pack-qt6-svn
+svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-plugin-pack-2.3/ qmmp-plugin-pack-qt6-svn
 fi
 
 cd qmmp-plugin-pack-qt6-svn
@@ -36,9 +36,7 @@ cp -r qmmp-plugin-pack-qt6-svn $TARBALL
 cd $TARBALL
 
 echo "Removing svn tags.."
-cd utils
-./remove_svn_tags.sh
-cd ..
+rm -rf .svn
 
 echo "Fixing versions.."
 sed 's/SET(SVN_VERSION TRUE)/SET(SVN_VERSION FALSE)/' -i CMakeLists.txt

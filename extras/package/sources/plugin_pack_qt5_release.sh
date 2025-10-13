@@ -36,9 +36,7 @@ cp -r qmmp-plugin-pack-qt5-svn $TARBALL
 cd $TARBALL
 
 echo "Removing svn tags.."
-cd utils
-./remove_svn_tags.sh
-cd ..
+rm -rf .svn
 
 echo "Fixing versions.."
 sed 's/SET(SVN_VERSION TRUE)/SET(SVN_VERSION FALSE)/' -i CMakeLists.txt

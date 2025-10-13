@@ -37,9 +37,7 @@ cp -r qmmp-qt5-svn $TARBALL
 cd $TARBALL
 
 echo "Removing svn tags.."
-cd utils
-./remove_svn_tags.sh
-cd ..
+rm -rf .svn
 
 echo "Fixing version.."
 sed 's/QMMP_VERSION_STABLE 0/QMMP_VERSION_STABLE 1/' -i src/qmmp/qmmp.h
