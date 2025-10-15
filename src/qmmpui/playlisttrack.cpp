@@ -268,6 +268,7 @@ void PlayListTrack::formatGroup() const
     };
 
     PlayListTrack track;
+    track.setPath(path());
 
     for(Qmmp::MetaData key : std::as_const(groupingKeys))
         track.setValue(key, value(key));
