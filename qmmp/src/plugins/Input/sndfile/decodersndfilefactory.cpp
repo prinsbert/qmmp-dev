@@ -107,6 +107,8 @@ bool DecoderSndFileFactory::canDecode(QIODevice *input) const
                     size_t size = buf[4] | buf[5] << 8 | buf[6] << 16 | buf[7] << 24;
                     if(!input->seek(input->pos() + size + 8))
                         break;
+
+                    continue;
                 }
 
                 break;
