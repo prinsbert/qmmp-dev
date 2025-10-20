@@ -8,6 +8,9 @@ Version 1.7.9
 * fixed issues with "--pl-help" and "--nowplaying-syntax" command-line
   options
 * fixed audio channel map for WMA
+* fixed detection of the PCM WAVE files with "JUNK",
+  "bext" and "fact" chunks
+* fixed retrieving song lyrics
 
 Version 1.7.8
 * added AIFF-C support
