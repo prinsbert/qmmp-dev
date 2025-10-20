@@ -1,6 +1,11 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 2.3.1
+* fixed grouping by parent directory
+* fixed detection of the PCM WAVE files with "JUNK",
+  "bext" and "fact" chunks
+
 Version 2.3.0
 * added shared FFT implementation for visual plugins
 * improved group mode:
