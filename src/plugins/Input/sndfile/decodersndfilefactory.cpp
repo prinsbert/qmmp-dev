@@ -35,6 +35,7 @@
 #define WAVE_FORMAT_IEEE_FLOAT 0x0003
 #define WAVE_FORMAT_ALAW 0x0006
 #define WAVE_FORMAT_MULAW 0x0007
+#define WAVE_FORMAT_IMA_ADPCM 0x0011
 #define WAVE_FORMAT_EXTENSIBLE 0xfffe
 
 // DecoderSndFileFactory
@@ -88,6 +89,7 @@ bool DecoderSndFileFactory::canDecode(QIODevice *input) const
         case WAVE_FORMAT_IEEE_FLOAT:
         case WAVE_FORMAT_ALAW:
         case WAVE_FORMAT_MULAW:
+        case WAVE_FORMAT_IMA_ADPCM:
         case WAVE_FORMAT_EXTENSIBLE:
             return true;
         default:
