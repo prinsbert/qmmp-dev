@@ -2,6 +2,7 @@ Changelog of Qt-based Multimedia Player
 --------------
 
 Version 1.7.9
+* added IMA ADPCM support
 * fixed displaying mpeg plugin build status
 * fixed default output under Windows
 * fixed IPC messages charset
