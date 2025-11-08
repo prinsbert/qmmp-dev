@@ -8,7 +8,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc https://ftp.acc.umu.se/mirror/qt.io/qtproject/official_releases/qt/5.15/$VERSION/submodules/$NAME-$VERSION.tar.xz
+    wget -nc https://ftp.acc.umu.se/mirror/qt.io/qtproject/archive/qt/5.15/$VERSION/submodules/$NAME-$VERSION.tar.xz
   ;;
   --install)
     cd temp
