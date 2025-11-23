@@ -6,27 +6,27 @@
     <message>
         <location filename="../rdetectfactory.cpp" line="30"/>
         <source>Volume Detection Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>音量检测插件</translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="50"/>
         <source>About Volume Detection Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>关于音量检测插件</translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="51"/>
         <source>Qmmp Removable Volume Detection Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp 移动设备检测插件</translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="52"/>
         <source>This plugin provides removable volume detection</source>
-        <translation type="unfinished"></translation>
+        <translation>此插件提供可移动设备检测功能</translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -34,7 +34,7 @@
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="14"/>
         <source>Volume Detection Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>移动设备插件设置</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="29"/>

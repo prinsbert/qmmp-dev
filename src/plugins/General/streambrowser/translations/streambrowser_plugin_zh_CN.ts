@@ -6,12 +6,12 @@
     <message>
         <location filename="../editstreamdialog.ui" line="14"/>
         <source>Edit Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑流</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="34"/>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL：</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="44"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../editstreamdialog.ui" line="64"/>
         <source>Bitrate:</source>
-        <translation type="unfinished"></translation>
+        <translation>比特率：</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="74"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../streambrowser.cpp" line="33"/>
         <source>Add Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>添加流：</translation>
     </message>
     <message>
         <location filename="../streambrowser.cpp" line="34"/>
@@ -72,7 +72,7 @@
     <message>
         <location filename="../streambrowserfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -175,7 +175,7 @@
     <message>
         <location filename="../streamwindow.cpp" line="273"/>
         <source>Edit Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑流</translation>
     </message>
 </context>
 </TS>

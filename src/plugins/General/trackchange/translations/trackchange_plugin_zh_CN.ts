@@ -26,7 +26,7 @@
     <message>
         <location filename="../trackchangefactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -67,12 +67,12 @@
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="97"/>
         <source>Command to run on application startup:</source>
-        <translation type="unfinished"></translation>
+        <translation>应用程序启动时运行的命令：</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="104"/>
         <source>Command to run on application exit:</source>
-        <translation type="unfinished"></translation>
+        <translation>应用程序退出时执行的命令：</translation>
     </message>
 </context>
 </TS>

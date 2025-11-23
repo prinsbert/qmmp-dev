@@ -86,7 +86,7 @@
     <message>
         <location filename="../fileopsfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="183"/>
         <source>Command:</source>
-        <translation type="unfinished"></translation>
+        <translation>命令：</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="218"/>
@@ -172,7 +172,7 @@
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="222"/>
         <source>Execute</source>
-        <translation type="unfinished"></translation>
+        <translation>执行</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="234"/>

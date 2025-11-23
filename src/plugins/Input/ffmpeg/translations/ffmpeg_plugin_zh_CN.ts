@@ -31,7 +31,7 @@
     <message>
         <location filename="../decoderffmpegfactory.cpp" line="359"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -109,12 +109,12 @@
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="145"/>
         <source>Tom&apos;s lossless Audio Kompressor (TAK)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tom&apos;s lossless Audio Kompressor (TAK)</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="152"/>
         <source>Direct Stream Digital (DSD)</source>
-        <translation type="unfinished"></translation>
+        <translation>Direct Stream Digital (DSD)</translation>
     </message>
 </context>
 </TS>

@@ -31,7 +31,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="51"/>
         <source>Display Jump to Track dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>显示跳转至曲目对话框</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="52"/>
@@ -124,7 +124,7 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="489"/>
         <source>Print debugging messages</source>
-        <translation type="unfinished"></translation>
+        <translation>打印调试信息</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="490"/>

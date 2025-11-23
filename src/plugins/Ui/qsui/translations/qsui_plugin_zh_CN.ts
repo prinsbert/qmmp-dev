@@ -26,7 +26,7 @@
     <message>
         <location filename="../aboutqsuidialog.cpp" line="46"/>
         <source>Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../aboutqsuidialog.cpp" line="48"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="101"/>
         <source>Replace Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>替换播放列表</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="102"/>
@@ -59,32 +59,32 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="105"/>
         <source>Tree View Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>树状查看模式</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="107"/>
         <source>Quick Search</source>
-        <translation type="unfinished"></translation>
+        <translation>快捷搜索</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="109"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>排序</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="118"/>
         <source>By Name</source>
-        <translation type="unfinished"></translation>
+        <translation>按名称</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="119"/>
         <source>By Size</source>
-        <translation type="unfinished"></translation>
+        <translation>按大小</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="120"/>
         <source>By Type</source>
-        <translation type="unfinished"></translation>
+        <translation>按类型</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="121"/>
@@ -117,63 +117,63 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="210"/>
         <source>Visualization Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>可视化颜色</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="216"/>
         <source>Color #1:</source>
-        <translation type="unfinished"></translation>
+        <translation>颜色 #1:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="283"/>
         <source>Color #2:</source>
-        <translation type="unfinished"></translation>
+        <translation>颜色 #2:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="347"/>
         <source>Color #3:</source>
-        <translation type="unfinished"></translation>
+        <translation>颜色 #3:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="436"/>
         <source>Reset colors</source>
-        <translation type="unfinished"></translation>
+        <translation>重置颜色</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="703"/>
         <source>Override group colors</source>
-        <translation type="unfinished"></translation>
+        <translation>覆盖分组颜色</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="806"/>
         <source>Override current track colors</source>
-        <translation type="unfinished"></translation>
+        <translation>覆盖当前曲目颜色</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="816"/>
         <source>Current track text:</source>
-        <translation type="unfinished"></translation>
+        <translation>当前曲目字体</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="915"/>
         <source>Waveform Seekbar Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>波形进度条颜色</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="921"/>
         <source>Progress bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>进度条：</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1010"/>
         <source>RMS:</source>
         <extracomment>Root mean square</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>RMS：</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1055"/>
         <source>Waveform:</source>
-        <translation type="unfinished"></translation>
+        <translation>波形：</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1096"/>
@@ -268,7 +268,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="94"/>
         <source>Show splitters</source>
-        <translation type="unfinished"></translation>
+        <translation>显示分隔符</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="142"/>
@@ -324,37 +324,37 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="867"/>
         <source>Current track background:</source>
-        <translation type="unfinished"></translation>
+        <translation>当前曲目背景：</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1268"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>分组：</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1275"/>
         <source>Extra group row:</source>
-        <translation type="unfinished"></translation>
+        <translation>额外的分组行：</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1372"/>
         <source>Tab position:</source>
-        <translation type="unfinished"></translation>
+        <translation>标签页位置：</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1409"/>
         <source>Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>工具栏</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1417"/>
         <source>Icon size:</source>
-        <translation type="unfinished"></translation>
+        <translation>图标尺寸：</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1442"/>
         <source>Customize...</source>
-        <translation type="unfinished"></translation>
+        <translation>自定义...</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="454"/>
@@ -374,7 +374,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="515"/>
         <source>Splitter:</source>
-        <translation type="unfinished"></translation>
+        <translation>分隔符：</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1345"/>
@@ -427,7 +427,7 @@
     <message>
         <location filename="../qsuivisualization.cpp" line="141"/>
         <source>Cells</source>
-        <translation type="unfinished"></translation>
+        <translation>单元</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="142"/>
@@ -590,7 +590,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="51"/>
         <source>&amp;Record</source>
-        <translation type="unfinished"></translation>
+        <translation>录音(&amp;R)</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="52"/>
@@ -635,7 +635,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="56"/>
         <source>&amp;Transit between playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>在播放列表间切换(&amp;T)</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="57"/>
@@ -675,7 +675,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="68"/>
         <source>Block Floating Panels</source>
-        <translation type="unfinished"></translation>
+        <translation>锁定浮动面板</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="69"/>
@@ -930,7 +930,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="101"/>
         <source>Application Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>应用菜单</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="102"/>
@@ -1179,7 +1179,7 @@
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="135"/>
         <source>Waveform Seek Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>波形进度条</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="149"/>
@@ -1295,7 +1295,7 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="641"/>
         <source>Menu Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>菜单栏</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="433"/>
@@ -1335,7 +1335,7 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="484"/>
         <source>Quick Search</source>
-        <translation type="unfinished"></translation>
+        <translation>快捷搜索</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="542"/>
@@ -1449,7 +1449,7 @@
     <message>
         <location filename="../qsuiplaylistbrowser.cpp" line="62"/>
         <source>Quick Search</source>
-        <translation type="unfinished"></translation>
+        <translation>快捷搜索</translation>
     </message>
 </context>
 <context>
@@ -1561,37 +1561,37 @@
     <message>
         <location filename="../qsuisettings.cpp" line="42"/>
         <source>16x16</source>
-        <translation type="unfinished"></translation>
+        <translation>16x16</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="43"/>
         <source>22x22</source>
-        <translation type="unfinished"></translation>
+        <translation>22x22</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="44"/>
         <source>32x32</source>
-        <translation type="unfinished"></translation>
+        <translation>32x32</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="45"/>
         <source>48x48</source>
-        <translation type="unfinished"></translation>
+        <translation>48x48</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="46"/>
         <source>64x64</source>
-        <translation type="unfinished"></translation>
+        <translation>64x64</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="48"/>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>顶部</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="49"/>
         <source>Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>底部</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="50"/>
@@ -1609,12 +1609,12 @@
     <message>
         <location filename="../qsuistatusbar.cpp" line="68"/>
         <source>tracks: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>曲目: %1</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="69"/>
         <source>total time: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>全部时长： %1</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="87"/>
@@ -1629,7 +1629,7 @@
     <message>
         <location filename="../qsuistatusbar.cpp" line="102"/>
         <source>Buffering</source>
-        <translation type="unfinished"></translation>
+        <translation>缓冲中</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="127"/>
@@ -1649,34 +1649,34 @@
     <message>
         <location filename="../qsuistatusbar.cpp" line="152"/>
         <source>%1 bits</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 bits</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="154"/>
         <source>mono</source>
-        <translation type="unfinished"></translation>
+        <translation>单声道</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="156"/>
         <source>stereo</source>
-        <translation type="unfinished"></translation>
+        <translation>立体声</translation>
     </message>
     <message numerus="yes">
         <location filename="../qsuistatusbar.cpp" line="158"/>
         <source>%n channels</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n 通道</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="159"/>
         <source>%1 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 赫兹</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="164"/>
         <source>%1 kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kbps</translation>
     </message>
 </context>
 <context>
@@ -1684,13 +1684,13 @@
     <message>
         <location filename="../qsuiwaveformseekbar.cpp" line="328"/>
         <source>2 Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>2 通道</translation>
     </message>
     <message>
         <location filename="../qsuiwaveformseekbar.cpp" line="331"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>RMS</translation>
     </message>
 </context>
 <context>
@@ -1757,7 +1757,7 @@
     <message>
         <location filename="../volumeslider.cpp" line="111"/>
         <source>%1: %2%</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: %2%</translation>
     </message>
 </context>
 </TS>

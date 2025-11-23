@@ -126,7 +126,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
         <source>&amp;Transit between playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>在播放列表间切换(&amp;T)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="52"/>
@@ -421,12 +421,12 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>Show &amp;Tab Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>显示标签页栏(&amp;T)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>Alt+T</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+T</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="91"/>
@@ -642,7 +642,7 @@
     <message>
         <location filename="../skinnedfactory.cpp" line="67"/>
         <source>Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../skinnedfactory.cpp" line="68"/>
@@ -657,7 +657,7 @@
     <message>
         <location filename="../skinnedfactory.cpp" line="70"/>
         <source>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</translation>
     </message>
 </context>
 <context>
@@ -1087,12 +1087,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="308"/>
         <source>Show splitters</source>
-        <translation type="unfinished"></translation>
+        <translation>显示分隔符</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="315"/>
         <source>Alternate splitter color</source>
-        <translation type="unfinished"></translation>
+        <translation>备用分隔符颜色</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="415"/>
@@ -1107,7 +1107,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="427"/>
         <source>Use skin colors</source>
-        <translation type="unfinished"></translation>
+        <translation>使用皮肤颜色</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="545"/>
@@ -1127,7 +1127,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="763"/>
         <source>Splitter:</source>
-        <translation type="unfinished"></translation>
+        <translation>分隔符：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="577"/>
@@ -1142,7 +1142,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="813"/>
         <source>Current track background:</source>
-        <translation type="unfinished"></translation>
+        <translation>当前曲目背景：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="871"/>
@@ -1172,7 +1172,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="691"/>
         <source>Load skin colors</source>
-        <translation type="unfinished"></translation>
+        <translation>载入皮肤颜色</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="904"/>
@@ -1187,12 +1187,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="994"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>分组：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1021"/>
         <source>Extra group row:</source>
-        <translation type="unfinished"></translation>
+        <translation>额外的分组行：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1048"/>
@@ -1329,17 +1329,17 @@
     <message>
         <location filename="../skinnedsettings.cpp" line="165"/>
         <source>Default skin</source>
-        <translation type="unfinished"></translation>
+        <translation>默认皮肤：</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="174"/>
         <source>Unarchived skin %1</source>
-        <translation type="unfinished"></translation>
+        <translation>未存档皮肤 %1</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="174"/>
         <source>Archived skin %1</source>
-        <translation type="unfinished"></translation>
+        <translation>存档的皮肤 %1</translation>
     </message>
 </context>
 <context>
