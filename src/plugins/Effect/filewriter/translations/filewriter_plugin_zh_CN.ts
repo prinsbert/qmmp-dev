@@ -21,7 +21,7 @@
     <message>
         <location filename="../effectfilewriterfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../filewritersettingsdialog.ui" line="109"/>
         <source>Write to single file if possible.</source>
-        <translation type="unfinished"></translation>
+        <translation>尽可能写入单个文件。</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.cpp" line="72"/>

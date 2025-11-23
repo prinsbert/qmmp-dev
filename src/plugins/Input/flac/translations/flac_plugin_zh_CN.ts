@@ -26,17 +26,17 @@
     <message>
         <location filename="../decoderflacfactory.cpp" line="220"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>在以下文件的基础上进行的编译：</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="221"/>
         <source>FLAC, API version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>FLAC, API 版本： %1</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="223"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 </TS>

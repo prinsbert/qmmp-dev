@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="112"/>
@@ -142,12 +142,12 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="109"/>
         <source>Emulate sample loop bug</source>
-        <translation type="unfinished"></translation>
+        <translation>模拟循环样本错误</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="116"/>
         <source>Use Paula mixer in Amiga modules</source>
-        <translation type="unfinished"></translation>
+        <translation>在 Amiga 模块中使用 Paula 混音器</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="33"/>
@@ -167,12 +167,12 @@
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest Neighbor</source>
-        <translation type="unfinished"></translation>
+        <translation>最近邻</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="38"/>
         <source>Cubic Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>三次样条</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="37"/>

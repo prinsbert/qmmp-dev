@@ -21,7 +21,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="419"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG 1.0/2.0/2.5 layer 1/2/3 音频解码器</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="420"/>
@@ -31,12 +31,12 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="429"/>
         <source>mpg123, API version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>mpg123, API 版本： %1</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="433"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="434"/>
@@ -52,7 +52,7 @@
         <location filename="../mpegmetadatamodel.cpp" line="76"/>
         <location filename="../mpegmetadatamodel.cpp" line="79"/>
         <source>Mode</source>
-        <translation>风格</translation>
+        <translation>模式</translation>
     </message>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="82"/>
@@ -80,22 +80,22 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="35"/>
         <source>Decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>解码器</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="41"/>
         <source>MAD</source>
-        <translation type="unfinished"></translation>
+        <translation>MAD</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="48"/>
         <source>MPG123</source>
-        <translation type="unfinished"></translation>
+        <translation>MPG123</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="71"/>
         <source>Enable CRC checking</source>
-        <translation type="unfinished"></translation>
+        <translation>开启 CRC 检测</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="87"/>
@@ -148,7 +148,7 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="253"/>
         <source>Merge selected tag types</source>
-        <translation type="unfinished"></translation>
+        <translation>合并选中的标签类型</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="272"/>
@@ -168,12 +168,12 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="343"/>
         <source>Try to detect encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>尝试检测编码</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.cpp" line="32"/>
         <source>Detect by Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>按语言环境检测</translation>
     </message>
 </context>
 </TS>
