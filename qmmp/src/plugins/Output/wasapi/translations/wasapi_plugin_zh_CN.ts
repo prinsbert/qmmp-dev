@@ -21,7 +21,7 @@
     <message>
         <location filename="../outputwasapifactory.cpp" line="55"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../wasapisettingsdialog.ui" line="14"/>
         <source>WASAPI Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>WASAPI 插件设置</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="35"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../wasapisettingsdialog.ui" line="78"/>
         <source>Exclusive mode</source>
-        <translation type="unfinished"></translation>
+        <translation>独占模式</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.cpp" line="65"/>

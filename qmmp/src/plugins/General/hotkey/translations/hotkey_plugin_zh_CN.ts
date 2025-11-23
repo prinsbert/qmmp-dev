@@ -24,7 +24,7 @@
     <message>
         <location filename="../hotkeyfactory.cpp" line="32"/>
         <source>X11 Hotkey Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>X11 热键插件</translation>
     </message>
     <message>
         <location filename="../hotkeyfactory.cpp" line="34"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../hotkeyfactory.cpp" line="64"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>

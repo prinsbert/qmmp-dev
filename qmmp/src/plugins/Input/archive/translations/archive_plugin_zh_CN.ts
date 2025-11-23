@@ -26,12 +26,12 @@
     <message>
         <location filename="../decoderarchivefactory.cpp" line="170"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>在以下文件的基础上进行的编译：</translation>
     </message>
     <message>
         <location filename="../decoderarchivefactory.cpp" line="173"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 </TS>
