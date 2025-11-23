@@ -4,32 +4,32 @@
 <context>
     <name>DecoderSndFileFactory</name>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="154"/>
+        <location filename="../decodersndfilefactory.cpp" line="158"/>
         <source>Sndfile Plugin</source>
         <translation>Plugin Sndfile</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="158"/>
+        <location filename="../decodersndfilefactory.cpp" line="162"/>
         <source>PCM Files</source>
         <translation>Arquivos PCM</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="314"/>
+        <location filename="../decodersndfilefactory.cpp" line="318"/>
         <source>About Sndfile Audio Plugin</source>
         <translation>Sobre o plugin Sndfile Audio</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="315"/>
+        <location filename="../decodersndfilefactory.cpp" line="319"/>
         <source>Qmmp Sndfile Audio Plugin</source>
         <translation>Plugin Qmmp Sndfile Audio</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="316"/>
+        <location filename="../decodersndfilefactory.cpp" line="320"/>
         <source>Compiled against:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="319"/>
+        <location filename="../decodersndfilefactory.cpp" line="323"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>

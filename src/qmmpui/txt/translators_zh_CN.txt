@@ -9,6 +9,7 @@
     Miroslav Mihov
 
 繁体中文：
+    Edouard.J.K Li <edouardlicn@gmail.com>
     Cosmos Chen
     艾昂<Ion83129@126.com>
     杰夫.黄
@@ -27,11 +28,12 @@
     Heimen Stoffels
     罗纳德.尤特马克
 
-Finnish:
+芬兰语：
     Jiri Grönroos
     Kimmo Kujansuu
 
 法语：
+    Nicolas PARLANT
     Adrien Vigneron - VRad <adrienvigneron@ml1.net>
     Sébastien Aperghis-Tramoni (maddingue)
     Stanislas Zeller <uncensored.assault@gmail.com>
@@ -68,7 +70,7 @@ Finnish:
 哈萨克语：
     Baurzhan Muftakhidinov <baurthefirst@gmail.com>
 
-Korean:
+朝鲜语：
    Jung Hee Lee <daemul72@gmail.com>
 
 立陶宛语：
@@ -99,7 +101,7 @@ Korean:
     Félix Medrano <xukosky@yahoo.es>
     Joel Barrios <darkshram@gmail.com>
 
-Swedish:
+瑞典语：
     Luna Jernberg <droidbittin@gmail.com>
 
 土耳其语：

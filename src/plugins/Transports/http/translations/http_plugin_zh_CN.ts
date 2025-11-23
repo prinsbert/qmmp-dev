@@ -26,7 +26,7 @@
     <message>
         <location filename="../httpinputfactory.cpp" line="55"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -64,17 +64,17 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="34"/>
         <source>Default buffer size:</source>
-        <translation type="unfinished"></translation>
+        <translation>默认缓冲区大小：</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="50"/>
         <source>This value is used if information about bitrate is &lt;b&gt;not&lt;/b&gt; available.</source>
-        <translation type="unfinished"></translation>
+        <translation>当比特率信息&lt;b&gt;不可用时，将使用此值&lt;/b&gt;。</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="53"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="69"/>
@@ -84,12 +84,12 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="90"/>
         <source>Buffer duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>缓冲时长：</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="97"/>
         <source>This value is used if information about bitrate is available.</source>
-        <translation type="unfinished"></translation>
+        <translation>当比特率信息可用时，将使用此值。</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="100"/>

@@ -79,12 +79,12 @@
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="104"/>
         <source>Compiled against libcdio-%1</source>
-        <translation type="unfinished"></translation>
+        <translation>基于 libcdio-%1 编译</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="107"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="108"/>
