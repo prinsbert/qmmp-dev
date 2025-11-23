@@ -11,7 +11,7 @@
     <message>
         <location filename="../mpvenginefactory.cpp" line="51"/>
         <source>Video Files</source>
-        <translation type="unfinished"></translation>
+        <translation>视频文件</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="198"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../mpvenginefactory.cpp" line="201"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -39,29 +39,29 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="50"/>
         <source>File size</source>
-        <translation type="unfinished"></translation>
+        <translation>文件大小</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="50"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="51"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>比特率</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="51"/>
         <location filename="../mpvmetadatamodel.cpp" line="70"/>
         <location filename="../mpvmetadatamodel.cpp" line="86"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>千比特每秒</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="70"/>
         <source>Audio bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>音频比特率</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
@@ -71,7 +71,7 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>赫兹</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="73"/>
@@ -92,12 +92,12 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="86"/>
         <source>Video bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>视频比特率</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="89"/>
         <source>Video format</source>
-        <translation type="unfinished"></translation>
+        <translation>视频格式</translation>
     </message>
 </context>
 </TS>
