@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="39"/>
         <source>XMP Plugin</source>
-        <translation>XMP插件</translation>
+        <translation>XMP 插件</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="54"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="109"/>
         <source>About XMP Audio Plugin</source>
-        <translation>关于XMP音频插件</translation>
+        <translation>关于 XMP 音频插件</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="110"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Compiled against libxmp-%1</source>
-        <translation>对照libxmp-%1进行了编译</translation>
+        <translation>基于 libcdio-%1 编译</translation>
     </message>
 </context>
 <context>
@@ -79,7 +79,7 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="59"/>
         <source>Module length in patterns</source>
-        <translation>样式中的模长</translation>
+        <translation>样式中的模组长度</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="79"/>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="92"/>
         <source>Comment</source>
-        <translation>评论</translation>
+        <translation>备注</translation>
     </message>
 </context>
 <context>
@@ -102,7 +102,7 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation>XMP插件设置</translation>
+        <translation>XMP 插件设置</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="34"/>
@@ -117,7 +117,7 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation>插音类型：</translation>
+        <translation> 插音类型：</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="78"/>
@@ -127,12 +127,12 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="85"/>
         <source>Use vblank timing</source>
-        <translation>使用vblank时间管理</translation>
+        <translation>使用 vblank 时间管理</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="92"/>
         <source>Emulate Protracker 2.x FX9 bug</source>
-        <translation>模拟Protracker 2.x FX9问题</translation>
+        <translation>模拟 Protracker 2.x FX9 问题</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="99"/>
@@ -152,17 +152,17 @@
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
-        <translation>22050 Hz</translation>
+        <translation>22050 赫兹</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
-        <translation>44100赫兹</translation>
+        <translation>44100 赫兹</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
-        <translation>48000赫兹</translation>
+        <translation>48000 赫兹</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="36"/>

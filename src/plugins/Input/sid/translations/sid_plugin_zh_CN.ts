@@ -6,27 +6,27 @@
     <message>
         <location filename="../decodersidfactory.cpp" line="57"/>
         <source>SID Plugin</source>
-        <translation>SID插件</translation>
+        <translation>SID 插件</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="59"/>
         <source>SID Files</source>
-        <translation>SID文件</translation>
+        <translation>SID 文件</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="112"/>
         <source>About SID Audio Plugin</source>
-        <translation>关于SID音频插件</translation>
+        <translation>关于 SID 音频插件</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="113"/>
         <source>Qmmp SID Audio Plugin</source>
-        <translation>Qmmp播放器SID音频插件</translation>
+        <translation>Qmmp SID 音频插件</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="114"/>
         <source>This plugin plays Commodore 64 music files using libsidplayfp library</source>
-        <translation>本插件使用libsidplayfp文件库播放科莫多64音乐文件</translation>
+        <translation>此插件使用 libsidplayfp 库播放 Commodore 64 音乐文件</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="115"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../sidsettingsdialog.ui" line="14"/>
         <source>SID Plugin Settings</source>
-        <translation>SID插件设置</translation>
+        <translation>SID 插件设置</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="55"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../sidsettingsdialog.ui" line="69"/>
         <source>HVSC database file:</source>
-        <translation>HVSC数据库文件：</translation>
+        <translation>HVSC 数据库文件：</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="76"/>
@@ -69,7 +69,7 @@
     <message>
         <location filename="../sidsettingsdialog.ui" line="100"/>
         <source>Enable HVSC song length database</source>
-        <translation>开启HVSC歌曲长度数据库</translation>
+        <translation>开启 HVSC 歌曲长度数据库</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="107"/>
@@ -79,12 +79,12 @@
     <message>
         <location filename="../sidsettingsdialog.cpp" line="41"/>
         <source>44100 Hz</source>
-        <translation>44100赫兹</translation>
+        <translation>44100 赫兹</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.cpp" line="42"/>
         <source>48000 Hz</source>
-        <translation>48000赫兹</translation>
+        <translation>48000 赫兹</translation>
     </message>
 </context>
 </TS>

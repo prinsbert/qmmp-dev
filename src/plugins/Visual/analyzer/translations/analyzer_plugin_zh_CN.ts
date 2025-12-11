@@ -109,12 +109,12 @@
     <message>
         <location filename="../analyzersettingsdialog.ui" line="35"/>
         <source>General</source>
-        <translation>总的</translation>
+        <translation>常规</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="41"/>
         <source>Cells size:</source>
-        <translation>单块儿尺寸</translation>
+        <translation>方格尺寸</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="101"/>

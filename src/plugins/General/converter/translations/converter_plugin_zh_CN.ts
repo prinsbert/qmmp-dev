@@ -18,7 +18,7 @@
     <message>
         <location filename="../converter.cpp" line="178"/>
         <source>Converting</source>
-        <translation>转化中</translation>
+        <translation>转换中</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="239"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../converterdialog.ui" line="39"/>
         <source>Title</source>
-        <translation>题头</translation>
+        <translation>标题</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="205"/>
@@ -123,12 +123,12 @@
     <message>
         <location filename="../converterdialog.cpp" line="358"/>
         <source>Unable to execute &quot;%1&quot;. Program not found.</source>
-        <translation>无法执行&quot;%1&quot;。程序未找到。</translation>
+        <translation>无法执行 &quot;%1&quot;。程序未找到。</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="365"/>
         <source>Process &quot;%1&quot; finished with error.</source>
-        <translation>进程”%1“完成同时发现错误。</translation>
+        <translation>进程 ”%1“ 已完成，但出现错误。</translation>
     </message>
 </context>
 <context>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../converterfactory.cpp" line="50"/>
         <source>Qmmp Converter Plugin</source>
-        <translation>Qmmp转换器插件</translation>
+        <translation>Qmmp 转换器插件</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="51"/>
@@ -182,7 +182,7 @@
     <message>
         <location filename="../converterpreseteditor.ui" line="29"/>
         <source>General</source>
-        <translation>总的</translation>
+        <translation>常规</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="35"/>
@@ -207,7 +207,7 @@
     <message>
         <location filename="../converterpreseteditor.ui" line="83"/>
         <source>Write tags</source>
-        <translation>写书签</translation>
+        <translation>写入标签</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="90"/>

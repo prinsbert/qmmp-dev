@@ -18,13 +18,13 @@
     <message>
         <location filename="../fileops.cpp" line="154"/>
         <source>Move Files</source>
-        <translation>转移文件</translation>
+        <translation>移动文件</translation>
     </message>
     <message numerus="yes">
         <location filename="../fileops.cpp" line="155"/>
         <source>Are you sure you want to move %n file(s)?</source>
         <translation>
-            <numerusform>你确定你希望移动%n文件(文件组)吗？</numerusform>
+            <numerusform>您确定要移动 %n 个文件吗？</numerusform>
         </translation>
     </message>
     <message>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../fileops.cpp" line="313"/>
         <source>Moving file %1/%2</source>
-        <translation>正在移动文件%1%2</translation>
+        <translation>正在移动文件 %1%2</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="123"/>
@@ -62,7 +62,7 @@
         <location filename="../fileops.cpp" line="124"/>
         <source>Are you sure you want to remove %n file(s) from disk?</source>
         <translation>
-            <numerusform>你确认要从磁盘中删除 %n 文件？</numerusform>
+            <numerusform>你确认要从磁盘中删除 %n 个文件？</numerusform>
         </translation>
     </message>
 </context>

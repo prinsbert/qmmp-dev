@@ -37,7 +37,7 @@
     <message>
         <location filename="../bs2bsettingsdialog.cpp" line="84"/>
         <source>%1 dB</source>
-        <translation>%1分贝</translation>
+        <translation>%1 分贝</translation>
     </message>
 </context>
 <context>
@@ -55,12 +55,12 @@
     <message>
         <location filename="../effectbs2bfactory.cpp" line="52"/>
         <source>This is the Qmmp plugin version of Boris Mikhaylov&apos;s headphone DSP effect &quot;Bauer stereophonic-to-binaural&quot;, abbreviated bs2b.</source>
-        <translation>此版本的 Qmmp 插件基于 Boris Mikhaylov 的耳机 DSP 特效 &quot;Bauer stereophonic-to-binaural&quot;, 精简的 bs2b 。</translation>
+        <translation>此版本的 Qmmp 插件基于 Boris Mikhaylov 的耳机 DSP 效果器 &quot;Bauer stereophonic-to-binaural&quot;，简称 bs2b 。</translation>
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="55"/>
         <source>Visit %1 for more details</source>
-        <translation>访问 %1 了解更多情况</translation>
+        <translation>访问 %1 了解更多详情</translation>
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="57"/>

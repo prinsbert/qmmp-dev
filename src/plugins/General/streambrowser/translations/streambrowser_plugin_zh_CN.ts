@@ -62,12 +62,12 @@
     <message>
         <location filename="../streambrowserfactory.cpp" line="51"/>
         <source>Qmmp Stream Browser Plugin</source>
-        <translation>Qmmp媒体流浏览器插件</translation>
+        <translation>Qmmp 媒体流浏览器插件</translation>
     </message>
     <message>
         <location filename="../streambrowserfactory.cpp" line="52"/>
         <source>This plugin allows one to add stream from IceCast stream directory</source>
-        <translation>此插件允许从IceCast媒体流文件夹向Qmmp中添加媒体流</translation>
+        <translation>此插件允许从 IceCast 媒体流文件夹向 Qmmp 中添加媒体流</translation>
     </message>
     <message>
         <location filename="../streambrowserfactory.cpp" line="53"/>
@@ -117,7 +117,7 @@
         <location filename="../streamwindow.cpp" line="55"/>
         <location filename="../streamwindow.cpp" line="69"/>
         <source>Genre</source>
-        <translation>风格</translation>
+        <translation>流派</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="55"/>
@@ -144,12 +144,12 @@
     <message>
         <location filename="../streamwindow.cpp" line="131"/>
         <source>&amp;Create</source>
-        <translation>＆新建</translation>
+        <translation>新建(&amp;C)</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="132"/>
         <source>&amp;Edit</source>
-        <translation>&amp;编辑</translation>
+        <translation>编辑(&amp;E)</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="136"/>
@@ -160,7 +160,7 @@
     <message>
         <location filename="../streamwindow.cpp" line="152"/>
         <source>Done</source>
-        <translation>完成</translation>
+        <translation>已完成</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="155"/>

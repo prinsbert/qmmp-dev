@@ -36,7 +36,7 @@
     <message>
         <location filename="../statusoption.cpp" line="97"/>
         <source>%aa - album artist</source>
-        <translation>%%aa - 专辑 艺术家</translation>
+        <translation>%%aa - 专辑艺术家</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="98"/>
