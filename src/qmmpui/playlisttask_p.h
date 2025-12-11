@@ -83,7 +83,7 @@ private:
     bool m_reverted = true;
     bool m_align_groups = false;
     int m_column = 0;
-    QHash<int, Qmmp::MetaData> m_sort_keys;
+    static const QHash<int, Qmmp::MetaData> m_sort_keys;
 
 };
 
