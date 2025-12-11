@@ -6,7 +6,7 @@
     <message>
         <location filename="../mpvenginefactory.cpp" line="47"/>
         <source>MPV Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>MPV 插件</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="51"/>
@@ -16,17 +16,17 @@
     <message>
         <location filename="../mpvenginefactory.cpp" line="198"/>
         <source>About MPV Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>关于 MPV 插件</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="199"/>
         <source>Qmmp MPV Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp MPV 插件</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="200"/>
         <source>This plugin uses mpv as backend</source>
-        <translation type="unfinished"></translation>
+        <translation>此插件使用 MPV 后端</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="201"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
         <source>Audio sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>音频取样率</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
@@ -77,17 +77,17 @@
         <location filename="../mpvmetadatamodel.cpp" line="73"/>
         <location filename="../mpvmetadatamodel.cpp" line="75"/>
         <source>Audio channels</source>
-        <translation type="unfinished"></translation>
+        <translation>音频通道</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="79"/>
         <source>Audio format</source>
-        <translation type="unfinished"></translation>
+        <translation>音频格式</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="85"/>
         <source>Video size</source>
-        <translation type="unfinished"></translation>
+        <translation>视频尺寸</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="86"/>
