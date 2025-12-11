@@ -228,24 +228,21 @@ void TrackInfo::clear()
 
 QString TrackInfo::pathFromUrl(const QString &url, int *track)
 {
-    QString path = url;
-    int index = path.indexOf(u"://"_s);
-    if(index > 0)
-        path.remove(0, index + 3);
-
-    QString trackStr = path.section(QLatin1Char('#'), -1);
-    bool ok = false;
-    int t = trackStr.toInt(&ok);
-    if(ok)
-    {
-        if(track)
-            *track = t;
-
-        index = path.lastIndexOf(QLatin1Char('#'));
-        path.remove(index, path.size() - index);
-    }
-    else if(track)
+    if(track)
         *track = -1;
+
+    int index1 = url.indexOf(u"://"_s);
+    if(index1 < 0)
+        return url;
+
+    int index2 = url.lastIndexOf(QLatin1Char('#'));
+    if(index2 < 0)
+        return url;
+
+    QString path = url.mid(index1 + 3, index2 - index1 - 3);
+    QString trackStr = url.mid(index2 + 1);
+    if(track)
+        *track = trackStr.toInt();
 
     return path;
 }
