@@ -6,7 +6,7 @@
     <message>
         <location filename="../playlistoption.cpp" line="33"/>
         <source>Show playlist manipulation commands</source>
-        <translation>显示播放列表的操作命令</translation>
+        <translation>显示播放列表操作命令</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="34"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../playlistoption.cpp" line="41"/>
         <source>Toggle playlist shuffle</source>
-        <translation>切换播放列表的重排功能</translation>
+        <translation>切换播放列表的乱序播放</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="42"/>
@@ -58,7 +58,7 @@
         <location filename="../playlistoption.cpp" line="134"/>
         <location filename="../playlistoption.cpp" line="173"/>
         <source>Invalid playlist ID</source>
-        <translation>无效的播放列表ID</translation>
+        <translation>无效的播放列表 ID</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="128"/>
@@ -68,7 +68,7 @@
     <message>
         <location filename="../playlistoption.cpp" line="138"/>
         <source>Invalid track ID</source>
-        <translation>无效的曲目ID</translation>
+        <translation>无效的曲目 ID</translation>
     </message>
 </context>
 </TS>

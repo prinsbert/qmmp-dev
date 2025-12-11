@@ -6,7 +6,7 @@
     <message>
         <location filename="../lyrics.cpp" line="34"/>
         <source>View Lyrics</source>
-        <translation>显示歌词</translation>
+        <translation>查看歌词</translation>
     </message>
     <message>
         <location filename="../lyrics.cpp" line="35"/>

@@ -21,7 +21,7 @@
     <message>
         <location filename="../udisksfactory.cpp" line="52"/>
         <source>This plugin provides removable devices detection using UDisks</source>
-        <translation>此插件依据可移动检测使用 UDisks</translation>
+        <translation>此插件通过 UDisks 实现可移除设备检测</translation>
     </message>
     <message>
         <location filename="../udisksfactory.cpp" line="53"/>

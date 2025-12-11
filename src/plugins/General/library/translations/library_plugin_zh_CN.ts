@@ -205,7 +205,7 @@
     <message>
         <location filename="../librarywidget.cpp" line="53"/>
         <source>&amp;View Track Details</source>
-        <translation>&amp;查看曲目详细内容</translation>
+        <translation>查看曲目详情(&amp;V)</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="55"/>

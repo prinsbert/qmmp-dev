@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderopusfactory.cpp" line="42"/>
         <source>Opus Plugin</source>
-        <translation>Opus插件</translation>
+        <translation>Opus 插件</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="45"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../decoderopusfactory.cpp" line="125"/>
         <source>About Opus Audio Plugin</source>
-        <translation>关于Opus音频</translation>
+        <translation>关于 Opus 音频</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="126"/>
         <source>Qmmp Opus Audio Plugin</source>
-        <translation>Qmmp Opus音频文件插件</translation>
+        <translation>Qmmp Opus 音频文件插件</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="127"/>

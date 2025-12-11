@@ -46,7 +46,7 @@
     <message>
         <location filename="../osssettingsdialog.ui" line="236"/>
         <source>PCM over Master</source>
-        <translation>PCM优先于Master</translation>
+        <translation>PCM 优先于 Master</translation>
     </message>
 </context>
 <context>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../outputossfactory.cpp" line="58"/>
         <source>Based on code by: Brad Hughes &lt;bhughes@trolltech.com&gt;</source>
-        <translation>源代码基于：Brad Hughes &lt;bhughes@trolltech.com&gt;</translation>
+        <translation>基于 Brad Hughes 编写的代码 &lt;bhughes@trolltech.com&gt;</translation>
     </message>
 </context>
 </TS>

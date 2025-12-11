@@ -85,7 +85,7 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="361"/>
         <source>Playback resume notification</source>
-        <translation>回放继续通知</translation>
+        <translation>恢复播放通知</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="368"/>

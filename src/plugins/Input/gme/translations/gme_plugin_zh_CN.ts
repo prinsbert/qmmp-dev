@@ -39,7 +39,7 @@
     <message>
         <location filename="../gmesettingsdialog.ui" line="14"/>
         <source>GME Plugin Settings</source>
-        <translation>GME插件设置</translation>
+        <translation>GME 插件设置</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="34"/>

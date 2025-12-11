@@ -11,12 +11,12 @@
     <message>
         <location filename="../rgscandialog.ui" line="84"/>
         <source>Write track gain/peak</source>
-        <translation>写下曲目增益/峰值</translation>
+        <translation>写入曲目增益/峰值</translation>
     </message>
     <message>
         <location filename="../rgscandialog.ui" line="42"/>
         <source>Title</source>
-        <translation>题头</translation>
+        <translation>标题</translation>
     </message>
     <message>
         <location filename="../rgscandialog.ui" line="47"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../rgscandialog.ui" line="77"/>
         <source>Skip already scanned files</source>
-        <translation>跳过已扫描过得文件</translation>
+        <translation>跳过已扫描的文件</translation>
     </message>
     <message>
         <location filename="../rgscandialog.ui" line="113"/>
@@ -56,12 +56,12 @@
     <message>
         <location filename="../rgscandialog.ui" line="120"/>
         <source>Write Tags</source>
-        <translation>写标签</translation>
+        <translation>写入标签</translation>
     </message>
     <message>
         <location filename="../rgscandialog.ui" line="91"/>
         <source>Write album gain/peak</source>
-        <translation>写专辑的增益/峰值</translation>
+        <translation>写入专辑的增益/峰值</translation>
     </message>
     <message>
         <location filename="../rgscandialog.cpp" line="127"/>
@@ -75,7 +75,7 @@
         <location filename="../rgscandialog.cpp" line="163"/>
         <location filename="../rgscandialog.cpp" line="228"/>
         <source>%1 dB</source>
-        <translation>%1分贝</translation>
+        <translation>%1 分贝</translation>
     </message>
 </context>
 <context>
@@ -93,12 +93,12 @@
     <message>
         <location filename="../rgscanfactory.cpp" line="50"/>
         <source>ReplayGain Scanner Plugin for Qmmp</source>
-        <translation>用于Qmmp播放器的回放增益扫描器插件</translation>
+        <translation>Qmmp 的回放增益扫描器插件</translation>
     </message>
     <message>
         <location filename="../rgscanfactory.cpp" line="51"/>
         <source>This plugin scans audio files and gives information for volume normalization</source>
-        <translation>本插件扫描音频文件并提供音量正常化的相关信息</translation>
+        <translation>此插件扫描音频文件并提供音量标准化信息</translation>
     </message>
     <message>
         <location filename="../rgscanfactory.cpp" line="52"/>

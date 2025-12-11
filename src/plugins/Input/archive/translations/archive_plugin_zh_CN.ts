@@ -6,27 +6,27 @@
     <message>
         <location filename="../decoderarchivefactory.cpp" line="40"/>
         <source>Archive Plugin</source>
-        <translation>归档插件</translation>
+        <translation>存档插件</translation>
     </message>
     <message>
         <location filename="../decoderarchivefactory.cpp" line="42"/>
         <source>Archives</source>
-        <translation>归档</translation>
+        <translation>存档</translation>
     </message>
     <message>
         <location filename="../decoderarchivefactory.cpp" line="168"/>
         <source>About Archive Reader Plugin</source>
-        <translation>关于归档读取器插件</translation>
+        <translation>关于存档读取器插件</translation>
     </message>
     <message>
         <location filename="../decoderarchivefactory.cpp" line="169"/>
         <source>Qmmp Archive Reader Plugin</source>
-        <translation>Qmmp 归档读取器插件</translation>
+        <translation>Qmmp 存档读取器插件</translation>
     </message>
     <message>
         <location filename="../decoderarchivefactory.cpp" line="170"/>
         <source>Compiled against:</source>
-        <translation>在以下文件的基础上进行的编译：</translation>
+        <translation>编译依赖：</translation>
     </message>
     <message>
         <location filename="../decoderarchivefactory.cpp" line="173"/>

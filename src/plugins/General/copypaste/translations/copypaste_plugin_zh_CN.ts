@@ -49,7 +49,7 @@
     <message>
         <location filename="../copypastefactory.cpp" line="49"/>
         <source>Qmmp Copy/Paste Plugin</source>
-        <translation>Qmmp复制/粘贴插件</translation>
+        <translation>Qmmp 复制/粘贴插件</translation>
     </message>
     <message>
         <location filename="../copypastefactory.cpp" line="50"/>

@@ -145,7 +145,7 @@
     <message>
         <location filename="../forms/columneditor.ui" line="14"/>
         <source>Edit Column</source>
-        <translation>编辑列目</translation>
+        <translation>编辑列</translation>
     </message>
     <message>
         <location filename="../forms/columneditor.ui" line="36"/>
@@ -1181,27 +1181,27 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="33"/>
         <source>Track Number</source>
-        <translation>单曲号</translation>
+        <translation>音轨编号</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="34"/>
         <source>Two-digit Track Number</source>
-        <translation>两位单曲号</translation>
+        <translation>两位数音轨编号</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="38"/>
         <source>Track Index</source>
-        <translation>曲目索引</translation>
+        <translation>音轨索引</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="40"/>
         <source>Genre</source>
-        <translation>风格</translation>
+        <translation>流派</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="41"/>
         <source>Comment</source>
-        <translation>评论</translation>
+        <translation>备注</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="42"/>
@@ -1211,7 +1211,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="45"/>
         <source>Duration</source>
-        <translation>长度</translation>
+        <translation>时长</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="55"/>
@@ -1308,7 +1308,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="50"/>
         <source>Artist - Title</source>
-        <translation>艺术家-题头</translation>
+        <translation>艺术家 - 标题</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="56"/>
@@ -1377,17 +1377,17 @@
     <message>
         <location filename="../playlistheadermodel.cpp" line="35"/>
         <source>Artist - Title</source>
-        <translation>艺术家-题头</translation>
+        <translation>艺术家 - 标题</translation>
     </message>
     <message>
         <location filename="../playlistheadermodel.cpp" line="185"/>
         <source>Title</source>
-        <translation>题头</translation>
+        <translation>标题</translation>
     </message>
     <message>
         <location filename="../playlistheadermodel.cpp" line="186"/>
         <source>Add Column</source>
-        <translation>增加n列</translation>
+        <translation>添加列</translation>
     </message>
 </context>
 <context>
@@ -1417,7 +1417,7 @@
     <message>
         <location filename="../qtfiledialog.cpp" line="35"/>
         <source>Qt File Dialog</source>
-        <translation>Qmmp 文件对话</translation>
+        <translation>Qt 文件对话框</translation>
     </message>
 </context>
 <context>
@@ -1425,7 +1425,7 @@
     <message>
         <location filename="../forms/shortcutdialog.ui" line="14"/>
         <source>Change Shortcut</source>
-        <translation>更改热键</translation>
+        <translation>更改快捷键</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="29"/>
@@ -1443,7 +1443,7 @@
     <message>
         <location filename="../forms/tageditor.ui" line="14"/>
         <source>Tag Editor</source>
-        <translation>标签编辑</translation>
+        <translation>标签编辑器</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="38"/>
@@ -1582,12 +1582,12 @@ Do you want to replace it?</source>
     <message>
         <location filename="../forms/winfileassocpage.ui" line="43"/>
         <source>Media files handled by Qmmp:</source>
-        <translation>使用Qmmp播放器播放的媒体文件：</translation>
+        <translation>Qmmp 支持的媒体文件格式：</translation>
     </message>
     <message>
         <location filename="../forms/winfileassocpage.ui" line="17"/>
         <source>Select All</source>
-        <translation>选择所有</translation>
+        <translation>全选</translation>
     </message>
 </context>
 </TS>

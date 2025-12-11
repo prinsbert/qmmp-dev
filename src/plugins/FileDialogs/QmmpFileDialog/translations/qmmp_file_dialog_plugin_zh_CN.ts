@@ -34,7 +34,7 @@
     <message>
         <location filename="../qmmpfiledialog.ui" line="255"/>
         <source>Close dialog on add</source>
-        <translation>关闭对话并打开已添加</translation>
+        <translation>添加后直接关闭文件对话框</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="124"/>
@@ -82,7 +82,7 @@ Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     <message>
         <location filename="../qmmpfiledialog.cpp" line="84"/>
         <source>Some code is copied from the Qt library</source>
-        <translation>一些源码基于 Qt 库</translation>
+        <translation>部分源码基于 Qt 库</translation>
     </message>
 </context>
 <context>
@@ -106,8 +106,8 @@ Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
         <location filename="../qmmpfiledialogimpl.cpp" line="465"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
-        <translation>%1 早已存在。
-你想要替换它吗？</translation>
+        <translation>%1 已存在。
+是否要替换它？</translation>
     </message>
 </context>
 </TS>
