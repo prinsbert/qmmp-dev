@@ -1,0 +1,7 @@
+*.qm
+.build
+.qmake.stash
+Makefile
+bin/qmmp
+lib
+qmmp.pro.*
