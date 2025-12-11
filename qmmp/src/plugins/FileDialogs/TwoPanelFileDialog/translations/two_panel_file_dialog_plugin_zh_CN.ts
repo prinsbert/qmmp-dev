@@ -55,7 +55,7 @@
     <message>
         <location filename="../twopanelfiledialog.cpp" line="79"/>
         <source>Based on code from the Qt library</source>
-        <translation>基于源于Qt库的代码</translation>
+        <translation>基于 Qt 库的代码</translation>
     </message>
 </context>
 <context>

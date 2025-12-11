@@ -4,9 +4,9 @@
 
 前期开发者
 
-    Artur Guzik <aguzik88@gmail.com>-kde4 提醒插件、托盘图标改进
-    Vladimir Kuznetsov <vovanec@gmail.com> - 外观及感受等很多改进
-    Yuriy Zhuravlev <stalkerg@gmail.com>- JACK及OSS插件
+    Artur Guzik <aguzik88@gmail.com> - kde4 提醒插件、托盘图标改进
+    Vladimir Kuznetsov <vovanec@gmail.com>  - 界面风格等很多改进
+    Yuriy Zhuravlev <stalkerg@gmail.com> - JACK 及 OSS 插件
 
 艺术制作
 

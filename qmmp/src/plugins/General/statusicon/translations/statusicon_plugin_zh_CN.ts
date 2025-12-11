@@ -21,12 +21,12 @@
     <message>
         <location filename="../statusicon.cpp" line="74"/>
         <source>Next</source>
-        <translation>下一曲</translation>
+        <translation>下一首</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="75"/>
         <source>Previous</source>
-        <translation>上一曲</translation>
+        <translation>上一首</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="77"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../statusicon.cpp" line="119"/>
         <source>Stopped</source>
-        <translation>被停止</translation>
+        <translation>已停止</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="144"/>
@@ -103,7 +103,7 @@
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="91"/>
         <source>Try to split file name when no tag</source>
-        <translation>无标签时尝试拆分文件名</translation>
+        <translation>没有标签时尝试拆分文件名</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="98"/>

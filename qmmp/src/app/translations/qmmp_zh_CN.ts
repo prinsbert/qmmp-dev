@@ -6,7 +6,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="46"/>
         <source>Don&apos;t clear the playlist</source>
-        <translation>不要清除这个播放列表</translation>
+        <translation>请勿清除这个播放列表</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="47"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="49"/>
         <source>Pause if playing, play otherwise</source>
-        <translation>正在播放则暂停，相反处于暂停则播放</translation>
+        <translation>若正在播放则暂停，否则继续播放</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="50"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="51"/>
         <source>Display Jump to Track dialog</source>
-        <translation>显示跳转至曲目对话框</translation>
+        <translation>显示跳转到音轨对话框</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="52"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="55"/>
         <source>Mute/Restore volume</source>
-        <translation>静音/回复音量</translation>
+        <translation>静音/恢复音量</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="56"/>
@@ -61,12 +61,12 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="57"/>
         <source>Skip forward in playlist</source>
-        <translation>跳到播放列表中的下一曲</translation>
+        <translation>在播放列表中向前跳转</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="58"/>
         <source>Skip backwards in playlist</source>
-        <translation>跳到播放列表中的上一曲</translation>
+        <translation>在播放列表中向后跳转</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="59"/>
@@ -81,12 +81,12 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="61"/>
         <source>Display Add File dialog</source>
-        <translation>显示添加文件对话</translation>
+        <translation>显示添加文件对话框</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="62"/>
         <source>Display Add Directory dialog</source>
-        <translation>显示添加文件夹对话</translation>
+        <translation>显示添加目录对话框</translation>
     </message>
 </context>
 <context>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="154"/>
         <source>Unknown command</source>
-        <translation>未知指令</translation>
+        <translation>未知命令</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="513"/>
@@ -104,7 +104,7 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="514"/>
         <source>Options:</source>
-        <translation>设置：</translation>
+        <translation>选项：</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="520"/>
@@ -160,22 +160,22 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="547"/>
         <source>QMMP version: %1</source>
-        <translation>QMMP版本：%1</translation>
+        <translation>QMMP 版本：%1</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="548"/>
         <source>Compiled with Qt version: %1</source>
-        <translation>用于编译的QT版本：%1</translation>
+        <translation>用于编译的 QT 版本：%1</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="549"/>
         <source>Using Qt version: %1</source>
-        <translation>使用的Qt版本：%1</translation>
+        <translation>使用的 Qt 版本：%1</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="552"/>
         <source>Qmmp Version</source>
-        <translation>Qmmp播放器版本</translation>
+        <translation>Qmmp 播放器版本</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="569"/>

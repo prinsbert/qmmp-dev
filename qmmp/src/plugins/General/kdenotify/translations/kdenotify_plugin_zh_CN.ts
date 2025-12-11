@@ -19,7 +19,7 @@
     <message>
         <location filename="../kdenotifyfactory.cpp" line="49"/>
         <source>About KDE Notification Plugin</source>
-        <translation>关于 KDE 4 通知插件</translation>
+        <translation>关于 KDE 通知插件</translation>
     </message>
     <message>
         <location filename="../kdenotifyfactory.cpp" line="50"/>

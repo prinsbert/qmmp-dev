@@ -41,7 +41,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="434"/>
         <source>Source code based on mq3 and madplay projects</source>
-        <translation>源代码基于mq3及madplay项目</translation>
+        <translation>源代码基于 mq3 和 madplay 项目</translation>
     </message>
 </context>
 <context>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="87"/>
         <source>Tag Priority</source>
-        <translation>标签优先</translation>
+        <translation>标签优先级</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="99"/>

@@ -101,7 +101,7 @@
     <message>
         <location filename="../coverwidget.cpp" line="97"/>
         <source>Images</source>
-        <translation>图象</translation>
+        <translation>图片</translation>
     </message>
 </context>
 </TS>

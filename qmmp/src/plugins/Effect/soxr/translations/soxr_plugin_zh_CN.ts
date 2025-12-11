@@ -6,12 +6,12 @@
     <message>
         <location filename="../effectsoxrfactory.cpp" line="30"/>
         <source>SoX Resampler Plugin</source>
-        <translation>SoX重新取样器插件</translation>
+        <translation>SoX 重新取样器插件</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="50"/>
         <source>About SoX Resampler Plugin</source>
-        <translation>关于SoX重新取样器插件</translation>
+        <translation>关于 SoX 重新取样器插件</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="51"/>

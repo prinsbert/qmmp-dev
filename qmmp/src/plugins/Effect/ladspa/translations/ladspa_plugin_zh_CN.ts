@@ -69,7 +69,7 @@
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="50"/>
         <source>UID</source>
-        <translation>用户ID</translation>
+        <translation>用户 ID</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="51"/>

@@ -40,7 +40,7 @@
         <location filename="../scrobblersettingsdialog.ui" line="31"/>
         <location filename="../scrobblersettingsdialog.ui" line="104"/>
         <source>Session:</source>
-        <translation>会议：</translation>
+        <translation>会话：</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="41"/>
@@ -52,7 +52,7 @@
         <location filename="../scrobblersettingsdialog.ui" line="63"/>
         <location filename="../scrobblersettingsdialog.ui" line="95"/>
         <source>Register new session</source>
-        <translation>注册新会议</translation>
+        <translation>注册新会话</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="73"/>
@@ -69,17 +69,17 @@
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="111"/>
         <source>1. Wait for browser startup</source>
-        <translation>1.等候浏览器启动</translation>
+        <translation>1.等待浏览器启动</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="112"/>
         <source>2. Allow Qmmp to scrobble tracks to your %1 account</source>
-        <translation>2.允许Qmmp向您的%1账户推荐类似曲目</translation>
+        <translation>2.允许 Qmmp 将曲目发送至您的 %1 账户</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="113"/>
         <source>3. Press &quot;OK&quot;</source>
-        <translation>3.按“OK”</translation>
+        <translation>3.按下 “OK”</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="118"/>

@@ -72,12 +72,12 @@
     <message>
         <location filename="../removablehelper.cpp" line="134"/>
         <source>Add CD &quot;%1&quot;</source>
-        <translation>增加CD&quot;%1&quot;</translation>
+        <translation>添加 CD &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../removablehelper.cpp" line="138"/>
         <source>Add Volume &quot;%1&quot;</source>
-        <translation>增加音量&quot;%1&quot;</translation>
+        <translation>添加设备 &quot;%1&quot;</translation>
     </message>
 </context>
 </TS>

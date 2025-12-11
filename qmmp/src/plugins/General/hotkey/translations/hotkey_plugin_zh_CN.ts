@@ -62,7 +62,7 @@
     <message>
         <location filename="../hotkeysettingsdialog.ui" line="51"/>
         <source>Action</source>
-        <translation>行动</translation>
+        <translation>操作</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.ui" line="56"/>
@@ -97,7 +97,7 @@
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="44"/>
         <source>Previous</source>
-        <translation>上一个</translation>
+        <translation>上一首</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="45"/>
@@ -127,7 +127,7 @@
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="50"/>
         <source>Jump to track</source>
-        <translation>跳至单曲</translation>
+        <translation>跳转到音轨</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="51"/>
@@ -142,7 +142,7 @@
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="110"/>
         <source>Key sequence &apos;%1&apos; is already used</source>
-        <translation>热键组合&apos;%1&apos;已经被使用了</translation>
+        <translation>热键组合 &apos;%1&apos; 已经被使用</translation>
     </message>
 </context>
 </TS>
