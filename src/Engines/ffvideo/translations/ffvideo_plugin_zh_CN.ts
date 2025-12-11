@@ -6,7 +6,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="41"/>
         <source>FFmpeg Video Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>FFmpeg 视频插件</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="45"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="161"/>
         <source>About FFVideo Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>关于 FFVideo 插件</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="162"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp 基于 FFmpeg 的视频插件</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="163"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Audio sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>音频取样率</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="50"/>
@@ -77,12 +77,12 @@
         <location filename="../ffvideometadatamodel.cpp" line="73"/>
         <location filename="../ffvideometadatamodel.cpp" line="75"/>
         <source>Audio channels</source>
-        <translation type="unfinished"></translation>
+        <translation>音频通道</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="82"/>
         <source>Video size</source>
-        <translation type="unfinished"></translation>
+        <translation>视频尺寸</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="83"/>
@@ -95,7 +95,7 @@
     <message>
         <location filename="../videowindow.cpp" line="40"/>
         <source>FFmpeg Video</source>
-        <translation type="unfinished"></translation>
+        <translation>FFmpeg 视频</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="45"/>
