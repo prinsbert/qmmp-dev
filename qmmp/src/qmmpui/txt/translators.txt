@@ -19,6 +19,7 @@ Chinese Simplified:
     mabier
     Mingcong Bai
     Mingye Wang
+    Rain Ding
 
 Czech:
     Jaroslav Lichtblau
