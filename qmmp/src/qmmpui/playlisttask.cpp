@@ -103,22 +103,22 @@ static bool _filenameGreaterComparator(TrackField* s1, TrackField* s2)
 }
 ////=============== THE END OF SORT IMPLEMENTATION =======================////
 
+const QHash<int, Qmmp::MetaData> PlayListTask::m_sort_keys = {
+    { PlayListModel::TITLE, Qmmp::TITLE },
+    { PlayListModel::DISCNUMBER, Qmmp::DISCNUMBER },
+    { PlayListModel::ALBUM, Qmmp::ALBUM },
+    { PlayListModel::ARTIST, Qmmp::ARTIST },
+    { PlayListModel::ALBUMARTIST, Qmmp::ALBUMARTIST },
+    { PlayListModel::FILENAME, Qmmp::UNKNOWN },
+    { PlayListModel::PATH_AND_FILENAME, Qmmp::UNKNOWN },
+    { PlayListModel::DATE, Qmmp::YEAR },
+    { PlayListModel::TRACK, Qmmp::TRACK },
+    { PlayListModel::FILE_CREATION_DATE, Qmmp::UNKNOWN },
+    { PlayListModel::FILE_MODIFICATION_DATE, Qmmp::UNKNOWN }
+};
+
 PlayListTask::PlayListTask(QObject *parent) : QThread(parent)
-{
-    m_sort_keys = {
-        { PlayListModel::TITLE, Qmmp::TITLE },
-        { PlayListModel::DISCNUMBER, Qmmp::DISCNUMBER },
-        { PlayListModel::ALBUM, Qmmp::ALBUM },
-        { PlayListModel::ARTIST, Qmmp::ARTIST },
-        { PlayListModel::ALBUMARTIST, Qmmp::ALBUMARTIST },
-        { PlayListModel::FILENAME, Qmmp::UNKNOWN },
-        { PlayListModel::PATH_AND_FILENAME, Qmmp::UNKNOWN },
-        { PlayListModel::DATE, Qmmp::YEAR },
-        { PlayListModel::TRACK, Qmmp::TRACK },
-        { PlayListModel::FILE_CREATION_DATE, Qmmp::UNKNOWN },
-        { PlayListModel::FILE_MODIFICATION_DATE, Qmmp::UNKNOWN }
-    };
-}
+{}
 
 PlayListTask::~PlayListTask()
 {
@@ -144,6 +144,8 @@ void PlayListTask::sort(QList<PlayListTrack *> tracks, PlayListModel::SortMode m
         f->track = t;
         if(mode == PlayListModel::GROUP)
             f->value = t->groupName();
+        else if(key == Qmmp::UNKNOWN && f->track->path().contains(u"://"_s) && f->track->path().contains(QLatin1Char('#')))
+            f->value = TrackInfo::pathFromUrl(f->track->path());
         else if(key == Qmmp::UNKNOWN)
             f->value = t->path();
         else
@@ -177,6 +179,8 @@ void PlayListTask::sortSelection(QList<PlayListTrack *> tracks, PlayListModel::S
         f->track = tracks[i];
         if(mode == PlayListModel::GROUP)
             f->value = f->track->groupName();
+        else if(key == Qmmp::UNKNOWN && f->track->path().contains(u"://"_s) && f->track->path().contains(QLatin1Char('#')))
+            f->value = TrackInfo::pathFromUrl(f->track->path());
         else if(key == Qmmp::UNKNOWN)
             f->value = f->track->path();
         else
