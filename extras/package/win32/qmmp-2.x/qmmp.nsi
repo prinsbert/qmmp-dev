@@ -80,6 +80,7 @@
   !insertmacro MUI_LANGUAGE "Russian"
   !insertmacro MUI_LANGUAGE "Ukrainian"
   !insertmacro MUI_LANGUAGE "TradChinese"
+  !insertmacro MUI_LANGUAGE "SimpChinese"
   
   
   !include "nsis-translations\English.nsh"
@@ -92,6 +93,7 @@
   !include "nsis-translations\Russian.nsh"
   !include "nsis-translations\Ukrainian.nsh"
   !include "nsis-translations\TradChinese.nsh"
+  !include "nsis-translations\SimpChinese.nsh"
   
 ;--------------------------------
 ;Macros

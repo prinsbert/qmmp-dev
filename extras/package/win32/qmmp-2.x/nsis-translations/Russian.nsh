@@ -8,6 +8,6 @@ LangString text_extra_skins            ${LANG_Russian} "Дополнительн
 LangString text_default_simple_ui      ${LANG_Russian} "Включить простой интерфейс по умолчанию"
 LangString text_enable_librcd          ${LANG_Russian} "Автоматическое определение кодировки ID3v1/ID3v2 (libRCD)"
 LangString text_enable_adlib           ${LANG_Russian} "Поддержка форматов AdLib (AdPlug)"
-LangString text_startmenu_shortcuts    ${LANG_Russian} "Создавать ярлыки в стартовом меню"
+LangString text_startmenu_shortcuts    ${LANG_Russian} "Создать ярлыки в меню запуска"
 LangString text_win64_warning          ${LANG_Russian} "Для установки данной программы требуется 64-битная версия Windows."
 LangString text_enqueue                ${LANG_Russian} "Добавить в очередь Qmmp"
