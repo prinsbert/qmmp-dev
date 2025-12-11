@@ -4,8 +4,10 @@ Changelog of Qt-based Multimedia Player
 Version 2.3.1
 * added IMA ADPCM support
 * fixed grouping by parent directory
+* fixed sorting by file name and path
 * fixed detection of the PCM WAVE files with "JUNK",
   "bext" and "fact" chunks
+* updated Chinese Simplified translation (Rain Ding)
 
 Version 2.3.0
 * added shared FFT implementation for visual plugins
