@@ -102,6 +102,7 @@ private slots:
     void copySelectedMenuActionTriggered(QAction *action);
 
 private:
+    bool event(QEvent *event) override;
     void closeEvent(QCloseEvent *e) override;
     void hideEvent(QHideEvent *e) override;
     QMenu *createPopupMenu() override;
