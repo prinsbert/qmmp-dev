@@ -377,7 +377,7 @@ bool QSUiListWidget::event(QEvent *e)
         if(e->type() == QEvent::Leave)
             m_popupWidget->deactivate();
     }
-    if(e->type() == QEvent::StyleChange)
+    if(e->type() == QEvent::StyleChange || e->type() == QEvent::PaletteChange)
         readSettings();
 
     return QWidget::event(e);

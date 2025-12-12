@@ -395,6 +395,17 @@ void QSUiMainWindow::playPause()
         m_player->play();
 }
 
+bool QSUiMainWindow::event(QEvent *event)
+{
+    if(event->type() == QEvent::StyleChange || event->type() == QEvent::PaletteChange)
+    {
+        const QWidgetList widgets = m_statusBar->findChildren<QWidget *>();
+        for(QWidget *w : std::as_const(widgets))
+            w->setPalette(qApp->palette(w));
+    }
+    return QMainWindow::event(event);
+}
+
 void QSUiMainWindow::closeEvent(QCloseEvent *e)
 {
     if(!m_hideOnClose || !m_uiHelper->visibilityControl())
