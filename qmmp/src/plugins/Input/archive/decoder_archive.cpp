@@ -30,16 +30,8 @@ DecoderArchive::DecoderArchive(const QString &url) : m_url(url)
 
 DecoderArchive::~DecoderArchive()
 {
-    if(m_decoder)
-    {
-        delete m_decoder;
-        m_decoder = nullptr;
-    }
-    if(m_input)
-    {
-        delete m_input;
-        m_input = nullptr;
-    }
+    delete m_decoder;
+    delete m_input;
 }
 
 bool DecoderArchive::initialize()
@@ -93,7 +85,7 @@ bool DecoderArchive::initialize()
         }
     }
 
-    if(!factory)
+    if(!factory || factory->properties().noInput)
     {
         qCWarning(plugin, "unable to find decoder factory");
         return false;
@@ -111,6 +103,7 @@ bool DecoderArchive::initialize()
         qCWarning(plugin, "unable to initialize decoder");
         return false;
     }
+    setProperties(m_decoder->properties());
     configure(m_decoder->audioParameters());
     return true;
 }
