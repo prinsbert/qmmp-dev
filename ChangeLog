@@ -7,6 +7,7 @@ Version 2.3.1
 * fixed sorting by file name and path
 * fixed detection of the PCM WAVE files with "JUNK",
   "bext" and "fact" chunks
+* fixed palette change issues
 * updated Chinese Simplified translation (Rain Ding)
 
 Version 2.3.0
