@@ -1,7 +1,7 @@
 project(libwavpack)
 
 # wavpack
-pkg_search_module(WAVPACK wavpack IMPORTED_TARGET)
+pkg_search_module(WAVPACK wavpack>=5.0.0 IMPORTED_TARGET)
 
 SET(libwavpack_SRCS
   decoder_wavpack.cpp
