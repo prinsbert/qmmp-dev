@@ -42,14 +42,14 @@ DecoderProperties DecoderWavPackFactory::properties() const
     properties.shortName = u"wavpack"_s;
     properties.hasAbout = true;
     properties.hasSettings = false;
-    properties.noInput = true;
+    properties.noInput = false;
     properties.protocols = QStringList { u"file"_s, u"wvpack"_s };
     return properties;
 }
 
-Decoder *DecoderWavPackFactory::create(const QString &p, QIODevice *)
+Decoder *DecoderWavPackFactory::create(const QString &p, QIODevice *i)
 {
-    return new DecoderWavPack(p);
+    return new DecoderWavPack(p, i);
 }
 
 QList<TrackInfo *> DecoderWavPackFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *ignoredFiles)

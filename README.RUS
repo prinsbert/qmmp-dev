@@ -92,7 +92,7 @@ Qmmp - Qt-based multimedia player
 - soxr >= 0.1.0 (опционально)
 - libxmp >= 4.2.0 (опционально)
 - libsndfile >= 1.0.22 (опционально)
-- wavpack >= 4.41 (опционально)
+- wavpack >= 5.0 (опционально)
 - pulseaudio >= 0.9.19 (опционально)
 - pipewire >= 0.3.26 (опционально)
 - ffmpeg >= 3.4 (опционально)
