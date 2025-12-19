@@ -2,7 +2,7 @@
 
 LIB_NAMES+='qtbase-qt6 qttools-qt6 qttranslations-qt6 qtimageformats-qt6'
 
-export QT_VERSION=6.7.3
+export QT_VERSION=6.10.1
 export DEV_PATH=/c/devel
 
 

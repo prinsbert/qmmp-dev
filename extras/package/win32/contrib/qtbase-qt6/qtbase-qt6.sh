@@ -8,14 +8,13 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc https://mirror.accum.se/mirror/qt.io/qtproject/archive/qt/6.7/$VERSION/submodules/$NAME-$VERSION.tar.xz
+    wget -nc https://mirror.accum.se/mirror/qt.io/qtproject/archive/qt/6.10/$VERSION/submodules/$NAME-$VERSION.tar.xz
   ;;
   --install)
     cd temp
     tar xvJf $NAME-$VERSION.tar.xz -C $DEV_PATH
     cp ../build.bat $DEV_PATH/$BUILD_ROOT
     cp ../build-win64.bat $DEV_PATH/$BUILD_ROOT
-    cat ../QTBUG-129434.patch | patch -p1 -d $DEV_PATH/$BUILD_ROOT
     cd $DEV_PATH/$BUILD_ROOT
     if [ ${MINGW64_PATH} ]; then
         cmd /c build-win64.bat

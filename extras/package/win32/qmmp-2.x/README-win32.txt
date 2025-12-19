@@ -24,7 +24,7 @@ List of the third-party libraries.
   Name                Version    Web page
 
   MinGW-w64           5.0.0      https://github.com/cristianadam/mingw-builds/
-  Qt                  6.7.3      https://qt.io/
+  Qt                  6.10.1     https://qt.io/
   7-Zip               24.08      https://www.7-zip.org/
   taglib              2.1.1      https://taglib.github.io/
   libmad              0.15.1b    https://www.underbit.com/products/mad/

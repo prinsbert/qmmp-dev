@@ -8,7 +8,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc https://mirror.accum.se/mirror/qt.io/qtproject/archive/qt/6.7/$VERSION/submodules/$NAME-$VERSION.tar.xz
+    wget -nc https://mirror.accum.se/mirror/qt.io/qtproject/archive/qt/6.10/$VERSION/submodules/$NAME-$VERSION.tar.xz
   ;;
   --install)
     cd temp

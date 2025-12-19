@@ -29,7 +29,7 @@ else
     export MINGW_HOST=i686-w64-mingw32
 fi
 
-export LDFLAGS="-lssp"
+#export LDFLAGS="-lssp"
 export STRIP=false
 export JOBS=4
 export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
