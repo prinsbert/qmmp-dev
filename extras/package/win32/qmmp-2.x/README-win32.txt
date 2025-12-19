@@ -33,7 +33,7 @@ List of the third-party libraries.
   flac                1.4.3      https://xiph.org/flac/index.html
   wavpack             5.8.1      https://www.wavpack.com/
   libsndfile          1.2.2      https://github.com/libsndfile/libsndfile
-  opus                1.5.2      https://www.opus-codec.org/
+  opus                1.6        https://www.opus-codec.org/
   opusfile            0.12       https://www.opus-codec.org/
   libbs2b             3.1.0      https://bs2b.sourceforge.net/
   curl                8.17.0     https://curl.haxx.se/
