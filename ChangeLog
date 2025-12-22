@@ -13,6 +13,7 @@ Version 1.7.9
   "bext" and "fact" chunks
 * fixed retrieving song lyrics
 * fixed sorting by file name and path
+* fixed drawing issues in the plugin list
 * fixed color scheme change issues
 * updated Chinese Simplified translation (Rain Ding)
 
