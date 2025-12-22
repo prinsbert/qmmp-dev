@@ -20,47 +20,43 @@
 
 #include <QApplication>
 #include <QMouseEvent>
+#include <QProxyStyle>
 #include "radioitemdelegate_p.h"
+
+class RadioItemStyle : public QProxyStyle
+{
+public:
+    RadioItemStyle() : QProxyStyle() {};
+
+    void drawPrimitive(QStyle::PrimitiveElement element, const QStyleOption *option,
+                       QPainter *painter, const QWidget *widget) const override
+    {
+        if(element == QStyle::PE_IndicatorItemViewItemCheck)
+            element = QStyle::PE_IndicatorRadioButton;
+
+        QProxyStyle::drawPrimitive(element, option, painter, widget);
+    }
+};
 
 RadioItemDelegate::RadioItemDelegate(QObject *parent) : QStyledItemDelegate(parent)
 {
+    m_style = new RadioItemStyle();
+}
+
+RadioItemDelegate::~RadioItemDelegate()
+{
+    delete m_style;
 }
 
 void RadioItemDelegate::paint(QPainter *painter,
                               const QStyleOptionViewItem &option,
                               const QModelIndex &index) const
 {
-    if (hasRadioButton(index))
+    if(hasRadioButton(index))
     {
         QStyleOptionViewItem opt = option;
-
         initStyleOption(&opt, index);
-
-        QStyleOptionButton buttonOption;
-        buttonOption.rect = option.rect;
-        buttonOption.text = index.data(Qt::DisplayRole).toString();
-        buttonOption.state |= QStyle::State_Enabled;
-
-        if (index.data(Qt::CheckStateRole) == Qt::Checked)
-        {
-            buttonOption.state |= QStyle::State_On;
-            buttonOption.state &=~ QStyle::State_Off;
-        }
-        else
-        {
-            buttonOption.state |= QStyle::State_Off;
-            buttonOption.state &=~ QStyle::State_On;
-        }
-
-        buttonOption.palette = opt.palette;
-
-        if(opt.state.testFlag(QStyle::State_Selected))
-        {
-            buttonOption.palette.setBrush(QPalette::WindowText,
-                                          opt.palette.brush(QPalette::HighlightedText));
-            qApp->style()->drawPrimitive(QStyle::PE_PanelItemViewItem, &opt, painter);
-        }
-        qApp->style()->drawControl(QStyle::CE_RadioButton, &buttonOption, painter);
+        m_style->drawControl(QStyle::CE_ItemViewItem, &opt, painter, option.widget);
     }
     else
     {
@@ -71,7 +67,7 @@ void RadioItemDelegate::paint(QPainter *painter,
 QSize RadioItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     QSize size = QStyledItemDelegate::sizeHint(option, index);
-    if (hasRadioButton(index))
+    if(hasRadioButton(index))
     {
         int buttonHeight = qApp->style()->pixelMetric(QStyle::PM_ExclusiveIndicatorHeight, &option);
         size.setHeight(qMax(size.height(), buttonHeight));
@@ -82,9 +78,9 @@ QSize RadioItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QMod
 bool RadioItemDelegate::editorEvent(QEvent *event, QAbstractItemModel *model,
                                     const QStyleOptionViewItem &option, const QModelIndex &index)
 {
-    if (event->type() == QEvent::MouseButtonRelease || event->type() == QEvent::KeyPress)
+    if(event->type() == QEvent::MouseButtonRelease || event->type() == QEvent::KeyPress)
     {
-        if (hasRadioButton(index))
+        if(hasRadioButton(index))
         {
             if(event->type() == QEvent::MouseButtonRelease)
             {

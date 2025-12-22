@@ -34,12 +34,16 @@ class RadioItemDelegate : public QStyledItemDelegate
     Q_OBJECT
 public:
     explicit RadioItemDelegate(QObject *parent = nullptr);
+    ~RadioItemDelegate();
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     bool editorEvent(QEvent *event, QAbstractItemModel *model,
                      const QStyleOptionViewItem &option, const QModelIndex &index) override;
     bool hasRadioButton(const QModelIndex &index) const;
+
+private:
+    QStyle *m_style;
 };
 
 #endif // RADIOITEMDELEGATE_P_H
