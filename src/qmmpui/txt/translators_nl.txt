@@ -19,6 +19,7 @@ Chinees (Vereenvoudigd):
     mabier
     Mingcong Bai
     Mingye Wang
+    Regengong
 
 Tsjechisch:
     Jaroslav Lichtblau
