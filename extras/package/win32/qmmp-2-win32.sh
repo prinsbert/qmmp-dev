@@ -31,6 +31,7 @@ download_qmmp_tarball()
   echo 'downloading qmmp...'
   wget -nc http://qmmp.ylsoftware.com/files/qmmp/2.3/qmmp-${QMMP_VERSION}.tar.bz2
   tar xvjf qmmp-${QMMP_VERSION}.tar.bz2
+  cat ../0001-projectm-fixed-preset-path.patch | patch -p1 -d qmmp-2.3.1
   cd ..
 }
 

@@ -1,0 +1,29 @@
+From bc2c3ec48a4f709aac44d783457f39c1aefda106 Mon Sep 17 00:00:00 2001
+From: Ilya Kotov <iokotov@astralinux.ru>
+Date: Mon, 22 Dec 2025 20:58:10 +0300
+Subject: [PATCH] projectm: fixed preset path
+
+---
+ src/plugins/Visual/projectm/projectmwidget.cpp | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/plugins/Visual/projectm/projectmwidget.cpp b/src/plugins/Visual/projectm/projectmwidget.cpp
+index 100a211..d02a155 100644
+--- a/src/plugins/Visual/projectm/projectmwidget.cpp
++++ b/src/plugins/Visual/projectm/projectmwidget.cpp
+@@ -95,9 +95,9 @@ void ProjectMWidget::initializeGL()
+         settings.textureSize = 1024;
+         settings.windowWidth = 512;
+         settings.windowHeight = 512;
+-        settings.presetURL = QString(qApp->applicationDirPath() + u"/projectM/presets"_s).toLocal8Bit().constData();
+-        settings.titleFontURL = QString(qApp->applicationDirPath() + u"/projectM/fonts/Vera.ttf"_s).toLocal8Bit().constData();
+-        settings.menuFontURL = QString(qApp->applicationDirPath() + u"/projectM/fonts/VeraMono.ttf"_s).toLocal8Bit().constData();
++        settings.presetURL = QString(qApp->applicationDirPath() + u"/../share/projectM/presets"_s).toLocal8Bit().constData();
++        settings.titleFontURL = QString(qApp->applicationDirPath() + u"/../share/projectM/fonts/Vera.ttf"_s).toLocal8Bit().constData();
++        settings.menuFontURL = QString(qApp->applicationDirPath() + u"/../share/projectM/fonts/VeraMono.ttf"_s).toLocal8Bit().constData();
+         settings.smoothPresetDuration = 5;
+         settings.presetDuration = 30;
+         settings.beatSensitivity = 1.0;
+-- 
+2.34.1
+
