@@ -26,12 +26,12 @@
     <message>
         <location filename="../decodersndfilefactory.cpp" line="234"/>
         <source>Compiled against %1</source>
-        <translation>Compilato con %1</translation>
+        <translation>Compilata con %1</translation>
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="235"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 </TS>

@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderaacfactory.cpp" line="39"/>
         <source>AAC Plugin</source>
-        <translation>Modulo AAC</translation>
+        <translation>Estensione AAC</translation>
     </message>
     <message>
         <location filename="../decoderaacfactory.cpp" line="41"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderaacfactory.cpp" line="107"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 </TS>

@@ -21,7 +21,7 @@
     <message>
         <location filename="../outputqtmultimediafactory.cpp" line="58"/>
         <source>Written by: Ivan Ponomarev &lt;ivantrue@gmail.com&gt;</source>
-        <translation>Autori: Ivan Ponomarev &lt;ivantrue@gmail.com&gt;</translation>
+        <translation>Autore: Ivan Ponomarev &lt;ivantrue@gmail.com&gt;</translation>
     </message>
 </context>
 <context>

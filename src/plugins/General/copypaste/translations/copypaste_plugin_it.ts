@@ -54,12 +54,12 @@
     <message>
         <location filename="../copypastefactory.cpp" line="50"/>
         <source>This plugin allows one to copy selected tracks from one playlist to another</source>
-        <translation>Questa estensione permette di copiare le tracce selezionate da una scaletta ad un&apos;altra</translation>
+        <translation>Questa estensione permette di copiare le tracce selezionate da una playlist ad un&apos;altra</translation>
     </message>
     <message>
         <location filename="../copypastefactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 </TS>

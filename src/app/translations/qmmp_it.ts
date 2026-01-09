@@ -6,7 +6,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="46"/>
         <source>Don&apos;t clear the playlist</source>
-        <translation>Non ripulire la scaletta</translation>
+        <translation>Non ripulire la playlist</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="47"/>
@@ -61,12 +61,12 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="57"/>
         <source>Skip forward in playlist</source>
-        <translation>Scorri in avanti nella scaletta</translation>
+        <translation>Scorri in avanti nella playlist</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="58"/>
         <source>Skip backwards in playlist</source>
-        <translation>Scorri indietro nella scaletta</translation>
+        <translation>Scorri indietro nella playlist</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="59"/>
@@ -170,7 +170,7 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="515"/>
         <source>Using Qt version: %1</source>
-        <translation>Utilizza Qt versione: %1</translation>
+        <translation>Usa Qt versione: %1</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="518"/>

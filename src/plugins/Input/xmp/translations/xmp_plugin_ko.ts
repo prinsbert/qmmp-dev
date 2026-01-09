@@ -167,7 +167,7 @@
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
-        <translation>최근접</translation>
+        <translation>최근접 이웃</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="37"/>

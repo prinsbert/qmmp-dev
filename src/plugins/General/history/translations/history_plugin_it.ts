@@ -47,7 +47,7 @@
     <message>
         <location filename="../historyfactory.cpp" line="54"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -178,7 +178,7 @@
     <message>
         <location filename="../historywindow.cpp" line="495"/>
         <source>Add to Playlist</source>
-        <translation>Aggiungi alla scaletta</translation>
+        <translation>Aggiungi alla playlist</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="496"/>

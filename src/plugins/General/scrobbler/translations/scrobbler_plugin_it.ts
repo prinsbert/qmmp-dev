@@ -21,7 +21,7 @@
     <message>
         <location filename="../scrobblerfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -52,7 +52,7 @@
         <location filename="../scrobblersettingsdialog.ui" line="63"/>
         <location filename="../scrobblersettingsdialog.ui" line="95"/>
         <source>Register new session</source>
-        <translation>Registra una nuova sessione</translation>
+        <translation>Registra nuova sessione</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="73"/>

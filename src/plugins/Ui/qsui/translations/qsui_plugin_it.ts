@@ -44,12 +44,12 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="100"/>
         <source>Add to Playlist</source>
-        <translation>Aggiungi alla scaletta</translation>
+        <translation>Aggiungi alla playlist</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="101"/>
         <source>Replace Playlist</source>
-        <translation>Sostituisci scaletta</translation>
+        <translation>Sostituisci playlist</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="102"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="915"/>
         <source>Waveform Seekbar Colors</source>
-        <translation>Colori barra di progresso selezionabile della forma d&apos;onda</translation>
+        <translation>Colori barra di posizionamento con forma d&apos;onda </translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="921"/>
@@ -178,17 +178,17 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="1096"/>
         <source>Fonts</source>
-        <translation>Caratteri</translation>
+        <translation>Tipi di carattere</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1102"/>
         <source>Use system fonts</source>
-        <translation>Usa caratteri di sistema</translation>
+        <translation>Usa tipi di caratteri di sistema</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1176"/>
         <source>Playlist:</source>
-        <translation>Scaletta</translation>
+        <translation>Playlist:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="62"/>
@@ -218,17 +218,17 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="148"/>
         <source>Show song numbers</source>
-        <translation>Mostra il numero dei brani</translation>
+        <translation>Mostra numeri dei brani</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="155"/>
         <source>Show song lengths</source>
-        <translation>Mostra la lunghezza dei brani</translation>
+        <translation>Mostra lunghezza dei brani</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="165"/>
         <source>Align song numbers</source>
-        <translation>Allinea il numero dei brani</translation>
+        <translation>Allinea numeri dei brani</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="87"/>
@@ -248,7 +248,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="1243"/>
         <source>Reset fonts</source>
-        <translation>Ripristina caratteri</translation>
+        <translation>Ripristina tipi di caratteri</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1192"/>
@@ -294,7 +294,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="448"/>
         <source>Playlist Colors</source>
-        <translation>Colori della scaletta</translation>
+        <translation>Colori della playlist</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="470"/>
@@ -394,7 +394,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="1365"/>
         <source>Show &apos;New Playlist&apos; button</source>
-        <translation>Mostra pulsante «Nuova scaletta»</translation>
+        <translation>Mostra pulsante «Nuova playlist»</translation>
     </message>
 </context>
 <context>
@@ -595,7 +595,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="52"/>
         <source>&amp;Repeat Playlist</source>
-        <translation>&amp;Ripeti la scaletta</translation>
+        <translation>&amp;Ripeti playlist</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="52"/>
@@ -605,7 +605,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="53"/>
         <source>&amp;Repeat Track</source>
-        <translation>&amp;Ripeti la traccia</translation>
+        <translation>&amp;Ripeti traccia</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="53"/>
@@ -625,7 +625,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="55"/>
         <source>&amp;No Playlist Advance</source>
-        <translation>&amp;Non avanzare nella scaletta</translation>
+        <translation>&amp;Non avanzare nella playlist</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="55"/>
@@ -635,7 +635,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="56"/>
         <source>&amp;Transit between playlists</source>
-        <translation>Passaggio &amp;tra scalette</translation>
+        <translation>Passaggio &amp;tra playlist</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="57"/>
@@ -650,7 +650,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="58"/>
         <source>&amp;Clear Queue</source>
-        <translation>Pulis&amp;ci la coda</translation>
+        <translation>Pulis&amp;ci coda</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="58"/>
@@ -670,17 +670,17 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="67"/>
         <source>Show Tabs</source>
-        <translation>Mostra le schede</translation>
+        <translation>Mostra schede</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="68"/>
         <source>Block Floating Panels</source>
-        <translation>Blocca i pannelli fluttuanti</translation>
+        <translation>Blocca pannelli fluttuanti</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="69"/>
         <source>Block Toolbars</source>
-        <translation>Blocca le barre degli strumenti</translation>
+        <translation>Blocca barre degli strumenti</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="71"/>
@@ -790,7 +790,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="85"/>
         <source>Invert Selection</source>
-        <translation>Inverti la selezione</translation>
+        <translation>Inverti selezione</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="86"/>
@@ -810,7 +810,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="88"/>
         <source>&amp;View Track Details</source>
-        <translation>&amp;Vedi i dettagli della traccia</translation>
+        <translation>&amp;Vedi dettagli della traccia</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="88"/>
@@ -820,7 +820,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="89"/>
         <source>&amp;New List</source>
-        <translation>&amp;Nuova lista</translation>
+        <translation>&amp;Nuovo elenco</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="89"/>
@@ -830,7 +830,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="90"/>
         <source>&amp;Delete List</source>
-        <translation>&amp;Elimina lista</translation>
+        <translation>&amp;Elimina elenco</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="90"/>
@@ -840,7 +840,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="91"/>
         <source>&amp;Load List</source>
-        <translation>Carica &amp;lista</translation>
+        <translation>Carica e&amp;lenco</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="91"/>
@@ -850,7 +850,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="92"/>
         <source>&amp;Save List</source>
-        <translation>&amp;Salva lista</translation>
+        <translation>&amp;Salva elenco</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="92"/>
@@ -860,7 +860,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="93"/>
         <source>&amp;Rename List</source>
-        <translation>&amp;Rinomina lista</translation>
+        <translation>&amp;Rinomina elenco</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="93"/>
@@ -870,7 +870,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="94"/>
         <source>&amp;Select Next Playlist</source>
-        <translation>&amp;Seleziona la scaletta successiva</translation>
+        <translation>&amp;Seleziona playlist successiva</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="94"/>
@@ -880,7 +880,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="95"/>
         <source>&amp;Select Previous Playlist</source>
-        <translation>&amp;Seleziona la scaletta precedente</translation>
+        <translation>&amp;Seleziona playlist precedente</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="95"/>
@@ -1104,7 +1104,7 @@
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="87"/>
         <source>Playlist</source>
-        <translation>Scaletta</translation>
+        <translation>Playlist</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="93"/>
@@ -1174,12 +1174,12 @@
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="123"/>
         <source>Playlists</source>
-        <translation>Scalette</translation>
+        <translation>Playlists</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="135"/>
         <source>Waveform Seek Bar</source>
-        <translation>Barra di progresso selezionabile della forma d&apos;onda</translation>
+        <translation>Barra di posizionamento con forma d&apos;onda</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="149"/>
@@ -1219,12 +1219,12 @@
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="204"/>
         <source>New Playlist</source>
-        <translation>Nuova scaletta</translation>
+        <translation>Nuova playlist</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="209"/>
         <source>Remove Playlist</source>
-        <translation>Rimuovi scaletta</translation>
+        <translation>Rimuovi playlist</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="214"/>
@@ -1270,7 +1270,7 @@
         <location filename="../forms/qsuimainwindow.ui" line="259"/>
         <location filename="../qsuimainwindow.cpp" line="295"/>
         <source>Rename Playlist</source>
-        <translation>Rinomina scaletta</translation>
+        <translation>Rinomina playlist</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="86"/>
@@ -1280,7 +1280,7 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="295"/>
         <source>Playlist name:</source>
-        <translation>Nome della scaletta</translation>
+        <translation>Nome della playlist</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="335"/>
@@ -1300,7 +1300,7 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="444"/>
         <source>Add new playlist</source>
-        <translation>Aggiungi nuova scaletta</translation>
+        <translation>Aggiungi nuova playlist</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="450"/>
@@ -1345,7 +1345,7 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="555"/>
         <source>Sort List</source>
-        <translation>Riordina la lista</translation>
+        <translation>Ordina elenco</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="557"/>
@@ -1421,17 +1421,17 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="571"/>
         <source>Sort Selection</source>
-        <translation>Riordina la selezione</translation>
+        <translation>Ordina selezione</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="587"/>
         <source>Randomize List</source>
-        <translation>Mescola il contenuto della lista</translation>
+        <translation>Mescola contenuto dell&apos;elenco</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="589"/>
         <source>Reverse List</source>
-        <translation>Inverti la lista</translation>
+        <translation>Inverti elenco</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="630"/>
@@ -1441,7 +1441,7 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="950"/>
         <source>&amp;New PlayList</source>
-        <translation>&amp;Nuova scaletta</translation>
+        <translation>&amp;Nuova playlist</translation>
     </message>
 </context>
 <context>

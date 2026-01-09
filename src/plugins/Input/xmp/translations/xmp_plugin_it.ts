@@ -11,7 +11,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="54"/>
         <source>Module Files</source>
-        <translation>File Module</translation>
+        <translation>File modulo</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="109"/>
@@ -26,12 +26,12 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Compiled against libxmp-%1</source>
-        <translation>Compilato con libxmp-%1</translation>
+        <translation>Compilata con libxmp-%1</translation>
     </message>
 </context>
 <context>

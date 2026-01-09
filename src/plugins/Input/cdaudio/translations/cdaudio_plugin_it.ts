@@ -74,18 +74,17 @@
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="101"/>
         <source>Compiled against libcdio-%1 and libcddb-%2</source>
-        <translation>Compilato con libcdio-%1 e libcddb-%2</translation>
+        <translation>Compilata con libcdio-%1 e libcddb-%2</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="104"/>
         <source>Compiled against libcdio-%1</source>
-        <translation> 88% match 
-Compilato con libcdio-%1</translation>
+        <translation>Compilata con libcdio-%1</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="107"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="108"/>

@@ -21,12 +21,12 @@
     <message>
         <location filename="../udisksfactory.cpp" line="52"/>
         <source>This plugin provides removable devices detection using UDisks</source>
-        <translation>Estensione che permette il rilevamento di dispositivi rimovibili utilizzando UDisks</translation>
+        <translation>Estensione che permette il rilevamento di dispositivi rimovibili usando UDisks</translation>
     </message>
     <message>
         <location filename="../udisksfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -57,12 +57,12 @@
     <message>
         <location filename="../udiskssettingsdialog.ui" line="38"/>
         <source>Add tracks to playlist automatically</source>
-        <translation>Aggiungi automaticamente le tracce alla scaletta</translation>
+        <translation>Aggiungi automaticamente le tracce alla playlist</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation>Rimuovi automaticamente i titoli dalla scaletta</translation>
+        <translation>Rimuovi automaticamente i titoli dalla playlist</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="55"/>
@@ -72,12 +72,12 @@
     <message>
         <location filename="../udiskssettingsdialog.ui" line="64"/>
         <source>Add files to playlist automatically</source>
-        <translation>Aggiungi automaticamente i file alla scaletta</translation>
+        <translation>Aggiungi automaticamente i file alla playlist</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation>Rimuovi automaticamente i file dalla scaletta</translation>
+        <translation>Rimuovi automaticamente i file dalla playlist</translation>
     </message>
 </context>
 </TS>

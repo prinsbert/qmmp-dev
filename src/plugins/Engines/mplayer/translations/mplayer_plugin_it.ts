@@ -31,7 +31,7 @@
     <message>
         <location filename="../mplayerenginefactory.cpp" line="76"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="64"/>
         <source>Video bitrate</source>
-        <translation>Bit al secondo video</translation>
+        <translation>Bit per secondo video</translation>
     </message>
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="64"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="68"/>
         <source>Audio bitrate</source>
-        <translation>Bit al secondo audio</translation>
+        <translation>Bit per secondo audio</translation>
     </message>
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="69"/>

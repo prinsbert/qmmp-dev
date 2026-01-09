@@ -21,12 +21,12 @@
     <message>
         <location filename="../httpinputfactory.cpp" line="54"/>
         <source>Compiled against libcurl-%1</source>
-        <translation>Compilato con libcurl-%1</translation>
+        <translation>Compilata con libcurl-%1</translation>
     </message>
     <message>
         <location filename="../httpinputfactory.cpp" line="55"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -69,7 +69,7 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="50"/>
         <source>This value is used if information about bitrate is &lt;b&gt;not&lt;/b&gt; available.</source>
-        <translation>Questo valore viene usato se &lt;b&gt;non&lt;/b&gt; ci sono informazioni disponibili sui bit al secondo.</translation>
+        <translation>Questo valore viene usato se &lt;b&gt;non&lt;/b&gt; ci sono informazioni disponibili sui bit per secondo.</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="53"/>
@@ -89,7 +89,7 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="97"/>
         <source>This value is used if information about bitrate is available.</source>
-        <translation>Questo valore viene usato se non ci sono informazioni disponibili sui bit al secondo.</translation>
+        <translation>Questo valore viene usato se non ci sono informazioni disponibili sui bit per secondo.</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="100"/>

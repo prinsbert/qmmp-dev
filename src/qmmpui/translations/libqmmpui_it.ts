@@ -283,7 +283,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="58"/>
         <source>Playlist</source>
-        <translation>Scaletta</translation>
+        <translation>Playlist</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="67"/>
@@ -341,7 +341,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="169"/>
         <source>Read tags while loading a playlist</source>
-        <translation>Leggi le etichette al caricamento delle scalette</translation>
+        <translation>Leggi le etichette al caricamento delle playlist</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="193"/>
@@ -397,12 +397,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="336"/>
         <source>Auto-save playlist when modified</source>
-        <translation>Salva automaticamente la scaletta se modificata</translation>
+        <translation>Salva automaticamente la playlist se modificata</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="343"/>
         <source>Clear previous playlist when opening new one</source>
-        <translation>Ripulisci la precedente scaletta quando una nuova viene aperta</translation>
+        <translation>Ripulisci la precedente playlist quando una nuova viene aperta</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="396"/>
@@ -459,7 +459,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="545"/>
         <source>Add files from command line to this playlist:</source>
-        <translation>Aggiungi file dalla riga di comando in questa scaletta:</translation>
+        <translation>Aggiungi file dalla riga di comando in questa playlist:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="562"/>
@@ -499,12 +499,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="660"/>
         <source>Use system font</source>
-        <translation>Usa carattere di sistema</translation>
+        <translation>Usa tipi di caratteri di sistema</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="681"/>
         <source>Font:</source>
-        <translation>Carattere;</translation>
+        <translation>Tipo di carattere:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="706"/>
@@ -580,7 +580,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="992"/>
         <source>Use  peak info to prevent clipping</source>
-        <translation>Utilizza informazioni di picco per evitare tagli</translation>
+        <translation>Usa informazioni di picco per evitare tagli</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1008"/>
@@ -595,7 +595,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="1067"/>
         <source>Use software volume control</source>
-        <translation>Utilizza il controllo volume del programma</translation>
+        <translation>Usa il controllo volume del programma</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1107"/>
@@ -1054,7 +1054,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="337"/>
         <source>Bitrate</source>
-        <translation>bit al secondo</translation>
+        <translation>Bit al secondo</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="337"/>
@@ -1236,7 +1236,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="70"/>
         <source>Bitrate</source>
-        <translation>bit al secondo</translation>
+        <translation>Bit per secondo</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="71"/>
@@ -1318,7 +1318,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>Duration | Format | Bitrate | Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Durata | Formato | Bit per secondo | Campionamento</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
@@ -1336,7 +1336,7 @@
     <message>
         <location filename="../playlistdownloader.cpp" line="123"/>
         <source>Unsupported playlist format</source>
-        <translation>Formato di scaletta non supportato</translation>
+        <translation>Formato di playlist non supportato</translation>
     </message>
 </context>
 <context>
@@ -1363,7 +1363,7 @@
         <location filename="../playlistmanager.cpp" line="177"/>
         <location filename="../playlistmanager.cpp" line="329"/>
         <source>Playlist</source>
-        <translation>Scaletta</translation>
+        <translation>Playlist</translation>
     </message>
 </context>
 <context>
@@ -1389,7 +1389,7 @@
     <message>
         <location filename="../qmmpuisettings.cpp" line="64"/>
         <source>Playlist</source>
-        <translation>Scaletta</translation>
+        <translation>Playlist</translation>
     </message>
 </context>
 <context>
@@ -1533,18 +1533,18 @@
         <location filename="../uihelper.cpp" line="178"/>
         <location filename="../uihelper.cpp" line="202"/>
         <source>Playlist Files</source>
-        <translation>File di scaletta</translation>
+        <translation>File di playlist</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="180"/>
         <source>Open Playlist</source>
-        <translation>Apri scaletta</translation>
+        <translation>Apri playlists</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="205"/>
         <location filename="../uihelper.cpp" line="224"/>
         <source>Save Playlist</source>
-        <translation>Salva scaletta</translation>
+        <translation>Salva playlist</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="224"/>

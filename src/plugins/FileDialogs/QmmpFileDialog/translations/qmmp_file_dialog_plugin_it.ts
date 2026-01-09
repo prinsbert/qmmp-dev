@@ -63,7 +63,7 @@
         <location filename="../qmmpfiledialog.cpp" line="70"/>
         <location filename="../qmmpfiledialog.cpp" line="80"/>
         <source>Qmmp File Dialog</source>
-        <translation>Finestra di dialogo Qmmp</translation>
+        <translation>Finestra di dialogo di Qmmp</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.cpp" line="79"/>
@@ -106,7 +106,8 @@ Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
         <location filename="../qmmpfiledialogimpl.cpp" line="465"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
-        <translation>%1 esiste già. Vuoi sostituirlo?</translation>
+        <translation>%1 esiste già.
+Vuoi sostituirlo?</translation>
     </message>
 </context>
 </TS>

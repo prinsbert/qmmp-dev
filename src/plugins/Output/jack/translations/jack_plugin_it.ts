@@ -21,7 +21,7 @@
     <message>
         <location filename="../outputjackfactory.cpp" line="56"/>
         <source>Written by: Yuriy Zhuravlev &lt;slalkerg@gmail.com&gt;</source>
-        <translation>Autori: Yuriy Zhuravlev &lt;slalkerg@gmail.com&gt;</translation>
+        <translation>Autore: Yuriy Zhuravlev &lt;slalkerg@gmail.com&gt;</translation>
     </message>
 </context>
 </TS>

@@ -60,7 +60,7 @@
     <message>
         <location filename="../libraryfactory.cpp" line="87"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -191,7 +191,7 @@
     <message>
         <location filename="../librarysettingsdialog.cpp" line="65"/>
         <source>Select Directories for Scanning</source>
-        <translation>Seleziona le cartelle da controllare</translation>
+        <translation>Seleziona cartelle da controllare</translation>
     </message>
 </context>
 <context>
@@ -199,17 +199,17 @@
     <message>
         <location filename="../librarywidget.cpp" line="51"/>
         <source>&amp;Add to Playlist</source>
-        <translation>&amp;Aggiungi alla scaletta</translation>
+        <translation>&amp;Aggiungi alla playlist</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="52"/>
         <source>Replace Playlist</source>
-        <translation>Sostituisci scaletta</translation>
+        <translation>Sostituisci playlist</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="53"/>
         <source>&amp;View Track Details</source>
-        <translation>&amp;Vedi i dettagli della traccia</translation>
+        <translation>&amp;Vedi dettagli della traccia</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="55"/>
