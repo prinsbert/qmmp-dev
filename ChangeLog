@@ -1,6 +1,11 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 0.12.23
+* added IMA ADPCM support
+* fixed default output under Windows
+* fixed retrieving song lyrics
+
 Version 0.12.22
 * added support for float PCM format in the dsound and wasapi plugins
 * added AIFF-C support
