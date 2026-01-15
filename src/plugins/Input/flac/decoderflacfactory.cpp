@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -39,9 +39,33 @@
 
 bool DecoderFLACFactory::canDecode(QIODevice *input) const
 {
-    char buf[36];
-    if (input->peek(buf, 36) != 36)
+    char buf[36] = { 0 };
+    if(input->peek(buf, sizeof(buf)) != sizeof(buf))
         return false;
+
+    if(!memcmp(buf, "ID3", 3))
+    {
+        TagLib::ByteVector byteVector(buf, sizeof(buf));
+        TagLib::ID3v2::Header header(byteVector);
+
+        if(input->isSequential())
+        {
+            int peekSize = header.completeTagSize() + sizeof(buf);
+            char peekBuf[peekSize];
+            if(input->peek(peekBuf, peekSize) != peekSize)
+                return false;
+            memcpy(buf, peekBuf + header.completeTagSize(), sizeof(buf));
+        }
+        else
+        {
+            input->seek(header.completeTagSize());
+            int peekSize = input->peek(buf, sizeof(buf));
+            input->seek(0); //restore position
+            if(peekSize != sizeof(buf))
+                return false;
+        }
+    }
+
     if(!memcmp(buf, "fLaC", 4)) //native flac
         return true;
     if(!memcmp(buf, "OggS", 4) && !memcmp(buf + 29, "FLAC", 4)) //ogg flac
