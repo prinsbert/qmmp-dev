@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -36,12 +36,8 @@ VorbisMetaDataModel::VorbisMetaDataModel(const QString &path, bool readOnly)
 #endif
 {
     m_path = path;
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     m_stream = new TagLib::FileStream(QStringToFileName(path), readOnly);
     m_file = new TagLib::Ogg::Vorbis::File(m_stream);
-#else
-    m_file = new TagLib::Ogg::Vorbis::File(QStringToFileName(path));
-#endif
     m_tag = m_file->tag();
     m_tags << new VorbisCommentModel(this);
 }
@@ -52,9 +48,7 @@ VorbisMetaDataModel::~VorbisMetaDataModel()
         delete m_tags.takeFirst();
 
     delete m_file;
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     delete m_stream;
-#endif
 }
 
 QList<TagModel* > VorbisMetaDataModel::tags() const

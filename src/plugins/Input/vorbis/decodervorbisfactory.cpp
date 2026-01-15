@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,9 +23,7 @@
 #include <taglib/tag.h>
 #include <taglib/fileref.h>
 #include <taglib/vorbisfile.h>
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
-#endif
 #include "decoder_vorbis.h"
 #include "vorbismetadatamodel.h"
 #include "decodervorbisfactory.h"
@@ -72,12 +70,8 @@ QList<TrackInfo *> DecoderVorbisFactory::createPlayList(const QString &path, Tra
     if(parts == TrackInfo::NoParts)
         return QList<TrackInfo*>() << info;
 
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream stream(QStringToFileName(path), true);
     TagLib::Ogg::Vorbis::File fileRef(&stream);
-#else
-    TagLib::Ogg::Vorbis::File fileRef(QStringToFileName(path));
-#endif
 
     if((parts & TrackInfo::MetaData) && fileRef.tag() && !fileRef.tag()->isEmpty())
     {

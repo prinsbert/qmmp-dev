@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -29,10 +29,8 @@
 #include <taglib/xiphcomment.h>
 #include <taglib/tmap.h>
 #include <taglib/id3v2header.h>
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
 #include <taglib/id3v2framefactory.h>
-#endif
 #include <QObject>
 #include <QFile>
 #include <QIODevice>
@@ -306,12 +304,8 @@ bool DecoderFLAC::initialize()
             QString p = m_path;
             p.remove("flac://");
             p.remove(QRegExp("#\\d+$"));
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
             TagLib::FileStream stream(QStringToFileName(p), true);
             TagLib::FLAC::File fileRef(&stream, TagLib::ID3v2::FrameFactory::instance());
-#else
-            TagLib::FLAC::File fileRef(QStringToFileName(p));
-#endif
             //looking for cuesheet comment
             TagLib::Ogg::XiphComment *xiph_comment = fileRef.xiphComment();
 

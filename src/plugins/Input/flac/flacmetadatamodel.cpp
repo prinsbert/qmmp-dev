@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -38,9 +38,7 @@ FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly)
 #endif
 {
     m_file = 0;
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     m_stream = 0;
-#endif
     m_tag = 0;
 
     if(path.startsWith("flac://"))
@@ -55,23 +53,15 @@ FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly)
 
     if(m_path.endsWith(".flac", Qt::CaseInsensitive))
     {
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
         m_stream = new TagLib::FileStream(QStringToFileName(m_path), readOnly);
         TagLib::FLAC::File *f = new TagLib::FLAC::File(m_stream, TagLib::ID3v2::FrameFactory::instance());
-#else
-        TagLib::FLAC::File *f = new TagLib::FLAC::File(QStringToFileName(m_path));
-#endif
         m_tag = f->xiphComment();
         m_file = f;
     }
     else if(m_path.endsWith(".oga", Qt::CaseInsensitive))
     {
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
         m_stream = new TagLib::FileStream(QStringToFileName(m_path), readOnly);
         TagLib::Ogg::FLAC::File *f = new TagLib::Ogg::FLAC::File(m_stream);
-#else
-        TagLib::Ogg::FLAC::File *f = new TagLib::Ogg::FLAC::File(QStringToFileName(m_path));
-#endif
         m_tag = f->tag();
         m_file = f;
     }
@@ -87,15 +77,8 @@ FLACMetaDataModel::~FLACMetaDataModel()
 {
     while(!m_tags.isEmpty())
         delete m_tags.takeFirst();
-    if(m_file)
-    {
-        delete m_file;
-        m_file = 0;
-    }
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
-    if(m_stream)
-        delete m_stream;
-#endif
+    delete m_file;
+    delete m_stream;
 }
 
 QList<TagModel* > FLACMetaDataModel::tags() const

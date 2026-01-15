@@ -1,11 +1,11 @@
 /***************************************************************************
- *   Copyright(C) 2009-2022 by Ilya Kotov                                 *
+ *   Copyright(C) 2009-2026 by Ilya Kotov                                  *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
  *   the Free Software Foundation; either version 2 of the License, or     *
- *  (at your option) any later version.                                   *
+ *   (at your option) any later version.                                   *
  *                                                                         *
  *   This program is distributed in the hope that it will be useful,       *
  *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
@@ -40,12 +40,8 @@
 MPEGMetaDataModel::MPEGMetaDataModel(bool using_rusxmms, const QString &path, bool readOnly) :
     MetaDataModel(readOnly, MetaDataModel::IS_COVER_EDITABLE)
 {
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     m_stream = new TagLib::FileStream(QStringToFileName(path), readOnly);
     m_file = new TagLib::MPEG::File(m_stream, TagLib::ID3v2::FrameFactory::instance());
-#else
-    m_file = new TagLib::MPEG::File(QStringToFileName(path));
-#endif
     m_tags << new MpegFileTagModel(using_rusxmms, m_file, TagLib::MPEG::File::ID3v1);
     m_tags << new MpegFileTagModel(using_rusxmms, m_file, TagLib::MPEG::File::ID3v2);
     m_tags << new MpegFileTagModel(using_rusxmms, m_file, TagLib::MPEG::File::APE);
@@ -56,9 +52,7 @@ MPEGMetaDataModel::~MPEGMetaDataModel()
     while(!m_tags.isEmpty())
         delete m_tags.takeFirst();
     delete m_file;
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     delete m_stream;
-#endif
 }
 
 QList<MetaDataItem> MPEGMetaDataModel::extraProperties() const

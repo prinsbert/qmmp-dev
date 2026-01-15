@@ -26,10 +26,8 @@
 #include <taglib/oggflacfile.h>
 #include <taglib/xiphcomment.h>
 #include <taglib/tmap.h>
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
 #include <taglib/id3v2framefactory.h>
-#endif
 #include "cueparser.h"
 #include "decoder_flac.h"
 #include "flacmetadatamodel.h"
@@ -124,27 +122,17 @@ QList<TrackInfo*> DecoderFLACFactory::createPlayList(const QString &path, TrackI
     TagLib::FLAC::File *flacFile = 0;
     TagLib::Ogg::FLAC::File *oggFlacFile = 0;
 
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream stream(QStringToFileName(path), true);
-#endif
 
     if(path.endsWith(".flac", Qt::CaseInsensitive))
     {
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
         flacFile = new TagLib::FLAC::File(&stream, TagLib::ID3v2::FrameFactory::instance());
-#else
-        flacFile = new TagLib::FLAC::File(QStringToFileName(path));
-#endif
         tag = flacFile->xiphComment();
         ap = flacFile->audioProperties();
     }
     else if(path.endsWith(".oga", Qt::CaseInsensitive))
     {
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
         oggFlacFile = new TagLib::Ogg::FLAC::File(&stream);
-#else
-        oggFlacFile = new TagLib::Ogg::FLAC::File(QStringToFileName(path));
-#endif
         tag = oggFlacFile->tag();
         ap = oggFlacFile->audioProperties();
     }

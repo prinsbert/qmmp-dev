@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -24,9 +24,7 @@
 #include <taglib/fileref.h>
 #include <taglib/mpcfile.h>
 #include <taglib/apetag.h>
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
-#endif
 #include "mpcmetadatamodel.h"
 #include "decoder_mpc.h"
 #include "decodermpcfactory.h"
@@ -74,12 +72,8 @@ QList<TrackInfo *> DecoderMPCFactory::createPlayList(const QString &path, TrackI
     if(parts == TrackInfo::NoParts)
         return QList<TrackInfo*>() << info;
 
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream stream(QStringToFileName(path), true);
     TagLib::MPC::File fileRef(&stream);
-#else
-    TagLib::MPC::File fileRef(QStringToFileName(path));
-#endif
 
     if((parts & TrackInfo::MetaData) && fileRef.APETag() && !fileRef.APETag()->isEmpty())
     {
