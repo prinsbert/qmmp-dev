@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,9 +23,7 @@
 #include <QRegExp>
 #include <taglib/apefile.h>
 #include <taglib/apetag.h>
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
-#endif
 #include "cueparser.h"
 #include "decoder_ffap.h"
 #include "decoder_ffapcue.h"
@@ -75,13 +73,8 @@ bool DecoderFFapCUE::initialize()
     p.remove("ape://");
     p.remove(QRegExp("#\\d+$"));
 
-
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream stream(QStringToFileName(p), true);
     TagLib::APE::File file(&stream);
-#else
-    TagLib::APE::File file(QStringToFileName(p));
-#endif
 
     TagLib::APE::Tag *tag = file.APETag();
 

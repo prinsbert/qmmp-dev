@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -28,9 +28,7 @@
 
 FFapMetaDataModel::FFapMetaDataModel(const QString &path, bool readOnly) : MetaDataModel(true)
 {
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     m_stream = 0;
-#endif
     m_file = 0;
     if(path.contains("://"))
     {
@@ -38,22 +36,14 @@ FFapMetaDataModel::FFapMetaDataModel(const QString &path, bool readOnly) : MetaD
         p.remove("ape://");
         p.remove(QRegExp("#\\d+$"));
         m_path = p;
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
         m_stream = new TagLib::FileStream(QStringToFileName(p), true);
         m_file = new TagLib::APE::File(m_stream);
-#else
-        m_file = new TagLib::APE::File(QStringToFileName(p));
-#endif
     }
     else
     {
         m_path = path;
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
         m_stream = new TagLib::FileStream(QStringToFileName(path), readOnly);
         m_file = new TagLib::APE::File(m_stream);
-#else
-        m_file = new TagLib::APE::File(QStringToFileName(path));
-#endif
         m_tags << new FFapFileTagModel(m_file, TagLib::APE::File::ID3v1);
         m_tags << new FFapFileTagModel(m_file, TagLib::APE::File::APE);
         setReadOnly(readOnly);
@@ -65,9 +55,7 @@ FFapMetaDataModel::~FFapMetaDataModel()
     while(!m_tags.isEmpty())
         delete m_tags.takeFirst();
     delete m_file;
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     delete m_stream;
-#endif
 }
 
 QList<MetaDataItem> FFapMetaDataModel::extraProperties() const
@@ -76,9 +64,7 @@ QList<MetaDataItem> FFapMetaDataModel::extraProperties() const
     TagLib::APE::Properties *ap = m_file->audioProperties();
     if(ap)
     {
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
         ep << MetaDataItem(tr("Samples"), ap->sampleFrames());
-#endif
         ep << MetaDataItem(tr("Version"), ap->version());
     }
     return ep;

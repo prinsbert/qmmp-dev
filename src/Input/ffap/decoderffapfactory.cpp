@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,9 +23,7 @@
 #include <QtPlugin>
 #include <taglib/apefile.h>
 #include <taglib/apetag.h>
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
-#endif
 #include "ffapmetadatamodel.h"
 #include "decoderffapfactory.h"
 #include "decoder_ffap.h"
@@ -90,12 +88,8 @@ QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, Track
     if(parts == TrackInfo::NoParts)
         return QList<TrackInfo *>() << info;
 
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream stream(QStringToFileName(path), true);
     TagLib::APE::File file(&stream);
-#else
-    TagLib::APE::File file(QStringToFileName(path));
-#endif
     TagLib::APE::Tag *tag = file.APETag();
     TagLib::APE::Properties *ap = file.audioProperties();
 
