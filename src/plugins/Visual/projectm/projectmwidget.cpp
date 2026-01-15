@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   Copyright (C) 2007 by  projectM team                                  *
@@ -44,12 +44,10 @@ ProjectMWidget::ProjectMWidget(QListWidget *listWidget, QWidget *parent)
     m_projectM = 0;
     m_menu = new QMenu(this);
     connect(SoundCore::instance(), SIGNAL(trackInfoChanged()), SLOT(updateTitle()));
-#if QT_VERSION >= 0x040700
     qDebug("ProjectMWidget: opengl version: %d.%d",
            context()->format().majorVersion(),
            context()->format().minorVersion());
     createActions();
-#endif
 }
 
 

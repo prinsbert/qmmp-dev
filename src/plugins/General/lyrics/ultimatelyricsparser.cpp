@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2019-2021 by Ilya Kotov                                 *
+ *   Copyright (C) 2019-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   Based on Amarok 2 Ultimate Lyrics script                              *
@@ -24,9 +24,7 @@
 #include <QXmlStreamReader>
 #include <QFile>
 #include <QtDebug>
-#if (QT_VERSION < QT_VERSION_CHECK(5, 7, 0)) //qAsConst template
 #include <qmmp/qmmp.h>
-#endif
 #include "ultimatelyricsparser.h"
 
 UltimateLyricsParser::UltimateLyricsParser()

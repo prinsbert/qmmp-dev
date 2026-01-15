@@ -67,7 +67,7 @@ Qmmp - Qt-based multimedia player
 - сканер ReplayGain
 
 Вимоги:
-- Qt >= 4.6
+- Qt >= 4.8
 - tar, unzip, bzip2, gzip
 - libmad
 - libvorbis

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2025 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -151,9 +151,7 @@ void ListWidget::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     m_drawer.fillBackground(&painter, width(), height());
-#if QT_VERSION >= 0x040700
     painter.setLayoutDirection(Qt::LayoutDirectionAuto);
-#endif
     bool rtl = (layoutDirection() == Qt::RightToLeft);
 
     painter.setClipRect(5,0,width() - 9, height());

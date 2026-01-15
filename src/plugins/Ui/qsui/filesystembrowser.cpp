@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -79,11 +79,7 @@ FileSystemBrowser::FileSystemBrowser(QWidget *parent) :
     m_fileSystemModel = new QFileSystemModel(this);
     m_fileSystemModel->setReadOnly(true);
     m_fileSystemModel->setNameFilterDisables(false);
-#if QT_VERSION >= 0x040700
     m_fileSystemModel->setFilter(QDir::AllDirs | QDir::Files | QDir::NoDot);
-#else
-    m_fileSystemModel->setFilter(QDir::AllDirs | QDir::Files);
-#endif
 
     m_proxyModel = new  FileSystemFilterProxyModel(this);
     m_proxyModel->setDynamicSortFilter(true);

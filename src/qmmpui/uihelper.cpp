@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -231,34 +231,7 @@ void UiHelper::showMainWindow()
 
 void UiHelper::exit()
 {
-#if QT_VERSION < 0x040700
-    bool closed = true;
-    QWidget *w;
-
-    while ((w = qApp->activeModalWidget()) && closed)
-    {
-        if (!w->isVisible())
-            break;
-
-        closed = w->close();
-    }
-
-    QWidgetList list = qApp->topLevelWidgets();
-
-    while (closed && !list.isEmpty())
-    {
-        w = list.takeLast();
-
-        if (w->isVisible() && w->windowType() != Qt::Desktop)
-        {
-            closed = w->close();
-            list = qApp->topLevelWidgets();
-            list.removeOne(w);
-        }
-    }
-#else
     qApp->closeAllWindows();
-#endif
     qApp->quit();
 }
 
