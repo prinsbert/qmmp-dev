@@ -36,6 +36,11 @@ export NO_COLOR=1
 
 case $1 in
   --download)
+    
+    if [ -n "$2" ]; then
+        LIB_NAMES=$2
+    fi
+   
     for NAME in $LIB_NAMES
     do
         echo 'downloading '${NAME}'...'
@@ -102,7 +107,7 @@ case $1 in
   ;;
   *)
     echo "Commands:"
-    echo "--download"
+    echo "--download <name>"
     echo "--install <name>"
     echo "--install-win64 <name>"
     echo "--clean"
