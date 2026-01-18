@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=adplug
-VERSION=2.3.3
+VERSION=2.4
 
 case $1 in
   --download)
