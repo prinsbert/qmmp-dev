@@ -2,13 +2,13 @@
 
 LIB_NAMES+='pkg-config yasm libmad mpg123 libogg libvorbis flac libsndfile opus opusfile '
 LIB_NAMES+='libbs2b curl libcdio libcdio-paranoia libgnurx libcddb libgme libxmp musepack '
-LIB_NAMES+='glew projectm xa enca soxr librcd 7z '
+LIB_NAMES+='xa enca soxr librcd 7z '
 LIB_NAMES+='libbinio adplug ' #adplug
 
 if [ -n "`uname | grep 5.1`"  ]; then
-    LIB_NAMES+='taglib-1.13 ffmpeg-3.4 libsidplayfp-2.3 wavpack-5.6'
+    LIB_NAMES+='taglib-1.13 ffmpeg-3.4 libsidplayfp-2.3 wavpack-5.6 glew-2.2 projectm'
 else
-    LIB_NAMES+='utf8cpp taglib ffmpeg libsidplayfp wavpack'
+    LIB_NAMES+='utf8cpp taglib ffmpeg libsidplayfp wavpack glew projectm'
 fi
 
 export DEV_PATH=/c/devel
