@@ -31,7 +31,7 @@ download_qmmp_tarball()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp...'
-  wget -nc http://qmmp.ylsoftware.com/files/qmmp/1.7/qmmp-${QMMP_VERSION}.tar.bz2
+  wget -nc https://qmmp.ylsoftware.com/files/qmmp/1.7/qmmp-${QMMP_VERSION}.tar.bz2
   tar xvjf qmmp-${QMMP_VERSION}.tar.bz2
   cd ..
 }
@@ -41,7 +41,7 @@ download_plugins_tarball()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp-plugin-pack...'
-  wget -nc http://qmmp.ylsoftware.com/files/qmmp-plugin-pack/1.7/qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}.tar.bz2
+  wget -nc https://qmmp.ylsoftware.com/files/qmmp-plugin-pack/1.7/qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}.tar.bz2
   tar xvjf qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}.tar.bz2
   cd ..
 }
