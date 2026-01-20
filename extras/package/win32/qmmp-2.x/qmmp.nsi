@@ -274,7 +274,7 @@ Section "-General Section"
         WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayName" "Qt-based Multimedia Player"
 !endif
 	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "UninstallString" "$INSTDIR\Uninstall.exe"
-	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayIcon" "$INSTDIR\qmmp.exe,0"
+	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayIcon" "$INSTDIR\bin\qmmp.exe,0"
 	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayVersion" "${QMMP_VERSION}"
 	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "Publisher" "Qmmp Development Team"
 	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "InstallLocation" "$INSTDIR"
