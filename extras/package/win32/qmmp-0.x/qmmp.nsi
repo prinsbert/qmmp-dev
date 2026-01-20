@@ -25,6 +25,7 @@
  ;Includes
  
   !include WinVer.nsh
+  !include FileFunc.nsh
 
 ;--------------------------------
 ;General
@@ -220,6 +221,10 @@ Section "-General Section"
 	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "URLUpdateInfo" "https://qmmp.ylsoftware.com"
 	WriteRegDWORD HKLM ${QMMP_UNINSTALL_KEY} "NoModify" 1
 	WriteRegDWORD HKLM ${QMMP_UNINSTALL_KEY} "NoRepair" 1
+
+        ${GetSize} "$INSTDIR" "/S=0K" $0 $1 $2
+        IntFmt $0 "0x%08X" $0
+        WriteRegDWORD HKLM ${QMMP_UNINSTALL_KEY} "EstimatedSize" "$0"
   
 	;Default Programs Registration (Vista & later)
 
