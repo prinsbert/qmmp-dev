@@ -37,47 +37,82 @@
         <translation>连接设置</translation>
     </message>
     <message>
-        <location filename="../shoutsettingsdialog.ui" line="32"/>
+        <location filename="../shoutsettingsdialog.ui" line="29"/>
+        <source>Connection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../shoutsettingsdialog.ui" line="35"/>
         <source>Host:</source>
         <translation>主机：</translation>
     </message>
     <message>
-        <location filename="../shoutsettingsdialog.ui" line="42"/>
+        <location filename="../shoutsettingsdialog.ui" line="45"/>
         <source>Port:</source>
         <translation>端口：</translation>
     </message>
     <message>
-        <location filename="../shoutsettingsdialog.ui" line="56"/>
+        <location filename="../shoutsettingsdialog.ui" line="59"/>
         <source>Mount point:</source>
         <translation>挂载点：</translation>
     </message>
     <message>
-        <location filename="../shoutsettingsdialog.ui" line="66"/>
+        <location filename="../shoutsettingsdialog.ui" line="69"/>
         <source>User:</source>
         <translation>用户：</translation>
     </message>
     <message>
-        <location filename="../shoutsettingsdialog.ui" line="76"/>
+        <location filename="../shoutsettingsdialog.ui" line="79"/>
         <source>Password:</source>
         <translation>密码：</translation>
     </message>
     <message>
-        <location filename="../shoutsettingsdialog.ui" line="86"/>
+        <location filename="../shoutsettingsdialog.ui" line="99"/>
+        <source>Audio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../shoutsettingsdialog.ui" line="105"/>
         <source>Quality:</source>
         <translation>质量：</translation>
     </message>
     <message>
-        <location filename="../shoutsettingsdialog.ui" line="106"/>
+        <location filename="../shoutsettingsdialog.ui" line="125"/>
         <source>Sample rate:</source>
         <translation>取样率：</translation>
     </message>
     <message>
-        <location filename="../shoutsettingsdialog.ui" line="136"/>
+        <location filename="../shoutsettingsdialog.ui" line="154"/>
+        <source>Metadata</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../shoutsettingsdialog.ui" line="160"/>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../shoutsettingsdialog.ui" line="170"/>
+        <source>URL:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../shoutsettingsdialog.ui" line="180"/>
+        <source>Genre:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../shoutsettingsdialog.ui" line="190"/>
+        <source>Description:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../shoutsettingsdialog.ui" line="89"/>
         <source>Public</source>
         <translation>公用</translation>
     </message>
     <message>
-        <location filename="../shoutsettingsdialog.ui" line="143"/>
+        <location filename="../shoutsettingsdialog.ui" line="132"/>
         <source>Hz</source>
         <translation>赫兹</translation>
     </message>
