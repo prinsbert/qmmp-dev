@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017-2025 by Ilya Kotov                                 *
+ *   Copyright (C) 2017-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -38,6 +38,10 @@ ShoutSettingsDialog::ShoutSettingsDialog(QWidget *parent) :
     m_ui->publicCheckBox->setChecked(settings.value(u"public"_s, false).toBool());
     m_ui->qualitySpinBox->setValue(settings.value(u"vorbis_quality"_s, 0.8).toDouble());
     m_ui->srateSpinBox->setValue(settings.value(u"sample_rate"_s, 44100).toInt());
+    m_ui->nameLineEdit->setText(settings.value(u"name"_s).toString());
+    m_ui->urlLineEdit->setText(settings.value(u"url"_s).toString());
+    m_ui->genreLineEdit->setText(settings.value(u"genre"_s).toString());
+    m_ui->descriptionLineEdit->setText(settings.value(u"description"_s).toString());
     settings.endGroup();
 }
 
@@ -58,6 +62,10 @@ void ShoutSettingsDialog::accept()
     settings.setValue(u"public"_s, m_ui->publicCheckBox->isChecked());
     settings.setValue(u"vorbis_quality"_s, m_ui->qualitySpinBox->value());
     settings.setValue(u"sample_rate"_s, m_ui->srateSpinBox->value());
+    settings.setValue(u"name"_s, m_ui->nameLineEdit->text());
+    settings.setValue(u"url"_s, m_ui->urlLineEdit->text());
+    settings.setValue(u"genre"_s, m_ui->genreLineEdit->text());
+    settings.setValue(u"description"_s, m_ui->descriptionLineEdit->text());
     settings.endGroup();
     QDialog::accept();
 }
