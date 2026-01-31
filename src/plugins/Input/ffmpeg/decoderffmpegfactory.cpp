@@ -89,8 +89,11 @@ bool DecoderFFmpegFactory::canDecode(QIODevice *i) const
         return true;
     if(filters.contains(u"*.tak"_s) && formats.contains(u"tak"_s))
         return true;
+    if(filters.contains(u"*.dsf"_s) && formats.contains(u"dsf"_s))
+        return true;
     if(formats.contains(u"matroska"_s) && avcodec_find_decoder(AV_CODEC_ID_OPUS) && i->isSequential()) //audio from YouTube
         return true;
+
     return false;
 }
 
