@@ -1,13 +1,13 @@
 #!/bin/sh
 
 NAME=libcdio
-VERSION=2.1.0
+VERSION=2.3.0
 
 case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc http://ftp.gnu.org/gnu/libcdio/$NAME-$VERSION.tar.bz2
+    wget -nc https://github.com/libcdio/libcdio/releases/download/$VERSION/$NAME-$VERSION.tar.bz2
   ;;
   --install)
     cd temp
