@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>EditStreamDialog</name>
     <message>
         <location filename="../editstreamdialog.ui" line="14"/>
         <source>Edit Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Stream bearbeiten</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="34"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../streambrowser.cpp" line="33"/>
         <source>Add Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Stream hinzufügen</translation>
     </message>
     <message>
         <location filename="../streambrowser.cpp" line="34"/>
@@ -176,7 +176,7 @@
     <message>
         <location filename="../streamwindow.cpp" line="278"/>
         <source>Edit Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Stream bearbeiten</translation>
     </message>
 </context>
 </TS>

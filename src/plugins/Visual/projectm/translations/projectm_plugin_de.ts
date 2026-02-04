@@ -90,7 +90,7 @@
         <location filename="../projectmwidget.cpp" line="145"/>
         <location filename="../projectmwidget.cpp" line="157"/>
         <source>&amp;Show Song Title</source>
-        <translation>Liedna&amp;me anzeigen</translation>
+        <translation>Titelna&amp;me anzeigen</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="145"/>

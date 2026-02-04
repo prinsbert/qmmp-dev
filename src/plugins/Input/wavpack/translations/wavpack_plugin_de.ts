@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>DecoderWavPackFactory</name>
     <message>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="182"/>
         <source>WavPack library version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Version der WavPack-Bibliothek: %1</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="184"/>

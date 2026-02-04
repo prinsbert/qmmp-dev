@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>Library</name>
     <message>
@@ -55,7 +55,7 @@
     <message>
         <location filename="../libraryfactory.cpp" line="86"/>
         <source>This plugin represents a database to store music files tags for a fast access</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieses Modul stellt eine Datenbank bereits, in der Metadaten von Musikdateien gespeichert werden, um einen schnellen Zugriff darauf zu ermöglichen</translation>
     </message>
     <message>
         <location filename="../libraryfactory.cpp" line="87"/>
@@ -68,7 +68,7 @@
     <message>
         <location filename="../librarymodel.cpp" line="206"/>
         <source>%1 - %2</source>
-        <translation>%1 - %2</translation>
+        <translation>%1 – %2</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="356"/>
@@ -78,82 +78,82 @@
     <message>
         <location filename="../librarymodel.cpp" line="356"/>
         <source>Unable to connect to database</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbindung zur Datenbank nicht möglich</translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="377"/>
         <source>%n day(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n Tag</numerusform>
+            <numerusform>%n Tage</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="378"/>
         <source>%n hour(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n Stunde</numerusform>
+            <numerusform>%n Stunden</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="379"/>
         <source>%n minute(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n Minute</numerusform>
+            <numerusform>%n Minuten</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="380"/>
         <source>%n second(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n Sekunde</numerusform>
+            <numerusform>%n Sekunden</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="384"/>
         <source>%1 %2 %3 %4</source>
         <comment>days hours minutes seconds</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 %3 %4</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="386"/>
         <source>%1 %2 %3</source>
         <comment>hours minutes seconds</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 %3</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="388"/>
         <source>%1 %2</source>
         <comment>minutes seconds</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="391"/>
         <source>Number of tracks: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl der Titel: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="392"/>
         <source>Number of albums: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl der Alben: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="393"/>
         <source>Number of artists: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl der Interpreten: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="394"/>
         <source>Total duration: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Gesamte Abspieldauer: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="397"/>
         <source>Library Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Bibliothek-Informationen</translation>
     </message>
 </context>
 <context>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../librarysettingsdialog.ui" line="14"/>
         <source>Media Library Settings</source>
-        <translation>Medienbibliothek-Einstellungen</translation>
+        <translation>Einstellungen Medienbibliothek-Modul</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="39"/>
@@ -186,12 +186,12 @@
     <message>
         <location filename="../librarysettingsdialog.ui" line="95"/>
         <source>List of directories for scanning:</source>
-        <translation type="unfinished"></translation>
+        <translation>Liste der zu durchsuchenden Verzeichnisse:</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.cpp" line="65"/>
         <source>Select Directories for Scanning</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzeichnisse zum Durchsuchen auswählen</translation>
     </message>
 </context>
 <context>
@@ -204,7 +204,7 @@
     <message>
         <location filename="../librarywidget.cpp" line="52"/>
         <source>Replace Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Wiedergabeliste ersetzen</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="53"/>
@@ -219,12 +219,12 @@
     <message>
         <location filename="../librarywidget.cpp" line="56"/>
         <source>&amp;Library Information</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Bibliothek-Informationen</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="90"/>
         <source>Scanning directories...</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzeichnisse werden durchsucht…</translation>
     </message>
     <message>
         <location filename="../librarywidget.ui" line="14"/>

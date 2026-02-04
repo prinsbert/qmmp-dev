@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>QmmpFileDialog</name>
     <message>
@@ -63,12 +63,12 @@
         <location filename="../qmmpfiledialog.cpp" line="70"/>
         <location filename="../qmmpfiledialog.cpp" line="80"/>
         <source>Qmmp File Dialog</source>
-        <translation>Qmmp Datei-Dialog</translation>
+        <translation>Qmmp Dateidialog</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.cpp" line="79"/>
         <source>About Qmmp File Dialog</source>
-        <translation>Über Qmmp Datei-Dialog</translation>
+        <translation>Über Qmmp Dateidialog</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.cpp" line="81"/>

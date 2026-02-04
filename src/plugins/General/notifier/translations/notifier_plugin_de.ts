@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>NotifierFactory</name>
     <message>
@@ -70,12 +70,12 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="299"/>
         <source>Cover size:</source>
-        <translation>Hüllengröße:</translation>
+        <translation>Covergröße:</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="325"/>
         <source>Volume change notification</source>
-        <translation>Lautstärkeänderungsbenachrichtigung</translation>
+        <translation>Benachrichtigung bei Änderung der Lautstärke</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="332"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="368"/>
         <source>Song change notification</source>
-        <translation>Liedwechselbenachrichtigung</translation>
+        <translation>Benachrichtigung bei Titelwechsel</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="375"/>

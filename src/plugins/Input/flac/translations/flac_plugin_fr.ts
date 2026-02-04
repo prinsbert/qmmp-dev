@@ -4,37 +4,37 @@
 <context>
     <name>DecoderFLACFactory</name>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="54"/>
+        <location filename="../decoderflacfactory.cpp" line="78"/>
         <source>FLAC Plugin</source>
         <translation>Greffon FLAC</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="56"/>
+        <location filename="../decoderflacfactory.cpp" line="80"/>
         <source>FLAC Files</source>
         <translation>Fichiers FLAC</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="218"/>
+        <location filename="../decoderflacfactory.cpp" line="242"/>
         <source>About FLAC Audio Plugin</source>
         <translation>À propos du greffon audio FLAC</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="219"/>
+        <location filename="../decoderflacfactory.cpp" line="243"/>
         <source>Qmmp FLAC Audio Plugin</source>
         <translation>Greffon audio FLAC pour Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="220"/>
+        <location filename="../decoderflacfactory.cpp" line="244"/>
         <source>Compiled against:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="221"/>
+        <location filename="../decoderflacfactory.cpp" line="245"/>
         <source>FLAC, API version: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="223"/>
+        <location filename="../decoderflacfactory.cpp" line="247"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Écrit par : Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

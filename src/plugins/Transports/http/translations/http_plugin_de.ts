@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>HTTPInputFactory</name>
     <message>
@@ -59,17 +59,17 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="76"/>
         <source>User Agent:</source>
-        <translation>Benutzer-Agent:</translation>
+        <translation>User-Agent:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="34"/>
         <source>Default buffer size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard-Puffer-Größe:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="50"/>
         <source>This value is used if information about bitrate is &lt;b&gt;not&lt;/b&gt; available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieser Wert wird verwendet, falls &lt;b&gt;keine&lt;/b&gt; Informationen über die Bitrate vorhanden sind.</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="53"/>
@@ -79,17 +79,17 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="69"/>
         <source>Change User Agent</source>
-        <translation>Benutzer-Agent ändern</translation>
+        <translation>User-Agent ändern</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="90"/>
         <source>Buffer duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puffer-Zeitraum:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="97"/>
         <source>This value is used if information about bitrate is available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieser Wert wird verwendet, falls Informationen über die Bitrate vorhanden sind.</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="100"/>
