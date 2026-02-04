@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -51,32 +51,32 @@
     <message>
         <location filename="../aboutdialog.cpp" line="84"/>
         <source>Transports:</source>
-        <translation type="unfinished"></translation>
+        <translation>Transport-Protokolle:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="90"/>
         <source>Decoders:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dekoder:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="98"/>
         <source>Engines:</source>
-        <translation type="unfinished"></translation>
+        <translation>Funktionseinheiten:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="105"/>
         <source>Effects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Effekte:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="134"/>
         <source>File dialogs:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dateidialoge:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="143"/>
         <source>User interfaces:</source>
-        <translation type="unfinished"></translation>
+        <translation>Benutzeroberflächen:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="126"/>
@@ -86,22 +86,22 @@
     <message>
         <location filename="../aboutdialog.cpp" line="73"/>
         <source>Qt version: %1 (compiled with %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt-Version: %1 (kompiliert mit %2)</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="74"/>
         <source>Qt platform: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt-Plattform:%1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="75"/>
         <source>System: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>System: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="76"/>
         <source>Build ABI: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Build-Binärschnittstelle (ABI): %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="113"/>
@@ -240,7 +240,7 @@
     <message>
         <location filename="../columneditor.cpp" line="98"/>
         <source>Disc Number</source>
-        <translation>Disc-Nummer</translation>
+        <translation>CD-Nummer</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="99"/>
@@ -324,7 +324,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="226"/>
         <source>Group format:</source>
-        <translation>Gruppenformat:</translation>
+        <translation>Format der Gruppe:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="242"/>
@@ -336,37 +336,37 @@
     <message>
         <location filename="../forms/configdialog.ui" line="169"/>
         <source>Read tags while loading a playlist</source>
-        <translation>Lesen von Schlagwörtern beim Laden einer Wiedergabeliste</translation>
+        <translation>Lesen von Metadaten beim Laden einer Wiedergabeliste</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="193"/>
         <source>Group Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel-Gruppieren-Modus</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="202"/>
         <source>Group size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Größe der Gruppe:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="219"/>
         <source>Show dividing line</source>
-        <translation type="unfinished"></translation>
+        <translation>Trennlinie anzeigen</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="251"/>
         <source>Extra row format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Format der zusätzlichen Reihe:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="276"/>
         <source>Show extra row</source>
-        <translation type="unfinished"></translation>
+        <translation>Zusätzliche Reihe anzeigen</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="283"/>
         <source>Show cover</source>
-        <translation>Hülle anzeigen</translation>
+        <translation>Cover anzeigen</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="293"/>
@@ -384,7 +384,7 @@
         <location filename="../forms/configdialog.ui" line="591"/>
         <location filename="../forms/configdialog.ui" line="605"/>
         <source>A list of file masks separated by comma.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eine kommagetrennte Liste von Datei-Masken.</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="316"/>
@@ -467,7 +467,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="568"/>
         <source>Cover Image Retrieve</source>
-        <translation>Holen von Cover-Bildern</translation>
+        <translation>Laden von Cover-Bildern</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="574"/>
@@ -603,7 +603,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="1121"/>
         <source>Use two passes for equalizer</source>
-        <translation type="unfinished"></translation>
+        <translation>Zwei Durchläufe (Passes) für den Equalizer verwenden</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1064"/>
@@ -613,17 +613,17 @@
     <message>
         <location filename="../forms/configdialog.ui" line="356"/>
         <source>Skip already existing tracks when adding</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel beim Hinzufügen überspringen, wenn sie bereits vorhanden sind</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="363"/>
         <source>Stop playback after removing of current track</source>
-        <translation type="unfinished"></translation>
+        <translation>Wiedergabe nach Entfernen des aktuellen Titels anhalten</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1088"/>
         <source>Output bit depth:</source>
-        <translation>Ausgabebittiefe</translation>
+        <translation>Ausgabebittiefe:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1029"/>
@@ -633,22 +633,22 @@
     <message>
         <location filename="../configdialog.cpp" line="63"/>
         <source>1 row</source>
-        <translation type="unfinished"></translation>
+        <translation>1 Reihe</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="64"/>
         <source>3 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>3 Reihen</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="65"/>
         <source>4 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>4 Reihen</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="66"/>
         <source>5 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>5 Reihen</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="67"/>
@@ -808,7 +808,7 @@
     <message>
         <location filename="../configdialog.cpp" line="369"/>
         <source>Korean</source>
-        <translation type="unfinished"></translation>
+        <translation>Koreanisch</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="370"/>
@@ -843,7 +843,7 @@
     <message>
         <location filename="../configdialog.cpp" line="376"/>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Schwedisch</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="377"/>
@@ -896,12 +896,13 @@
     <message>
         <location filename="../covereditor.cpp" line="34"/>
         <source>External File</source>
-        <translation type="unfinished"></translation>
+        <translation>Externe Datei</translation>
     </message>
     <message>
         <location filename="../covereditor.cpp" line="35"/>
         <source>Tag</source>
-        <translation>Schlagwort</translation>
+        <translatorcomment>Tag wie in Metadaten</translatorcomment>
+        <translation>Metadaten</translation>
     </message>
 </context>
 <context>
@@ -914,7 +915,7 @@
     <message>
         <location filename="../coverviewer.cpp" line="68"/>
         <source>Save Cover As</source>
-        <translation>Hülle speichern als</translation>
+        <translation>Cover speichern als</translation>
     </message>
     <message>
         <location filename="../coverviewer.cpp" line="70"/>
@@ -992,7 +993,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="260"/>
         <source>Cover</source>
-        <translation>Hülle</translation>
+        <translation>Cover</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="286"/>
@@ -1042,7 +1043,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="314"/>
         <source>Track</source>
-        <translation>Titel</translation>
+        <translation>Titelnummer</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="315"/>
@@ -1125,7 +1126,7 @@
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="46"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filter</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
@@ -1153,7 +1154,7 @@
         <location filename="../jumptotrackdialog.cpp" line="118"/>
         <location filename="../jumptotrackdialog.cpp" line="149"/>
         <source>Unqueue</source>
-        <translation>Aus der Warteschlange entfernen</translation>
+        <translation>Aus Warteschlange entfernen</translation>
     </message>
 </context>
 <context>
@@ -1221,22 +1222,22 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="61"/>
         <source>Duration | Format | Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Abspieldauer | Format | Bitrate</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>Year | Duration | Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Jahr | Abspieldauer | Bitrate</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="65"/>
         <source>Year | Duration | Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Jahr | Abspieldauer | Abtastrate</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="65"/>
         <source>%y | %if(%l,%l | ,)%{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%y | %if(%l,%l | ,)%{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="69"/>
@@ -1281,7 +1282,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="43"/>
         <source>Disc Number</source>
-        <translation>Disc-Nummer</translation>
+        <translation>CD-Nummer</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="48"/>
@@ -1318,32 +1319,32 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="61"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>Duration | Format | Bitrate | Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Abspieldauer | Format | Bitrate | Abtastrate</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>Duration | Format | Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Abspieldauer | Format | Abtastrate</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>%if(%l,%l | ,)%{format} | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>%y | %if(%l,%l | ,)%{bitrate} kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>%y | %if(%l,%l | ,)%{bitrate} kbps</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="68"/>
@@ -1364,12 +1365,12 @@
     <message>
         <location filename="../playlistgroup.cpp" line="145"/>
         <source>Streams</source>
-        <translation type="unfinished">Streams</translation>
+        <translation>Streams</translation>
     </message>
     <message>
         <location filename="../playlistgroup.cpp" line="161"/>
         <source>Empty group</source>
-        <translation type="unfinished">Leere Gruppe</translation>
+        <translation>Leere Gruppe</translation>
     </message>
 </context>
 <context>
@@ -1404,7 +1405,7 @@
     <message>
         <location filename="../qmmpuisettings.cpp" line="39"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../qmmpuisettings.cpp" line="64"/>
@@ -1417,7 +1418,7 @@
     <message>
         <location filename="../qtfiledialog.cpp" line="35"/>
         <source>Qt File Dialog</source>
-        <translation>Qt Datei-Dialog</translation>
+        <translation>Qt-Dateidialog</translation>
     </message>
 </context>
 <context>
@@ -1443,7 +1444,7 @@
     <message>
         <location filename="../forms/tageditor.ui" line="14"/>
         <source>Tag Editor</source>
-        <translation>Schlagworteditor</translation>
+        <translation>Metadaten-Editor</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="38"/>
@@ -1505,7 +1506,7 @@
     <message>
         <location filename="../forms/tageditor.ui" line="311"/>
         <source>Include selected tag in file</source>
-        <translation>Ausgewähltes Schlagwort in Datei einbeziehen</translation>
+        <translation>Ausgewählte Metadaten in Datei einbeziehen</translation>
     </message>
 </context>
 <context>

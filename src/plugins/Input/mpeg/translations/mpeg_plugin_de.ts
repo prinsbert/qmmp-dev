@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>DecoderMpegFactory</name>
     <message>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="419"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG 1.0/2.0/2.5 Layer 1/2/3 Audio-Dekoder</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="420"/>
@@ -100,12 +100,13 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="87"/>
         <source>Tag Priority</source>
-        <translation>Schlagwortpriorität</translation>
+        <translation>Metadaten-Priorität</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="99"/>
         <source>First:</source>
-        <translation>Erster:</translation>
+        <translatorcomment>Erste Priorität</translatorcomment>
+        <translation>Erste:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="119"/>
@@ -138,17 +139,19 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="148"/>
         <source>Second:</source>
-        <translation>Zweiter:</translation>
+        <translatorcomment>Zweite Priorität</translatorcomment>
+        <translation>Zweite:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="197"/>
         <source>Third:</source>
-        <translation>Dritter:</translation>
+        <translatorcomment>Dritte Priorität</translatorcomment>
+        <translation>Dritte:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="253"/>
         <source>Merge selected tag types</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte Metadaten-Typen zusammenführen</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="272"/>
@@ -168,12 +171,12 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="343"/>
         <source>Try to detect encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Versuchen Kodierung zu erkennen</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.cpp" line="32"/>
         <source>Detect by Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Anhand der Sprachumgebung erkennen</translation>
     </message>
 </context>
 </TS>

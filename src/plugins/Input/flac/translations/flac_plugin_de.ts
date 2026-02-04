@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>DecoderFLACFactory</name>
     <message>
@@ -26,12 +26,12 @@
     <message>
         <location filename="../decoderflacfactory.cpp" line="244"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kompiliert gegen:</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="245"/>
         <source>FLAC, API version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>FLAC, API-Version: %1</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="247"/>

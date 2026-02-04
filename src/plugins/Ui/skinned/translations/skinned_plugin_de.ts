@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>SkinnedActionManager</name>
     <message>
@@ -61,32 +61,32 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>+10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+10 Sekunden</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>+30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+30 Sekunden</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>+60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+60 Sekunden</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>-10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-10 Sekunden</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>-30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-30 Sekunden</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>-60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-60 Sekunden</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
@@ -446,7 +446,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="95"/>
         <source>Show &amp;Tab Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tab-Leiste anzeigen</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="95"/>
@@ -695,7 +695,7 @@
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
         <source>Restore Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>Standardkurzbefehle wiederherstellen</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>
@@ -850,7 +850,7 @@
         <location filename="../skinnedplaylist.cpp" line="250"/>
         <location filename="../skinnedplaylist.cpp" line="290"/>
         <source>By Disc Number</source>
-        <translation>Nach Disc-Nummer</translation>
+        <translation>Nach CD-Nummer</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="253"/>
@@ -1016,12 +1016,12 @@
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="75"/>
         <source>Show cover</source>
-        <translation>Hülle anzeigen</translation>
+        <translation>Cover anzeigen</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="89"/>
         <source>Cover size:</source>
-        <translation>Hüllengröße:</translation>
+        <translation>Covergröße:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="115"/>
@@ -1087,12 +1087,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="260"/>
         <source>Skin install path:</source>
-        <translation type="unfinished"></translation>
+        <translation>Installationspfad für Designs:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="244"/>
         <source>Random skin on every startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Zufälliges Design bei jedem Starten verwenden</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="107"/>
@@ -1112,7 +1112,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="238"/>
         <source>Extra Skin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Zusätzliche Design-Einstellungen</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="251"/>
@@ -1127,17 +1127,17 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="341"/>
         <source>Use smooth scrolling</source>
-        <translation type="unfinished"></translation>
+        <translation>Flüssigen Bildlauf verwenden</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="362"/>
         <source>Show splitters</source>
-        <translation type="unfinished"></translation>
+        <translation>Trenner anzeigen</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="369"/>
         <source>Alternate splitter color</source>
-        <translation type="unfinished"></translation>
+        <translation>Farben der Trenner abwechseln</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="469"/>
@@ -1152,12 +1152,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="481"/>
         <source>Use skin colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Farben des Designs verwenden</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="599"/>
         <source>Background #2:</source>
-        <translation>Hintergrund #2:</translation>
+        <translation>Hintergrund Nr. 2:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="663"/>
@@ -1172,7 +1172,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="817"/>
         <source>Splitter:</source>
-        <translation type="unfinished"></translation>
+        <translation>Trenner:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="631"/>
@@ -1192,22 +1192,22 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="509"/>
         <source>Background #1:</source>
-        <translation>Hintergrund #1:</translation>
+        <translation>Hintergrund Nr. 1:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="745"/>
         <source>Load skin colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Farben des Designs laden</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="829"/>
         <source>Override group background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Alternativer Gruppen-Hintergrund:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="874"/>
         <source>Override current track background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Alternativer Hintergrund für den aktuellen Titel:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="938"/>
@@ -1222,12 +1222,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1028"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppen:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1055"/>
         <source>Extra group row:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zusätzliche Reihe in Gruppe:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1082"/>
@@ -1304,7 +1304,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="302"/>
         <source>Song Display</source>
-        <translation>Liedanzeige</translation>
+        <translation>Titelanzeige</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="348"/>
@@ -1314,17 +1314,17 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="321"/>
         <source>Show song lengths</source>
-        <translation>Liedlängen anzeigen</translation>
+        <translation>Titel-Länge anzeigen</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="314"/>
         <source>Show song numbers</source>
-        <translation>Liednummern anzeigen</translation>
+        <translation>Titel-Nummer anzeigen</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="331"/>
         <source>Align song numbers</source>
-        <translation>Liednummern ausrichten</translation>
+        <translation>Titel-Nummer ausrichten</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="355"/>
@@ -1349,7 +1349,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="376"/>
         <source>Show &apos;New Playlist&apos; button</source>
-        <translation>„Neue Wiedergabeliste“-Knopf zeigen</translation>
+        <translation>„Neue Wiedergabeliste“-Schaltfläche zeigen</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="89"/>
@@ -1364,17 +1364,17 @@
     <message>
         <location filename="../skinnedsettings.cpp" line="159"/>
         <source>Default skin</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard-Design</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="168"/>
         <source>Unarchived skin %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Entpacktes Design %1</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="168"/>
         <source>Archived skin %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gepacktes Design %1</translation>
     </message>
 </context>
 <context>
@@ -1382,7 +1382,7 @@
     <message>
         <location filename="../skinnedtextscroller.cpp" line="54"/>
         <source>Autoscroll Songname</source>
-        <translation>Automatischer Bildlauf des Liednamens</translation>
+        <translation>Automatischer Bildlauf des Titelnamens</translation>
     </message>
     <message>
         <location filename="../skinnedtextscroller.cpp" line="55"/>
@@ -1392,7 +1392,7 @@
     <message>
         <location filename="../skinnedtextscroller.cpp" line="122"/>
         <source>Buffering: %1%</source>
-        <translation>Pufferung: %1 %</translation>
+        <translation>Pufferung: %1&#xa0;%</translation>
     </message>
 </context>
 <context>

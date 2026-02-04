@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>EffectMonoToStereoFactory</name>
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="29"/>
         <source>Mono to Stereo Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Mono-zu-Stereo-Konverter-Modul</translation>
     </message>
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="49"/>
         <source>About Mono to Stereo Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Über Mono-zu-Stereo-Konverter-Modul</translation>
     </message>
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="50"/>
         <source>Qmmp Mono to Stereo Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Mono-zu-Stereo-Konverter-Modul</translation>
     </message>
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="51"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>CDAudioSettingsDialog</name>
     <message>
@@ -79,7 +79,7 @@
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="104"/>
         <source>Compiled against libcdio-%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kompiliert mit libcdio-%1</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="107"/>

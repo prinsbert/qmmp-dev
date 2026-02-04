@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>ListenBrainzFactory</name>
     <message>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../listenbrainzfactory.cpp" line="52"/>
         <source>This plugin submits listen history to ListenBrainz server</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieses Modul überträgt den Abspielverlauf zum ListenBrainz-Server</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="53"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../listenbrainzsettingsdialog.ui" line="29"/>
         <source>ListenBrainz user token:</source>
-        <translation type="unfinished"></translation>
+        <translation>ListenBrainz-Benutzer-Token:</translation>
     </message>
 </context>
 </TS>

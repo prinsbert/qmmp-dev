@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>TaskbarFactory</name>
     <message>
         <location filename="../taskbarfactory.cpp" line="28"/>
         <source>Taskbar Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Taskleisten-Modul</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="49"/>
         <source>About Taskbar Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Über Taskleisten-Modul</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="50"/>
         <source>Qmmp Taskbar Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Taskleisten-Modul</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="51"/>
         <source>This plugin adds support for progress indicator in the Windows taskbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieses Modul fügt eine Fortschrittsanzeige in der Windows-Taskleiste hinzu</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="52"/>
@@ -31,22 +31,22 @@
     <message>
         <location filename="../taskbarfactory.cpp" line="53"/>
         <source>Based on QtWinExtras module of the Qt Toolkit</source>
-        <translation type="unfinished"></translation>
+        <translation>Basiert auf dem QtWinExtras-Modul des Qt-Toolkits</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="54"/>
         <source>QtWinExtras developers:</source>
-        <translation type="unfinished"></translation>
+        <translation>Entwickler QtWinExtras:</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="55"/>
         <source>Ivan Vizir &lt;define-true-false@yandex.com&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ivan Vizir &lt;define-true-false@yandex.com&gt;</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="56"/>
         <source>The Qt Company Ltd.</source>
-        <translation type="unfinished"></translation>
+        <translation>The Qt Company Ltd.</translation>
     </message>
 </context>
 </TS>

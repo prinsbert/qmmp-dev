@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>RGScanDialog</name>
     <message>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../rgscandialog.ui" line="120"/>
         <source>Write Tags</source>
-        <translation>Schlagwörter schreiben</translation>
+        <translation>Metadaten schreiben</translation>
     </message>
     <message>
         <location filename="../rgscandialog.ui" line="91"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>Lyrics</name>
     <message>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../lyricsfactory.cpp" line="70"/>
         <source>This plugin retrieves lyrics from LyricWiki</source>
-        <translation>Dieses Modul empfängt Liedtexte von LyricWiki</translation>
+        <translation>Dieses Modul ruft Liedtexte von LyricWiki ab</translation>
     </message>
     <message>
         <location filename="../lyricsfactory.cpp" line="71"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../lyricsfactory.cpp" line="72"/>
         <source>Based on Ultimate Lyrics script by Vladimir Brkic &lt;vladimir_brkic@yahoo.com&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Basiert auf dem „Ultimate Lyrics“-Skrip von Vladimir Brkic &lt;vladimir_brkic@yahoo.com&gt;</translation>
     </message>
 </context>
 <context>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../lyricswidget.ui" line="159"/>
         <source>Track:</source>
-        <translation>Titel:</translation>
+        <translation>Titelnummer:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="171"/>
@@ -111,7 +111,7 @@
         <location filename="../lyricswidget.cpp" line="148"/>
         <location filename="../lyricswidget.cpp" line="234"/>
         <source>&lt;h2&gt;%1 - %2&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;%1 - %2&lt;/h2&gt;</translation>
+        <translation>&lt;h2&gt;%1 – %2&lt;/h2&gt;</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="159"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="169"/>
         <source>Error: %1 - %2</source>
-        <translation>Fehler: %1 - %2</translation>
+        <translation>Fehler: %1 – %2</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="182"/>
@@ -131,12 +131,12 @@
     <message>
         <location filename="../lyricswidget.cpp" line="236"/>
         <source>Tag</source>
-        <translation>Schlagwort</translation>
+        <translation>Metadaten</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="257"/>
         <source>Cache</source>
-        <translation type="unfinished"></translation>
+        <translation>Zwischenspeicher</translation>
     </message>
 </context>
 <context>

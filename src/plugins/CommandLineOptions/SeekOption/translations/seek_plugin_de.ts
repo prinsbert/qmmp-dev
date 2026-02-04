@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>SeekOption</name>
     <message>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../seekoption.cpp" line="64"/>
         <source>Invalid position specified</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige Position angegeben</translation>
     </message>
 </context>
 </TS>
