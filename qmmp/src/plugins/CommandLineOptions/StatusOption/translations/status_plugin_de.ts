@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>StatusOption</name>
     <message>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../statusoption.cpp" line="112"/>
         <source>%{samplesize} - bits per sample</source>
-        <translation type="unfinished"></translation>
+        <translation>%{samplesize} - Bits pro Sample</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="113"/>

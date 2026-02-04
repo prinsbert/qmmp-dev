@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>BuiltinCommandLineOption</name>
     <message>
@@ -11,12 +11,12 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="47"/>
         <source>Start playing current song</source>
-        <translation>Aktuelles Lied abspielen</translation>
+        <translation>Aktuellen Titel abspielen</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="48"/>
         <source>Pause current song</source>
-        <translation>Aktuelles Lied pausieren</translation>
+        <translation>Aktuellen Titel pausieren</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="49"/>
@@ -26,12 +26,12 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="50"/>
         <source>Stop current song</source>
-        <translation>Aktuelles Lied stoppen</translation>
+        <translation>Aktuellen Titel stoppen</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="51"/>
         <source>Display Jump to Track dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>„Springe zu Titel“-Dialog anzeigen</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="52"/>
@@ -51,12 +51,12 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="55"/>
         <source>Mute/Restore volume</source>
-        <translation>Lautstärke stumm schalten/zurückstellen</translation>
+        <translation>Lautstärke stummschalten/wiederherstellen</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="56"/>
         <source>Print mute status</source>
-        <translation>Stummschaltstatus ausgeben</translation>
+        <translation>Status der Stummschaltung ausgeben</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="57"/>
@@ -114,7 +114,7 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="521"/>
         <source>List all available user interfaces</source>
-        <translation>Liste aller verfügbaren Benutzeroberflächen</translation>
+        <translation>Alle verfügbaren Benutzeroberflächen auflisten</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="522"/>
@@ -124,17 +124,17 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="523"/>
         <source>Print debugging messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Debugging-Nachrichten ausgeben</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="524"/>
         <source>Display this text and exit</source>
-        <translation>Zeigt diesen Hilfetext an</translation>
+        <translation>Diesen Hilfetext anzeigen</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="525"/>
         <source>Print version number and exit</source>
-        <translation>Gibt die Versionsnummer aus</translation>
+        <translation>Versionsnummer ausgeben</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="527"/>
@@ -149,7 +149,7 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="529"/>
         <source>Bug tracker: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bug-Tracker: %1</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="176"/>

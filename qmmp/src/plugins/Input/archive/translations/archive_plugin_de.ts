@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>DecoderArchiveFactory</name>
     <message>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderarchivefactory.cpp" line="170"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kompiliert mit:</translation>
     </message>
     <message>
         <location filename="../decoderarchivefactory.cpp" line="173"/>

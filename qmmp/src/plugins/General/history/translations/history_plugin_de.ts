@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>History</name>
     <message>
@@ -19,22 +19,22 @@
     <message>
         <location filename="../historyfactory.cpp" line="31"/>
         <source>Listening History Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Abpsiel-Chronik-Modul</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="51"/>
         <source>About Listening History Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Über Abspiel-Chronik-Modul</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="52"/>
         <source>Qmmp Listening History Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Abspiel-Chronik-Modul</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="53"/>
         <source>This plugin collects information about listened tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieses Modul sammelt informationen über abgespielte Titel</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="54"/>
@@ -47,7 +47,7 @@
     <message>
         <location filename="../historysettingsdialog.ui" line="14"/>
         <source>Listening History Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen Abspiel-Chronik-Modul</translation>
     </message>
     <message>
         <location filename="../historysettingsdialog.ui" line="31"/>
@@ -102,7 +102,7 @@
         <location filename="../historywindow.ui" line="128"/>
         <location filename="../historywindow.ui" line="177"/>
         <source>Song</source>
-        <translation>Song</translation>
+        <translation>Titel</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="137"/>
@@ -120,17 +120,17 @@
         <location filename="../historywindow.ui" line="209"/>
         <location filename="../historywindow.ui" line="236"/>
         <source>Play counts</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl Wiedergaben</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="164"/>
         <source>Top Songs</source>
-        <translation type="unfinished"></translation>
+        <translation>Top-Titel</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="191"/>
         <source>Top Artists</source>
-        <translation type="unfinished"></translation>
+        <translation>Top-Interpreten</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="204"/>
@@ -140,7 +140,7 @@
     <message>
         <location filename="../historywindow.ui" line="218"/>
         <source>Top Genres</source>
-        <translation type="unfinished"></translation>
+        <translation>Top-Genres</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="231"/>
@@ -180,7 +180,7 @@
     <message>
         <location filename="../historywindow.cpp" line="485"/>
         <source>Remove from History</source>
-        <translation type="unfinished"></translation>
+        <translation>Aus Chronik entfernen</translation>
     </message>
 </context>
 </TS>

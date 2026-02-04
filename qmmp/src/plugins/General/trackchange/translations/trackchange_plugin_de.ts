@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>TrackChangeFactory</name>
     <message>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="29"/>
         <source>Command to run when Qmmp starts new track</source>
-        <translation>Auszuführender Befehl, wenn Qmmp einen neuen Titel startet</translation>
+        <translation>Auszuführender Befehl, wenn Qmmp einen neuen Titel startet:</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="39"/>
@@ -47,32 +47,32 @@
         <location filename="../trackchangesettingsdialog.ui" line="73"/>
         <location filename="../trackchangesettingsdialog.ui" line="90"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="46"/>
         <source>Command to run toward to end of a track</source>
-        <translation>Gegen Ende des Titels auszuführender Befehl</translation>
+        <translation>Auszuführender Befehl, wenn der Titel sich dem Ende nähert:</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="63"/>
         <source>Command to run when Qmmp reaches the end of the playlist</source>
-        <translation>Auszuführender Befehl, wenn Qmmp das Ende der Wiedergabeliste erreicht</translation>
+        <translation>Auszuführender Befehl, wenn das Ende der Wiedergabeliste erreicht ist:</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="80"/>
         <source>Command to run when title changes (i.e. network streams title)</source>
-        <translation>Auszuführender Befehl, wenn sich der Titel ändert (z.B. der Titel von Netzwerkstreams)</translation>
+        <translation>Auszuführender Befehl, wenn sich der Titel ändert (z. B. der Titel von Netzwerkstreams):</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="97"/>
         <source>Command to run on application startup:</source>
-        <translation type="unfinished"></translation>
+        <translation>Auszuführender Befehl, beim Starten der Anwendung:</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="104"/>
         <source>Command to run on application exit:</source>
-        <translation type="unfinished"></translation>
+        <translation>Auszuführender Befehl, beim Beenden der Anwendung:</translation>
     </message>
 </context>
 </TS>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>HotkeyDialog</name>
     <message>
@@ -24,22 +24,22 @@
     <message>
         <location filename="../hotkeyfactory.cpp" line="32"/>
         <source>X11 Hotkey Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>X11-Kurzbefehle-Modul</translation>
     </message>
     <message>
         <location filename="../hotkeyfactory.cpp" line="34"/>
         <source>Global Hotkey Plugin</source>
-        <translation>Globales Kurzbefehle-Modul</translation>
+        <translation>Globale-Kurzbefehle-Modul</translation>
     </message>
     <message>
         <location filename="../hotkeyfactory.cpp" line="61"/>
         <source>About Global Hotkey Plugin</source>
-        <translation>Über Globales Kurzbefehle-Modul</translation>
+        <translation>Über Globale-Kurzbefehle-Modul</translation>
     </message>
     <message>
         <location filename="../hotkeyfactory.cpp" line="62"/>
         <source>Qmmp Global Hotkey Plugin</source>
-        <translation>Qmmp Globales Kurzbefehle-Modul</translation>
+        <translation>Qmmp Globale-Kurzbefehle-Modul</translation>
     </message>
     <message>
         <location filename="../hotkeyfactory.cpp" line="63"/>
@@ -57,7 +57,7 @@
     <message>
         <location filename="../hotkeysettingsdialog.ui" line="14"/>
         <source>Global Hotkey Plugin Settings</source>
-        <translation>Einstellungen Globales Kurzbefehle-Modul</translation>
+        <translation>Einstellungen Globale-Kurzbefehle-Modul</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.ui" line="51"/>
@@ -142,7 +142,7 @@
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="110"/>
         <source>Key sequence &apos;%1&apos; is already used</source>
-        <translation>Tastenfolge &apos;%1&apos; wird bereits verwendet</translation>
+        <translation>Tastenfolge „%1“ wird bereits verwendet</translation>
     </message>
 </context>
 </TS>

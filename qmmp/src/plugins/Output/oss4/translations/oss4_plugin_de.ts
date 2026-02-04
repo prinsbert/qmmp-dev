@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>Oss4SettingsDialog</name>
     <message>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../oss4settingsdialog.cpp" line="69"/>
         <source>Default (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard (%1)</translation>
     </message>
 </context>
 <context>

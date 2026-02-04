@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>StatusIcon</name>
     <message>
@@ -103,7 +103,7 @@
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="91"/>
         <source>Try to split file name when no tag</source>
-        <translation>Bei keinem Schlagwort versuchen Dateinamen zu trennen</translation>
+        <translation>Bei fehlenden Metadaten versuchen Dateinamen zu trennen</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="98"/>
@@ -123,7 +123,7 @@
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="174"/>
         <source>Cover size:</source>
-        <translation>Hüllengröße:</translation>
+        <translation>Covergröße:</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="214"/>

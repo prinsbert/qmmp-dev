@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>PlayListOption</name>
     <message>
@@ -68,7 +68,7 @@
     <message>
         <location filename="../playlistoption.cpp" line="138"/>
         <source>Invalid track ID</source>
-        <translation>Ungültige Titelkennung</translation>
+        <translation>Ungültige Titel-ID</translation>
     </message>
 </context>
 </TS>

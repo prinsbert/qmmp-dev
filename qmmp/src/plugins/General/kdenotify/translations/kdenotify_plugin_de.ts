@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>KdeNotify</name>
     <message>
@@ -19,7 +19,7 @@
     <message>
         <location filename="../kdenotifyfactory.cpp" line="49"/>
         <source>About KDE Notification Plugin</source>
-        <translation>Über KDE-4-Benachrichtigungsmodul</translation>
+        <translation>Über KDE-Benachrichtigungsmodul</translation>
     </message>
     <message>
         <location filename="../kdenotifyfactory.cpp" line="50"/>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="14"/>
         <source>KDE Notification Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen KDE-Benachrichtigungsmodul</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="39"/>

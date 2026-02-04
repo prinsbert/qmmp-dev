@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="de_DE">
 <context>
     <name>AboutQSUIDialog</name>
     <message>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="101"/>
         <source>Replace Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Widergabeliste ersetzen</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="102"/>
@@ -59,7 +59,7 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="105"/>
         <source>Tree View Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Baumansichtsmodus</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="107"/>
@@ -69,22 +69,22 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="116"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortieren</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="110"/>
         <source>By Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Namen</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="111"/>
         <source>By Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Größe</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="112"/>
         <source>By Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Typ</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="113"/>
@@ -117,7 +117,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="80"/>
         <source>Use smooth scrolling</source>
-        <translation type="unfinished"></translation>
+        <translation>Flüssigen Bildlauf verwenden</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="217"/>
@@ -127,17 +127,17 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="223"/>
         <source>Color #1:</source>
-        <translation>Farbe #1:</translation>
+        <translation>Farbe Nr. 1:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="290"/>
         <source>Color #2:</source>
-        <translation>Farbe #2:</translation>
+        <translation>Farbe Nr. 2:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="354"/>
         <source>Color #3:</source>
-        <translation>Farbe #3:</translation>
+        <translation>Farbe Nr. 3:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="443"/>
@@ -147,17 +147,17 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="710"/>
         <source>Override group colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Alternative Farben für Gruppen verwenden</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="813"/>
         <source>Override current track colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Alternative Farben für den aktuellen Titel verwenden</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="823"/>
         <source>Current track text:</source>
-        <translation type="unfinished"></translation>
+        <translation>Text des aktuellen Titels:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="922"/>
@@ -273,7 +273,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="101"/>
         <source>Show splitters</source>
-        <translation type="unfinished"></translation>
+        <translation>Trenner anzeigen</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="149"/>
@@ -329,22 +329,22 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="874"/>
         <source>Current track background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hintergrund des aktuellen Titels:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1275"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppen:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1282"/>
         <source>Extra group row:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zusätzliche Reihe in Gruppe:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1379"/>
         <source>Tab position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Position der Reiter:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1416"/>
@@ -379,7 +379,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="522"/>
         <source>Splitter:</source>
-        <translation type="unfinished"></translation>
+        <translation>Trenner:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1352"/>
@@ -399,7 +399,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="1372"/>
         <source>Show &apos;New Playlist&apos; button</source>
-        <translation>Schaltfläche &apos;Neue Wiedergabeliste&apos; anzeigen</translation>
+        <translation>Schaltfläche „Neue Wiedergabeliste“ anzeigen</translation>
     </message>
 </context>
 <context>
@@ -407,7 +407,7 @@
     <message>
         <location filename="../qsuivisualization.cpp" line="128"/>
         <source>Cover</source>
-        <translation>Hülle</translation>
+        <translation>Cover</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="131"/>
@@ -570,32 +570,32 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="49"/>
         <source>+10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+10 Sekunden</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="50"/>
         <source>+30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+30 Sekunden</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="51"/>
         <source>+60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+60 Sekunden</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="52"/>
         <source>-10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-10 Sekunden</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="53"/>
         <source>-30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-30 Sekunden</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="54"/>
         <source>-60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-60 Sekunden</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="55"/>
@@ -705,7 +705,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="74"/>
         <source>Block Floating Panels</source>
-        <translation type="unfinished"></translation>
+        <translation>Schwebende Panele sperren</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="75"/>
@@ -960,7 +960,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="107"/>
         <source>Application Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Anwendungsmenü</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="108"/>
@@ -1003,7 +1003,7 @@
     <message>
         <location filename="../qsuicoverwidget.cpp" line="65"/>
         <source>Save Cover As</source>
-        <translation>Hülle speichern als</translation>
+        <translation>Cover speichern als</translation>
     </message>
     <message>
         <location filename="../qsuicoverwidget.cpp" line="67"/>
@@ -1104,7 +1104,7 @@
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="63"/>
         <source>Restore Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard wiederherstellen</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="56"/>
@@ -1199,7 +1199,7 @@
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="114"/>
         <source>Cover</source>
-        <translation>Hülle</translation>
+        <translation>Cover</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="123"/>
@@ -1325,7 +1325,7 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="653"/>
         <source>Menu Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Menüleiste</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="443"/>
@@ -1375,7 +1375,7 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="554"/>
         <source>Edit Statusbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Statusleiste bearbeiten</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="556"/>
@@ -1563,12 +1563,12 @@
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="75"/>
         <source>Show cover</source>
-        <translation>Hülle anzeigen</translation>
+        <translation>Cover anzeigen</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="89"/>
         <source>Cover size:</source>
-        <translation>Hüllengröße:</translation>
+        <translation>Covergröße:</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="115"/>
@@ -1596,27 +1596,27 @@
     <message>
         <location filename="../qsuisettings.cpp" line="42"/>
         <source>16x16</source>
-        <translation>16x16</translation>
+        <translation>16×16</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="43"/>
         <source>22x22</source>
-        <translation>22x22</translation>
+        <translation>22×22</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="44"/>
         <source>32x32</source>
-        <translation>32x32</translation>
+        <translation>32×32</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="45"/>
         <source>48x48</source>
-        <translation>48x48</translation>
+        <translation>48×48</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="46"/>
         <source>64x64</source>
-        <translation>64x64</translation>
+        <translation>64×64</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="48"/>
@@ -1644,7 +1644,7 @@
     <message>
         <location filename="../qsuistatusbar.cpp" line="53"/>
         <source>tracks: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel: %1</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="54"/>
@@ -1699,9 +1699,9 @@
     <message numerus="yes">
         <location filename="../qsuistatusbar.cpp" line="178"/>
         <source>%n channels</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n Kanal</numerusform>
+            <numerusform>%n Kanäle</numerusform>
         </translation>
     </message>
     <message>
@@ -1720,72 +1720,72 @@
     <message>
         <location filename="../forms/qsuistatusbareditor.ui" line="14"/>
         <source>StatusBar Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Statusleisteneditor</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="102"/>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Status</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="103"/>
         <source>Sample Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Abtastgröße</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="104"/>
         <source>Number of Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl der Kanäle</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="105"/>
         <source>Sample Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Abtastrate</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="106"/>
         <source>Track Count</source>
-        <translation type="unfinished"></translation>
+        <translation>Titelanzahl</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="107"/>
         <source>Total Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Gesamtzeit</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="109"/>
         <source>Elapsed Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Vergangene Zeit</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="110"/>
         <source>Remaining Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Übrige Zeit</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="111"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Abspieldauer</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="112"/>
         <source>Elapsed Time + Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Vergangene Zeit + Abspieldauer</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="113"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Format</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="114"/>
         <source>Decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>Dekoder</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="108"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitrate</translation>
     </message>
 </context>
 <context>
@@ -1793,53 +1793,53 @@
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="14"/>
         <source>ToolBar Editor</source>
-        <translation type="unfinished">Werkzeugleisteneditor</translation>
+        <translation>Werkzeugleisteneditor</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="34"/>
         <source>Toolbar:</source>
-        <translation type="unfinished">Werkzeugleiste:</translation>
+        <translation>Werkzeugleiste:</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="57"/>
         <source>&amp;Create</source>
-        <translation type="unfinished">&amp;Erstellen</translation>
+        <translation>&amp;Erstellen</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="73"/>
         <source>Re&amp;name</source>
-        <translation type="unfinished">Umbe&amp;nennen</translation>
+        <translation>Umbe&amp;nennen</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="89"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished">&amp;Entfernen</translation>
+        <translation>Entfe&amp;rnen</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="104"/>
         <location filename="../qsuitoolbareditor.cpp" line="197"/>
         <source>Separator</source>
-        <translation type="unfinished">Trennzeichen</translation>
+        <translation>Trennzeichen</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="247"/>
         <source>Toolbar</source>
-        <translation type="unfinished">Werkzeugleiste</translation>
+        <translation>Werkzeugleiste</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="249"/>
         <source>Toolbar %1</source>
-        <translation type="unfinished">Werkzeugleiste %1</translation>
+        <translation>Werkzeugleiste %1</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="263"/>
         <source>Rename Toolbar</source>
-        <translation type="unfinished">Werkzeugleiste umbenennen</translation>
+        <translation>Werkzeugleiste umbenennen</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="263"/>
         <source>Toolbar name:</source>
-        <translation type="unfinished">Werkzeugleistenname:</translation>
+        <translation>Werkzeugleistenname:</translation>
     </message>
 </context>
 <context>
@@ -1861,7 +1861,7 @@
     <message>
         <location filename="../volumeslider.cpp" line="111"/>
         <source>%1: %2%</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: %2%</translation>
     </message>
 </context>
 </TS>
