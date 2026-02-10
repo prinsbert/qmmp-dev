@@ -25,20 +25,20 @@ List of the third-party libraries.
 
   MinGW-w64           4.3.3      https://mingw-w64.sourceforge.net/
   Qt                  4.8.7-git  https://qt.io/
-  unzip               5.51       https://www.info-zip.org/pub/infozip/UnZip.html
+  unzip               5.51       https://infozip.sourceforge.net/UnZip.html
   taglib              1.13.1     https://taglib.github.io/
   libmad              0.15.1b    https://www.underbit.com/products/mad/
-  libogg              1.3.6      https://www.vorbis.com/
-  libvorbis           1.3.7      https://www.vorbis.com/
-  flac                1.5.0      https://xiph.org/flac/index.html
+  libogg              1.3.6      https://xiph.org/ogg/
+  libvorbis           1.3.7      https://xiph.org/vorbis/
+  flac                1.5.0      https://xiph.org/flac/
   wavpack             5.6.0      https://www.wavpack.com/
   libsndfile          1.2.2      https://github.com/libsndfile/libsndfile
   opus                1.5.2      https://www.opus-codec.org/
   opusfile            0.12       https://www.opus-codec.org/
   libbs2b             3.1.0      https://bs2b.sourceforge.net/
-  curl                8.14.1     https://curl.haxx.se/
-  libcdio             2.1.0      https://www.gnu.org/software/libcdio/
-  libcdio-paranoia    10.2+2.0.1 https://www.gnu.org/software/libcdio/
+  curl                8.14.1     https://curl.se/
+  libcdio             2.1.0      https://github.com/libcdio/libcdio/
+  libcdio-paranoia    10.2+2.0.1 https://github.com/libcdio/libcdio-paranoia/
   mingw-libgnurx      2.5.1      https://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      https://libcddb.sourceforge.net/
   ffmpeg              3.4.14     https://ffmpeg.org/
@@ -46,9 +46,9 @@ List of the third-party libraries.
   libgme              0.6.4      https://github.com/libgme/game-music-emu
   musepack            r475       https://www.musepack.net/
   glew                2.2.0      https://glew.sourceforge.net/
-  projectm            2.1.0      https://projectm.sourceforge.net/
+  projectm            2.1.0      https://github.com/projectM-visualizer/projectm/
   libsidplayfp        2.3.1      https://sourceforge.net/projects/sidplay-residfp/
-  enca                1.19       https://cihar.com/software/enca/
+  enca                1.19       https://github.com/Project-OSS-Revival/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
   librcd              0.1.14     https://github.com/RusXMMS/librcd  
   mpg123              1.33.0     https://www.mpg123.de/

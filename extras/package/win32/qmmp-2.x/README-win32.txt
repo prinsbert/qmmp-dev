@@ -30,15 +30,15 @@ List of the third-party libraries.
   libmad              0.15.1b    https://www.underbit.com/products/mad/
   libogg              1.3.6      https://www.vorbis.com/
   libvorbis           1.3.7      https://www.vorbis.com/
-  flac                1.4.3      https://xiph.org/flac/index.html
+  flac                1.4.3      https://xiph.org/flac/
   wavpack             5.8.1      https://www.wavpack.com/
   libsndfile          1.2.2      https://github.com/libsndfile/libsndfile
   opus                1.6        https://www.opus-codec.org/
   opusfile            0.12       https://www.opus-codec.org/
   libbs2b             3.1.0      https://bs2b.sourceforge.net/
-  curl                8.17.0     https://curl.haxx.se/
-  libcdio             2.1.0      https://www.gnu.org/software/libcdio/
-  libcdio-paranoia    10.2+2.0.2 https://www.gnu.org/software/libcdio/  
+  curl                8.17.0     https://curl.se/
+  libcdio             2.1.0      https://github.com/libcdio/libcdio/
+  libcdio-paranoia    10.2+2.0.2 https://github.com/libcdio/libcdio-paranoia/  
   mingw-libgnurx      2.5.1      https://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      https://libcddb.sourceforge.net/
   ffmpeg              7.1.3      https://ffmpeg.org/
@@ -46,9 +46,9 @@ List of the third-party libraries.
   libgme              0.6.4      https://github.com/libgme/game-music-emu
   musepack            r475       https://www.musepack.net/
   glew                2.2.0      https://glew.sourceforge.net/
-  projectm            2.1.0      https://projectm.sourceforge.net/
+  projectm            2.1.0      https://github.com/projectM-visualizer/projectm/
   libsidplayfp        2.15.2     https://sourceforge.net/projects/sidplay-residfp/
-  enca                1.19       https://cihar.com/software/enca/
+  enca                1.19       https://github.com/Project-OSS-Revival/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
   librcd              0.1.14     https://github.com/RusXMMS/librcd
   mpg123              1.33.3     https://www.mpg123.de/
