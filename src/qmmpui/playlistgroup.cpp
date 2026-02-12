@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2025 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -142,7 +142,7 @@ QString PlayListGroup::formatTitle0() const
         return QString();
 
     if(m_trackList.constFirst()->path().contains(u"://"_s) && !m_trackList.constFirst()->path().contains(QLatin1Char('#')))
-        return qApp->translate("PlayListGroup", "Streams");
+        return QCoreApplication::translate("PlayListGroup", "Streams");
 
     qint64 duration = 0;
     for(const PlayListTrack *t : std::as_const(m_trackList))
@@ -158,7 +158,7 @@ QString PlayListGroup::formatTitle0() const
         title.replace(u"%20"_s, u" "_s);
 
     if(title.isEmpty())
-        return qApp->translate("PlayListGroup", "Empty group");
+        return QCoreApplication::translate("PlayListGroup", "Empty group");
 
     return title;
 }
