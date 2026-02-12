@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2015-2025 by Ilya Kotov                                 *
+ *   Copyright (C) 2015-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -106,7 +106,7 @@ void MetaDataFormatter::setPattern(const QString &pattern)
     {
         qCDebug(core) << "=>" << dumpNode(n);
     }
-    qCDebug(core)"MetaDataFormatter: end of dump");
+    qCDebug(core) << "MetaDataFormatter: end of dump";
 #endif
 }
 
