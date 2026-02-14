@@ -1,6 +1,12 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 2.3.2
+* fixed preset path in the projectm plugin
+* fixed determination of FLAC files with ID3v2 tags
+* fixed DSD support in the ffmpeg plugin
+* updated German translation (Panagiotis Papadopoulos)
+
 Version 2.3.1
 * added IMA ADPCM support
 * fixed grouping by parent directory
