@@ -9,6 +9,7 @@ Búlgaro:
     Miroslav Mihov
 
 Mandarim tradicional:
+    Edouard.J.K Li <edouardlicn@gmail.com>
     Cosmos Chen
     lon <lon83129@126.com>
     Jeff Huang
@@ -18,6 +19,7 @@ Mandarim simplificado:
     mabier
     Mingcong Bai
     Mingye Wang
+    Rain Ding
 
 Checo:
     Jaroslav Lichtblau
@@ -32,6 +34,7 @@ Finlandês:
     Kimmo Kujansuu
 
 Francês:
+    Nicolas PARLANT
     Adrien Vigneron - VRad <adrienvigneron@ml1.net>
     Sébastien Aperghis-Tramoni (maddingue)
     Stanislas Zeller <uncensored.assault@gmail.com>
