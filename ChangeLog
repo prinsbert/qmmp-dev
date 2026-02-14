@@ -1,6 +1,10 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 1.7.10
+* fixed determination of FLAC files with ID3v2 tags
+* fixed DSD support in the ffmpeg plugin
+
 Version 1.7.9
 * added IMA ADPCM support
 * fixed displaying mpeg plugin build status
