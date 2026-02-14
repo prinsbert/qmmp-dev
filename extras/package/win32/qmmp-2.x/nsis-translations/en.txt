@@ -11,3 +11,4 @@ AdLib formats support (AdPlug)
 Start Menu Shortcuts
 A 64-bit Windows operating system is required to install this software.
 Enqueue in Qmmp
+Use Windows11 Style

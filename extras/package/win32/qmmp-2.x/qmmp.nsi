@@ -184,21 +184,6 @@
   WriteRegStr HKLM  "${QMMP_DEF_PROGS_KEY}\Capabilities\FileAssociations" ${EXT} "QmmpFileAudio"
 !macroend
 
-;Check windows version
-
-Function .onInit
-  ${IfNot} ${AtLeastWin10}
-    MessageBox MB_OK "$(text_win10_warning)"
-    Quit
-  ${EndIf}
-!ifdef WIN64
-  ${IfNot} ${RunningX64}
-    MessageBox MB_OK|MB_ICONSTOP $(text_win64_warning)
-    Quit
-  ${EndIf}
-!endif
-FunctionEnd
-
 ;Metadata
 
 VIProductVersion "${QMMP_PRODUCT_VERSION}"
@@ -321,6 +306,9 @@ Section /o $(text_enable_librcd)
   FileClose $2
 SectionEnd
 
+Section /o $(text_force_windows11_style) FORCE_WINDOWS11_STYLE
+SectionEnd
+
 Section /o $(text_enable_adlib)
   SetOutPath "$INSTDIR\bin"
   File adplug\libbinio*.dll adplug\libadplug*.dll
@@ -333,7 +321,11 @@ Section $(text_startmenu_shortcuts) SHORTCUTS
     SetShellVarContext all
     CreateDirectory "$SMPROGRAMS\Qt-based Multimedia Player"
     CreateShortCut "$SMPROGRAMS\Qt-based Multimedia Player\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\Uninstall.exe" 0
-    CreateShortCut "$SMPROGRAMS\Qt-based Multimedia Player\Qmmp.lnk" "$INSTDIR\bin\qmmp.exe" "" "$INSTDIR\bin\qmmp.exe" 0
+    Var /GLOBAL QmmpCommandLine
+    ${If} ${SectionIsSelected} ${FORCE_WINDOWS11_STYLE}
+       StrCpy $(QmmpCommandLine) "-style windows11"  
+    ${EndIf}
+    CreateShortCut "$SMPROGRAMS\Qt-based Multimedia Player\Qmmp.lnk" "$INSTDIR\bin\qmmp.exe" $QmmpCommandLine "$INSTDIR\bin\qmmp.exe" 0
   ${EndIf}
 SectionEnd
 
@@ -346,6 +338,24 @@ Function .onSelChange
     IntOp $1 ${SF_RO} ~ 
     IntOp $0 $0 & $1
     SectionSetFlags ${SHORTCUTS} $0     
+  ${EndIf}
+FunctionEnd
+
+;Check windows version
+
+Function .onInit
+  ${IfNot} ${AtLeastWin10}
+    MessageBox MB_OK "$(text_win10_warning)"
+    Quit
+  ${EndIf}
+!ifdef WIN64
+  ${IfNot} ${RunningX64}
+    MessageBox MB_OK|MB_ICONSTOP $(text_win64_warning)
+    Quit
+  ${EndIf}
+!endif
+  ${IfNot} ${IsWin10}
+    SectionSetText ${FORCE_WINDOWS11_STYLE} ""
   ${EndIf}
 FunctionEnd
 
