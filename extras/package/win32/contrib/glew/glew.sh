@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=glew
-VERSION=2.3.0
+VERSION=2.3.1
 
 case $1 in
   --download)
