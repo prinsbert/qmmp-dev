@@ -49,7 +49,7 @@ static inline int pw_stream_get_time_n(struct pw_stream * stream,
 OutputPipeWire *OutputPipeWire::instance = nullptr;
 VolumePipeWire *OutputPipeWire::volumeControl = nullptr;
 
-constexpr qint64 pipewireBufferSize = 1500; //ms
+constexpr qint64 pipewireBufferSize = 500; //ms
 
 OutputPipeWire::OutputPipeWire(): Output()
 {
@@ -268,9 +268,9 @@ qint64 OutputPipeWire::latency()
 
     if(pw_stream_get_time_n(m_stream, &ts, sizeof(ts)) == 0) //1.1.0
     {
-        delayMs -= (pw_stream_get_nsec(m_stream) - ts.now) / SPA_NSEC_PER_MSEC; //1.1.0
+        delayMs -= qBound(0LL, qint64(pw_stream_get_nsec(m_stream) - ts.now) / SPA_NSEC_PER_MSEC, delayMs); //1.1.0
         delayMs += ts.queued * SPA_MSEC_PER_SEC / freq;
-        delayMs += ts.buffered / freq;
+        delayMs += ts.buffered * SPA_MSEC_PER_SEC / freq;
         if(ts.rate.denom > 0)
         {
             delayMs += ts.delay * SPA_MSEC_PER_SEC * ts.rate.num / ts.rate.denom;
