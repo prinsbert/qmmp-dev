@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2025 by Ilya Kotov                                      *
+ *   Copyright (C) 2025-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -64,7 +64,6 @@ public:
     QString lyrics() const;
 
 private:
-    bool m_using_rusxmms;
     TagLib::RIFF::WAV::File *m_wavFile = nullptr;
     TagLib::RIFF::AIFF::File *m_aiffFile = nullptr;
     TagLib::ID3v2::Tag *m_tag = nullptr;
