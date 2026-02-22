@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2025 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -88,6 +88,7 @@ private:
     quint32 m_bufferSize = 0;
     quint32 m_frames = 0;
     quint32 m_stride = 0;
+    uint32_t m_spaBufferSize = 0; //bytes
     QHash <Qmmp::ChannelPosition, spa_audio_channel> m_pw_channels;
 };
 
