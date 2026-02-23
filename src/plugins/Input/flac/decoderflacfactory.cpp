@@ -18,6 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <vector>
 #include <QMessageBox>
 #include <QFileInfo>
 #include <taglib/tag.h>
@@ -49,10 +50,10 @@ bool DecoderFLACFactory::canDecode(QIODevice *input) const
         if(input->isSequential())
         {
             int peekSize = header.completeTagSize() + sizeof(buf);
-            char peekBuf[peekSize];
-            if(input->peek(peekBuf, peekSize) != peekSize)
+            std::vector<char> peekBuf(peekSize);
+            if(input->peek(peekBuf.data(), peekSize) != peekSize)
                 return false;
-            memcpy(buf, peekBuf + header.completeTagSize(), sizeof(buf));
+            memcpy(buf, peekBuf.data() + header.completeTagSize(), sizeof(buf));
         }
         else
         {
