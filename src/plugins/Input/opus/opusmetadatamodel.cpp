@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2025 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -233,9 +233,10 @@ void OpusVorbisCommentModel::setValue(Qmmp::MetaData key, const QString &value)
         m_tag->setYear(value.toInt());
         return;
     case Qmmp::DISCNUMBER:
-        value == "0"_L1 ?
-        m_tag->removeFields("DISCNUMBER"):
-        m_tag->addField("DISCNUMBER", str, true);
+        if (value == "0"_L1)
+            m_tag->removeFields("DISCNUMBER");
+        else
+            m_tag->addField("DISCNUMBER", str, true);
     }
 }
 

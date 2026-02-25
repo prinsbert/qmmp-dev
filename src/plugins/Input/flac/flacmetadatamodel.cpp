@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2025 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -182,7 +182,6 @@ QString FLACMetaDataModel::cue() const
 
 void FLACMetaDataModel::setCue(const QString &content)
 {
-    m_tag->removeFields("CUESHEET");
     m_tag->addField("CUESHEET", QStringToTString(content), true);
     m_file->save();
 }
@@ -298,9 +297,10 @@ void FLACVorbisCommentModel::setValue(Qmmp::MetaData key, const QString &value)
         m_tag->setYear(value.toInt());
         return;
     case Qmmp::DISCNUMBER:
-        value == "0"_L1 ?
-        m_tag->removeFields("DISCNUMBER"):
-        m_tag->addField("DISCNUMBER", str, true);
+        if(value == "0"_L1)
+            m_tag->removeFields("DISCNUMBER");
+        else
+            m_tag->addField("DISCNUMBER", str, true);
     }
 }
 
