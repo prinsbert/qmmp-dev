@@ -5,9 +5,10 @@ Qt-pohjainen multimediasoitin
 Kannettava määritykset
 Poista tämä tiedosto poistaaksesi kannettava tila käytöstä
 Extra ulkoasut
-Käytä Simple UI oletuksena
+Käytä yksinkertaista käyttöliittymää oletuksena
 Automaattinen ID3v1/ID3v2 tunnistus (libRCD)
 AdLib formaattien tuki (AdPlug)
 Käynnistä-valikon pikakuvakkeet
-Ohjelmiston asentamiseen tarvitaan 64-bit Windows-käyttöjärjestelmä.
+Ohjelmiston asentamiseen tarvitaan 64-bittinen Windows-käyttöjärjestelmä.
 Aseta jonoon Qmmp:ssä
+Käytä Windows 11 -tyyliä
