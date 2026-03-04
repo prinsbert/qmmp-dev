@@ -21,7 +21,6 @@
 #define COMMANDLINEMANAGER_H
 
 #include <QHash>
-#include "general.h"
 #include "commandlinehandler.h"
 #include "qmmpui_export.h"
 

@@ -25,7 +25,6 @@
 #include <qmmp/metadatamanager.h>
 #include "fileloader_p.h"
 #include "qmmpuisettings.h"
-#include "playlistitem.h"
 #include "playlistparser.h"
 
 FileLoader::FileLoader(QObject *parent) : QThread(parent)
