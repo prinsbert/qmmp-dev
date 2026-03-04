@@ -21,7 +21,6 @@
 #include <QApplication>
 #include <QLocale>
 #include <QIcon>
-#include <stdio.h>
 #include <stdlib.h>
 #ifdef Q_OS_WIN
 #include <QtGlobal>
@@ -45,7 +44,7 @@ static int setupUnixSignalHandlers()
     sigemptyset(&term.sa_mask);
     term.sa_flags |= SA_RESTART;
 
-    if (sigaction(SIGTERM, &term, 0))
+    if (sigaction(SIGTERM, &term, nullptr))
         return 2;
 
     return 0;
