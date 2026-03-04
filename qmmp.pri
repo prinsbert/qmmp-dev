@@ -63,6 +63,7 @@ unix {
 #*-g++ {
 #  QMAKE_CXXFLAGS += -Werror=zero-as-null-pointer-constant
 #  QMAKE_CXXFLAGS += -Werror=suggest-override
+#  QMAKE_CXXFLAGS += -Wall -Wextra
 #}
 
 #Comment/uncomment this if you want to change plugins list
