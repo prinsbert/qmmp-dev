@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2019-2025 by Ilya Kotov                                 *
+ *   Copyright (C) 2019-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   Based on Amarok 2 Ultimate Lyrics script                              *
