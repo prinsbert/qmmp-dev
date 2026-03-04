@@ -27,7 +27,6 @@
 #include <QMessageBox>
 #include <QFileInfo>
 #include <algorithm>
-#include <qmmp/soundcore.h>
 #include <qmmp/metadatamanager.h>
 #include "filedialog.h"
 #include "playlistparser.h"

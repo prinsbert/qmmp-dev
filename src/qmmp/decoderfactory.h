@@ -25,7 +25,6 @@
 #include <QString>
 #include <QIODevice>
 #include <QStringList>
-#include "qmmp_export.h"
 #include "decoder.h"
 #include "metadatamodel.h"
 #include "trackinfo.h"

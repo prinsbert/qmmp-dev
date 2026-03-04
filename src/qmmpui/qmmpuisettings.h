@@ -24,7 +24,6 @@
 #include <QObject>
 #include <QStringList>
 #include "playlistheadermodel.h"
-#include "metadataformatter.h"
 #include "qmmpui_export.h"
 
 class MetaDataHelper;

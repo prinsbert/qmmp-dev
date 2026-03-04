@@ -25,13 +25,13 @@
 #include <QList>
 #include <QSet>
 #include <QAbstractListModel>
-#include "metadataformatter.h"
 
 class TrackListModel;
 class QSortFilterProxyModel;
 class QEvent;
 class PlayListManager;
 class PlayListModel;
+class PlayListTrack;
 
 namespace Ui {
 class JumpToTrackDialog;

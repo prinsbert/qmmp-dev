@@ -23,11 +23,8 @@
 #include <QMessageBox>
 #include <QClipboard>
 #include <QPushButton>
-#include <qmmp/qmmpsettings.h>
 #include <qmmp/metadatamanager.h>
 #include <qmmp/qmmp.h>
-#include "playlistparser.h"
-#include "playlistformat.h"
 #include "playlistmodel.h"
 #include "playlistdownloader.h"
 #include "qmmpuisettings.h"

@@ -21,7 +21,6 @@
 #define PLAYLISTTRACK_H
 
 #include <QStringList>
-#include <qmmp/qmmp.h>
 #include <qmmp/trackinfo.h>
 #include "playlistitem.h"
 #include "qmmpui_export.h"

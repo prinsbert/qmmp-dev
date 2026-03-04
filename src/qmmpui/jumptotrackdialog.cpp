@@ -27,7 +27,6 @@
 #include <QKeySequence>
 #include <QStyledItemDelegate>
 #include <QPainter>
-#include <qmmp/soundcore.h>
 #include "playlistmanager.h"
 #include "mediaplayer.h"
 #include "ui_jumptotrackdialog.h"

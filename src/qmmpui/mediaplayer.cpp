@@ -23,7 +23,6 @@
 #include <QLocale>
 #include <QTimer>
 #include <QTranslator>
-#include "playlistitem.h"
 #include "qmmpuisettings.h"
 #include "mediaplayer.h"
 

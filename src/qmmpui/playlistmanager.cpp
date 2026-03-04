@@ -25,7 +25,6 @@
 #include <QTimer>
 #include <QSettings>
 #include <QSaveFile>
-#include <qmmp/trackinfo.h>
 #include "qmmpuisettings.h"
 #include "playlistmanager.h"
 

@@ -25,10 +25,7 @@
 #include <QList>
 #include <QMap>
 #include <QIODevice>
-#include "qmmp_export.h"
-#include "qmmp.h"
 #include "trackinfo.h"
-#include "abstractengine.h"
 #include "metadatamodel.h"
 
 class AbstractEngine;

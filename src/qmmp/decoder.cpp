@@ -12,11 +12,6 @@
 #include "qmmpplugincache_p.h"
 #include "output.h"
 #include "decoderfactory.h"
-
-extern "C"
-{
-#include "equ/iir.h"
-}
 #include "decoder.h"
 
 Decoder::Decoder(QIODevice *input) : m_input(input)
