@@ -5,6 +5,10 @@ Version 2.3.2
 * fixed preset path in the projectm plugin
 * fixed determination of FLAC files with ID3v2 tags
 * fixed DSD support in the ffmpeg plugin
+* fixed build warnings
+* improved pipewire plugin:
+  - fixed delay calculation
+  - increased buffer size
 * updated German translation (Panagiotis Papadopoulos)
 
 Version 2.3.1
