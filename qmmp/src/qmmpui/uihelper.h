@@ -65,7 +65,7 @@ public:
     /*!
      * Returns \b true if one of the general plugin can change visibility, otherwise returns \b false
      */
-    bool visibilityControl();
+    bool visibilityControl() const;
     /*!
      * Adds the newly created action to the menu with type \b type.
      * Menu with type \b type should be created first.

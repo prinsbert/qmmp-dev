@@ -141,7 +141,7 @@ public:
     /*!
      * Returns global proxy url.
      */
-    const QUrl &proxy() const;
+    QUrl proxy() const;
     /*!
      * Returls global proxy type.
      */
@@ -157,7 +157,7 @@ public:
     /*!
      * Returns equalizer settings.
      */
-    const EqSettings &eqSettings() const;
+    EqSettings eqSettings() const;
     /*!
      * Changes equalizer settings to \b settings.
      */

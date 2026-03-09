@@ -24,8 +24,8 @@
 #include <QMap>
 #include <QHash>
 #include <QRecursiveMutex>
-#include "abstractengine.h"
 #include "audioparameters.h"
+#include "trackinfo.h"
 #include "qmmp.h"
 
 /*! @brief The StateHandler class allows one to track information about playback progress.
