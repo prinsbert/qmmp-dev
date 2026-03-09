@@ -57,7 +57,7 @@ UiHelper::~UiHelper()
     settings.setValue(u"General/last_dir"_s, m_lastDir);
 }
 
-bool UiHelper::visibilityControl()
+bool UiHelper::visibilityControl() const
 {
     const QList<GeneralFactory *> factories = General::enabledFactories();
     return std::any_of(factories.cbegin(), factories.cend(),

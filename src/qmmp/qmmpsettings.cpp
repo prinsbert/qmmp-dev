@@ -159,7 +159,7 @@ bool QmmpSettings::useProxyAuth() const
     return m_proxy_auth;
 }
 
-const QUrl &QmmpSettings::proxy() const
+QUrl QmmpSettings::proxy() const
 {
     return m_proxy_url;
 }
@@ -183,7 +183,7 @@ void QmmpSettings::setNetworkSettings(bool use_proxy, bool auth, ProxyType type,
     emit networkSettingsChanged();
 }
 
-const EqSettings &QmmpSettings::eqSettings() const
+EqSettings QmmpSettings::eqSettings() const
 {
     return m_eq_settings;
 }
