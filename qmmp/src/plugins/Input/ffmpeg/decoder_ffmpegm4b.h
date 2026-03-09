@@ -41,7 +41,7 @@ public:
     void seek(qint64) override;
     qint64 read(unsigned char *data, qint64 size) override;
     int bitrate() const override;
-    const QString nextURL() const override;
+    QString nextURL() const override;
     void next() override;
 
 private:

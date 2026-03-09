@@ -433,7 +433,7 @@ void QSUiWaveformScanner::stop()
     }
 }
 
-const QList<int> &QSUiWaveformScanner::data() const
+QList<int> QSUiWaveformScanner::data() const
 {
     QMutexLocker locker(&m_mutex);
     return m_data;

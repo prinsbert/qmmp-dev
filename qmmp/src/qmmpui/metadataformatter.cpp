@@ -110,7 +110,7 @@ void MetaDataFormatter::setPattern(const QString &pattern)
 #endif
 }
 
-const QString MetaDataFormatter::pattern() const
+QString MetaDataFormatter::pattern() const
 {
     return m_pattern;
 }

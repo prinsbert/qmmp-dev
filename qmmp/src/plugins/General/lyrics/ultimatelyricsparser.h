@@ -37,8 +37,8 @@ public:
     ~UltimateLyricsParser();
 
     bool load(const QString &path);
-    const QString &errorString() const;
-    const QList<LyricsProvider *> &providers();
+    QString errorString() const;
+    QList<LyricsProvider *> providers();
     LyricsProvider *provider(const QString &name) const;
     static const QStringList &defaultProviders();
 

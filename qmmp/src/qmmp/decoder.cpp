@@ -47,7 +47,7 @@ void Decoder::configure(const AudioParameters &p)
 void Decoder::next()
 {}
 
-const QString Decoder::nextURL() const
+QString Decoder::nextURL() const
 {
     return QString();
 }
@@ -57,7 +57,7 @@ const AudioParameters &Decoder::audioParameters() const
     return m_parameters;
 }
 
-const QMap<Qmmp::ReplayGainKey, double> &Decoder::replayGainInfo() const
+QMap<Qmmp::ReplayGainKey, double> Decoder::replayGainInfo() const
 {
     return m_rg;
 }

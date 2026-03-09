@@ -103,15 +103,15 @@ public:
     /*!
      * Returns number of the columns.
      */
-    int count();
+    int count() const;
     /*!
      * Returns name of the column with index \b index.
      */
-    const QString name(int index) const;
+    QString name(int index) const;
     /*!
      * Returns template of the column with index \b index.
      */
-    const QString pattern(int index) const;
+    QString pattern(int index) const;
     /*!
      * Adds extra data to column (size, geometry, etc).
      * @param index Index of the column.
@@ -124,7 +124,7 @@ public:
      * @param index Index of the column.
      * @param key Key of the extra field.
      */
-    const QVariant data(int index, int key) const;
+    QVariant data(int index, int key) const;
 
 signals:
     /*!

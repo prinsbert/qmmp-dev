@@ -778,7 +778,7 @@ void QSUiListWidget::dragMoveEvent(QDragMoveEvent *event)
         event->acceptProposedAction();
 }
 
-const QString QSUiListWidget::getExtraString(PlayListItem *item)
+QString QSUiListWidget::getExtraString(PlayListItem *item) const
 {
     if(item->isGroup())
         return QString();

@@ -47,7 +47,7 @@ int ChannelMap::mask() const
     return mask;
 }
 
-const ChannelMap ChannelMap::remaped() const
+ChannelMap ChannelMap::remaped() const
 {
     ChannelMap map;
     for(int i = 0; i < 9; ++i)
@@ -62,7 +62,7 @@ const ChannelMap ChannelMap::remaped() const
     return map;
 }
 
-const QString ChannelMap::toString() const
+QString ChannelMap::toString() const
 {
     static const QHash <Qmmp::ChannelPosition, QString> names = {
         { Qmmp::CHAN_NULL, u"NA"_s },

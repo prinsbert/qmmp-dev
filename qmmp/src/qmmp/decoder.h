@@ -73,7 +73,7 @@ public:
      * By default this function does nothing.
      * Reimplemet it if your decoder can play next track without stop/start cycle.
      */
-    virtual const QString nextURL() const;
+    virtual QString nextURL() const;
     /*!
      * Returns detected audio parameters.
      */
@@ -81,12 +81,12 @@ public:
     /*!
      * Returns ReplayGain information.
      */
-    const QMap<Qmmp::ReplayGainKey, double> &replayGainInfo() const;
+    QMap<Qmmp::ReplayGainKey, double> replayGainInfo() const;
     /*!
      * Sets ReplayGain information. Use this function before playback.
      * @param rg ReplayGain information
      */
-    void setReplayGainInfo(const QMap<Qmmp::ReplayGainKey,double> &rg);
+    void setReplayGainInfo(const QMap<Qmmp::ReplayGainKey, double> &rg);
     /*!
      * Returns QIODevice-based input source assigned for this decoder.
      */

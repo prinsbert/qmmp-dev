@@ -40,7 +40,7 @@ public:
 
     void setImage(const QImage &img);
     bool hasImage() const;
-    const QImage &image() const;
+    QImage image() const;
 
 public slots:
     void saveAs();

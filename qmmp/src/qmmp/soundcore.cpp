@@ -237,7 +237,7 @@ Qmmp::State SoundCore::state() const
     return m_handler->state();
 }
 
-const QMap<Qmmp::MetaData, QString> &SoundCore::metaData() const
+QMap<Qmmp::MetaData, QString> SoundCore::metaData() const
 {
     return m_info.metaData();
 }
@@ -247,7 +247,7 @@ QString SoundCore::metaData(Qmmp::MetaData key) const
     return m_info.value(key);
 }
 
-const QHash<QString, QString> &SoundCore::streamInfo() const
+QHash<QString, QString> SoundCore::streamInfo() const
 {
     return m_streamInfo;
 }

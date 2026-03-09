@@ -171,7 +171,7 @@ public:
     /*!
      * Returns a list of filters which should be used for directory scanning.
      */
-    const QStringList &restrictFilters() const;
+    QStringList restrictFilters() const;
     /*!
      * Disables all builtin directory scanning filters and sets them to \b filters (Example: *.mp3,*.ogg).
      */
@@ -179,7 +179,7 @@ public:
     /*!
      * Returns a list of filters which should be excluded from incoming files while directory scanning.
      */
-    const QStringList &excludeFilters() const;
+    QStringList excludeFilters() const;
     /*!
      * Sets a list of filters which should be excluded from incoming files while directory scanning.
      * @param filters A set of filters separated by semicolon (Example: *.cue,*.ogg).
@@ -193,7 +193,7 @@ public:
     /*!
      * Returns default playlist name.
      */
-    const QString &defaultPlayListName() const;
+    QString defaultPlayListName() const;
     /*!
      * Sets default playlist options.
      * @param name Default playlist name.

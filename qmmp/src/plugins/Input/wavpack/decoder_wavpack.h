@@ -40,7 +40,7 @@ public:
     int bitrate() const override;
     qint64 read(unsigned char *data, qint64 maxSize) override;
     void seek(qint64 time) override;
-    const QString nextURL() const override;
+    QString nextURL() const override;
     void next() override;
 
 private:

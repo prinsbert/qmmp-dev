@@ -47,7 +47,7 @@ public:
     /*!
      * Returns localized name of property.
      */
-    const QString &name() const;
+    QString name() const;
     /*!
      * Changes localized name to \b name
      */
@@ -55,7 +55,7 @@ public:
     /*!
      * Returns property value.
      */
-    const QVariant &value() const;
+    QVariant value() const;
     /*!
      * Returns value of property.
      */
@@ -63,7 +63,7 @@ public:
     /*!
      * Returns suffix of property.
      */
-    const QString &suffix() const;
+    QString suffix() const;
     /*!
      * Changes property suffix to \b suffixed
      */
@@ -158,7 +158,7 @@ public:
     /*!
      * Returns details dialog hints.
      */
-    const DialogHints &dialogHints() const;
+    DialogHints dialogHints() const;
 
 protected:
     /*!

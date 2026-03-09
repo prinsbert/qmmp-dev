@@ -38,8 +38,8 @@ public:
     QmmpUiPluginCache(const QString &file, QSettings *settings);
     explicit QmmpUiPluginCache(QObject *instance);
 
-    const QString shortName() const;
-    const QString file() const;
+    QString shortName() const;
+    QString file() const;
     int priority() const;
     bool hasError() const;
 

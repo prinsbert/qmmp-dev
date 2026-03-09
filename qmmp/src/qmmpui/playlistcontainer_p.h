@@ -68,7 +68,7 @@ public:
     void removeFromQueue(PlayListTrack *track);
     void clearQueue();
     void restoreQueue(const QList<PlayListTrack *> &tracks);
-    const QList<PlayListTrack *> &queuedTracks() const;
+    QList<PlayListTrack *> queuedTracks() const;
     int linesPerGroup() const;
     void setLinesPerGroup(int lines);
 

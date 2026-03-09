@@ -122,12 +122,12 @@ QmmpUiPluginCache::QmmpUiPluginCache(QObject *instance)
     qCDebug(core) << "registered internal factory" << m_shortName;
 }
 
-const QString QmmpUiPluginCache::shortName() const
+QString QmmpUiPluginCache::shortName() const
 {
     return m_shortName;
 }
 
-const QString QmmpUiPluginCache::file() const
+QString QmmpUiPluginCache::file() const
 {
     return m_path;
 }

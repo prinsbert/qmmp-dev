@@ -41,7 +41,7 @@ public:
 
     void prepare(PlayListTrack *track, QPoint pos);
     void deactivate();
-    const QString url() const;
+    QString url() const;
 
 private slots:
     void loadCover();
