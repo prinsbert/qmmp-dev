@@ -72,17 +72,17 @@ bool TrackInfo::isEmpty() const
     return m_metaData.isEmpty() && m_properties.isEmpty() && m_replayGainInfo.isEmpty() && m_path.isEmpty();
 }
 
-const QString &TrackInfo::path() const
+QString TrackInfo::path() const
 {
     return m_path;
 }
 
-const QString TrackInfo::value(Qmmp::MetaData key) const
+QString TrackInfo::value(Qmmp::MetaData key) const
 {
     return m_metaData.value(key);
 }
 
-const QString TrackInfo::value(Qmmp::TrackProperty key) const
+QString TrackInfo::value(Qmmp::TrackProperty key) const
 {
     return m_properties.value(key);
 }
@@ -92,17 +92,17 @@ double TrackInfo::value(Qmmp::ReplayGainKey key) const
     return m_replayGainInfo.value(key);
 }
 
-const QMap<Qmmp::MetaData, QString> &TrackInfo::metaData() const
+QMap<Qmmp::MetaData, QString> TrackInfo::metaData() const
 {
     return m_metaData;
 }
 
-const QMap<Qmmp::TrackProperty, QString> &TrackInfo::properties() const
+QMap<Qmmp::TrackProperty, QString> TrackInfo::properties() const
 {
     return m_properties;
 }
 
-const QMap<Qmmp::ReplayGainKey, double> &TrackInfo::replayGainInfo() const
+QMap<Qmmp::ReplayGainKey, double> TrackInfo::replayGainInfo() const
 {
     return m_replayGainInfo;
 }

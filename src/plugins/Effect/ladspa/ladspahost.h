@@ -83,8 +83,8 @@ public:
 
     int applyEffect(float *data, size_t samples);
     void configure(quint32 freq, int chan);
-    const QList<LADSPAPlugin *> &plugins() const;
-    const QList<LADSPAEffect *> &effects() const;
+    QList<LADSPAPlugin *> plugins() const;
+    QList<LADSPAEffect *> effects() const;
     void load(LADSPAPlugin *plugin);
     void unload(LADSPAEffect *effect);
 

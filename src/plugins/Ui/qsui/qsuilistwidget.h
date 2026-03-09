@@ -109,7 +109,7 @@ private:
     /*!
      * Returns string with queue number or(and) repeate flag for the \b item.
      */
-    const QString getExtraString(PlayListItem *item);
+    QString getExtraString(PlayListItem *item) const;
     void updateScrollBars();
     int viewportHeight() const;
     int lastVisibleLine() const;

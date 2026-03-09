@@ -82,15 +82,15 @@ public:
     /*!
      * Returns file path or stream URL.
      */
-    const QString &path() const;
+    QString path() const;
     /*!
      * Returns the metdata string associated with the given \b key.
      */
-    const QString value(Qmmp::MetaData key) const;
+    QString value(Qmmp::MetaData key) const;
     /*!
      * Returns the track property string associated with the given \b key.
      */
-    const QString value(Qmmp::TrackProperty key) const;
+    QString value(Qmmp::TrackProperty key) const;
     /*!
      * Returns the ReplayGain value associated with the given \b key.
      */
@@ -98,15 +98,15 @@ public:
     /*!
      * Returns the track metadata map.
      */
-    const QMap<Qmmp::MetaData, QString> &metaData() const;
+    QMap<Qmmp::MetaData, QString> metaData() const;
     /*!
      * Returns the track property map.
      */
-    const QMap<Qmmp::TrackProperty, QString> &properties() const;
+    QMap<Qmmp::TrackProperty, QString> properties() const;
     /*!
      * Returns the ReplayGain information.
      */
-    const QMap<Qmmp::ReplayGainKey, double> &replayGainInfo() const;
+    QMap<Qmmp::ReplayGainKey, double> replayGainInfo() const;
     /*!
      * Returns parts of the stored track information.
      */

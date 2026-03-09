@@ -84,7 +84,7 @@ public:
     ~QSUiWaveformScanner();
     bool scan(const QString &path);
     void stop();
-    const QList<int> &data() const;
+    QList<int> data() const;
     const AudioParameters &audioParameters() const;
 
 signals:

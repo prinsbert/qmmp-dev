@@ -61,7 +61,7 @@ void PlayListContainer::restoreQueue(const QList<PlayListTrack *> &tracks)
     updateQueueIndexes();
 }
 
-const QList<PlayListTrack *> &PlayListContainer::queuedTracks() const
+QList<PlayListTrack *> PlayListContainer::queuedTracks() const
 {
     return m_queue;
 }

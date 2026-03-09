@@ -73,7 +73,7 @@ public:
     /*!
      * Returns metadata template.
      */
-    const QString pattern() const;
+    QString pattern() const;
     /*!
      * Converts metadata of track \b track to one string using template.
      */

@@ -58,7 +58,7 @@ bool CoverViewer::hasImage() const
     return !m_image.isNull();
 }
 
-const QImage &CoverViewer::image() const
+QImage CoverViewer::image() const
 {
     return m_image;
 }

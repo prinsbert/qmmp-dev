@@ -188,12 +188,12 @@ void PlayListHeaderModel::execInsert(int index, QWidget *parent)
         insert(index, editor.name(), editor.pattern());
 }
 
-int PlayListHeaderModel::count()
+int PlayListHeaderModel::count() const
 {
     return m_columns.count();
 }
 
-const QString PlayListHeaderModel::name(int index) const
+QString PlayListHeaderModel::name(int index) const
 {
     if(index < 0 || index >= m_columns.size())
     {
@@ -202,7 +202,7 @@ const QString PlayListHeaderModel::name(int index) const
     }
     return m_columns[index].name;
 }
-const QString PlayListHeaderModel::pattern(int index) const
+QString PlayListHeaderModel::pattern(int index) const
 {
     if(index < 0 || index >= m_columns.size())
     {
@@ -222,7 +222,7 @@ void PlayListHeaderModel::setData(int index, int key, const QVariant &data)
     m_columns[index].data.insert(key, data);
 }
 
-const QVariant PlayListHeaderModel::data(int index, int key) const
+QVariant PlayListHeaderModel::data(int index, int key) const
 {
     if(index < 0 || index >= m_columns.size())
     {

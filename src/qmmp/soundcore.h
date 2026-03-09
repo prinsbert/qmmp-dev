@@ -105,7 +105,7 @@ public:
     /*!
      * Returns all meta data in map.
      */
-    const QMap<Qmmp::MetaData, QString> &metaData() const;
+    QMap<Qmmp::MetaData, QString> metaData() const;
     /*!
      * Returns the metdata string associated with the given \b key.
      */
@@ -113,7 +113,7 @@ public:
     /*!
      * Returns a hash of stream information if available
      */
-    const QHash<QString, QString> &streamInfo() const;
+    QHash<QString, QString> streamInfo() const;
     /*!
      * Returns current track information.
      */

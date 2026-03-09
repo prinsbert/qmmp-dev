@@ -120,12 +120,12 @@ bool UltimateLyricsParser::load(const QString &path)
     return true;
 }
 
-const QString &UltimateLyricsParser::errorString() const
+QString UltimateLyricsParser::errorString() const
 {
     return m_errorString;
 }
 
-const QList<LyricsProvider *> &UltimateLyricsParser::providers()
+QList<LyricsProvider *> UltimateLyricsParser::providers()
 {
     return m_providers;
 }

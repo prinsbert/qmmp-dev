@@ -250,11 +250,11 @@ public:
     /*!
      * Returns a list of queued tracks.
      */
-    const QList<PlayListTrack *> &queuedTracks() const;
+    QList<PlayListTrack *> queuedTracks() const;
     /*!
      * Returns \b true if play queue is empty, otherwise returns - \b false.
      */
-    bool isEmptyQueue()const;
+    bool isEmptyQueue() const;
     /*!
      * Returns the number of tracks in the queue
      */

@@ -360,7 +360,7 @@ void QmmpUiSettings::setPlayListTransitionEnabled(bool enabled)
     }
 }
 
-const QStringList &QmmpUiSettings::restrictFilters() const
+QStringList QmmpUiSettings::restrictFilters() const
 {
     return m_restrict_filters;
 }
@@ -371,7 +371,7 @@ void QmmpUiSettings::setRestrictFilters(const QString &filters)
     saveSettings();
 }
 
-const QStringList &QmmpUiSettings::excludeFilters() const
+QStringList QmmpUiSettings::excludeFilters() const
 {
     return m_exclude_filters;
 }
@@ -387,7 +387,7 @@ bool QmmpUiSettings::useDefaultPlayList() const
     return m_use_default_pl;
 }
 
-const QString &QmmpUiSettings::defaultPlayListName() const
+QString QmmpUiSettings::defaultPlayListName() const
 {
     return m_default_pl_name;
 }

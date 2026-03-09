@@ -723,7 +723,7 @@ void QSUiPlayListHeader::setSize(int index, int size)
     m_model->setData(index, SIZE, size);
 }
 
-const QString QSUiPlayListHeader::name(int index) const
+QString QSUiPlayListHeader::name(int index) const
 {
     return m_model->data(index, NAME).toString();
 }

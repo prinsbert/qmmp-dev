@@ -147,7 +147,7 @@ ArchiveTagReader::~ArchiveTagReader()
     delete m_stream;
 }
 
-const QMap<Qmmp::MetaData, QString> ArchiveTagReader::metaData() const
+QMap<Qmmp::MetaData, QString> ArchiveTagReader::metaData() const
 {
     QMap<Qmmp::MetaData, QString> m;
 

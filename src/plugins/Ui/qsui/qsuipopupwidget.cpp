@@ -119,7 +119,7 @@ void QSUiPopupWidget::deactivate()
     hide();
 }
 
-const QString QSUiPopupWidget::url() const
+QString QSUiPopupWidget::url() const
 {
     return m_url;
 }

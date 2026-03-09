@@ -36,7 +36,7 @@ public:
 
     ~ArchiveTagReader();
 
-    const QMap<Qmmp::MetaData, QString>  metaData() const;
+    QMap<Qmmp::MetaData, QString> metaData() const;
     TagLib::AudioProperties *audioProperties() const;
 
 private:

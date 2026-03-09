@@ -81,7 +81,7 @@ private:
     void initStyleOption(QStyleOptionHeader *opt);
     int size(int index) const;
     void setSize(int index, int size);
-    const QString name(int index) const;
+    QString name(int index) const;
     void adjustColumn(int index);
     int autoResizeColumn() const;
     void writeSettings();

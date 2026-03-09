@@ -24,7 +24,7 @@ MetaDataItem::MetaDataItem(const QString &name, const QVariant &value, const QSt
     m_name(name), m_suffix(suffix), m_value(value)
 {}
 
-const QString &MetaDataItem::name() const
+QString MetaDataItem::name() const
 {
     return m_name;
 }
@@ -34,7 +34,7 @@ void MetaDataItem::setName(const QString &name)
     m_name = name;
 }
 
-const QVariant &MetaDataItem::value() const
+QVariant MetaDataItem::value() const
 {
     return m_value;
 }
@@ -44,7 +44,7 @@ void MetaDataItem::setValue(const QString &value)
     m_value = value;
 }
 
-const QString &MetaDataItem::suffix() const
+QString MetaDataItem::suffix() const
 {
     return m_suffix;
 }
@@ -115,7 +115,7 @@ bool MetaDataModel::isReadOnly() const
     return m_readOnly;
 }
 
-const MetaDataModel::DialogHints &MetaDataModel::dialogHints() const
+MetaDataModel::DialogHints MetaDataModel::dialogHints() const
 {
     return m_dialogHints;
 }

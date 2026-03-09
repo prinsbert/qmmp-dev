@@ -866,7 +866,7 @@ void PlayListModel::setQueued(PlayListTrack *t)
     emit listChanged(QUEUE);
 }
 
-const QList<PlayListTrack *> &PlayListModel::queuedTracks() const
+QList<PlayListTrack *> PlayListModel::queuedTracks() const
 {
     return m_container->queuedTracks();
 }
