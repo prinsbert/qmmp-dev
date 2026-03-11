@@ -43,6 +43,9 @@ void CueParser::loadData(const QByteArray &data, QmmpTextCodec *codec)
 {
     clear();
 
+    if(data.isEmpty())
+        return;
+
     QString artist, album, genre, date, comment, file;
     double album_peak = 0.0, album_gain = 0.0;
     QString str = codec->toUnicode(data);
