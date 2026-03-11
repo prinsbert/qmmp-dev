@@ -46,14 +46,16 @@ private:
     QString m_path;
     QList<TagModel* > m_tags;
     TagLib::Ogg::XiphComment *m_tag = nullptr;
-    TagLib::File *m_file = nullptr;
     TagLib::FileStream *m_stream = nullptr;
+    TagLib::FLAC::File *m_nativeFlacFile = nullptr;
+    TagLib::Ogg::FLAC::File *m_oggFlacFile = nullptr;
 };
 
 class FLACVorbisCommentModel : public TagModel
 {
 public:
-    FLACVorbisCommentModel(TagLib::Ogg::XiphComment *tag, TagLib::File *file);
+    FLACVorbisCommentModel(TagLib::FLAC::File *file);
+    FLACVorbisCommentModel(TagLib::Ogg::FLAC::File *file);
     ~FLACVorbisCommentModel();
     QString name() const override;
     QString value(Qmmp::MetaData key) const override;
@@ -61,7 +63,8 @@ public:
     void save() override;
 
 private:
-    TagLib::File *m_file;
+    TagLib::FLAC::File *m_nativeFlacFile = nullptr;
+    TagLib::Ogg::FLAC::File *m_oggFlacFile = nullptr;
     TagLib::Ogg::XiphComment *m_tag;
 };
 
