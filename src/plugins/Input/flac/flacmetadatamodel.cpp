@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2025 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -171,7 +171,7 @@ void FLACMetaDataModel::removeCover()
 
 QString FLACMetaDataModel::cue() const
 {
-    if (m_tag->fieldListMap().contains("CUESHEET"))
+    if (m_tag && m_tag->fieldListMap().contains("CUESHEET"))
     {
         QByteArray data(m_tag->fieldListMap()["CUESHEET"].toString().toCString(true));
         return QString::fromUtf8(data);
@@ -182,15 +182,28 @@ QString FLACMetaDataModel::cue() const
 
 void FLACMetaDataModel::setCue(const QString &content)
 {
-    m_tag->removeFields("CUESHEET");
-    m_tag->addField("CUESHEET", QStringToTString(content), true);
-    m_file->save();
+    if(!m_tag)
+    {
+        TagLib::FLAC::File *flacFile = dynamic_cast<TagLib::FLAC::File *>(m_file);
+        if(flacFile)
+            m_tag = flacFile->xiphComment(true);
+    }
+    
+    if(m_tag)
+    {
+        m_tag->removeFields("CUESHEET");
+        m_tag->addField("CUESHEET", QStringToTString(content), true);
+        m_file->save();
+    }
 }
 
 void FLACMetaDataModel::removeCue()
 {
-    m_tag->removeFields("CUESHEET");
-    m_file->save();
+    if(m_tag)
+    {
+        m_tag->removeFields("CUESHEET");
+        m_file->save();
+    }
 }
 
 QString FLACMetaDataModel::lyrics() const
