@@ -42,6 +42,9 @@ void CueParser::loadData(const QByteArray &data, QTextCodec *codec)
 {
     clear();
 
+    if(data.isEmpty())
+        return;
+
     QString artist, album, genre, date, comment, file;
     double album_peak = 0.0, album_gain = 0.0;
     QTextStream textStream(data, QIODevice::ReadOnly);
