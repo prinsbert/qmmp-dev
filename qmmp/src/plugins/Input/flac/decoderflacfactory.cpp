@@ -29,6 +29,7 @@
 #include <taglib/tmap.h>
 #include <taglib/tfilestream.h>
 #include <taglib/id3v2framefactory.h>
+#include <taglib/id3v2tag.h>
 #include <FLAC/export.h>
 #include <qmmp/cueparser.h>
 #include "decoder_flac.h"
@@ -217,7 +218,43 @@ QList<TrackInfo*> DecoderFLACFactory::createPlayList(const QString &path, TrackI
             info->setValue(Qmmp::COMPOSER, TStringToQString(fld.toString()));
         if(!(fld = tag->fieldListMap()["DISCNUMBER"]).isEmpty())
             info->setValue(Qmmp::DISCNUMBER, TStringToQString(fld.toString()));
+    }
+    //id3v2 as fallback
+    if((parts & TrackInfo::MetaData) && flacFile && flacFile->hasID3v2Tag())
+    {
+        TagLib::ID3v2::Tag *id3v2_tag = flacFile->ID3v2Tag();
 
+        QMap<Qmmp::MetaData, QString> tags = {
+            { Qmmp::ARTIST, TStringToQString(id3v2_tag->artist()) },
+            { Qmmp::ALBUM,  TStringToQString(id3v2_tag->album()) },
+            { Qmmp::COMMENT, TStringToQString(id3v2_tag->comment()) },
+            { Qmmp::GENRE, TStringToQString(id3v2_tag->genre()) },
+            { Qmmp::TITLE, TStringToQString(id3v2_tag->title()) },
+            { Qmmp::YEAR, QString::number(id3v2_tag->year()) },
+            { Qmmp::TRACK, QString::number(id3v2_tag->track()) }
+        };
+
+        if(!id3v2_tag->frameListMap()["TPE2"].isEmpty())
+        {
+            TagLib::String albumArtist = id3v2_tag->frameListMap()["TPE2"].front()->toString();
+            tags.insert(Qmmp::ALBUMARTIST, TStringToQString(albumArtist));
+        }
+        if(!id3v2_tag->frameListMap()["TCOM"].isEmpty())
+        {
+            TagLib::String composer = id3v2_tag->frameListMap()["TCOM"].front()->toString();
+            tags.insert(Qmmp::COMPOSER, TStringToQString(composer));
+        }
+        if(!id3v2_tag->frameListMap()["TPOS"].isEmpty())
+        {
+            TagLib::String disc = id3v2_tag->frameListMap()["TPOS"].front()->toString();
+            tags.insert(Qmmp::DISCNUMBER, TStringToQString(disc));
+        }
+
+        //prefer tags with longest length
+        for(auto it = tags.cbegin(); it != tags.cend(); ++it) {
+            if(info->value(it.key()).length() < it.value().length())
+                info->setValue(it.key(), it.value());
+        }
     }
 
     delete flacFile;

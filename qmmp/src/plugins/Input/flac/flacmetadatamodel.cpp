@@ -25,8 +25,10 @@
 #include <taglib/tmap.h>
 #include <taglib/id3v2framefactory.h>
 #include <taglib/flacpicture.h>
+#include <taglib/id3v2tag.h>
 #include <qmmp/metadatamanager.h>
 #include "flacmetadatamodel.h"
+#include "textidentificationframe.h"
 
 FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly) :
     MetaDataModel(readOnly, MetaDataModel::IsCoverEditable)
@@ -45,6 +47,7 @@ FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly) :
         if(m_nativeFlacFile->isValid())
         {
             m_tags << new FLACVorbisCommentModel(m_nativeFlacFile);
+            m_tags << new FLACID3v2TagModel(m_nativeFlacFile);
             setDialogHints(dialogHints() | MetaDataModel::IsCueEditable);
             setReadOnly(m_nativeFlacFile->readOnly());
         }
@@ -65,9 +68,7 @@ FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly) :
 
 FLACMetaDataModel::~FLACMetaDataModel()
 {
-    while(!m_tags.isEmpty())
-        delete m_tags.takeFirst();
-
+    qDeleteAll(m_tags);
     delete m_nativeFlacFile;
     delete m_oggFlacFile;
     delete m_stream;
@@ -233,9 +234,6 @@ FLACVorbisCommentModel::FLACVorbisCommentModel(TagLib::Ogg::FLAC::File *file) :
     m_tag(file->tag())
 {}
 
-FLACVorbisCommentModel::~FLACVorbisCommentModel()
-{}
-
 QString FLACVorbisCommentModel::name() const
 {
     return u"Vorbis Comment"_s;
@@ -334,4 +332,148 @@ void FLACVorbisCommentModel::save()
         m_nativeFlacFile->save();
     else if(m_oggFlacFile)
         m_oggFlacFile->save();
+}
+
+FLACID3v2TagModel::FLACID3v2TagModel(TagLib::FLAC::File *file) :
+    m_file(file),
+    m_tag(file->ID3v2Tag())
+{}
+
+QString FLACID3v2TagModel::name() const
+{
+    return u"ID3v2"_s;
+}
+
+QString FLACID3v2TagModel::value(Qmmp::MetaData key) const
+{
+    if(!m_tag)
+        return QString();
+
+    TagLib::String str;
+
+    switch(key)
+    {
+    case Qmmp::TITLE:
+        str = m_tag->title();
+        break;
+    case Qmmp::ARTIST:
+        str = m_tag->artist();
+        break;
+    case Qmmp::ALBUMARTIST:
+        if(!m_tag->frameListMap()["TPE2"].isEmpty())
+        {
+            str = m_tag->frameListMap()["TPE2"].front()->toString();
+        }
+        break;
+    case Qmmp::ALBUM:
+        str = m_tag->album();
+        break;
+    case Qmmp::COMMENT:
+        str = m_tag->comment();
+        break;
+    case Qmmp::GENRE:
+        str = m_tag->genre();
+        break;
+    case Qmmp::COMPOSER:
+        if(!m_tag->frameListMap()["TCOM"].isEmpty())
+        {
+            str = m_tag->frameListMap()["TCOM"].front()->toString();
+        }
+        break;
+    case Qmmp::YEAR:
+        return QString::number(m_tag->year());
+    case Qmmp::TRACK:
+        return QString::number(m_tag->track());
+    case  Qmmp::DISCNUMBER:
+        if(!m_tag->frameListMap()["TPOS"].isEmpty())
+        {
+            str = m_tag->frameListMap()["TPOS"].front()->toString();
+        }
+        break;
+    case Qmmp::UNKNOWN:
+        break;
+    }
+    return TStringToQString(str);
+}
+
+void FLACID3v2TagModel::setValue(Qmmp::MetaData key, const QString &value)
+{
+    if(!m_tag)
+        return;
+
+    TagLib::String str = QStringToTString(value);
+    TagLib::ID3v2::FrameFactory::instance()->setDefaultTextEncoding(TagLib::String::UTF8);
+
+    //save additional tags
+    TagLib::ByteVector id3v2_key;
+    if(key == Qmmp::ALBUMARTIST)
+        id3v2_key = "TPE2"; //album artist
+    else if(key == Qmmp::COMPOSER)
+        id3v2_key = "TCOM"; //composer
+    else if(key == Qmmp::DISCNUMBER)
+        id3v2_key = "TPOS";  //disc number
+
+    if(!id3v2_key.isEmpty())
+    {
+        if(value.isEmpty())
+            m_tag->removeFrames(id3v2_key);
+        else if(!m_tag->frameListMap()[id3v2_key].isEmpty())
+            m_tag->frameListMap()[id3v2_key].front()->setText(str);
+        else
+        {
+            TagLib::ID3v2::TextIdentificationFrame *frame;
+            frame = new TagLib::ID3v2::TextIdentificationFrame(id3v2_key, TagLib::String::UTF8);
+            frame->setText(str);
+            m_tag->addFrame(frame);
+        }
+        return;
+    }
+
+    switch(key)
+    {
+    case Qmmp::TITLE:
+        m_tag->setTitle(str);
+        break;
+    case Qmmp::ARTIST:
+        m_tag->setArtist(str);
+        break;
+    case Qmmp::ALBUM:
+        m_tag->setAlbum(str);
+        break;
+    case Qmmp::COMMENT:
+        m_tag->setComment(str);
+        break;
+    case Qmmp::GENRE:
+        m_tag->setGenre(str);
+        break;
+    case Qmmp::YEAR:
+        m_tag->setYear(value.toInt());
+        break;
+    case Qmmp::TRACK:
+        m_tag->setTrack(value.toInt());
+    default:
+        break;
+    }
+}
+
+bool FLACID3v2TagModel::exists() const
+{
+    return m_tag != nullptr;
+}
+
+void FLACID3v2TagModel::create()
+{
+    m_tag = m_file->ID3v2Tag(true);
+}
+
+void FLACID3v2TagModel::remove()
+{
+    m_tag = nullptr;
+}
+
+void FLACID3v2TagModel::save()
+{
+    if(!m_tag)
+        m_file->strip(TagLib::FLAC::File::ID3v2);
+    m_file->save();
 }
