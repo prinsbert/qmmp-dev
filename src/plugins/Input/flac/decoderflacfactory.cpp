@@ -251,7 +251,8 @@ QList<TrackInfo*> DecoderFLACFactory::createPlayList(const QString &path, TrackI
         }
 
         //prefer tags with longest length
-        for(auto it = tags.cbegin(); it != tags.cend(); ++it) {
+        for(auto it = tags.cbegin(); it != tags.cend(); ++it)
+        {
             if(info->value(it.key()).length() < it.value().length())
                 info->setValue(it.key(), it.value());
         }
