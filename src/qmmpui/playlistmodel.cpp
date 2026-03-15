@@ -1041,80 +1041,97 @@ void PlayListModel::updateMetaData(const QStringList &paths)
     if(m_container->isEmpty())
         return;
 
-    QList<PlayListTrack *> tracksToRemove;
-    QList<PlayListTrack *> tracksToAdd;
+    qDebug() << paths;
 
-    QHash<QString, TrackInfo *> cache; //cache for tracks
-    QSet<QString> multiTrackFiles; //files with multiple tracks
+    QSet<QString> pathsToRemove, pathsToAdd;
+    QHash<QString, TrackInfo *> pathsToUpdate; //path, new metadata
+    QHash<QString, QList<TrackInfo *>> pathsToReplace; //path, list of tracks
+    QList<TrackInfo *> trackInfoList;
 
+    //get information
     for(const QString &path : std::as_const(paths))
     {
-        bool missing = false; //track is missing
+        if(pathsToRemove.contains(path) || pathsToUpdate.contains(path) || pathsToReplace.contains(path))
+            continue;
 
-        //update cache
-        if(!cache.contains(path))
+        if(!path.contains(u"://"_s)) //local file
         {
-            //is it track of local file?
-            if(path.contains(u"://"_s) && path.contains(QLatin1Char('#')) && !cache.contains(path))
-            {
-                QString filePath = TrackInfo::pathFromUrl(path);
-                if(multiTrackFiles.contains(filePath)) //looks like local file has been already scanned, but does not contain this track
-                {
-                    missing = true;
-                }
-                else if(QFileInfo(filePath).isFile())
-                {
-                    const QList<TrackInfo *> list = MetaDataManager::instance()->createPlayList(filePath);
-                    for(TrackInfo *info : std::as_const(list))
-                        cache.insert(info->path(), info);
+            const QList<TrackInfo *> list = MetaDataManager::instance()->createPlayList(path);
+            if(list.isEmpty()) //remove unavailable files
+                pathsToRemove << path;
+            else if(list.count() == 1 && list.first()->path() == path) //update metadata of local file
+                pathsToUpdate.insert(path, list.first());
+            else  //replace single file by CUE tracks
+                pathsToReplace.insert(path, list);
 
-                    multiTrackFiles << path;
-                }
-            }
-            else if(QFileInfo(path).isFile()) //is it local file?
-            {
-                const QList<TrackInfo *> list = MetaDataManager::instance()->createPlayList(path);
-                for(TrackInfo *info : std::as_const(list))
-                    cache.insert(info->path(), info);
-            }
+            trackInfoList << list;
         }
-
-        QList<TrackInfo *> list;
-        if(cache.contains(path)) //using TrackInfo object from cache
-            list << cache.value(path);
-        else if(!missing)
-            list << MetaDataManager::instance()->createPlayList(path);
-
-        for(int i = 0; i < m_container->trackCount(); ++i)
+        else if(path.contains(u"://"_s) && path.contains(QLatin1Char('#'))) //CUE track
         {
-            PlayListTrack *track = m_container->track(i);
-            if(!track)
-                continue;
+            QString filePath = TrackInfo::pathFromUrl(path);
+            const QList<TrackInfo *> list = MetaDataManager::instance()->createPlayList(path);
+            if(list.isEmpty()) {
+                //try to receive all tracks for CUE file
+                const QList<TrackInfo *> fullList = MetaDataManager::instance()->createPlayList(filePath);
+                if(fullList.isEmpty()) //invalid file
+                {
+                    pathsToRemove << filePath << path;
+                }
+                else if(fullList.count() == 1 && fullList.first()->path() == filePath) //replace CUE tracks by single file
+                {
+                    if(!pathsToAdd.contains(filePath)) //replace first CUE track
+                    {
+                        pathsToAdd << filePath;
+                        pathsToReplace.insert(path, fullList);
+                    }
+                    else
+                    {
+                        pathsToRemove << path; //remove other CUE track
+                    }
+                }
+                else
+                {
+                    pathsToRemove << path; //remove unavailable CUE track
+                }
 
-            if(track->path() == path)
-            {
-                if(list.isEmpty()) //track is not available
-                    tracksToRemove << track;
-                else if(list.count() == 1)
-                {
-                    track->updateMetaData(list.constFirst()); //update single track
-                }
-                else //replace single track by multiple tracks
-                {
-                    track->updateMetaData(list.constFirst()); //update existing track
-                    delete list.takeFirst();
-                    for(const TrackInfo *info : std::as_const(list)) //add remaining tracks
-                        tracksToAdd << new PlayListTrack(info);
-                }
+                trackInfoList << fullList;
             }
-        }
+            else if(list.count() == 1 && list.first()->path() == path) //update single CUE track
+                pathsToUpdate.insert(path, list.first());
 
-        if(!cache.contains(path))
-            qDeleteAll(list);
+            trackInfoList << list;
+        }
     }
 
-    qDeleteAll(cache);
-    cache.clear();
+    //modify playlist
+    QList<PlayListTrack *> tracksToRemove, tracksToAdd;
+
+    for(int i = 0; i < m_container->trackCount(); ++i)
+    {
+        PlayListTrack *track = m_container->track(i);
+        if(!track || tracksToRemove.contains(track)) //skip already removed tracks (prevents infinite loop)
+            continue;
+
+        if(pathsToRemove.contains(track->path()))
+            tracksToRemove << track;
+
+        if(pathsToUpdate.contains(track->path()))
+            track->updateMetaData(pathsToUpdate.value(track->path()));
+
+        if(pathsToReplace.contains(track->path()) && !tracksToRemove.contains(track))
+        {
+            const QList<TrackInfo *> list = pathsToReplace.value(track->path());
+            QList<PlayListTrack *> tracks;
+            for(TrackInfo *info : std::as_const(list))
+                tracks << new PlayListTrack(info);
+
+            insertTracksInternal(track, tracks);
+            tracksToRemove << track; //remove previous track
+        }
+    }
+
+    qDeleteAll(trackInfoList);
+    trackInfoList.clear();
 
     if(!tracksToRemove.isEmpty())
         removeTracks(tracksToRemove);
