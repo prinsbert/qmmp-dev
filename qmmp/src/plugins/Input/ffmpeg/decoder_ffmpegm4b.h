@@ -21,7 +21,7 @@
 #ifndef DECODER_FFMPEGM4B_H
 #define DECODER_FFMPEGM4B_H
 
-#include "trackinfo.h"
+#include <qmmp/trackinfo.h>
 #include <qmmp/decoder.h>
 
 class TrackInfo;
