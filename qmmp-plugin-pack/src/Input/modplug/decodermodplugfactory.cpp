@@ -65,9 +65,9 @@ Decoder *DecoderModPlugFactory::create(const QString &path, QIODevice *input)
     return new DecoderModPlug(path);
 }
 
-QList<TrackInfo *> DecoderModPlugFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
+QList<TrackInfo> DecoderModPlugFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
-    QList <TrackInfo*> list;
+    QList<TrackInfo> list;
     QSettings settings;
     bool useFileName = settings.value("UseFileName"_L1, false).toBool();
 
@@ -94,12 +94,12 @@ QList<TrackInfo *> DecoderModPlugFactory::createPlayList(const QString &path, Tr
     {
         CSoundFile *soundFile = new CSoundFile();
         soundFile->Create((uchar*) buffer.data(), buffer.size() + 1);
-        TrackInfo *info = new TrackInfo(path);
-        info->setDuration((qint64)soundFile->GetSongTime() * 1000);
+        TrackInfo info (path);
+        info.setDuration((qint64)soundFile->GetSongTime() * 1000);
 
         if(parts & TrackInfo::MetaData)
         {
-            info->setValue(Qmmp::TITLE, useFileName ? path.section(QLatin1Char('/'), -1) :
+            info.setValue(Qmmp::TITLE, useFileName ? path.section(QLatin1Char('/'), -1) :
                                                       QString::fromUtf8(soundFile->GetTitle()));
         }
 
@@ -109,7 +109,7 @@ QList<TrackInfo *> DecoderModPlugFactory::createPlayList(const QString &path, Tr
             //info->setValue(Qmmp::SAMPLERATE);
             //info->setValue(Qmmp::CHANNELS);
             //info->setValue(Qmmp::BITS_PER_SAMPLE);
-            info->setValue(Qmmp::FORMAT_NAME, ModPlugMetaDataModel::getTypeName(soundFile->GetType()));
+            info.setValue(Qmmp::FORMAT_NAME, ModPlugMetaDataModel::getTypeName(soundFile->GetType()));
         }
 
         list << info;

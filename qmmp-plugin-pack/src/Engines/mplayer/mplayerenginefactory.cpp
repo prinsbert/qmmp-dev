@@ -51,7 +51,7 @@ AbstractEngine *MplayerEngineFactory::create(QObject *parent)
     return new MplayerEngine(parent);
 }
 
-QList<TrackInfo *> MplayerEngineFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
+QList<TrackInfo> MplayerEngineFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
     Q_UNUSED(parts);
     return { MplayerInfo::createTrackInfo(path) };

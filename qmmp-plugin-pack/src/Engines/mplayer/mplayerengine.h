@@ -37,7 +37,7 @@ class InputSource;
 class MplayerInfo
 {
 public:
-    static TrackInfo *createTrackInfo(const QString &path);
+    static TrackInfo createTrackInfo(const QString &path);
     static const QStringList &filters();
     static bool supports(const QString &path);
 };

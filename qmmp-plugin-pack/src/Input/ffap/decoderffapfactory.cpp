@@ -61,7 +61,7 @@ Decoder *DecoderFFapFactory::create(const QString &path, QIODevice *i)
     return new DecoderFFap(path, i);
 }
 
-QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
+QList<TrackInfo> DecoderFFapFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
     int track = -1; //cue track
     QString filePath = path;
@@ -72,10 +72,10 @@ QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, Track
         parts = TrackInfo::AllParts; //extract all metadata for single cue track
     }
 
-    TrackInfo *info = new TrackInfo(filePath);
+    TrackInfo info(filePath);
 
     if(parts == TrackInfo::Parts())
-        return QList<TrackInfo *>() << info;
+        return { info };
 
     TagLib::FileStream stream(QStringToFileName(filePath), true);
     TagLib::APE::File file(&stream);
@@ -84,25 +84,25 @@ QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, Track
 
     if((parts & TrackInfo::Properties) && ap)
     {
-        info->setValue(Qmmp::BITRATE, ap->bitrate());
-        info->setValue(Qmmp::SAMPLERATE, ap->sampleRate());
-        info->setValue(Qmmp::CHANNELS, ap->channels());
-        info->setValue(Qmmp::BITS_PER_SAMPLE, ap->bitsPerSample());
-        info->setValue(Qmmp::FORMAT_NAME, u"Monkey's Audio"_s);
-        info->setDuration(ap->lengthInMilliseconds());
+        info.setValue(Qmmp::BITRATE, ap->bitrate());
+        info.setValue(Qmmp::SAMPLERATE, ap->sampleRate());
+        info.setValue(Qmmp::CHANNELS, ap->channels());
+        info.setValue(Qmmp::BITS_PER_SAMPLE, ap->bitsPerSample());
+        info.setValue(Qmmp::FORMAT_NAME, u"Monkey's Audio"_s);
+        info.setDuration(ap->lengthInMilliseconds());
     }
 
     if((parts & TrackInfo::ReplayGainInfo) && tag && !tag->isEmpty())
     {
         TagLib::APE::ItemListMap items = tag->itemListMap();
         if (items.contains("REPLAYGAIN_TRACK_GAIN"))
-            info->setValue(Qmmp::REPLAYGAIN_TRACK_GAIN,TStringToQString(items["REPLAYGAIN_TRACK_GAIN"].values()[0]));
+            info.setValue(Qmmp::REPLAYGAIN_TRACK_GAIN,TStringToQString(items["REPLAYGAIN_TRACK_GAIN"].values()[0]));
         if (items.contains("REPLAYGAIN_TRACK_PEAK"))
-            info->setValue(Qmmp::REPLAYGAIN_TRACK_PEAK,TStringToQString(items["REPLAYGAIN_TRACK_PEAK"].values()[0]));
+            info.setValue(Qmmp::REPLAYGAIN_TRACK_PEAK,TStringToQString(items["REPLAYGAIN_TRACK_PEAK"].values()[0]));
         if (items.contains("REPLAYGAIN_ALBUM_GAIN"))
-            info->setValue(Qmmp::REPLAYGAIN_ALBUM_GAIN,TStringToQString(items["REPLAYGAIN_ALBUM_GAIN"].values()[0]));
+            info.setValue(Qmmp::REPLAYGAIN_ALBUM_GAIN,TStringToQString(items["REPLAYGAIN_ALBUM_GAIN"].values()[0]));
         if (items.contains("REPLAYGAIN_ALBUM_PEAK"))
-            info->setValue(Qmmp::REPLAYGAIN_ALBUM_PEAK,TStringToQString(items["REPLAYGAIN_ALBUM_PEAK"].values()[0]));
+            info.setValue(Qmmp::REPLAYGAIN_ALBUM_PEAK,TStringToQString(items["REPLAYGAIN_ALBUM_PEAK"].values()[0]));
     }
 
     if((parts & TrackInfo::MetaData) && tag && !tag->isEmpty())
@@ -110,29 +110,28 @@ QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, Track
         if (tag->itemListMap().contains("CUESHEET"))
         {
             CueParser parser(tag->itemListMap()["CUESHEET"].toString().toCString(true));
-            parser.setDuration(info->duration());
-            parser.setProperties(info->properties());
+            parser.setDuration(info.duration());
+            parser.setProperties(info.properties());
             parser.setUrl(u"ape"_s, filePath);
-            delete info;
             return parser.createPlayList(track);
         }
 
-        info->setValue(Qmmp::ALBUM, TStringToQString(tag->album()));
-        info->setValue(Qmmp::ARTIST, TStringToQString(tag->artist()));
-        info->setValue(Qmmp::COMMENT, TStringToQString(tag->comment()));
-        info->setValue(Qmmp::GENRE, TStringToQString(tag->genre()));
-        info->setValue(Qmmp::TITLE, TStringToQString(tag->title()));
-        info->setValue(Qmmp::YEAR, tag->year());
-        info->setValue(Qmmp::TRACK, tag->track());
+        info.setValue(Qmmp::ALBUM, TStringToQString(tag->album()));
+        info.setValue(Qmmp::ARTIST, TStringToQString(tag->artist()));
+        info.setValue(Qmmp::COMMENT, TStringToQString(tag->comment()));
+        info.setValue(Qmmp::GENRE, TStringToQString(tag->genre()));
+        info.setValue(Qmmp::TITLE, TStringToQString(tag->title()));
+        info.setValue(Qmmp::YEAR, tag->year());
+        info.setValue(Qmmp::TRACK, tag->track());
         //additional metadata
         TagLib::APE::Item fld;
         if(!(fld = tag->itemListMap()["ALBUM ARTIST"]).isEmpty())
-            info->setValue(Qmmp::ALBUMARTIST, TStringToQString(fld.toString()));
+            info.setValue(Qmmp::ALBUMARTIST, TStringToQString(fld.toString()));
         if(!(fld = tag->itemListMap()["COMPOSER"]).isEmpty())
-            info->setValue(Qmmp::COMPOSER, TStringToQString(fld.toString()));
+            info.setValue(Qmmp::COMPOSER, TStringToQString(fld.toString()));
     }
 
-    return QList<TrackInfo *>() << info;
+    return { info };
 }
 
 MetaDataModel* DecoderFFapFactory::createMetaDataModel(const QString &path, bool readOnly)

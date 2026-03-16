@@ -155,20 +155,17 @@ void MpvEngine::onError(QProcess::ProcessError error)
 
 void MpvEngine::sendMetaData()
 {
-    QList<TrackInfo *> infoList = m_factory->createPlayList(m_source->path(), TrackInfo::AllParts, nullptr);
-    if(!infoList.isEmpty() && QFileInfo::exists(infoList.at(0)->path()))
+    QList<TrackInfo> infoList = m_factory->createPlayList(m_source->path(), TrackInfo::AllParts, nullptr);
+    if(!infoList.isEmpty() && QFileInfo::exists(infoList.constFirst().path()))
     {
-        TrackInfo *info = infoList.takeFirst();
-        info->setValue(Qmmp::DECODER, m_factory->properties().shortName);
-        info->setValue(Qmmp::FILE_SIZE, QFileInfo(info->path()).size());
-        StateHandler::instance()->dispatch(*info);
-        AudioParameters ap(info->value(Qmmp::SAMPLERATE).toInt(), ChannelMap(info->value(Qmmp::CHANNELS).toInt()),
-                           AudioParameters::findAudioFormat(info->value(Qmmp::BITS_PER_SAMPLE).toInt()));
+        TrackInfo info = infoList.takeFirst();
+        info.setValue(Qmmp::DECODER, m_factory->properties().shortName);
+        info.setValue(Qmmp::FILE_SIZE, QFileInfo(info.path()).size());
+        StateHandler::instance()->dispatch(info);
+        AudioParameters ap(info.value(Qmmp::SAMPLERATE).toInt(), ChannelMap(info.value(Qmmp::CHANNELS).toInt()),
+                           AudioParameters::findAudioFormat(info.value(Qmmp::BITS_PER_SAMPLE).toInt()));
         StateHandler::instance()->dispatch(ap);
-
-        delete info;
     }
-    qDeleteAll(infoList);
 }
 
 void MpvEngine::processEvents()

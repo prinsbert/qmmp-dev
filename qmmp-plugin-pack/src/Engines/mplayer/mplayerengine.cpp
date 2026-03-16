@@ -35,7 +35,7 @@
 
 //#define MPLAYER_DEBUG
 
-TrackInfo *MplayerInfo::createTrackInfo(const QString &path)
+TrackInfo MplayerInfo::createTrackInfo(const QString &path)
 {
     static const QRegularExpression rx_id_length(u"^ID_LENGTH=([0-9,.]+)*"_s);
     static const QRegularExpression rx_id_audio_bitrate(u"^ID_AUDIO_BITRATE=([0-9,.]+)*"_s);
@@ -48,26 +48,26 @@ TrackInfo *MplayerInfo::createTrackInfo(const QString &path)
     mplayer_process.waitForFinished(1500);
     mplayer_process.kill();
     QString str = QString::fromLocal8Bit(mplayer_process.readAll()).trimmed();
-    TrackInfo *info = new TrackInfo(path);
+    TrackInfo info(path);
     const QStringList lines = str.split(QChar::LineFeed);
     for(const QString &line : std::as_const(lines))
     {
         QRegularExpressionMatch match;
 
         if((match = rx_id_length.match(line)).hasMatch())
-            info->setDuration(match.captured(1).toDouble() * 1000);
+            info.setDuration(match.captured(1).toDouble() * 1000);
         else if((match = rx_id_audio_bitrate.match(line)).hasMatch())
-            info->setValue(Qmmp::BITRATE, match.captured(1).toDouble());
+            info.setValue(Qmmp::BITRATE, match.captured(1).toDouble());
         else if((match = rx_id_audio_rate.match(line)).hasMatch())
-            info->setValue(Qmmp::SAMPLERATE, match.captured(1).toDouble());
+            info.setValue(Qmmp::SAMPLERATE, match.captured(1).toDouble());
         else if((match = rx_id_audio_nch.match(line)).hasMatch())
-            info->setValue(Qmmp::CHANNELS, match.captured(1).toInt());
+            info.setValue(Qmmp::CHANNELS, match.captured(1).toInt());
         else if((match = rx_id_audio_codec.match(line)).hasMatch())
-            info->setValue(Qmmp::FORMAT_NAME, match.captured(1));
+            info.setValue(Qmmp::FORMAT_NAME, match.captured(1));
     }
-    info->setValue(Qmmp::BITS_PER_SAMPLE, 32);
-    info->setValue(Qmmp::DECODER, u"mplayer"_s);
-    info->setValue(Qmmp::FILE_SIZE, QFileInfo(path).size());
+    info.setValue(Qmmp::BITS_PER_SAMPLE, 32);
+    info.setValue(Qmmp::DECODER, u"mplayer"_s);
+    info.setValue(Qmmp::FILE_SIZE, QFileInfo(path).size());
 #ifdef MPLAYER_DEBUG
     qCDebug(plugin) << str;
 #endif
@@ -125,9 +125,8 @@ bool MplayerEngine::enqueue(InputSource *source)
 
 bool MplayerEngine::initialize()
 {
-    TrackInfo *info = MplayerInfo::createTrackInfo(m_source->path());
-    m_length = info->duration();
-    delete info;
+    TrackInfo info = MplayerInfo::createTrackInfo(m_source->path());
+    m_length = info.duration();
     m_args.clear();
     m_args << u"-slave"_s;
     QSettings settings;
@@ -282,9 +281,8 @@ void MplayerEngine::startMplayerProcess()
     m_process->start(u"mplayer"_s, m_args);
     StateHandler::instance()->dispatch(Qmmp::Playing);
     StateHandler::instance()->dispatch(m_length);
-    TrackInfo *info = MplayerInfo::createTrackInfo(m_source->path());
-    StateHandler::instance()->dispatch(*info);
-    delete info;
+    TrackInfo info = MplayerInfo::createTrackInfo(m_source->path());
+    StateHandler::instance()->dispatch(info);
     m_source->deleteLater();
     m_source = nullptr;
     m_currentTime = 0;
