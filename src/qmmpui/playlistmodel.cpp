@@ -1041,8 +1041,6 @@ void PlayListModel::updateMetaData(const QStringList &paths)
     if(m_container->isEmpty())
         return;
 
-    qDebug() << paths;
-
     QSet<QString> pathsToRemove, pathsToAdd;
     QHash<QString, TrackInfo *> pathsToUpdate; //path, new metadata
     QHash<QString, QList<TrackInfo *>> pathsToReplace; //path, list of tracks
