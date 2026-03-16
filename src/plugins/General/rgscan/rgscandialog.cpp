@@ -271,11 +271,10 @@ RGScanner *RGScanDialog::findScannerByUrl(const QString &url)
 
 QString RGScanDialog::getAlbumName(const QString &url)
 {
-    QList<TrackInfo *> infoList = MetaDataManager::instance()->createPlayList(url);
+    QList<TrackInfo> infoList = MetaDataManager::instance()->createPlayList(url);
     if(infoList.isEmpty())
         return QString();
-    QString album = infoList.constFirst()->value(Qmmp::ALBUM);
-    qDeleteAll(infoList);
+    QString album = infoList.constFirst().value(Qmmp::ALBUM);
     return album;
 }
 

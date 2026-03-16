@@ -1041,12 +1041,9 @@ void PlayListModel::updateMetaData(const QStringList &paths)
     if(m_container->isEmpty())
         return;
 
-    qDebug() << paths;
-
     QSet<QString> pathsToRemove, pathsToAdd;
-    QHash<QString, TrackInfo *> pathsToUpdate; //path, new metadata
-    QHash<QString, QList<TrackInfo *>> pathsToReplace; //path, list of tracks
-    QList<TrackInfo *> trackInfoList;
+    QHash<QString, TrackInfo> pathsToUpdate; //path, new metadata
+    QHash<QString, QList<TrackInfo>> pathsToReplace; //path, list of tracks
 
     //get information
     for(const QString &path : std::as_const(paths))
@@ -1056,28 +1053,26 @@ void PlayListModel::updateMetaData(const QStringList &paths)
 
         if(!path.contains(u"://"_s)) //local file
         {
-            const QList<TrackInfo *> list = MetaDataManager::instance()->createPlayList(path);
+            const QList<TrackInfo> list = MetaDataManager::instance()->createPlayList(path);
             if(list.isEmpty()) //remove unavailable files
                 pathsToRemove << path;
-            else if(list.count() == 1 && list.first()->path() == path) //update metadata of local file
-                pathsToUpdate.insert(path, list.first());
+            else if(list.count() == 1 && list.constFirst().path() == path) //update metadata of local file
+                pathsToUpdate.insert(path, list.constFirst());
             else  //replace single file by CUE tracks
                 pathsToReplace.insert(path, list);
-
-            trackInfoList << list;
         }
         else if(path.contains(u"://"_s) && path.contains(QLatin1Char('#'))) //CUE track
         {
             QString filePath = TrackInfo::pathFromUrl(path);
-            const QList<TrackInfo *> list = MetaDataManager::instance()->createPlayList(path);
+            const QList<TrackInfo> list = MetaDataManager::instance()->createPlayList(path);
             if(list.isEmpty()) {
                 //try to receive all tracks for CUE file
-                const QList<TrackInfo *> fullList = MetaDataManager::instance()->createPlayList(filePath);
+                const QList<TrackInfo> fullList = MetaDataManager::instance()->createPlayList(filePath);
                 if(fullList.isEmpty()) //invalid file
                 {
                     pathsToRemove << filePath << path;
                 }
-                else if(fullList.count() == 1 && fullList.first()->path() == filePath) //replace CUE tracks by single file
+                else if(fullList.count() == 1 && fullList.constFirst().path() == filePath) //replace CUE tracks by single file
                 {
                     if(!pathsToAdd.contains(filePath)) //replace first CUE track
                     {
@@ -1093,13 +1088,9 @@ void PlayListModel::updateMetaData(const QStringList &paths)
                 {
                     pathsToRemove << path; //remove unavailable CUE track
                 }
-
-                trackInfoList << fullList;
             }
-            else if(list.count() == 1 && list.first()->path() == path) //update single CUE track
+            else if(list.count() == 1 && list.constFirst().path() == path) //update single CUE track
                 pathsToUpdate.insert(path, list.first());
-
-            trackInfoList << list;
         }
     }
 
@@ -1120,18 +1111,15 @@ void PlayListModel::updateMetaData(const QStringList &paths)
 
         if(pathsToReplace.contains(track->path()) && !tracksToRemove.contains(track))
         {
-            const QList<TrackInfo *> list = pathsToReplace.value(track->path());
+            const QList<TrackInfo> list = pathsToReplace.value(track->path());
             QList<PlayListTrack *> tracks;
-            for(TrackInfo *info : std::as_const(list))
-                tracks << new PlayListTrack(info);
+            for(const TrackInfo &info : std::as_const(list))
+                tracks << new PlayListTrack(&info);
 
             insertTracksInternal(track, tracks);
             tracksToRemove << track; //remove previous track
         }
     }
-
-    qDeleteAll(trackInfoList);
-    trackInfoList.clear();
 
     if(!tracksToRemove.isEmpty())
         removeTracks(tracksToRemove);

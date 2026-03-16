@@ -59,12 +59,12 @@ Decoder *DecoderMPCFactory::create(const QString &, QIODevice *i)
     return new DecoderMPC(i);
 }
 
-QList<TrackInfo *> DecoderMPCFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
+QList<TrackInfo> DecoderMPCFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
-    TrackInfo *info = new TrackInfo(path);
+    TrackInfo info(path);
 
     if(parts == TrackInfo::Parts())
-        return QList<TrackInfo*>() << info;
+        return { info };
 
     TagLib::FileStream stream(QStringToFileName(path), true);
     TagLib::MPC::File fileRef(&stream);
@@ -72,31 +72,31 @@ QList<TrackInfo *> DecoderMPCFactory::createPlayList(const QString &path, TrackI
     if((parts & TrackInfo::MetaData) && fileRef.APETag() && !fileRef.APETag()->isEmpty())
     {
         TagLib::APE::Tag *tag = fileRef.APETag();
-        info->setValue(Qmmp::ALBUM, TStringToQString(tag->album()));
-        info->setValue(Qmmp::ARTIST, TStringToQString(tag->artist()));
-        info->setValue(Qmmp::COMMENT, TStringToQString(tag->comment()));
-        info->setValue(Qmmp::GENRE, TStringToQString(tag->genre()));
-        info->setValue(Qmmp::TITLE, TStringToQString(tag->title()));
-        info->setValue(Qmmp::YEAR, tag->year());
-        info->setValue(Qmmp::TRACK, tag->track());
+       info.setValue(Qmmp::ALBUM, TStringToQString(tag->album()));
+       info.setValue(Qmmp::ARTIST, TStringToQString(tag->artist()));
+       info.setValue(Qmmp::COMMENT, TStringToQString(tag->comment()));
+       info.setValue(Qmmp::GENRE, TStringToQString(tag->genre()));
+       info.setValue(Qmmp::TITLE, TStringToQString(tag->title()));
+       info.setValue(Qmmp::YEAR, tag->year());
+       info.setValue(Qmmp::TRACK, tag->track());
         TagLib::APE::Item fld;
         if(!(fld = tag->itemListMap()["ALBUM ARTIST"]).isEmpty())
-            info->setValue(Qmmp::ALBUMARTIST, TStringToQString(fld.toString()));
+           info.setValue(Qmmp::ALBUMARTIST, TStringToQString(fld.toString()));
         if(!(fld = tag->itemListMap()["COMPOSER"]).isEmpty())
-            info->setValue(Qmmp::COMPOSER, TStringToQString(fld.toString()));
+           info.setValue(Qmmp::COMPOSER, TStringToQString(fld.toString()));
     }
 
     if((parts & TrackInfo::Properties) && fileRef.audioProperties())
     {
-        info->setValue(Qmmp::BITRATE, fileRef.audioProperties()->bitrate());
-        info->setValue(Qmmp::SAMPLERATE, fileRef.audioProperties()->sampleRate());
-        info->setValue(Qmmp::CHANNELS, fileRef.audioProperties()->channels());
-        info->setValue(Qmmp::BITS_PER_SAMPLE, 16);
-        info->setValue(Qmmp::FORMAT_NAME, QStringLiteral("Musepack SV%1").arg(fileRef.audioProperties()->mpcVersion()));
-        info->setDuration(fileRef.audioProperties()->lengthInMilliseconds());
+       info.setValue(Qmmp::BITRATE, fileRef.audioProperties()->bitrate());
+       info.setValue(Qmmp::SAMPLERATE, fileRef.audioProperties()->sampleRate());
+       info.setValue(Qmmp::CHANNELS, fileRef.audioProperties()->channels());
+       info.setValue(Qmmp::BITS_PER_SAMPLE, 16);
+       info.setValue(Qmmp::FORMAT_NAME, QStringLiteral("Musepack SV%1").arg(fileRef.audioProperties()->mpcVersion()));
+       info.setDuration(fileRef.audioProperties()->lengthInMilliseconds());
     }
 
-    return QList<TrackInfo*>() << info;
+    return { info };
 }
 
 MetaDataModel* DecoderMPCFactory::createMetaDataModel(const QString &path, bool readOnly)

@@ -45,9 +45,9 @@ MetaDataManager::~MetaDataManager()
     delete m_cover_cache;
 }
 
-QList<TrackInfo *> MetaDataManager::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *ignoredPaths) const
+QList<TrackInfo> MetaDataManager::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *ignoredPaths) const
 {
-    QList<TrackInfo *> list;
+    QList<TrackInfo> list;
     DecoderFactory *fact = nullptr;
     EngineFactory *efact = nullptr;
     QStringList dummyList;
@@ -67,7 +67,7 @@ QList<TrackInfo *> MetaDataManager::createPlayList(const QString &path, TrackInf
         QString scheme = path.section(u"://"_s, 0, 0);
         if(InputSource::findByUrl(path))
         {
-            list << new TrackInfo(path);
+            list << TrackInfo(path);
         }
         else
         {
@@ -87,12 +87,12 @@ QList<TrackInfo *> MetaDataManager::createPlayList(const QString &path, TrackInf
     else if(efact)
         list = efact->createPlayList(path, parts, ignoredPaths);
 
-    for(TrackInfo *info : std::as_const(list))
+    for(TrackInfo &info : list)
     {
-        if(info->value(Qmmp::DECODER).isEmpty() && (fact || efact))
-            info->setValue(Qmmp::DECODER, fact ? fact->properties().shortName : efact->properties().shortName);
-        if(info->value(Qmmp::FILE_SIZE).isEmpty() && !path.contains(u"://"_s))
-            info->setValue(Qmmp::FILE_SIZE, QFileInfo(path).size());
+        if(info.value(Qmmp::DECODER).isEmpty() && (fact || efact))
+            info.setValue(Qmmp::DECODER, fact ? fact->properties().shortName : efact->properties().shortName);
+        if(info.value(Qmmp::FILE_SIZE).isEmpty() && !path.contains(u"://"_s))
+            info.setValue(Qmmp::FILE_SIZE, QFileInfo(path).size());
     }
     return list;
 }

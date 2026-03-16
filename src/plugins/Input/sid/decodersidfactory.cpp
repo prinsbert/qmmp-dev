@@ -72,11 +72,11 @@ Decoder *DecoderSIDFactory::create(const QString &path, QIODevice *input)
     return new DecoderSID(&m_db, path);
 }
 
-QList<TrackInfo *> DecoderSIDFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
+QList<TrackInfo> DecoderSIDFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
     SIDHelper helper(&m_db);
     helper.load(path);
-    QList<TrackInfo*> list = helper.createPlayList(parts);
+    QList<TrackInfo> list = helper.createPlayList(parts);
     if(list.isEmpty())
         return list;
     if(path.contains(u"://"_s)) //is it url?
@@ -84,13 +84,11 @@ QList<TrackInfo *> DecoderSIDFactory::createPlayList(const QString &path, TrackI
         int track = path.section(QLatin1Char('#'), -1).toInt();
         if(track > list.count() || track < 1)
         {
-            qDeleteAll(list);
             list.clear();
             return list;
         }
-        TrackInfo *info = list.takeAt(track - 1);
-        qDeleteAll(list);
-        return QList<TrackInfo *>() << info;
+        TrackInfo info = list.takeAt(track - 1);
+        return { info };
     }
     return list;
 }

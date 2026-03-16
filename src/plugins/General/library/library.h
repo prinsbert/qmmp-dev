@@ -55,13 +55,13 @@ private slots:
 private:
     void run() override;
     bool createTables();
-    void addTrack(TrackInfo *track, const QString &filePath);
+    void addTrack(const TrackInfo &track, const QString &filePath);
     QByteArray serializeAudioInfo(const QMap<Qmmp::TrackProperty, QString> &properties);
     bool scanDirectories(const QStringList &paths);
     void addDirectory(const QString &s);
     void removeMissingFiles(const QStringList &paths);
     bool checkFile(const QFileInfo &info);
-    void removeIgnoredTracks(QList<TrackInfo *> *tracks, const QStringList &ignoredPaths);
+    void removeIgnoredTracks(QList<TrackInfo> *tracks, const QStringList &ignoredPaths);
     void updateIgnoredFiles(const QStringList &paths);
     void readIgnoredFiles();
 

@@ -173,12 +173,12 @@ Decoder *DecoderSndFileFactory::create(const QString &, QIODevice *input)
     return new DecoderSndFile(input);
 }
 
-QList<TrackInfo *> DecoderSndFileFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
+QList<TrackInfo> DecoderSndFileFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
-    TrackInfo *info = new TrackInfo(path);
+    TrackInfo info(path);
 
     if(parts == TrackInfo::Parts())
-        return QList<TrackInfo*>() << info;
+        return { info };
 
     TagLib::FileStream stream(QStringToFileName(path), true);
 
@@ -188,21 +188,21 @@ QList<TrackInfo *> DecoderSndFileFactory::createPlayList(const QString &path, Tr
         TagLib::RIFF::AIFF::File file(&stream);
 
         if((parts & TrackInfo::MetaData) && file.tag() && !file.tag()->isEmpty())
-            info->setValues(id3v2toMetaData(file.tag()));
+            info.setValues(id3v2toMetaData(file.tag()));
 
         if((parts & TrackInfo::Properties) && file.audioProperties())
         {
-            info->setValue(Qmmp::BITRATE, file.audioProperties()->bitrate());
-            info->setValue(Qmmp::SAMPLERATE, file.audioProperties()->sampleRate());
-            info->setValue(Qmmp::CHANNELS, file.audioProperties()->channels());
-            info->setValue(Qmmp::BITS_PER_SAMPLE, file.audioProperties()->bitsPerSample());
+            info.setValue(Qmmp::BITRATE, file.audioProperties()->bitrate());
+            info.setValue(Qmmp::SAMPLERATE, file.audioProperties()->sampleRate());
+            info.setValue(Qmmp::CHANNELS, file.audioProperties()->channels());
+            info.setValue(Qmmp::BITS_PER_SAMPLE, file.audioProperties()->bitsPerSample());
             if(file.audioProperties()->isAiffC() && !file.audioProperties()->compressionName().isEmpty())
-                info->setValue(Qmmp::FORMAT_NAME, QStringLiteral("AIFF-C (%1)").arg(TStringToQString(file.audioProperties()->compressionName())));
+                info.setValue(Qmmp::FORMAT_NAME, QStringLiteral("AIFF-C (%1)").arg(TStringToQString(file.audioProperties()->compressionName())));
             else if(file.audioProperties()->isAiffC())
-                info->setValue(Qmmp::FORMAT_NAME, u"AIFF-C"_s); //unknown compression
+                info.setValue(Qmmp::FORMAT_NAME, u"AIFF-C"_s); //unknown compression
             else
-                info->setValue(Qmmp::FORMAT_NAME, u"AIFF"_s);
-            info->setDuration(file.audioProperties()->lengthInMilliseconds());
+                info.setValue(Qmmp::FORMAT_NAME, u"AIFF"_s);
+            info.setDuration(file.audioProperties()->lengthInMilliseconds());
         }
 
         return { info };
@@ -213,18 +213,18 @@ QList<TrackInfo *> DecoderSndFileFactory::createPlayList(const QString &path, Tr
         TagLib::RIFF::WAV::File file(&stream);
 
         if((parts & TrackInfo::MetaData) && file.ID3v2Tag() && !file.ID3v2Tag()->isEmpty())
-            info->setValues(id3v2toMetaData(file.ID3v2Tag()));
+            info.setValues(id3v2toMetaData(file.ID3v2Tag()));
 
         if((parts & TrackInfo::Properties) && file.audioProperties())
         {
-            info->setValue(Qmmp::BITRATE, file.audioProperties()->bitrate());
-            info->setValue(Qmmp::SAMPLERATE, file.audioProperties()->sampleRate());
-            info->setValue(Qmmp::CHANNELS, file.audioProperties()->channels());
-            info->setValue(Qmmp::BITS_PER_SAMPLE, file.audioProperties()->bitsPerSample());
+            info.setValue(Qmmp::BITRATE, file.audioProperties()->bitrate());
+            info.setValue(Qmmp::SAMPLERATE, file.audioProperties()->sampleRate());
+            info.setValue(Qmmp::CHANNELS, file.audioProperties()->channels());
+            info.setValue(Qmmp::BITS_PER_SAMPLE, file.audioProperties()->bitsPerSample());
             SF_FORMAT_INFO format_info = { (file.audioProperties()->format()) << 16 & SF_FORMAT_TYPEMASK, nullptr, nullptr };
             sf_command(nullptr, SFC_GET_FORMAT_INFO, &format_info, sizeof(format_info));
-            info->setValue(Qmmp::FORMAT_NAME, QString::fromLatin1(format_info.name));
-            info->setDuration(file.audioProperties()->lengthInMilliseconds());
+            info.setValue(Qmmp::FORMAT_NAME, QString::fromLatin1(format_info.name));
+            info.setDuration(file.audioProperties()->lengthInMilliseconds());
         }
 
         return { info };
@@ -242,59 +242,58 @@ QList<TrackInfo *> DecoderSndFileFactory::createPlayList(const QString &path, Tr
 #endif
     if(!sndfile)
     {
-        delete info;
-        return QList<TrackInfo *>();
+        return QList<TrackInfo>();
     }
 
     if(parts & TrackInfo::MetaData)
     {
         const char *title = sf_get_string(sndfile, SF_STR_TITLE);
-        info->setValue(Qmmp::TITLE, title ? QString::fromUtf8(title) : QString());
+        info.setValue(Qmmp::TITLE, title ? QString::fromUtf8(title) : QString());
         const char *date = sf_get_string(sndfile, SF_STR_DATE);
-        info->setValue(Qmmp::YEAR, date ? QString::fromUtf8(date) : QString());
+        info.setValue(Qmmp::YEAR, date ? QString::fromUtf8(date) : QString());
         const char *album = sf_get_string(sndfile, SF_STR_ALBUM);
-        info->setValue(Qmmp::ALBUM, album ? QString::fromUtf8(album) : QString());
+        info.setValue(Qmmp::ALBUM, album ? QString::fromUtf8(album) : QString());
         const char *track = sf_get_string(sndfile, SF_STR_TRACKNUMBER);
-        info->setValue(Qmmp::TRACK, track ? QString::fromUtf8(track) : QString());
+        info.setValue(Qmmp::TRACK, track ? QString::fromUtf8(track) : QString());
         const char *artist = sf_get_string(sndfile, SF_STR_ARTIST);
-        info->setValue(Qmmp::ARTIST, artist ? QString::fromUtf8(artist) : QString());
+        info.setValue(Qmmp::ARTIST, artist ? QString::fromUtf8(artist) : QString());
         const char *comment = sf_get_string(sndfile, SF_STR_COMMENT);
-        info->setValue(Qmmp::COMMENT, comment ? QString::fromUtf8(comment) : QString());
+        info.setValue(Qmmp::COMMENT, comment ? QString::fromUtf8(comment) : QString());
         const char *genre = sf_get_string(sndfile, SF_STR_GENRE);
-        info->setValue(Qmmp::COMMENT, genre ? QString::fromUtf8(genre) : QString());
+        info.setValue(Qmmp::COMMENT, genre ? QString::fromUtf8(genre) : QString());
     }
 
     if(parts & TrackInfo::Properties)
     {
-        info->setValue(Qmmp::BITRATE, QFileInfo(path).size() * 8000.0 / info->duration() + 0.5);
-        info->setValue(Qmmp::SAMPLERATE, snd_info.samplerate);
-        info->setValue(Qmmp::CHANNELS, snd_info.channels);
+        info.setValue(Qmmp::BITRATE, QFileInfo(path).size() * 8000.0 / info.duration() + 0.5);
+        info.setValue(Qmmp::SAMPLERATE, snd_info.samplerate);
+        info.setValue(Qmmp::CHANNELS, snd_info.channels);
         switch(snd_info.format & SF_FORMAT_SUBMASK)
         {
         case SF_FORMAT_PCM_S8:
         case SF_FORMAT_PCM_U8:
-            info->setValue(Qmmp::BITS_PER_SAMPLE, 8);
+            info.setValue(Qmmp::BITS_PER_SAMPLE, 8);
             break;
         case SF_FORMAT_PCM_16:
-            info->setValue(Qmmp::BITS_PER_SAMPLE, 16);
+            info.setValue(Qmmp::BITS_PER_SAMPLE, 16);
             break;
         case SF_FORMAT_PCM_24:
-            info->setValue(Qmmp::BITS_PER_SAMPLE, 24);
+            info.setValue(Qmmp::BITS_PER_SAMPLE, 24);
             break;
         case SF_FORMAT_PCM_32:
         case SF_FORMAT_FLOAT:
-            info->setValue(Qmmp::BITS_PER_SAMPLE, 32);
+            info.setValue(Qmmp::BITS_PER_SAMPLE, 32);
             break;
         case SF_FORMAT_DOUBLE:
-            info->setValue(Qmmp::BITS_PER_SAMPLE, 64);
+            info.setValue(Qmmp::BITS_PER_SAMPLE, 64);
             break;
         }
         SF_FORMAT_INFO format_info;
         memset(&format_info, 0, sizeof(format_info));
         format_info.format = (snd_info.format & SF_FORMAT_TYPEMASK);
         sf_command(nullptr, SFC_GET_FORMAT_INFO, &format_info, sizeof(format_info));
-        info->setValue(Qmmp::FORMAT_NAME, QString::fromLatin1(format_info.name));
-        info->setDuration(int(snd_info.frames * 1000 / snd_info.samplerate));
+        info.setValue(Qmmp::FORMAT_NAME, QString::fromLatin1(format_info.name));
+        info.setDuration(int(snd_info.frames * 1000 / snd_info.samplerate));
     }
 
     sf_close(sndfile);

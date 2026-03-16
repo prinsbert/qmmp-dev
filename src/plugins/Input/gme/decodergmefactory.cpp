@@ -55,7 +55,7 @@ Decoder *DecoderGmeFactory::create(const QString &path, QIODevice *input)
     return new DecoderGme(path);
 }
 
-QList<TrackInfo *> DecoderGmeFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *ignoredFiles)
+QList<TrackInfo> DecoderGmeFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *ignoredFiles)
 {
     GmeHelper helper;
     //is it one track?
@@ -63,23 +63,21 @@ QList<TrackInfo *> DecoderGmeFactory::createPlayList(const QString &path, TrackI
     {
         int track = -1;
         QString filePath = TrackInfo::pathFromUrl(path, &track);
-        QList<TrackInfo *> list = createPlayList(filePath, parts, ignoredFiles);
+        QList<TrackInfo> list = createPlayList(filePath, parts, ignoredFiles);
         if (list.isEmpty() || track <= 0 || track > list.count())
         {
-            qDeleteAll(list);
             list.clear();
             return list;
         }
-        TrackInfo *info = list.takeAt(track - 1);
-        qDeleteAll(list);
-        return QList<TrackInfo *>() << info;
+        TrackInfo info = list.takeAt(track - 1);
+        return { info };
     }
 
     Music_Emu *emu = helper.load(path);
     if(!emu)
     {
         qCWarning(plugin, "unable to open file");
-        return QList<TrackInfo *>();
+        return QList<TrackInfo>();
     }
     return helper.createPlayList(parts);
 }

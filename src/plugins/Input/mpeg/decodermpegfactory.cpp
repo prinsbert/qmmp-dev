@@ -210,12 +210,12 @@ Decoder *DecoderMpegFactory::create(const QString &, QIODevice *input)
     return d;
 }
 
-QList<TrackInfo *> DecoderMpegFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
+QList<TrackInfo> DecoderMpegFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
-    TrackInfo *info = new TrackInfo(path);
+    TrackInfo info(path);
 
     if(parts == TrackInfo::Parts())
-        return QList<TrackInfo*>() << info;
+        return { info };
 
     TagLib::FileStream stream(QStringToFileName(path), true);
 #if TAGLIB_MAJOR_VERSION >= 2
@@ -329,35 +329,35 @@ QList<TrackInfo *> DecoderMpegFactory::createPlayList(const QString &path, Track
         {
             for(auto it = tags.cbegin(); it != tags.cend(); ++it)
             {
-                if(info->value(it.key()).length() < it.value().length())
-                    info->setValue(it.key(), it.value());
+                if(info.value(it.key()).length() < it.value().length())
+                    info.setValue(it.key(), it.value());
             }
         }
     }
 
     if((parts & TrackInfo::Properties) && fileRef.audioProperties())
     {
-        info->setValue(Qmmp::BITRATE, fileRef.audioProperties()->bitrate());
-        info->setValue(Qmmp::SAMPLERATE, fileRef.audioProperties()->sampleRate());
-        info->setValue(Qmmp::CHANNELS, fileRef.audioProperties()->channels());
-        info->setValue(Qmmp::BITS_PER_SAMPLE, 32); //float
+        info.setValue(Qmmp::BITRATE, fileRef.audioProperties()->bitrate());
+        info.setValue(Qmmp::SAMPLERATE, fileRef.audioProperties()->sampleRate());
+        info.setValue(Qmmp::CHANNELS, fileRef.audioProperties()->channels());
+        info.setValue(Qmmp::BITS_PER_SAMPLE, 32); //float
         switch(fileRef.audioProperties()->version())
         {
         case TagLib::MPEG::Header::Version1:
-            info->setValue(Qmmp::FORMAT_NAME, QStringLiteral("MPEG-1 layer %1").arg(fileRef.audioProperties()->layer()));
+            info.setValue(Qmmp::FORMAT_NAME, QStringLiteral("MPEG-1 layer %1").arg(fileRef.audioProperties()->layer()));
             break;
         case TagLib::MPEG::Header::Version2:
-            info->setValue(Qmmp::FORMAT_NAME, QStringLiteral("MPEG-2 layer %1").arg(fileRef.audioProperties()->layer()));
+            info.setValue(Qmmp::FORMAT_NAME, QStringLiteral("MPEG-2 layer %1").arg(fileRef.audioProperties()->layer()));
             break;
         case TagLib::MPEG::Header::Version2_5:
-            info->setValue(Qmmp::FORMAT_NAME, QStringLiteral("MPEG-2.5 layer %1").arg(fileRef.audioProperties()->layer()));
+            info.setValue(Qmmp::FORMAT_NAME, QStringLiteral("MPEG-2.5 layer %1").arg(fileRef.audioProperties()->layer()));
             break;
 #if TAGLIB_MAJOR_VERSION >= 2
         case TagLib::MPEG::Header::Version4:
-            info->setValue(Qmmp::FORMAT_NAME, QStringLiteral("MPEG-4 layer %1").arg(fileRef.audioProperties()->layer()));
+            info.setValue(Qmmp::FORMAT_NAME, QStringLiteral("MPEG-4 layer %1").arg(fileRef.audioProperties()->layer()));
 #endif
         }
-        info->setDuration(fileRef.audioProperties()->lengthInMilliseconds());
+        info.setDuration(fileRef.audioProperties()->lengthInMilliseconds());
     }
 
     if(parts & TrackInfo::ReplayGainInfo)
@@ -375,31 +375,31 @@ QList<TrackInfo *> DecoderMpegFactory::createPlayList(const QString &path, Track
 
                 TagLib::String desc = frame->description().upper();
                 if (desc == "REPLAYGAIN_TRACK_GAIN")
-                    info->setValue(Qmmp::REPLAYGAIN_TRACK_GAIN, TStringToQString(frame->fieldList()[1]));
+                    info.setValue(Qmmp::REPLAYGAIN_TRACK_GAIN, TStringToQString(frame->fieldList()[1]));
                 else if (desc == "REPLAYGAIN_TRACK_PEAK")
-                    info->setValue(Qmmp::REPLAYGAIN_TRACK_PEAK, TStringToQString(frame->fieldList()[1]));
+                    info.setValue(Qmmp::REPLAYGAIN_TRACK_PEAK, TStringToQString(frame->fieldList()[1]));
                 else if (desc == "REPLAYGAIN_ALBUM_GAIN")
-                    info->setValue(Qmmp::REPLAYGAIN_ALBUM_GAIN, TStringToQString(frame->fieldList()[1]));
+                    info.setValue(Qmmp::REPLAYGAIN_ALBUM_GAIN, TStringToQString(frame->fieldList()[1]));
                 else if (desc == "REPLAYGAIN_ALBUM_PEAK")
-                    info->setValue(Qmmp::REPLAYGAIN_ALBUM_PEAK, TStringToQString(frame->fieldList()[1]));
+                    info.setValue(Qmmp::REPLAYGAIN_ALBUM_PEAK, TStringToQString(frame->fieldList()[1]));
             }
         }
-        if(info->replayGainInfo().isEmpty() && fileRef.APETag() && !fileRef.APETag()->isEmpty())
+        if(info.replayGainInfo().isEmpty() && fileRef.APETag() && !fileRef.APETag()->isEmpty())
         {
             TagLib::APE::Tag *tag = fileRef.APETag();
             TagLib::APE::ItemListMap items = tag->itemListMap();
             if (items.contains("REPLAYGAIN_TRACK_GAIN"))
-                info->setValue(Qmmp::REPLAYGAIN_TRACK_GAIN,TStringToQString(items["REPLAYGAIN_TRACK_GAIN"].values()[0]));
+                info.setValue(Qmmp::REPLAYGAIN_TRACK_GAIN,TStringToQString(items["REPLAYGAIN_TRACK_GAIN"].values()[0]));
             if (items.contains("REPLAYGAIN_TRACK_PEAK"))
-                info->setValue(Qmmp::REPLAYGAIN_TRACK_PEAK,TStringToQString(items["REPLAYGAIN_TRACK_PEAK"].values()[0]));
+                info.setValue(Qmmp::REPLAYGAIN_TRACK_PEAK,TStringToQString(items["REPLAYGAIN_TRACK_PEAK"].values()[0]));
             if (items.contains("REPLAYGAIN_ALBUM_GAIN"))
-                info->setValue(Qmmp::REPLAYGAIN_ALBUM_GAIN,TStringToQString(items["REPLAYGAIN_ALBUM_GAIN"].values()[0]));
+                info.setValue(Qmmp::REPLAYGAIN_ALBUM_GAIN,TStringToQString(items["REPLAYGAIN_ALBUM_GAIN"].values()[0]));
             if (items.contains("REPLAYGAIN_ALBUM_PEAK"))
-                info->setValue(Qmmp::REPLAYGAIN_ALBUM_PEAK,TStringToQString(items["REPLAYGAIN_ALBUM_PEAK"].values()[0]));
+                info.setValue(Qmmp::REPLAYGAIN_ALBUM_PEAK,TStringToQString(items["REPLAYGAIN_ALBUM_PEAK"].values()[0]));
         }
     }
 
-    return QList<TrackInfo*>() << info;
+    return { info };
 }
 
 MetaDataModel* DecoderMpegFactory::createMetaDataModel(const QString &path, bool readOnly)

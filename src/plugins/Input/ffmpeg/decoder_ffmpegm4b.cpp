@@ -39,12 +39,6 @@ DecoderFFmpegM4b::~DecoderFFmpegM4b()
     if(m_input)
         m_input->deleteLater();
     m_input = nullptr;
-
-    for(ChapterInfo &ch : m_chapters)
-    {
-        delete ch.info;
-        ch.info = nullptr;
-    }
 }
 
 bool DecoderFFmpegM4b::initialize()
@@ -83,10 +77,9 @@ bool DecoderFFmpegM4b::initialize()
         return false;
     }
 
-    QList<TrackInfo *> tracks = m_factory->createPlayList(filePath, TrackInfo::AllParts, nullptr);
+    QList<TrackInfo> tracks = m_factory->createPlayList(filePath, TrackInfo::AllParts, nullptr);
     if(tracks.isEmpty() || tracks.count() != int(in->nb_chapters))
     {
-        qDeleteAll(tracks);
         avformat_close_input(&in);
         qCWarning(plugin, "unable to find tracks");
         return false;
@@ -120,7 +113,6 @@ bool DecoderFFmpegM4b::initialize()
     m_decoder = new DecoderFFmpeg(filePath, m_input);
     if(!m_decoder->initialize())
     {
-        qDeleteAll(tracks);
         qCWarning(plugin, "DecoderFFapCUE: invalid audio file");
         return false;
     }
@@ -135,7 +127,7 @@ bool DecoderFFmpegM4b::initialize()
     m_frameSize = audioParameters().sampleSize() * audioParameters().channels();
 
     setReplayGainInfo(m_decoder->replayGainInfo()); //send ReplayGaing info
-    addMetaData(m_chapters[m_track - 1].info->metaData()); //send metadata
+    addMetaData(m_chapters[m_track - 1].info.metaData()); //send metadata
     return true;
 }
 
@@ -218,7 +210,7 @@ void DecoderFFmpegM4b::next()
         m_trackSize = audioParameters().sampleRate() *
                 audioParameters().channels() *
                 audioParameters().sampleSize() * m_duration/1000;
-        addMetaData(m_chapters[m_track - 1].info->metaData());
+        addMetaData(m_chapters[m_track - 1].info.metaData());
         setReplayGainInfo(m_decoder->replayGainInfo());
         m_written = 0;
     }

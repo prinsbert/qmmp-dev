@@ -132,7 +132,7 @@ void Converter::run()
     QString out_path = m_preset[u"out_dir"_s].toString();
     QString pattern = m_preset[u"file_name"_s].toString();
 
-    QList<TrackInfo *> list = MetaDataManager::instance()->createPlayList(path);
+    QList<TrackInfo> list = MetaDataManager::instance()->createPlayList(path);
 
     if(list.isEmpty() || out_path.isEmpty() || pattern.isEmpty())
     {
@@ -141,9 +141,7 @@ void Converter::run()
         return;
     }
 
-    TrackInfo info = *list.constFirst();
-    qDeleteAll(list);
-    list.clear();
+    TrackInfo info = list.takeFirst();
     MetaDataFormatter formatter(pattern);
 
 

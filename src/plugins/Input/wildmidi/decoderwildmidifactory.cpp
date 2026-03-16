@@ -61,9 +61,9 @@ Decoder *DecoderWildMidiFactory::create(const QString &path, QIODevice *input)
     return new DecoderWildMidi(path);
 }
 
-QList<TrackInfo *> DecoderWildMidiFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
+QList<TrackInfo> DecoderWildMidiFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
-    TrackInfo *info = new TrackInfo(path);
+    TrackInfo info(path);
     WildMidiHelper *helper = WildMidiHelper::instance();
 
     if((parts & TrackInfo::Properties) && helper->initialize() && helper->sampleRate())
@@ -73,13 +73,13 @@ QList<TrackInfo *> DecoderWildMidiFactory::createPlayList(const QString &path, T
         {
             WildMidiHelper::instance()->addPtr(midi_ptr);
             _WM_Info *wm_info = WildMidi_GetInfo(midi_ptr);
-            info->setValue(Qmmp::SAMPLERATE, helper->sampleRate());
-            info->setDuration((qint64)wm_info->approx_total_samples * 1000 / helper->sampleRate());
+            info.setValue(Qmmp::SAMPLERATE, helper->sampleRate());
+            info.setDuration((qint64)wm_info->approx_total_samples * 1000 / helper->sampleRate());
             WildMidi_Close(midi_ptr);
             WildMidiHelper::instance()->removePtr(midi_ptr);
         }
     }
-    return QList<TrackInfo *>() << info;
+    return { info };
 }
 
 MetaDataModel* DecoderWildMidiFactory::createMetaDataModel(const QString &path, bool readOnly)

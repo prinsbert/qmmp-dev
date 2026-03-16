@@ -54,9 +54,9 @@ Decoder *DecoderArchiveFactory::create(const QString &url, QIODevice *)
     return new DecoderArchive(url);
 }
 
-QList<TrackInfo *> DecoderArchiveFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
+QList<TrackInfo> DecoderArchiveFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
-    QList<TrackInfo *> list;
+    QList<TrackInfo> list;
     struct archive_entry *entry = nullptr;
 
     struct archive *a = archive_read_new();
@@ -86,7 +86,6 @@ QList<TrackInfo *> DecoderArchiveFactory::createPlayList(const QString &path, Tr
     {
         if(archive_read_has_encrypted_entries(a) == 1) //skip encrypted archives
         {
-            qDeleteAll(list);
             list.clear();
             archive_read_free(a);
             return list;
@@ -114,34 +113,33 @@ QList<TrackInfo *> DecoderArchiveFactory::createPlayList(const QString &path, Tr
 
             if(!filtered.isEmpty())
             {
-                list << new TrackInfo(QStringLiteral("%1://%2#%3").arg(archivePath.section(QLatin1Char('.'), -1).toLower(), archivePath, filePath));
+                list << TrackInfo(QStringLiteral("%1://%2#%3").arg(archivePath.section(QLatin1Char('.'), -1).toLower(), archivePath, filePath));
 
                 ArchiveInputDevice dev(a, entry, nullptr);
-                ArchiveTagReader reader(&dev, list.last()->path());
+                ArchiveTagReader reader(&dev, list.constLast().path());
 
                 if(!dev.isOpen())
                 {
-                    qDeleteAll(list);
                     list.clear();
                     archive_read_free(a);
                     return list;
                 }
 
                 if(parts & TrackInfo::MetaData)
-                    list.last()->setValues(reader.metaData());
+                    list.last().setValues(reader.metaData());
 
                 TagLib::AudioProperties *ap = reader.audioProperties();
 
                 if((parts & TrackInfo::Properties) && ap)
                 {
-                    list.last()->setValue(Qmmp::BITRATE, ap->bitrate());
-                    list.last()->setValue(Qmmp::SAMPLERATE, ap->sampleRate());
-                    list.last()->setValue(Qmmp::CHANNELS, ap->channels());
-                    list.last()->setValue(Qmmp::FILE_SIZE, dev.size());
+                    list.last().setValue(Qmmp::BITRATE, ap->bitrate());
+                    list.last().setValue(Qmmp::SAMPLERATE, ap->sampleRate());
+                    list.last().setValue(Qmmp::CHANNELS, ap->channels());
+                    list.last().setValue(Qmmp::FILE_SIZE, dev.size());
                 }
 
                 if(ap)
-                    list.last()->setDuration(reader.audioProperties()->lengthInMilliseconds());
+                    list.last().setDuration(reader.audioProperties()->lengthInMilliseconds());
             }
         }
         archive_read_data_skip(a);

@@ -588,21 +588,18 @@ void QmmpAudioEngine::attachMetaData(Decoder *decoder, DecoderFactory *factory, 
     if(fileInfo.isFile() || factory->properties().protocols.contains(scheme))
     {
         QStringList ignoredPaths;
-        QList<TrackInfo *> list = factory->createPlayList(path, TrackInfo::AllParts, &ignoredPaths);
+        QList<TrackInfo> list = factory->createPlayList(path, TrackInfo::AllParts, &ignoredPaths);
         if(!list.isEmpty())
         {
-            TrackInfo *info = list.takeFirst();
-            qDeleteAll(list);
-            list.clear();
-            decoder->addMetaData(info->metaData());
-            if(info->parts() & TrackInfo::ReplayGainInfo)
-                decoder->setReplayGainInfo(info->replayGainInfo());
-            info->updateValues(decoder->properties());
-            info->setValue(Qmmp::DECODER, factory->properties().shortName);
-            if(fileInfo.isFile() && info->value(Qmmp::FILE_SIZE).isEmpty())
-                info->setValue(Qmmp::FILE_SIZE, fileInfo.size());
-            decoder->setProperties(info->properties());
-            delete info;
+            TrackInfo info = list.constFirst();
+            decoder->addMetaData(info.metaData());
+            if(info.parts() & TrackInfo::ReplayGainInfo)
+                decoder->setReplayGainInfo(info.replayGainInfo());
+            info.updateValues(decoder->properties());
+            info.setValue(Qmmp::DECODER, factory->properties().shortName);
+            if(fileInfo.isFile() && info.value(Qmmp::FILE_SIZE).isEmpty())
+                info.setValue(Qmmp::FILE_SIZE, fileInfo.size());
+            decoder->setProperties(info.properties());
         }
     }
     else

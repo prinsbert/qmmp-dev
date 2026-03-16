@@ -21,6 +21,7 @@
 #ifndef DECODER_FFMPEGM4B_H
 #define DECODER_FFMPEGM4B_H
 
+#include "trackinfo.h"
 #include <qmmp/decoder.h>
 
 class TrackInfo;
@@ -60,7 +61,7 @@ private:
 
     struct ChapterInfo
     {
-        TrackInfo *info;
+        TrackInfo info;
         qint64 offset;
         qint64 duration;
         QString url;

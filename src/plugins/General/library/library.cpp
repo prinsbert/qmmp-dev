@@ -174,7 +174,7 @@ bool Library::createTables()
     return ok;
 }
 
-void Library::addTrack(TrackInfo *track, const QString &filePath)
+void Library::addTrack(const TrackInfo &track, const QString &filePath)
 {
     QSqlDatabase db = QSqlDatabase::database(CONNECTION_NAME);
     if(!db.isOpen())
@@ -188,24 +188,24 @@ void Library::addTrack(TrackInfo *track, const QString &filePath)
                   ":year, :track, :discnumber, :duration, "
                   ":audioinfo, :url, :filepath, :searchstring)"_s);
 
-    QString title = track->value(Qmmp::TITLE).isEmpty() ? track->path().section(QLatin1Char('/'), -1) : track->value(Qmmp::TITLE);
-    QString album = track->value(Qmmp::ALBUM).isEmpty() ? tr("Unknown") : track->value(Qmmp::ALBUM);
-    QString artist = track->value(Qmmp::ARTIST).isEmpty() ? tr("Unknown") : track->value(Qmmp::ARTIST);
+    QString title = track.value(Qmmp::TITLE).isEmpty() ? track.path().section(QLatin1Char('/'), -1) : track.value(Qmmp::TITLE);
+    QString album = track.value(Qmmp::ALBUM).isEmpty() ? tr("Unknown") : track.value(Qmmp::ALBUM);
+    QString artist = track.value(Qmmp::ARTIST).isEmpty() ? tr("Unknown") : track.value(Qmmp::ARTIST);
 
     query.bindValue(u":timestamp"_s, QFileInfo(filePath).lastModified());
     query.bindValue(u":title"_s, title);
     query.bindValue(u":artist"_s, artist);
-    query.bindValue(u":albumartist"_s, track->value(Qmmp::ALBUMARTIST));
+    query.bindValue(u":albumartist"_s, track.value(Qmmp::ALBUMARTIST));
     query.bindValue(u":album"_s, album);
-    query.bindValue(u":comment"_s, track->value(Qmmp::COMMENT));
-    query.bindValue(u":genre"_s, track->value(Qmmp::GENRE));
-    query.bindValue(u":composer"_s, track->value(Qmmp::COMPOSER));
-    query.bindValue(u":year"_s, track->value(Qmmp::YEAR));
-    query.bindValue(u":track"_s, track->value(Qmmp::TRACK));
-    query.bindValue(u":discnumber"_s, track->value(Qmmp::DISCNUMBER));
-    query.bindValue(u":duration"_s, track->duration());
-    query.bindValue(u":audioinfo"_s, serializeAudioInfo(track->properties()));
-    query.bindValue(u":url"_s, track->path());
+    query.bindValue(u":comment"_s, track.value(Qmmp::COMMENT));
+    query.bindValue(u":genre"_s, track.value(Qmmp::GENRE));
+    query.bindValue(u":composer"_s, track.value(Qmmp::COMPOSER));
+    query.bindValue(u":year"_s, track.value(Qmmp::YEAR));
+    query.bindValue(u":track"_s, track.value(Qmmp::TRACK));
+    query.bindValue(u":discnumber"_s, track.value(Qmmp::DISCNUMBER));
+    query.bindValue(u":duration"_s, track.duration());
+    query.bindValue(u":audioinfo"_s, serializeAudioInfo(track.properties()));
+    query.bindValue(u":url"_s, track.path());
     query.bindValue(u":filepath"_s, filePath);
     query.bindValue(u":searchstring"_s, QStringLiteral("%1|||%2|||%3").arg(artist, album, title).toLower());
     if(!query.exec())
@@ -288,7 +288,7 @@ bool Library::scanDirectories(const QStringList &paths)
 
 void Library::addDirectory(const QString &s)
 {
-    QList<TrackInfo *> tracks;
+    QList<TrackInfo> tracks;
     QHash<const TrackInfo *, QString> filePathHash;
     QStringList ignoredPaths;
 
@@ -302,32 +302,28 @@ void Library::addDirectory(const QString &s)
         if(!checkFile(info) && !m_ignoredFiles.contains(info.filePath()))
         {
             QStringList paths;
-            const QList<TrackInfo *> pl = MetaDataManager::instance()->createPlayList(info.absoluteFilePath(), TrackInfo::AllParts, &paths);
+            const QList<TrackInfo> pl = MetaDataManager::instance()->createPlayList(info.absoluteFilePath(), TrackInfo::AllParts, &paths);
 
             //save local file path
-            for(const TrackInfo *t : std::as_const(pl))
-                filePathHash.insert(t, info.absoluteFilePath());
+            for(const TrackInfo &t : std::as_const(pl))
+                filePathHash.insert(&t, info.absoluteFilePath());
 
             tracks << pl;
             ignoredPaths << paths;
 
         }
 
-        if (m_stopped)
+        if(m_stopped)
         {
-            qDeleteAll(tracks);
-            tracks.clear();
             return;
         }
     }
 
     removeIgnoredTracks(&tracks, ignoredPaths);
 
-    for(TrackInfo *info : std::as_const(tracks))    
-        addTrack(info, filePathHash.value(info));
+    for(const TrackInfo &info : std::as_const(tracks))
+        addTrack(info, filePathHash.value(&info));
 
-    qDeleteAll(tracks);
-    tracks.clear();
 
     updateIgnoredFiles(ignoredPaths);
 
@@ -431,17 +427,16 @@ bool Library::checkFile(const QFileInfo &info)
     return info.lastModified() == query.value(u"Timestamp"_s).toDateTime();
 }
 
-void Library::removeIgnoredTracks(QList<TrackInfo *> *tracks, const QStringList &ignoredPaths)
+void Library::removeIgnoredTracks(QList<TrackInfo> *tracks, const QStringList &ignoredPaths)
 {
     if(ignoredPaths.isEmpty())
         return;
 
-    QList<TrackInfo *>::iterator it = tracks->begin();
+    QList<TrackInfo>::iterator it = tracks->begin();
     while(it != tracks->end())
     {
-        if(ignoredPaths.contains((*it)->path()))
+        if(ignoredPaths.contains((*it).path()))
         {
-            delete (*it);
             it = tracks->erase(it);
         }
         else

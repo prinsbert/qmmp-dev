@@ -92,13 +92,11 @@ void PlayListTrack::updateMetaData(const TrackInfo &info)
 
 void PlayListTrack::updateMetaData()
 {
-    QList<TrackInfo *> list = MetaDataManager::instance()->createPlayList(path());
-    if(list.count() == 1 && list.constFirst()->path() == path() && list.constFirst()->parts() != TrackInfo::Parts())
+    QList<TrackInfo> list = MetaDataManager::instance()->createPlayList(path());
+    if(list.count() == 1 && list.constFirst().path() == path() && list.constFirst().parts() != TrackInfo::Parts())
     {
-        TrackInfo *info = list.constFirst();
-        updateMetaData(info);
+        updateMetaData(list.constFirst());
     }
-    qDeleteAll(list);
 }
 
 QString PlayListTrack::groupName() const

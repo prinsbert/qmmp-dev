@@ -74,16 +74,16 @@ Music_Emu *GmeHelper::load(const QString &url, int sample_rate)
     return m_emu;
 }
 
-QList<TrackInfo *> GmeHelper::createPlayList(TrackInfo::Parts parts)
+QList<TrackInfo> GmeHelper::createPlayList(TrackInfo::Parts parts)
 {
-    QList<TrackInfo*> list;
+    QList<TrackInfo> list;
     if(!m_emu)
         return list;
     int count = gme_track_count(m_emu);
     gme_info_t *track_info;
     for(int i = 0; i < count; ++i)
     {
-        TrackInfo *info = new TrackInfo();
+        TrackInfo info;
         if(!gme_track_info(m_emu, &track_info, i))
         {
             if(track_info->length <= 0)
@@ -95,23 +95,23 @@ QList<TrackInfo *> GmeHelper::createPlayList(TrackInfo::Parts parts)
             track_info->length += m_fade_length;
         if(parts & TrackInfo::MetaData)
         {
-            info->setValue(Qmmp::ALBUM, track_info->game);
-            info->setValue(Qmmp::TITLE, track_info->song);
-            info->setValue(Qmmp::ARTIST, track_info->author);
-            info->setValue(Qmmp::COMMENT, track_info->comment);
-            info->setValue(Qmmp::TRACK, i+1);
+            info.setValue(Qmmp::ALBUM, track_info->game);
+            info.setValue(Qmmp::TITLE, track_info->song);
+            info.setValue(Qmmp::ARTIST, track_info->author);
+            info.setValue(Qmmp::COMMENT, track_info->comment);
+            info.setValue(Qmmp::TRACK, i + 1);
         }
         if(parts & TrackInfo::Properties)
         {
-            info->setValue(Qmmp::BITRATE, 8);
-            info->setValue(Qmmp::SAMPLERATE, 44100);
-            info->setValue(Qmmp::CHANNELS, 2);
-            info->setValue(Qmmp::BITS_PER_SAMPLE, 16);
-            info->setValue(Qmmp::FORMAT_NAME, track_info->system);
+            info.setValue(Qmmp::BITRATE, 8);
+            info.setValue(Qmmp::SAMPLERATE, 44100);
+            info.setValue(Qmmp::CHANNELS, 2);
+            info.setValue(Qmmp::BITS_PER_SAMPLE, 16);
+            info.setValue(Qmmp::FORMAT_NAME, track_info->system);
         }
 
-        info->setPath(u"gme://"_s + m_path + QStringLiteral("#%1").arg(i+1));
-        info->setDuration(track_info->length);
+        info.setPath(u"gme://"_s + m_path + QStringLiteral("#%1").arg(i+1));
+        info.setDuration(track_info->length);
         gme_free_info(track_info);
         list << info;
     }

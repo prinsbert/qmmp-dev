@@ -37,13 +37,12 @@ FileLoader::FileLoader(QObject *parent) : QThread(parent)
 QList<PlayListTrack *> FileLoader::processFile(const QString &path, QStringList *ignoredPaths)
 {
     QList<PlayListTrack *> tracks;
-    const QList<TrackInfo *> infoList = MetaDataManager::instance()->createPlayList(path, m_parts, ignoredPaths);
+    const QList<TrackInfo> infoList = MetaDataManager::instance()->createPlayList(path, m_parts, ignoredPaths);
 
-    for(const TrackInfo *info : std::as_const(infoList))
+    for(const TrackInfo &info : std::as_const(infoList))
     {
-        tracks.append(new PlayListTrack(info));
+        tracks.append(new PlayListTrack(&info));
     }
-    qDeleteAll(infoList);
     return tracks;
 }
 
@@ -54,21 +53,18 @@ void FileLoader::insertPlayList(const QString &fmt, const QByteArray &contents, 
     while (!tracks.isEmpty() && !m_finished)
     {
         PlayListTrack *t = tracks.takeFirst();
-        QList<TrackInfo *> infoList = MetaDataManager::instance()->createPlayList(t->path(), m_parts);
+        QList<TrackInfo> infoList = MetaDataManager::instance()->createPlayList(t->path(), m_parts);
         if(infoList.count() != 1) //invalid or unsupported track
         {
-            qDeleteAll(infoList);
-            infoList.clear();
             delete t;
             continue;
         }
 
-        TrackInfo *info = infoList.constFirst();
-        if(!info->value(Qmmp::ALBUM).isEmpty() && !info->value(Qmmp::ARTIST).isEmpty())
+        const TrackInfo info = infoList.constFirst();
+        if(!info.value(Qmmp::ALBUM).isEmpty() && !info.value(Qmmp::ARTIST).isEmpty())
             t->updateMetaData(infoList.constFirst());
 
         emit newTracksToInsert(before, QList<PlayListTrack *>() << t);
-        delete info;
     }
     //clear remaining tracks
     qDeleteAll(tracks);
@@ -85,18 +81,16 @@ void FileLoader::insertPlayList(const QString &path, PlayListTrack *before)
         while(!tracks.isEmpty() && !m_finished)
         {
             PlayListTrack *t = tracks.takeFirst();
-            QList<TrackInfo *> infoList = MetaDataManager::instance()->createPlayList(t->path(), m_parts);
+            QList<TrackInfo> infoList = MetaDataManager::instance()->createPlayList(t->path(), m_parts);
             if(infoList.count() != 1) //invalid or unsupported track
             {
-                qDeleteAll(infoList);
-                infoList.clear();
                 delete t;
                 continue;
             }
 
-            if(!infoList.constFirst()->value(Qmmp::ALBUM).isEmpty() && !infoList.constFirst()->value(Qmmp::ARTIST).isEmpty())
+            if(!infoList.constFirst().value(Qmmp::ALBUM).isEmpty() && !infoList.constFirst().value(Qmmp::ARTIST).isEmpty())
                 t->updateMetaData(infoList.constFirst());
-            delete infoList.takeFirst();
+            infoList.takeFirst();
             tmp << t;
             if(tmp.count() > 30)
             {

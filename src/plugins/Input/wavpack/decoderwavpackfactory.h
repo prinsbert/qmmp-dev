@@ -33,7 +33,7 @@ public:
     bool canDecode(QIODevice *input) const override;
     DecoderProperties properties() const override;
     Decoder *create(const QString &p, QIODevice *i) override;
-    QList<TrackInfo *> createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *ignoredFiles) override;
+    QList<TrackInfo> createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *ignoredFiles) override;
     MetaDataModel* createMetaDataModel(const QString &path, bool readOnly) override;
     QDialog *createSettings(QWidget *parent) override;
     void showAbout(QWidget *parent) override;

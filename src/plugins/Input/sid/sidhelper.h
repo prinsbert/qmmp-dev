@@ -37,7 +37,7 @@ public:
     explicit SIDHelper(SidDatabase *db);
     ~SIDHelper();
     SidTune *load(const QString &url);
-    QList<TrackInfo *> createPlayList(TrackInfo::Parts parts);
+    QList<TrackInfo> createPlayList(TrackInfo::Parts parts);
 
 private:
     QString m_path;

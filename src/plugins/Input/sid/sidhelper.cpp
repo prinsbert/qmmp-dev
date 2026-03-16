@@ -47,9 +47,9 @@ SidTune *SIDHelper::load(const QString &url)
     return m_tune;
 }
 
-QList<TrackInfo *> SIDHelper::createPlayList(TrackInfo::Parts parts)
+QList<TrackInfo> SIDHelper::createPlayList(TrackInfo::Parts parts)
 {
-    QList<TrackInfo *> list;
+    QList<TrackInfo> list;
     if(!m_tune || !m_tune->getInfo())
         return list;
     int count = m_tune->getInfo()->songs();
@@ -59,22 +59,22 @@ QList<TrackInfo *> SIDHelper::createPlayList(TrackInfo::Parts parts)
 
     for(int i = 1; i <= count; ++i)
     {
-        m_tune->selectSong(i+1);
-        TrackInfo *info = new TrackInfo();
+        m_tune->selectSong(i + 1);
+        TrackInfo info;
 
         if(parts & TrackInfo::MetaData)
         {
             const SidTuneInfo *tune_info = m_tune->getInfo();
-            info->setValue(Qmmp::TITLE, tune_info->infoString(0));
-            info->setValue(Qmmp::ARTIST, tune_info->infoString(1));
-            info->setValue(Qmmp::COMMENT, tune_info->commentString(0));
-            info->setValue(Qmmp::TRACK, i);
+            info.setValue(Qmmp::TITLE, tune_info->infoString(0));
+            info.setValue(Qmmp::ARTIST, tune_info->infoString(1));
+            info.setValue(Qmmp::COMMENT, tune_info->commentString(0));
+            info.setValue(Qmmp::TRACK, i);
         }
         int length = m_db->length(md5, i);
         if(length > -1)
-            info->setDuration(length * 1000);
+            info.setDuration(length * 1000);
 
-        info->setPath(QStringLiteral("sid://%1#%2").arg(m_path).arg(i));
+        info.setPath(QStringLiteral("sid://%1#%2").arg(m_path).arg(i));
         list << info;
     }
     return list;
