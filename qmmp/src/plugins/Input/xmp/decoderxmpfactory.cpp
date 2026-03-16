@@ -67,10 +67,10 @@ Decoder *DecoderXmpFactory::create(const QString &path, QIODevice *input)
     return new DecoderXmp(path);
 }
 
-QList<TrackInfo *> DecoderXmpFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
+QList<TrackInfo> DecoderXmpFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
-    QList<TrackInfo*> list;
-    TrackInfo *info = new TrackInfo(path);
+    QList<TrackInfo> list;
+    TrackInfo info(path);
     if(parts & (TrackInfo::MetaData | TrackInfo::Properties))
     {
         xmp_context ctx = xmp_create_context();
@@ -78,14 +78,13 @@ QList<TrackInfo *> DecoderXmpFactory::createPlayList(const QString &path, TrackI
         {
             qCWarning(plugin, "unable to load module");
             xmp_free_context(ctx);
-            delete info;
             return list;
         }
         xmp_module_info mi;
         xmp_get_module_info(ctx, &mi);
-        info->setValue(Qmmp::TITLE, mi.mod->name);
-        info->setValue(Qmmp::FORMAT_NAME, mi.mod->type);
-        info->setDuration(mi.seq_data[0].duration);
+        info.setValue(Qmmp::TITLE, mi.mod->name);
+        info.setValue(Qmmp::FORMAT_NAME, mi.mod->type);
+        info.setDuration(mi.seq_data[0].duration);
         xmp_release_module(ctx);
         xmp_free_context(ctx);
     }

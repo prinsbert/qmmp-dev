@@ -460,10 +460,9 @@ void PlayListTask::run()
         for(const QFileInfo &i : std::as_const(l))
         {
             QStringList ignored;
-            for(TrackInfo *info : mm->createPlayList(i.canonicalFilePath(), parts, &ignored))
+            for(const TrackInfo &info : mm->createPlayList(i.canonicalFilePath(), parts, &ignored))
             {
-                m_new_tracks << new PlayListTrack(info);
-                delete info;
+                m_new_tracks << new PlayListTrack(&info);
             }
             ignoredFiles.append(ignored);
         }

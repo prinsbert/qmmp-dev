@@ -188,7 +188,7 @@ Decoder *DecoderFFmpegFactory::create(const QString &path, QIODevice *input)
     return new DecoderFFmpeg(path, input);
 }
 
-QList<TrackInfo *> DecoderFFmpegFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
+QList<TrackInfo> DecoderFFmpegFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
     int trackNumber = -1; //cue/m4b track
     QString filePath = path;
@@ -199,10 +199,10 @@ QList<TrackInfo *> DecoderFFmpegFactory::createPlayList(const QString &path, Tra
         parts = TrackInfo::AllParts; //extract all metadata for single cue/m4b track
     }
 
-    TrackInfo *info = new TrackInfo(filePath);
+    TrackInfo info(filePath);
 
     if(parts == TrackInfo::Parts())
-        return QList<TrackInfo*>() << info;
+        return { info };
 
     AVFormatContext *in = nullptr;
 
@@ -213,8 +213,7 @@ QList<TrackInfo *> DecoderFFmpegFactory::createPlayList(const QString &path, Tra
 #endif
     {
         qCDebug(plugin, "unable to open file");
-        delete info;
-        return  QList<TrackInfo*>();
+        return  QList<TrackInfo>();
     }
 
     avformat_find_stream_info(in, nullptr);
@@ -225,23 +224,23 @@ QList<TrackInfo *> DecoderFFmpegFactory::createPlayList(const QString &path, Tra
         if(idx >= 0)
         {
             AVCodecParameters *c = in->streams[idx]->codecpar;
-            info->setValue(Qmmp::BITRATE, int(c->bit_rate) / 1000);
-            info->setValue(Qmmp::SAMPLERATE, c->sample_rate);
+            info.setValue(Qmmp::BITRATE, int(c->bit_rate) / 1000);
+            info.setValue(Qmmp::SAMPLERATE, c->sample_rate);
 #if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59,37,100)) //ffmpeg-5.1
-            info->setValue(Qmmp::CHANNELS, c->ch_layout.nb_channels);
+            info.setValue(Qmmp::CHANNELS, c->ch_layout.nb_channels);
 #else
-            info->setValue(Qmmp::CHANNELS, c->channels);
+            info.setValue(Qmmp::CHANNELS, c->channels);
 #endif
             if(c->bits_per_raw_sample > 0)
-                info->setValue(Qmmp::BITS_PER_SAMPLE, c->bits_per_raw_sample);
+                info.setValue(Qmmp::BITS_PER_SAMPLE, c->bits_per_raw_sample);
             else
-                info->setValue(Qmmp::BITS_PER_SAMPLE, av_get_bytes_per_sample(static_cast<AVSampleFormat>(c->format)) * 8);
+                info.setValue(Qmmp::BITS_PER_SAMPLE, av_get_bytes_per_sample(static_cast<AVSampleFormat>(c->format)) * 8);
 
             const AVCodec *codec = avcodec_find_decoder(c->codec_id);
             if(codec)
-                info->setValue(Qmmp::FORMAT_NAME, QString::fromLatin1(codec->name));
-            info->setValue(Qmmp::FILE_SIZE, QFileInfo(filePath).size()); //adds file size for cue tracks
-            info->setDuration(in->duration * 1000 / AV_TIME_BASE);
+                info.setValue(Qmmp::FORMAT_NAME, QString::fromLatin1(codec->name));
+            info.setValue(Qmmp::FILE_SIZE, QFileInfo(filePath).size()); //adds file size for cue tracks
+            info.setDuration(in->duration * 1000 / AV_TIME_BASE);
         }
     }
 
@@ -251,20 +250,18 @@ QList<TrackInfo *> DecoderFFmpegFactory::createPlayList(const QString &path, Tra
         if(cuesheet)
         {
             CueParser parser(cuesheet->value);
-            parser.setDuration(info->duration());
-            parser.setProperties(info->properties());
+            parser.setDuration(info.duration());
+            parser.setProperties(info.properties());
             parser.setUrl(u"ffmpeg"_s, filePath);
 
             avformat_close_input(&in);
-            delete info;
             return parser.createPlayList(trackNumber);
         }
 
         if(trackNumber > 0 && path.startsWith(u"ffmpeg://"_s)) //invalid track
         {
             avformat_close_input(&in);
-            delete info;
-            return QList<TrackInfo*>();
+            return QList<TrackInfo>();
         }
 
         AVDictionaryEntry *album = av_dict_get(in->metadata,"album",nullptr,0);
@@ -294,42 +291,40 @@ QList<TrackInfo *> DecoderFFmpegFactory::createPlayList(const QString &path, Tra
             track = av_dict_get(in->metadata,"WM/TrackNumber",nullptr,0);
 
         if(album)
-            info->setValue(Qmmp::ALBUM, QString::fromUtf8(album->value).trimmed());
+            info.setValue(Qmmp::ALBUM, QString::fromUtf8(album->value).trimmed());
         if(album_artist)
-            info->setValue(Qmmp::ALBUMARTIST, QString::fromUtf8(album_artist->value).trimmed());
+            info.setValue(Qmmp::ALBUMARTIST, QString::fromUtf8(album_artist->value).trimmed());
         if(artist)
-            info->setValue(Qmmp::ARTIST, QString::fromUtf8(artist->value).trimmed());
+            info.setValue(Qmmp::ARTIST, QString::fromUtf8(artist->value).trimmed());
         if(composer)
-            info->setValue(Qmmp::COMPOSER, QString::fromUtf8(composer->value).trimmed());
+            info.setValue(Qmmp::COMPOSER, QString::fromUtf8(composer->value).trimmed());
         if(comment)
-            info->setValue(Qmmp::COMMENT, QString::fromUtf8(comment->value).trimmed());
+            info.setValue(Qmmp::COMMENT, QString::fromUtf8(comment->value).trimmed());
         if(genre)
-            info->setValue(Qmmp::GENRE, QString::fromUtf8(genre->value).trimmed());
+            info.setValue(Qmmp::GENRE, QString::fromUtf8(genre->value).trimmed());
         if(title)
-            info->setValue(Qmmp::TITLE, QString::fromUtf8(title->value).trimmed());
+            info.setValue(Qmmp::TITLE, QString::fromUtf8(title->value).trimmed());
         if(year)
-            info->setValue(Qmmp::YEAR, year->value);
+            info.setValue(Qmmp::YEAR, year->value);
         if(track)
-            info->setValue(Qmmp::TRACK, track->value);
+            info.setValue(Qmmp::TRACK, track->value);
 
         if(in->nb_chapters > 1 && filePath.endsWith(u".m4b"_s, Qt::CaseInsensitive))
         {
-            QList<TrackInfo *> tracks = createPlayListFromChapters(in, info, trackNumber);
+            QList<TrackInfo> tracks = createPlayListFromChapters(in, &info, trackNumber);
             avformat_close_input(&in);
-            delete info;
             return tracks;
         }
 
         if(trackNumber > 0 && path.startsWith(u"m4b://"_s)) //invalid chapter
         {
             avformat_close_input(&in);
-            delete info;
-            return QList<TrackInfo*>();
+            return QList<TrackInfo>();
         }
     }
 
     avformat_close_input(&in);
-    return QList<TrackInfo*>() << info;
+    return { info };
 }
 
 MetaDataModel* DecoderFFmpegFactory::createMetaDataModel(const QString &path, bool readOnly)
@@ -371,10 +366,10 @@ QString DecoderFFmpegFactory::translation() const
     return QLatin1String(":/ffmpeg_plugin_");
 }
 
-QList<TrackInfo *> DecoderFFmpegFactory::createPlayListFromChapters(AVFormatContext *in, TrackInfo *extraInfo,
+QList<TrackInfo> DecoderFFmpegFactory::createPlayListFromChapters(AVFormatContext *in, TrackInfo *extraInfo,
                                                                     int trackNumber)
 {
-    QList<TrackInfo *> tracks;
+    QList<TrackInfo> tracks;
 
     for(unsigned int i = 0; i < in->nb_chapters; ++i)
     {
@@ -382,15 +377,15 @@ QList<TrackInfo *> DecoderFFmpegFactory::createPlayListFromChapters(AVFormatCont
             continue;
 
         AVChapter *chapter = in->chapters[i];
-        TrackInfo *info = new TrackInfo(QStringLiteral("m4b://%1#%2").arg(extraInfo->path()).arg(i + 1));
-        info->setDuration((chapter->end - chapter->start) * av_q2d(chapter->time_base) * 1000);
-        info->setValues(extraInfo->properties());
-        info->setValues(extraInfo->metaData());
-        info->setValue(Qmmp::TRACK, i + 1);
+        TrackInfo info(QStringLiteral("m4b://%1#%2").arg(extraInfo->path()).arg(i + 1));
+        info.setDuration((chapter->end - chapter->start) * av_q2d(chapter->time_base) * 1000);
+        info.setValues(extraInfo->properties());
+        info.setValues(extraInfo->metaData());
+        info.setValue(Qmmp::TRACK, i + 1);
 
         AVDictionaryEntry *title = av_dict_get(chapter->metadata,"title", nullptr, 0);
         if(title)
-            info->setValue(Qmmp::TITLE, QString::fromUtf8(title->value).trimmed());
+            info.setValue(Qmmp::TITLE, QString::fromUtf8(title->value).trimmed());
 
         tracks << info;
     }

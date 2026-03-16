@@ -140,14 +140,14 @@ void CueParser::loadData(const QByteArray &data, QmmpTextCodec *codec)
         qCWarning(core, "invalid cue data");
 }
 
-QList<TrackInfo *> CueParser::createPlayList(int track) const
+QList<TrackInfo> CueParser::createPlayList(int track) const
 {
-    QList<TrackInfo *> out;
+    QList<TrackInfo> out;
 
     if(track <= 0)
     {
         for(const CUETrack *track : m_tracks)
-            out << new TrackInfo(track->info);
+            out << TrackInfo(track->info);
     }
     else if(track > m_tracks.count())
     {
@@ -156,7 +156,7 @@ QList<TrackInfo *> CueParser::createPlayList(int track) const
     }
     else
     {
-        out << new TrackInfo(m_tracks.at(track - 1)->info);
+        out << TrackInfo(m_tracks.at(track - 1)->info);
     }
 
     return out;
