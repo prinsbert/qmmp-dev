@@ -66,12 +66,12 @@ AbstractEngine *MpvEngineFactory::create(QObject *parent)
     return new MpvEngine(this, parent);
 }
 
-QList<TrackInfo *> MpvEngineFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
+QList<TrackInfo> MpvEngineFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
-    TrackInfo *info = new TrackInfo(path);
+    TrackInfo info(path);
 
     if(parts == TrackInfo::Parts())
-        return QList<TrackInfo*>() << info;
+        return { info };
 
     AVFormatContext *in = nullptr;
 
@@ -82,8 +82,7 @@ QList<TrackInfo *> MpvEngineFactory::createPlayList(const QString &path, TrackIn
 #endif
     {
         qCDebug(plugin) << "unable to open file";
-        delete info;
-        return  QList<TrackInfo*>();
+        return QList<TrackInfo>();
     }
 
     avformat_find_stream_info(in, nullptr);
@@ -111,19 +110,19 @@ QList<TrackInfo *> MpvEngineFactory::createPlayList(const QString &path, TrackIn
             track = av_dict_get(in->metadata,"WM/TrackNumber",nullptr,0);
 
         if(album)
-            info->setValue(Qmmp::ALBUM, QString::fromUtf8(album->value));
+            info.setValue(Qmmp::ALBUM, QString::fromUtf8(album->value));
         if(artist)
-            info->setValue(Qmmp::ARTIST, QString::fromUtf8(artist->value));
+            info.setValue(Qmmp::ARTIST, QString::fromUtf8(artist->value));
         if(comment)
-            info->setValue(Qmmp::COMMENT, QString::fromUtf8(comment->value));
+            info.setValue(Qmmp::COMMENT, QString::fromUtf8(comment->value));
         if(genre)
-            info->setValue(Qmmp::GENRE, QString::fromUtf8(genre->value));
+            info.setValue(Qmmp::GENRE, QString::fromUtf8(genre->value));
         if(title)
-            info->setValue(Qmmp::TITLE, QString::fromUtf8(title->value));
+            info.setValue(Qmmp::TITLE, QString::fromUtf8(title->value));
         if(year)
-            info->setValue(Qmmp::YEAR, year->value);
+            info.setValue(Qmmp::YEAR, year->value);
         if(track)
-            info->setValue(Qmmp::TRACK, track->value);
+            info.setValue(Qmmp::TRACK, track->value);
     }
 
     if(parts & TrackInfo::Properties)
@@ -155,30 +154,30 @@ QList<TrackInfo *> MpvEngineFactory::createPlayList(const QString &path, TrackIn
         if(audioIndex >= 0)
         {
             AVCodecParameters *c = in->streams[audioIndex]->codecpar;
-            info->setValue(Qmmp::BITRATE, int(c->bit_rate) / 1000);
-            info->setValue(Qmmp::SAMPLERATE, c->sample_rate);
+            info.setValue(Qmmp::BITRATE, int(c->bit_rate) / 1000);
+            info.setValue(Qmmp::SAMPLERATE, c->sample_rate);
 #if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59,37,100)) //ffmpeg-5.1
-            info->setValue(Qmmp::CHANNELS, c->ch_layout.nb_channels);
+            info.setValue(Qmmp::CHANNELS, c->ch_layout.nb_channels);
 #else
-            info->setValue(Qmmp::CHANNELS, c->channels);
+            info.setValue(Qmmp::CHANNELS, c->channels);
 #endif
             if(c->bits_per_raw_sample > 0)
-                info->setValue(Qmmp::BITS_PER_SAMPLE, c->bits_per_raw_sample);
+                info.setValue(Qmmp::BITS_PER_SAMPLE, c->bits_per_raw_sample);
             else
-                info->setValue(Qmmp::BITS_PER_SAMPLE, av_get_bytes_per_sample(static_cast<AVSampleFormat>(c->format)) * 8);
-            info->setDuration(in->duration * 1000 / AV_TIME_BASE);
+                info.setValue(Qmmp::BITS_PER_SAMPLE, av_get_bytes_per_sample(static_cast<AVSampleFormat>(c->format)) * 8);
+            info.setDuration(in->duration * 1000 / AV_TIME_BASE);
 
             const AVCodec *codec = avcodec_find_decoder(c->codec_id);
             if(codec)
                 codecs << QString::fromLatin1(codec->name);
         }
 
-        info->setValue(Qmmp::FORMAT_NAME, codecs.join(QLatin1Char('+')));
-        info->setValue(Qmmp::DECODER, u"mpv"_s);
+        info.setValue(Qmmp::FORMAT_NAME, codecs.join(QLatin1Char('+')));
+        info.setValue(Qmmp::DECODER, u"mpv"_s);
     }
 
     avformat_close_input(&in);
-    return QList<TrackInfo*>() << info;
+    return { info };
 }
 
 MetaDataModel* MpvEngineFactory::createMetaDataModel(const QString &path, bool readOnly)

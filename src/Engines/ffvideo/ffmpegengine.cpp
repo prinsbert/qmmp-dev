@@ -366,17 +366,13 @@ void FFmpegEngine::sendMetaData()
     QString path = m_inputs.value(m_decoder)->path();
     if(QFile::exists(path)) //send metadata for local files only
     {
-        QList<TrackInfo *> list = m_factory->createPlayList(path, TrackInfo::AllParts, nullptr);
+        QList<TrackInfo> list = m_factory->createPlayList(path, TrackInfo::AllParts, nullptr);
         if(!list.isEmpty())
         {
-            TrackInfo *info = list.takeFirst();
-            info->setValue(Qmmp::DECODER, m_factory->properties().shortName);
-            info->setValue(Qmmp::FILE_SIZE, QFileInfo(path).size());
-            StateHandler::instance()->dispatch(*info);
-            delete info;
-
-            while(!list.isEmpty())
-                delete list.takeFirst();
+            TrackInfo info = list.takeFirst();
+            info.setValue(Qmmp::DECODER, m_factory->properties().shortName);
+            info.setValue(Qmmp::FILE_SIZE, QFileInfo(path).size());
+            StateHandler::instance()->dispatch(info);
         }
     }
 }

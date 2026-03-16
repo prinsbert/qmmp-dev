@@ -33,7 +33,7 @@ public:
     EngineProperties properties() const override;
     bool supports(const QString &source) const override;
     AbstractEngine *create(QObject *parent = nullptr) override;
-    QList<TrackInfo *> createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *) override;
+    QList<TrackInfo> createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *) override;
     MetaDataModel* createMetaDataModel(const QString &path, bool readOnly) override;
     QDialog *createSettings(QWidget *) override;
     void showAbout(QWidget *parent) override;
