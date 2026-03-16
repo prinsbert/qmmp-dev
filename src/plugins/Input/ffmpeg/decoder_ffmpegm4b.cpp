@@ -105,7 +105,6 @@ bool DecoderFFmpegM4b::initialize()
         m_chapters << chapterInfo;
     }
 
-    tracks.clear();
     avformat_close_input(&in);
 
     m_input = new QFile(filePath);
@@ -120,7 +119,6 @@ bool DecoderFFmpegM4b::initialize()
     m_decoder = new DecoderFFmpeg(filePath, m_input);
     if(!m_decoder->initialize())
     {
-        qDeleteAll(tracks);
         qCWarning(plugin, "DecoderFFapCUE: invalid audio file");
         return false;
     }
