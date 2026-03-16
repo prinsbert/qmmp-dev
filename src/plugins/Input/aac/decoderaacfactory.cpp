@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -63,7 +63,7 @@ QList<TrackInfo *> DecoderAACFactory::createPlayList(const QString &path, TrackI
     if(!file.open(QIODevice::ReadOnly))
     {
         delete info;
-        return QList<TrackInfo*>() << info;
+        return QList<TrackInfo*>();
     }
 
     AACFile aac_file(&file, parts & TrackInfo::MetaData);
