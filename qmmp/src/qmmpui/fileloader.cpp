@@ -41,7 +41,7 @@ QList<PlayListTrack *> FileLoader::processFile(const QString &path, QStringList 
 
     for(const TrackInfo &info : std::as_const(infoList))
     {
-        tracks.append(new PlayListTrack(&info));
+        tracks.append(new PlayListTrack(info));
     }
     return tracks;
 }
