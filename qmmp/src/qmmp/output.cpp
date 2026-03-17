@@ -5,11 +5,7 @@
 //
 #include <QStringList>
 #include <QDir>
-#include <stdio.h>
 #include "audioparameters.h"
-#include "qmmpsettings.h"
-#include "buffer.h"
-#include "volumehandler.h"
 #include "qmmp.h"
 #include "qmmpplugincache_p.h"
 #include "output.h"

@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <math.h>
-#include <limits>
 #include <QtGlobal>
 #include <QtEndian>
 #include "audioconverter.h"
