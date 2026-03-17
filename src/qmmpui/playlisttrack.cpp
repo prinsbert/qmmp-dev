@@ -44,7 +44,7 @@ PlayListTrack::PlayListTrack(const PlayListTrack &other) : TrackInfo(other),
     m_formattedLength = other.m_formattedLength;
 }
 
-PlayListTrack::PlayListTrack(const TrackInfo *info) : TrackInfo(*info),
+PlayListTrack::PlayListTrack(const TrackInfo &info) : TrackInfo(info),
     PlayListItem()
 {
     m_settings = QmmpUiSettings::instance();
@@ -70,24 +70,19 @@ PlayListTrack &PlayListTrack::operator=(const PlayListTrack &other)
     return *this;
 }
 
-void PlayListTrack::updateMetaData(const TrackInfo *info)
+void PlayListTrack::updateMetaData(const TrackInfo &info)
 {
-    setValues(info->metaData());
-    if(info->parts() & TrackInfo::Properties)
-        setValues(info->properties());
-    if(info->parts() & TrackInfo::ReplayGainInfo)
-        setValues(info->replayGainInfo());
-    setDuration(info->duration());
-    setPath(info->path());
+    setValues(info.metaData());
+    if(info.parts() & TrackInfo::Properties)
+        setValues(info.properties());
+    if(info.parts() & TrackInfo::ReplayGainInfo)
+        setValues(info.replayGainInfo());
+    setDuration(info.duration());
+    setPath(info.path());
     m_formattedTitles.clear();
     m_formattedLength.clear();
     m_group.clear();
     formatGroup();
-}
-
-void PlayListTrack::updateMetaData(const TrackInfo &info)
-{
-    updateMetaData(&info);
 }
 
 void PlayListTrack::updateMetaData()

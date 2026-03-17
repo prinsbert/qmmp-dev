@@ -1114,7 +1114,7 @@ void PlayListModel::updateMetaData(const QStringList &paths)
             const QList<TrackInfo> list = pathsToReplace.value(track->path());
             QList<PlayListTrack *> tracks;
             for(const TrackInfo &info : std::as_const(list))
-                tracks << new PlayListTrack(&info);
+                tracks << new PlayListTrack(info);
 
             insertTracksInternal(track, tracks);
             tracksToRemove << track; //remove previous track

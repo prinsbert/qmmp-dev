@@ -47,7 +47,7 @@ public:
      * Constructs plalist item with given metadata.
      * @param info Media file information.
      */
-    PlayListTrack(const TrackInfo *info);
+    PlayListTrack(const TrackInfo &info);
     /*!
      * Object destructor.
      */
@@ -69,11 +69,6 @@ public:
      *  Returns formatted length of the item.
      */
     QString formattedDuration() const override;
-    /*!
-     *  Updates current metadata.
-     *  @param info Track information.
-     */
-    void updateMetaData(const TrackInfo *info);
     /*!
      *  Updates current metadata.
      *  @param info Track information.
