@@ -288,8 +288,7 @@ bool Library::scanDirectories(const QStringList &paths)
 
 void Library::addDirectory(const QString &s)
 {
-    QList<TrackInfo> tracks;
-    QHash<const TrackInfo *, QString> filePathHash;
+    QList<QPair<TrackInfo, QString>> tracks;
     QStringList ignoredPaths;
 
     QDir dir(s);
@@ -306,9 +305,7 @@ void Library::addDirectory(const QString &s)
 
             //save local file path
             for(const TrackInfo &t : std::as_const(pl))
-                filePathHash.insert(&t, info.absoluteFilePath());
-
-            tracks << pl;
+                tracks << qMakePair(t, info.absoluteFilePath());
             ignoredPaths << paths;
 
         }
@@ -321,8 +318,8 @@ void Library::addDirectory(const QString &s)
 
     removeIgnoredTracks(&tracks, ignoredPaths);
 
-    for(const TrackInfo &info : std::as_const(tracks))
-        addTrack(info, filePathHash.value(&info));
+    for(const auto &t : std::as_const(tracks))
+        addTrack(t.first, t.second);
 
 
     updateIgnoredFiles(ignoredPaths);
@@ -336,7 +333,7 @@ void Library::addDirectory(const QString &s)
     for(const QFileInfo &i : std::as_const(l))
     {
         addDirectory(i.absoluteFilePath());
-        if (m_stopped)
+        if(m_stopped)
             return;
     }
 }
@@ -427,15 +424,17 @@ bool Library::checkFile(const QFileInfo &info)
     return info.lastModified() == query.value(u"Timestamp"_s).toDateTime();
 }
 
-void Library::removeIgnoredTracks(QList<TrackInfo> *tracks, const QStringList &ignoredPaths)
+void Library::removeIgnoredTracks(QList<QPair<TrackInfo, QString>> *tracks, const QStringList &ignoredPaths)
 {
     if(ignoredPaths.isEmpty())
         return;
 
-    QList<TrackInfo>::iterator it = tracks->begin();
+    QSet<QString> ignoredPathsSet(ignoredPaths.cbegin(), ignoredPaths.cend());
+
+    auto it = tracks->begin();
     while(it != tracks->end())
     {
-        if(ignoredPaths.contains((*it).path()))
+        if(ignoredPathsSet.contains((*it).second))
         {
             it = tracks->erase(it);
         }
