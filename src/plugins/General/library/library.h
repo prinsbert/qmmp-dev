@@ -61,7 +61,7 @@ private:
     void addDirectory(const QString &s);
     void removeMissingFiles(const QStringList &paths);
     bool checkFile(const QFileInfo &info);
-    void removeIgnoredTracks(QList<TrackInfo> *tracks, const QStringList &ignoredPaths);
+    void removeIgnoredTracks(QList<QPair<TrackInfo, QString>> *tracks, const QStringList &ignoredPaths);
     void updateIgnoredFiles(const QStringList &paths);
     void readIgnoredFiles();
 
