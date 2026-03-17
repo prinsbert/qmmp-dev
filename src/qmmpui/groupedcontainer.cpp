@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #include <QRandomGenerator>
+#include "playlisttrack_p.h"
 #include "groupedcontainer_p.h"
 
 GroupedContainer::GroupedContainer()
@@ -49,7 +50,7 @@ void GroupedContainer::addTrack(PlayListTrack *track)
             m_groups[i]->m_title0.clear();
             m_groups[i]->m_title1.clear();
             m_tracks.insert(lastIndex + 1, track);
-            track->m_track_index = lastIndex + 1;
+            track->d_ptr->trackIndex = lastIndex + 1;
             m_update = true;
             return;
         }
@@ -59,7 +60,7 @@ void GroupedContainer::addTrack(PlayListTrack *track)
     group->m_trackList.append(track);
     m_tracks.append(track);
     m_groups.append(group);
-    track->m_track_index = m_tracks.count() - 1;
+    track->d_ptr->trackIndex = m_tracks.count() - 1;
 
     if(!m_update)
     {
@@ -428,7 +429,7 @@ void GroupedContainer::updateCache() const
                 .subindex = 0,
                 .alternateColor = alternateColor
             };
-            track->m_track_index = line.index;
+            track->d_ptr->trackIndex = line.index;
             m_lines << line;
             alternateColor = !alternateColor;
         }
