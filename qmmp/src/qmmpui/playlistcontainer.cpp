@@ -19,12 +19,13 @@
  ***************************************************************************/
 
 #include "playlistmodel.h"
+#include "playlisttrack_p.h"
 #include "playlistcontainer_p.h"
 
 PlayListTrack *PlayListContainer::dequeue()
 {
     PlayListTrack *t = m_queue.dequeue();
-    t->m_queued_index = -1;
+    t->d_ptr->queuedIndex = -1;
     updateQueueIndexes();
     return t;
 }
@@ -40,7 +41,7 @@ void PlayListContainer::removeFromQueue(PlayListTrack *track)
     if(track->isQueued())
     {
         m_queue.removeAll(track);
-        track->m_queued_index = -1;
+        track->d_ptr->queuedIndex = -1;
         updateQueueIndexes();
     }
 }
@@ -48,7 +49,7 @@ void PlayListContainer::removeFromQueue(PlayListTrack *track)
 void PlayListContainer::clearQueue()
 {
     for(int i = 0; i < m_queue.size(); ++i)
-        m_queue[i]->m_queued_index = -1;
+        m_queue[i]->d_ptr->queuedIndex = -1;
 
     m_queue.clear();
 }
@@ -81,12 +82,12 @@ void PlayListContainer::swapTrackNumbers(QList<PlayListTrack *> *container, int 
     PlayListTrack *track1 = container->at(index1);
     PlayListTrack *track2 = container->at(index2);
     int number = track1->trackIndex();
-    track1->m_track_index = track2->m_track_index;
-    track2->m_track_index = number;
+    track1->d_ptr->trackIndex = track2->d_ptr->trackIndex;
+    track2->d_ptr->trackIndex = number;
 }
 
 void PlayListContainer::updateQueueIndexes()
 {
     for(int i = 0; i < m_queue.size(); ++i)
-        m_queue[i]->m_queued_index = i;
+        m_queue[i]->d_ptr->queuedIndex = i;
 }

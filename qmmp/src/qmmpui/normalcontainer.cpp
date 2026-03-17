@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #include <QRandomGenerator>
+#include "playlisttrack_p.h"
 #include "normalcontainer_p.h"
 
 NormalContainer::NormalContainer()
@@ -40,26 +41,26 @@ void NormalContainer::addTracks(const QList<PlayListTrack *> &tracks)
     for(PlayListTrack *track : std::as_const(tracks))
     {
         m_tracks.append(track);
-        track->m_queued_index = -1;
-        track->m_track_index = m_tracks.count() - 1;
+        track->d_ptr->queuedIndex = -1;
+        track->d_ptr->trackIndex = m_tracks.count() - 1;
     }
 }
 
 int NormalContainer::insertTrack(int index, PlayListTrack *track)
 {
-    track->m_queued_index = -1;
+    track->d_ptr->queuedIndex = -1;
     if(index >= 0 && index < m_tracks.count())
     {
         m_tracks.insert(index, track);
-        track->m_track_index = index;
+        track->d_ptr->trackIndex = index;
         //update indexes
         for(int i = index; i < m_tracks.count(); ++i)
-            static_cast<PlayListTrack *>(m_tracks[i])->m_track_index = i;
+            static_cast<PlayListTrack *>(m_tracks[i])->d_ptr->trackIndex = i;
         return index;
     }
 
     m_tracks.append(track);
-    track->m_track_index = m_tracks.count() - 1;
+    track->d_ptr->trackIndex = m_tracks.count() - 1;
     return m_tracks.count() - 1;
 }
 
@@ -146,7 +147,7 @@ void NormalContainer::removeTracks(QList<PlayListTrack *> tracks)
     }
 
     for(int i = 0; i < m_tracks.count(); ++i)
-        static_cast<PlayListTrack *>(m_tracks[i])->m_track_index = i;
+        static_cast<PlayListTrack *>(m_tracks[i])->d_ptr->trackIndex = i;
 }
 
 bool NormalContainer::move(const QList<int> &indexes, int from, int to)
@@ -209,7 +210,7 @@ void NormalContainer::randomizeList()
         m_tracks.swapItemsAt(rg->generate() % m_tracks.size(), rg->generate() % m_tracks.size());
 
     for(int i = 0; i < m_tracks.count(); ++i)
-        m_tracks[i]->m_track_index = i;
+        m_tracks[i]->d_ptr->trackIndex = i;
 }
 
 int NormalContainer::lineCount() const

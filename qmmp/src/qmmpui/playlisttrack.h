@@ -28,12 +28,14 @@
 class QmmpUiSettings;
 class PlayListHeaderModel;
 class MetaDataHelper;
+class PlayListTrackPrivate;
 
 /** @brief The PlayListTrack class provides a track for use with the PlayListModel class.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class QMMPUI_EXPORT PlayListTrack : public TrackInfo, public PlayListItem
 {
+    Q_DECLARE_PRIVATE(PlayListTrack)
 public:
     /*!
      * Constructs an empty plalist item.
@@ -123,23 +125,10 @@ public:
     bool isUsed() const;
 
 private:
-    void formatTitle(int column) const;
-    void formatGroup() const;
-    mutable QStringList m_formattedTitles;
-    mutable QString m_formattedLength;
-    mutable QString m_group;
-    mutable QStringList m_titleFormats;
-    mutable QString m_groupFormat;
-    QmmpUiSettings *m_settings;
-    int m_refCount = 0;
-    bool m_sheduledForDeletion = false;
-    MetaDataHelper *m_helper;
+    PlayListTrackPrivate *d_ptr;
     friend class PlayListContainer;
     friend class NormalContainer;
     friend class GroupedContainer;
-    int m_queued_index = -1;
-    int m_track_index = -1;
-
 };
 
 #endif

@@ -18,8 +18,6 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 #include <qmmp/metadatamanager.h>
-#include "metadataformatter.h"
-#include "qmmpuisettings.h"
 #include "playlistitem.h"
 
 PlayListItem::PlayListItem()
