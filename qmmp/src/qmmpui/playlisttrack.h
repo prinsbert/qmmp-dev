@@ -45,11 +45,14 @@ public:
      * Constructs a new PlayListTrack that is a copy of the given track \b other
      */
     explicit PlayListTrack(const PlayListTrack &other);
+    explicit PlayListTrack(const PlayListTrack *other);
+    explicit PlayListTrack(PlayListTrack &&other) noexcept;
     /*!
      * Constructs plalist item with given metadata.
      * @param info Media file information.
      */
     PlayListTrack(const TrackInfo &info);
+    PlayListTrack(TrackInfo &&info);
     /*!
      * Object destructor.
      */
@@ -58,6 +61,7 @@ public:
      * Assigns \b other to this track and returns a reference to this track.
      */
     PlayListTrack &operator=(const PlayListTrack &other);
+    PlayListTrack &operator=(PlayListTrack &&other) noexcept;
     /*!
      * Returns formatted title of the item.
      * @param column Number of column.

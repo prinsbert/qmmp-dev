@@ -45,11 +45,28 @@ PlayListTrack::PlayListTrack(const PlayListTrack &other) :
     setSelected(other.isSelected());
 }
 
+PlayListTrack::PlayListTrack(const PlayListTrack *other) :
+    PlayListTrack(*other)
+{}
+
+PlayListTrack::PlayListTrack(PlayListTrack &&other) noexcept
+{
+    TrackInfo::swap(other);
+    std::swap(d_ptr, other.d_ptr);
+}
+
 PlayListTrack::PlayListTrack(const TrackInfo &info) :
     TrackInfo(info),
     PlayListItem(),
     d_ptr(new PlayListTrackPrivate(this))
 {}
+
+PlayListTrack::PlayListTrack(TrackInfo &&info) :
+    PlayListItem(),
+    d_ptr(new PlayListTrackPrivate(this))
+{
+    TrackInfo::swap(info);
+}
 
 PlayListTrack::~PlayListTrack()
 {
@@ -69,6 +86,13 @@ PlayListTrack &PlayListTrack::operator=(const PlayListTrack &other)
     d->groupFormat = other.d_ptr->groupFormat;
     d->formattedLength = other.d_ptr->formattedLength;
     setSelected(other.isSelected());
+    return *this;
+}
+
+PlayListTrack &PlayListTrack::operator=(PlayListTrack &&other) noexcept
+{
+    TrackInfo::swap(other);
+    std::swap(d_ptr, other.d_ptr);
     return *this;
 }
 
