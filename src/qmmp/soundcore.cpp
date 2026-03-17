@@ -25,8 +25,6 @@
 #include <QDir>
 #include "qmmpevents_p.h"
 #include "qmmpaudioengine_p.h"
-#include "decoderfactory.h"
-#include "effect.h"
 #include "statehandler.h"
 #include "inputsource.h"
 #include "volumehandler.h"
