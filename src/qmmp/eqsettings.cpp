@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -81,7 +81,7 @@ void EqSettings::setPreamp(double preamp)
 
 EqSettings &EqSettings::operator=(const EqSettings &s)
 {
-    for(int i = 0; i < m_bands; ++i)
+    for(int i = 0; i < s.m_bands; ++i)
         m_gains[i] = s.m_gains[i];
     m_preamp = s.m_preamp;
     m_is_enabled = s.m_is_enabled;
