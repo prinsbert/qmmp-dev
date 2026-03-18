@@ -28,12 +28,14 @@
 #include "effectfactory.h"
 
 class QmmpPluginCache;
+class EffectPrivate;
 
 /*! @brief The Effect class provides the base interface class of audio effects.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class QMMP_EXPORT Effect
 {
+    Q_DECLARE_PRIVATE(Effect)
 public:
     /*!
      * Object contsructor.
@@ -66,20 +68,20 @@ public:
     /*!
      * Returns map of channels
      */
-    const ChannelMap &channelMap() const;
+    ChannelMap channelMap() const;
     /*!
      * Returns audio parameters for output data.
      */
-    const AudioParameters audioParameters() const;
+    AudioParameters audioParameters() const;
     /*!
      * Returns assigned factory object.
      */
-    EffectFactory* factory() const;
+    EffectFactory *factory() const;
     /*!
      * Creates effect object from \b factory. Returns effect objects if factory is enabled,
      * otherwise returns \b 0.
      */
-    static Effect* create(EffectFactory *factory);
+    static Effect *create(EffectFactory *factory);
     /*!
      * Returns a list of effect factories.
      */
@@ -111,13 +113,7 @@ public:
     static EffectFactory *findFactory(const QString &shortName);
 
 private:
-    EffectFactory *m_factory = nullptr;
-    quint32 m_freq = 0;
-    int m_channels = 0;
-    ChannelMap m_chan_map;
-    static void loadPlugins();
-    static QList<QmmpPluginCache*> *m_cache;
-    static QStringList m_enabledNames;
+    EffectPrivate *d_ptr;
 };
 
 #endif

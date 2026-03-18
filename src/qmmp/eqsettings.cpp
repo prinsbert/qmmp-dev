@@ -21,85 +21,109 @@
 #include <QtGlobal>
 #include "eqsettings.h"
 
-EqSettings::EqSettings(const EqSettings &other)
+class EqSettingsPrivate
 {
-    m_preamp = other.m_preamp;
-    m_is_enabled = other.m_is_enabled;
-    m_bands = other.m_bands;
-    m_two_passes = other.m_two_passes;
-    for(int i = 0; i < 31; ++i)
-        m_gains[i] = other.m_gains[i];
+public:
+    EqSettingsPrivate(int bands) : bands(bands) {}
+
+    double gains[31] = { 0 };
+    double preamp = 0;
+    bool isEnabled = false;
+    int bands;
+    bool twoPasses = false;
+};
+
+EqSettings::EqSettings(const EqSettings &other) : d_ptr(new EqSettingsPrivate(other.bands()))
+{
+    operator=(other);
 }
 
-EqSettings::EqSettings(Bands bands)
+EqSettings::EqSettings(EqSettings &&other)
 {
-    m_bands = bands;
+    std::swap(d_ptr, other.d_ptr);
+}
+
+EqSettings::EqSettings(Bands bands) : d_ptr(new EqSettingsPrivate(bands))
+{}
+
+EqSettings::~EqSettings()
+{
+    delete d_ptr;
 }
 
 bool EqSettings::isEnabled() const
 {
-    return m_is_enabled;
+    return d_ptr->isEnabled;
 }
 
 double EqSettings::gain(int chan) const
 {
-    return m_gains[chan];
+    return d_ptr->gains[chan];
 }
 
 double EqSettings::preamp() const
 {
-    return m_preamp;
+    return d_ptr->preamp;
 }
 
 int EqSettings::bands() const
 {
-    return static_cast<int>(m_bands);
+    return d_ptr->bands;
 }
 
 bool EqSettings::twoPasses() const
 {
-    return m_two_passes;
+    return d_ptr->twoPasses;
 }
 
 void EqSettings::setEnabled(bool enabled)
 {
-    m_is_enabled = enabled;
+    d_ptr->isEnabled = enabled;
 }
 
 void EqSettings::setGain(int band, double gain)
 {
-    m_gains[band] = gain;
+    d_ptr->gains[band] = gain;
 }
 
 void EqSettings::setPreamp(double preamp)
 {
-    m_preamp = preamp;
+    d_ptr->preamp = preamp;
 }
 
 void EqSettings::setTwoPasses(bool enabled)
 {
-    m_two_passes = enabled;
+    d_ptr->twoPasses = enabled;
 }
 
 EqSettings &EqSettings::operator=(const EqSettings &s)
 {
-    for(int i = 0; i < m_bands; ++i)
-        m_gains[i] = s.m_gains[i];
-    m_preamp = s.m_preamp;
-    m_is_enabled = s.m_is_enabled;
-    m_bands = s.m_bands;
-    m_two_passes = s.m_two_passes;
+    Q_D(EqSettings);
+    for(int i = 0; i < s.d_ptr->bands; ++i)
+        d->gains[i] = s.d_ptr->gains[i];
+    d->preamp = s.d_ptr->preamp;
+    d->isEnabled = s.d_ptr->isEnabled;
+    d->bands = s.d_ptr->bands;
+    d->twoPasses = s.d_ptr->twoPasses;
+    return *this;
+}
+
+EqSettings &EqSettings::operator=(EqSettings &&s)
+{
+    std::swap(d_ptr, s.d_ptr);
     return *this;
 }
 
 bool EqSettings::operator==(const EqSettings &s) const
 {
-    for(int i = 0; i < m_bands; ++i)
+    Q_D(const EqSettings);
+    for(int i = 0; i < d->bands; ++i)
     {
-        if(m_gains[i] != s.m_gains[i])
+        if(d->gains[i] != s.d_ptr->gains[i])
             return false;
     }
-    return (m_preamp == s.m_preamp) && (m_is_enabled == s.m_is_enabled) && (m_bands == s.m_bands) && (m_two_passes == s.m_two_passes);
+    return (d->preamp == s.d_ptr->preamp) && (d->isEnabled == s.d_ptr->isEnabled) &&
+           (d->bands == s.d_ptr->bands) && (d->twoPasses == s.d_ptr->twoPasses);
 }
 
 bool EqSettings::operator!=(const EqSettings &s) const

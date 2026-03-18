@@ -14,15 +14,76 @@
 #include "decoderfactory.h"
 #include "decoder.h"
 
-Decoder::Decoder(QIODevice *input) : m_input(input)
+
+class DecoderPrivate
+{
+public:
+    DecoderPrivate(QIODevice *input) : input(input) {}
+
+    //sort cache items by priority
+    static bool _pluginCacheLessComparator(const QmmpPluginCache* f1, const QmmpPluginCache* f2)
+    {
+        return f1->priority() < f2->priority();
+    }
+
+    static void loadPlugins()
+    {
+        if (cache)
+            return;
+
+        cache = new QList<QmmpPluginCache*>;
+        QSettings settings;
+        for(const QString &filePath : Qmmp::findPlugins(u"Input"_s))
+        {
+            QmmpPluginCache *item = new QmmpPluginCache(filePath, &settings);
+            if(item->hasError())
+            {
+                delete item;
+                continue;
+            }
+            cache->append(item);
+        }
+        disabledNames = settings.value(u"Decoder/disabled_plugins"_s).toStringList();
+        std::stable_sort(cache->begin(), cache->end(), _pluginCacheLessComparator);
+        QmmpPluginCache::cleanup(&settings);
+
+        qAddPostRoutine(DecoderPrivate::updateCache);
+    }
+
+    static void updateCache()
+    {
+        if(cache)
+        {
+            QSettings settings;
+            for(QmmpPluginCache *item : std::as_const(*cache))
+                item->update(&settings);
+        }
+    }
+
+    static QList<QmmpPluginCache*> *cache;
+    static QStringList disabledNames;
+    AudioParameters parameters;
+    QMap<Qmmp::TrackProperty, QString> properties;
+    QIODevice *input;
+    bool hasMetaData = false;
+    QMap<Qmmp::MetaData, QString> metaData;
+    QMap<Qmmp::ReplayGainKey, double> m_rg; //replay gain information
+};
+
+QStringList DecoderPrivate::disabledNames;
+QList<QmmpPluginCache*> *DecoderPrivate::cache = nullptr;
+
+Decoder::Decoder(QIODevice *input) : d_ptr(new DecoderPrivate(input))
 {}
 
 Decoder::~Decoder()
-{}
+{
+    delete d_ptr;
+}
 
 void Decoder::setReplayGainInfo(const QMap<Qmmp::ReplayGainKey, double> &rg)
 {
-    m_rg = rg;
+    d_ptr->m_rg = rg;
 }
 
 void Decoder::configure(quint32 srate, const ChannelMap &map, Qmmp::AudioFormat format)
@@ -38,10 +99,11 @@ void Decoder::configure(quint32 srate, int channels, Qmmp::AudioFormat f)
 
 void Decoder::configure(const AudioParameters &p)
 {
-    m_parameters = p;
-    setProperty(Qmmp::SAMPLERATE, m_parameters.sampleRate());
-    setProperty(Qmmp::CHANNELS, m_parameters.channels());
-    setProperty(Qmmp::BITS_PER_SAMPLE, m_parameters.validBitsPerSample());
+    Q_D(Decoder);
+    d->parameters = p;
+    setProperty(Qmmp::SAMPLERATE, d->parameters.sampleRate());
+    setProperty(Qmmp::CHANNELS, d->parameters.channels());
+    setProperty(Qmmp::BITS_PER_SAMPLE, d->parameters.validBitsPerSample());
 }
 
 void Decoder::next()
@@ -52,45 +114,48 @@ QString Decoder::nextURL() const
     return QString();
 }
 
-const AudioParameters &Decoder::audioParameters() const
+AudioParameters Decoder::audioParameters() const
 {
-    return m_parameters;
+    return d_ptr->parameters;
 }
 
 QMap<Qmmp::ReplayGainKey, double> Decoder::replayGainInfo() const
 {
-    return m_rg;
+    return d_ptr->m_rg;
 }
 
 void Decoder::addMetaData(const QMap<Qmmp::MetaData, QString> &metaData)
 {
-    m_metaData = metaData;
-    m_hasMetaData = true;
+    Q_D(Decoder);
+    d->metaData = metaData;
+    d->hasMetaData = true;
 }
 
 QIODevice *Decoder::input()
 {
-    return m_input;
+    return d_ptr->input;
 }
 
 bool Decoder::hasMetaData() const
 {
-    return m_hasMetaData;
+    return d_ptr->hasMetaData;
 }
 
 QMap<Qmmp::MetaData, QString> Decoder::takeMetaData()
 {
-    m_hasMetaData = false;
-    return m_metaData;
+    Q_D(Decoder);
+    d->hasMetaData = false;
+    return d->metaData;
 }
 
 void Decoder::setProperty(Qmmp::TrackProperty key, const QVariant &value)
 {
+    Q_D(Decoder);
     QString strValue = value.toString();
     if(strValue.isEmpty() || strValue == "0"_L1)
-        m_properties.remove(key);
+        d->properties.remove(key);
     else
-        m_properties[key] = strValue;
+        d->properties[key] = strValue;
 }
 
 void Decoder::setProperties(const QMap<Qmmp::TrackProperty, QString> &properties)
@@ -101,57 +166,14 @@ void Decoder::setProperties(const QMap<Qmmp::TrackProperty, QString> &properties
 
 QMap<Qmmp::TrackProperty, QString> Decoder::properties() const
 {
-    return m_properties;
+    return d_ptr->properties;
 }
 
 // static methods
-QStringList Decoder::m_disabledNames;
-QList<QmmpPluginCache*> *Decoder::m_cache = nullptr;
-
-//sort cache items by priority
-static bool _pluginCacheLessComparator(const QmmpPluginCache* f1, const QmmpPluginCache* f2)
-{
-    return f1->priority() < f2->priority();
-}
-
-void Decoder::loadPlugins()
-{
-    if (m_cache)
-        return;
-
-    m_cache = new QList<QmmpPluginCache*>;
-    QSettings settings;
-    for(const QString &filePath : Qmmp::findPlugins(u"Input"_s))
-    {
-        QmmpPluginCache *item = new QmmpPluginCache(filePath, &settings);
-        if(item->hasError())
-        {
-            delete item;
-            continue;
-        }
-        m_cache->append(item);
-    }
-    m_disabledNames = settings.value(u"Decoder/disabled_plugins"_s).toStringList();
-    std::stable_sort(m_cache->begin(), m_cache->end(), _pluginCacheLessComparator);
-    QmmpPluginCache::cleanup(&settings);
-
-    qAddPostRoutine(Decoder::updateCache);
-}
-
-void Decoder::updateCache()
-{
-    if(m_cache)
-    {
-        QSettings settings;
-        for(QmmpPluginCache *item : std::as_const(*m_cache))
-            item->update(&settings);
-    }
-}
-
 QString Decoder::file(const DecoderFactory *factory)
 {
-    loadPlugins();
-    for(const QmmpPluginCache *item : std::as_const(*m_cache))
+    DecoderPrivate::loadPlugins();
+    for(const QmmpPluginCache *item : std::as_const(*DecoderPrivate::cache))
     {
         if(item->shortName() == factory->properties().shortName)
             return item->file();
@@ -161,12 +183,12 @@ QString Decoder::file(const DecoderFactory *factory)
 
 QStringList Decoder::protocols()
 {
-    loadPlugins();
+    DecoderPrivate::loadPlugins();
     QStringList protocolList;
 
-    for(QmmpPluginCache *item : std::as_const(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*DecoderPrivate::cache))
     {
-        if(m_disabledNames.contains(item->shortName()))
+        if(DecoderPrivate::disabledNames.contains(item->shortName()))
             continue;
 
         protocolList << item->protocols();
@@ -177,7 +199,7 @@ QStringList Decoder::protocols()
 
 DecoderFactory *Decoder::findByFilePath(const QString &path, bool useContent)
 {
-    loadPlugins();
+    DecoderPrivate::loadPlugins();
 
     //get list of available/supported factories
     QList<DecoderFactory*> filtered = useContent ? enabledFactories() : findByFileExtension(path);
@@ -224,10 +246,10 @@ DecoderFactory *Decoder::findByMime(const QString& type)
 {
     if(type.isEmpty())
         return nullptr;
-    loadPlugins();
-    for(QmmpPluginCache *item : std::as_const(*m_cache))
+    DecoderPrivate::loadPlugins();
+    for(QmmpPluginCache *item : std::as_const(*DecoderPrivate::cache))
     {
-        if(m_disabledNames.contains(item->shortName()))
+        if(DecoderPrivate::disabledNames.contains(item->shortName()))
             continue;
         DecoderFactory *fact = item->decoderFactory();
         if(fact && !fact->properties().noInput && fact->properties().contentTypes.contains(type))
@@ -238,10 +260,10 @@ DecoderFactory *Decoder::findByMime(const QString& type)
 
 DecoderFactory *Decoder::findByContent(QIODevice *input)
 {
-    loadPlugins();
-    for(QmmpPluginCache *item : std::as_const(*m_cache))
+    DecoderPrivate::loadPlugins();
+    for(QmmpPluginCache *item : std::as_const(*DecoderPrivate::cache))
     {
-        if(m_disabledNames.contains(item->shortName()))
+        if(DecoderPrivate::disabledNames.contains(item->shortName()))
             continue;
         DecoderFactory *fact = item->decoderFactory();
         if(fact && !fact->properties().noInput && fact->canDecode(input))
@@ -252,13 +274,13 @@ DecoderFactory *Decoder::findByContent(QIODevice *input)
 
 DecoderFactory *Decoder::findByProtocol(const QString &p)
 {
-    loadPlugins();
-    for(QmmpPluginCache *item : std::as_const(*m_cache))
+    DecoderPrivate::loadPlugins();
+    for(QmmpPluginCache *item : std::as_const(*DecoderPrivate::cache))
     {
-        if(m_disabledNames.contains(item->shortName()))
+        if(DecoderPrivate::disabledNames.contains(item->shortName()))
             continue;
 
-        if (item->decoderFactory() && item->decoderFactory()->properties().protocols.contains(p))
+        if(item->decoderFactory() && item->decoderFactory()->properties().protocols.contains(p))
             return item->decoderFactory();
     }
     return nullptr;
@@ -268,9 +290,9 @@ QList<DecoderFactory *> Decoder::findByFileExtension(const QString &path)
 {
     QList<DecoderFactory*> filtered;
     DecoderFactory *fact = nullptr;
-    for(QmmpPluginCache *item : std::as_const(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*DecoderPrivate::cache))
     {
-        if(m_disabledNames.contains(item->shortName()))
+        if(DecoderPrivate::disabledNames.contains(item->shortName()))
             continue;
 
         if(!(fact = item->decoderFactory()))
@@ -285,7 +307,7 @@ QList<DecoderFactory *> Decoder::findByFileExtension(const QString &path)
 
 void Decoder::setEnabled(DecoderFactory *factory, bool enable)
 {
-    loadPlugins();
+    DecoderPrivate::loadPlugins();
     if (!factories().contains(factory))
         return;
 
@@ -293,26 +315,26 @@ void Decoder::setEnabled(DecoderFactory *factory, bool enable)
         return;
 
     if(enable)
-        m_disabledNames.removeAll(factory->properties().shortName);
+        DecoderPrivate::disabledNames.removeAll(factory->properties().shortName);
     else
-        m_disabledNames.append(factory->properties().shortName);
+        DecoderPrivate::disabledNames.append(factory->properties().shortName);
 
-    m_disabledNames.removeDuplicates();
+    DecoderPrivate::disabledNames.removeDuplicates();
     QSettings settings;
-    settings.setValue(u"Decoder/disabled_plugins"_s, m_disabledNames);
+    settings.setValue(u"Decoder/disabled_plugins"_s, DecoderPrivate::disabledNames);
 }
 
 bool Decoder::isEnabled(const DecoderFactory *factory)
 {
-    loadPlugins();
-    return !m_disabledNames.contains(factory->properties().shortName);
+    DecoderPrivate::loadPlugins();
+    return !DecoderPrivate::disabledNames.contains(factory->properties().shortName);
 }
 
 QList<DecoderFactory *> Decoder::factories()
 {
-    loadPlugins();
+    DecoderPrivate::loadPlugins();
     QList<DecoderFactory *> list;
-    for(QmmpPluginCache *item : std::as_const(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*DecoderPrivate::cache))
     {
         if(item->decoderFactory())
             list.append(item->decoderFactory());
@@ -322,11 +344,11 @@ QList<DecoderFactory *> Decoder::factories()
 
 QList<DecoderFactory *> Decoder::enabledFactories()
 {
-    loadPlugins();
+    DecoderPrivate::loadPlugins();
     QList<DecoderFactory *> list;
-    for(QmmpPluginCache *item : std::as_const(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*DecoderPrivate::cache))
     {
-        if(m_disabledNames.contains(item->shortName()))
+        if(DecoderPrivate::disabledNames.contains(item->shortName()))
             continue;
         if(item->decoderFactory())
             list.append(item->decoderFactory());
@@ -336,11 +358,11 @@ QList<DecoderFactory *> Decoder::enabledFactories()
 
 QStringList Decoder::nameFilters()
 {
-    loadPlugins();
+    DecoderPrivate::loadPlugins();
     QStringList filters;
-    for(QmmpPluginCache *item : std::as_const(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*DecoderPrivate::cache))
     {
-        if(m_disabledNames.contains(item->shortName()))
+        if(DecoderPrivate::disabledNames.contains(item->shortName()))
             continue;
 
         filters << item->filters();
@@ -350,11 +372,11 @@ QStringList Decoder::nameFilters()
 
 QStringList Decoder::contentTypes()
 {
-    loadPlugins();
+    DecoderPrivate::loadPlugins();
     QStringList types;
-    for(QmmpPluginCache *item : std::as_const(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*DecoderPrivate::cache))
     {
-        if(m_disabledNames.contains(item->shortName()))
+        if(DecoderPrivate::disabledNames.contains(item->shortName()))
             continue;
 
         types << item->contentTypes();
