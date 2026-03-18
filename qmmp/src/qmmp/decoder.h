@@ -18,6 +18,7 @@
 
 class QmmpPluginCache;
 class DecoderFactory;
+class DecoderPrivate;
 
 /*! @brief The Decoder class provides the base interface class of audio decoders.
  * @author Brad Hughes <bhughes@trolltech.com>
@@ -25,6 +26,7 @@ class DecoderFactory;
  */
 class QMMP_EXPORT Decoder
 {
+    Q_DECLARE_PRIVATE(Decoder)
 public:
     /*!
      * Object contsructor.
@@ -77,7 +79,7 @@ public:
     /*!
      * Returns detected audio parameters.
      */
-    const AudioParameters &audioParameters() const;
+    AudioParameters audioParameters() const;
     /*!
      * Returns ReplayGain information.
      */
@@ -205,16 +207,7 @@ protected:
     void configure(const AudioParameters &p);
 
 private:
-    static void loadPlugins();
-    static void updateCache();
-    static QList<QmmpPluginCache*> *m_cache;
-    static QStringList m_disabledNames;
-    AudioParameters m_parameters;
-    QMap<Qmmp::TrackProperty, QString> m_properties;
-    QIODevice *m_input;
-    bool m_hasMetaData = false;
-    QMap<Qmmp::MetaData, QString> m_metaData;
-    QMap <Qmmp::ReplayGainKey, double> m_rg; //replay gain information
+    DecoderPrivate *d_ptr;
 };
 
 #endif // DECODER_H
