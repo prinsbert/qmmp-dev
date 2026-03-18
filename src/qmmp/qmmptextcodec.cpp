@@ -26,6 +26,8 @@
 class QmmpTextCodecPrivate
 {
 public:
+    QmmpTextCodecPrivate(const QByteArray &name) : m_name(name) {}
+
     ~QmmpTextCodecPrivate()
     {
         if(to)
@@ -35,24 +37,24 @@ public:
     }
 
     iconv_t to = nullptr, from = nullptr;
+    QByteArray m_name;
 };
 
-QmmpTextCodec::QmmpTextCodec(const QByteArray &charset) : d_ptr(new QmmpTextCodecPrivate),
-    m_name(charset.toUpper())
-
+QmmpTextCodec::QmmpTextCodec(const QByteArray &charset) :
+    d_ptr(new QmmpTextCodecPrivate(charset.toUpper()))
 {
     Q_D(QmmpTextCodec);
 
-    if(m_name == "UTF-8"_ba || m_name == "UTF-16"_ba)
+    if(d->m_name == "UTF-8"_ba || d->m_name == "UTF-16"_ba)
         return;
 
-    if((d->to = iconv_open(m_name.constData(), "UTF-16")) == (iconv_t)(-1))
+    if((d->to = iconv_open(d->m_name.constData(), "UTF-16")) == (iconv_t)(-1))
     {
         qCWarning(core, "error: %s", strerror(errno));
         d->to = nullptr;
     }
 
-    if((d->from = iconv_open("UTF-16", m_name.constData())) == (iconv_t)(-1))
+    if((d->from = iconv_open("UTF-16", d->m_name.constData())) == (iconv_t)(-1))
     {
         qCWarning(core, "error: %s", strerror(errno));
         d->from = nullptr;
@@ -66,16 +68,16 @@ QmmpTextCodec::~QmmpTextCodec()
 
 QByteArray QmmpTextCodec::name() const
 {
-    return m_name;
+    return d_ptr->m_name;
 }
 
 QString QmmpTextCodec::toUnicode(const QByteArray &a) const
 {
     Q_D(const QmmpTextCodec);
 
-    if(m_name == "UTF-16"_ba)
+    if(d->m_name == "UTF-16"_ba)
         return QString::fromUtf16(reinterpret_cast<const char16_t *>(a.data()), a.size() / 2);
-    if(!d->from || m_name == "UTF-8"_ba)
+    if(!d->from || d->m_name == "UTF-8"_ba)
         return QString::fromUtf8(a);
 
     size_t inBytesLeft = 0;
@@ -134,9 +136,9 @@ QByteArray QmmpTextCodec::fromUnicode(const QString &str) const
 {
     Q_D(const QmmpTextCodec);
 
-    if(m_name == "UTF-16"_ba)
+    if(d->m_name == "UTF-16"_ba)
         return QByteArray(reinterpret_cast<const char*>(str.utf16()), str.size() * 2);
-    if(!d->from || m_name == "UTF-8"_ba)
+    if(!d->from || d->m_name == "UTF-8"_ba)
         return str.toUtf8();
 
     size_t inBytesLeft = 0;

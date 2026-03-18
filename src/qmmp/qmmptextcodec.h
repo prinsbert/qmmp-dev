@@ -32,6 +32,7 @@ class QmmpTextCodecPrivate;
  */
 class QMMP_EXPORT QmmpTextCodec
 {
+    Q_DECLARE_PRIVATE(QmmpTextCodec);
 public:
     /*!
      * Constructor.
@@ -68,8 +69,6 @@ public:
 
 private:
     QmmpTextCodecPrivate *d_ptr;
-    Q_DECLARE_PRIVATE(QmmpTextCodec);
-    QByteArray m_name;
 };
 
 #endif // QMMPTEXTCODEC_H
