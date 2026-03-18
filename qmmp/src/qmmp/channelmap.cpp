@@ -22,19 +22,87 @@
 #include <QHash>
 #include "channelmap.h"
 
-Qmmp::ChannelPosition ChannelMap::m_internal_map[9] = { Qmmp::CHAN_FRONT_LEFT,
-                                                        Qmmp::CHAN_FRONT_RIGHT,
-                                                        Qmmp::CHAN_REAR_LEFT,
-                                                        Qmmp::CHAN_REAR_RIGHT,
-                                                        Qmmp::CHAN_FRONT_CENTER,
-                                                        Qmmp::CHAN_REAR_CENTER,
-                                                        Qmmp::CHAN_LFE,
-                                                        Qmmp::CHAN_SIDE_LEFT,
-                                                        Qmmp::CHAN_SIDE_RIGHT };
+namespace ChannelMapPrivate {
+static Qmmp::ChannelPosition internalMap[9] = {
+    Qmmp::CHAN_FRONT_LEFT,
+    Qmmp::CHAN_FRONT_RIGHT,
+    Qmmp::CHAN_REAR_LEFT,
+    Qmmp::CHAN_REAR_RIGHT,
+    Qmmp::CHAN_FRONT_CENTER,
+    Qmmp::CHAN_REAR_CENTER,
+    Qmmp::CHAN_LFE,
+    Qmmp::CHAN_SIDE_LEFT,
+    Qmmp::CHAN_SIDE_RIGHT
+};
+}
 
 ChannelMap::ChannelMap(int channels)
 {
-    generateMap(channels);
+    int mask = 0;
+
+    switch (channels)
+    {
+    case 1:
+        mask = Qmmp::CHAN_FRONT_LEFT;
+        break;
+    case 2:
+        mask = Qmmp::CHAN_FRONT_LEFT
+               | Qmmp::CHAN_FRONT_RIGHT;
+        break;
+    case 3:
+        mask = Qmmp::CHAN_FRONT_LEFT
+               | Qmmp::CHAN_FRONT_RIGHT
+               | Qmmp::CHAN_FRONT_CENTER;
+        break;
+    case 4:
+        mask = Qmmp::CHAN_FRONT_LEFT
+               | Qmmp::CHAN_FRONT_RIGHT
+               | Qmmp::CHAN_REAR_LEFT
+               | Qmmp::CHAN_REAR_RIGHT;
+        break;
+    case 5:
+        mask = Qmmp::CHAN_FRONT_LEFT
+               | Qmmp::CHAN_FRONT_RIGHT
+               | Qmmp::CHAN_FRONT_CENTER
+               | Qmmp::CHAN_REAR_LEFT
+               | Qmmp::CHAN_REAR_RIGHT;
+        break;
+    case 6:
+        mask = Qmmp::CHAN_FRONT_LEFT
+               | Qmmp::CHAN_FRONT_RIGHT
+               | Qmmp::CHAN_FRONT_CENTER
+               | Qmmp::CHAN_LFE
+               | Qmmp::CHAN_REAR_LEFT
+               | Qmmp::CHAN_REAR_RIGHT;
+        break;
+    case 7:
+        mask = Qmmp::CHAN_FRONT_LEFT
+               | Qmmp::CHAN_FRONT_RIGHT
+               | Qmmp::CHAN_FRONT_CENTER
+               | Qmmp::CHAN_LFE
+               | Qmmp::CHAN_REAR_CENTER
+               | Qmmp::CHAN_SIDE_LEFT
+               | Qmmp::CHAN_SIDE_RIGHT;
+        break;
+    case 8:
+        mask = Qmmp::CHAN_FRONT_LEFT
+               | Qmmp::CHAN_FRONT_RIGHT
+               | Qmmp::CHAN_FRONT_CENTER
+               | Qmmp::CHAN_LFE
+               | Qmmp::CHAN_REAR_LEFT
+               | Qmmp::CHAN_REAR_RIGHT
+               | Qmmp::CHAN_SIDE_LEFT
+               | Qmmp::CHAN_SIDE_RIGHT;
+        break;
+    default:
+        ;
+    }
+
+    for(int i = 0; i < 9; ++i)
+    {
+        if(mask & ChannelMapPrivate::internalMap[i])
+            append(ChannelMapPrivate::internalMap[i]);
+    }
 }
 
 int ChannelMap::mask() const
@@ -52,8 +120,8 @@ ChannelMap ChannelMap::remaped() const
     ChannelMap map;
     for(int i = 0; i < 9; ++i)
     {
-         if(contains(m_internal_map[i]))
-             map.append(m_internal_map[i]);
+         if(contains(ChannelMapPrivate::internalMap[i]))
+            map.append(ChannelMapPrivate::internalMap[i]);
     }
     while (map.count() < count())
     {
@@ -82,73 +150,4 @@ QString ChannelMap::toString() const
        list << names.value(channel);
 
     return list.join(QLatin1Char(','));
-}
-
-void ChannelMap::generateMap(int channels)
-{
-    int mask = 0;
-
-    switch (channels)
-    {
-    case 1:
-        mask = Qmmp::CHAN_FRONT_LEFT;
-        break;
-    case 2:
-        mask = Qmmp::CHAN_FRONT_LEFT
-                | Qmmp::CHAN_FRONT_RIGHT;
-        break;
-    case 3:
-        mask = Qmmp::CHAN_FRONT_LEFT
-                | Qmmp::CHAN_FRONT_RIGHT
-                | Qmmp::CHAN_FRONT_CENTER;
-        break;
-    case 4:
-        mask = Qmmp::CHAN_FRONT_LEFT
-                | Qmmp::CHAN_FRONT_RIGHT
-                | Qmmp::CHAN_REAR_LEFT
-                | Qmmp::CHAN_REAR_RIGHT;
-        break;
-    case 5:
-        mask = Qmmp::CHAN_FRONT_LEFT
-                | Qmmp::CHAN_FRONT_RIGHT
-                | Qmmp::CHAN_FRONT_CENTER
-                | Qmmp::CHAN_REAR_LEFT
-                | Qmmp::CHAN_REAR_RIGHT;
-        break;
-    case 6:
-        mask = Qmmp::CHAN_FRONT_LEFT
-                | Qmmp::CHAN_FRONT_RIGHT
-                | Qmmp::CHAN_FRONT_CENTER
-                | Qmmp::CHAN_LFE
-                | Qmmp::CHAN_REAR_LEFT
-                | Qmmp::CHAN_REAR_RIGHT;
-        break;
-    case 7:
-        mask = Qmmp::CHAN_FRONT_LEFT
-                | Qmmp::CHAN_FRONT_RIGHT
-                | Qmmp::CHAN_FRONT_CENTER
-                | Qmmp::CHAN_LFE
-                | Qmmp::CHAN_REAR_CENTER
-                | Qmmp::CHAN_SIDE_LEFT
-                | Qmmp::CHAN_SIDE_RIGHT;
-        break;
-    case 8:
-        mask = Qmmp::CHAN_FRONT_LEFT
-                | Qmmp::CHAN_FRONT_RIGHT
-                | Qmmp::CHAN_FRONT_CENTER
-                | Qmmp::CHAN_LFE
-                | Qmmp::CHAN_REAR_LEFT
-                | Qmmp::CHAN_REAR_RIGHT
-                | Qmmp::CHAN_SIDE_LEFT
-                | Qmmp::CHAN_SIDE_RIGHT;
-        break;
-    default:
-        ;
-    }
-
-    for(int i = 0; i < 9; ++i)
-    {
-        if(mask & m_internal_map[i])
-            append(m_internal_map[i]);
-    }
 }

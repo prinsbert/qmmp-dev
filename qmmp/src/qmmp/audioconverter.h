@@ -24,16 +24,20 @@
 #include <stddef.h>
 #include "qmmp.h"
 
+class AudioConverterPrivate;
+
 /*! @brief The AbstractEngine class provides the internal audio converter.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class QMMP_EXPORT AudioConverter
 {
+    Q_DECLARE_PRIVATE(AudioConverter)
 public:
     /*!
      * Object constructor.
      */
     AudioConverter();
+    ~AudioConverter();
     /*!
      * Sets working audio format.
      * This function should be called before object usage.
@@ -57,7 +61,7 @@ public:
 
 
 private:
-    Qmmp::AudioFormat m_format = Qmmp::PCM_UNKNOWN;
+    AudioConverterPrivate *d_ptr;
 };
 
 #endif // AUDIOCONVERTER_H

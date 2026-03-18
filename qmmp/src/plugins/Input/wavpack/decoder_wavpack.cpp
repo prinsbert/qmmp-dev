@@ -98,8 +98,7 @@ bool DecoderWavPack::initialize()
                 }
                 m_path = p;
                 //send metadata
-                QMap<Qmmp::MetaData, QString> metaData = m_parser->info(m_track)->metaData();
-                addMetaData(metaData);
+                addMetaData(m_parser->info(m_track).metaData());
             }
             else
             {
@@ -162,7 +161,7 @@ bool DecoderWavPack::initialize()
         m_offset = m_parser->offset(m_track);
         m_length_in_bytes = audioParameters().sampleRate() *
                           audioParameters().frameSize() * m_length / 1000;
-        setReplayGainInfo(m_parser->info(m_track)->replayGainInfo());
+        setReplayGainInfo(m_parser->info(m_track).replayGainInfo());
         seek(0);
     }
     m_totalBytes = 0;
@@ -247,8 +246,8 @@ void DecoderWavPack::next()
         m_length_in_bytes = audioParameters().sampleRate() *
                           audioParameters().channels() *
                           audioParameters().sampleSize() * m_length/1000;
-        addMetaData(m_parser->info(m_track)->metaData());
-        setReplayGainInfo(m_parser->info(m_track)->replayGainInfo());
+        addMetaData(m_parser->info(m_track).metaData());
+        setReplayGainInfo(m_parser->info(m_track).replayGainInfo());
         m_totalBytes = 0;
     }
 }

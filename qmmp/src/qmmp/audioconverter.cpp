@@ -62,17 +62,28 @@
     } \
 }
 
-AudioConverter::AudioConverter()
+class AudioConverterPrivate
+{
+public:
+    Qmmp::AudioFormat format = Qmmp::PCM_UNKNOWN;
+};
+
+AudioConverter::AudioConverter() : d_ptr(new AudioConverterPrivate)
 {}
+
+AudioConverter::~AudioConverter()
+{
+    delete d_ptr;
+}
 
 void AudioConverter::configure(Qmmp::AudioFormat f)
 {
-    m_format = f;
+    d_ptr->format = f;
 }
 
 void AudioConverter::toFloat(const unsigned char *in, float *out, size_t samples)
 {
-    switch (m_format)
+    switch (d_ptr->format)
     {
     case Qmmp::PCM_S8:
         INT_TO_FLOAT(qint8,,in, out, samples, 0, 0x80);
@@ -124,7 +135,7 @@ void AudioConverter::toFloat(const unsigned char *in, float *out, size_t samples
 
 void AudioConverter::fromFloat(const float *in, unsigned char *out, size_t samples)
 {
-    switch (m_format)
+    switch (d_ptr->format)
     {
     case Qmmp::PCM_S8:
         FLOAT_TO_INT(qint8,, in, out, samples, 0, 0x80, 0x7F);

@@ -25,11 +25,14 @@
 #include "channelmap.h"
 #include "qmmp.h"
 
+class AudioParametersPrivate;
+
 /*! @brief The AudioParameters class keeps information about audio settings.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class QMMP_EXPORT AudioParameters
 {
+    Q_DECLARE_PRIVATE(AudioParameters)
 public:
     /*!
      * Byte order of samples.
@@ -50,14 +53,18 @@ public:
      * @param format PCM data format.
      */
     AudioParameters(quint32 srate, const ChannelMap &map, Qmmp::AudioFormat format);
+
+    ~AudioParameters();
     /*!
      * Constructs a copy of \b other.
      */
     AudioParameters(const AudioParameters &other);
+    AudioParameters(AudioParameters &&other);
     /*!
      * Assigns audio parameters \b p to this parameters.
      */
     AudioParameters &operator=(const AudioParameters &p);
+    AudioParameters &operator=(AudioParameters &&p);
     /*!
      * Returns \b true if parameters \b p is equal to this parameters; otherwise returns \b false.
      */
@@ -131,11 +138,7 @@ public:
     static Qmmp::AudioFormat findAudioFormat(int bits, ByteOrder byteOrder = LittleEndian);
 
 private:
-    quint32 m_srate = 0;
-    ChannelMap m_chan_map;
-    Qmmp::AudioFormat m_format = Qmmp::PCM_S16LE;
-    int m_sz = 2;
-    int m_precision = 16;
+    AudioParametersPrivate *d_ptr;
 };
 
 #endif // AUDIOPARAMETERS_H

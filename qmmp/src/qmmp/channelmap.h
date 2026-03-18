@@ -47,10 +47,6 @@ public:
      * Converts channel channel mapping to string representation (for debug purposes).
      */
     QString toString() const;
-
-private:
-    static Qmmp::ChannelPosition m_internal_map[9];
-    void generateMap(int channels);
 };
 
 #endif // CHANNELMAP_H

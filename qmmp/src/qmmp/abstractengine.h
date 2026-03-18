@@ -30,6 +30,7 @@ class QIODevice;
 class InputSource;
 class QmmpPluginCache;
 class EngineFactory;
+class AbstractEnginePrivate;
 
 
 /*! @brief The AbstractEngine class provides the base interface class of audio audio engines.
@@ -37,7 +38,8 @@ class EngineFactory;
  */
 class QMMP_EXPORT AbstractEngine : public QThread
 {
- Q_OBJECT
+    Q_OBJECT
+    Q_DECLARE_PRIVATE(AbstractEngine)
 public:
     /*!
      * Object constructor.
@@ -47,7 +49,7 @@ public:
     /*!
      * Destructor.
      */
-    virtual ~AbstractEngine() = default;
+    virtual ~AbstractEngine();
     /*!
      * Adds \b source to the internal queue.
      * Subclass should reimplement this function.
@@ -132,10 +134,7 @@ protected:
     QMutex *mutex();
 
 private:
-    QMutex m_mutex;
-    static void loadPlugins();
-    static QList<QmmpPluginCache*> *m_cache;
-    static QStringList m_disabledNames;
+    AbstractEnginePrivate *d_ptr;
 };
 
 
