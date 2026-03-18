@@ -87,14 +87,14 @@ bool DecoderCUE::initialize()
     m_decoder->seek(m_offset);
 
     configure(m_decoder->audioParameters());
-    setReplayGainInfo(m_cueFile->info(m_track)->replayGainInfo());
+    setReplayGainInfo(m_cueFile->info(m_track).replayGainInfo());
     length_in_bytes = audioParameters().sampleRate() *
                       audioParameters().frameSize() * m_length/1000;
     m_totalBytes = 0;
 
     m_sz = audioParameters().frameSize();
 
-    addMetaData(m_cueFile->info(m_track)->metaData());
+    addMetaData(m_cueFile->info(m_track).metaData());
     return true;
 }
 
@@ -175,8 +175,8 @@ void DecoderCUE::next()
         m_offset = m_cueFile->offset(m_track);
         length_in_bytes = audioParameters().sampleRate() *
                           audioParameters().frameSize() * m_length/1000;
-        addMetaData(m_cueFile->info(m_track)->metaData());
-        setReplayGainInfo(m_cueFile->info(m_track)->replayGainInfo());
+        addMetaData(m_cueFile->info(m_track).metaData());
+        setReplayGainInfo(m_cueFile->info(m_track).replayGainInfo());
         m_totalBytes = 0;
     }
 }

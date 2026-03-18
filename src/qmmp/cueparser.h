@@ -28,11 +28,14 @@
 #include "trackinfo.h"
 #include "qmmp_export.h"
 
+class CueParserPrivate;
+
 /*! @brief The CueParser class provides CUE parser.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class QMMP_EXPORT CueParser
 {
+    Q_DECLARE_PRIVATE(CueParser)
 public:
     /*!
      * Constructs empty CUE parser.
@@ -96,7 +99,7 @@ public:
     /*!
      * Returns information for the given \b track.
      */
-    const TrackInfo *info(int track) const;
+    TrackInfo info(int track) const;
     /*!
      * Sets duration for the given content file.
      * \param file Content file path.
@@ -139,16 +142,7 @@ public:
     void clear();
 
 private:
-    struct CUETrack
-    {
-        TrackInfo info;
-        QString file;
-        qint64 offset = 0;
-    };
-    QList<CUETrack *> m_tracks;
-    QStringList m_files;
-    QStringList splitLine(const QString &line);
-    qint64 getLength(const QString &str);
+    CueParserPrivate *d_ptr;
 };
 
 #endif // CUEPARSER_H

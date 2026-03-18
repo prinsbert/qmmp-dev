@@ -21,38 +21,69 @@
 #include <QHash>
 #include "audioparameters.h"
 
-AudioParameters::AudioParameters()
+class AudioParametersPrivate
+{
+public:
+    quint32 srate = 0;
+    ChannelMap chanMap;
+    Qmmp::AudioFormat format = Qmmp::PCM_S16LE;
+    int sampleSize = 2;
+    int validBitsPerSample = 16;
+};
+
+AudioParameters::AudioParameters() :
+    d_ptr(new AudioParametersPrivate)
 {}
 
-AudioParameters::AudioParameters(const AudioParameters &other) : m_srate(other.sampleRate()),
-    m_chan_map(other.channelMap()),
-    m_format(other.format()),
-    m_sz(other.sampleSize()),
-    m_precision(other.validBitsPerSample())
-{}
+AudioParameters::AudioParameters(const AudioParameters &other) :
+    d_ptr(new AudioParametersPrivate)
+{
+    operator=(other);
+}
+
+AudioParameters::AudioParameters(AudioParameters &&other)
+{
+    std::swap(d_ptr, other.d_ptr);
+}
 
 AudioParameters::AudioParameters(quint32 srate, const ChannelMap &map, Qmmp::AudioFormat format) :
-    m_srate(srate),
-    m_chan_map(map),
-    m_format(format),
-    m_sz(sampleSize(format)),
-    m_precision(validBitsPerSample(format))
-{}
+    d_ptr(new AudioParametersPrivate)
+{
+    Q_D(AudioParameters);
+    d->srate = srate;
+    d->chanMap = map;
+    d->format = format;
+    d->sampleSize = sampleSize(format);
+    d->validBitsPerSample = validBitsPerSample(format);
+}
+
+AudioParameters::~AudioParameters()
+{
+    delete d_ptr;
+}
 
 AudioParameters &AudioParameters::operator=(const AudioParameters &p)
 {
-    m_srate = p.sampleRate();
-    m_chan_map = p.channelMap();
-    m_format = p.format();
-    m_sz = p.sampleSize();
-    m_precision = p.validBitsPerSample();
+    Q_D(AudioParameters);
+    d->srate = p.sampleRate();
+    d->chanMap = p.channelMap();
+    d->format = p.format();
+    d->sampleSize = p.sampleSize();
+    d->validBitsPerSample = p.validBitsPerSample();
+    return *this;
+}
+
+AudioParameters &AudioParameters::operator=(AudioParameters &&p)
+{
+    std::swap(d_ptr, p.d_ptr);
     return *this;
 }
 
 bool AudioParameters::operator==(const AudioParameters &p) const
 {
-    return m_srate == p.sampleRate() && m_chan_map == p.channelMap() && m_format == p.format()
-            && m_precision == p.validBitsPerSample();
+    Q_D(const AudioParameters);
+    return d->srate == p.sampleRate() && d->chanMap == p.channelMap() && d->format == p.format()
+            && d->validBitsPerSample == p.validBitsPerSample();
 }
 
 bool AudioParameters::operator!=(const AudioParameters &p) const
@@ -62,47 +93,47 @@ bool AudioParameters::operator!=(const AudioParameters &p) const
 
 quint32 AudioParameters::sampleRate() const
 {
-    return m_srate;
+    return d_ptr->srate;
 }
 
 int AudioParameters::channels() const
 {
-    return m_chan_map.count();
+    return d_ptr->chanMap.count();
 }
 
 const ChannelMap AudioParameters::channelMap() const
 {
-    return m_chan_map;
+    return d_ptr->chanMap;
 }
 
 Qmmp::AudioFormat AudioParameters::format() const
 {
-    return m_format;
+    return d_ptr->format;
 }
 
 int AudioParameters::sampleSize() const
 {
-    return m_sz;
+    return d_ptr->sampleSize;
 }
 
 int AudioParameters::frameSize() const
 {
-    return m_sz * m_chan_map.count();
+    return d_ptr->sampleSize * d_ptr->chanMap.count();
 }
 
 int AudioParameters::bitsPerSample() const
 {
-    return m_sz * 8;
+    return d_ptr->sampleSize * 8;
 }
 
 int AudioParameters::validBitsPerSample() const
 {
-    return m_precision;
+    return d_ptr->validBitsPerSample;
 }
 
 AudioParameters::ByteOrder AudioParameters::byteOrder() const
 {
-    switch(m_format)
+    switch(d_ptr->format)
     {
     case Qmmp::PCM_S16BE:
     case Qmmp::PCM_S24BE:
@@ -115,6 +146,7 @@ AudioParameters::ByteOrder AudioParameters::byteOrder() const
 
 QString AudioParameters::toString() const
 {
+    Q_D(const AudioParameters);
     static const QHash<Qmmp::AudioFormat, QString> names = {
         { Qmmp::PCM_S8, u"s8"_s },
         { Qmmp::PCM_U8, u"u8"_s },
@@ -133,7 +165,7 @@ QString AudioParameters::toString() const
         { Qmmp::PCM_FLOAT, u"float"_s }
     };
 
-    return QStringLiteral("%1 Hz, {%2}, %3").arg(m_srate).arg(m_chan_map.toString(), names.value(m_format, u"unknown"_s));
+    return QStringLiteral("%1 Hz, {%2}, %3").arg(d->srate).arg(d->chanMap.toString(), names.value(d->format, u"unknown"_s));
 }
 
 int AudioParameters::sampleSize(Qmmp::AudioFormat format)

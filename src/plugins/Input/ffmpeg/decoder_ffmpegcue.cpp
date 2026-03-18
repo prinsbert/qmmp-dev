@@ -107,8 +107,8 @@ bool DecoderFFmpegCue::initialize()
 
     m_frameSize = audioParameters().sampleSize() * audioParameters().channels();
 
-    setReplayGainInfo(m_parser->info(m_track)->replayGainInfo()); //send ReplayGaing info
-    addMetaData(m_parser->info(m_track)->metaData()); //send metadata
+    setReplayGainInfo(m_parser->info(m_track).replayGainInfo()); //send ReplayGaing info
+    addMetaData(m_parser->info(m_track).metaData()); //send metadata
     return true;
 }
 
@@ -183,7 +183,7 @@ QString DecoderFFmpegCue::nextURL() const
 
 void DecoderFFmpegCue::next()
 {
-    if(m_track +1 <= m_parser->count())
+    if(m_track + 1 <= m_parser->count())
     {
         m_track++;
         m_duration = m_parser->duration(m_track);
@@ -191,8 +191,8 @@ void DecoderFFmpegCue::next()
         m_trackSize = audioParameters().sampleRate() *
                 audioParameters().channels() *
                 audioParameters().sampleSize() * m_duration/1000;
-        addMetaData(m_parser->info(m_track)->metaData());
-        setReplayGainInfo(m_parser->info(m_track)->replayGainInfo());
+        addMetaData(m_parser->info(m_track).metaData());
+        setReplayGainInfo(m_parser->info(m_track).replayGainInfo());
         m_written = 0;
     }
 }
