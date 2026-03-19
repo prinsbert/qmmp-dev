@@ -26,11 +26,14 @@
 #include <QFlags>
 #include "qmmp.h"
 
+class TagModelPrivate;
+
 /*! @brief The StateHandler class provides is the base interface class of tag editor.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class QMMP_EXPORT TagModel
 {
+    Q_DECLARE_PRIVATE(TagModel)
 public:
     /*!
      * This enum describes tag editor capabilities
@@ -50,7 +53,7 @@ public:
     /*!
      * Destructor.
      */
-    virtual ~TagModel() = default;
+    virtual ~TagModel();
     /*!
      * Returns tag name.
      * Subclass should reimplement this fucntion.
@@ -97,7 +100,7 @@ public:
     ModelCaps caps() const;
 
 private:
-    ModelCaps m_f = DefaultCaps;
+    TagModelPrivate *d_ptr;
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(TagModel::ModelCaps)

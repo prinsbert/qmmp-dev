@@ -44,12 +44,15 @@ inline bool operator!=(const VolumeSettings &v1, const VolumeSettings &v2)
     return v1.left != v2.left || v1.right != v2.right;
 }
 
+class VolumePrivate;
+
 /*! @brief The Volume class provides asbtract volume interface
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class QMMP_EXPORT Volume : public QObject
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(Volume)
 public:
     /*!
      * This enum describes volume capabilities.
@@ -61,10 +64,11 @@ public:
                                 * emitting changed() signal so polling the volume is not needed */
     };
     Q_DECLARE_FLAGS(VolumeFlags, VolumeFlag)
+    Volume();
     /*!
      * Destructor.
      */
-    virtual ~Volume(){}
+    virtual ~Volume();
     /*!
      * Setups volume levels.
      * Subclass should reimplement this fucntion.
@@ -96,7 +100,7 @@ signals:
     void changed();
 
 private:
-    bool m_mutedInternal = false;
+    VolumePrivate *d_ptr;
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Volume::VolumeFlags)
