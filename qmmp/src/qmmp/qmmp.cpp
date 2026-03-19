@@ -32,11 +32,12 @@
 
 #include "qmmp.h"
 
-QString Qmmp::m_configDir;
-QString Qmmp::m_langID;
+Q_GLOBAL_STATIC(QString, configDir);
+Q_GLOBAL_STATIC(QString, langID);
 #ifdef Q_OS_WIN
-QString Qmmp::m_appDir;
+Q_GLOBAL_STATIC(QString, appDir);
 #endif
+
 
 #ifdef QT_DEBUG
 Q_LOGGING_CATEGORY(core, "qmmp.core", QtDebugMsg)
@@ -46,40 +47,39 @@ Q_LOGGING_CATEGORY(core, "qmmp.core", QtWarningMsg)
 Q_LOGGING_CATEGORY(plugin, "qmmp.plugin", QtWarningMsg)
 #endif
 
-
 QString Qmmp::configDir()
 {
 #ifdef Q_OS_WIN
-    if(m_configDir.isEmpty())
+    if(::configDir()->isEmpty())
     {
         if(isPortable())
-            return m_appDir + u"/.qmmp"_s;
+            return *::appDir() + u"/.qmmp"_s;
 
-        return  QDir::homePath() + u"/.qmmp"_s;
+        return QDir::homePath() + u"/.qmmp"_s;
     }
 #else
-    if(m_configDir.isEmpty())
+    if(::configDir()->isEmpty())
         return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation),
                                            QCoreApplication::organizationName());
 
 #endif
-    return m_configDir;
+    return *::configDir();
 }
 
 void Qmmp::setConfigDir(const QString &path)
 {
-    m_configDir = path;
+    ::configDir()->operator = (path);
 }
 
 QString Qmmp::cacheDir()
 {
 #ifdef Q_OS_WIN
-    return configDir();
+    return *::configDir();
 #else
-    if(m_configDir.isEmpty())
+    if(::configDir()->isEmpty())
         return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation),
                                            QCoreApplication::organizationName());
-    return m_configDir;
+    return *::configDir();
 #endif
 }
 
@@ -130,13 +130,13 @@ QStringList Qmmp::findPlugins(const QString &prefix)
 
 QString Qmmp::systemLanguageID()
 {
-    if(m_langID.isEmpty())
+    if(langID()->isEmpty())
     {
-        m_langID = uiLanguageID();
+        langID()->operator = (uiLanguageID());
     }
 
-    if(m_langID != "auto"_L1)
-        return m_langID;
+    if(*langID() != "auto"_L1)
+        return *langID();
 
 #ifdef Q_OS_UNIX
     QByteArray v = qgetenv ("LC_ALL");
@@ -162,7 +162,7 @@ void Qmmp::setUiLanguageID(const QString &code)
 {
     QSettings settings;
     settings.setValue(u"General/locale"_s, code);
-    m_langID.clear();
+    langID()->clear();
 }
 
 QString Qmmp::dataPath()
@@ -175,20 +175,20 @@ QString Qmmp::userDataPath()
 #if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
     return configDir();
 #else
-    if(m_configDir.isEmpty())
+    if(::configDir()->isEmpty())
     {
         return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation),
                                            QCoreApplication::organizationName());
     }
-    return m_configDir;
+    return *::configDir();
 #endif
 }
 
 #ifdef Q_OS_WIN
 bool Qmmp::isPortable()
 {
-    if(m_appDir.isEmpty())
-        m_appDir = QCoreApplication::applicationDirPath();
-    return QFile::exists(m_appDir + QStringLiteral("/../qmmp_portable.txt"));
+    if(appDir()->isEmpty())
+        appDir()->operator = (QCoreApplication::applicationDirPath());
+    return QFile::exists(*appDir() + QStringLiteral("/../qmmp_portable.txt"));
 }
 #endif

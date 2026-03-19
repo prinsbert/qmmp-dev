@@ -33,6 +33,7 @@
 #include <qmmp/decoderfactory.h>
 #include <qmmp/audioconverter.h>
 #include <qmmp/buffer.h>
+#include <qmmp/qmmpsettings.h>
 #include <qmmpui/metadataformatter.h>
 #include "qsuiwaveformseekbar.h"
 

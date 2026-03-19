@@ -29,6 +29,8 @@
 #include <qmmp/visualfactory.h>
 #include <qmmp/effectfactory.h>
 #include <qmmp/effect.h>
+#include <qmmp/visualfactory.h>
+#include <qmmp/visual.h>
 #include <qmmp/soundcore.h>
 #include <qmmp/enginefactory.h>
 #include <qmmp/abstractengine.h>

@@ -24,7 +24,6 @@
 #include <QStringList>
 #include <QWidget>
 #include <QHash>
-#include <stddef.h>
 #include "qmmp_export.h"
 
 #define QMMP_VISUAL_NODE_SIZE 512 //samples
@@ -32,7 +31,7 @@
 
 class VisualFactory;
 class VisualBuffer;
-typedef struct _struct_fft_state fft_state;
+class VisualPrivate;
 
 /*! @brief The Visual class provides the base interface class of visualizations.
  *  @author Ilya Kotov <forkotov02@ya.ru>
@@ -40,6 +39,7 @@ typedef struct _struct_fft_state fft_state;
 class QMMP_EXPORT Visual : public QWidget
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(Visual)
 public:
     /*!
     * Object contsructor.
@@ -87,9 +87,9 @@ public:
      */
     static void initialize(QWidget *parent, QObject *receiver = nullptr, const char *member = nullptr);
     /*!
-     * Returns a pointer to a list of created visual objects.
+     * Returns a list of created visual objects.
      */
-    static QList<Visual *> *visuals();
+    static const QList<Visual *> &visuals();
     /*!
      * Shows configuration dialog and updates settings automatically.
      * @param factory Visual plugin factory.
@@ -151,20 +151,7 @@ protected:
     bool takeFFTData(float *left, float *right = nullptr);
 
 private:
-    static void createVisualization(VisualFactory *factory, QWidget *parent);
-    static QList<VisualFactory*> *m_factories;
-    static QHash <const VisualFactory*, QString> *m_files;
-    static void checkFactories();
-    static QList<Visual*>  m_visuals;
-    static QHash<VisualFactory*, Visual*> m_vis_map; //internal visualization
-    static QWidget *m_parentWidget;
-    static QObject *m_receiver;
-    static const char *m_member;
-    static VisualBuffer m_buffer;
-
-    fft_state *m_state = nullptr;
-    float *m_left_fft = nullptr, *m_right_fft = nullptr;
-    float *m_tmp_data = nullptr;
+    VisualPrivate *d_ptr;
 };
 
 #endif

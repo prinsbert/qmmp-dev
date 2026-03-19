@@ -22,13 +22,11 @@
 
 #include <QObject>
 #include <QMutex>
-#include <atomic>
-#include "qmmp.h"
-#include "volume.h"
 #include "buffer.h"
 
 class QTimer;
 class SoftwareVolume;
+class VolumeHandlerPrivate;
 
 /*!
  * @brief The VolumeHandler class provides volume control access
@@ -37,6 +35,7 @@ class SoftwareVolume;
 class QMMP_EXPORT VolumeHandler : public QObject
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(VolumeHandler)
 public:
     /*!
      * Object constructor.
@@ -131,16 +130,7 @@ public slots:
     void reload();
 
 private:
-    VolumeSettings m_settings;
-    bool m_prev_block = false;
-    std::atomic_bool m_muted = ATOMIC_VAR_INIT(false);
-    std::atomic_bool m_apply = ATOMIC_VAR_INIT(false);
-    QMutex m_mutex;
-    double m_scaleLeft = 0, m_scaleRight = 0;
-    Volume *m_volume = nullptr;
-    QTimer *m_timer;
-    static VolumeHandler *m_instance;
-
+    VolumeHandlerPrivate *d_ptr;
 };
 
 #endif

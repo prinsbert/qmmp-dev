@@ -233,13 +233,6 @@ public:
     static bool isPortable();
 #endif
 
-private:
-    static QString m_configDir;
-    static QString m_langID;
-#ifdef Q_OS_WIN
-    static QString m_appDir;
-#endif
-
 };
 
 #endif
