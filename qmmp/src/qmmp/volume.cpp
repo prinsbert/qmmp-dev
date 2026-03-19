@@ -23,7 +23,7 @@
 class VolumePrivate
 {
 public:
-    bool m_mutedInternal = false;
+    bool mutedInternal = false;
 };
 
 Volume::Volume() : d_ptr(new VolumePrivate)
@@ -36,12 +36,12 @@ Volume::~Volume()
 
 bool Volume::isMuted() const
 {
-    return d_ptr->m_mutedInternal;
+    return d_ptr->mutedInternal;
 }
 
 void Volume::setMuted(bool mute)
 {
-    d_ptr->m_mutedInternal = mute;
+    d_ptr->mutedInternal = mute;
 }
 
 Volume::VolumeFlags Volume::flags() const
