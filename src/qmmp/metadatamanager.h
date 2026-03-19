@@ -35,6 +35,7 @@ class DecoderFactory;
 class EngineFactory;
 class InputSourceFactory;
 class QmmpSettings;
+class MetaDataManagerPrivate;
 
 
 /*! @brief The MetaDataManager class is the base class for metadata access.
@@ -42,6 +43,7 @@ class QmmpSettings;
  */
 class QMMP_EXPORT MetaDataManager
 {
+    Q_DECLARE_PRIVATE(MetaDataManager)
 public:
     /*!
      * Extracts metadata and audio information from file \b path and returns a list of FileInfo items.
@@ -58,7 +60,7 @@ public:
      * @param readOnly Open file in read-only mode (\b true - enabled, \b false - disable).
      * @return MetaDataModel pointer or null pointer.
      */
-    MetaDataModel* createMetaDataModel(const QString &url, bool readOnly) const;
+    MetaDataModel *createMetaDataModel(const QString &url, bool readOnly) const;
     /*!
      * Returns a list of file name filters with description, i.e. "MPEG Files (*.mp3 *.mpg)"
      */
@@ -120,21 +122,7 @@ public:
 private:
     MetaDataManager();
     ~MetaDataManager();
-    static void destroy();
-
-    struct CoverCacheItem
-    {
-        QString coverPath;
-        QImage coverImage;
-    };
-
-    QFileInfoList findCoverFiles(QDir dir, int depth) const;
-    CoverCacheItem *createCoverCacheItem(const QString &url) const;
-    mutable QCache<QString, CoverCacheItem> *m_cover_cache;
-    QmmpSettings *m_settings;
-    mutable QRecursiveMutex m_mutex;
-
-    static MetaDataManager* m_instance;
+    MetaDataManagerPrivate *d_ptr;
 };
 
 #endif // METADATAMANAGER_H
