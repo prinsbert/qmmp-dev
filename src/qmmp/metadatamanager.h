@@ -25,9 +25,7 @@
 #include <QStringList>
 #include <QImage>
 #include <QDir>
-#include <QRecursiveMutex>
 #include <QRegularExpression>
-#include <QCache>
 #include "trackinfo.h"
 #include "metadatamodel.h"
 

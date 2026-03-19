@@ -24,6 +24,8 @@
 #include <QMutexLocker>
 #include <QCoreApplication>
 #include <QImageReader>
+#include <QCache>
+#include <QRecursiveMutex>
 #include "decoder.h"
 #include "decoderfactory.h"
 #include "abstractengine.h"
