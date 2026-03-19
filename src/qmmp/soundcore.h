@@ -24,11 +24,7 @@
 #include <QString>
 #include <QQueue>
 #include <QHash>
-#include "decoder.h"
-#include "output.h"
-#include "visual.h"
 #include "qmmp.h"
-#include "qmmpsettings.h"
 #include "audioparameters.h"
 #include "eqsettings.h"
 #include "trackinfo.h"
@@ -37,6 +33,7 @@ class VolumeHandler;
 class AbstractEngine;
 class InputSource;
 class StateHandler;
+class SoundCorePrivate;
 
 /*! \brief The SoundCore class provides a simple interface for audio playback.
  * @author Ilya Kotov <forkotov02@ya.ru>
@@ -44,6 +41,7 @@ class StateHandler;
 class QMMP_EXPORT SoundCore : public QObject
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(SoundCore)
 public:
     /*!
      * Object constructor.
@@ -117,7 +115,7 @@ public:
     /*!
      * Returns current track information.
      */
-    const TrackInfo &trackInfo() const;
+    TrackInfo trackInfo() const;
     /*!
      *  Indicates that the current active engine will be used for the next queued track.
      *  May be useful for some effect plugins.
@@ -130,7 +128,7 @@ public:
     /*!
      * Returns a pointer to the SoundCore instance.
      */
-    static SoundCore* instance();
+    static SoundCore *instance();
 
 public slots:
     /*!
@@ -251,28 +249,11 @@ signals:
      */
     void nextTrackRequest();
 
-private slots:
-    void startNextSource();
-    void startNextEngine();
-
 private:
     bool event(QEvent *e) override;
-    enum NextEngineState
-    {
-        NO_ENGINE = 0,
-        SAME_ENGINE,
-        ANOTHER_ENGINE,
-        INVALID_SOURCE
-    };
-    QHash <QString, QString> m_streamInfo;
-    TrackInfo m_info;
-    QString m_path;
-    static SoundCore* m_instance;
-    StateHandler *m_handler;
-    VolumeHandler *m_volumeControl;
-    AbstractEngine *m_engine = nullptr;
-    QQueue<InputSource *> m_sources;
-    NextEngineState m_nextState = NO_ENGINE;
+    SoundCorePrivate *d_ptr;
+
+
 };
 
 #endif

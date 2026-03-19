@@ -181,7 +181,7 @@ bool OutputWriter::prepareConverters()
 
 void OutputWriter::startVisualization()
 {
-    for(Visual *visual : *Visual::visuals())
+    for(Visual *visual : Visual::visuals())
     {
         QMetaObject::invokeMethod(visual, "start", Qt::QueuedConnection);
     }
@@ -190,7 +190,7 @@ void OutputWriter::startVisualization()
 void OutputWriter::stopVisualization()
 {
     Visual::clearBuffer();
-    for(Visual *visual : *Visual::visuals())
+    for(Visual *visual : Visual::visuals())
     {
         QMetaObject::invokeMethod(visual, "stop", Qt::QueuedConnection);
     }

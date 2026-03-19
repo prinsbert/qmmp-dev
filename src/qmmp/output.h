@@ -19,6 +19,7 @@
 class QTimer;
 class QmmpSettings;
 class QmmpPluginCache;
+class OutputPrivate;
 
 /*! @brief The Output class provides the base interface class of audio outputs.
  * @author Brad Hughes <bhughes@trolltech.com>
@@ -26,6 +27,7 @@ class QmmpPluginCache;
  */
 class QMMP_EXPORT Output
 {
+    Q_DECLARE_PRIVATE(Output)
 public:
     /*!
      * Object contsructor.
@@ -97,7 +99,7 @@ public:
     /*!
      * Returns required channel map.
      */
-    const ChannelMap &channelMap() const;
+    ChannelMap channelMap() const;
     /*!
      * Returns selected audio format.
      */
@@ -139,12 +141,7 @@ protected:
     void configure(quint32 freq, ChannelMap map, Qmmp::AudioFormat format);
 
 private:
-    quint32 m_frequency = 0;
-    ChannelMap m_chan_map;
-    Qmmp::AudioFormat m_format = Qmmp::PCM_UNKNOWN;
-    int m_sample_size = 0;
-    static void loadPlugins();
-    static QList<QmmpPluginCache*> *m_cache;
+    OutputPrivate *d_ptr;
 };
 
 

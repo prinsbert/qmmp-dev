@@ -28,12 +28,15 @@
 #include "trackinfo.h"
 #include "qmmp.h"
 
+class StateHandlerPrivate;
+
 /*! @brief The StateHandler class allows one to track information about playback progress.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class QMMP_EXPORT StateHandler : public QObject
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(StateHandler)
 public:
     /*!
      * Object constructor.
@@ -133,18 +136,8 @@ signals:
      */
     void bufferingProgress(int progress);
 
-
 private:
-    qint64 m_elapsed = -1;
-    qint64 m_duration = 0;
-    bool m_sendAboutToFinish = true;
-    int m_bitrate = 0;
-    static StateHandler* m_instance;
-    TrackInfo m_info;
-    QHash <QString, QString> m_streamInfo;
-    Qmmp::State m_state = Qmmp::Stopped;
-    AudioParameters m_audioParameters;
-    mutable QRecursiveMutex m_mutex;
+    StateHandlerPrivate *d_ptr;
 };
 
 #endif

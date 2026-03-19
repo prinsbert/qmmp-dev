@@ -30,7 +30,7 @@
 #define EVENT_STATE_CHANGED (QEvent::Type(QEvent::User)) /*!< @internal */
 #define EVENT_NEXT_TRACK_REQUEST (QEvent::Type(QEvent::User + 1)) /*!< @internal */
 #define EVENT_FINISHED (QEvent::Type(QEvent::User + 2)) /*!< @internal */
-#define  EVENT_TRACK_INFO_CHANGED (QEvent::Type(QEvent::User + 3)) /*!< @internal */
+#define EVENT_TRACK_INFO_CHANGED (QEvent::Type(QEvent::User + 3)) /*!< @internal */
 #define EVENT_STREAM_INFO_CHANGED (QEvent::Type(QEvent::User + 4)) /*!< @internal */
 
 /*! @internal

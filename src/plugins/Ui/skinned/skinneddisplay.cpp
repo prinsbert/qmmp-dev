@@ -23,6 +23,7 @@
 #include <QMenu>
 #include <QTimer>
 #include <qmmp/soundcore.h>
+#include <qmmp/qmmpsettings.h>
 #include <qmmpui/mediaplayer.h>
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/qmmpuisettings.h>
@@ -31,7 +32,6 @@
 #include "skinnedbutton.h"
 #include "skinnedtitlebar.h"
 #include "skinnedpositionbar.h"
-#include "skinnednumber.h"
 #include "skinnedtogglebutton.h"
 #include "symboldisplay.h"
 #include "skinnedtextscroller.h"

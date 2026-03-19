@@ -30,6 +30,7 @@
 #include <QOpenGLContext>
 #include <qmmp/soundcore.h>
 #include <qmmp/qmmp.h>
+#include <qmmp/visual.h>
 #include "projectmwrapper.h"
 #include "projectmwidget.h"
 
