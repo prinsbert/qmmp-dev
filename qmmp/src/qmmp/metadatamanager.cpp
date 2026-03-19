@@ -33,16 +33,102 @@
 
 #define COVER_CACHE_SIZE 20
 
-MetaDataManager* MetaDataManager::m_instance = nullptr;
+class MetaDataManagerPrivate
+{
+    Q_DECLARE_PUBLIC(MetaDataManager)
+public:
+    struct CoverCacheItem
+    {
+        QString coverPath;
+        QImage coverImage;
+    };
 
-MetaDataManager::MetaDataManager() :
-    m_cover_cache(new QCache<QString, CoverCacheItem>(COVER_CACHE_SIZE)),
-    m_settings(QmmpSettings::instance())
+    MetaDataManagerPrivate(MetaDataManager *manager) :
+        q_ptr(manager),
+        coverCache(COVER_CACHE_SIZE)
+    {}
+
+private:
+    QFileInfoList findCoverFiles(QDir dir, int depth) const
+    {
+        dir.setFilter(QDir::Files | QDir::Hidden);
+        dir.setSorting(QDir::Name);
+        QFileInfoList file_list = dir.entryInfoList(settings->coverNameFilters());
+
+        const auto fileListCopy = file_list; //avoid container modification
+        for(const QFileInfo &i : std::as_const(fileListCopy))
+        {
+            if(QDir::match(settings->coverNameFilters(false), i.fileName()))
+                file_list.removeAll(i);
+
+            if(QImageReader::imageFormat(i.filePath()).isEmpty()) //remove unsupported image formats
+                file_list.removeAll(i);
+        }
+        if(!depth || !file_list.isEmpty())
+            return file_list;
+
+        depth--;
+        dir.setFilter(QDir::Dirs | QDir::NoDotAndDotDot);
+        dir.setSorting(QDir::Name);
+        const QFileInfoList dir_info_list = dir.entryInfoList();
+        for(const QFileInfo &i : std::as_const(dir_info_list))
+        {
+            file_list << findCoverFiles(QDir(i.absoluteFilePath()), depth);
+        }
+        return file_list;
+    }
+
+    CoverCacheItem *createCoverCacheItem(const QString &url) const
+    {
+        Q_Q(const MetaDataManager);
+
+        CoverCacheItem *item = new CoverCacheItem;
+
+        if(!url.contains(u"://"_s) && settings->useCoverFiles())
+            item->coverPath = q->findCoverFile(url);
+
+        if(item->coverPath.isEmpty())
+        {
+            MetaDataModel *model = q->createMetaDataModel(url, true);
+            if(model)
+            {
+                item->coverPath = model->coverPath();
+                item->coverImage = model->cover();
+                delete model;
+            }
+        }
+
+        if(!item->coverPath.isEmpty() && item->coverImage.isNull())
+            item->coverImage = QImage(item->coverPath);
+
+        if(item->coverImage.width() > 1024 || item->coverImage.height() > 1024)
+            item->coverImage = item->coverImage.scaled(1024, 1024, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+
+        return item;
+    }
+
+    static void destroy()
+    {
+        delete instance;
+        instance = nullptr;
+    }
+
+    MetaDataManager *q_ptr;
+    mutable QCache<QString, CoverCacheItem> coverCache;
+    mutable QRecursiveMutex mutex;
+    QmmpSettings *settings = QmmpSettings::instance();
+
+    static MetaDataManager *instance;
+};
+
+MetaDataManager* MetaDataManagerPrivate::instance = nullptr;
+
+MetaDataManager::MetaDataManager() : d_ptr(new MetaDataManagerPrivate(this))
 {}
 
 MetaDataManager::~MetaDataManager()
 {
-    delete m_cover_cache;
+    delete d_ptr;
 }
 
 QList<TrackInfo> MetaDataManager::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *ignoredPaths) const
@@ -59,7 +145,7 @@ QList<TrackInfo> MetaDataManager::createPlayList(const QString &path, TrackInfo:
         if(!QFile::exists(path))
             return list;
 
-        if(!(fact = Decoder::findByFilePath(path, m_settings->determineFileTypeByContent())))
+        if(!(fact = Decoder::findByFilePath(path, d_ptr->settings->determineFileTypeByContent())))
             efact = AbstractEngine::findByFilePath(path);
     }
     else
@@ -97,7 +183,7 @@ QList<TrackInfo> MetaDataManager::createPlayList(const QString &path, TrackInfo:
     return list;
 }
 
-MetaDataModel* MetaDataManager::createMetaDataModel(const QString &path, bool readOnly) const
+MetaDataModel *MetaDataManager::createMetaDataModel(const QString &path, bool readOnly) const
 {
     DecoderFactory *fact = nullptr;
     EngineFactory *efact = nullptr;
@@ -106,7 +192,7 @@ MetaDataModel* MetaDataManager::createMetaDataModel(const QString &path, bool re
     {
         if(!QFile::exists(path))
             return nullptr;
-        if((fact = Decoder::findByFilePath(path, m_settings->determineFileTypeByContent())))
+        if((fact = Decoder::findByFilePath(path, d_ptr->settings->determineFileTypeByContent())))
             return fact->createMetaDataModel(path, readOnly);
         if((efact = AbstractEngine::findByFilePath(path)))
             return efact->createMetaDataModel(path, readOnly);
@@ -149,7 +235,7 @@ QStringList MetaDataManager::nameFilters() const
 {
     QStringList filters = Decoder::nameFilters();
     filters << AbstractEngine::nameFilters();
-    if(m_settings->determineFileTypeByContent())
+    if(d_ptr->settings->determineFileTypeByContent())
         filters << u"*"_s;
     filters.removeDuplicates();
     return filters;
@@ -187,35 +273,38 @@ bool MetaDataManager::supports(const QString &fileName) const
 
 QImage MetaDataManager::getCover(const QString &url) const
 {
-    QMutexLocker locker(&m_mutex);
-    CoverCacheItem *item = m_cover_cache->object(url);
+    Q_D(const MetaDataManager);
+    QMutexLocker locker(&d->mutex);
+    MetaDataManagerPrivate::CoverCacheItem *item = d->coverCache.object(url);
 
     if(item)
         return item->coverImage;
 
-    if(m_cover_cache->insert(url, createCoverCacheItem(url)))
-        return m_cover_cache->object(url)->coverImage;
+    if(d->coverCache.insert(url, d->createCoverCacheItem(url)))
+        return d->coverCache.object(url)->coverImage;
 
     return QImage();
 }
 
 QString MetaDataManager::getCoverPath(const QString &url) const
 {
-    QMutexLocker locker(&m_mutex);
-    CoverCacheItem *item = m_cover_cache->object(url);
+    Q_D(const MetaDataManager);
+    QMutexLocker locker(&d->mutex);
+    MetaDataManagerPrivate::CoverCacheItem *item = d->coverCache.object(url);
 
     if(item)
         return item->coverPath;
 
-    if(m_cover_cache->insert(url, createCoverCacheItem(url)))
-        return m_cover_cache->object(url)->coverPath;
+    if(d->coverCache.insert(url, d->createCoverCacheItem(url)))
+        return d->coverCache.object(url)->coverPath;
 
     return QString();
 }
 
 QString MetaDataManager::findCoverFile(const QString &fileName) const
 {
-    if(!m_settings->useCoverFiles())
+    Q_D(const MetaDataManager);
+    if(!d->settings->useCoverFiles())
         return QString();
 
     if(!QFile::exists(fileName))
@@ -223,70 +312,15 @@ QString MetaDataManager::findCoverFile(const QString &fileName) const
         return QString();
     }
 
-    QFileInfoList l = findCoverFiles(QFileInfo(fileName).absoluteDir(), m_settings->coverSearchDepth());
+    QFileInfoList l = d->findCoverFiles(QFileInfo(fileName).absoluteDir(), d->settings->coverSearchDepth());
     return l.isEmpty() ? QString() : l.at(0).filePath();
-}
-
-QFileInfoList MetaDataManager::findCoverFiles(QDir dir, int depth) const
-{
-    dir.setFilter(QDir::Files | QDir::Hidden);
-    dir.setSorting(QDir::Name);
-    QFileInfoList file_list = dir.entryInfoList(m_settings->coverNameFilters());
-
-    const auto fileListCopy = file_list; //avoid container modification
-    for(const QFileInfo &i : std::as_const(fileListCopy))
-    {
-        if(QDir::match(m_settings->coverNameFilters(false), i.fileName()))
-            file_list.removeAll(i);
-
-        if(QImageReader::imageFormat(i.filePath()).isEmpty()) //remove unsupported image formats
-            file_list.removeAll(i);
-    }
-    if(!depth || !file_list.isEmpty())
-        return file_list;
-
-    depth--;
-    dir.setFilter(QDir::Dirs | QDir::NoDotAndDotDot);
-    dir.setSorting(QDir::Name);
-    const QFileInfoList dir_info_list = dir.entryInfoList();
-    for(const QFileInfo &i : std::as_const(dir_info_list))
-    {
-        file_list << findCoverFiles(QDir(i.absoluteFilePath()), depth);
-    }
-    return file_list;
-}
-
-MetaDataManager::CoverCacheItem *MetaDataManager::createCoverCacheItem(const QString &url) const
-{
-    CoverCacheItem *item = new CoverCacheItem;
-
-    if(!url.contains(u"://"_s) && m_settings->useCoverFiles())
-        item->coverPath = findCoverFile(url);
-
-    if(item->coverPath.isEmpty())
-    {
-        MetaDataModel *model = createMetaDataModel(url, true);
-        if(model)
-        {
-            item->coverPath = model->coverPath();
-            item->coverImage = model->cover();
-            delete model;
-        }
-    }
-
-    if(!item->coverPath.isEmpty() && item->coverImage.isNull())
-        item->coverImage = QImage(item->coverPath);
-
-    if(item->coverImage.width() > 1024 || item->coverImage.height() > 1024)
-        item->coverImage = item->coverImage.scaled(1024, 1024, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-
-    return item;
 }
 
 void MetaDataManager::clearCoverCache()
 {
-    QMutexLocker locker(&m_mutex);
-    m_cover_cache->clear();
+    Q_D(MetaDataManager);
+    QMutexLocker locker(&d->mutex);
+    d->coverCache.clear();
 }
 
 void MetaDataManager::prepareForAnotherThread()
@@ -309,16 +343,10 @@ bool MetaDataManager::hasMatch(const QList<QRegularExpression> &regExps, const Q
 
 MetaDataManager *MetaDataManager::instance()
 {
-    if(!m_instance)
+    if(!MetaDataManagerPrivate::instance)
     {
-        m_instance = new MetaDataManager();
-        qAddPostRoutine(&MetaDataManager::destroy);
+        MetaDataManagerPrivate::instance = new MetaDataManager();
+        qAddPostRoutine(&MetaDataManagerPrivate::destroy);
     }
-    return m_instance;
-}
-
-void MetaDataManager::destroy()
-{
-    delete m_instance;
-    m_instance = nullptr;
+    return MetaDataManagerPrivate::instance;
 }
