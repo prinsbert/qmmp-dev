@@ -20,14 +20,28 @@
 
 #include "volume.h"
 
+class VolumePrivate
+{
+public:
+    bool m_mutedInternal = false;
+};
+
+Volume::Volume() : d_ptr(new VolumePrivate)
+{}
+
+Volume::~Volume()
+{
+    delete d_ptr;
+}
+
 bool Volume::isMuted() const
 {
-    return m_mutedInternal;
+    return d_ptr->m_mutedInternal;
 }
 
 void Volume::setMuted(bool mute)
 {
-    m_mutedInternal = mute;
+    d_ptr->m_mutedInternal = mute;
 }
 
 Volume::VolumeFlags Volume::flags() const
