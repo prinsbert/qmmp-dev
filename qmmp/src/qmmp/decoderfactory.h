@@ -101,7 +101,6 @@ public:
      * Returns translation file path without locale code and extension
      */
     virtual QString translation() const = 0;
-
 };
 
 Q_DECLARE_INTERFACE(DecoderFactory, "DecoderFactory/1.0")

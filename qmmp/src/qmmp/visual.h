@@ -23,7 +23,6 @@
 #include <QMutex>
 #include <QStringList>
 #include <QWidget>
-#include <QHash>
 #include "qmmp_export.h"
 
 #define QMMP_VISUAL_NODE_SIZE 512 //samples

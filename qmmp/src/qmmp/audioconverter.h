@@ -21,7 +21,6 @@
 #ifndef AUDIOCONVERTER_H
 #define AUDIOCONVERTER_H
 
-#include <stddef.h>
 #include "qmmp.h"
 
 class AudioConverterPrivate;

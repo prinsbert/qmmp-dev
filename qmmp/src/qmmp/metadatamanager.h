@@ -115,7 +115,7 @@ public:
     /*!
      * Returns a pointer to the MetaDataManager instance.
      */
-    static MetaDataManager* instance();
+    static MetaDataManager *instance();
 
 private:
     MetaDataManager();
