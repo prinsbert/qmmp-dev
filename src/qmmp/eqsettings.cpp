@@ -38,10 +38,9 @@ EqSettings::EqSettings(const EqSettings &other) : d_ptr(new EqSettingsPrivate(ot
     operator=(other);
 }
 
-EqSettings::EqSettings(EqSettings &&other)
-{
-    std::swap(d_ptr, other.d_ptr);
-}
+EqSettings::EqSettings(EqSettings &&other) noexcept :
+    d_ptr(std::exchange(other.d_ptr, nullptr))
+{}
 
 EqSettings::EqSettings(Bands bands) : d_ptr(new EqSettingsPrivate(bands))
 {}
@@ -108,7 +107,7 @@ EqSettings &EqSettings::operator=(const EqSettings &s)
     return *this;
 }
 
-EqSettings &EqSettings::operator=(EqSettings &&s)
+EqSettings &EqSettings::operator=(EqSettings &&s) noexcept
 {
     std::swap(d_ptr, s.d_ptr);
     return *this;

@@ -59,12 +59,12 @@ public:
      * Constructs a copy of \b other.
      */
     AudioParameters(const AudioParameters &other);
-    AudioParameters(AudioParameters &&other);
+    AudioParameters(AudioParameters &&other) noexcept;
     /*!
      * Assigns audio parameters \b p to this parameters.
      */
     AudioParameters &operator=(const AudioParameters &p);
-    AudioParameters &operator=(AudioParameters &&p);
+    AudioParameters &operator=(AudioParameters &&p) noexcept;
     /*!
      * Returns \b true if parameters \b p is equal to this parameters; otherwise returns \b false.
      */

@@ -41,10 +41,9 @@ AudioParameters::AudioParameters(const AudioParameters &other) :
     operator=(other);
 }
 
-AudioParameters::AudioParameters(AudioParameters &&other)
-{
-    std::swap(d_ptr, other.d_ptr);
-}
+AudioParameters::AudioParameters(AudioParameters &&other) noexcept :
+    d_ptr(std::exchange(other.d_ptr, nullptr))
+{}
 
 AudioParameters::AudioParameters(quint32 srate, const ChannelMap &map, Qmmp::AudioFormat format) :
     d_ptr(new AudioParametersPrivate)
@@ -73,7 +72,7 @@ AudioParameters &AudioParameters::operator=(const AudioParameters &p)
     return *this;
 }
 
-AudioParameters &AudioParameters::operator=(AudioParameters &&p)
+AudioParameters &AudioParameters::operator=(AudioParameters &&p) noexcept
 {
     std::swap(d_ptr, p.d_ptr);
     return *this;

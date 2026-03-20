@@ -46,7 +46,7 @@ public:
      * Constructs a copy of \b other.
      */
     EqSettings(const EqSettings &other);
-    EqSettings(EqSettings &&other);
+    EqSettings(EqSettings &&other) noexcept;
     /*!
      * Constructs an empty equalizer settings (0 dB, disabled)
      * @param bands - Number of bands (supported: 10, 15, 25, 31)
@@ -95,7 +95,7 @@ public:
      * Assigns equalizer settings \b s to this settings.
      */
     EqSettings &operator=(const EqSettings &s);
-    EqSettings &operator=(EqSettings &&s);
+    EqSettings &operator=(EqSettings &&s) noexcept;
     /*!
      * Returns \b true if equalizer settins \b s is equal to this settings; otherwise returns false.
      */
