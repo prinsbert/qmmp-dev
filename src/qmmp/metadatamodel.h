@@ -30,12 +30,15 @@
 #include <QFlags>
 #include "tagmodel.h"
 
+class MetaDataItemPrivate;
+class MetaDataModelPrivate;
 
 /*! @brief Container of extra file/track property.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class QMMP_EXPORT MetaDataItem
 {
+    Q_DECLARE_PRIVATE(MetaDataItem)
 public:
     /*!
      * Constructor
@@ -44,6 +47,12 @@ public:
      * \param suffix Localized suffix of property (i.e. kbit, kbps, etc).
      */
     MetaDataItem(const QString &name, const QVariant &value, const QString &suffix = QString());
+    MetaDataItem(const MetaDataItem &other);
+    MetaDataItem(MetaDataItem &&other) noexcept;
+    ~MetaDataItem();
+
+    MetaDataItem &operator=(const MetaDataItem &other);
+    MetaDataItem &operator=(MetaDataItem &&other) noexcept;
     /*!
      * Returns localized name of property.
      */
@@ -57,9 +66,9 @@ public:
      */
     QVariant value() const;
     /*!
-     * Returns value of property.
+     * Changes property value.
      */
-    void setValue(const QString &value);
+    void setValue(const QVariant &value);
     /*!
      * Returns suffix of property.
      */
@@ -70,8 +79,7 @@ public:
     void setSuffix(const QString &suffix);
 
 private:
-    QString m_name, m_suffix;
-    QVariant m_value;
+    MetaDataItemPrivate *d_ptr;
 };
 
 /*! @brief The MetaDataModel is the base interface class of metadata access.
@@ -79,6 +87,7 @@ private:
  */
 class QMMP_EXPORT MetaDataModel
 {
+    Q_DECLARE_PRIVATE(MetaDataModel)
 public:
     /*!
      * Details dialog settings.
@@ -99,7 +108,7 @@ public:
     /*!
      * Destructor.
      */
-    virtual ~MetaDataModel() = default;
+    virtual ~MetaDataModel();
     /*!
      * Returns extra properties of the media source (in addition to the \b Qmmp::TrackProperty values).
      * Default implemetation returns empty array.
@@ -172,8 +181,7 @@ protected:
     void setReadOnly(bool readOnly);
 
 private:
-    bool m_readOnly;
-    DialogHints m_dialogHints;
+    MetaDataModelPrivate *d_ptr;
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(MetaDataModel::DialogHints)

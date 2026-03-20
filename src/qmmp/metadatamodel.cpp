@@ -20,44 +20,102 @@
 
 #include "metadatamodel.h"
 
+class MetaDataItemPrivate
+{
+public:
+    QString name, suffix;
+    QVariant value;
+};
+
 MetaDataItem::MetaDataItem(const QString &name, const QVariant &value, const QString &suffix) :
-    m_name(name), m_suffix(suffix), m_value(value)
+    d_ptr(new MetaDataItemPrivate)
+{
+    Q_D(MetaDataItem);
+    d->name = name;
+    d->value = value;
+    d->suffix = suffix;
+}
+
+MetaDataItem::MetaDataItem(const MetaDataItem &other) :
+    d_ptr(new MetaDataItemPrivate)
+{
+    operator = (other);
+}
+
+MetaDataItem::MetaDataItem(MetaDataItem &&other) noexcept :
+    d_ptr(std::exchange(other.d_ptr, nullptr))
 {}
+
+MetaDataItem::~MetaDataItem()
+{
+    delete d_ptr;
+}
+
+MetaDataItem &MetaDataItem::operator=(const MetaDataItem &other)
+{
+    Q_D(MetaDataItem);
+    d->name = other.d_ptr->name;
+    d->value = other.d_ptr->value;
+    d->suffix = other.d_ptr->suffix;
+    return *this;
+}
+
+MetaDataItem &MetaDataItem::operator=(MetaDataItem &&other) noexcept
+{
+    std::swap(d_ptr, other.d_ptr);
+    return *this;
+}
 
 QString MetaDataItem::name() const
 {
-    return m_name;
+    return d_ptr->name;
 }
 
 void MetaDataItem::setName(const QString &name)
 {
-    m_name = name;
+    d_ptr->name = name;
 }
 
 QVariant MetaDataItem::value() const
 {
-    return m_value;
+    return d_ptr->value;
 }
 
-void MetaDataItem::setValue(const QString &value)
+void MetaDataItem::setValue(const QVariant &value)
 {
-    m_value = value;
+    d_ptr->value = value;
 }
 
 QString MetaDataItem::suffix() const
 {
-    return m_suffix;
+    return d_ptr->suffix;
 }
 
 void MetaDataItem::setSuffix(const QString &suffix)
 {
-    m_suffix = suffix;
+    d_ptr->suffix = suffix;
 }
 
+class MetaDataModelPrivate
+{
+public:
+    MetaDataModelPrivate(bool ro, MetaDataModel::DialogHints hints) :
+        readOnly(ro),
+        dialogHints(hints)
+    {}
+
+    bool readOnly;
+    MetaDataModel::DialogHints dialogHints;
+};
+
 MetaDataModel::MetaDataModel(bool readOnly, DialogHints hints) :
-    m_readOnly(readOnly),
-    m_dialogHints(hints)
+    d_ptr(new MetaDataModelPrivate(readOnly, hints))
 {}
+
+MetaDataModel::~MetaDataModel()
+{
+    delete d_ptr;
+}
 
 QList<MetaDataItem> MetaDataModel::extraProperties() const
 {
@@ -112,20 +170,20 @@ QString MetaDataModel::lyrics() const
 
 bool MetaDataModel::isReadOnly() const
 {
-    return m_readOnly;
+    return d_ptr->readOnly;
 }
 
 MetaDataModel::DialogHints MetaDataModel::dialogHints() const
 {
-    return m_dialogHints;
+    return d_ptr->dialogHints;
 }
 
 void MetaDataModel::setDialogHints(const DialogHints &hints)
 {
-    m_dialogHints = hints;
+    d_ptr->dialogHints = hints;
 }
 
 void MetaDataModel::setReadOnly(bool readOnly)
 {
-    m_readOnly = readOnly;
+    d_ptr->readOnly = readOnly;
 }
