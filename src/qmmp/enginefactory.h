@@ -24,7 +24,6 @@
 #include <QStringList>
 #include <QList>
 #include <QMap>
-#include <QIODevice>
 #include "trackinfo.h"
 #include "metadatamodel.h"
 

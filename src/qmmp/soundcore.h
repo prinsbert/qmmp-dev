@@ -22,7 +22,6 @@
 
 #include <QObject>
 #include <QString>
-#include <QQueue>
 #include <QHash>
 #include "qmmp.h"
 #include "audioparameters.h"
