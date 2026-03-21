@@ -22,41 +22,58 @@
 #include "ui_templateeditor.h"
 #include "templateeditor.h"
 
-TemplateEditor::TemplateEditor(QWidget *parent) : QDialog(parent), m_ui(new Ui::TemplateEditor)
+class TemplateEditorPrivate : public Ui::TemplateEditor
 {
-    m_ui->setupUi(this);
-    createMenu();
-    connect(m_ui->buttonBox, &QDialogButtonBox::clicked, this, [this](QAbstractButton *button) {
-        if(m_ui->buttonBox->standardButton(button) == QDialogButtonBox::RestoreDefaults)
-            m_ui->textEdit->setPlainText(m_defaultTemplate);
+    Q_DECLARE_PUBLIC(::TemplateEditor)
+public:
+    TemplateEditorPrivate(::TemplateEditor *editor) : q_ptr(editor)
+    {
+        setupUi(editor);
+    }
+
+private:
+    void createMenu()
+    {
+        Q_Q(::TemplateEditor);
+        MetaDataFormatterMenu *menu = new MetaDataFormatterMenu(MetaDataFormatterMenu::TITLE_MENU, q);
+        insertButton->setMenu(menu);
+        q->connect(menu, &MetaDataFormatterMenu::patternSelected, textEdit, &QPlainTextEdit::insertPlainText);
+    }
+
+    ::TemplateEditor *q_ptr;
+    QString defaultTemplate;
+};
+
+TemplateEditor::TemplateEditor(QWidget *parent) :
+    QDialog(parent),
+    d_ptr(new TemplateEditorPrivate(this))
+{
+    Q_D(TemplateEditor);
+    d->createMenu();
+    connect(d->buttonBox, &QDialogButtonBox::clicked, this, [d](QAbstractButton *button) {
+        if(d->buttonBox->standardButton(button) == QDialogButtonBox::RestoreDefaults)
+            d->textEdit->setPlainText(d->defaultTemplate);
     });
 }
 
 TemplateEditor::~TemplateEditor()
 {
-    delete m_ui;
+    delete d_ptr;
 }
 
 QString TemplateEditor::currentTemplate() const
 {
-    return m_ui->textEdit->toPlainText ();
+    return d_ptr->textEdit->toPlainText();
 }
 
 void TemplateEditor::setTemplate(const QString &text)
 {
-    m_ui->textEdit->setPlainText(text);
+    d_ptr->textEdit->setPlainText(text);
 }
 
 void TemplateEditor::setDefaultTemplate(const QString &text)
 {
-    m_defaultTemplate = text;
-}
-
-void TemplateEditor::createMenu()
-{
-    MetaDataFormatterMenu *menu = new MetaDataFormatterMenu(MetaDataFormatterMenu::TITLE_MENU, this);
-    m_ui->insertButton->setMenu(menu);
-    connect(menu, &MetaDataFormatterMenu::patternSelected, m_ui->textEdit, &QPlainTextEdit::insertPlainText);
+    d_ptr->defaultTemplate = text;
 }
 
 QString TemplateEditor::getTemplate(QWidget *parent, const QString &title, const QString &text,

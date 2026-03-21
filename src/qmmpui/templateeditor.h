@@ -24,16 +24,15 @@
 #include <QDialog>
 #include "qmmpui_export.h"
 
-namespace Ui {
-    class TemplateEditor;
-}
+class TemplateEditorPrivate;
 
 /*! @brief The TemplateEditor class provides simple template editor dialog.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class QMMPUI_EXPORT TemplateEditor : public QDialog
 {
-Q_OBJECT
+    Q_OBJECT
+    Q_DECLARE_PRIVATE(TemplateEditor)
 public:
     /*!
      * Constructor.
@@ -69,10 +68,7 @@ public:
                                 const QString &default_template = QString(), bool *ok = nullptr);
 
 private:
-    void createMenu();
-    Ui::TemplateEditor *m_ui;
-    QString m_defaultTemplate;
-
+    TemplateEditorPrivate *d_ptr;
 };
 
 #endif // TEMPLATEEDITOR_H

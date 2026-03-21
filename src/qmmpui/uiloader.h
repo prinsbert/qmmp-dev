@@ -62,10 +62,6 @@ public:
      * Returns \b true if general plugin is enabled, otherwise returns \b false.-
      */
     static UiFactory *selected();
-
-private:
-    static void loadPlugins();
-    static QList<QmmpUiPluginCache*> *m_cache;
 };
 
 #endif //UILOADER_H
