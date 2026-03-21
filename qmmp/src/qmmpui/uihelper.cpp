@@ -40,21 +40,97 @@
 #include "mediaplayer.h"
 #include "uihelper.h"
 
-UiHelper *UiHelper::m_instance = nullptr;
-
-UiHelper::UiHelper(QObject *parent)
-        : QObject(parent)
+class UiHelperPrivate
 {
-    m_instance = this;
+    Q_DECLARE_PUBLIC(UiHelper)
+public:
+    UiHelperPrivate(UiHelper *helper) : q_ptr(helper)
+    {
+        if(instance)
+            qCFatal(core) << "only one instance is allowed";
+        instance = helper;
+    };
+
+    ~UiHelperPrivate()
+    {
+        instance = nullptr;
+    }
+
+private:
+    UiHelper *q_ptr;
+
+    void removeAction(QAction *action)
+    {
+        for(UiHelper::MenuType type : menus.keys())
+        {
+            menus[type].actions.removeAll(action);
+            if(menus[type].menu)
+            {
+                menus[type].menu->removeAction(action);
+                menus[type].menu->menuAction()->setVisible(!menus[type].autoHide || !menus[type].actions.isEmpty());
+            }
+        }
+    }
+
+    void addSelectedFiles(const QStringList &files, bool play)
+    {
+        if(files.isEmpty() || !PlayListManager::instance()->playLists().contains(model))
+            return;
+        if(play)
+        {
+            PlayListManager::instance()->selectPlayList(model);
+            q_ptr->replaceAndPlay(files);
+        }
+        else
+        {
+            model->addPaths(files);
+        }
+    }
+
+    void playSelectedFiles(const QStringList &files)
+    {
+        addSelectedFiles(files, true);
+    }
+
+    void disconnectPl()
+    {
+        Q_Q(UiHelper);
+        while(!plConnections.isEmpty())
+            q->disconnect(plConnections.takeFirst());
+    }
+
+    QMap<GeneralFactory*, General*> generals;
+    struct MenuData
+    {
+        QPointer<QMenu> menu;
+        QPointer<QAction> before;
+        QList<QAction*> actions;
+        bool autoHide = false;
+    };
+    QMap<UiHelper::MenuType, MenuData> menus;
+    QString lastDir;
+    QPointer<JumpToTrackDialog> jumpDialog;
+    PlayListModel *model = nullptr;
+    QList<QMetaObject::Connection> plConnections;
+    static UiHelper *instance;
+};
+
+UiHelper *UiHelperPrivate::instance = nullptr;
+
+UiHelper::UiHelper(QObject *parent) :
+    QObject(parent),
+    d_ptr(new UiHelperPrivate(this))
+{
     General::create(parent);
     QSettings settings;
-    m_lastDir = settings.value(u"General/last_dir"_s, QDir::homePath()).toString(); //last directory
+    d_ptr->lastDir = settings.value(u"General/last_dir"_s, QDir::homePath()).toString(); //last directory
 }
 
 UiHelper::~UiHelper()
 {
     QSettings settings;
-    settings.setValue(u"General/last_dir"_s, m_lastDir);
+    settings.setValue(u"General/last_dir"_s, d_ptr->lastDir);
+    delete d_ptr;
 }
 
 bool UiHelper::visibilityControl() const
@@ -66,89 +142,81 @@ bool UiHelper::visibilityControl() const
 
 void UiHelper::addAction(QAction *action, MenuType type)
 {
-    connect(action, &QAction::destroyed, this, qOverload<QObject *>(&UiHelper::removeAction));
+    Q_D(UiHelper);
+    connect(action, &QAction::destroyed, this, [d](QObject *action) { d->removeAction(qobject_cast<QAction *>(action)); });
 
-    if(!m_menus[type].actions.contains(action))
+    if(!d->menus[type].actions.contains(action))
     {
-        m_menus[type].actions.append(action);
+        d->menus[type].actions.append(action);
         action->setShortcutVisibleInContextMenu(true);
     }
-    if(m_menus[type].menu && !m_menus[type].menu->actions().contains(action))
+    if(d->menus[type].menu && !d->menus[type].menu->actions().contains(action))
     {
-        if(m_menus[type].before)
-            m_menus[type].menu->insertAction(m_menus[type].before, action);
+        if(d->menus[type].before)
+            d->menus[type].menu->insertAction(d->menus[type].before, action);
         else
-            m_menus[type].menu->addAction(action);
-        m_menus[type].menu->menuAction()->setVisible(!m_menus[type].autoHide || !m_menus[type].actions.isEmpty());
-    }
-}
-
-void UiHelper::removeAction(QAction *action)
-{
-    for(MenuType type : m_menus.keys())
-    {
-        m_menus[type].actions.removeAll(action);
-        if(m_menus[type].menu)
-        {
-            m_menus[type].menu->removeAction(action);
-            m_menus[type].menu->menuAction()->setVisible(!m_menus[type].autoHide || !m_menus[type].actions.isEmpty());
-        }
+            d->menus[type].menu->addAction(action);
+        d->menus[type].menu->menuAction()->setVisible(!d->menus[type].autoHide || !d->menus[type].actions.isEmpty());
     }
 }
 
 QList<QAction *> UiHelper::actions(MenuType type)
 {
-    return m_menus[type].actions;
+    return d_ptr->menus[type].actions;
 }
 
 QMenu *UiHelper::createMenu(MenuType type, const QString &title, bool autoHide, QWidget *parent)
 {
-    if(m_menus[type].menu)
+    Q_D(UiHelper);
+    if(d->menus[type].menu)
     {
-        m_menus[type].menu->setTitle(title);
+        d->menus[type].menu->setTitle(title);
     }
     else
     {
-        m_menus[type].menu = new QMenu(title, parent);
-        m_menus[type].menu->addActions(m_menus[type].actions);
+        d->menus[type].menu = new QMenu(title, parent);
+        d->menus[type].menu->addActions(d->menus[type].actions);
     }
-    m_menus[type].autoHide = autoHide;
-    m_menus[type].menu->menuAction()->setVisible(!autoHide || !m_menus[type].actions.isEmpty());
-    return m_menus[type].menu;
+    d->menus[type].autoHide = autoHide;
+    d->menus[type].menu->menuAction()->setVisible(!autoHide || !d->menus[type].actions.isEmpty());
+    return d->menus[type].menu;
 }
 
 void UiHelper::registerMenu(UiHelper::MenuType type, QMenu *menu, bool autoHide, QAction *before)
 {
-    m_menus[type].menu = menu;
-    m_menus[type].before = before;
-    m_menus[type].autoHide = autoHide;
+    Q_D(UiHelper);
+    d->menus[type].menu = menu;
+    d->menus[type].before = before;
+    d->menus[type].autoHide = autoHide;
     if(before)
-        m_menus[type].menu->insertActions(before, m_menus[type].actions);
+        d->menus[type].menu->insertActions(before, d->menus[type].actions);
     else
-        m_menus[type].menu->addActions(m_menus[type].actions);
-    m_menus[type].menu->menuAction()->setVisible(!autoHide || !m_menus[type].actions.isEmpty());
+        d->menus[type].menu->addActions(d->menus[type].actions);
+    d->menus[type].menu->menuAction()->setVisible(!autoHide || !d->menus[type].actions.isEmpty());
 }
 
 void UiHelper::addFiles(QWidget *parent, PlayListModel *model)
 {
+    Q_D(UiHelper);
     QStringList filters;
     filters << tr("All Supported Bitstreams") +
                QStringLiteral(" (%1)").arg(MetaDataManager::instance()->nameFilters().join(QChar::Space));
     filters << MetaDataManager::instance()->filters();
-    m_model = model;
-    FileDialog::popup(parent, FileDialog::PlayDirsFiles, &m_lastDir,
+    d->model = model;
+    FileDialog::popup(parent, FileDialog::PlayDirsFiles, &d->lastDir,
                       this, SLOT(addSelectedFiles(QStringList,bool)),
                       tr("Select one or more files to open"), filters.join(u";;"_s));
 }
 
 void UiHelper::playFiles(QWidget *parent, PlayListModel *model)
 {
+    Q_D(UiHelper);
     QStringList filters;
     filters << tr("All Supported Bitstreams") +
                QStringLiteral(" (%1)").arg(MetaDataManager::instance()->nameFilters().join(QChar::Space));
     filters << MetaDataManager::instance()->filters();
-    m_model = model;
-    FileDialog::popup(parent, FileDialog::AddDirsFiles, &m_lastDir,
+    d->model = model;
+    FileDialog::popup(parent, FileDialog::AddDirsFiles, &d->lastDir,
                       this, SLOT(playSelectedFiles(QStringList)),
                       tr("Select one or more files to play"), filters.join(u";;"_s));
 
@@ -156,7 +224,7 @@ void UiHelper::playFiles(QWidget *parent, PlayListModel *model)
 
 void UiHelper::addDirectory(QWidget *parent, PlayListModel *model)
 {
-    FileDialog::popup(parent, FileDialog::AddDirs, &m_lastDir,
+    FileDialog::popup(parent, FileDialog::AddDirs, &d_ptr->lastDir,
                       model, SLOT(addPaths(QStringList)),
                       tr("Choose a directory"));
 }
@@ -168,6 +236,7 @@ void UiHelper::addUrl(QWidget *parent, PlayListModel *model)
 
 void UiHelper::loadPlayList(QWidget *parent, PlayListModel *model)
 {
+    Q_D(UiHelper);
     if(PlayListParser::nameFilters().isEmpty())
     {
         qCWarning(core, "There is no registered playlist parsers");
@@ -176,7 +245,7 @@ void UiHelper::loadPlayList(QWidget *parent, PlayListModel *model)
 
     QString mask = tr("Playlist Files") + QStringLiteral(" (%1)").arg(PlayListParser::nameFilters().join(QChar::Space));
     //TODO use nonmodal dialog and multiplier playlists
-    QString f_path = FileDialog::getOpenFileName(parent, tr("Open Playlist"), m_lastDir, mask);
+    QString f_path = FileDialog::getOpenFileName(parent, tr("Open Playlist"), d->lastDir, mask);
     if (!f_path.isEmpty())
     {
         if(QmmpUiSettings::instance()->clearPreviousPlayList())
@@ -185,12 +254,13 @@ void UiHelper::loadPlayList(QWidget *parent, PlayListModel *model)
             model->setName(QFileInfo(f_path).baseName());
         }
         model->loadPlaylist(f_path);
-        m_lastDir = QFileInfo(f_path).absoluteDir().path();
+        d->lastDir = QFileInfo(f_path).absoluteDir().path();
     }
 }
 
 void UiHelper::savePlayList(QWidget *parent, PlayListModel *model)
 {
+    Q_D(UiHelper);
     if(PlayListParser::nameFilters().isEmpty())
     {
         qCWarning(core, "There is no registered playlist parsers");
@@ -201,7 +271,7 @@ void UiHelper::savePlayList(QWidget *parent, PlayListModel *model)
     filters << tr("Playlist Files") + QStringLiteral(" (%1)").arg(PlayListParser::nameFilters().join(QChar::Space));
     filters << PlayListParser::filters();
     QString selectedFilter = filters.at(1);
-    QString f_name = FileDialog::getSaveFileName(parent, tr("Save Playlist"), m_lastDir + QLatin1Char('/') +
+    QString f_name = FileDialog::getSaveFileName(parent, tr("Save Playlist"), d->lastDir + QLatin1Char('/') +
                                                  model->name(), filters.join(u";;"_s), &selectedFilter);
 
     if(f_name.isEmpty())
@@ -231,19 +301,20 @@ void UiHelper::savePlayList(QWidget *parent, PlayListModel *model)
     if (!f_name.isEmpty())
     {
         model->savePlaylist(f_name);
-        m_lastDir = QFileInfo(f_name).absoluteDir().path();
+        d->lastDir = QFileInfo(f_name).absoluteDir().path();
     }
 }
 
 void UiHelper::jumpToTrack(QWidget *parent, PlayListModel *model)
 {
-    if(!m_jumpDialog)
-        m_jumpDialog = new JumpToTrackDialog(model, parent);
+    Q_D(UiHelper);
+    if(!d->jumpDialog)
+        d->jumpDialog = new JumpToTrackDialog(model, parent);
 
-    if(m_jumpDialog->isHidden())
-        m_jumpDialog->show();
+    if(d->jumpDialog->isHidden())
+        d->jumpDialog->show();
 
-    m_jumpDialog->raise();
+    d->jumpDialog->raise();
 }
 
 void UiHelper::about(QWidget *parent)
@@ -271,6 +342,7 @@ void UiHelper::exit()
 
 void UiHelper::replaceAndPlay(const QStringList &paths)
 {
+    Q_D(UiHelper);
     if(paths.isEmpty())
         return;
 
@@ -279,60 +351,13 @@ void UiHelper::replaceAndPlay(const QStringList &paths)
     PlayListManager::instance()->activatePlayList(pl);
     pl->clear();
 
-    connect(pl, &PlayListModel::tracksAdded, MediaPlayer::instance(), &MediaPlayer::play);
-    connect(pl, &PlayListModel::tracksAdded, this, &UiHelper::disconnectPl);
-    connect(pl, &PlayListModel::loaderFinished, this, &UiHelper::disconnectPl);
+    d->plConnections << connect(pl, &PlayListModel::tracksAdded, MediaPlayer::instance(), &MediaPlayer::play);
+    d->plConnections << connect(pl, &PlayListModel::tracksAdded, this, [d] { d->disconnectPl(); });
+    d->plConnections << connect(pl, &PlayListModel::loaderFinished, this, [d] { d->disconnectPl(); });
     pl->addPaths(paths);
 }
 
-UiHelper* UiHelper::instance()
+UiHelper *UiHelper::instance()
 {
-    return m_instance;
-}
-
-void UiHelper::removeAction(QObject *action)
-{
-    for(MenuType type : m_menus.keys())
-    {
-        for(QList<QAction *>::iterator it = m_menus[type].actions.begin(); it != m_menus[type].actions.end(); ++it)
-        {
-            if(*it == action)
-            {
-                m_menus[type].actions.erase(it);
-                m_menus[type].menu->menuAction()->setVisible(!m_menus[type].autoHide || !m_menus[type].actions.isEmpty());
-                break;
-            }
-        }
-    }
-}
-
-void UiHelper::addSelectedFiles(const QStringList &files, bool play)
-{
-    if(files.isEmpty() || !PlayListManager::instance()->playLists().contains(m_model))
-        return;
-    if(play)
-    {
-        PlayListManager::instance()->selectPlayList(m_model);
-        replaceAndPlay(files);
-    }
-    else
-    {
-        m_model->addPaths(files);
-    }
-}
-
-void UiHelper::playSelectedFiles(const QStringList &files)
-{
-    addSelectedFiles(files, true);
-}
-
-void UiHelper::disconnectPl()
-{
-    PlayListModel *model = qobject_cast<PlayListModel*>(sender());
-    if(model)
-    {
-        disconnect(model, &PlayListModel::tracksAdded, MediaPlayer::instance(), &MediaPlayer::play);
-        disconnect(model, &PlayListModel::tracksAdded, this, &UiHelper::disconnectPl);
-        disconnect(model, &PlayListModel::loaderFinished, this, &UiHelper::disconnectPl);
-    }
+    return UiHelperPrivate::instance;
 }

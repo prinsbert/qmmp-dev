@@ -36,13 +36,15 @@ class QWidget;
 class General;
 class GeneralFactory;
 class JumpToTrackDialog;
+class UiHelperPrivate;
 
 /*! @brief The UiHelper class provides simple api to access general plugins and some gui features.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
-class QMMPUI_EXPORT  UiHelper : public QObject
+class QMMPUI_EXPORT UiHelper : public QObject
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(UiHelper)
 public:
     /*!
      * Object constructor,
@@ -154,7 +156,7 @@ public:
     /*!
      * Returns a pointer to the object's instance.
      */
-    static UiHelper* instance();
+    static UiHelper *instance();
 
 public slots:
     /*!
@@ -207,26 +209,8 @@ signals:
      */
     void widgetUpdated(const QString &id);
 
-private slots:
-    void removeAction(QObject *action);
-    void addSelectedFiles(const QStringList &files, bool play);
-    void playSelectedFiles(const QStringList &files);
-    void disconnectPl();
-
 private:
-    QMap <GeneralFactory*, General*> m_generals;
-    struct MenuData
-    {
-        QPointer<QMenu> menu;
-        QPointer<QAction> before;
-        QList<QAction*> actions;
-        bool autoHide = false;
-    };
-    QMap<MenuType, MenuData> m_menus;
-    QString m_lastDir;
-    QPointer <JumpToTrackDialog> m_jumpDialog;
-    PlayListModel *m_model = nullptr;
-    static UiHelper* m_instance;
+    UiHelperPrivate *d_ptr;
 };
 
 #endif
