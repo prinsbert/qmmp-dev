@@ -21,6 +21,7 @@
 #include <QSettings>
 #include <QHeaderView>
 #include <QMessageBox>
+#include <QPushButton>
 #include <qmmp/qmmp.h>
 #include <algorithm>
 #include "hotkeydialog.h"
@@ -50,7 +51,7 @@ HotkeySettingsDialog::HotkeySettingsDialog(QWidget *parent)
     m_ui->tableWidget->setItem(11,0, new QTableWidgetItem(tr("Jump to track")));
     m_ui->tableWidget->setItem(12,0, new QTableWidgetItem(tr("Mute")));
 
-    connect(m_ui->buttonBox, &QDialogButtonBox::clicked, this, &HotkeySettingsDialog::restoreKeys);
+    connect(m_ui->buttonBox->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &HotkeySettingsDialog::restoreKeys);
 
     QSettings settings;
     settings.beginGroup(u"Hotkey"_s);
@@ -98,8 +99,8 @@ void HotkeySettingsDialog::on_tableWidget_itemDoubleClicked (QTableWidgetItem *i
     HotkeyDialog *dialog = new HotkeyDialog(key->key, key->mod, this);
     if(item->type() >= QTableWidgetItem::UserType && dialog->exec() == QDialog::Accepted)
     {
-        QString keyString = HotkeyManager::getKeyString(dialog->keySym (), dialog->nativeModifiers ());
-        QList<QTableWidgetItem*> items =  m_ui->tableWidget->findItems(keyString, Qt::MatchFixedString);
+        QString keyString = HotkeyManager::getKeyString(dialog->keySym(), dialog->nativeModifiers());
+        QList<QTableWidgetItem *> items =  m_ui->tableWidget->findItems(keyString, Qt::MatchFixedString);
         if(keyString.isEmpty() || items.isEmpty() || items.constFirst() == item)
         {
             item->setText(keyString);
