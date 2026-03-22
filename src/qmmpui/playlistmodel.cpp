@@ -1272,7 +1272,7 @@ void PlayListModel::stopAfterSelected()
         blockSignals(true);
         addToQueue();
         blockSignals(false);
-        m_stop_track = m_container->queuedTracks().last();
+        m_stop_track = m_container->queuedTracks().constLast();
         emit listChanged(STOP_AFTER | QUEUE);
     }
 }
