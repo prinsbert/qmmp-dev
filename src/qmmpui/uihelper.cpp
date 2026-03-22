@@ -59,19 +59,6 @@ public:
 private:
     UiHelper *q_ptr;
 
-    void removeAction(QAction *action)
-    {
-        for(UiHelper::MenuType type : menus.keys())
-        {
-            menus[type].actions.removeAll(action);
-            if(menus[type].menu)
-            {
-                menus[type].menu->removeAction(action);
-                menus[type].menu->menuAction()->setVisible(!menus[type].autoHide || !menus[type].actions.isEmpty());
-            }
-        }
-    }
-
     void addSelectedFiles(const QStringList &files, bool play)
     {
         if(files.isEmpty() || !PlayListManager::instance()->playLists().contains(model))
@@ -143,7 +130,7 @@ bool UiHelper::visibilityControl() const
 void UiHelper::addAction(QAction *action, MenuType type)
 {
     Q_D(UiHelper);
-    connect(action, &QAction::destroyed, this, [d](QObject *action) { d->removeAction(qobject_cast<QAction *>(action)); });
+    connect(action, &QAction::destroyed, this, [this](QObject *action) { removeAction(qobject_cast<QAction *>(action)); });
 
     if(!d->menus[type].actions.contains(action))
     {
@@ -157,6 +144,20 @@ void UiHelper::addAction(QAction *action, MenuType type)
         else
             d->menus[type].menu->addAction(action);
         d->menus[type].menu->menuAction()->setVisible(!d->menus[type].autoHide || !d->menus[type].actions.isEmpty());
+    }
+}
+
+void UiHelper::removeAction(QAction *action)
+{
+    Q_D(UiHelper);
+    for(MenuType type : d->menus.keys())
+    {
+        d->menus[type].actions.removeAll(action);
+        if(d->menus[type].menu)
+        {
+            d->menus[type].menu->removeAction(action);
+            d->menus[type].menu->menuAction()->setVisible(!d->menus[type].autoHide || !d->menus[type].actions.isEmpty());
+        }
     }
 }
 
