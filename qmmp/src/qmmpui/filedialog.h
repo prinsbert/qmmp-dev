@@ -138,13 +138,29 @@ public:
      *                 m_playListModel, SLOT(addFileList(QStringList)),
      *                 tr("Choose a directory"));
      */
-    static void popup(QWidget *parent = nullptr,
-                      Mode mode = AddFiles,
-                      QString *dir = nullptr,
-                      QObject *receiver = nullptr,
-                      const char *member = nullptr,
-                      const QString &caption = QString(),
-                      const QString &filters = QString());
+    static void popupImpl(QWidget *parent = nullptr,
+                          Mode mode = AddFiles,
+                          QString *dir = nullptr,
+                          const QString &caption = QString(),
+                          const QString &filters = QString());
+
+    template <class Obj, typename Func1>
+    static inline void popup(QWidget *parent,
+                             Mode mode,
+                             QString *dir,
+                             const Obj *receiver,
+                             Func1 slot,
+                             const QString &caption = QString(),
+                             const QString &filters = QString())
+    {
+        FileDialog *inst = instance();
+        if(inst->m_initialized)
+            inst->disconnect();
+        connect(inst, &FileDialog::filesSelected, receiver, slot);
+        connect(inst, &FileDialog::filesSelected, inst, &FileDialog::updateLastDir);
+        inst->m_initialized = true;
+        popupImpl(parent, mode, dir, caption, filters);
+    }
 
 signals:
     /*!
@@ -193,12 +209,11 @@ private slots:
 
 private:
     static void loadPlugins();
-    static FileDialog* instance();
+    static FileDialog *instance();
     static FileDialogFactory *m_currentFactory;
-    static FileDialog* m_instance;
+    static FileDialog *m_instance;
     static QList<QmmpUiPluginCache*> *m_cache;
 
-    void init(QObject* receiver, const char* member, QString *dir);
     bool m_initialized;
     QString *m_lastDir;
 };
