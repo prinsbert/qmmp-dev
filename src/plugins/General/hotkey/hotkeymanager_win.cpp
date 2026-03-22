@@ -164,7 +164,7 @@ HotkeyManager::~HotkeyManager()
 
 const QString HotkeyManager::getKeyString(quint32 key, quint32 modifiers)
 {
-    QHash<quint32, QString> modList = {
+    static const QHash<quint32, QString> modList = {
         { ShiftLeft,    u"Shift"_s },
         { ControlLeft,  u"Ctrl"_s },
         { AltLeft,      u"Alt"_s },
