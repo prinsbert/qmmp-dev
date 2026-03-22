@@ -205,7 +205,7 @@ void UiHelper::addFiles(QWidget *parent, PlayListModel *model)
     filters << MetaDataManager::instance()->filters();
     d->model = model;
     FileDialog::popup(parent, FileDialog::PlayDirsFiles, &d->lastDir,
-                      this, SLOT(addSelectedFiles(QStringList,bool)),
+                      this, [d](const QStringList &files, bool play) { d->addSelectedFiles(files, play); },
                       tr("Select one or more files to open"), filters.join(u";;"_s));
 }
 
@@ -218,7 +218,7 @@ void UiHelper::playFiles(QWidget *parent, PlayListModel *model)
     filters << MetaDataManager::instance()->filters();
     d->model = model;
     FileDialog::popup(parent, FileDialog::AddDirsFiles, &d->lastDir,
-                      this, SLOT(playSelectedFiles(QStringList)),
+                      this, [d](const QStringList &files, bool) { d->addSelectedFiles(files, true); },
                       tr("Select one or more files to play"), filters.join(u";;"_s));
 
 }
@@ -226,7 +226,7 @@ void UiHelper::playFiles(QWidget *parent, PlayListModel *model)
 void UiHelper::addDirectory(QWidget *parent, PlayListModel *model)
 {
     FileDialog::popup(parent, FileDialog::AddDirs, &d_ptr->lastDir,
-                      model, SLOT(addPaths(QStringList)),
+                      model, [model](const QStringList &paths, bool) { model->addPaths(paths); },
                       tr("Choose a directory"));
 }
 

@@ -124,11 +124,9 @@ QString FileDialog::getSaveFileName (QWidget *parent, const QString &caption,
     return l.isEmpty() ? QString() : l.at(0);
 }
 
-void FileDialog::popup(QWidget *parent,
+void FileDialog::popupImpl(QWidget *parent,
                        Mode m,
                        QString *dir,
-                       QObject *receiver,
-                       const char *member,
                        const QString &caption,
                        const QString &filters)
 
@@ -137,7 +135,8 @@ void FileDialog::popup(QWidget *parent,
         qCFatal(core) << "empty last dir pointer";
     FileDialog* inst = instance();
     inst->setParent(parent);
-    inst->init(receiver, member, dir);
+    inst->m_lastDir = dir;
+    //inst->init(receiver, member, dir);
     if(!m_currentFactory->properties().modal)
         inst->raise(*dir, m, caption, filters.split(u";;"_s));
     else
@@ -200,19 +199,6 @@ void FileDialog::raise(const QString &dir, Mode mode, const QString &caption, co
     Q_UNUSED(mode);
     Q_UNUSED(caption);
     Q_UNUSED(mask);
-}
-
-void FileDialog::init(QObject* receiver, const char* member, QString *dir)
-{
-    m_lastDir = dir;
-    if(m_initialized)
-        disconnect();
-    if(receiver &&  member)
-    {
-        connect(this, SIGNAL(filesSelected(QStringList,bool)), receiver, member);
-        connect(this, &FileDialog::filesSelected, this, &FileDialog::updateLastDir);
-        m_initialized = true;
-    }
 }
 
 void FileDialog::updateLastDir(const QStringList &list)
