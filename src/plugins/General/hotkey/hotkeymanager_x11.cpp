@@ -88,30 +88,28 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
     WId rootWindow = DefaultRootWindow(HotkeyManager::display());
     QSettings settings; //load settings
     settings.beginGroup(u"Hotkey"_s);
-    for (int i = Hotkey::PLAY, j = 0; i <= Hotkey::VOLUME_MUTE; ++i, ++j)
+    for(int i = Hotkey::PLAY, j = 0; i <= Hotkey::VOLUME_MUTE; ++i, ++j)
     {
         quint32 key = settings.value(QStringLiteral("key_%1").arg(i), Hotkey::defaultKey(i)).toUInt();
         quint32 mod = settings.value(QStringLiteral("modifiers_%1").arg(i), 0).toUInt();
 
-        if (key)
+        if(key)
         {
+            KeyCode code = XKeysymToKeycode(HotkeyManager::display(), key);
+            if(!code)
+                continue;
+
+            Hotkey *hotkey = new Hotkey;
+            hotkey->action = i;
+            hotkey->key = key;
+            hotkey->code = XKeysymToKeycode(HotkeyManager::display(), hotkey->key);
+            hotkey->mod = mod;
+            hotkey->code = code;
             for(long mask_mod : ignModifiersList())
             {
-                Hotkey *hotkey = new Hotkey;
-                hotkey->action = i;
-                hotkey->key = key;
-                hotkey->code = XKeysymToKeycode(HotkeyManager::display(), hotkey->key);
-                if(!hotkey->code)
-                {
-                    delete hotkey;
-                    continue;
-                }
-
-                XGrabKey(HotkeyManager::display(),  hotkey->code, mod | mask_mod, rootWindow, True,
-                         GrabModeAsync, GrabModeAsync);
-                hotkey->mod = mod | mask_mod;
-                m_grabbedKeys << hotkey;
+                XGrabKey(HotkeyManager::display(),  hotkey->code, mod | mask_mod, rootWindow, True, GrabModeAsync, GrabModeAsync);
             }
+            m_grabbedKeys << hotkey;
         }
     }
     settings.endGroup();
@@ -126,7 +124,10 @@ HotkeyManager::~HotkeyManager()
     {
         Hotkey *key = m_grabbedKeys.takeFirst();
         if(key->code)
-            XUngrabKey(HotkeyManager::display(), key->code, key->mod, HotkeyManager::appRootWindow());
+        {
+            for(long mask_mod : ignModifiersList())
+                XUngrabKey(HotkeyManager::display(), key->code, key->mod | mask_mod, HotkeyManager::appRootWindow());
+        }
         delete key;
     }
 }
@@ -161,16 +162,20 @@ bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message
 
     if(e->response_type == XCB_KEY_PRESS)
     {
-        xcb_key_press_event_t *ke = (xcb_key_press_event_t*)e;
+        xcb_key_press_event_t *ke = static_cast<xcb_key_press_event_t*>(message);
         quint32 key = keycodeToKeysym(ke->detail);
         quint32 mod = ke->state;
         SoundCore *core = SoundCore::instance();
         MediaPlayer *player = MediaPlayer::instance();
+        long ignoredMask = 0;
+        for(long mask : ignModifiersList())
+            ignoredMask |= mask;
+
         for(const Hotkey *hotkey : std::as_const(m_grabbedKeys))
         {
-            if (hotkey->key != key || hotkey->mod != mod)
+            if(hotkey->key != key || (hotkey->mod | ignoredMask) != (mod | ignoredMask))
                 continue;
-            qCDebug(plugin, "[%s] pressed", qPrintable(getKeyString(key, mod)));
+            qCDebug(plugin, "[%s] pressed", qPrintable(getKeyString(key, mod & ~ignoredMask)));
 
             switch (hotkey->action)
             {
