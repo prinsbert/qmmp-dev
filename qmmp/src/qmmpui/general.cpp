@@ -26,58 +26,66 @@
 #include "qmmpuiplugincache_p.h"
 #include "general.h"
 
-QList<QmmpUiPluginCache*> *General::m_cache = nullptr;
-QStringList General::m_enabledNames;
-QHash <GeneralFactory*, QObject*> *General::m_generals = nullptr;
-QObject *General::m_parent = nullptr;
-
-void General::loadPlugins()
+class GeneralPrivate
 {
-    if(m_cache)
-        return;
-
-    m_cache = new QList<QmmpUiPluginCache*>;
-    QSettings settings;
-    for(const QString &filePath : Qmmp::findPlugins(u"General"_s))
+public:
+    static void loadPlugins()
     {
-        QmmpUiPluginCache *item = new QmmpUiPluginCache(filePath, &settings);
-        if(item->hasError())
+        if(cache)
+            return;
+
+        cache = new QList<QmmpUiPluginCache*>;
+        QSettings settings;
+        for(const QString &filePath : Qmmp::findPlugins(u"General"_s))
         {
-            delete item;
-            continue;
+            QmmpUiPluginCache *item = new QmmpUiPluginCache(filePath, &settings);
+            if(item->hasError())
+            {
+                delete item;
+                continue;
+            }
+            cache->append(item);
         }
-        m_cache->append(item);
+        enabledNames = settings.value(u"General/enabled_plugins"_s).toStringList();
+        QmmpUiPluginCache::cleanup(&settings);
     }
-    m_enabledNames = settings.value(u"General/enabled_plugins"_s).toStringList();
-    QmmpUiPluginCache::cleanup(&settings);
-}
+    static QHash<GeneralFactory*, QObject*> *generals;
+    static QObject *parent;
+    static QList<QmmpUiPluginCache*> *cache;
+    static QStringList enabledNames;
+};
+
+QList<QmmpUiPluginCache*> *GeneralPrivate::cache = nullptr;
+QStringList GeneralPrivate::enabledNames;
+QHash<GeneralFactory*, QObject*> *GeneralPrivate::generals = nullptr;
+QObject *GeneralPrivate::parent = nullptr;
 
 void General::create(QObject *parent)
 {
-    if(m_generals)
+    if(GeneralPrivate::generals)
         return;
-    m_generals = new QHash<GeneralFactory*, QObject*>();
-    m_parent = parent;
-    loadPlugins();
-    for(QmmpUiPluginCache* item : std::as_const(*m_cache))
+    GeneralPrivate::generals = new QHash<GeneralFactory*, QObject*>();
+    GeneralPrivate::parent = parent;
+    GeneralPrivate::loadPlugins();
+    for(QmmpUiPluginCache* item : std::as_const(*GeneralPrivate::cache))
     {
-        if(!m_enabledNames.contains(item->shortName()))
+        if(!GeneralPrivate::enabledNames.contains(item->shortName()))
             continue;
         GeneralFactory *factory = item->generalFactory();
         if(factory)
         {
             QObject *general = factory->create(parent);
             if(general)
-                m_generals->insert(factory, general);
+                GeneralPrivate::generals->insert(factory, general);
         }
     }
 }
 
 QList<GeneralFactory *> General::factories()
 {
-    loadPlugins();
+    GeneralPrivate::loadPlugins();
     QList<GeneralFactory *> list;
-    for(QmmpUiPluginCache *item : std::as_const(*m_cache))
+    for(QmmpUiPluginCache *item : std::as_const(*GeneralPrivate::cache))
     {
         if(item->generalFactory())
             list.append(item->generalFactory());
@@ -87,11 +95,11 @@ QList<GeneralFactory *> General::factories()
 
 QList<GeneralFactory *> General::enabledFactories()
 {
-    loadPlugins();
+    GeneralPrivate::loadPlugins();
     QList<GeneralFactory *> list;
-    for(QmmpUiPluginCache *item : std::as_const(*m_cache))
+    for(QmmpUiPluginCache *item : std::as_const(*GeneralPrivate::cache))
     {
-        if(!m_enabledNames.contains(item->shortName()))
+        if(!GeneralPrivate::enabledNames.contains(item->shortName()))
             continue;
         if(item->generalFactory())
             list.append(item->generalFactory());
@@ -141,15 +149,15 @@ QWidget *General::createWidget(const QString &id, QWidget *parent)
 
 QString General::file(const GeneralFactory *factory)
 {
-    loadPlugins();
-    auto it = std::find_if(m_cache->cbegin(), m_cache->cend(),
+    GeneralPrivate::loadPlugins();
+    auto it = std::find_if(GeneralPrivate::cache->cbegin(), GeneralPrivate::cache->cend(),
                            [factory] (QmmpUiPluginCache *item){ return item->shortName() == factory->properties().shortName; } );
-    return it == m_cache->cend() ? QString() : (*it)->file();
+    return it == GeneralPrivate::cache->cend() ? QString() : (*it)->file();
 }
 
 void General::setEnabled(GeneralFactory *factory, bool enable)
 {
-    loadPlugins();
+    GeneralPrivate::loadPlugins();
     if(!factories().contains(factory))
         return;
 
@@ -159,23 +167,23 @@ void General::setEnabled(GeneralFactory *factory, bool enable)
     QSettings settings;
 
     if(enable)
-        m_enabledNames << factory->properties().shortName;
+        GeneralPrivate::enabledNames << factory->properties().shortName;
     else
-        m_enabledNames.removeAll(factory->properties().shortName);
-    m_enabledNames.removeDuplicates();
-    settings.setValue(u"General/enabled_plugins"_s, m_enabledNames);
+        GeneralPrivate::enabledNames.removeAll(factory->properties().shortName);
+    GeneralPrivate::enabledNames.removeDuplicates();
+    settings.setValue(u"General/enabled_plugins"_s, GeneralPrivate::enabledNames);
 
-    if(!m_generals)
+    if(!GeneralPrivate::generals)
         return;
 
-    if(enable == m_generals->contains(factory))
+    if(enable == GeneralPrivate::generals->contains(factory))
         return;
 
     if(enable)
     {
-        QObject *general = factory->create(m_parent);
+        QObject *general = factory->create(GeneralPrivate::parent);
         if(general)
-            m_generals->insert(factory, general);
+            GeneralPrivate::generals->insert(factory, general);
 
         for(const WidgetDescription &d : factory->properties().widgets)
             emit UiHelper::instance()->widgetAdded(QStringLiteral("%1_%2").arg(factory->properties().shortName).arg(d.id));
@@ -185,8 +193,8 @@ void General::setEnabled(GeneralFactory *factory, bool enable)
         for(const WidgetDescription &d : factory->properties().widgets)
             emit UiHelper::instance()->widgetRemoved(QStringLiteral("%1_%2").arg(factory->properties().shortName).arg(d.id));
 
-        if(m_generals->value(factory))
-            delete m_generals->take(factory);
+        if(GeneralPrivate::generals->value(factory))
+            delete GeneralPrivate::generals->take(factory);
     }
 }
 
@@ -196,13 +204,13 @@ void General::showSettings(GeneralFactory *factory, QWidget *parentWidget)
     if(!dialog)
         return;
 
-    if(m_generals && dialog->exec() == QDialog::Accepted && m_generals->contains(factory))
+    if(GeneralPrivate::generals && dialog->exec() == QDialog::Accepted && GeneralPrivate::generals->contains(factory))
     {
-        delete m_generals->take(factory);
+        delete GeneralPrivate::generals->take(factory);
 
-        QObject *general = factory->create(m_parent);
+        QObject *general = factory->create(GeneralPrivate::parent);
         if(general)
-            m_generals->insert(factory, general);
+            GeneralPrivate::generals->insert(factory, general);
 
         for(const WidgetDescription &d : factory->properties().widgets)
             emit UiHelper::instance()->widgetUpdated(QStringLiteral("%1_%2").arg(factory->properties().shortName).arg(d.id));
@@ -212,6 +220,6 @@ void General::showSettings(GeneralFactory *factory, QWidget *parentWidget)
 
 bool General::isEnabled(const GeneralFactory *factory)
 {
-    loadPlugins();
-    return m_enabledNames.contains(factory->properties().shortName);
+    GeneralPrivate::loadPlugins();
+    return GeneralPrivate::enabledNames.contains(factory->properties().shortName);
 }

@@ -21,42 +21,59 @@
 #include <QPalette>
 #include "colorwidget.h"
 
-ColorWidget::ColorWidget(QWidget *parent) : QFrame(parent)
+class ColorWidgetPrivate
+{
+public:
+    QString colorName;
+    QColorDialog::ColorDialogOptions options;
+};
+
+ColorWidget::ColorWidget(QWidget *parent) :
+    QFrame(parent),
+    d_ptr(new ColorWidgetPrivate)
 {
     setFrameShape(QFrame::Box);
     setAutoFillBackground(true);
 }
 
+ColorWidget::~ColorWidget()
+{
+    delete d_ptr;
+}
+
 QColorDialog::ColorDialogOptions ColorWidget::options() const
 {
-    return m_options;
+    return d_ptr->options;
 }
 
 void ColorWidget::setOptions(QColorDialog::ColorDialogOptions options)
 {
-    if(m_options != options)
+    Q_D(ColorWidget);
+    if(d->options != options)
     {
-        m_options = options;
+        d->options = options;
         emit optionsChanged();
     }
 }
 
 void ColorWidget::mousePressEvent(QMouseEvent *)
 {
-    QColor color = QColorDialog::getColor(QColor(m_colorName), parentWidget(), tr("Select Color"), m_options);
+    Q_D(ColorWidget);
+    QColor color = QColorDialog::getColor(QColor(d->colorName), parentWidget(), tr("Select Color"), d->options);
     if(color.isValid())
     {
-        setColor(color.name((m_options & QColorDialog::ShowAlphaChannel) ? QColor::HexArgb : QColor::HexRgb));
+        setColor(color.name((d->options & QColorDialog::ShowAlphaChannel) ? QColor::HexArgb : QColor::HexRgb));
     }
 }
 
 void ColorWidget::setColor(const QString &name)
 {
-    m_colorName = name;
-    setStyleSheet(QStringLiteral("QFrame { background: %1 }").arg(m_colorName));
+    Q_D(ColorWidget);
+    d->colorName = name;
+    setStyleSheet(QStringLiteral("QFrame { background: %1 }").arg(d->colorName));
 }
 
 QString ColorWidget::colorName() const
 {
-    return m_colorName;
+    return d_ptr->colorName;
 }
