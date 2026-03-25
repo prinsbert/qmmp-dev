@@ -59,7 +59,6 @@ public:
     int action = PLAY;
     int code = 0;
 #ifdef Q_OS_WIN
-    UINT mods = 0;
     WPARAM id = 0;
 #endif
     quint32 defaultKey();

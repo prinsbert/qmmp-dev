@@ -31,18 +31,6 @@
 #include <qmmpui/uihelper.h>
 #include "hotkeymanager.h"
 
-enum WindowsNativeModifiers
-{
-    ShiftLeft    = 0x00000001,
-    ControlLeft  = 0x00000002,
-    AltLeft      = 0x00000004,
-    WinLeft      = 0x00000008,
-    ShiftRight   = 0x00000010,
-    ControlRight = 0x00000020,
-    AltRight     = 0x00000040,
-    WinRight     = 0x00000080
-};
-
 static struct
 {
     unsigned int key; //virtual key
@@ -122,26 +110,16 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
             hotkey->key = key;
             hotkey->code = MapVirtualKey(key, 0);
             hotkey->mod = mod;
+            hotkey->id = hotkey->mod^hotkey->key;
 
-            if(hotkey->mod & ShiftLeft || hotkey->mod & ShiftRight)
-                hotkey->mods |= MOD_SHIFT;
-            if(hotkey->mod & ControlLeft || hotkey->mod & ControlRight)
-                hotkey->mods |= MOD_CONTROL;
-            if(hotkey->mod & AltLeft || hotkey->mod & AltRight)
-                hotkey->mods |= MOD_ALT;
-            if(hotkey->mod & WinLeft || hotkey->mod & WinRight)
-                hotkey->mods |= MOD_WIN;
-
-            hotkey->id = hotkey->mods^hotkey->key;
-
-            if(RegisterHotKey(nullptr, hotkey->id,  hotkey->mods, hotkey->key))
+            if(RegisterHotKey(nullptr, hotkey->id,  hotkey->mod, hotkey->key))
             {
-                qCDebug(plugin, "registered key=0x%x, mod=0x%x", hotkey->key, hotkey->mods);
+                qCDebug(plugin, "registered key=0x%x, mod=0x%x", hotkey->key, hotkey->mod);
             }
             else
             {
                 hotkey->id = 0;
-                qCWarning(plugin, "unable to register key=0x%x, mod=0x%x", hotkey->key, hotkey->mods);
+                qCWarning(plugin, "unable to register key=0x%x, mod=0x%x", hotkey->key, hotkey->mod);
             }
 
             m_grabbedKeys << hotkey;
@@ -165,20 +143,16 @@ HotkeyManager::~HotkeyManager()
 const QString HotkeyManager::getKeyString(quint32 key, quint32 modifiers)
 {
     static const QHash<quint32, QString> modList = {
-        { ShiftLeft,    u"Shift"_s },
-        { ControlLeft,  u"Ctrl"_s },
-        { AltLeft,      u"Alt"_s },
-        { WinLeft,      u"Win"_s },
-        { ShiftRight,   u"Shift"_s },
-        { ControlRight, u"Ctrl"_s },
-        { AltRight,     u"Alt"_s },
-        { WinRight,     u"Win"_s }
+        { MOD_SHIFT,    u"Shift"_s },
+        { MOD_CONTROL,  u"Ctrl"_s },
+        { MOD_ALT,      u"Alt"_s },
+        { MOD_WIN,      u"Win"_s }
     };
 
     QString keyStr;
     for(auto it = modList.cbegin(); it != modList.cend(); ++it)
     {
-        if (modifiers & it.key())
+        if(modifiers & it.key())
             keyStr.append(it.value() + QLatin1Char('+'));
     }
 
