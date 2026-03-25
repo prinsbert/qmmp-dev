@@ -25,12 +25,15 @@
 #include <QColorDialog>
 #include "qmmpui_export.h"
 
+class ColorWidgetPrivate;
+
 /*! @brief The ColorWidget class is used to display and select color.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class QMMPUI_EXPORT ColorWidget : public QFrame
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(ColorWidget)
     /*!
      * Color selection dialog options.
      */
@@ -44,7 +47,7 @@ public:
     /*!
      * Destructor.
      */
-    ~ColorWidget() = default;
+    virtual ~ColorWidget();
     /*!
      * Returns color dialog options.
      */
@@ -70,11 +73,11 @@ public slots:
      */
     void setColor(const QString &name);
 
-private:
-    void mousePressEvent(QMouseEvent *) override final;
+protected:
+    virtual void mousePressEvent(QMouseEvent *) override;
 
-    QString m_colorName;
-    QColorDialog::ColorDialogOptions m_options;
+private:
+    ColorWidgetPrivate *d_ptr;
 };
 
 #endif

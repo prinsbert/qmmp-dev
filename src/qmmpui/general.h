@@ -87,13 +87,8 @@ public:
     static bool isEnabled(const GeneralFactory* factory);
 
 private:
-    General() {}
-    ~General() {}
-    static void loadPlugins();
-    static QHash <GeneralFactory*, QObject*> *m_generals;
-    static QObject *m_parent;
-    static QList<QmmpUiPluginCache*> *m_cache;
-    static QStringList m_enabledNames;
+    General() = delete;
+    ~General() = delete;
 };
 
 #endif
