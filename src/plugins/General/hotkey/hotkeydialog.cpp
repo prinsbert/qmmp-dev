@@ -44,9 +44,21 @@ HotkeyDialog::~HotkeyDialog()
 void HotkeyDialog::keyPressEvent (QKeyEvent *event)
 {
     m_key = HotkeyManager::keycodeToKeysym(event->nativeScanCode ());
-    m_modifiers = event->nativeModifiers ();
+#ifdef Q_OS_WIN
+    m_modifiers = 0;
+    if(event->modifiers() & Qt::ShiftModifier)
+        m_modifiers |= MOD_SHIFT;
+    if(event->modifiers() & Qt::ControlModifier)
+        m_modifiers |= MOD_CONTROL;
+    if(event->modifiers() & Qt::AltModifier)
+        m_modifiers |= MOD_ALT;
+    if(event->modifiers() & Qt::MetaModifier)
+        m_modifiers |= MOD_WIN;
+#else
+    m_modifiers = event->nativeModifiers();
     for(long mask_mod : HotkeyManager::ignModifiersList())
         m_modifiers &= ~mask_mod; //remove ignored modifiers (num lock, caps lock, etc)
+#endif
 
     m_ui->keyLineEdit->setText(HotkeyManager::getKeyString(m_key, m_modifiers));
     QDialog::keyPressEvent(event);
