@@ -28,11 +28,14 @@
 #include <qmmp/qmmp.h>
 #include "qmmpui_export.h"
 
+class MetaDataFormatterPrivate;
+
 /*! @brief The MetaDataFormatter formats metadata using templates.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class QMMPUI_EXPORT MetaDataFormatter
 {
+    Q_DECLARE_PRIVATE(MetaDataFormatter)
 public:
     /*!
      * Constructor.
@@ -65,6 +68,7 @@ public:
      * %dir - full path of the parent directory.
      */
     MetaDataFormatter(const QString &pattern = QString());
+    ~MetaDataFormatter();
     /*!
      * Setups metadata template.
      * @param pattern Metadata template string.
@@ -101,67 +105,7 @@ public:
     static QString formatDuration(qint64 duration, bool hideZero = true, bool showMs = false);
 
 private:
-    struct Node;
-    struct Param;
-
-    struct Node
-    {
-        enum {
-            PRINT_TEXT = 0,
-            IF_KEYWORD,
-            OR_OPERATOR,
-            AND_OPERATOR,
-            DIR_FUNCTION
-        } command;
-
-        QList<Param> params;
-    };
-
-    struct Param
-    {
-        enum {
-            FIELD = 0,
-            PROPERTY,
-            TEXT,
-            NUMERIC,
-            NODES
-        } type;
-
-        //extra fields
-        enum
-        {
-            PATH = Qmmp::DISCNUMBER + 1,
-            TWO_DIGIT_TRACK,
-            DURATION,
-            FILE_NAME,
-            TRACK_INDEX
-        };
-
-        int field = -1;
-        QString text;
-        int number = 0;
-        QList<Node> children;
-    };
-
-    bool parseField(QList<Node> *nodes, QString::const_iterator *i, QString::const_iterator end);
-    bool parseProperty(QList<Node> *nodes, QString::const_iterator *i, QString::const_iterator end);
-    bool parseIf(QList<Node> *nodes, QString::const_iterator *i, QString::const_iterator end);
-    bool parseDir(QList<Node> *nodes, QString::const_iterator *i, QString::const_iterator end);
-    void parseText(QList<Node> *nodes, QString::const_iterator *i, QString::const_iterator end);
-    void parseEscape(QList<Node> *nodes, QString::const_iterator *i, QString::const_iterator end);
-
-    QString evalute(const QList<Node> *nodes, const TrackInfo *info, int trackIndex) const;
-    QString printParam(Param *p, const TrackInfo *info, int trackIndex) const;
-    QString printField(int field, const TrackInfo *info, int trackIndex) const;
-    QString printProperty(int field, const TrackInfo *info) const;
-
-    QString dumpNode(Node node) const;
-
-    QList<MetaDataFormatter::Node> compile(const QString &expr);
-    QString m_pattern;
-    QList<MetaDataFormatter::Node> m_nodes;
-    QHash<QString, int> m_fieldNames;
-    QHash<QString, int> m_propertyNames;
+    MetaDataFormatterPrivate *d_ptr;
 };
 
-#endif // METADATAFORMATTER2_H
+#endif // METADATAFORMATTER_H

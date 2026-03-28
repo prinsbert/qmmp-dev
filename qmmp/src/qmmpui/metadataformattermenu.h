@@ -44,8 +44,8 @@ public:
 signals:
     void patternSelected(const QString &pattern);
 
-private slots:
-    void onActionTriggered(QAction *action);
+private:
+    MetaDataFormatterMenu() = delete;
 
 };
 

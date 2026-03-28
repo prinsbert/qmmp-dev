@@ -79,10 +79,7 @@ MetaDataFormatterMenu::MetaDataFormatterMenu(Type type, QWidget *parent) :
         addAction(tr("File Size"))->setData(u"%{filesize}"_s);
     }
 
-    connect(this, &QMenu::triggered, this, &MetaDataFormatterMenu::onActionTriggered);
-}
-
-void MetaDataFormatterMenu::onActionTriggered(QAction *action)
-{
-    emit patternSelected(action->data().toString());
+    connect(this, &QMenu::triggered, this, [this] (QAction *action) {
+        emit patternSelected(action->data().toString());
+    });
 }
