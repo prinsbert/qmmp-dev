@@ -62,6 +62,10 @@ public:
      * Returns \b true if general plugin is enabled, otherwise returns \b false.-
      */
     static UiFactory *selected();
+
+private:
+    UiLoader() = delete;
+    ~UiLoader() = delete;
 };
 
 #endif //UILOADER_H
