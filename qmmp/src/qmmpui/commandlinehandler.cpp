@@ -21,10 +21,43 @@
 #include <qmmp/qmmp.h>
 #include "commandlinehandler.h"
 
+class CommandLineHandlerPrivate
+{
+public:
+    struct CommandLineOption
+    {
+        QStringList names;
+        QStringList values;
+        QString helpString;
+        CommandLineHandler::OptionFlags flags;
+
+        inline bool operator == (const CommandLineOption &opt) const
+        {
+            return names == opt.names &&
+                   values == opt.values &&
+                   helpString == opt.helpString &&
+                   flags == opt.flags;
+        }
+    };
+
+    QMap<int, CommandLineOption> options;
+};
+
+
+CommandLineHandler::CommandLineHandler() :
+    d_ptr(new CommandLineHandlerPrivate)
+{}
+
+CommandLineHandler::~CommandLineHandler()
+{
+    delete d_ptr;
+}
+
 QStringList CommandLineHandler::helpString() const
 {
+    Q_D(const CommandLineHandler);
     QStringList out;
-    for(const CommandLineOption &opt : std::as_const(m_options))
+    for(const CommandLineHandlerPrivate::CommandLineOption &opt : std::as_const(d->options))
     {
         if(opt.flags & HiddenFromHelp)
             continue;
@@ -39,25 +72,26 @@ QStringList CommandLineHandler::helpString() const
 
 QString CommandLineHandler::helpString(int id) const
 {
-    if(m_options[id].values.isEmpty())
-        return  QStringLiteral("%1||%2").arg(m_options[id].names.join(u", "_s), m_options[id].helpString);
+    Q_D(const CommandLineHandler);
+    if(d->options[id].values.isEmpty())
+        return QStringLiteral("%1||%2").arg(d->options[id].names.join(u", "_s), d->options[id].helpString);
 
-    return QStringLiteral("%1 <%2>||%3").arg(m_options[id].names.join(u", "_s), m_options[id].values.join(u"> <"_s), m_options[id].helpString);
+    return QStringLiteral("%1 <%2>||%3").arg(d->options[id].names.join(u", "_s), d->options[id].values.join(u"> <"_s), d->options[id].helpString);
 }
 
 int CommandLineHandler::identify(const QString &name) const
 {
-    for(const CommandLineOption &opt : std::as_const(m_options))
+    for(const CommandLineHandlerPrivate::CommandLineOption &opt : std::as_const(d_ptr->options))
     {
         if(opt.names.contains(name))
-            return m_options.key(opt);
+            return d_ptr->options.key(opt);
     }
     return -1;
 }
 
 CommandLineHandler::OptionFlags CommandLineHandler::flags(int id) const
 {
-    return m_options.value(id).flags;
+    return d_ptr->options.value(id).flags;
 }
 
 void CommandLineHandler::registerOption(int id, const QString &name, const QString &helpString, const QStringList &values)
@@ -67,14 +101,14 @@ void CommandLineHandler::registerOption(int id, const QString &name, const QStri
 
 void CommandLineHandler::registerOption(int id, const QStringList &names, const QString &helpString, const QStringList &values)
 {
-    CommandLineOption opt;
+    CommandLineHandlerPrivate::CommandLineOption opt;
     opt.names = names;
     opt.values = values;
     opt.helpString = helpString;
-    m_options.insert(id, opt);
+    d_ptr->options.insert(id, opt);
 }
 
 void CommandLineHandler::setOptionFlags(int id, OptionFlags flags)
 {
-    m_options[id].flags = flags;
+    d_ptr->options[id].flags = flags;
 }

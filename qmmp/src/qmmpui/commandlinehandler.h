@@ -27,16 +27,20 @@
 #include <QFlags>
 #include "qmmpui_export.h"
 
+class CommandLineHandlerPrivate;
+
 /*! @brief Abstract base class of the command line plugins.
  * @author Vladimir Kuznetsov <vovanec@gmail.ru>
  */
 class QMMPUI_EXPORT CommandLineHandler
 {
+    Q_DECLARE_PRIVATE(CommandLineHandler)
 public:
+    CommandLineHandler();
     /*!
      * Object destructor
      */
-    virtual ~CommandLineHandler() {}
+    virtual ~CommandLineHandler();
     /*!
      * Registers command line options. Subclass should implement this function
      */
@@ -117,23 +121,7 @@ protected:
     void setOptionFlags(int id, OptionFlags flags);
 
 private:
-    struct CommandLineOption
-    {
-        QStringList names;
-        QStringList values;
-        QString helpString;
-        OptionFlags flags;
-
-        inline bool operator == (const CommandLineOption &opt) const
-        {
-            return names == opt.names &&
-                    values == opt.values &&
-                    helpString == opt.helpString &&
-                    flags == opt.flags;
-        }
-    };
-
-    QMap<int, CommandLineOption> m_options;
+    CommandLineHandlerPrivate *d_ptr;
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(CommandLineHandler::OptionFlags)
