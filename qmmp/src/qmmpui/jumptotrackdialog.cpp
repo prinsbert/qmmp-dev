@@ -210,7 +210,8 @@ bool JumpToTrackDialog::eventFilter(QObject *o, QEvent *e)
 ///TrackListModel
 TrackListModel::TrackListModel(PlayListModel *model, QObject *parent) : QAbstractListModel(parent), m_model(model)
 {
-    m_queue = QSet<PlayListTrack *>(m_model->queuedTracks().cbegin(), m_model->queuedTracks().cend());
+    const auto queuedTracks = m_model->queuedTracks();
+    m_queue = QSet<PlayListTrack *>(queuedTracks.cbegin(), queuedTracks.cend());
     connect(m_model, &PlayListModel::listChanged, this, &TrackListModel::onListChanged);
 }
 
@@ -259,13 +260,15 @@ void TrackListModel::onListChanged(int flags)
     if(flags & PlayListModel::STRUCTURE)
     {
         beginResetModel();
-        m_queue = QSet<PlayListTrack *>(m_model->queuedTracks().cbegin(), m_model->queuedTracks().cend());
+        const auto queuedTracks = m_model->queuedTracks();
+        m_queue = QSet<PlayListTrack *>(queuedTracks.cbegin(), queuedTracks.cend());
         endResetModel();
     }
     else if(flags & PlayListModel::QUEUE)
     {
         QSet<PlayListTrack *> changed = m_queue;
-        m_queue = QSet<PlayListTrack *>(m_model->queuedTracks().cbegin(), m_model->queuedTracks().cend());
+        const auto queuedTracks = m_model->queuedTracks();
+        m_queue = QSet<PlayListTrack *>(queuedTracks.cbegin(), queuedTracks.cend());
         changed.unite(m_queue);
 
         for(PlayListTrack *t : std::as_const(changed))
