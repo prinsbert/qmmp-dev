@@ -37,7 +37,7 @@ public:
         q->connect(manager, &QNetworkAccessManager::finished, q, [this](QNetworkReply *reply) { readResponse(reply); });
         //load global proxy settings
         QmmpSettings *gs = QmmpSettings::instance();
-        if (gs->isProxyEnabled())
+        if(gs->isProxyEnabled())
         {
             QNetworkProxy proxy(QNetworkProxy::HttpProxy, gs->proxy().host(),  gs->proxy().port());
             if(gs->proxyType() == QmmpSettings::SOCKS5_PROXY)
