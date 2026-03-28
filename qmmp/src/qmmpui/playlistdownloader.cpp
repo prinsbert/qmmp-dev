@@ -21,6 +21,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkProxy>
 #include <QNetworkReply>
+#include <QCoreApplication>
 #include <qmmp/qmmp.h>
 #include <qmmp/qmmpsettings.h>
 #include "playlistparser.h"
@@ -29,6 +30,7 @@
 class PlayListDownloaderPrivate
 {
     Q_DECLARE_PUBLIC(PlayListDownloader)
+    Q_DECLARE_TR_FUNCTIONS(PlayListDownloader)
 public:
     PlayListDownloaderPrivate(PlayListDownloader *pld) : q_ptr(pld)
     {
@@ -93,7 +95,7 @@ public:
             }
             else
             {
-                emit q->finished(false, q->tr("Unsupported playlist format"));
+                emit q->finished(false, tr("Unsupported playlist format"));
             }
 
             reply->deleteLater();

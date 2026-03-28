@@ -28,15 +28,15 @@
 class QmmpUiSettingsPrivate
 {
     Q_DECLARE_PUBLIC(QmmpUiSettings)
+    Q_DECLARE_TR_FUNCTIONS(QmmpUiSettings)
 public:
     QmmpUiSettingsPrivate(QmmpUiSettings *qu) : q_ptr(qu)
     {
-        Q_Q(const QmmpUiSettings);
         helper = new MetaDataHelper;
         QSettings s;
         s.beginGroup(u"PlayList"_s);
         groupFormat = s.value(u"group_format"_s, u"%p%if(%p&%a, - %if(%y,[%y] ,),)%a"_s).toString();
-        groupExtraRowFormat = s.value(u"group_extra_row_format"_s, q->tr("%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz")).toString();
+        groupExtraRowFormat = s.value(u"group_extra_row_format"_s, tr("%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz")).toString();
         linesPerGroup = s.value(u"lines_per_group"_s, 1).toInt();
         groupExtraRowVisible = s.value(u"group_extra_row_visible"_s, true).toBool();
         groupCoverVisible = s.value(u"group_cover_visible"_s, true).toBool();
@@ -61,7 +61,7 @@ public:
         restrictFilters = s.value(u"restrict_filters"_s).toStringList();
         excludeFilters = s.value(u"exclude_filters"_s).toStringList();
         useDefaultPl = s.value(u"use_default_pl"_s, false).toBool();
-        defaultPlName = s.value(u"default_pl_name"_s, q->tr("Playlist")).toString();
+        defaultPlName = s.value(u"default_pl_name"_s, tr("Playlist")).toString();
         s.endGroup();
         useClipboard = s.value(u"URLDialog/use_clipboard"_s, false).toBool();
 
