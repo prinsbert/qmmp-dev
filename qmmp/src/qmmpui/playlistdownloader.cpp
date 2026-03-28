@@ -26,147 +26,166 @@
 #include "playlistparser.h"
 #include "playlistdownloader.h"
 
-PlayListDownloader::PlayListDownloader(QObject *parent) : QObject(parent),
-    m_ua(QStringLiteral("qmmp/%1").arg(Qmmp::strVersion()).toLatin1())
+class PlayListDownloaderPrivate
 {
-    m_manager = new QNetworkAccessManager(this);
-    connect(m_manager, &QNetworkAccessManager::finished, this, &PlayListDownloader::readResponse);
-    //load global proxy settings
-    QmmpSettings *gs = QmmpSettings::instance();
-    if (gs->isProxyEnabled())
+    Q_DECLARE_PUBLIC(PlayListDownloader)
+public:
+    PlayListDownloaderPrivate(PlayListDownloader *pld) : q_ptr(pld)
     {
-        QNetworkProxy proxy(QNetworkProxy::HttpProxy, gs->proxy().host(),  gs->proxy().port());
-        if(gs->proxyType() == QmmpSettings::SOCKS5_PROXY)
-            proxy.setType(QNetworkProxy::Socks5Proxy);
-        if(gs->useProxyAuth())
+        Q_Q(PlayListDownloader);
+        manager = new QNetworkAccessManager(q);
+        q->connect(manager, &QNetworkAccessManager::finished, q, [this](QNetworkReply *reply) { readResponse(reply); });
+        //load global proxy settings
+        QmmpSettings *gs = QmmpSettings::instance();
+        if (gs->isProxyEnabled())
         {
-            proxy.setUser(gs->proxy().userName());
-            proxy.setPassword(gs->proxy().password());
+            QNetworkProxy proxy(QNetworkProxy::HttpProxy, gs->proxy().host(),  gs->proxy().port());
+            if(gs->proxyType() == QmmpSettings::SOCKS5_PROXY)
+                proxy.setType(QNetworkProxy::Socks5Proxy);
+            if(gs->useProxyAuth())
+            {
+                proxy.setUser(gs->proxy().userName());
+                proxy.setPassword(gs->proxy().password());
+            }
+            manager->setProxy(proxy);
         }
-        m_manager->setProxy(proxy);
     }
+
+    void readResponse(QNetworkReply *reply)
+    {
+        Q_Q(PlayListDownloader);
+        if(!model)
+        {
+            reply->deleteLater();
+            return;
+        }
+
+        if(reply == downloadReply)
+        {
+            downloadReply = nullptr;
+
+            if(reply->error() != QNetworkReply::NoError)
+            {
+                emit q->finished(false, QStringLiteral("%1 (%2)").arg(reply->errorString()).arg(reply->error()));
+                reply->deleteLater();
+                return;
+            }
+
+            QUrl url = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
+            if(!url.isEmpty() && url != url)
+            {
+                reply->deleteLater();
+                qCDebug(core) << "redirect to" << url.toString();
+                q->start(url, model);
+                return;
+            }
+
+            QString contentType = reply->header(QNetworkRequest::ContentTypeHeader).toString();
+            qCDebug(core) << "content type:" << contentType;
+            PlayListFormat *fmt = PlayListParser::findByMime(contentType);
+            if(!fmt)
+                fmt = PlayListParser::findByUrl(url);
+
+            if(fmt)
+            {
+                model->loadPlaylist(fmt->properties().shortName, reply->readAll());
+                emit q->finished(true);
+            }
+            else
+            {
+                emit q->finished(false, q->tr("Unsupported playlist format"));
+            }
+
+            reply->deleteLater();
+        }
+        else if(reply == checkReply)
+        {
+            checkReply = nullptr;
+
+            if(reply->error() != QNetworkReply::NoError) //playlist is not available, simply add URL
+            {
+                model->addPath(url.toString());
+                reply->deleteLater();
+                emit q->finished(true);
+                return;
+            }
+
+            QUrl url = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
+            if(!url.isEmpty() && url != url)
+            {
+                reply->deleteLater();
+                qCDebug(core) << "redirect to" << url.toString();
+                q->start(url, model);
+                return;
+            }
+
+            QString contentType = reply->header(QNetworkRequest::ContentTypeHeader).toString();
+            qCDebug(core) << "content type:" << contentType;
+            PlayListFormat *fmt = PlayListParser::findByMime(contentType);
+            if(!fmt)
+                fmt = PlayListParser::findByUrl(url);
+
+            if(fmt)
+            {
+                model->loadPlaylist(fmt->properties().shortName, reply->readAll());
+                emit q->finished(true);
+            }
+            else
+            {
+                model->addPath(url.toString());
+                emit q->finished(true);
+            }
+
+            reply->deleteLater();
+        }
+        else //unknown request
+        {
+            reply->deleteLater();
+        }
+    }
+
+private:
+    PlayListDownloader *q_ptr;
+    QNetworkAccessManager *manager;
+    QUrl redirectUrl, url;
+    QNetworkReply *downloadReply = nullptr;
+    QNetworkReply *checkReply = nullptr;
+    QByteArray userAgent = QStringLiteral("qmmp/%1").arg(Qmmp::strVersion()).toLatin1();
+    QPointer<PlayListModel> model;
+};
+
+PlayListDownloader::PlayListDownloader(QObject *parent) :
+    QObject(parent),
+    d_ptr(new PlayListDownloaderPrivate(this))
+{}
+
+PlayListDownloader::~PlayListDownloader()
+{
+    delete d_ptr;
 }
 
 void PlayListDownloader::start(const QUrl &url, PlayListModel *model)
 {
-    m_model = model;
-    m_url = url;
-    m_redirect_url.clear();
+    Q_D(PlayListDownloader);
+    d->model = model;
+    d->url = url;
+    d->redirectUrl.clear();
 
     QNetworkRequest r;
     r.setUrl(url);
-    r.setRawHeader("User-Agent", m_ua);
+    r.setRawHeader("User-Agent", d->userAgent);
 
     if(PlayListParser::findByUrl(url)) //is it playlist?
     {
-        m_downloadReply = m_manager->get(r); //download playlist
+        d->downloadReply = d->manager->get(r); //download playlist
     }
     else
     {
-        m_checkReply = m_manager->get(r); //check playlist
-        connect(m_checkReply, &QNetworkReply::downloadProgress, this, &PlayListDownloader::onDownloadProgress);
+        d->checkReply = d->manager->get(r); //check playlist
+        connect(d->checkReply, &QNetworkReply::downloadProgress, this, [d](qint64 bytesReceived) {
+            if(bytesReceived > 20480 && d->checkReply) //20к - maximum playlist size
+                d->checkReply->abort();
+        } );
     }
 }
 
-void PlayListDownloader::onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal)
-{
-    Q_UNUSED(bytesTotal);
-    if(bytesReceived > 20480) //20к - maximum playlist size
-    {
-        QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
-        if(reply)
-            reply->abort();
-    }
-}
-
-void PlayListDownloader::readResponse(QNetworkReply *reply)
-{
-    if(!m_model)
-    {
-        reply->deleteLater();
-        return;
-    }
-
-    if(reply == m_downloadReply)
-    {
-        m_downloadReply = nullptr;
-
-        if(reply->error() != QNetworkReply::NoError)
-        {
-            emit finished(false, QStringLiteral("%1 (%2)").arg(reply->errorString()).arg(reply->error()));
-            reply->deleteLater();
-            return;
-        }
-
-        QUrl url = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
-        if(!url.isEmpty() && m_url != url)
-        {
-            reply->deleteLater();
-            qCDebug(core) << "redirect to" << url.toString();
-            start(url, m_model);
-            return;
-        }
-
-        QString contentType = reply->header(QNetworkRequest::ContentTypeHeader).toString();
-        qCDebug(core) << "content type:" << contentType;
-        PlayListFormat *fmt = PlayListParser::findByMime(contentType);
-        if(!fmt)
-            fmt = PlayListParser::findByUrl(m_url);
-
-        if(fmt)
-        {
-            m_model->loadPlaylist(fmt->properties().shortName, reply->readAll());
-            emit finished(true);
-        }
-        else
-        {
-            emit finished(false, tr("Unsupported playlist format"));
-        }
-
-        reply->deleteLater();
-    }
-    else if(reply == m_checkReply)
-    {
-        m_checkReply = nullptr;
-
-        if(reply->error() != QNetworkReply::NoError) //playlist is not available, simply add URL
-        {
-            m_model->addPath(m_url.toString());
-            reply->deleteLater();
-            emit finished(true);
-            return;
-        }
-
-        QUrl url = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
-        if(!url.isEmpty() && m_url != url)
-        {
-            reply->deleteLater();
-            qCDebug(core) << "redirect to" << url.toString();
-            start(url, m_model);
-            return;
-        }
-
-        QString contentType = reply->header(QNetworkRequest::ContentTypeHeader).toString();
-        qCDebug(core) << "content type:" << contentType;
-        PlayListFormat *fmt = PlayListParser::findByMime(contentType);
-        if(!fmt)
-            fmt = PlayListParser::findByUrl(m_url);
-
-        if(fmt)
-        {
-            m_model->loadPlaylist(fmt->properties().shortName, reply->readAll());
-            emit finished(true);
-        }
-        else
-        {
-            m_model->addPath(m_url.toString());
-            emit finished(true);
-        }
-
-        reply->deleteLater();
-    }
-    else //unknown request
-    {
-        reply->deleteLater();
-    }
-}
