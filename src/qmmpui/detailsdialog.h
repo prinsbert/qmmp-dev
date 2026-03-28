@@ -22,19 +22,11 @@
 
 #include <QDialog>
 #include <QList>
-#include <QSet>
-#include <qmmp/trackinfo.h>
+#include <qmmpui/playlisttrack.h>
 #include "qmmpui_export.h"
 
-class QTextCodec;
-class QAbstractButton;
 class PlayListTrack;
-class MetaDataModel;
-class MetaDataItem;
-
-namespace Ui {
-    class DetailsDialog;
-}
+class DetailsDialogPrivate;
 
 /** @brief The DetailsDialog class provides dialog to show/edit metadata.
  * @author Ilya Kotov <forkotov02@ya.ru>
@@ -42,6 +34,7 @@ namespace Ui {
 class QMMPUI_EXPORT DetailsDialog : public QDialog
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(DetailsDialog);
 public:
     /*!
      * Constructor.
@@ -71,25 +64,9 @@ signals:
      */
     void metaDataChanged(const QStringList &paths);
 
-private slots:
-    void on_buttonBox_clicked(QAbstractButton *button);
-    void on_tabWidget_currentChanged(int index);
-    void on_directoryButton_clicked();
-    void on_prevButton_clicked();
-    void on_nextButton_clicked();
-
 private:
-    Ui::DetailsDialog *m_ui;
     void closeEvent(QCloseEvent *) override;
-    void updatePage();
-    void printInfo();
-    QString formatRow(const QString &key, const QString &value) const;
-    QString formatRow(const MetaDataItem &item) const;
-    MetaDataModel *m_metaDataModel = nullptr;
-    QList<PlayListTrack *> m_tracks;
-    TrackInfo m_info;
-    int m_page = 0;
-    QSet<QString> m_modifiedPaths;
+    DetailsDialogPrivate *d_ptr;
 };
 
 #endif

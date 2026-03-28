@@ -35,364 +35,399 @@
 #include "cueeditor_p.h"
 #include "detailsdialog.h"
 
-DetailsDialog::DetailsDialog(const QList<PlayListTrack *> &tracks, QWidget *parent)
-        : QDialog(parent), m_tracks(tracks)
+class DetailsDialogPrivate : public Ui::DetailsDialog
 {
-    m_ui = new Ui::DetailsDialog;
-    m_ui->setupUi(this);
-    setAttribute(Qt::WA_QuitOnClose, false);
-    m_ui->directoryButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_DirOpenIcon));
-    m_ui->nextButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowRight));
-    m_ui->prevButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowLeft));
-    updatePage();
-    on_tabWidget_currentChanged(0);
+    Q_DECLARE_PUBLIC(::DetailsDialog)
+public:
+    DetailsDialogPrivate(const QList<PlayListTrack *> &t, ::DetailsDialog *dialog) :
+        q_ptr(dialog),
+        tracks(t)
+    {
+        for(PlayListTrack *t : std::as_const(tracks))
+            t->beginUsage();
+    }
 
-    for(PlayListTrack *t : std::as_const(m_tracks))
-        t->beginUsage();
+    ~DetailsDialogPrivate()
+    {
+        for(PlayListTrack *t : std::as_const(tracks))
+        {
+            t->endUsage();
+            if (!t->isUsed() && t->isSheduledForDeletion())
+            {
+                delete t;
+                t = nullptr;
+            }
+        }
+
+        if(!modifiedPaths.isEmpty())
+            emit q_ptr->metaDataChanged(modifiedPaths.values());
+
+        if(metaDataModel)
+        {
+            delete metaDataModel;
+            metaDataModel = nullptr;
+        }
+    }
+
+    void updatePage()
+    {
+        Q_Q(::DetailsDialog);
+        if(metaDataModel)
+        {
+            delete metaDataModel;
+            metaDataModel = nullptr;
+        }
+
+        while(tabWidget->count() > 1)
+        {
+            int index = tabWidget->count() - 1;
+            QWidget *w = tabWidget->widget(index);
+            tabWidget->removeTab(index);
+            w->deleteLater();
+        }
+
+        pageLabel->setText(q->tr("%1/%2").arg(page + 1).arg(tracks.count()));
+        if(page >= 0 && page < tracks.count())
+            info = *tracks.at(page);
+        else
+            info.clear();
+
+        q->setWindowTitle(info.path().section(QLatin1Char('/'),-1));
+        pathEdit->setText(info.path());
+
+        //load metadata and create metadata model
+        QList<TrackInfo> infoList = MetaDataManager::instance()->createPlayList(info.path());
+        if(!infoList.isEmpty())
+        {
+            if(infoList.constFirst().parts() & TrackInfo::MetaData)
+                info.setValues(infoList.constFirst().metaData());
+            if(infoList.constFirst().parts() & TrackInfo::Properties)
+            {
+                info.updateValues(infoList.constFirst().properties());
+                info.setDuration(infoList.constFirst().duration());
+            }
+        }
+        infoList.clear();
+
+        QString coverPath;
+        QImage coverImage;
+        bool readOnly = false;
+
+        if(info.path().contains(u"://"_s) && info.path().contains(QLatin1Char('#'))) //track of multi-track file
+        {
+            QString filePath = TrackInfo::pathFromUrl(info.path());
+            if(QFileInfo(filePath).isFile())
+                readOnly = !QFileInfo(filePath).isWritable() || !QFile::exists(filePath);
+        }
+        else if(!info.path().contains(u"://"_s)) //local file
+        {
+            coverPath = MetaDataManager::instance()->findCoverFile(info.path());
+            readOnly = !QFileInfo(info.path()).isWritable() || !QFile::exists(info.path());
+        }
+
+        metaDataModel = MetaDataManager::instance()->createMetaDataModel(info.path(), readOnly);
+
+        if(metaDataModel)
+        {
+            coverPath = coverPath.isEmpty() ? metaDataModel->coverPath() : coverPath;
+            coverImage = metaDataModel->cover();
+        }
+
+        if((metaDataModel && (metaDataModel->dialogHints() & MetaDataModel::IsCoverEditable)) ||
+            !coverPath.isEmpty() ||
+            !coverImage.isNull())
+        {
+            CoverEditor *coverEditor = new CoverEditor(metaDataModel, coverPath, q);
+            tabWidget->addTab(coverEditor, q->tr("Cover"));
+        }
+
+        if(metaDataModel)
+        {
+            for(TagModel *tagModel : metaDataModel->tags())
+            {
+                TagEditor *editor = new TagEditor(tagModel, q);
+                editor->setEnabled(!metaDataModel->isReadOnly());
+                tabWidget->addTab(editor, tagModel->name());
+            }
+
+            for(const MetaDataItem &item : metaDataModel->descriptions())
+            {
+                QTextEdit *textEdit = new QTextEdit(q);
+                textEdit->setReadOnly(true);
+                textEdit->setPlainText(item.value().toString());
+                tabWidget->addTab(textEdit, item.name());
+            }
+
+            QString lyrics = metaDataModel->lyrics();
+            if(!lyrics.isEmpty())
+            {
+                QTextEdit *textEdit = new QTextEdit(q);
+                textEdit->setReadOnly(true);
+                textEdit->setPlainText(lyrics);
+                tabWidget->addTab(textEdit, q->tr("Lyrics"));
+            }
+
+            if(metaDataModel->dialogHints() & MetaDataModel::IsCueEditable)
+            {
+                CueEditor *cueEditor = new CueEditor(metaDataModel, info, q);
+                tabWidget->addTab(cueEditor, u"CUE"_s);
+            }
+        }
+
+        printInfo();
+    }
+
+    void printInfo()
+    {
+        Q_Q(::DetailsDialog);
+        SoundCore *core = SoundCore::instance();
+        QString formattedText, metaDataRows, streamInfoRows, propertyRows;
+        QStringList tableParts;
+
+        //tags
+        metaDataRows += formatRow(q->tr("Title"), info.value(Qmmp::TITLE));
+        metaDataRows += formatRow(q->tr("Artist"), info.value (Qmmp::ARTIST));
+        metaDataRows += formatRow(q->tr("Album artist"), info.value(Qmmp::ALBUMARTIST));
+        metaDataRows += formatRow(q->tr("Album"), info.value(Qmmp::ALBUM));
+        metaDataRows += formatRow(q->tr("Comment"), info.value(Qmmp::COMMENT));
+        metaDataRows += formatRow(q->tr("Genre"), info.value(Qmmp::GENRE));
+        metaDataRows += formatRow(q->tr("Composer"), info.value(Qmmp::COMPOSER));
+        metaDataRows += formatRow(q->tr("Year"), info.value(Qmmp::YEAR));
+        metaDataRows += formatRow(q->tr("Track"), info.value(Qmmp::TRACK));
+        metaDataRows += formatRow(q->tr("Disc number"), info.value(Qmmp::DISCNUMBER));
+        metaDataRows = metaDataRows.trimmed();
+        if(!metaDataRows.isEmpty())
+            tableParts << metaDataRows;
+
+        //stream information
+        if(core->state() == Qmmp::Playing && core->path() == info.path())
+        {
+            const QHash<QString, QString> &streamInfo = core->streamInfo();
+            for(auto it = streamInfo.cbegin(); it != streamInfo.cend(); ++it)
+                streamInfoRows += formatRow(it.key(), it.value());
+        }
+        streamInfoRows = streamInfoRows.trimmed();
+        if(!streamInfoRows.isEmpty())
+            tableParts << streamInfoRows;
+
+        //properties
+        QList<MetaDataItem> items;
+        if(info.duration() > 0)
+            items << MetaDataItem(q->tr("Duration"), MetaDataFormatter::formatDuration(info.duration()));
+        if(!metaDataModel || !(metaDataModel->dialogHints() & MetaDataModel::CompletePropertyList))
+        {
+            items << MetaDataItem(q->tr("Bitrate"), info.value(Qmmp::BITRATE).toInt(), q->tr("kbps"));
+            items << MetaDataItem(q->tr("Sample rate"), info.value(Qmmp::SAMPLERATE).toInt(), q->tr("Hz"));
+            items << MetaDataItem(q->tr("Channels"), info.value(Qmmp::CHANNELS).toInt());
+            items << MetaDataItem(q->tr("Sample size"), info.value(Qmmp::BITS_PER_SAMPLE).toInt(), q->tr("bits"));
+            items << MetaDataItem(q->tr("Format name"), info.value(Qmmp::FORMAT_NAME));
+            items << MetaDataItem(q->tr("File size"), info.value(Qmmp::FILE_SIZE).toInt() / 1024, q->tr("KiB"));
+        }
+        if(metaDataModel)
+            items << metaDataModel->extraProperties();
+        for(const MetaDataItem &item : std::as_const(items))
+            propertyRows += formatRow(item);
+        propertyRows = propertyRows.trimmed();
+        if(!propertyRows.isEmpty())
+            tableParts << propertyRows;
+
+        //create table
+        if(q->layoutDirection() == Qt::RightToLeft)
+            formattedText.append(u"<DIV align=\"right\" dir=\"rtl\">"_s);
+        else
+            formattedText.append(u"<DIV>"_s);
+        formattedText.append(u"<TABLE>"_s);
+
+        formattedText += tableParts.join(u"<tr><td colspan=2><hr></td></tr>"_s);
+
+        formattedText.append(u"</TABLE>"_s);
+        formattedText.append(u"</DIV>"_s);
+        textEdit->setHtml(formattedText);
+    }
+
+    QString formatRow(const QString &key, const QString &value) const
+    {
+        Q_Q(const ::DetailsDialog);
+        if(value.isEmpty() || key.isEmpty())
+            return QString();
+        QString str(u"<tr>"_s);
+        if(q->layoutDirection() == Qt::RightToLeft)
+            str.append(u"<td>"_s + value + u"</td> <td style=\"padding-left: 15px;\"><b>"_s + key + u"</b></td>"_s);
+        else
+            str.append(u"<td><b>"_s + key + u"</b></td> <td style=\"padding-left: 15px;\">"_s + value + u"</td>"_s);
+        str.append(u"</tr>"_s);
+        return str;
+    }
+
+    QString formatRow(const MetaDataItem &item) const
+    {
+        Q_Q(const ::DetailsDialog);
+        if(item.value().isNull() || item.name().isEmpty() || !item.value().isValid())
+            return QString();
+
+        QString value;
+        if(item.value().typeId() == QMetaType::Bool)
+            value = item.value().toBool() ? q->tr("Yes") : q->tr("No");
+        else if(item.value().typeId() == QMetaType::Double)
+            value = QStringLiteral("%1").arg(item.value().toDouble(), 0, 'f', 4);
+        else
+            value = item.value().toString();
+
+        if(value.isEmpty() || value == "0"_L1 || value == "0.0000"_L1)
+            return QString();
+
+        if(!item.suffix().isEmpty())
+            value += QChar::Space + item.suffix();
+
+        return formatRow(item.name(), value);
+    }
+
+    void onDirectoryButtonClicked()
+    {
+        QString dir_path;
+        if(!info.path().contains(u"://"_s)) //local file
+            dir_path = QFileInfo(info.path()).absolutePath();
+        else if (info.path().contains(u":///"_s)) //pseudo-protocol
+        {
+            dir_path = QUrl(info.path()).path();
+            dir_path.replace(QString::fromLatin1(QUrl::toPercentEncoding(u"#"_s)), u"#"_s);
+            dir_path.replace(QString::fromLatin1(QUrl::toPercentEncoding(u"?"_s)), u"?"_s);
+            dir_path.replace(QString::fromLatin1(QUrl::toPercentEncoding(u"%"_s)), u"%"_s);
+            dir_path = QFileInfo(dir_path).absolutePath();
+        }
+        else
+            return;
+
+        QDesktopServices::openUrl(QUrl::fromLocalFile(dir_path));
+    }
+
+    void onButtonBoxClicked(QAbstractButton *button)
+    {
+        if(buttonBox->standardButton(button) == QDialogButtonBox::Save)
+        {
+            TagEditor *tagEditor = nullptr;
+            CoverEditor *coverEditor = nullptr;
+            CueEditor *cueEditor = nullptr;
+
+            if((tagEditor = qobject_cast<TagEditor *>(tabWidget->currentWidget())))
+            {
+                tagEditor->save();
+                modifiedPaths.insert(info.path());
+            }
+            else if((coverEditor = qobject_cast<CoverEditor *>(tabWidget->currentWidget())))
+            {
+                coverEditor->save();
+                modifiedPaths.insert(info.path());
+                MetaDataManager::instance()->clearCoverCache();
+            }
+            else if((cueEditor = qobject_cast<CueEditor *>(tabWidget->currentWidget())))
+            {
+                //update all cue tracks
+                static const QRegularExpression trackNumber(u"#\\d+$"_s);
+                int count = cueEditor->trackCount();
+                QString path = info.path();
+                path.remove(trackNumber);
+                for(int i = 0; i < count; ++i)
+                    modifiedPaths.insert(QStringLiteral("%1#%2").arg(path).arg(i + 1));
+                modifiedPaths.insert(info.path());
+
+                cueEditor->save();
+            }
+        }
+        else
+        {
+            //close all files before closing dialog
+            if(metaDataModel)
+            {
+                delete metaDataModel;
+                metaDataModel = nullptr;
+            }
+            q_ptr->reject();
+        }
+    }
+
+    void onTabWidgetCurrentChanged(int index)
+    {
+        CoverEditor *coverEditor = nullptr;
+        CueEditor *cueEditor = nullptr;
+        if(qobject_cast<TagEditor *>(tabWidget->widget(index)))
+            buttonBox->button(QDialogButtonBox::Save)->setEnabled(metaDataModel && !metaDataModel->isReadOnly());
+        else if((coverEditor = qobject_cast<CoverEditor *>(tabWidget->currentWidget())))
+            buttonBox->button(QDialogButtonBox::Save)->setEnabled(coverEditor->isEditable());
+        else if((cueEditor = qobject_cast<CueEditor *>(tabWidget->currentWidget())))
+            buttonBox->button(QDialogButtonBox::Save)->setEnabled(cueEditor->isEditable());
+        else
+            buttonBox->button(QDialogButtonBox::Save)->setEnabled(false);
+    }
+
+    void onPrevButtonClicked()
+    {
+        if(page == 0)
+            page = tracks.count() - 1;
+        else
+            page--;
+        updatePage();
+    }
+
+    void onNextButtonClicked()
+    {
+        if(page >= tracks.count() - 1)
+            page = 0;
+        else
+            page++;
+        updatePage();
+    }
+
+private:
+    ::DetailsDialog *q_ptr;
+    MetaDataModel *metaDataModel = nullptr;
+    QList<PlayListTrack *> tracks;
+    TrackInfo info;
+    int page = 0;
+    QSet<QString> modifiedPaths;
+};
+
+DetailsDialog::DetailsDialog(const QList<PlayListTrack *> &tracks, QWidget *parent) :
+    QDialog(parent),
+    d_ptr(new DetailsDialogPrivate(tracks, this))
+{
+    Q_D(DetailsDialog);
+    d->setupUi(this);
+    setAttribute(Qt::WA_QuitOnClose, false);
+    d->directoryButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_DirOpenIcon));
+    d->nextButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowRight));
+    d->prevButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowLeft));
+    d->updatePage();
+    d->onTabWidgetCurrentChanged(0);
+
+    connect(d->buttonBox, &QDialogButtonBox::clicked, this, [d](QAbstractButton *button) { d->onButtonBoxClicked(button); });
+    connect(d->tabWidget, &QTabWidget::currentChanged, this, [d](int index) { d->onTabWidgetCurrentChanged(index); });
+    connect(d->directoryButton, &QToolButton::clicked, this, [d] { d->onDirectoryButtonClicked(); });
+    connect(d->prevButton,  &QToolButton::clicked, this, [d] { d->onPrevButtonClicked(); });
+    connect(d->nextButton,  &QToolButton::clicked, this, [d] { d->onNextButtonClicked(); });
 }
 
-DetailsDialog::DetailsDialog(PlayListTrack *track, QWidget *parent) : DetailsDialog(QList<PlayListTrack *>{ track }, parent)
+DetailsDialog::DetailsDialog(PlayListTrack *track, QWidget *parent) :
+    DetailsDialog(QList<PlayListTrack *>{ track }, parent)
 {}
 
 DetailsDialog::~DetailsDialog()
 {
-    for(PlayListTrack *t : std::as_const(m_tracks))
-    {
-        t->endUsage();
-        if (!t->isUsed() && t->isSheduledForDeletion())
-        {
-            delete t;
-            t = nullptr;
-        }
-    }
-
-    if(!m_modifiedPaths.isEmpty())
-        emit metaDataChanged(m_modifiedPaths.values());
-
-    if(m_metaDataModel)
-    {
-        delete m_metaDataModel;
-        m_metaDataModel = nullptr;
-    }
-    delete m_ui;
+    delete d_ptr;
 }
 
 QStringList DetailsDialog::modifiedPaths() const
 {
-    return m_modifiedPaths.values();
-}
-
-void DetailsDialog:: on_directoryButton_clicked()
-{
-    QString dir_path;
-    if(!m_info.path().contains(u"://"_s)) //local file
-        dir_path = QFileInfo(m_info.path()).absolutePath();
-    else if (m_info.path().contains(u":///"_s)) //pseudo-protocol
-    {
-        dir_path = QUrl(m_info.path()).path();
-        dir_path.replace(QString::fromLatin1(QUrl::toPercentEncoding(u"#"_s)), u"#"_s);
-        dir_path.replace(QString::fromLatin1(QUrl::toPercentEncoding(u"?"_s)), u"?"_s);
-        dir_path.replace(QString::fromLatin1(QUrl::toPercentEncoding(u"%"_s)), u"%"_s);
-        dir_path = QFileInfo(dir_path).absolutePath();
-    }
-    else
-        return;
-
-    QDesktopServices::openUrl(QUrl::fromLocalFile(dir_path));
-}
-
-void DetailsDialog::on_buttonBox_clicked(QAbstractButton *button)
-{
-    if(m_ui->buttonBox->standardButton(button) == QDialogButtonBox::Save)
-    {
-        TagEditor *tagEditor = nullptr;
-        CoverEditor *coverEditor = nullptr;
-        CueEditor *cueEditor = nullptr;
-
-        if((tagEditor = qobject_cast<TagEditor *>(m_ui->tabWidget->currentWidget())))
-        {
-            tagEditor->save();
-            m_modifiedPaths.insert(m_info.path());
-        }
-        else if((coverEditor = qobject_cast<CoverEditor *>(m_ui->tabWidget->currentWidget())))
-        {
-            coverEditor->save();
-            m_modifiedPaths.insert(m_info.path());
-            MetaDataManager::instance()->clearCoverCache();
-        }
-        else if((cueEditor = qobject_cast<CueEditor *>(m_ui->tabWidget->currentWidget())))
-        {
-            //update all cue tracks
-            static const QRegularExpression trackNumber(u"#\\d+$"_s);
-            int count = cueEditor->trackCount();
-            QString path = m_info.path();
-            path.remove(trackNumber);
-            for(int i = 0; i < count; ++i)
-                m_modifiedPaths.insert(QStringLiteral("%1#%2").arg(path).arg(i + 1));
-            m_modifiedPaths.insert(m_info.path());
-
-            cueEditor->save();
-        }
-    }
-    else
-    {
-        //close all files before closing dialog
-        if(m_metaDataModel)
-        {
-            delete m_metaDataModel;
-            m_metaDataModel = nullptr;
-        }
-        reject();
-    }
-}
-
-void DetailsDialog::on_tabWidget_currentChanged(int index)
-{
-    CoverEditor *coverEditor = nullptr;
-    CueEditor *cueEditor = nullptr;
-    if(qobject_cast<TagEditor *>(m_ui->tabWidget->widget(index)))
-        m_ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(m_metaDataModel && !m_metaDataModel->isReadOnly());
-    else if((coverEditor = qobject_cast<CoverEditor *>(m_ui->tabWidget->currentWidget())))
-        m_ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(coverEditor->isEditable());
-    else if((cueEditor = qobject_cast<CueEditor *>(m_ui->tabWidget->currentWidget())))
-        m_ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(cueEditor->isEditable());
-    else
-        m_ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(false);
-}
-
-void DetailsDialog::on_prevButton_clicked()
-{
-    if(m_page == 0)
-        m_page = m_tracks.count() - 1;
-    else
-        m_page--;
-    updatePage();
-}
-
-void DetailsDialog::on_nextButton_clicked()
-{
-    if(m_page >= m_tracks.count() - 1)
-        m_page = 0;
-    else
-        m_page++;
-    updatePage();
+    return d_ptr->modifiedPaths.values();
 }
 
 void DetailsDialog::closeEvent(QCloseEvent *)
 {
+    Q_D(DetailsDialog);
     //close all files before closing dialog
-    if(m_metaDataModel)
+    if(d->metaDataModel)
     {
-        delete m_metaDataModel;
-        m_metaDataModel = nullptr;
+        delete d->metaDataModel;
+        d->metaDataModel = nullptr;
     }
-}
-
-void DetailsDialog::updatePage()
-{
-    if(m_metaDataModel)
-    {
-        delete m_metaDataModel;
-        m_metaDataModel = nullptr;
-    }
-
-    while (m_ui->tabWidget->count() > 1)
-    {
-        int index = m_ui->tabWidget->count() - 1;
-        QWidget *w = m_ui->tabWidget->widget(index);
-        m_ui->tabWidget->removeTab(index);
-        w->deleteLater();
-    }
-
-    m_ui->pageLabel->setText(tr("%1/%2").arg(m_page + 1).arg(m_tracks.count()));
-    if(m_page >= 0 && m_page < m_tracks.count())
-        m_info = *m_tracks.at(m_page);
-    else
-        m_info.clear();
-
-    setWindowTitle(m_info.path().section(QLatin1Char('/'),-1));
-    m_ui->pathEdit->setText(m_info.path());
-
-    //load metadata and create metadata model
-    QList<TrackInfo> infoList = MetaDataManager::instance()->createPlayList(m_info.path());
-    if(!infoList.isEmpty())
-    {
-        if(infoList.constFirst().parts() & TrackInfo::MetaData)
-            m_info.setValues(infoList.constFirst().metaData());
-        if(infoList.constFirst().parts() & TrackInfo::Properties)
-        {
-            m_info.updateValues(infoList.constFirst().properties());
-            m_info.setDuration(infoList.constFirst().duration());
-        }
-    }
-    infoList.clear();
-
-    QString coverPath;
-    QImage coverImage;
-    bool readOnly = false;
-
-    if(m_info.path().contains(u"://"_s) && m_info.path().contains(QLatin1Char('#'))) //track of multi-track file
-    {
-        QString filePath = TrackInfo::pathFromUrl(m_info.path());
-        if(QFileInfo(filePath).isFile())
-            readOnly = !QFileInfo(filePath).isWritable() || !QFile::exists(filePath);
-    }
-    else if(!m_info.path().contains(u"://"_s)) //local file
-    {
-        coverPath = MetaDataManager::instance()->findCoverFile(m_info.path());
-        readOnly = !QFileInfo(m_info.path()).isWritable() || !QFile::exists(m_info.path());
-    }
-
-    m_metaDataModel = MetaDataManager::instance()->createMetaDataModel(m_info.path(), readOnly);
-
-    if(m_metaDataModel)
-    {
-        coverPath = coverPath.isEmpty() ? m_metaDataModel->coverPath() : coverPath;
-        coverImage = m_metaDataModel->cover();
-    }
-
-    if((m_metaDataModel && (m_metaDataModel->dialogHints() & MetaDataModel::IsCoverEditable)) ||
-            !coverPath.isEmpty() ||
-            !coverImage.isNull())
-    {
-        CoverEditor *coverEditor = new CoverEditor(m_metaDataModel, coverPath, this);
-        m_ui->tabWidget->addTab(coverEditor, tr("Cover"));
-    }
-
-    if(m_metaDataModel)
-    {
-        for(TagModel *tagModel : m_metaDataModel->tags())
-        {
-            TagEditor *editor = new TagEditor(tagModel, this);
-            editor->setEnabled(!m_metaDataModel->isReadOnly());
-            m_ui->tabWidget->addTab(editor, tagModel->name());
-        }
-
-        for(const MetaDataItem &item : m_metaDataModel->descriptions())
-        {
-            QTextEdit *textEdit = new QTextEdit(this);
-            textEdit->setReadOnly(true);
-            textEdit->setPlainText(item.value().toString());
-            m_ui->tabWidget->addTab(textEdit, item.name());
-        }
-
-        QString lyrics = m_metaDataModel->lyrics();
-        if(!lyrics.isEmpty())
-        {
-            QTextEdit *textEdit = new QTextEdit(this);
-            textEdit->setReadOnly(true);
-            textEdit->setPlainText(lyrics);
-            m_ui->tabWidget->addTab(textEdit, tr("Lyrics"));
-        }
-
-        if(m_metaDataModel->dialogHints() & MetaDataModel::IsCueEditable)
-        {
-            CueEditor *cueEditor = new CueEditor(m_metaDataModel, m_info, this);
-            m_ui->tabWidget->addTab(cueEditor, u"CUE"_s);
-        }
-    }
-
-    printInfo();
-}
-
-void DetailsDialog::printInfo()
-{
-    SoundCore *core = SoundCore::instance();
-    QString formattedText, metaDataRows, streamInfoRows, propertyRows;
-    QStringList tableParts;
-
-    //tags
-    metaDataRows += formatRow(tr("Title"), m_info.value(Qmmp::TITLE));
-    metaDataRows += formatRow(tr("Artist"), m_info.value (Qmmp::ARTIST));
-    metaDataRows += formatRow(tr("Album artist"), m_info.value(Qmmp::ALBUMARTIST));
-    metaDataRows += formatRow(tr("Album"), m_info.value(Qmmp::ALBUM));
-    metaDataRows += formatRow(tr("Comment"), m_info.value(Qmmp::COMMENT));
-    metaDataRows += formatRow(tr("Genre"), m_info.value(Qmmp::GENRE));
-    metaDataRows += formatRow(tr("Composer"), m_info.value(Qmmp::COMPOSER));
-    metaDataRows += formatRow(tr("Year"), m_info.value(Qmmp::YEAR));
-    metaDataRows += formatRow(tr("Track"), m_info.value(Qmmp::TRACK));
-    metaDataRows += formatRow(tr("Disc number"), m_info.value(Qmmp::DISCNUMBER));
-    metaDataRows = metaDataRows.trimmed();
-    if(!metaDataRows.isEmpty())
-        tableParts << metaDataRows;
-
-    //stream information
-    if(core->state() == Qmmp::Playing && core->path() == m_info.path())
-    {
-        const QHash<QString, QString> &streamInfo = core->streamInfo();
-        for(auto it = streamInfo.cbegin(); it != streamInfo.cend(); ++it)
-            streamInfoRows += formatRow(it.key(), it.value());
-    }
-    streamInfoRows = streamInfoRows.trimmed();
-    if(!streamInfoRows.isEmpty())
-        tableParts << streamInfoRows;
-
-    //properties
-    QList<MetaDataItem> items;
-    if(m_info.duration() > 0)
-        items << MetaDataItem(tr("Duration"), MetaDataFormatter::formatDuration(m_info.duration()));
-    if(!m_metaDataModel || !(m_metaDataModel->dialogHints() & MetaDataModel::CompletePropertyList))
-    {
-        items << MetaDataItem(tr("Bitrate"), m_info.value(Qmmp::BITRATE).toInt(), tr("kbps"));
-        items << MetaDataItem(tr("Sample rate"), m_info.value(Qmmp::SAMPLERATE).toInt(), tr("Hz"));
-        items << MetaDataItem(tr("Channels"), m_info.value(Qmmp::CHANNELS).toInt());
-        items << MetaDataItem(tr("Sample size"), m_info.value(Qmmp::BITS_PER_SAMPLE).toInt(), tr("bits"));
-        items << MetaDataItem(tr("Format name"), m_info.value(Qmmp::FORMAT_NAME));
-        items << MetaDataItem(tr("File size"), m_info.value(Qmmp::FILE_SIZE).toInt() / 1024, tr("KiB"));
-    }
-    if(m_metaDataModel)
-        items << m_metaDataModel->extraProperties();
-    for(const MetaDataItem &item : std::as_const(items))
-        propertyRows += formatRow(item);
-    propertyRows = propertyRows.trimmed();
-    if(!propertyRows.isEmpty())
-        tableParts << propertyRows;
-
-    //create table
-    if(layoutDirection() == Qt::RightToLeft)
-        formattedText.append(u"<DIV align=\"right\" dir=\"rtl\">"_s);
-    else
-        formattedText.append(u"<DIV>"_s);
-    formattedText.append(u"<TABLE>"_s);
-
-    formattedText += tableParts.join(u"<tr><td colspan=2><hr></td></tr>"_s);
-
-    formattedText.append(u"</TABLE>"_s);
-    formattedText.append(u"</DIV>"_s);
-    m_ui->textEdit->setHtml(formattedText);
-}
-
-QString DetailsDialog::formatRow(const QString &key, const QString &value) const
-{
-    if(value.isEmpty() || key.isEmpty())
-        return QString();
-    QString str(u"<tr>"_s);
-    if(layoutDirection() == Qt::RightToLeft)
-        str.append(u"<td>"_s + value + u"</td> <td style=\"padding-left: 15px;\"><b>"_s + key + u"</b></td>"_s);
-    else
-        str.append(u"<td><b>"_s + key + u"</b></td> <td style=\"padding-left: 15px;\">"_s + value + u"</td>"_s);
-    str.append(u"</tr>"_s);
-    return str;
-}
-
-QString DetailsDialog::formatRow(const MetaDataItem &item) const
-{
-    if(item.value().isNull() || item.name().isEmpty() || !item.value().isValid())
-        return QString();
-
-    QString value;
-    if(item.value().typeId() == QMetaType::Bool)
-        value = item.value().toBool() ? tr("Yes") : tr("No");
-    else if(item.value().typeId() == QMetaType::Double)
-        value = QStringLiteral("%1").arg(item.value().toDouble(), 0, 'f', 4);
-    else
-        value = item.value().toString();
-
-    if(value.isEmpty() || value == "0"_L1 || value == "0.0000"_L1)
-        return QString();
-
-    if(!item.suffix().isEmpty())
-        value += QChar::Space + item.suffix();
-
-    return formatRow(item.name(), value);
 }
