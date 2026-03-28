@@ -23,25 +23,35 @@
 #include "ui_shortcutdialog.h"
 #include "shortcutdialog.h"
 
-ShortcutDialog::ShortcutDialog(const QKeySequence &key, QWidget *parent)
-        : QDialog(parent), m_ui(new Ui::ShortcutDialog), m_key(key)
+class ShortcutDialogPrivate : public Ui::ShortcutDialog
 {
-    m_ui->setupUi(this);
-    m_ui->keyLineEdit->setText(key.toString(QKeySequence::NativeText));
-    QPushButton *button = m_ui->buttonBox->addButton(tr("Clear"), QDialogButtonBox::ResetRole);
-    connect(button, &QPushButton::clicked, m_ui->keyLineEdit, &QLineEdit::clear);
-    connect(button, &QPushButton::clicked, this, [this] { m_key = QKeySequence(); });
+public:
+    ShortcutDialogPrivate(const QKeySequence &k) : key(k) {}
+    QKeySequence key;
+};
+
+ShortcutDialog::ShortcutDialog(const QKeySequence &key, QWidget *parent) :
+    QDialog(parent),
+    d_ptr(new ShortcutDialogPrivate(key))
+{
+    Q_D(ShortcutDialog);
+    d->setupUi(this);
+    d->keyLineEdit->setText(key.toString(QKeySequence::NativeText));
+    QPushButton *button = d->buttonBox->addButton(tr("Clear"), QDialogButtonBox::ResetRole);
+    connect(button, &QPushButton::clicked, d->keyLineEdit, &QLineEdit::clear);
+    connect(button, &QPushButton::clicked, this, [d] { d->key = QKeySequence(); });
     connect(this, &QDialog::accepted, this, [this] { releaseKeyboard(); });
     connect(this, &QDialog::rejected, this, [this] { releaseKeyboard(); });
 }
 
 ShortcutDialog::~ShortcutDialog()
 {
-    delete m_ui;
+    delete d_ptr;
 }
 
 void ShortcutDialog::keyPressEvent(QKeyEvent *event)
 {
+    Q_D(ShortcutDialog);
     int key = event->key();
     switch(key)
     {
@@ -55,13 +65,13 @@ void ShortcutDialog::keyPressEvent(QKeyEvent *event)
     case Qt::Key_Menu:
     case 0:
     case Qt::Key_unknown:
-        m_ui->keyLineEdit->clear();
-        m_key = QKeySequence();
+        d->keyLineEdit->clear();
+        d->key = QKeySequence();
         QWidget::keyPressEvent(event);
         return;
     }
-    m_key = QKeySequence(event->keyCombination());
-    m_ui->keyLineEdit->setText(m_key.toString(QKeySequence::NativeText));
+    d->key = QKeySequence(event->keyCombination());
+    d->keyLineEdit->setText(d->key.toString(QKeySequence::NativeText));
     QWidget::keyPressEvent(event);
 }
 
@@ -73,5 +83,5 @@ void ShortcutDialog::showEvent(QShowEvent *event)
 
 QKeySequence ShortcutDialog::key() const
 {
-    return m_key;
+    return d_ptr->key;
 }

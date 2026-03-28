@@ -100,13 +100,8 @@ public:
     static QList<PlayListTrack *> deserialize(const QByteArray &json);
 
 private:
-    PlayListParser(){}
-
-    static QList<PlayListFormat*> *m_formats;
-    static const QHash<QString, Qmmp::MetaData> m_metaKeys;
-    static const QHash<QString, Qmmp::TrackProperty> m_propKeys;
-
-
+    PlayListParser() = delete;
+    ~PlayListParser() = delete;
 };
 
 #endif

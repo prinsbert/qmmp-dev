@@ -26,7 +26,7 @@
 #include "playlistheadermodel.h"
 #include "qmmpui_export.h"
 
-class MetaDataHelper;
+class QmmpUiSettingsPrivate;
 
 /*! @brief The QmmpUiSettings class provides access to global libqmmpui library settings.
  * @author Ilya Kotov <forkotov02@ya.ru>
@@ -34,6 +34,7 @@ class MetaDataHelper;
 class QMMPUI_EXPORT QmmpUiSettings : public QObject
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(QmmpUiSettings)
 public:
     /*!
      * Constructor.
@@ -325,49 +326,8 @@ public slots:
      */
     void setPlayListTransitionEnabled(bool enabled);
 
-private slots:
-    /*!
-     * Writes all unsaved settings to configuration file
-     */
-    void sync();
-
 private:
-    void saveSettings(bool rebuildGroups = false);
-
-    static QmmpUiSettings* m_instance;
-    //playlist
-    QString m_group_format;
-    QString m_group_extra_row_format;
-    int m_lines_per_group;
-    bool m_group_extra_row_visible;
-    bool m_group_cover_visible;
-    bool m_group_dividing_line_visible;
-    bool m_convert_underscore, m_convert_twenty;
-    bool m_use_metadata;
-    bool m_autosave_playlist;
-    bool m_repeate_list;
-    bool m_shuffle;
-    bool m_groups_enabled;
-    bool m_repeat_track;
-    bool m_no_pl_advance;
-    bool m_clear_prev_playlist;
-    bool m_read_metadata_for_playlist;
-    bool m_transit_between_playlists;
-    bool m_skip_existing_tracks;
-    bool m_stop_after_removing_of_current;
-    //general
-    bool m_resume_on_startup;
-    QStringList m_exclude_filters, m_restrict_filters;
-    //default playlist
-    bool m_use_default_pl;
-    QString m_default_pl_name;
-    //url dialog
-    bool m_use_clipboard;
-    //formatters
-    MetaDataHelper *m_helper;
-    //protect from multiple calls
-    bool m_saveSettings = false;
-    bool m_rebuildGroups = false;
+    QmmpUiSettingsPrivate *d_ptr;
 };
 
 #endif // QMMPUISETTINGS_H
