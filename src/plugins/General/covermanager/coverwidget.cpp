@@ -25,6 +25,7 @@
 #include <QAction>
 #include <QActionGroup>
 #include <QSettings>
+#include <QDir>
 #include <qmmp/qmmp.h>
 #include <qmmpui/filedialog.h>
 #include "coverwidget.h"

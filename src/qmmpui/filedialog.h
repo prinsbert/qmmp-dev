@@ -21,14 +21,11 @@
 #ifndef FILEDIALOG_H
 #define FILEDIALOG_H
 
-#include <QString>
-#include <QStringList>
-#include <QFileDialog>
-#include <QHash>
+#include <QWidget>
 #include "qmmpui_export.h"
 #include "filedialogfactory.h"
 
-class QmmpUiPluginCache;
+class FileDialogPrivate;
 
 /*! @brief The FileDialog class is the base interface class of the file dialogs.
  * @author Vladimir Kuznetsov <vovanec@gmail.com>
@@ -36,6 +33,7 @@ class QmmpUiPluginCache;
 class QMMPUI_EXPORT FileDialog : public QObject
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(FileDialog)
 public:
     /*!
      * Returns a list of registered file dialog factories.
@@ -154,11 +152,8 @@ public:
                              const QString &filters = QString())
     {
         FileDialog *inst = instance();
-        if(inst->m_initialized)
-            inst->disconnect();
+        inst->disconnect();
         connect(inst, &FileDialog::filesSelected, receiver, slot);
-        connect(inst, &FileDialog::filesSelected, inst, &FileDialog::updateLastDir);
-        inst->m_initialized = true;
         popupImpl(parent, mode, dir, caption, filters);
     }
 
@@ -176,7 +171,7 @@ protected:
     /*!
      * Object destructor
      */
-    virtual ~FileDialog() = default;
+    virtual ~FileDialog();
     /*!
      * Opens nonmodal file dialog. Selected file dialog should support nonmodal mode.
      * Otherwise this function does nothing.
@@ -203,19 +198,9 @@ protected:
     virtual QStringList exec(QWidget *parent, const QString &dir, Mode mode,
                              const QString &caption, const QString &filter = QString(),
                              QString *selectedFilter = nullptr) = 0;
-
-private slots:
-    void updateLastDir(const QStringList&);
-
 private:
-    static void loadPlugins();
+    FileDialogPrivate *d_ptr;
     static FileDialog *instance();
-    static FileDialogFactory *m_currentFactory;
-    static FileDialog *m_instance;
-    static QList<QmmpUiPluginCache*> *m_cache;
-
-    bool m_initialized;
-    QString *m_lastDir;
 };
 
 #endif

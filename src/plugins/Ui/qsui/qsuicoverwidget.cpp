@@ -21,6 +21,7 @@
 #include <QPainter>
 #include <QPaintEvent>
 #include <QAction>
+#include <QDir>
 #include <qmmp/qmmp.h>
 #include <qmmpui/filedialog.h>
 #include "qsuicoverwidget.h"
