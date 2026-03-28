@@ -54,9 +54,8 @@ public:
     static QString formatHelpString(const QString &line);
 
 private:
-    static void checkOptions();
-    static QList<CommandLineHandler *> *m_options;
-    static QHash<CommandLineHandler*, QString> *m_files;
+    CommandLineManager() = delete;
+    ~CommandLineManager() = delete;
 };
 
 #endif

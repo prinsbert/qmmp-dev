@@ -37,53 +37,60 @@
 #define qPrintable qUtf8Printable
 #endif
 
-QList<CommandLineHandler *> *CommandLineManager::m_options = nullptr;
-QHash<CommandLineHandler*, QString> *CommandLineManager::m_files = nullptr;
-
-void CommandLineManager::checkOptions()
+class CommandLineManagerPrivate
 {
-    if(!m_options)
+public:
+    static void checkOptions()
     {
-        m_options = new QList<CommandLineHandler *>;
-        m_files = new QHash<CommandLineHandler*, QString>;
-
-        for(const QString &filePath : Qmmp::findPlugins(u"CommandLineOptions"_s))
+        if(!options)
         {
-            QPluginLoader loader(filePath);
-            QObject *plugin = loader.instance();
-            if (loader.isLoaded())
-                /*qCDebug(core) << "loaded plugin" << QFileInfo(filePath).filePath();*/;
-            else
-                qCWarning(core) << loader.errorString();
+            options = new QList<CommandLineHandler *>;
+            files = new QHash<CommandLineHandler*, QString>;
 
-            CommandLineHandler *option = nullptr;
-            if(plugin)
-                option = qobject_cast<CommandLineHandler *>(plugin);
-
-            if(option)
+            for(const QString &filePath : Qmmp::findPlugins(u"CommandLineOptions"_s))
             {
-                m_options->append(option);
-                m_files->insert(option, filePath);
-                if(!option->translation().isEmpty())
+                QPluginLoader loader(filePath);
+                QObject *plugin = loader.instance();
+                if (loader.isLoaded())
+                    /*qCDebug(core) << "loaded plugin" << QFileInfo(filePath).filePath();*/;
+                else
+                    qCWarning(core) << loader.errorString();
+
+                CommandLineHandler *option = nullptr;
+                if(plugin)
+                    option = qobject_cast<CommandLineHandler *>(plugin);
+
+                if(option)
                 {
-                    QTranslator *translator = new QTranslator(qApp);
-                    if(translator->load(option->translation() + Qmmp::systemLanguageID()))
-                        qApp->installTranslator(translator);
-                    else
-                        delete translator;
+                    options->append(option);
+                    files->insert(option, filePath);
+                    if(!option->translation().isEmpty())
+                    {
+                        QTranslator *translator = new QTranslator(qApp);
+                        if(translator->load(option->translation() + Qmmp::systemLanguageID()))
+                            qApp->installTranslator(translator);
+                        else
+                            delete translator;
+                    }
+                    option->registerOprions();
                 }
-                option->registerOprions();
             }
         }
     }
-}
+
+    static QList<CommandLineHandler *> *options;
+    static QHash<CommandLineHandler*, QString> *files;
+};
+
+QList<CommandLineHandler *> *CommandLineManagerPrivate::options = nullptr;
+QHash<CommandLineHandler*, QString> *CommandLineManagerPrivate::files = nullptr;
 
 QString CommandLineManager::executeCommand(const QString &name, const QStringList &args, const QString &currentWorkingDir)
 {
-    checkOptions();
+    CommandLineManagerPrivate::checkOptions();
     bool started = UiHelper::instance() && SoundCore::instance() && MediaPlayer::instance();
 
-    for(CommandLineHandler *opt : std::as_const(*m_options))
+    for(CommandLineHandler *opt : std::as_const(*CommandLineManagerPrivate::options))
     {
         int id = opt->identify(name);
         if(id < 0)
@@ -100,10 +107,10 @@ QString CommandLineManager::executeCommand(const QString &name, const QStringLis
 
 bool CommandLineManager::hasOption(const QString &opt_str, CommandLineHandler::OptionFlags *flags)
 {
-    checkOptions();
+    CommandLineManagerPrivate::checkOptions();
     if(flags)
         *flags = CommandLineHandler::OptionFlags();
-    for(const CommandLineHandler *opt : std::as_const(*m_options))
+    for(const CommandLineHandler *opt : std::as_const(*CommandLineManagerPrivate::options))
     {
         int id = opt->identify(opt_str);
         if(id >= 0)
@@ -118,8 +125,8 @@ bool CommandLineManager::hasOption(const QString &opt_str, CommandLineHandler::O
 
 void CommandLineManager::printUsage()
 {
-    checkOptions();
-    for(const CommandLineHandler *opt : std::as_const(*m_options))
+    CommandLineManagerPrivate::checkOptions();
+    for(const CommandLineHandler *opt : std::as_const(*CommandLineManagerPrivate::options))
     {
         for(const QString &line : opt->helpString())
         {
