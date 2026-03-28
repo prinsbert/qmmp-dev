@@ -30,10 +30,18 @@
 #include "playlistformat.h"
 #include "playlistparser.h"
 
-QList<PlayListFormat*> *PlayListParser::m_formats = nullptr;
+class PlayListParserPrivate
+{
+public:
+    static QList<PlayListFormat*> *formats;
+    static const QHash<QString, Qmmp::MetaData> metaKeys;
+    static const QHash<QString, Qmmp::TrackProperty> propKeys;
+};
+
+QList<PlayListFormat*> *PlayListParserPrivate::formats = nullptr;
 
 //key names
-const QHash<QString, Qmmp::MetaData>  PlayListParser::m_metaKeys = {
+const QHash<QString, Qmmp::MetaData> PlayListParserPrivate::metaKeys = {
     { u"title"_s, Qmmp::TITLE },
     { u"artist"_s, Qmmp::ARTIST },
     { u"albumArtist"_s, Qmmp::ALBUMARTIST },
@@ -46,7 +54,7 @@ const QHash<QString, Qmmp::MetaData>  PlayListParser::m_metaKeys = {
     { u"disk"_s, Qmmp::DISCNUMBER }
 };
 
-const QHash<QString, Qmmp::TrackProperty>  PlayListParser::m_propKeys = {
+const QHash<QString, Qmmp::TrackProperty>  PlayListParserPrivate::propKeys = {
     { u"bitrate"_s, Qmmp::BITRATE },
     { u"samplerate"_s, Qmmp::SAMPLERATE },
     { u"channels"_s, Qmmp::CHANNELS },
@@ -59,14 +67,14 @@ const QHash<QString, Qmmp::TrackProperty>  PlayListParser::m_propKeys = {
 QList<PlayListFormat *> PlayListParser::formats()
 {
     loadFormats();
-    return *m_formats;
+    return *PlayListParserPrivate::formats;
 }
 
 QStringList PlayListParser::nameFilters()
 {
     loadFormats();
     QStringList filters;
-    for(const PlayListFormat *format : std::as_const(*m_formats))
+    for(const PlayListFormat *format : std::as_const(*PlayListParserPrivate::formats))
     {
         filters << format->properties().filters;
     }
@@ -77,7 +85,7 @@ QStringList PlayListParser::filters()
 {
     loadFormats();
     QStringList filters;
-    for(const PlayListFormat *format : std::as_const(*m_formats))
+    for(const PlayListFormat *format : std::as_const(*PlayListParserPrivate::formats))
     {
         if (!format->properties().filters.isEmpty())
             filters << QStringLiteral("%1 (%2)").arg(format->properties().shortName.toUpper(),  format->properties().filters.join(QChar::Space));
@@ -93,15 +101,15 @@ bool PlayListParser::isPlayList(const QString &url)
 PlayListFormat *PlayListParser::findByMime(const QString &mime)
 {
     loadFormats();
-    auto it = std::find_if(m_formats->cbegin(), m_formats->cend(),
+    auto it = std::find_if(PlayListParserPrivate::formats->cbegin(), PlayListParserPrivate::formats->cend(),
                            [mime](PlayListFormat *format) { return format->properties().contentTypes.contains(mime); } );
-    return it == m_formats->cend() ? nullptr : *it;
+    return it == PlayListParserPrivate::formats->cend() ? nullptr : *it;
 }
 
 PlayListFormat *PlayListParser::findByPath(const QString &filePath)
 {
     loadFormats();
-    for(PlayListFormat *format : std::as_const(*m_formats))
+    for(PlayListFormat *format : std::as_const(*PlayListParserPrivate::formats))
     {
         if(QDir::match(format->properties().filters, filePath.section(QLatin1Char('/'), -1)))
             return format;
@@ -175,17 +183,17 @@ QList<PlayListTrack *> PlayListParser::loadPlaylist(const QString &f_name)
 
 QList<PlayListTrack *> PlayListParser::loadPlaylist(const QString &fmt, const QByteArray &content)
 {
-    auto it = std::find_if(m_formats->cbegin(), m_formats->cend(),
+    auto it = std::find_if(PlayListParserPrivate::formats->cbegin(), PlayListParserPrivate::formats->cend(),
                            [fmt](PlayListFormat *format) { return format->properties().shortName == fmt; } );
-    return it == m_formats->cend() ? QList<PlayListTrack *>() : (*it)->decode(content);
+    return it == PlayListParserPrivate::formats->cend() ? QList<PlayListTrack *>() : (*it)->decode(content);
 }
 
 void PlayListParser::loadFormats()
 {
-    if (m_formats)
+    if (PlayListParserPrivate::formats)
         return;
 
-    m_formats = new QList<PlayListFormat*>();
+    PlayListParserPrivate::formats = new QList<PlayListFormat*>();
     for(const QString &filePath : Qmmp::findPlugins(u"PlayListFormats"_s))
     {
         QPluginLoader loader(filePath);
@@ -196,11 +204,11 @@ void PlayListParser::loadFormats()
             qCWarning(core) << loader.errorString();
 
         PlayListFormat *fmt = nullptr;
-        if (plugin)
+        if(plugin)
             fmt = qobject_cast<PlayListFormat *>(plugin);
 
-        if (fmt)
-            m_formats->append(fmt);
+        if(fmt)
+            PlayListParserPrivate::formats->append(fmt);
     }
 }
 
@@ -211,13 +219,15 @@ QByteArray PlayListParser::serialize(const QList<PlayListTrack *> &tracks)
     {
         QJsonObject obj;
         QString value;
-        for(QHash<QString, Qmmp::MetaData>::const_iterator it = m_metaKeys.constBegin(); it != m_metaKeys.constEnd(); ++it)
+        for(QHash<QString, Qmmp::MetaData>::const_iterator it = PlayListParserPrivate::metaKeys.constBegin();
+             it != PlayListParserPrivate::metaKeys.constEnd(); ++it)
         {
             if(!(value = t->value(it.value())).isEmpty())
                 obj.insert(it.key(), value);
         }
 
-        for(QHash<QString, Qmmp::TrackProperty>::const_iterator it = m_propKeys.constBegin(); it != m_propKeys.constEnd(); ++it)
+        for(QHash<QString, Qmmp::TrackProperty>::const_iterator it = PlayListParserPrivate::propKeys.constBegin();
+             it != PlayListParserPrivate::propKeys.constEnd(); ++it)
         {
             if(!(value = t->value(it.value())).isEmpty())
                 obj.insert(it.key(), value);
@@ -262,9 +272,9 @@ QList<PlayListTrack *> PlayListParser::deserialize(const QByteArray &json)
 
         for(QJsonObject::const_iterator i = obj.constBegin(); i != obj.constEnd(); ++i)
         {
-            if((metaKey = m_metaKeys.value(i.key(), Qmmp::UNKNOWN)) != Qmmp::UNKNOWN)
+            if((metaKey = PlayListParserPrivate::metaKeys.value(i.key(), Qmmp::UNKNOWN)) != Qmmp::UNKNOWN)
                 t->setValue(metaKey, i.value().toString());
-            else if((propKey = m_propKeys.value(i.key(), Qmmp::UNKNOWN_PROPERTY)) != Qmmp::UNKNOWN_PROPERTY)
+            else if((propKey = PlayListParserPrivate::propKeys.value(i.key(), Qmmp::UNKNOWN_PROPERTY)) != Qmmp::UNKNOWN_PROPERTY)
                 t->setValue(propKey, i.value().toString());
         }
 
