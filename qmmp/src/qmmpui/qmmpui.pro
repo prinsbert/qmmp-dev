@@ -61,6 +61,7 @@ HEADERS += general.h \
     addurldialog_p.h \
     qmmpuiplugincache_p.h \
     playlistgroup.h \
+    playlistgroup_p.h \
     playlisttrack.h \
     playlisttrack_p.h \
     playlistcontainer_p.h \

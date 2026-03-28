@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2026 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,39 +17,38 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#include <qmmp/metadatamanager.h>
-#include "playlistitem.h"
 
-class PlayListItemPrivate
+#ifndef PLAYLISTGROUP_P_H
+#define PLAYLISTGROUP_P_H
+
+#include <QString>
+#include <QImage>
+
+class GroupedContainer;
+class QmmpUiSettings;
+class MetaDataHelper;
+class PlayListTrack;
+
+class PlayListGroupPrivate
 {
 public:
-    bool selected = false;
+    PlayListGroupPrivate(const QString &name);
+    ~PlayListGroupPrivate();
+
+    QString formatTitle0() const;
+    QString formatTitle1() const;
+
+    QList<PlayListTrack *> m_trackList; //A list of tracks
+    mutable QString m_title0;
+    mutable QString m_title1;
+    QString m_groupName;
+
+    bool m_isCoverLoaded = false;
+    QImage m_cover;
+
+private:
+    QmmpUiSettings *m_settings;
+    MetaDataHelper *m_helper;
 };
 
-PlayListItem::PlayListItem() : d_ptr(new PlayListItemPrivate)
-{}
-
-PlayListItem::~PlayListItem()
-{
-    delete d_ptr;
-}
-
-void PlayListItem::setSelected(bool yes)
-{
-    d_ptr->selected = yes;
-}
-
-bool PlayListItem::isSelected() const
-{
-    return d_ptr->selected;
-}
-
-int PlayListItem::trackIndex() const
-{
-    return -1;
-}
-
-QImage PlayListItem::cover() const
-{
-    return QImage();
-}
+#endif //PLAYLISTGROUP_P_H
