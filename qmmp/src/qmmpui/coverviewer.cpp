@@ -24,6 +24,7 @@
 #include <QSettings>
 #include <QStandardPaths>
 #include <QVariant>
+#include <QDir>
 #include <QFileInfo>
 #include <qmmp/qmmp.h>
 #include "filedialog.h"

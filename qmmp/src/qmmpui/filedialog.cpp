@@ -20,47 +20,79 @@
 
 #include <QFile>
 #include <QSettings>
-#include <QApplication>
 #include <QPluginLoader>
 #include <QMetaObject>
-#include <QLibrary>
+#include <QDir>
+#include <QFileInfo>
 #include <algorithm>
 #include <qmmp/qmmp.h>
 #include "qmmpuiplugincache_p.h"
 #include "filedialog.h"
 #include "qtfiledialog_p.h"
 
-//static functions
-FileDialog* FileDialog::m_instance = nullptr;
-QList<QmmpUiPluginCache*> *FileDialog::m_cache = nullptr;
-FileDialogFactory *FileDialog::m_currentFactory = nullptr;
-
-void FileDialog::loadPlugins()
+class FileDialogPrivate
 {
-    if(m_cache)
-        return;
-
-    m_cache = new QList<QmmpUiPluginCache*>;
-    m_cache->append(new QmmpUiPluginCache(new QtFileDialogFactory));
-
-    QSettings settings;
-    for(const QString &filePath : Qmmp::findPlugins(u"FileDialogs"_s))
+public:
+    FileDialogPrivate(FileDialog *dialog)
     {
-        QmmpUiPluginCache *item = new QmmpUiPluginCache(filePath, &settings);
-        if(item->hasError())
-        {
-            delete item;
-            continue;
-        }
-        m_cache->append(item);
+        instance = dialog;
     }
-}
+
+    ~FileDialogPrivate()
+    {
+        instance = nullptr;
+    }
+
+    static void loadPlugins()
+    {
+        if(cache)
+            return;
+
+        cache = new QList<QmmpUiPluginCache*>;
+        cache->append(new QmmpUiPluginCache(new QtFileDialogFactory));
+
+        QSettings settings;
+        for(const QString &filePath : Qmmp::findPlugins(u"FileDialogs"_s))
+        {
+            QmmpUiPluginCache *item = new QmmpUiPluginCache(filePath, &settings);
+            if(item->hasError())
+            {
+                delete item;
+                continue;
+            }
+            cache->append(item);
+        }
+    }
+
+    void updateLastDir(const QStringList &list)
+    {
+        if(!list.isEmpty() && lastDir)
+        {
+            QString path = list.constFirst();
+            if(path.endsWith(QLatin1Char('/')))
+                path.remove(path.size() - 1, 1);
+            *lastDir = path.left(path.lastIndexOf(QLatin1Char('/')));
+        }
+    }
+
+    bool initialized = false;
+    QString *lastDir = nullptr;
+
+    static FileDialogFactory *currentFactory;
+    static FileDialog *instance;
+    static QList<QmmpUiPluginCache*> *cache;
+};
+
+//static functions
+FileDialog *FileDialogPrivate::instance = nullptr;
+QList<QmmpUiPluginCache*> *FileDialogPrivate::cache = nullptr;
+FileDialogFactory *FileDialogPrivate::currentFactory = nullptr;
 
 QList<FileDialogFactory *> FileDialog::factories()
 {
-    loadPlugins();
+    FileDialogPrivate::loadPlugins();
     QList<FileDialogFactory *> list;
-    for(QmmpUiPluginCache *item : std::as_const(*m_cache))
+    for(QmmpUiPluginCache *item : std::as_const(*FileDialogPrivate::cache))
     {
         if(item->fileDialogFactory())
             list.append(item->fileDialogFactory());
@@ -70,14 +102,14 @@ QList<FileDialogFactory *> FileDialog::factories()
 
 void FileDialog::setEnabled(const FileDialogFactory *factory)
 {
-    loadPlugins();
+    FileDialogPrivate::loadPlugins();
     QSettings settings;
     settings.setValue("FileDialog"_L1, factory->properties().shortName);
 }
 
 bool FileDialog::isEnabled(const FileDialogFactory *factory)
 {
-    loadPlugins();
+    FileDialogPrivate::loadPlugins();
     QSettings settings;
     QString name = settings.value(u"FileDialog"_s, u"qt_dialog"_s).toString();
     return factory->properties().shortName == name;
@@ -85,10 +117,10 @@ bool FileDialog::isEnabled(const FileDialogFactory *factory)
 
 QString FileDialog::file(const FileDialogFactory *factory)
 {
-    loadPlugins();
-    auto it = std::find_if(m_cache->cbegin(), m_cache->cend(),
+    FileDialogPrivate::loadPlugins();
+    auto it = std::find_if(FileDialogPrivate::cache->cbegin(), FileDialogPrivate::cache->cend(),
                            [factory] (QmmpUiPluginCache *item){ return item->shortName() == factory->properties().shortName; } );
-    return it == m_cache->cend() ? QString() : (*it)->file();
+    return it == FileDialogPrivate::cache->cend() ? QString() : (*it)->file();
 }
 
 QString FileDialog::getExistingDirectory(QWidget *parent,
@@ -125,19 +157,20 @@ QString FileDialog::getSaveFileName (QWidget *parent, const QString &caption,
 }
 
 void FileDialog::popupImpl(QWidget *parent,
-                       Mode m,
-                       QString *dir,
-                       const QString &caption,
-                       const QString &filters)
+                           Mode m,
+                           QString *dir,
+                           const QString &caption,
+                           const QString &filters)
 
 {
     if(!dir)
         qCFatal(core) << "empty last dir pointer";
-    FileDialog* inst = instance();
+    FileDialog *inst = instance();
     inst->setParent(parent);
-    inst->m_lastDir = dir;
-    //inst->init(receiver, member, dir);
-    if(!m_currentFactory->properties().modal)
+    inst->d_ptr->lastDir = dir;
+    inst->d_ptr->initialized = true;
+    connect(inst, &FileDialog::filesSelected, inst, [inst](const QStringList &selected) { inst->d_func()->updateLastDir(selected); });
+    if(!FileDialogPrivate::currentFactory->properties().modal)
         inst->raise(*dir, m, caption, filters.split(u";;"_s));
     else
     {
@@ -157,40 +190,37 @@ void FileDialog::popupImpl(QWidget *parent,
     }
 }
 
-FileDialog* FileDialog::instance()
+FileDialog *FileDialog::instance()
 {
-    loadPlugins();
+    FileDialogPrivate::loadPlugins();
     FileDialogFactory *selected = nullptr;
 
     QSettings settings;
     QString name = settings.value(u"FileDialog"_s, u"qt_dialog"_s).toString();
 
-    auto it = std::find_if(m_cache->cbegin(), m_cache->cend(),
+    auto it = std::find_if(FileDialogPrivate::cache->cbegin(), FileDialogPrivate::cache->cend(),
                            [name] (QmmpUiPluginCache *item){ return item->shortName() == name; } );
-    if(it != m_cache->cend())
+    if(it != FileDialogPrivate::cache->cend())
         selected = (*it)->fileDialogFactory();
 
     if(!selected)
-        selected = m_cache->constFirst()->fileDialogFactory();
+        selected = FileDialogPrivate::cache->constFirst()->fileDialogFactory();
 
-    if(selected == m_currentFactory && m_instance)
-        return m_instance;
+    if(selected == FileDialogPrivate::currentFactory && FileDialogPrivate::instance)
+        return FileDialogPrivate::instance;
 
-    if(m_instance)
-    {
-        delete m_instance;
-        m_instance = nullptr;
-    }
-
-    m_currentFactory = selected;
-    m_instance = m_currentFactory->create();
-    return m_instance;
+    delete FileDialogPrivate::instance;
+    FileDialogPrivate::currentFactory = selected;
+    return FileDialogPrivate::currentFactory->create();
 }
 
 //base implementation
-FileDialog::FileDialog() : QObject(), m_initialized(false)
+FileDialog::FileDialog() : d_ptr(new FileDialogPrivate(this))
+{}
+
+FileDialog::~FileDialog()
 {
-    m_lastDir = nullptr;
+    delete d_ptr;
 }
 
 void FileDialog::raise(const QString &dir, Mode mode, const QString &caption, const QStringList &mask)
@@ -199,15 +229,4 @@ void FileDialog::raise(const QString &dir, Mode mode, const QString &caption, co
     Q_UNUSED(mode);
     Q_UNUSED(caption);
     Q_UNUSED(mask);
-}
-
-void FileDialog::updateLastDir(const QStringList &list)
-{
-    if(!list.isEmpty() && m_lastDir)
-    {
-        QString path = list.constFirst();
-        if(path.endsWith(QLatin1Char('/')))
-            path.remove(path.size() - 1, 1);
-        *m_lastDir = path.left(path.lastIndexOf(QLatin1Char('/')));
-    }
 }
