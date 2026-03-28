@@ -27,8 +27,7 @@
 #include "playlistmodel.h"
 #include "qmmpui_export.h"
 
-class QNetworkAccessManager;
-class QNetworkReply;
+class PlayListDownloaderPrivate;
 
 /*! @brief The PlayListDownloader class downloads playlist from remote URL and extracts tracks
  * @author Ilya Kotov <forkotov02@ya.ru>
@@ -36,11 +35,13 @@ class QNetworkReply;
 class QMMPUI_EXPORT PlayListDownloader : public QObject
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(PlayListDownloader)
 public:
     /*!
      * Object constructor.
      */
     explicit PlayListDownloader(QObject *parent = nullptr);
+    ~PlayListDownloader();
 
 signals:
     /*!
@@ -58,17 +59,10 @@ public slots:
      */
     void start(const QUrl &url, PlayListModel *model);
 
-private slots:
-    void onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
-    void readResponse(QNetworkReply *reply);
-
 private:
-    QNetworkAccessManager *m_manager;
-    QUrl m_redirect_url, m_url;
-    QNetworkReply *m_downloadReply = nullptr;
-    QNetworkReply *m_checkReply = nullptr;
-    QByteArray m_ua;
-    QPointer<PlayListModel> m_model;
+    PlayListDownloaderPrivate *d_ptr;
+
+
 };
 
 #endif // PLAYLISTDOWNLOADER_H
