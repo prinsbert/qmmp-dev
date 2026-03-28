@@ -38,6 +38,7 @@
 class DetailsDialogPrivate : public Ui::DetailsDialog
 {
     Q_DECLARE_PUBLIC(::DetailsDialog)
+    Q_DECLARE_TR_FUNCTIONS(DetailsDialog)
 public:
     DetailsDialogPrivate(const QList<PlayListTrack *> &t, ::DetailsDialog *dialog) :
         q_ptr(dialog),
@@ -86,7 +87,7 @@ public:
             w->deleteLater();
         }
 
-        pageLabel->setText(q->tr("%1/%2").arg(page + 1).arg(tracks.count()));
+        pageLabel->setText(tr("%1/%2").arg(page + 1).arg(tracks.count()));
         if(page >= 0 && page < tracks.count())
             info = *tracks.at(page);
         else
@@ -138,7 +139,7 @@ public:
             !coverImage.isNull())
         {
             CoverEditor *coverEditor = new CoverEditor(metaDataModel, coverPath, q);
-            tabWidget->addTab(coverEditor, q->tr("Cover"));
+            tabWidget->addTab(coverEditor, tr("Cover"));
         }
 
         if(metaDataModel)
@@ -164,7 +165,7 @@ public:
                 QTextEdit *textEdit = new QTextEdit(q);
                 textEdit->setReadOnly(true);
                 textEdit->setPlainText(lyrics);
-                tabWidget->addTab(textEdit, q->tr("Lyrics"));
+                tabWidget->addTab(textEdit, tr("Lyrics"));
             }
 
             if(metaDataModel->dialogHints() & MetaDataModel::IsCueEditable)
@@ -185,16 +186,16 @@ public:
         QStringList tableParts;
 
         //tags
-        metaDataRows += formatRow(q->tr("Title"), info.value(Qmmp::TITLE));
-        metaDataRows += formatRow(q->tr("Artist"), info.value (Qmmp::ARTIST));
-        metaDataRows += formatRow(q->tr("Album artist"), info.value(Qmmp::ALBUMARTIST));
-        metaDataRows += formatRow(q->tr("Album"), info.value(Qmmp::ALBUM));
-        metaDataRows += formatRow(q->tr("Comment"), info.value(Qmmp::COMMENT));
-        metaDataRows += formatRow(q->tr("Genre"), info.value(Qmmp::GENRE));
-        metaDataRows += formatRow(q->tr("Composer"), info.value(Qmmp::COMPOSER));
-        metaDataRows += formatRow(q->tr("Year"), info.value(Qmmp::YEAR));
-        metaDataRows += formatRow(q->tr("Track"), info.value(Qmmp::TRACK));
-        metaDataRows += formatRow(q->tr("Disc number"), info.value(Qmmp::DISCNUMBER));
+        metaDataRows += formatRow(tr("Title"), info.value(Qmmp::TITLE));
+        metaDataRows += formatRow(tr("Artist"), info.value (Qmmp::ARTIST));
+        metaDataRows += formatRow(tr("Album artist"), info.value(Qmmp::ALBUMARTIST));
+        metaDataRows += formatRow(tr("Album"), info.value(Qmmp::ALBUM));
+        metaDataRows += formatRow(tr("Comment"), info.value(Qmmp::COMMENT));
+        metaDataRows += formatRow(tr("Genre"), info.value(Qmmp::GENRE));
+        metaDataRows += formatRow(tr("Composer"), info.value(Qmmp::COMPOSER));
+        metaDataRows += formatRow(tr("Year"), info.value(Qmmp::YEAR));
+        metaDataRows += formatRow(tr("Track"), info.value(Qmmp::TRACK));
+        metaDataRows += formatRow(tr("Disc number"), info.value(Qmmp::DISCNUMBER));
         metaDataRows = metaDataRows.trimmed();
         if(!metaDataRows.isEmpty())
             tableParts << metaDataRows;
@@ -213,15 +214,15 @@ public:
         //properties
         QList<MetaDataItem> items;
         if(info.duration() > 0)
-            items << MetaDataItem(q->tr("Duration"), MetaDataFormatter::formatDuration(info.duration()));
+            items << MetaDataItem(tr("Duration"), MetaDataFormatter::formatDuration(info.duration()));
         if(!metaDataModel || !(metaDataModel->dialogHints() & MetaDataModel::CompletePropertyList))
         {
-            items << MetaDataItem(q->tr("Bitrate"), info.value(Qmmp::BITRATE).toInt(), q->tr("kbps"));
-            items << MetaDataItem(q->tr("Sample rate"), info.value(Qmmp::SAMPLERATE).toInt(), q->tr("Hz"));
-            items << MetaDataItem(q->tr("Channels"), info.value(Qmmp::CHANNELS).toInt());
-            items << MetaDataItem(q->tr("Sample size"), info.value(Qmmp::BITS_PER_SAMPLE).toInt(), q->tr("bits"));
-            items << MetaDataItem(q->tr("Format name"), info.value(Qmmp::FORMAT_NAME));
-            items << MetaDataItem(q->tr("File size"), info.value(Qmmp::FILE_SIZE).toInt() / 1024, q->tr("KiB"));
+            items << MetaDataItem(tr("Bitrate"), info.value(Qmmp::BITRATE).toInt(), tr("kbps"));
+            items << MetaDataItem(tr("Sample rate"), info.value(Qmmp::SAMPLERATE).toInt(), tr("Hz"));
+            items << MetaDataItem(tr("Channels"), info.value(Qmmp::CHANNELS).toInt());
+            items << MetaDataItem(tr("Sample size"), info.value(Qmmp::BITS_PER_SAMPLE).toInt(), tr("bits"));
+            items << MetaDataItem(tr("Format name"), info.value(Qmmp::FORMAT_NAME));
+            items << MetaDataItem(tr("File size"), info.value(Qmmp::FILE_SIZE).toInt() / 1024, tr("KiB"));
         }
         if(metaDataModel)
             items << metaDataModel->extraProperties();
@@ -261,13 +262,12 @@ public:
 
     QString formatRow(const MetaDataItem &item) const
     {
-        Q_Q(const ::DetailsDialog);
         if(item.value().isNull() || item.name().isEmpty() || !item.value().isValid())
             return QString();
 
         QString value;
         if(item.value().typeId() == QMetaType::Bool)
-            value = item.value().toBool() ? q->tr("Yes") : q->tr("No");
+            value = item.value().toBool() ? tr("Yes") : tr("No");
         else if(item.value().typeId() == QMetaType::Double)
             value = QStringLiteral("%1").arg(item.value().toDouble(), 0, 'f', 4);
         else
