@@ -25,11 +25,11 @@ private:
     int refCount = 0;
     bool sheduledForDeletion = false;
     MetaDataHelper *helper;
+    int queuedIndex = -1;
+    int trackIndex = -1;
     friend class PlayListContainer;
     friend class NormalContainer;
     friend class GroupedContainer;
-    int queuedIndex = -1;
-    int trackIndex = -1;
 };
 
 #endif // PLAYLISTTRACK_P_H

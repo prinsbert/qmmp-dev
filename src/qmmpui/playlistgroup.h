@@ -26,15 +26,14 @@
 #include "playlistitem.h"
 #include "qmmpui_export.h"
 
-class GroupedContainer;
-class QmmpUiSettings;
-class MetaDataHelper;
+class PlayListGroupPrivate;
 
 /** @brief The PlayListTrack class provides a group for use with the PlayListModel class.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class QMMPUI_EXPORT PlayListGroup : public PlayListItem
 {
+    Q_DECLARE_PRIVATE(PlayListGroup)
 public:
     /*!
      * Constructor.
@@ -106,20 +105,7 @@ public:
     void updateMetaData();
 
 private:
-    QString formatTitle0() const;
-    QString formatTitle1() const;
-
-    QList<PlayListTrack *> m_trackList; //A list of tracks
-    mutable QString m_title0;
-    mutable QString m_title1;
-    QString m_groupName;
-
-    bool m_isCoverLoaded = false;
-    QImage m_cover;
-
-    QmmpUiSettings *m_settings;
-    MetaDataHelper *m_helper;
-
+    PlayListGroupPrivate *d_ptr;
     friend class GroupedContainer;
 };
 

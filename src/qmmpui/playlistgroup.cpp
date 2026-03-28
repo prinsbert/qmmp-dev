@@ -21,15 +21,124 @@
 #include <QApplication>
 #include "qmmpuisettings.h"
 #include "metadatahelper_p.h"
+#include "playlistgroup_p.h"
 #include "playlistgroup.h"
 
-PlayListGroup::PlayListGroup(const QString &groupName) : m_groupName(groupName)
-{
-    m_settings = QmmpUiSettings::instance();
-    m_helper = MetaDataHelper::instance();
-}
+PlayListGroup::PlayListGroup(const QString &groupName) :
+    d_ptr(new PlayListGroupPrivate(groupName))
+{}
 
 PlayListGroup::~PlayListGroup()
+{
+    delete d_ptr;
+}
+
+QString PlayListGroup::formattedTitle(int line) const
+{
+    Q_D(const PlayListGroup);
+    if(line == 0)
+    {
+        if(d->m_title0.isEmpty())
+            d->m_title0 = d->formatTitle0();
+
+        return d->m_title0;
+    }
+
+    if(line == 1)
+    {
+        if(d->m_title1.isEmpty())
+            d->m_title1 = d->formatTitle1();
+
+        return d->m_title1;
+    }
+
+    return QString();
+}
+
+QStringList PlayListGroup::formattedTitles() const
+{
+    Q_D(const PlayListGroup);
+    if(d->m_title0.isEmpty())
+        d->m_title0 = d->formatTitle0();
+
+    if(d->m_title1.isEmpty())
+        d->m_title1 = d->formatTitle1();
+
+    return { d->m_title0, d->m_title1 };
+}
+
+bool PlayListGroup::contains(const PlayListTrack *track) const
+{
+    return d_ptr->m_trackList.contains(track);
+}
+
+bool PlayListGroup::isEmpty() const
+{
+    return d_ptr->m_trackList.isEmpty();
+}
+
+QList<PlayListTrack *> PlayListGroup::tracks() const
+{
+    return d_ptr->m_trackList;
+}
+
+int PlayListGroup::count() const
+{
+    return d_ptr->m_trackList.count();
+}
+
+QString PlayListGroup::formattedDuration() const
+{
+    return QString();
+}
+
+QString PlayListGroup::groupName() const
+{
+    return d_ptr->m_groupName;
+}
+
+bool PlayListGroup::isGroup() const
+{
+    return true;
+}
+
+QString PlayListGroup::firstTrackPath() const
+{
+    Q_D(const PlayListGroup);
+    return d->m_trackList.isEmpty() ? QString() : d->m_trackList.constFirst()->path();
+}
+
+bool PlayListGroup::isCoverLoaded() const
+{
+    return d_ptr->m_isCoverLoaded;
+}
+
+QImage PlayListGroup::cover() const
+{
+    return d_ptr->m_cover;
+}
+
+void PlayListGroup::setCover(const QImage &cover)
+{
+    Q_D(PlayListGroup);
+    d->m_isCoverLoaded = true;
+    d->m_cover = cover;
+}
+
+void PlayListGroup::updateMetaData()
+{
+    Q_D(PlayListGroup);
+    d->m_title0.clear();
+    d->m_title1.clear();
+}
+
+PlayListGroupPrivate::PlayListGroupPrivate(const QString &name) :
+    m_groupName(name),
+    m_settings(QmmpUiSettings::instance()),
+    m_helper(MetaDataHelper::instance())
+{}
+
+PlayListGroupPrivate::~PlayListGroupPrivate()
 {
     while(!m_trackList.isEmpty())
     {
@@ -42,101 +151,7 @@ PlayListGroup::~PlayListGroup()
     }
 }
 
-QString PlayListGroup::formattedTitle(int line) const
-{
-    if(line == 0)
-    {
-        if(m_title0.isEmpty())
-            m_title0 = formatTitle0();
-
-        return m_title0;
-    }
-
-    if(line == 1)
-    {
-        if(m_title1.isEmpty())
-            m_title1 = formatTitle1();
-
-        return m_title1;
-    }
-
-    return QString();
-}
-
-QStringList PlayListGroup::formattedTitles() const
-{
-    if(m_title0.isEmpty())
-        m_title0 = formatTitle0();
-
-    if(m_title1.isEmpty())
-        m_title1 = formatTitle1();
-
-    return { m_title0, m_title1 };
-}
-
-bool PlayListGroup::contains(const PlayListTrack *track) const
-{
-    return m_trackList.contains(track);
-}
-
-bool PlayListGroup::isEmpty() const
-{
-    return m_trackList.isEmpty();
-}
-
-QList<PlayListTrack *> PlayListGroup::tracks() const
-{
-    return m_trackList;
-}
-
-int PlayListGroup::count() const
-{
-    return m_trackList.count();
-}
-
-QString PlayListGroup::formattedDuration() const
-{
-    return QString();
-}
-
-QString PlayListGroup::groupName() const
-{
-    return m_groupName;
-}
-
-bool PlayListGroup::isGroup() const
-{
-    return true;
-}
-
-QString PlayListGroup::firstTrackPath() const
-{
-    return m_trackList.isEmpty() ? QString() : m_trackList.constFirst()->path();
-}
-
-bool PlayListGroup::isCoverLoaded() const
-{
-    return m_isCoverLoaded;
-}
-
-QImage PlayListGroup::cover() const
-{
-    return m_cover;
-}
-
-void PlayListGroup::setCover(const QImage &cover)
-{
-    m_isCoverLoaded = true;
-    m_cover = cover;
-}
-
-void PlayListGroup::updateMetaData()
-{
-    m_title0.clear();
-    m_title1.clear();
-}
-
-QString PlayListGroup::formatTitle0() const
+QString PlayListGroupPrivate::formatTitle0() const
 {
     if(m_trackList.isEmpty())
         return QString();
@@ -163,7 +178,7 @@ QString PlayListGroup::formatTitle0() const
     return title;
 }
 
-QString PlayListGroup::formatTitle1() const
+QString PlayListGroupPrivate::formatTitle1() const
 {
     if(m_trackList.isEmpty() || m_trackList.constFirst()->properties().isEmpty())
         return QString();
@@ -183,3 +198,5 @@ QString PlayListGroup::formatTitle1() const
 
     return title;
 }
+
+

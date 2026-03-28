@@ -25,12 +25,14 @@
 #include <qmmp/qmmp.h>
 #include "qmmpui_export.h"
 
+class PlayListItemPrivate;
 
 /** @brief The PlayListItem class provides an item for use with the PlayListModel class.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class QMMPUI_EXPORT PlayListItem
 {
+    Q_DECLARE_PRIVATE(PlayListItem)
 public:
     /*!
      * Constructs an empty plalist item.
@@ -82,7 +84,7 @@ public:
     virtual QImage cover() const;
 
 private:
-    bool m_selected = false;
+    PlayListItemPrivate *d_ptr;
 };
 
 #endif
