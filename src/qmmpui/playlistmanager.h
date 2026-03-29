@@ -21,21 +21,20 @@
 #define PLAYLISTMANAGER_H
 
 #include <QObject>
-#include <QMap>
 #include <qmmp/qmmp.h>
 #include "playlistheadermodel.h"
 #include "playlistmodel.h"
 #include "qmmpui_export.h"
 
-class QTimer;
-class QmmpUiSettings;
+class PlayListManagerPrivate;
 
 /*! @brief The PlayListManager class is used to handle multiple playlists.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class QMMPUI_EXPORT PlayListManager : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
+    Q_DECLARE_PRIVATE(PlayListManager)
 public:
     /*!
      * Constructor.
@@ -49,7 +48,7 @@ public:
     /*!
      * Returns a pointer to the object's instance.
      */
-    static PlayListManager* instance();
+    static PlayListManager *instance();
     /*!
      * Returns a list of all playlists.
      */
@@ -268,23 +267,8 @@ public slots:
      */
     void rebuildGroups();
 
-private slots:
-    void writePlayLists();
-    void onListChanged(int flags);
-    void onCurrentTrackRemoved();
-
 private:
-    void readPlayLists();
-
-    static PlayListManager* m_instance;
-    static const QMap<QString, Qmmp::MetaData> m_metaKeys;
-    static const QMap<QString, Qmmp::TrackProperty> m_propKeys;
-    QList<PlayListModel *> m_models;
-    PlayListModel *m_current = nullptr;
-    PlayListModel *m_selected = nullptr;
-    QTimer *m_timer;
-    PlayListHeaderModel *m_header;
-    QmmpUiSettings *m_ui_settings;
+    PlayListManagerPrivate *d_ptr;
 };
 
 #endif // PLAYLISTMANAGER_H
