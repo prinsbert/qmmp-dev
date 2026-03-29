@@ -25,8 +25,6 @@
 #include "playlistmanager.h"
 #include "qmmpui_export.h"
 
-class QmmpUiSettings;
-class QTimer;
 class MediaPlayerPrivate;
 
 /*! @brief The MediaPlayer class provides a simple way to use SoundCore and PlayListModel together.
@@ -49,7 +47,7 @@ public:
     /*!
      * Returns a pointer to the object's instance.
      */
-    static MediaPlayer* instance();
+    static MediaPlayer *instance();
     /*!
      * Returns playlist manager pointer
      */
