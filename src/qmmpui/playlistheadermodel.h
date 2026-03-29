@@ -24,12 +24,9 @@
 #include <QObject>
 #include <QWidget>
 #include <QSettings>
-#include <QHash>
-#include <QVariant>
-#include "metadataformatter.h"
 #include "qmmpui_export.h"
 
-class MetaDataHelper;
+class PlayListHeaderModelPrivate;
 
 /*!
  * @brief Helper class that provides access to playlist column configuration.
@@ -38,6 +35,7 @@ class MetaDataHelper;
 class QMMPUI_EXPORT PlayListHeaderModel : public QObject
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(PlayListHeaderModel)
 public:
     /*!
      * Constructs a playlist model.
@@ -152,17 +150,7 @@ signals:
     void headerChanged();
 
 private:
-    void updatePlayLists();
-
-    struct ColumnHeader
-    {
-        QString name;
-        QString pattern;
-        QHash<int, QVariant> data;
-    };
-    QList<ColumnHeader> m_columns;
-    bool m_settings_loaded = false;
-    MetaDataHelper *m_helper;
+    PlayListHeaderModelPrivate *d_ptr;
 };
 
 #endif // COLUMNMANAGER_H
