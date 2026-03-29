@@ -18,7 +18,6 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include "playlistmodel.h"
 #include "playlisttrack_p.h"
 #include "playlistcontainer_p.h"
 
