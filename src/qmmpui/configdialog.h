@@ -22,16 +22,9 @@
 
 #include <QDialog>
 #include <QIcon>
-#include <QApplication>
-#include <QMouseEvent>
 #include "qmmpui_export.h"
 
-namespace Ui {
-    class ConfigDialog;
-}
-
-class QListWidgetItem;
-class QTreeWidgetItem;
+class ConfigDialogPrivate;
 
 /*! @brief Configuration dialog class.
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -39,6 +32,7 @@ class QTreeWidgetItem;
 class QMMPUI_EXPORT ConfigDialog : public QDialog
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(ConfigDialog)
 public:
     /*!
      * Constructor.
@@ -57,26 +51,11 @@ public:
      */
     void addPage(const QString &name, QWidget *widget, const QIcon &icon = QIcon());
 
-private slots:
-    void on_contentsWidget_currentItemChanged (QListWidgetItem *current, QListWidgetItem *previous);
-    void on_preferencesButton_clicked();
-    void on_informationButton_clicked();
-    void on_treeWidget_itemChanged(QTreeWidgetItem *item, int column);
-    void on_treeWidget_currentItemChanged (QTreeWidgetItem *current, QTreeWidgetItem *);
-    void on_cueFontButton_clicked();
-    void saveSettings();
-    void updateGroupSettings();
-
 private:
-    void readSettings();
-    void findSkins(const QString &path);
-    void loadPluginsInfo();
-    void createMenus();
-    void loadLanguages();
-    int m_insert_row = 0;
-    Ui::ConfigDialog *m_ui;
-    QAction *m_preferencesAction;
-    QAction *m_informationAction;
+    ConfigDialogPrivate *d_ptr;
+
+
+
 
 };
 
