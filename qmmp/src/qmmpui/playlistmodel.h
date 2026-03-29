@@ -23,25 +23,13 @@
 #include <QObject>
 #include <QString>
 #include <QStringList>
-#include <QMap>
-#include <QQueue>
-#include <QPointer>
-#include <QVector>
 #include <QUrl>
-#include <QSet>
 #include "playlistitem.h"
 #include "playlisttrack.h"
 #include "playlistgroup.h"
-#include "coverloader_p.h"
 #include "qmmpui_export.h"
 
-class FileLoader;
-class PlayState;
-class PlayListFormat;
-class PlayListModel;
-class PlayListContainer;
-class QmmpUiSettings;
-class PlayListTask;
+class PlayListModelPrivate;
 
 /*! @brief Helper class that keeps track of a view's selected items.
  *
@@ -87,6 +75,7 @@ struct SimpleSelection
 class QMMPUI_EXPORT PlayListModel : public QObject
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(PlayListModel)
 public:
     /*!
      * Constructs a playlist model.
@@ -267,7 +256,7 @@ public:
      * Returns current selection(playlist can contain a lot of selections,
      * this method returns selection which \b trackIndex belongs to)
      */
-    SimpleSelection getSelection(int trackIndex);
+    SimpleSelection getSelection(int trackIndex) const;
     /*!
      * Returns a list of the selected lines.
      */
@@ -567,58 +556,7 @@ public slots:
     void updateMetaData();
 
 private:
-    /*!
-     * Returns topmost row in current selection
-     */
-    int topmostInSelection(int);
-    /*!
-     * Returns bottommost row in current selection
-     */
-    int bottommostInSelection(int);
-    /*!
-     * Removes items from model. If \b inverted is \b false -
-     * selected items will be removed, else - unselected.
-     */
-    void removeSelection(bool inverted = false);
-
-    int removeTrackInternal(int i);
-
-private slots:
-    /*!
-     * Prepares play state object
-     */
-    void preparePlayState();
-    /*!
-     * Prepares model for shuffle playing. \b yes parameter is \b true - model iterates in shuffle mode.
-     */
-    void prepareForShufflePlaying(bool yes);
-    /*!
-     * Enabled/Disabled groped mode
-     * @param enabled State of the groups (\b true - enabled, \b false - disabled)
-     */
-    void prepareGroups(bool enabled);
-
-    void onTaskFinished();
-
-    void updateMetaData(const QStringList &paths);
-
-    void startCoverLoader();
-    void setCover(const QString &path, const QImage &img);
-    void insertTracksInternal(PlayListTrack *before, const QList<PlayListTrack *> &tracks);
-
-private:
-    PlayListTrack *m_current_track = nullptr;
-    PlayListTrack *m_stop_track = nullptr;
-    int m_current = -1;
-    PlayState* m_play_state; /*!< Current playing state (Normal or Shuffle) */
-    qint64 m_total_duration = 0;
-    FileLoader *m_loader;
-    CoverLoader *m_coverLoder;
-    QString m_name;
-    PlayListContainer *m_container;
-    QmmpUiSettings *m_ui_settings;
-    PlayListTask *m_task;
-    QSet<QString> m_uniquePaths;
+    PlayListModelPrivate *d_ptr;
 };
 
 Q_DECLARE_METATYPE(PlayListModel::SortMode)
