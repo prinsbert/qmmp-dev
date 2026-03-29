@@ -293,15 +293,17 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
 
 QList<PlayListTrack *> GroupedContainer::takeAllTracks()
 {
-    QList<PlayListTrack *> tracks = m_tracks;
-    for(PlayListGroup *g : std::as_const(m_groups))
+    clearQueue();
+    while(!m_groups.isEmpty())
     {
+        PlayListGroup *g = m_groups.takeFirst();
         g->d_ptr->m_trackList.clear();
         g->d_ptr->m_title0.clear();
         g->d_ptr->m_title1.clear();
+        delete g;
     }
-    clear();
-    return tracks;
+    m_lines.clear();
+    return std::move(m_tracks);
 }
 
 void GroupedContainer::clear()

@@ -539,7 +539,7 @@ QList<PlayListTrack *> PlayListTask::takeResults(PlayListTrack **current_track)
             m_new_tracks.clear();
         }
     }
-    return m_tracks;
+    return std::move(m_tracks);
 }
 
 int PlayListTask::column() const
