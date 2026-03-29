@@ -32,21 +32,21 @@ class MediaPlayerPrivate
 public:
     MediaPlayerPrivate(MediaPlayer *q) : q_ptr(q)
     {
-        if(m_instance)
+        if(instance)
             qCFatal(core) << "only one instance is allowed";
-        m_instance = q;
+        instance = q;
 
-        m_core = new SoundCore(q);
-        m_settings = new QmmpUiSettings(q);
-        m_pl_manager = new PlayListManager(q);
-        m_finishTimer = new QTimer(q);
-        m_finishTimer->setSingleShot(q);
-        m_finishTimer->setInterval(500);
+        soundCore = new SoundCore(q);
+        settings = new QmmpUiSettings(q);
+        plManager = new PlayListManager(q);
+        finishTimer = new QTimer(q);
+        finishTimer->setSingleShot(q);
+        finishTimer->setInterval(500);
     }
 
     ~MediaPlayerPrivate()
     {
-        m_instance = nullptr;
+        instance = nullptr;
     }
 
 private:
@@ -55,31 +55,31 @@ private:
     void playNext()
     {
         Q_Q(MediaPlayer);
-        if(m_settings->isRepeatableTrack())
+        if(settings->isRepeatableTrack())
         {
             q->play();
             return;
         }
-        if(m_settings->isNoPlayListAdvance())
+        if(settings->isNoPlayListAdvance())
         {
             q->stop();
             return;
         }
-        if (!m_pl_manager->currentPlayList()->next())
+        if (!plManager->currentPlayList()->next())
         {
-            if(!m_settings->isPlayListTransitionEnabled())
+            if(!settings->isPlayListTransitionEnabled())
             {
                 q->stop();
                 return;
             }
             //next playlist
-            int index = m_pl_manager->currentPlayListIndex() + 1;
-            PlayListModel *nextPlayList = index < m_pl_manager->count() ? m_pl_manager->playListAt(index) : nullptr;
+            int index = plManager->currentPlayListIndex() + 1;
+            PlayListModel *nextPlayList = index < plManager->count() ? plManager->playListAt(index) : nullptr;
             PlayListTrack *nextTrack = nextPlayList ? nextPlayList->currentTrack() : nullptr;
             if(nextTrack)
             {
-                m_pl_manager->selectPlayList(nextPlayList);
-                m_pl_manager->activatePlayList(nextPlayList);
+                plManager->selectPlayList(nextPlayList);
+                plManager->activatePlayList(nextPlayList);
                 q->play();
             }
             else
@@ -93,26 +93,26 @@ private:
 
     void updateNextUrl()
     {
-        m_nextUrl.clear();
+        nextUrl.clear();
         PlayListTrack *track = nullptr;
-        if(m_settings->isRepeatableTrack())
-            track = m_pl_manager->currentPlayList()->currentTrack();
-        else if(!m_settings->isNoPlayListAdvance())
-            track = m_pl_manager->currentPlayList()->nextTrack();
+        if(settings->isRepeatableTrack())
+            track = plManager->currentPlayList()->currentTrack();
+        else if(!settings->isNoPlayListAdvance())
+            track = plManager->currentPlayList()->nextTrack();
 
-        if(!track && m_settings->isPlayListTransitionEnabled())
+        if(!track && settings->isPlayListTransitionEnabled())
         {
-            int index = m_pl_manager->currentPlayListIndex() + 1;
-            PlayListModel *nextPlayList = index < m_pl_manager->count() ? m_pl_manager->playListAt(index) : nullptr;
+            int index = plManager->currentPlayListIndex() + 1;
+            PlayListModel *nextPlayList = index < plManager->count() ? plManager->playListAt(index) : nullptr;
             track = nextPlayList ? nextPlayList->currentTrack() : nullptr;
         }
 
         if(track)
         {
-            bool ok = m_core->play(track->path(), true);
+            bool ok = soundCore->play(track->path(), true);
             if(ok)
             {
-                m_nextUrl = track->path();
+                nextUrl = track->path();
                 qCDebug(core) << "next track state: received";
             }
             else
@@ -128,25 +128,25 @@ private:
         switch ((int) state)
         {
         case Qmmp::NormalError:
-            m_core->stop();
-            m_nextUrl.clear();
-            if (m_skips <= m_pl_manager->currentPlayList()->trackCount())
+            soundCore->stop();
+            nextUrl.clear();
+            if(m_skips <= plManager->currentPlayList()->trackCount())
             {
                 m_skips++;
                 playNext();
             }
             break;
         case Qmmp::FatalError:
-            m_core->stop();
-            m_nextUrl.clear();
+            soundCore->stop();
+            nextUrl.clear();
             break;
         case Qmmp::Playing:
-            m_finishTimer->stop();
+            finishTimer->stop();
             m_skips = 0;
             break;
         case Qmmp::Stopped:
-            m_finishTimer->start();
-            restoreMetaData(m_pl_manager->currentPlayList()->currentTrack());
+            finishTimer->start();
+            restoreMetaData(plManager->currentPlayList()->currentTrack());
             break;
         default:
             ;
@@ -155,7 +155,7 @@ private:
 
     void updateMetaData()
     {
-        TrackInfo info = m_core->trackInfo();
+        TrackInfo info = soundCore->trackInfo();
         qCDebug(core) << "===== metadata ======";
         qCDebug(core) << "ARTIST =" << info.value(Qmmp::ARTIST);
         qCDebug(core) << "TITLE =" << info.value(Qmmp::TITLE);
@@ -183,7 +183,7 @@ private:
         qCDebug(core) << "DURATION =" << info.duration();
         qCDebug(core) << "== end of metadata ==";
 
-        PlayListModel *pl = m_pl_manager->currentPlayList();
+        PlayListModel *pl = plManager->currentPlayList();
         PlayListTrack *currentTrack = pl->currentTrack();
         if(currentTrack && currentTrack->path() == info.path())
         {
@@ -195,8 +195,8 @@ private:
 
     void onCurrentTrackRemoved()
     {
-        if(m_settings->stopAfterRemovingOfCurrentTrack())
-            m_core->stop();
+        if(settings->stopAfterRemovingOfCurrentTrack())
+            soundCore->stop();
     }
 
     void saveMetaData(const PlayListTrack *track)
@@ -204,7 +204,7 @@ private:
         if(!track)
             return;
 
-        m_savedInfo = *track;
+        savedInfo = *track;
     }
 
     void restoreMetaData(PlayListTrack *track)
@@ -213,14 +213,14 @@ private:
             return;
 
         //restore initial metadata for streams
-        if(m_savedInfo.path().contains(u"://"_s) && !m_savedInfo.path().contains(QLatin1Char('#')) &&
-            m_savedInfo.path() == track->path() &&
-            !m_savedInfo.value(Qmmp::TITLE).isEmpty())
+        if(savedInfo.path().contains(u"://"_s) && !savedInfo.path().contains(QLatin1Char('#')) &&
+            savedInfo.path() == track->path() &&
+            !savedInfo.value(Qmmp::TITLE).isEmpty())
         {
-            m_savedInfo.clear(TrackInfo::Properties | TrackInfo::ReplayGainInfo); //restore displaying metadata only
-            track->updateMetaData(m_savedInfo);
+            savedInfo.clear(TrackInfo::Properties | TrackInfo::ReplayGainInfo); //restore displaying metadata only
+            track->updateMetaData(savedInfo);
             updatePlayListMetaData(track);
-            m_savedInfo.clear();
+            savedInfo.clear();
         }
     }
 
@@ -229,7 +229,7 @@ private:
         if(!track)
             return;
 
-        PlayListModel *pl = m_pl_manager->currentPlayList();
+        PlayListModel *pl = plManager->currentPlayList();
         PlayListGroup *group = pl->group(track);
         //update group titles
         if(group && group->tracks().constFirst() == track)
@@ -238,18 +238,17 @@ private:
         pl->updateMetaData();
     }
 
-    QmmpUiSettings *m_settings;
-    PlayListManager *m_pl_manager;
-    SoundCore *m_core;
-    static MediaPlayer *m_instance;
+    QmmpUiSettings *settings;
+    PlayListManager *plManager;
+    SoundCore *soundCore;
+    static MediaPlayer *instance;
     int m_skips = 0;
-    QString m_nextUrl;
-    TrackInfo m_savedInfo;
-    QTimer *m_finishTimer;
-
+    QString nextUrl;
+    TrackInfo savedInfo;
+    QTimer *finishTimer;
 };
 
-MediaPlayer *MediaPlayerPrivate::m_instance = nullptr;
+MediaPlayer *MediaPlayerPrivate::instance = nullptr;
 
 MediaPlayer::MediaPlayer(QObject *parent):
     QObject(parent),
@@ -263,12 +262,12 @@ MediaPlayer::MediaPlayer(QObject *parent):
     else
         delete translator;
 
-    connect(d->m_finishTimer, &QTimer::timeout, this, &MediaPlayer::playbackFinished);
-    connect(d->m_core, &SoundCore::nextTrackRequest, this, [d] { d->updateNextUrl(); });
-    connect(d->m_core, &SoundCore::finished, this, [d] { d->playNext(); });
-    connect(d->m_core, &SoundCore::stateChanged, this, [d](Qmmp::State newState) { d->processState(newState); });
-    connect(d->m_core, &SoundCore::trackInfoChanged, this, [d] { d->updateMetaData(); });
-    connect(d->m_pl_manager, &PlayListManager::currentTrackRemoved, this, [d] { d->onCurrentTrackRemoved(); });
+    connect(d->finishTimer, &QTimer::timeout, this, &MediaPlayer::playbackFinished);
+    connect(d->soundCore, &SoundCore::nextTrackRequest, this, [d] { d->updateNextUrl(); });
+    connect(d->soundCore, &SoundCore::finished, this, [d] { d->playNext(); });
+    connect(d->soundCore, &SoundCore::stateChanged, this, [d](Qmmp::State newState) { d->processState(newState); });
+    connect(d->soundCore, &SoundCore::trackInfoChanged, this, [d] { d->updateMetaData(); });
+    connect(d->plManager, &PlayListManager::currentTrackRemoved, this, [d] { d->onCurrentTrackRemoved(); });
 }
 
 MediaPlayer::~MediaPlayer()
@@ -276,14 +275,14 @@ MediaPlayer::~MediaPlayer()
     delete d_ptr;
 }
 
-MediaPlayer* MediaPlayer::instance()
+MediaPlayer *MediaPlayer::instance()
 {
-    return MediaPlayerPrivate::m_instance;
+    return MediaPlayerPrivate::instance;
 }
 
 PlayListManager *MediaPlayer::playListManager()
 {
-    return d_ptr->m_pl_manager;
+    return d_ptr->plManager;
 }
 
 void MediaPlayer::play()
@@ -294,57 +293,57 @@ void MediaPlayer::play()
 void MediaPlayer::playFromPosition(qint64 offset)
 {
     Q_D(MediaPlayer);
-    d->m_pl_manager->currentPlayList()->doCurrentVisibleRequest();
-    if(d->m_core->state() == Qmmp::Paused)
+    d->plManager->currentPlayList()->doCurrentVisibleRequest();
+    if(d->soundCore->state() == Qmmp::Paused)
     {
-        d->m_core->pause();
+        d->soundCore->pause();
         return;
     }
 
-    if(d->m_pl_manager->currentPlayList()->isEmpty())
+    if(d->plManager->currentPlayList()->isEmpty())
         return;
 
-    QString s = d->m_pl_manager->currentPlayList()->currentTrack()->path();
+    QString s = d->plManager->currentPlayList()->currentTrack()->path();
     if(s.isEmpty())
     {
-        d->m_nextUrl.clear();
+        d->nextUrl.clear();
         return;
     }
-    if(d->m_nextUrl == s)
+    if(d->nextUrl == s)
     {
-        d->m_nextUrl.clear();
+        d->nextUrl.clear();
         return;
     }
-    d->m_core->play(s, false, offset);
+    d->soundCore->play(s, false, offset);
 }
 
 void MediaPlayer::stop()
 {
     Q_D(MediaPlayer);
-    d->m_core->stop();
-    d->m_nextUrl.clear();
+    d->soundCore->stop();
+    d->nextUrl.clear();
     d->m_skips = 0;
 }
 
 void MediaPlayer::pause()
 {
-    d_ptr->m_core->pause();
+    d_ptr->soundCore->pause();
 }
 
 void MediaPlayer::next()
 {
     Q_D(MediaPlayer);
-    bool playNext = d->m_core->state() != Qmmp::Stopped;
+    bool playNext = d->soundCore->state() != Qmmp::Stopped;
     stop();
-    if(d->m_pl_manager->currentPlayList()->next() && playNext)
+    if(d->plManager->currentPlayList()->next() && playNext)
         play();
 }
 
 void MediaPlayer::previous()
 {
     Q_D(MediaPlayer);
-    bool playNext = d->m_core->state() != Qmmp::Stopped;
+    bool playNext = d->soundCore->state() != Qmmp::Stopped;
     stop();
-    if(d->m_pl_manager->currentPlayList()->previous() && playNext)
+    if(d->plManager->currentPlayList()->previous() && playNext)
         play();
 }
