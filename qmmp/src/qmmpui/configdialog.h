@@ -53,10 +53,6 @@ public:
 
 private:
     ConfigDialogPrivate *d_ptr;
-
-
-
-
 };
 
 #endif
