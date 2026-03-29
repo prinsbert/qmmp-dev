@@ -26,8 +26,7 @@ NormalContainer::NormalContainer()
 {}
 
 NormalContainer::~NormalContainer()
-{
-}
+{}
 
 void NormalContainer::addTrack(PlayListTrack *track)
 {
@@ -180,10 +179,7 @@ bool NormalContainer::move(const QList<int> &indexes, int from, int to)
 QList<PlayListTrack *> NormalContainer::takeAllTracks()
 {
     clearQueue();
-    QList<PlayListTrack *> tracks;
-    while(!m_tracks.isEmpty())
-        tracks.append(static_cast<PlayListTrack *>(m_tracks.takeFirst()));
-    return tracks;
+    return std::move(m_tracks);
 }
 
 void NormalContainer::clear()
@@ -195,7 +191,7 @@ void NormalContainer::clear()
 
 void NormalContainer::reverseList()
 {
-    for (int i = 0; i < m_tracks.size()/2; i++)
+    for(int i = 0; i < m_tracks.size()/2; i++)
     {
         m_tracks.swapItemsAt(i, m_tracks.size() - i - 1);
         swapTrackNumbers(&m_tracks, i, m_tracks.size() - i - 1);

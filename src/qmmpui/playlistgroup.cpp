@@ -142,7 +142,7 @@ PlayListGroupPrivate::~PlayListGroupPrivate()
 {
     while(!m_trackList.isEmpty())
     {
-        PlayListTrack* mf = m_trackList.takeFirst();
+        PlayListTrack *mf = m_trackList.takeFirst();
 
         if (mf->isUsed())
             mf->deleteLater();
