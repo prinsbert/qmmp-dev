@@ -99,8 +99,8 @@ private:
             preferencesButton->setEnabled(false);
             informationButton->setEnabled(false);
         }
-        m_preferencesAction->setEnabled(preferencesButton->isEnabled());
-        m_informationAction->setEnabled(informationButton->isEnabled());
+        preferencesAction->setEnabled(preferencesButton->isEnabled());
+        informationAction->setEnabled(informationButton->isEnabled());
     }
 
     void on_cueFontButton_clicked()
@@ -396,14 +396,14 @@ private:
         });
 
         treeWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
-        m_preferencesAction = new QAction(QIcon::fromTheme(u"configure"_s), tr("Preferences"), treeWidget);
-        m_preferencesAction->setEnabled(false);
-        treeWidget->addAction(m_preferencesAction);
-        m_informationAction = new QAction(QIcon::fromTheme(u"dialog-information"_s), tr("Information"), treeWidget);
-        m_informationAction->setEnabled(false);
-        treeWidget->addAction(m_informationAction);
-        q->connect(m_preferencesAction, &QAction::triggered, q, [this] { onPreferencesButtonClicked(); });
-        q->connect(m_informationAction, &QAction::triggered, q, [this] { onInformationButtonClicked(); });
+        preferencesAction = new QAction(QIcon::fromTheme(u"configure"_s), tr("Preferences"), treeWidget);
+        preferencesAction->setEnabled(false);
+        treeWidget->addAction(preferencesAction);
+        informationAction = new QAction(QIcon::fromTheme(u"dialog-information"_s), tr("Information"), treeWidget);
+        informationAction->setEnabled(false);
+        treeWidget->addAction(informationAction);
+        q->connect(preferencesAction, &QAction::triggered, q, [this] { onPreferencesButtonClicked(); });
+        q->connect(informationAction, &QAction::triggered, q, [this] { onInformationButtonClicked(); });
     }
 
     void loadLanguages()
@@ -455,9 +455,9 @@ private:
     }
 
     ::ConfigDialog *q_ptr;
-    int m_insert_row = 0;
-    QAction *m_preferencesAction;
-    QAction *m_informationAction;
+    int insertRow = 0;
+    QAction *preferencesAction;
+    QAction *informationAction;
 };
 
 ConfigDialog::ConfigDialog(QWidget *parent) :
@@ -517,9 +517,9 @@ ConfigDialog::~ConfigDialog()
 void ConfigDialog::addPage(const QString &name, QWidget *widget, const QIcon &icon)
 {
     Q_D(ConfigDialog);
-    d->stackedWidget->insertWidget(d->m_insert_row, widget);
-    d->contentsWidget->insertItem (d->m_insert_row, name);
-    d->contentsWidget->item(d->m_insert_row)->setIcon(icon);
+    d->stackedWidget->insertWidget(d->insertRow, widget);
+    d->contentsWidget->insertItem (d->insertRow, name);
+    d->contentsWidget->item(d->insertRow)->setIcon(icon);
     d->contentsWidget->setCurrentRow(0);
-    d->m_insert_row++;
+    d->insertRow++;
 }
