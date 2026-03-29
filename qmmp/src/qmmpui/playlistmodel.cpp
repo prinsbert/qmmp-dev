@@ -194,15 +194,15 @@ public:
      */
     void prepareGroups(bool enabled)
     {
-        PlayListContainer *container = nullptr;
+        PlayListContainer *newContainer = nullptr;
         if(enabled)
-            container = new GroupedContainer;
+            newContainer = new GroupedContainer;
         else
-            container = new NormalContainer;
-        container->setLinesPerGroup(uiSettings->linesPerGroup());
-        container->addTracks(container->takeAllTracks());
+            newContainer = new NormalContainer;
+        newContainer->setLinesPerGroup(uiSettings->linesPerGroup());
+        newContainer->addTracks(container->takeAllTracks());
         delete container;
-        container = container;
+        container = newContainer;
         if(!container->isEmpty())
             currentTrackIndex = container->indexOf(currentTrack);
         emit q_ptr->listChanged(PlayListModel::STRUCTURE);
