@@ -2,7 +2,6 @@ project(libstatusicon)
 
 set(libstatusicon_SRCS
     statusiconsettingsdialog.cpp
-    statusicon.cpp
     statusiconfactory.cpp
     qmmptrayicon.cpp
     statusiconpopupwidget.cpp
@@ -11,6 +10,10 @@ set(libstatusicon_SRCS
     translations/translations.qrc
     images/tray_images.qrc
 )
+
+if(NOT WIN32)
+    set(libstatusicon_SRCS statusicon.cpp ${libstatusicon_SRCS})
+endif()
 
 add_library(statusicon MODULE ${libstatusicon_SRCS})
 target_link_libraries(statusicon PRIVATE Qt6::Widgets libqmmpui libqmmp)
