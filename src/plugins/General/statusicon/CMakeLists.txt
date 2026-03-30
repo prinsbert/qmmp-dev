@@ -3,8 +3,8 @@ project(libstatusicon)
 set(libstatusicon_SRCS
     statusiconsettingsdialog.cpp
     statusiconfactory.cpp
+    statusicon.cpp
     qmmptrayicon.cpp
-    statusiconpopupwidget.cpp
     statusiconcoverwidget.cpp
     statusiconsettingsdialog.ui
     translations/translations.qrc
@@ -12,7 +12,7 @@ set(libstatusicon_SRCS
 )
 
 if(NOT WIN32)
-    set(libstatusicon_SRCS statusicon.cpp ${libstatusicon_SRCS})
+    set(libstatusicon_SRCS statusiconpopupwidget.cpp ${libstatusicon_SRCS})
 endif()
 
 add_library(statusicon MODULE ${libstatusicon_SRCS})
