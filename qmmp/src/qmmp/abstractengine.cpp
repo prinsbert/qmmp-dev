@@ -28,15 +28,16 @@
 #include "qmmp.h"
 #include "abstractengine.h"
 
+Q_GLOBAL_STATIC(QList<QmmpPluginCache *>, engineCache);
+
 class AbstractEnginePrivate
 {
 public:
     static void loadPlugins()
     {
-        if(cache)
+        if(engineCache.exists())
             return;
 
-        cache = new QList<QmmpPluginCache*>;
         QSettings settings;
         for(const QString &filePath : Qmmp::findPlugins(u"Engines"_s))
         {
@@ -46,19 +47,27 @@ public:
                 delete item;
                 continue;
             }
-            cache->append(item);
+            engineCache->append(item);
         }
         disabledNames = settings.value(u"Engine/disabled_plugins"_s).toStringList();
         QmmpPluginCache::cleanup(&settings);
+        qAddPostRoutine(AbstractEnginePrivate::cleanup);
     }
+
+    static void cleanup()
+    {
+        if(engineCache.exists())
+        {
+            qDeleteAll(*engineCache);
+        }
+    }
+
     QMutex mutex;
-    static QList<QmmpPluginCache*> *cache;
     static QStringList disabledNames;
 
 };
 
 QStringList AbstractEnginePrivate::disabledNames;
-QList<QmmpPluginCache*> *AbstractEnginePrivate::cache = nullptr;
 
 AbstractEngine::AbstractEngine(QObject *parent) :
     QThread(parent),
@@ -91,7 +100,7 @@ AbstractEngine *AbstractEngine::create(InputSource *s, QObject *parent)
 
 
     AbstractEnginePrivate::loadPlugins();
-    for(QmmpPluginCache *item : std::as_const(*AbstractEnginePrivate::cache))
+    for(QmmpPluginCache *item : std::as_const(*engineCache))
     {
         if(AbstractEnginePrivate::disabledNames.contains(item->shortName()))
             continue;
@@ -115,7 +124,7 @@ QList<EngineFactory *> AbstractEngine::factories()
 {
     AbstractEnginePrivate::loadPlugins();
     QList<EngineFactory *> list;
-    for(QmmpPluginCache *item : std::as_const(*AbstractEnginePrivate::cache))
+    for(QmmpPluginCache *item : std::as_const(*engineCache))
     {
         if(item->engineFactory())
             list.append(item->engineFactory());
@@ -127,7 +136,7 @@ QList<EngineFactory *> AbstractEngine::enabledFactories()
 {
     AbstractEnginePrivate::loadPlugins();
     QList<EngineFactory *> list;
-    for(QmmpPluginCache *item : std::as_const(*AbstractEnginePrivate::cache))
+    for(QmmpPluginCache *item : std::as_const(*engineCache))
     {
         if(AbstractEnginePrivate::disabledNames.contains(item->shortName()))
             continue;
@@ -141,7 +150,7 @@ QStringList AbstractEngine::nameFilters()
 {
     AbstractEnginePrivate::loadPlugins();
     QStringList filters;
-    for(QmmpPluginCache *item : std::as_const(*AbstractEnginePrivate::cache))
+    for(QmmpPluginCache *item : std::as_const(*engineCache))
     {
         if(AbstractEnginePrivate::disabledNames.contains(item->shortName()))
             continue;
@@ -155,7 +164,7 @@ QStringList AbstractEngine::contentTypes()
 {
     AbstractEnginePrivate::loadPlugins();
     QStringList types;
-    for(QmmpPluginCache *item : std::as_const(*AbstractEnginePrivate::cache))
+    for(QmmpPluginCache *item : std::as_const(*engineCache))
     {
         if(AbstractEnginePrivate::disabledNames.contains(item->shortName()))
             continue;
@@ -168,7 +177,7 @@ QStringList AbstractEngine::contentTypes()
 EngineFactory *AbstractEngine::findByFilePath(const QString& source)
 {
     AbstractEnginePrivate::loadPlugins();
-    for(QmmpPluginCache *item : std::as_const(*AbstractEnginePrivate::cache))
+    for(QmmpPluginCache *item : std::as_const(*engineCache))
     {
         if(AbstractEnginePrivate::disabledNames.contains(item->shortName()))
             continue;
@@ -216,7 +225,7 @@ bool AbstractEngine::isEnabled(const AbstractEngine *engine)
 QString AbstractEngine::file(const EngineFactory *factory)
 {
     AbstractEnginePrivate::loadPlugins();
-    for(const QmmpPluginCache *item : std::as_const(*AbstractEnginePrivate::cache))
+    for(const QmmpPluginCache *item : std::as_const(*engineCache))
     {
         if(item->shortName() == factory->properties().shortName)
             return item->file();
@@ -229,7 +238,7 @@ QStringList AbstractEngine::protocols()
     AbstractEnginePrivate::loadPlugins();
     QStringList protocolList;
 
-    for(QmmpPluginCache *item : std::as_const(*AbstractEnginePrivate::cache))
+    for(QmmpPluginCache *item : std::as_const(*engineCache))
     {
         if(AbstractEnginePrivate::disabledNames.contains(item->shortName()))
             continue;
