@@ -26,9 +26,12 @@
 #include <QFileInfo>
 #include <algorithm>
 #include <qmmp/qmmp.h>
+#include "qcoreapplication.h"
 #include "qmmpuiplugincache_p.h"
 #include "filedialog.h"
 #include "qtfiledialog_p.h"
+
+Q_GLOBAL_STATIC(QList<QmmpUiPluginCache *>, fileDialogCache);
 
 class FileDialogPrivate
 {
@@ -45,11 +48,10 @@ public:
 
     static void loadPlugins()
     {
-        if(cache)
+        if(fileDialogCache.exists())
             return;
 
-        cache = new QList<QmmpUiPluginCache*>;
-        cache->append(new QmmpUiPluginCache(new QtFileDialogFactory));
+        fileDialogCache->append(new QmmpUiPluginCache(new QtFileDialogFactory));
 
         QSettings settings;
         for(const QString &filePath : Qmmp::findPlugins(u"FileDialogs"_s))
@@ -60,8 +62,9 @@ public:
                 delete item;
                 continue;
             }
-            cache->append(item);
+            fileDialogCache->append(item);
         }
+        qAddPostRoutine(FileDialogPrivate::cleanup);
     }
 
     void updateLastDir(const QStringList &list)
@@ -75,24 +78,30 @@ public:
         }
     }
 
+    static void cleanup()
+    {
+        if(fileDialogCache.exists())
+        {
+            qDeleteAll(*fileDialogCache);
+        }
+    }
+
     bool initialized = false;
     QString *lastDir = nullptr;
 
     static FileDialogFactory *currentFactory;
     static FileDialog *instance;
-    static QList<QmmpUiPluginCache*> *cache;
 };
 
 //static functions
 FileDialog *FileDialogPrivate::instance = nullptr;
-QList<QmmpUiPluginCache*> *FileDialogPrivate::cache = nullptr;
 FileDialogFactory *FileDialogPrivate::currentFactory = nullptr;
 
 QList<FileDialogFactory *> FileDialog::factories()
 {
     FileDialogPrivate::loadPlugins();
     QList<FileDialogFactory *> list;
-    for(QmmpUiPluginCache *item : std::as_const(*FileDialogPrivate::cache))
+    for(QmmpUiPluginCache *item : std::as_const(*fileDialogCache))
     {
         if(item->fileDialogFactory())
             list.append(item->fileDialogFactory());
@@ -118,9 +127,9 @@ bool FileDialog::isEnabled(const FileDialogFactory *factory)
 QString FileDialog::file(const FileDialogFactory *factory)
 {
     FileDialogPrivate::loadPlugins();
-    auto it = std::find_if(FileDialogPrivate::cache->cbegin(), FileDialogPrivate::cache->cend(),
+    auto it = std::find_if(fileDialogCache->cbegin(), fileDialogCache->cend(),
                            [factory] (QmmpUiPluginCache *item){ return item->shortName() == factory->properties().shortName; } );
-    return it == FileDialogPrivate::cache->cend() ? QString() : (*it)->file();
+    return it == fileDialogCache->cend() ? QString() : (*it)->file();
 }
 
 QString FileDialog::getExistingDirectory(QWidget *parent,
@@ -198,13 +207,13 @@ FileDialog *FileDialog::instance()
     QSettings settings;
     QString name = settings.value(u"FileDialog"_s, u"qt_dialog"_s).toString();
 
-    auto it = std::find_if(FileDialogPrivate::cache->cbegin(), FileDialogPrivate::cache->cend(),
+    auto it = std::find_if(fileDialogCache->cbegin(), fileDialogCache->cend(),
                            [name] (QmmpUiPluginCache *item){ return item->shortName() == name; } );
-    if(it != FileDialogPrivate::cache->cend())
+    if(it != fileDialogCache->cend())
         selected = (*it)->fileDialogFactory();
 
     if(!selected)
-        selected = FileDialogPrivate::cache->constFirst()->fileDialogFactory();
+        selected = fileDialogCache->constFirst()->fileDialogFactory();
 
     if(selected == FileDialogPrivate::currentFactory && FileDialogPrivate::instance)
         return FileDialogPrivate::instance;

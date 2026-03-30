@@ -30,15 +30,14 @@
 #include "playlistformat.h"
 #include "playlistparser.h"
 
+Q_GLOBAL_STATIC(QList<PlayListFormat*>, plFormats)
+
 class PlayListParserPrivate
 {
 public:
-    static QList<PlayListFormat*> *formats;
     static const QHash<QString, Qmmp::MetaData> metaKeys;
     static const QHash<QString, Qmmp::TrackProperty> propKeys;
 };
-
-QList<PlayListFormat*> *PlayListParserPrivate::formats = nullptr;
 
 //key names
 const QHash<QString, Qmmp::MetaData> PlayListParserPrivate::metaKeys = {
@@ -67,14 +66,14 @@ const QHash<QString, Qmmp::TrackProperty>  PlayListParserPrivate::propKeys = {
 QList<PlayListFormat *> PlayListParser::formats()
 {
     loadFormats();
-    return *PlayListParserPrivate::formats;
+    return *plFormats;
 }
 
 QStringList PlayListParser::nameFilters()
 {
     loadFormats();
     QStringList filters;
-    for(const PlayListFormat *format : std::as_const(*PlayListParserPrivate::formats))
+    for(const PlayListFormat *format : std::as_const(*plFormats))
     {
         filters << format->properties().filters;
     }
@@ -85,7 +84,7 @@ QStringList PlayListParser::filters()
 {
     loadFormats();
     QStringList filters;
-    for(const PlayListFormat *format : std::as_const(*PlayListParserPrivate::formats))
+    for(const PlayListFormat *format : std::as_const(*plFormats))
     {
         if (!format->properties().filters.isEmpty())
             filters << QStringLiteral("%1 (%2)").arg(format->properties().shortName.toUpper(),  format->properties().filters.join(QChar::Space));
@@ -101,15 +100,15 @@ bool PlayListParser::isPlayList(const QString &url)
 PlayListFormat *PlayListParser::findByMime(const QString &mime)
 {
     loadFormats();
-    auto it = std::find_if(PlayListParserPrivate::formats->cbegin(), PlayListParserPrivate::formats->cend(),
+    auto it = std::find_if(plFormats->cbegin(), plFormats->cend(),
                            [mime](PlayListFormat *format) { return format->properties().contentTypes.contains(mime); } );
-    return it == PlayListParserPrivate::formats->cend() ? nullptr : *it;
+    return it == plFormats->cend() ? nullptr : *it;
 }
 
 PlayListFormat *PlayListParser::findByPath(const QString &filePath)
 {
     loadFormats();
-    for(PlayListFormat *format : std::as_const(*PlayListParserPrivate::formats))
+    for(PlayListFormat *format : std::as_const(*plFormats))
     {
         if(QDir::match(format->properties().filters, filePath.section(QLatin1Char('/'), -1)))
             return format;
@@ -183,17 +182,16 @@ QList<PlayListTrack *> PlayListParser::loadPlaylist(const QString &f_name)
 
 QList<PlayListTrack *> PlayListParser::loadPlaylist(const QString &fmt, const QByteArray &content)
 {
-    auto it = std::find_if(PlayListParserPrivate::formats->cbegin(), PlayListParserPrivate::formats->cend(),
+    auto it = std::find_if(plFormats->cbegin(), plFormats->cend(),
                            [fmt](PlayListFormat *format) { return format->properties().shortName == fmt; } );
-    return it == PlayListParserPrivate::formats->cend() ? QList<PlayListTrack *>() : (*it)->decode(content);
+    return it == plFormats->cend() ? QList<PlayListTrack *>() : (*it)->decode(content);
 }
 
 void PlayListParser::loadFormats()
 {
-    if (PlayListParserPrivate::formats)
+    if(plFormats.exists())
         return;
 
-    PlayListParserPrivate::formats = new QList<PlayListFormat*>();
     for(const QString &filePath : Qmmp::findPlugins(u"PlayListFormats"_s))
     {
         QPluginLoader loader(filePath);
@@ -208,7 +206,7 @@ void PlayListParser::loadFormats()
             fmt = qobject_cast<PlayListFormat *>(plugin);
 
         if(fmt)
-            PlayListParserPrivate::formats->append(fmt);
+            plFormats->append(fmt);
     }
 }
 

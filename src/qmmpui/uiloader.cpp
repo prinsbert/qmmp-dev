@@ -29,15 +29,16 @@
 #define QMMP_DEFAULT_UI "skinned"
 #endif
 
+Q_GLOBAL_STATIC(QList<QmmpUiPluginCache *>, uiCache);
+
 class UiLoaderPrivate
 {
 public:
     static void loadPlugins()
     {
-        if (cache)
+        if(uiCache.exists())
             return;
 
-        cache = new QList<QmmpUiPluginCache*>;
         QSettings settings;
         for(const QString &filePath : Qmmp::findPlugins(u"Ui"_s))
         {
@@ -47,20 +48,25 @@ public:
                 delete item;
                 continue;
             }
-            cache->append(item);
+            uiCache->append(item);
         }
+        qAddPostRoutine(UiLoaderPrivate::cleanup);
     }
 
-    static QList<QmmpUiPluginCache*> *cache;
+    static void cleanup()
+    {
+        if(uiCache.exists())
+        {
+            qDeleteAll(*uiCache);
+        }
+    }
 };
-
-QList<QmmpUiPluginCache*> *UiLoaderPrivate::cache = nullptr;
 
 QList<UiFactory *> UiLoader::factories()
 {
     UiLoaderPrivate::loadPlugins();
     QList<UiFactory *> list;
-    for(QmmpUiPluginCache *item : std::as_const(*UiLoaderPrivate::cache))
+    for(QmmpUiPluginCache *item : std::as_const(*uiCache))
     {
         if(item->uiFactory())
             list.append(item->uiFactory());
@@ -72,7 +78,7 @@ QStringList UiLoader::names()
 {
     QStringList out;
     UiLoaderPrivate::loadPlugins();
-    for(const QmmpUiPluginCache *item : std::as_const(*UiLoaderPrivate::cache))
+    for(const QmmpUiPluginCache *item : std::as_const(*uiCache))
     {
         out << item->shortName();
     }
@@ -82,9 +88,9 @@ QStringList UiLoader::names()
 QString UiLoader::file(UiFactory *factory)
 {
     UiLoaderPrivate::loadPlugins();
-    auto it = std::find_if(UiLoaderPrivate::cache->cbegin(), UiLoaderPrivate::cache->cend(),
+    auto it = std::find_if(uiCache->cbegin(), uiCache->cend(),
                            [factory](QmmpUiPluginCache *item) { return item->shortName() == factory->properties().shortName; } );
-    return it == UiLoaderPrivate::cache->cend() ? QString() : (*it)->file();
+    return it == uiCache->cend() ? QString() : (*it)->file();
 }
 
 void UiLoader::select(UiFactory* factory)
@@ -95,9 +101,7 @@ void UiLoader::select(UiFactory* factory)
 void UiLoader::select(const QString &name)
 {
     UiLoaderPrivate::loadPlugins();
-    if(std::any_of(UiLoaderPrivate::cache->cbegin(), UiLoaderPrivate::cache->cend(), [name](QmmpUiPluginCache *item) {
-            return item->shortName() == name;
-        } ))
+    if(std::any_of(uiCache->cbegin(), uiCache->cend(), [name](QmmpUiPluginCache *item) { return item->shortName() == name; } ))
     {
         QSettings settings;
         settings.setValue (u"Ui/current_plugin"_s, name);
@@ -116,12 +120,12 @@ UiFactory *UiLoader::selected()
 #else
     QString name = settings.value(u"Ui/current_plugin"_s, QStringLiteral(QMMP_DEFAULT_UI)).toString();
 #endif
-    for(QmmpUiPluginCache *item : std::as_const(*UiLoaderPrivate::cache))
+    for(QmmpUiPluginCache *item : std::as_const(*uiCache))
     {
         if(item->shortName() == name && item->uiFactory())
             return item->uiFactory();
     }
-    if(!UiLoaderPrivate::cache->isEmpty())
-        return UiLoaderPrivate::cache->constFirst()->uiFactory();
+    if(!uiCache->isEmpty())
+        return uiCache->constFirst()->uiFactory();
     return nullptr;
 }
