@@ -27,6 +27,8 @@
 #include "effectfactory.h"
 #include "effect.h"
 
+Q_GLOBAL_STATIC(QList<QmmpPluginCache *>, effectCache);
+
 class EffectPrivate
 {
 public:
@@ -37,10 +39,9 @@ public:
 
     static void loadPlugins()
     {
-        if(cache)
+        if(effectCache.exists())
             return;
 
-        cache = new QList<QmmpPluginCache *>;
         QSettings settings;
         for(const QString &filePath : Qmmp::findPlugins(u"Effect"_s))
         {
@@ -50,11 +51,20 @@ public:
                 delete item;
                 continue;
             }
-            cache->append(item);
+            effectCache->append(item);
         }
 
-        std::stable_sort(cache->begin(), cache->end(), _effectCacheCompareFunc);
+        std::stable_sort(effectCache->begin(), effectCache->end(), _effectCacheCompareFunc);
         enabledNames = settings.value(u"Effect/enabled_plugins"_s).toStringList();
+        qAddPostRoutine(EffectPrivate::cleanup);
+    }
+
+    static void cleanup()
+    {
+        if(effectCache.exists())
+        {
+            qDeleteAll(*effectCache);
+        }
     }
 
     EffectFactory *factory = nullptr;
@@ -62,11 +72,9 @@ public:
     int channels = 0;
     ChannelMap m_chan_map;
 
-    static QList<QmmpPluginCache*> *cache;
     static QStringList enabledNames;
 };
 
-QList<QmmpPluginCache*> *EffectPrivate::cache = nullptr;
 QStringList EffectPrivate::enabledNames;
 
 Effect::Effect() : d_ptr(new EffectPrivate)
@@ -124,7 +132,7 @@ QList<EffectFactory *> Effect::factories()
 {
     EffectPrivate::loadPlugins();
     QList<EffectFactory *> list;
-    for(QmmpPluginCache *item : std::as_const(*EffectPrivate::cache))
+    for(QmmpPluginCache *item : std::as_const(*effectCache))
     {
         if(item->effectFactory())
             list.append(item->effectFactory());
@@ -136,7 +144,7 @@ QList<EffectFactory *> Effect::enabledFactories()
 {
     EffectPrivate::loadPlugins();
     QList<EffectFactory *> list;
-    for(QmmpPluginCache *item : std::as_const(*EffectPrivate::cache))
+    for(QmmpPluginCache *item : std::as_const(*effectCache))
     {
         if(EffectPrivate::enabledNames.contains(item->shortName()) && item->effectFactory())
             list.append(item->effectFactory());
@@ -147,7 +155,7 @@ QList<EffectFactory *> Effect::enabledFactories()
 QString Effect::file(const EffectFactory *factory)
 {
     EffectPrivate::loadPlugins();
-    for(const QmmpPluginCache *item : std::as_const(*EffectPrivate::cache))
+    for(const QmmpPluginCache *item : std::as_const(*effectCache))
     {
         if(item->shortName() == factory->properties().shortName)
             return item->file();
@@ -193,7 +201,7 @@ bool Effect::isEnabled(const EffectFactory *factory)
 EffectFactory *Effect::findFactory(const QString &shortName)
 {
     EffectPrivate::loadPlugins();
-    for(QmmpPluginCache *item : std::as_const(*EffectPrivate::cache))
+    for(QmmpPluginCache *item : std::as_const(*effectCache))
     {
         if(item->shortName() == shortName)
             return item->effectFactory();
