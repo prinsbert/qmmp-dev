@@ -4,6 +4,12 @@ LEGEND
 [-] Bug fix
 [!] Enhancement
 
+1.7.10
+[*] qmmp-1.7.10
+[*] taglib-2.2.1
+[*] libsidplayfp-2.16.1
+[*] mpg123-1.33.4
+
 1.7.9
 [*] qmmp-1.7.9
 [*] qt-5.15.18
