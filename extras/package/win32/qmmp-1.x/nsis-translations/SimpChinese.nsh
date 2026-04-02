@@ -11,3 +11,4 @@ LangString text_enable_adlib           ${LANG_SimpChinese} "AdLib 格式支持�
 LangString text_startmenu_shortcuts    ${LANG_SimpChinese} "开始菜单快捷方式"
 LangString text_win64_warning          ${LANG_SimpChinese} "安装此软件需要64位 Windows 操作系统。"
 LangString text_enqueue                ${LANG_SimpChinese} "在 Qmmp 播放器中排队"
+LangString text_force_windows11_style  ${LANG_SimpChinese} "Use Windows 11 style"

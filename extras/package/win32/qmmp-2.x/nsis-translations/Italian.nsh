@@ -1,7 +1,7 @@
 LangString text_app_desc               ${LANG_Italian} "Riproduttore audio basato su Qt che supporta molti formati"
 LangString text_win10_warning          ${LANG_Italian} "È richiesto Windows 10 o superiore"
 LangString text_win7_warning           ${LANG_Italian} "È richiesto Windows 7 o superiore"
-LangString text_app_full_name          ${LANG_Italian} "Riproduttore audio basato su Qt (Qt-based Multimedia Player)"
+LangString text_app_full_name          ${LANG_Italian} "Riproduttore multimediale basato su Qt"
 LangString text_portable_configuration ${LANG_Italian} "Configurazione portabile"
 LangString text_portable_warning       ${LANG_Italian} "Rimuovi questo file per disabilitare la modalità portabile"
 LangString text_extra_skins            ${LANG_Italian} "Temi aggiuntivi"
@@ -11,3 +11,4 @@ LangString text_enable_adlib           ${LANG_Italian} "Supporto formati AdLib (
 LangString text_startmenu_shortcuts    ${LANG_Italian} "Scorciatoia del menu di avvio"
 LangString text_win64_warning          ${LANG_Italian} "È richiesto un sistema operativo Windows a 64 bit per installare questo programma."
 LangString text_enqueue                ${LANG_Italian} "Accoda in Qmmp"
+LangString text_force_windows11_style  ${LANG_Italian} "Use Windows 11 style"

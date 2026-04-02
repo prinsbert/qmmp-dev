@@ -11,3 +11,4 @@ LangString text_enable_adlib           ${LANG_Korean} "AdLib 포맷 지원 (AdPl
 LangString text_startmenu_shortcuts    ${LANG_Korean} "시작 메뉴 단축키"
 LangString text_win64_warning          ${LANG_Korean} "이 소프트웨어를 설치하려면 64비트 Windows 운영 체제가 필요합니다."
 LangString text_enqueue                ${LANG_Korean} "Qmmp의 대기열에 넣기"
+LangString text_force_windows11_style  ${LANG_Korean} "Use Windows 11 style"

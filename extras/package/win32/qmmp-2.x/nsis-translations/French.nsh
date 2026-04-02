@@ -11,3 +11,4 @@ LangString text_enable_adlib           ${LANG_French} "AdLib formats support (Ad
 LangString text_startmenu_shortcuts    ${LANG_French} "Menu raccourcis"
 LangString text_win64_warning          ${LANG_French} "Un système d'exploitation Windows 64-bits est requis pour installer le logiciel."
 LangString text_enqueue                ${LANG_French} "Mettre en queue dans Qmmp"
+LangString text_force_windows11_style  ${LANG_French} "Use Windows 11 style"

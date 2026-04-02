@@ -11,3 +11,4 @@ Obsługuj formaty AdLib (AdPlug)
 Skróty w menu Start
 Do zainstalowania tego oprogramowania wymagany jest 64-bitowy system operacyjny Windows.
 Kolejkuj w Qmmp
+Używaj stylu Windows 11

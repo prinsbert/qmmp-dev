@@ -11,3 +11,4 @@ LangString text_enable_adlib           ${LANG_Dutch} "AdLib-formaatondersteuning
 LangString text_startmenu_shortcuts    ${LANG_Dutch} "Startmenusneltoetsen"
 LangString text_win64_warning          ${LANG_Dutch} "Deze software vereist een 64-bitsversie van Windows."
 LangString text_enqueue                ${LANG_Dutch} "Toevoegen aan Qmmp-wachtrij"
+LangString text_force_windows11_style  ${LANG_Dutch} "Windows 11-stijl gebruiken"

@@ -1,7 +1,7 @@
 Riproduttore audio basato su Qt che supporta molti formati
 È richiesto Windows 10 o superiore
 È richiesto Windows 7 o superiore
-Riproduttore audio basato su Qt (Qt-based Multimedia Player)
+Riproduttore multimediale basato su Qt
 Configurazione portabile
 Rimuovi questo file per disabilitare la modalità portabile
 Temi aggiuntivi
@@ -11,3 +11,4 @@ Supporto formati AdLib (AdPlug)
 Scorciatoia del menu di avvio
 È richiesto un sistema operativo Windows a 64 bit per installare questo programma.
 Accoda in Qmmp
+Use Windows 11 style

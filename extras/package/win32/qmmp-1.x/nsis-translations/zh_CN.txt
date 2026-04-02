@@ -11,3 +11,4 @@ AdLib 格式支持（AdPlug）
 开始菜单快捷方式
 安装此软件需要64位 Windows 操作系统。
 在 Qmmp 播放器中排队
+Use Windows 11 style

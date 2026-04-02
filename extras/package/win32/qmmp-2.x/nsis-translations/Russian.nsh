@@ -11,3 +11,4 @@ LangString text_enable_adlib           ${LANG_Russian} "Поддержка фо�
 LangString text_startmenu_shortcuts    ${LANG_Russian} "Создать ярлыки в меню запуска"
 LangString text_win64_warning          ${LANG_Russian} "Для установки данной программы требуется 64-битная версия Windows."
 LangString text_enqueue                ${LANG_Russian} "Добавить в очередь Qmmp"
+LangString text_force_windows11_style  ${LANG_Russian} "Использовать стиль Windows 11"

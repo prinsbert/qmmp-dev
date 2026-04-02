@@ -11,3 +11,4 @@ AdLib formats support (AdPlug)
 Menu raccourcis
 Un système d'exploitation Windows 64-bits est requis pour installer le logiciel.
 Mettre en queue dans Qmmp
+Use Windows 11 style
