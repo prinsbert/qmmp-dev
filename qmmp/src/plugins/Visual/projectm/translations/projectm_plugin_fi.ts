@@ -75,110 +75,110 @@
 <context>
     <name>ProjectMWidget</name>
     <message>
-        <location filename="../projectmwidget.cpp" line="144"/>
-        <location filename="../projectmwidget.cpp" line="156"/>
+        <location filename="../projectmwidget.cpp" line="145"/>
+        <location filename="../projectmwidget.cpp" line="157"/>
         <source>&amp;Help</source>
         <translation>&amp;Ohje</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="144"/>
-        <location filename="../projectmwidget.cpp" line="156"/>
+        <location filename="../projectmwidget.cpp" line="145"/>
+        <location filename="../projectmwidget.cpp" line="157"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="145"/>
-        <location filename="../projectmwidget.cpp" line="157"/>
+        <location filename="../projectmwidget.cpp" line="146"/>
+        <location filename="../projectmwidget.cpp" line="158"/>
         <source>&amp;Show Song Title</source>
         <translation>&amp;Näytä kappaleen nimi</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="145"/>
-        <location filename="../projectmwidget.cpp" line="157"/>
+        <location filename="../projectmwidget.cpp" line="146"/>
+        <location filename="../projectmwidget.cpp" line="158"/>
         <source>F2</source>
         <translation>F2</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="146"/>
-        <location filename="../projectmwidget.cpp" line="158"/>
+        <location filename="../projectmwidget.cpp" line="147"/>
+        <location filename="../projectmwidget.cpp" line="159"/>
         <source>&amp;Show Preset Name</source>
         <translation>&amp;Näytä esiasetuksen nimi</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="146"/>
-        <location filename="../projectmwidget.cpp" line="158"/>
+        <location filename="../projectmwidget.cpp" line="147"/>
+        <location filename="../projectmwidget.cpp" line="159"/>
         <source>F3</source>
         <translation>F3</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="147"/>
-        <location filename="../projectmwidget.cpp" line="159"/>
+        <location filename="../projectmwidget.cpp" line="148"/>
+        <location filename="../projectmwidget.cpp" line="160"/>
         <source>&amp;Show Menu</source>
         <translation>&amp;Näytä valikko</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="147"/>
-        <location filename="../projectmwidget.cpp" line="159"/>
+        <location filename="../projectmwidget.cpp" line="148"/>
+        <location filename="../projectmwidget.cpp" line="160"/>
         <source>M</source>
         <translation>M</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="149"/>
-        <location filename="../projectmwidget.cpp" line="161"/>
+        <location filename="../projectmwidget.cpp" line="150"/>
+        <location filename="../projectmwidget.cpp" line="162"/>
         <source>&amp;Next Preset</source>
         <translation>&amp;Seuraava esiasetus</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="149"/>
-        <location filename="../projectmwidget.cpp" line="161"/>
+        <location filename="../projectmwidget.cpp" line="150"/>
+        <location filename="../projectmwidget.cpp" line="162"/>
         <source>N</source>
         <translation>N</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="150"/>
-        <location filename="../projectmwidget.cpp" line="162"/>
+        <location filename="../projectmwidget.cpp" line="151"/>
+        <location filename="../projectmwidget.cpp" line="163"/>
         <source>&amp;Previous Preset</source>
         <translation>&amp;Edellinen esiasetus</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="150"/>
-        <location filename="../projectmwidget.cpp" line="162"/>
+        <location filename="../projectmwidget.cpp" line="151"/>
+        <location filename="../projectmwidget.cpp" line="163"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="151"/>
-        <location filename="../projectmwidget.cpp" line="163"/>
+        <location filename="../projectmwidget.cpp" line="152"/>
+        <location filename="../projectmwidget.cpp" line="164"/>
         <source>&amp;Random Preset</source>
         <translation>&amp;Satunnainen esiasetus</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="151"/>
-        <location filename="../projectmwidget.cpp" line="163"/>
+        <location filename="../projectmwidget.cpp" line="152"/>
+        <location filename="../projectmwidget.cpp" line="164"/>
         <source>R</source>
         <translation>R</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="152"/>
-        <location filename="../projectmwidget.cpp" line="164"/>
+        <location filename="../projectmwidget.cpp" line="153"/>
+        <location filename="../projectmwidget.cpp" line="165"/>
         <source>&amp;Lock Preset</source>
         <translation>&amp;Lukitse esiasetus</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="152"/>
-        <location filename="../projectmwidget.cpp" line="164"/>
+        <location filename="../projectmwidget.cpp" line="153"/>
+        <location filename="../projectmwidget.cpp" line="165"/>
         <source>L</source>
         <translation>L</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="154"/>
-        <location filename="../projectmwidget.cpp" line="166"/>
+        <location filename="../projectmwidget.cpp" line="155"/>
+        <location filename="../projectmwidget.cpp" line="167"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Koko näyttö</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="154"/>
-        <location filename="../projectmwidget.cpp" line="166"/>
+        <location filename="../projectmwidget.cpp" line="155"/>
+        <location filename="../projectmwidget.cpp" line="167"/>
         <source>F</source>
         <translation>F</translation>
     </message>
@@ -198,12 +198,12 @@
     <message>
         <location filename="../visualprojectmfactory.cpp" line="51"/>
         <source>Qmmp ProjectM Visual Plugin</source>
-        <translation>Qmmp ProjectM Visual Plugin</translation>
+        <translation>Qmmp:n ProjectM-visuaaliliitännäinen</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="52"/>
         <source>This plugin adds projectM visualization</source>
-        <translation>Tämä laajennus lisää projectM visualisoinnin</translation>
+        <translation>Tämä liitännäinen lisää projectM-visualisoinnin</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="53"/>
@@ -213,7 +213,7 @@
     <message>
         <location filename="../visualprojectmfactory.cpp" line="54"/>
         <source>Based on libprojectM-qt library</source>
-        <translation>Pohjautuu libprojectM-qt kirjastoon</translation>
+        <translation>Pohjautuu libprojectM-qt-kirjastoon</translation>
     </message>
 </context>
 </TS>

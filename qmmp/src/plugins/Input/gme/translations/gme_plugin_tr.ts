@@ -14,22 +14,22 @@
         <translation>Oyun Müzik Dosyaları</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="101"/>
+        <location filename="../decodergmefactory.cpp" line="99"/>
         <source>About GME Audio Plugin</source>
         <translation>GME Ses Eklentisi Hakkında</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="102"/>
+        <location filename="../decodergmefactory.cpp" line="100"/>
         <source>Qmmp GME Audio Plugin</source>
         <translation>Qmmp GME Ses Eklentisi</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="103"/>
+        <location filename="../decodergmefactory.cpp" line="101"/>
         <source>This plugin uses Game_Music_Emu library to play game music files</source>
         <translation>Bu eklenti midi dosyalarını oynatmada Game_Music_Emu kitaplığını kullanır</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="104"/>
+        <location filename="../decodergmefactory.cpp" line="102"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Yazan: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

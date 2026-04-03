@@ -19,7 +19,7 @@
     <message>
         <location filename="../historyfactory.cpp" line="31"/>
         <source>Listening History Plugin</source>
-        <translation>Listening History Plugin</translation>
+        <translation>Kuunteluhistorian liitännäinen</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="51"/>
@@ -29,12 +29,12 @@
     <message>
         <location filename="../historyfactory.cpp" line="52"/>
         <source>Qmmp Listening History Plugin</source>
-        <translation>Qmmp Listening History Plugin</translation>
+        <translation>Qmmp:n kuunteluhistorian liitännäinen</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="53"/>
         <source>This plugin collects information about listened tracks</source>
-        <translation>Tämä laajennus kerää tietoja kuunnelluista kappaleista</translation>
+        <translation>Tämä liitännäinen kerää tietoja kuunnelluista kappaleista</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="54"/>
@@ -47,7 +47,7 @@
     <message>
         <location filename="../historysettingsdialog.ui" line="14"/>
         <source>Listening History Plugin Settings</source>
-        <translation>Asetukset Listening History Plugin</translation>
+        <translation>Kuunteluhistorialiitännäisen asetukset</translation>
     </message>
     <message>
         <location filename="../historysettingsdialog.ui" line="31"/>

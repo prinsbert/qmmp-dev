@@ -14,22 +14,22 @@
         <translation>Программы звукогенераторов</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="101"/>
+        <location filename="../decodergmefactory.cpp" line="99"/>
         <source>About GME Audio Plugin</source>
         <translation>Об аудио-модуле GME</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="102"/>
+        <location filename="../decodergmefactory.cpp" line="100"/>
         <source>Qmmp GME Audio Plugin</source>
         <translation>Аудио-модуль GME для Qmmp</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="103"/>
+        <location filename="../decodergmefactory.cpp" line="101"/>
         <source>This plugin uses Game_Music_Emu library to play game music files</source>
         <translation>Для воспроизведения используется библиотека Game_Music_Emu </translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="104"/>
+        <location filename="../decodergmefactory.cpp" line="102"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Разработчик: Илья Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>

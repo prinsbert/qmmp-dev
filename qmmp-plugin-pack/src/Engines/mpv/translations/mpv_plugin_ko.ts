@@ -14,22 +14,22 @@
         <translation>비디오 파일</translation>
     </message>
     <message>
-        <location filename="../mpvenginefactory.cpp" line="198"/>
+        <location filename="../mpvenginefactory.cpp" line="197"/>
         <source>About MPV Plugin</source>
         <translation>MPV 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../mpvenginefactory.cpp" line="199"/>
+        <location filename="../mpvenginefactory.cpp" line="198"/>
         <source>Qmmp MPV Plugin</source>
         <translation>Qmmp MPV 플러그인</translation>
     </message>
     <message>
-        <location filename="../mpvenginefactory.cpp" line="200"/>
+        <location filename="../mpvenginefactory.cpp" line="199"/>
         <source>This plugin uses mpv as backend</source>
         <translation>이 플러그인은 mpv를 백엔드로 사용합니다</translation>
     </message>
     <message>
-        <location filename="../mpvenginefactory.cpp" line="201"/>
+        <location filename="../mpvenginefactory.cpp" line="200"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

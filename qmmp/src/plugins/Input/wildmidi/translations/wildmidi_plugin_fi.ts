@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="46"/>
         <source>WildMidi Plugin</source>
-        <translation>WildMidi Plugin</translation>
+        <translation>WildMidi-liitännäinen</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="48"/>

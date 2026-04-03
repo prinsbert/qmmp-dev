@@ -24,7 +24,7 @@
     <message>
         <location filename="../outputoss4factory.cpp" line="36"/>
         <source>OSS4 Plugin</source>
-        <translation>OSS4 Plugin</translation>
+        <translation>OSS4-liitännäinen</translation>
     </message>
     <message>
         <location filename="../outputoss4factory.cpp" line="55"/>

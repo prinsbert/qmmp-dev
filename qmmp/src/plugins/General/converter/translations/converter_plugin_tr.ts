@@ -5,28 +5,28 @@
     <name>Converter</name>
     <message>
         <location filename="../converter.cpp" line="125"/>
-        <location filename="../converter.cpp" line="228"/>
+        <location filename="../converter.cpp" line="226"/>
         <source>Cancelled</source>
         <translation>İptal Edildi</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="140"/>
-        <location filename="../converter.cpp" line="210"/>
+        <location filename="../converter.cpp" line="208"/>
         <source>Error</source>
         <translation>Hata</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="178"/>
+        <location filename="../converter.cpp" line="176"/>
         <source>Converting</source>
         <translation>Dönüştürülüyor</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="239"/>
+        <location filename="../converter.cpp" line="237"/>
         <source>Encoding</source>
         <translation>Kodlama</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="277"/>
+        <location filename="../converter.cpp" line="275"/>
         <source>Finished</source>
         <translation>Bitirildi</translation>
     </message>

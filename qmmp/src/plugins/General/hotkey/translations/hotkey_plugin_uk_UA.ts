@@ -70,77 +70,77 @@
         <translation>Гарячий клавіш</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="39"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="40"/>
         <source>Play</source>
         <translation>Відтворити</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="40"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="41"/>
         <source>Stop</source>
         <translation>Зупинити</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="41"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="42"/>
         <source>Pause</source>
         <translation>Павза</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="42"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="43"/>
         <source>Play/Pause</source>
         <translation>Відтворити/Павза</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="43"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="44"/>
         <source>Next</source>
         <translation>Уперед</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="44"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="45"/>
         <source>Previous</source>
         <translation>Назад</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="45"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="46"/>
         <source>Show/Hide</source>
         <translation>Показати/Сховати</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="46"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="47"/>
         <source>Volume +</source>
         <translation>Гучність +</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="47"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="48"/>
         <source>Volume -</source>
         <translation>Гучність -</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="48"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="49"/>
         <source>Forward 5 seconds</source>
         <translation>Уперед на 5 секунд</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="49"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="50"/>
         <source>Rewind 5 seconds</source>
         <translation>Назад на 5 секунд</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="50"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="51"/>
         <source>Jump to track</source>
         <translation>Перейти на доріжку</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="51"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="52"/>
         <source>Mute</source>
         <translation>Вимкнути звук</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="111"/>
         <source>Warning</source>
         <translation>Попередження</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="111"/>
         <source>Key sequence &apos;%1&apos; is already used</source>
         <translation>Сполучення клавішів &quot;%1&quot; вже використовується</translation>
     </message>

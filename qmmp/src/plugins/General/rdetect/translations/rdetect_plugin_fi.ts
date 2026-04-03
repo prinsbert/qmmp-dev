@@ -39,7 +39,7 @@
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="29"/>
         <source>CD Audio Detection</source>
-        <translation>Audio CD:n tunnistus</translation>
+        <translation>Ääni-CD:n tunnistus</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="38"/>

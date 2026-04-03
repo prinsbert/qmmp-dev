@@ -19,6 +19,7 @@ Kiina yksinkertaistettu:
     Mabier
     Mingcong Bai
     Mingye Wang
+    Rain Ding
 
 Tšekki:
     Jaroslav Lichtblau

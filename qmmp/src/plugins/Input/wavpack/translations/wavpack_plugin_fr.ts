@@ -14,22 +14,22 @@
         <translation>Fichiers WavPack</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="180"/>
+        <location filename="../decoderwavpackfactory.cpp" line="177"/>
         <source>About WavPack Audio Plugin</source>
         <translation>À propos du greffon audio WavPack</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="181"/>
+        <location filename="../decoderwavpackfactory.cpp" line="178"/>
         <source>Qmmp WavPack Audio Plugin</source>
         <translation>Greffon audio WavPack pour Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="182"/>
+        <location filename="../decoderwavpackfactory.cpp" line="179"/>
         <source>WavPack library version: %1</source>
         <translation>Version de la librairie WavPack : %1</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="184"/>
+        <location filename="../decoderwavpackfactory.cpp" line="181"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Écrit par : Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

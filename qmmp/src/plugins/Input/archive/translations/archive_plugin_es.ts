@@ -14,22 +14,22 @@
         <translation>Archivos</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="168"/>
+        <location filename="../decoderarchivefactory.cpp" line="166"/>
         <source>About Archive Reader Plugin</source>
         <translation>Acerca del Módulo Lector de Archivo</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="169"/>
+        <location filename="../decoderarchivefactory.cpp" line="167"/>
         <source>Qmmp Archive Reader Plugin</source>
         <translation>Módulo Lector de Archivo de Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="170"/>
+        <location filename="../decoderarchivefactory.cpp" line="168"/>
         <source>Compiled against:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="173"/>
+        <location filename="../decoderarchivefactory.cpp" line="171"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Escrito por: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

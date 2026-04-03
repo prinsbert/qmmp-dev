@@ -69,7 +69,7 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="99"/>
         <source>Audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Audio</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="105"/>
@@ -84,22 +84,22 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="154"/>
         <source>Metadata</source>
-        <translation type="unfinished"></translation>
+        <translation>Metadati</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="160"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="170"/>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="180"/>
         <source>Genre:</source>
-        <translation type="unfinished"></translation>
+        <translation>Genere:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="190"/>

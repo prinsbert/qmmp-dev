@@ -14,22 +14,22 @@
         <translation>Αρχειοθήκες</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="168"/>
+        <location filename="../decoderarchivefactory.cpp" line="166"/>
         <source>About Archive Reader Plugin</source>
         <translation>Σχετικά με το πρόσθετο ανάγνωσης αρχειοθηκών</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="169"/>
+        <location filename="../decoderarchivefactory.cpp" line="167"/>
         <source>Qmmp Archive Reader Plugin</source>
         <translation>Πρόσθετο ανάγνωσης αρχειοθηκών Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="170"/>
+        <location filename="../decoderarchivefactory.cpp" line="168"/>
         <source>Compiled against:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="173"/>
+        <location filename="../decoderarchivefactory.cpp" line="171"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>

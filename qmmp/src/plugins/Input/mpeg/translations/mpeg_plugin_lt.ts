@@ -14,32 +14,32 @@
         <translation type="unfinished">MPEG bylos</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="418"/>
+        <location filename="../decodermpegfactory.cpp" line="417"/>
         <source>About MPEG Audio Plugin</source>
         <translation type="unfinished">Apie MPEG audio įskiepį</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="419"/>
+        <location filename="../decodermpegfactory.cpp" line="418"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="420"/>
+        <location filename="../decodermpegfactory.cpp" line="419"/>
         <source>Compiled against:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="429"/>
+        <location filename="../decodermpegfactory.cpp" line="428"/>
         <source>mpg123, API version: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="433"/>
+        <location filename="../decodermpegfactory.cpp" line="432"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished">Sukūrė: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="434"/>
+        <location filename="../decodermpegfactory.cpp" line="433"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation type="unfinished">Kodas sukurtas mq3 ir madplay projektų kodais </translation>
     </message>

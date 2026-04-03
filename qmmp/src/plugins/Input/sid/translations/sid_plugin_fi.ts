@@ -6,7 +6,7 @@
     <message>
         <location filename="../decodersidfactory.cpp" line="57"/>
         <source>SID Plugin</source>
-        <translation>SID Plugin</translation>
+        <translation>SID-liitännäinen</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="59"/>
@@ -14,22 +14,22 @@
         <translation>SID-tiedostot</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="112"/>
+        <location filename="../decodersidfactory.cpp" line="110"/>
         <source>About SID Audio Plugin</source>
         <translation>Tietoja: SID Audio Plugin</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="113"/>
+        <location filename="../decodersidfactory.cpp" line="111"/>
         <source>Qmmp SID Audio Plugin</source>
         <translation>Qmmp SID Audio Plugin</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="114"/>
+        <location filename="../decodersidfactory.cpp" line="112"/>
         <source>This plugin plays Commodore 64 music files using libsidplayfp library</source>
         <translation>Tämä liitännäinen toistaa Commodore 64 musiikkia käyttäen libsidplayfp kirjastoa</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="115"/>
+        <location filename="../decodersidfactory.cpp" line="113"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Kirjoittanut: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

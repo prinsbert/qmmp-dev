@@ -6,7 +6,7 @@
     <message>
         <location filename="../decodervorbisfactory.cpp" line="44"/>
         <source>Ogg Vorbis Plugin</source>
-        <translation>Ogg Vorbis Plugin</translation>
+        <translation>Ogg Vorbis -liitännäinen</translation>
     </message>
     <message>
         <location filename="../decodervorbisfactory.cpp" line="47"/>

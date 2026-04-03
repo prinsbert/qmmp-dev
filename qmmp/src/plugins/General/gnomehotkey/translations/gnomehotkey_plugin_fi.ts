@@ -6,7 +6,7 @@
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="29"/>
         <source>Gnome Hotkey Plugin</source>
-        <translation>Gnome Hotkey Plugin</translation>
+        <translation>Gnome-pikanäppäinten liitännäinen</translation>
     </message>
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="50"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="52"/>
         <source>This plugin adds support of the GNOME/Cinnamon hotkeys</source>
-        <translation>Tämä laajennus lisää tuen GNOME ja Cinnamon pikanäppäimille</translation>
+        <translation>Tämä liitännäinen lisää tuen GNOME- ja Cinnamon-pikanäppäimille</translation>
     </message>
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="53"/>

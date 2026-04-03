@@ -6,7 +6,7 @@
     <message>
         <location filename="../outputwasapifactory.cpp" line="29"/>
         <source>WASAPI Plugin</source>
-        <translation>WASAPI Plugin</translation>
+        <translation>WASAPI-liitännäinen</translation>
     </message>
     <message>
         <location filename="../outputwasapifactory.cpp" line="53"/>

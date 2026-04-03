@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="38"/>
         <source>WavPack Plugin</source>
-        <translation>WavPack Plugin</translation>
+        <translation>WavPack-liitännäinen</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="40"/>
@@ -14,22 +14,22 @@
         <translation>WavPack-tiedostot</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="180"/>
+        <location filename="../decoderwavpackfactory.cpp" line="177"/>
         <source>About WavPack Audio Plugin</source>
         <translation>Tietoja: WavPack Audio Plugin</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="181"/>
+        <location filename="../decoderwavpackfactory.cpp" line="178"/>
         <source>Qmmp WavPack Audio Plugin</source>
         <translation>Qmmp WavPack Audio Plugin</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="182"/>
+        <location filename="../decoderwavpackfactory.cpp" line="179"/>
         <source>WavPack library version: %1</source>
         <translation>WavPack library versio: %1</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="184"/>
+        <location filename="../decoderwavpackfactory.cpp" line="181"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Kirjoittanut: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

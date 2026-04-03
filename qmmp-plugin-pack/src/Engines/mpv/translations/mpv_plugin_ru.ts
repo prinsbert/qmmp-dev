@@ -14,22 +14,22 @@
         <translation>Файлы видео</translation>
     </message>
     <message>
-        <location filename="../mpvenginefactory.cpp" line="198"/>
+        <location filename="../mpvenginefactory.cpp" line="197"/>
         <source>About MPV Plugin</source>
         <translation>О модуле MPV</translation>
     </message>
     <message>
-        <location filename="../mpvenginefactory.cpp" line="199"/>
+        <location filename="../mpvenginefactory.cpp" line="198"/>
         <source>Qmmp MPV Plugin</source>
         <translation>Модуль MPV для Qmmp</translation>
     </message>
     <message>
-        <location filename="../mpvenginefactory.cpp" line="200"/>
+        <location filename="../mpvenginefactory.cpp" line="199"/>
         <source>This plugin uses mpv as backend</source>
         <translation>В этом модуле для воспроизведения используется MPV</translation>
     </message>
     <message>
-        <location filename="../mpvenginefactory.cpp" line="201"/>
+        <location filename="../mpvenginefactory.cpp" line="200"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Разработчик: Илья Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>

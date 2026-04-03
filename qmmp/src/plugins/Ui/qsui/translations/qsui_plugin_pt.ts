@@ -996,17 +996,17 @@
 <context>
     <name>QSUiCoverWidget</name>
     <message>
-        <location filename="../qsuicoverwidget.cpp" line="32"/>
+        <location filename="../qsuicoverwidget.cpp" line="33"/>
         <source>&amp;Save As...</source>
         <translation>&amp;Guardar como...</translation>
     </message>
     <message>
-        <location filename="../qsuicoverwidget.cpp" line="65"/>
+        <location filename="../qsuicoverwidget.cpp" line="66"/>
         <source>Save Cover As</source>
         <translation>Guardar capa como</translation>
     </message>
     <message>
-        <location filename="../qsuicoverwidget.cpp" line="67"/>
+        <location filename="../qsuicoverwidget.cpp" line="68"/>
         <source>Images</source>
         <translation>Imagens</translation>
     </message>
@@ -1845,12 +1845,12 @@
 <context>
     <name>QSUiWaveformSeekBar</name>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="335"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="336"/>
         <source>2 Channels</source>
         <translation>2 canais</translation>
     </message>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="338"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="339"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation>RMS</translation>

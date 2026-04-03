@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderopusfactory.cpp" line="42"/>
         <source>Opus Plugin</source>
-        <translation>Opus Plugin</translation>
+        <translation>Opus-liitännäinen</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="45"/>

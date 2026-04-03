@@ -70,77 +70,77 @@
         <translation>Sneltoets</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="39"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="40"/>
         <source>Play</source>
         <translation>Afspelen</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="40"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="41"/>
         <source>Stop</source>
         <translation>Stoppen</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="41"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="42"/>
         <source>Pause</source>
         <translation>Pauzeren</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="42"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="43"/>
         <source>Play/Pause</source>
         <translation>Afspelen/Pauzeren</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="43"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="44"/>
         <source>Next</source>
         <translation>Volgende</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="44"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="45"/>
         <source>Previous</source>
         <translation>Vorige</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="45"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="46"/>
         <source>Show/Hide</source>
         <translation>Tonen/Verbergen</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="46"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="47"/>
         <source>Volume +</source>
         <translation>Volume +</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="47"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="48"/>
         <source>Volume -</source>
         <translation>Volume -</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="48"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="49"/>
         <source>Forward 5 seconds</source>
         <translation>5 seconden vooruitspoelen</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="49"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="50"/>
         <source>Rewind 5 seconds</source>
         <translation>5 seconden terugspoelen</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="50"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="51"/>
         <source>Jump to track</source>
         <translation>Ga naar nummer</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="51"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="52"/>
         <source>Mute</source>
         <translation>Dempen</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="111"/>
         <source>Warning</source>
         <translation>Waarschuwing</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="111"/>
         <source>Key sequence &apos;%1&apos; is already used</source>
         <translation>De toetscombinatie &apos;%1&apos; is al in gebruik</translation>
     </message>

@@ -14,7 +14,7 @@
     <message>
         <location filename="../kdenotifyfactory.cpp" line="29"/>
         <source>KDE notification plugin</source>
-        <translation>KDE notification plugin</translation>
+        <translation>KDE:n ilmoitusliitännäinen</translation>
     </message>
     <message>
         <location filename="../kdenotifyfactory.cpp" line="49"/>
@@ -24,7 +24,7 @@
     <message>
         <location filename="../kdenotifyfactory.cpp" line="50"/>
         <source>KDE notification plugin for Qmmp</source>
-        <translation>Qmmp KDE notification plugin</translation>
+        <translation>Qmmp:n KDE-ilmoitusliitännäinen</translation>
     </message>
 </context>
 <context>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="14"/>
         <source>KDE Notification Plugin Settings</source>
-        <translation>KDE Notification Plugin asetukset</translation>
+        <translation>KDE:n ilmoitusliitännäisen asetukset</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="39"/>

@@ -30,7 +30,7 @@
     <message>
         <location filename="../libraryfactory.cpp" line="33"/>
         <source>Media Library Plugin</source>
-        <translation>Media Library Plugin</translation>
+        <translation>Mediakirjastoliitännäinen</translation>
     </message>
     <message>
         <location filename="../libraryfactory.cpp" line="38"/>
@@ -50,7 +50,7 @@
     <message>
         <location filename="../libraryfactory.cpp" line="85"/>
         <source>Qmmp Media Library Plugin</source>
-        <translation>Qmmp Media Library Plugin</translation>
+        <translation>Qmmp:n mediakirjastoliitännäinen</translation>
     </message>
     <message>
         <location filename="../libraryfactory.cpp" line="86"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../librarysettingsdialog.ui" line="14"/>
         <source>Media Library Settings</source>
-        <translation>Asetukset Media Library</translation>
+        <translation>Mediakirjaston asetukset</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="39"/>
@@ -229,7 +229,7 @@
     <message>
         <location filename="../librarywidget.ui" line="14"/>
         <source>Media Library</source>
-        <translation>Media Library</translation>
+        <translation>Mediakirjasto</translation>
     </message>
 </context>
 </TS>

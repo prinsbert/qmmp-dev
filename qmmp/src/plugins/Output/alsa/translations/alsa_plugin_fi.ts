@@ -6,7 +6,7 @@
     <message>
         <location filename="../alsasettingsdialog.ui" line="14"/>
         <source>ALSA Plugin Settings</source>
-        <translation>Asetukset ALSA Plugin</translation>
+        <translation>ALSA-liitännäisen asetukset</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="33"/>
@@ -69,7 +69,7 @@
     <message>
         <location filename="../outputalsafactory.cpp" line="31"/>
         <source>ALSA Plugin</source>
-        <translation>ALSA Plugin</translation>
+        <translation>ALSA-liitännäinen</translation>
     </message>
     <message>
         <location filename="../outputalsafactory.cpp" line="55"/>

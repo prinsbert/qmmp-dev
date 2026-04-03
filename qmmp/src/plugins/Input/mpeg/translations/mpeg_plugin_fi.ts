@@ -6,7 +6,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="177"/>
         <source>MPEG Plugin</source>
-        <translation>MPEG Plugin</translation>
+        <translation>MPEG-liitännäinen</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="180"/>
@@ -14,32 +14,32 @@
         <translation>MPEG-tiedostot</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="418"/>
+        <location filename="../decodermpegfactory.cpp" line="417"/>
         <source>About MPEG Audio Plugin</source>
         <translation>Tietoja: MPEG Audio Plugin</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="419"/>
+        <location filename="../decodermpegfactory.cpp" line="418"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
         <translation>MPEG 1.0/2.0/2.5 taso 1/2/3 audio dekooderi</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="420"/>
+        <location filename="../decodermpegfactory.cpp" line="419"/>
         <source>Compiled against:</source>
         <translation>Koostettu:</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="429"/>
+        <location filename="../decodermpegfactory.cpp" line="428"/>
         <source>mpg123, API version: %1</source>
         <translation>mpg123, API-versio: %1</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="433"/>
+        <location filename="../decodermpegfactory.cpp" line="432"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Kirjoittanut: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="434"/>
+        <location filename="../decodermpegfactory.cpp" line="433"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation>Lähdekoodi perustuu mq3- ja madplay-projektien koodiin</translation>
     </message>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="14"/>
         <source>MPEG Plugin Settings</source>
-        <translation>Asetukset MPEG Plugin</translation>
+        <translation>MPEG-liitännäisen asetukset</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="35"/>
