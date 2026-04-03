@@ -323,7 +323,7 @@ Section $(text_startmenu_shortcuts) SHORTCUTS
     CreateShortCut "$SMPROGRAMS\Qt-based Multimedia Player\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\Uninstall.exe" 0
     Var /GLOBAL QmmpCommandLine
     ${If} ${SectionIsSelected} ${FORCE_WINDOWS11_STYLE}
-       StrCpy $(QmmpCommandLine) "-style windows11"  
+       StrCpy $QmmpCommandLine "-style windows11"  
     ${EndIf}
     CreateShortCut "$SMPROGRAMS\Qt-based Multimedia Player\Qmmp.lnk" "$INSTDIR\bin\qmmp.exe" $QmmpCommandLine "$INSTDIR\bin\qmmp.exe" 0
   ${EndIf}
