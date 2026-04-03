@@ -270,7 +270,9 @@ qint64 OutputPipeWire::latency()
     {
         delayMs -= qBound(0LL, qint64(pw_stream_get_nsec(m_stream) - ts.now) / SPA_NSEC_PER_MSEC, delayMs); //1.1.0
         delayMs += ts.queued * SPA_MSEC_PER_SEC / freq;
+#if PW_CHECK_VERSION(0, 3, 50)
         delayMs += ts.buffered * SPA_MSEC_PER_SEC / freq;
+#endif
         if(ts.rate.denom > 0)
         {
             delayMs += ts.delay * SPA_MSEC_PER_SEC * ts.rate.num / ts.rate.denom;
