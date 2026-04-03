@@ -14,27 +14,27 @@
         <translation>猴子音訊檔案</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="150"/>
+        <location filename="../decoderffapfactory.cpp" line="149"/>
         <source>About FFap Audio Plugin</source>
         <translation>關於 FFap 音訊插件</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="151"/>
+        <location filename="../decoderffapfactory.cpp" line="150"/>
         <source>Qmmp FFap Audio Plugin</source>
         <translation>Qmmp FFap 音訊插件</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="152"/>
+        <location filename="../decoderffapfactory.cpp" line="151"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
         <translation>此插件提供猴子音訊（APE）支援</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="153"/>
+        <location filename="../decoderffapfactory.cpp" line="152"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="154"/>
+        <location filename="../decoderffapfactory.cpp" line="153"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
         <translation>基於 deadbeef、FFmpeg 和 rockbox 的程式碼</translation>
     </message>

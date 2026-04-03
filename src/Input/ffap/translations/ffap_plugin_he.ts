@@ -14,27 +14,27 @@
         <translation>קבצי Monkey&apos;s Audio</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="150"/>
+        <location filename="../decoderffapfactory.cpp" line="149"/>
         <source>About FFap Audio Plugin</source>
         <translation>אודות תוסף שמע FFap</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="151"/>
+        <location filename="../decoderffapfactory.cpp" line="150"/>
         <source>Qmmp FFap Audio Plugin</source>
         <translation>תוסף שמע FFap של Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="152"/>
+        <location filename="../decoderffapfactory.cpp" line="151"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
         <translation>תוסף זה מספק תמיכה לקבצי Monkey&apos;s Audio ‏(APE)</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="153"/>
+        <location filename="../decoderffapfactory.cpp" line="152"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="154"/>
+        <location filename="../decoderffapfactory.cpp" line="153"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
         <translation>מבוסס על קוד מתוך deadbeef, FFmpeg וגם rockbox</translation>
     </message>

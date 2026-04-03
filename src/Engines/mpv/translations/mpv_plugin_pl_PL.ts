@@ -14,22 +14,22 @@
         <translation>Pliki wideo</translation>
     </message>
     <message>
-        <location filename="../mpvenginefactory.cpp" line="198"/>
+        <location filename="../mpvenginefactory.cpp" line="197"/>
         <source>About MPV Plugin</source>
         <translation>O wtyczce MPV</translation>
     </message>
     <message>
-        <location filename="../mpvenginefactory.cpp" line="199"/>
+        <location filename="../mpvenginefactory.cpp" line="198"/>
         <source>Qmmp MPV Plugin</source>
         <translation>Wtyczka MPV dla Qmmp</translation>
     </message>
     <message>
-        <location filename="../mpvenginefactory.cpp" line="200"/>
+        <location filename="../mpvenginefactory.cpp" line="199"/>
         <source>This plugin uses mpv as backend</source>
         <translation>Ta wtyczka używa mpv do odtwarzania</translation>
     </message>
     <message>
-        <location filename="../mpvenginefactory.cpp" line="201"/>
+        <location filename="../mpvenginefactory.cpp" line="200"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Napisana przez: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="51"/>
         <source>Bitrate</source>
-        <translation>Szybkość transmisji</translation>
+        <translation>Przepływność</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="51"/>
@@ -61,7 +61,7 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="70"/>
         <source>Audio bitrate</source>
-        <translation>Bitrate dźwięku</translation>
+        <translation>Przepływność dźwięku</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="86"/>
         <source>Video bitrate</source>
-        <translation>Bitrate wideo</translation>
+        <translation>Przepływność wideo</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="89"/>

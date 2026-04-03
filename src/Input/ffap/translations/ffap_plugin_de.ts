@@ -14,27 +14,27 @@
         <translation>Monkey’s-Audio-Dateien</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="150"/>
+        <location filename="../decoderffapfactory.cpp" line="149"/>
         <source>About FFap Audio Plugin</source>
         <translation>Über FFap-Audio-Modul</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="151"/>
+        <location filename="../decoderffapfactory.cpp" line="150"/>
         <source>Qmmp FFap Audio Plugin</source>
         <translation>Qmmp FFap-Audio-Modul</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="152"/>
+        <location filename="../decoderffapfactory.cpp" line="151"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
         <translation>Dieses Modul fügt Unterstützung für Monkey’s Audio (APE) hinzu</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="153"/>
+        <location filename="../decoderffapfactory.cpp" line="152"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Geschrieben von: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="154"/>
+        <location filename="../decoderffapfactory.cpp" line="153"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
         <translation>Basiert auf Code von deadbeef, FFmpeg und Rockbox</translation>
     </message>
