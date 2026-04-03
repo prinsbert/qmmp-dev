@@ -70,77 +70,77 @@
         <translation>단축키</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="39"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="40"/>
         <source>Play</source>
         <translation>재생</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="40"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="41"/>
         <source>Stop</source>
         <translation>중지</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="41"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="42"/>
         <source>Pause</source>
         <translation>일시중지</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="42"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="43"/>
         <source>Play/Pause</source>
         <translation>재생/일시중지</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="43"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="44"/>
         <source>Next</source>
         <translation>다음</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="44"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="45"/>
         <source>Previous</source>
         <translation>이전</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="45"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="46"/>
         <source>Show/Hide</source>
         <translation>표시/숨김</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="46"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="47"/>
         <source>Volume +</source>
         <translation>볼륨 +</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="47"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="48"/>
         <source>Volume -</source>
         <translation>볼륨 -</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="48"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="49"/>
         <source>Forward 5 seconds</source>
         <translation>5초 앞으로</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="49"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="50"/>
         <source>Rewind 5 seconds</source>
         <translation>5초 되감기</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="50"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="51"/>
         <source>Jump to track</source>
         <translation>트랙으로 이동</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="51"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="52"/>
         <source>Mute</source>
         <translation>음소거</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="111"/>
         <source>Warning</source>
         <translation>경고</translation>
     </message>
     <message>
-        <location filename="../hotkeysettingsdialog.cpp" line="110"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="111"/>
         <source>Key sequence &apos;%1&apos; is already used</source>
         <translation>&apos;%1&apos; 키 시퀀스가 이미 사용되었습니다</translation>
     </message>

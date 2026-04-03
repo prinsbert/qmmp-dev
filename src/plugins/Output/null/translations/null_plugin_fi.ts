@@ -6,7 +6,7 @@
     <message>
         <location filename="../outputnullfactory.cpp" line="30"/>
         <source>Null Plugin</source>
-        <translation>Null Plugin</translation>
+        <translation>Null-liitännäinen</translation>
     </message>
     <message>
         <location filename="../outputnullfactory.cpp" line="55"/>

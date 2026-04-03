@@ -14,22 +14,22 @@
         <translation>압축파일</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="168"/>
+        <location filename="../decoderarchivefactory.cpp" line="166"/>
         <source>About Archive Reader Plugin</source>
         <translation>압축파일 읽기도구 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="169"/>
+        <location filename="../decoderarchivefactory.cpp" line="167"/>
         <source>Qmmp Archive Reader Plugin</source>
         <translation>Qmmp 압축파일 읽기도구 플러그인</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="170"/>
+        <location filename="../decoderarchivefactory.cpp" line="168"/>
         <source>Compiled against:</source>
         <translation>컴파일 대상:</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="173"/>
+        <location filename="../decoderarchivefactory.cpp" line="171"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

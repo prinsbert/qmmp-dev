@@ -6,7 +6,7 @@
     <message>
         <location filename="../outputpipewirefactory.cpp" line="30"/>
         <source>PipeWire Plugin</source>
-        <translation>PipeWire Plugin</translation>
+        <translation>PipeWire-liitännäinen</translation>
     </message>
     <message>
         <location filename="../outputpipewirefactory.cpp" line="55"/>

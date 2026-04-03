@@ -6,7 +6,7 @@
     <message>
         <location filename="../mprisfactory.cpp" line="30"/>
         <source>MPRIS Plugin</source>
-        <translation>MPRIS Plugin</translation>
+        <translation>MPRIS-liitännäinen</translation>
     </message>
     <message>
         <location filename="../mprisfactory.cpp" line="50"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../mprisfactory.cpp" line="51"/>
         <source>Qmmp MPRIS Plugin</source>
-        <translation>Qmmp MPRIS Plugin</translation>
+        <translation>Qmmp:n MPRIS-liitännäinen</translation>
     </message>
     <message>
         <location filename="../mprisfactory.cpp" line="52"/>

@@ -11,12 +11,12 @@
     <message>
         <location filename="../aboutqsuidialog.cpp" line="42"/>
         <source>Qmmp Simple User Interface (QSUI)</source>
-        <translation>Qmmp käyttöliittymä (QSUI)</translation>
+        <translation>Qmmp:n yksinkertainen käyttöliittymä (QSUI)</translation>
     </message>
     <message>
         <location filename="../aboutqsuidialog.cpp" line="43"/>
         <source>Qmmp version: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation>Qmmp versio: &lt;b&gt;%1&lt;/b&gt;</translation>
+        <translation>Qmmp-versio: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../aboutqsuidialog.cpp" line="45"/>
@@ -965,7 +965,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="108"/>
         <source>&amp;About Ui</source>
-        <translation>&amp;Tietoja Ui</translation>
+        <translation>&amp;Tietoja käyttöliittymästä</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="109"/>
@@ -975,7 +975,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="110"/>
         <source>&amp;About Qt</source>
-        <translation>&amp;Tietoja Qt</translation>
+        <translation>&amp;Tietoja Qt:stä</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="111"/>
@@ -996,17 +996,17 @@
 <context>
     <name>QSUiCoverWidget</name>
     <message>
-        <location filename="../qsuicoverwidget.cpp" line="32"/>
+        <location filename="../qsuicoverwidget.cpp" line="33"/>
         <source>&amp;Save As...</source>
         <translation>&amp;Tallenna nimellä...</translation>
     </message>
     <message>
-        <location filename="../qsuicoverwidget.cpp" line="65"/>
+        <location filename="../qsuicoverwidget.cpp" line="66"/>
         <source>Save Cover As</source>
         <translation>Tallenna kansikuva nimellä</translation>
     </message>
     <message>
-        <location filename="../qsuicoverwidget.cpp" line="67"/>
+        <location filename="../qsuicoverwidget.cpp" line="68"/>
         <source>Images</source>
         <translation>Kuvat</translation>
     </message>
@@ -1845,12 +1845,12 @@
 <context>
     <name>QSUiWaveformSeekBar</name>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="335"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="336"/>
         <source>2 Channels</source>
         <translation>2 kanavaa</translation>
     </message>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="338"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="339"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation>RMS</translation>

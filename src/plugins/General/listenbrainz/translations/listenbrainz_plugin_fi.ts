@@ -6,7 +6,7 @@
     <message>
         <location filename="../listenbrainzfactory.cpp" line="30"/>
         <source>ListenBrainz Plugin</source>
-        <translation>ListenBrainz Plugin</translation>
+        <translation>ListenBrainz-liitännäinen</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="50"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../listenbrainzfactory.cpp" line="51"/>
         <source>Qmmp ListenBrainz Plugin</source>
-        <translation>Qmmp ListenBrainz Plugin</translation>
+        <translation>Qmmp:n ListenBrainz-liitännäinen</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="52"/>
         <source>This plugin submits listen history to ListenBrainz server</source>
-        <translation>Tämä laajennus lähettää kuunteluhistorian ListenBrainz-palvelimelle</translation>
+        <translation>Tämä liitännäinen lähettää kuunteluhistorian ListenBrainz-palvelimelle</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="53"/>
@@ -34,7 +34,7 @@
     <message>
         <location filename="../listenbrainzsettingsdialog.ui" line="14"/>
         <source>ListenBrainz Plugin Settings</source>
-        <translation>Asetukset ListenBrainz Plugin</translation>
+        <translation>ListenBrainz-liitännäisen asetukset</translation>
     </message>
     <message>
         <location filename="../listenbrainzsettingsdialog.ui" line="29"/>

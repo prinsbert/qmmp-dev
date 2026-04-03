@@ -6,7 +6,7 @@
     <message>
         <location filename="../decodermpcfactory.cpp" line="47"/>
         <source>Musepack Plugin</source>
-        <translation>Musepack Plugin</translation>
+        <translation>Musepack-liitännäinen</translation>
     </message>
     <message>
         <location filename="../decodermpcfactory.cpp" line="49"/>

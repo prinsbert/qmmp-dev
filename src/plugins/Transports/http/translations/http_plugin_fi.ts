@@ -6,7 +6,7 @@
     <message>
         <location filename="../httpinputfactory.cpp" line="33"/>
         <source>HTTP Plugin</source>
-        <translation>HTTP Plugin</translation>
+        <translation>HTTP-liitännäinen</translation>
     </message>
     <message>
         <location filename="../httpinputfactory.cpp" line="52"/>
@@ -34,7 +34,7 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="14"/>
         <source>HTTP Plugin Settings</source>
-        <translation>Asetukset HTTP Plugin</translation>
+        <translation>HTTP-liitännäisen asetukset</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="115"/>

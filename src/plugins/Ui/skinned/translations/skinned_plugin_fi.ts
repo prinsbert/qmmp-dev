@@ -446,7 +446,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="95"/>
         <source>Show &amp;Tab Bar</source>
-        <translation>Näytä &amp;Välilehtipalkki</translation>
+        <translation>Näytä &amp;välilehtipalkki</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="95"/>
@@ -471,7 +471,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="99"/>
         <source>&amp;About Qt</source>
-        <translation>&amp;Tietoja Qt</translation>
+        <translation>&amp;Tietoja Qt:stä</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="100"/>
@@ -1364,7 +1364,7 @@
     <message>
         <location filename="../skinnedsettings.cpp" line="159"/>
         <source>Default skin</source>
-        <translation>Oletus ulkoasu</translation>
+        <translation>Oletusarvoinen ulkoasu</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="168"/>

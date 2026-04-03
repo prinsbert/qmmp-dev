@@ -19,6 +19,7 @@
     mabier
     Mingcong Bai
     Mingye Wang
+    Rain Ding
 
 Чешский:
     Jaroslav Lichtblau

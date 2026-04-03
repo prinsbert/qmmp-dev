@@ -14,22 +14,22 @@
         <translation>壓縮檔</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="168"/>
+        <location filename="../decoderarchivefactory.cpp" line="166"/>
         <source>About Archive Reader Plugin</source>
         <translation>關於壓縮檔支援插件</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="169"/>
+        <location filename="../decoderarchivefactory.cpp" line="167"/>
         <source>Qmmp Archive Reader Plugin</source>
         <translation>Qmmp 壓縮檔支援插件</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="170"/>
+        <location filename="../decoderarchivefactory.cpp" line="168"/>
         <source>Compiled against:</source>
         <translation>編譯針對：</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="173"/>
+        <location filename="../decoderarchivefactory.cpp" line="171"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

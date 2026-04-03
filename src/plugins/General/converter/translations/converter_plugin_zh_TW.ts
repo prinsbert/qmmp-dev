@@ -5,28 +5,28 @@
     <name>Converter</name>
     <message>
         <location filename="../converter.cpp" line="125"/>
-        <location filename="../converter.cpp" line="228"/>
+        <location filename="../converter.cpp" line="226"/>
         <source>Cancelled</source>
         <translation>取消</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="140"/>
-        <location filename="../converter.cpp" line="210"/>
+        <location filename="../converter.cpp" line="208"/>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="178"/>
+        <location filename="../converter.cpp" line="176"/>
         <source>Converting</source>
         <translation>轉換中</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="239"/>
+        <location filename="../converter.cpp" line="237"/>
         <source>Encoding</source>
         <translation>編碼中</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="277"/>
+        <location filename="../converter.cpp" line="275"/>
         <source>Finished</source>
         <translation>完成的</translation>
     </message>

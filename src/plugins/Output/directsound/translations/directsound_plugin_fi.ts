@@ -6,7 +6,7 @@
     <message>
         <location filename="../outputdirectsoundfactory.cpp" line="28"/>
         <source>DirectSound Plugin</source>
-        <translation>DirectSound Plugin</translation>
+        <translation>DirectSound-liitännäinen</translation>
     </message>
     <message>
         <location filename="../outputdirectsoundfactory.cpp" line="53"/>

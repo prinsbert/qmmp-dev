@@ -6,7 +6,7 @@
     <message>
         <location filename="../outputpulseaudiofactory.cpp" line="30"/>
         <source>PulseAudio Plugin</source>
-        <translation>PulseAudio Plugin</translation>
+        <translation>PulseAudio-liitännäinen</translation>
     </message>
     <message>
         <location filename="../outputpulseaudiofactory.cpp" line="55"/>

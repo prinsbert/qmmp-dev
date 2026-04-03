@@ -14,32 +14,32 @@
         <translation>MPEG Dosyaları</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="418"/>
+        <location filename="../decodermpegfactory.cpp" line="417"/>
         <source>About MPEG Audio Plugin</source>
         <translation>MPEG Ses Eklentisi Hakkında</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="419"/>
+        <location filename="../decodermpegfactory.cpp" line="418"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
         <translation>MPEG 1.0 / 2.0 / 2.5 katman 1/2/3 ses kod çözücüsü</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="420"/>
+        <location filename="../decodermpegfactory.cpp" line="419"/>
         <source>Compiled against:</source>
         <translation>Dayanarak derlendi:</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="429"/>
+        <location filename="../decodermpegfactory.cpp" line="428"/>
         <source>mpg123, API version: %1</source>
         <translation>mpg123, API uyarlaması: % 1</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="433"/>
+        <location filename="../decodermpegfactory.cpp" line="432"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Yazan: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="434"/>
+        <location filename="../decodermpegfactory.cpp" line="433"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation>Kaynak kodu Mq3 ve madplay projeleri temellidir.</translation>
     </message>

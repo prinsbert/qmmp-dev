@@ -6,7 +6,7 @@
     <message>
         <location filename="../osssettingsdialog.ui" line="14"/>
         <source>OSS Plugin Settings</source>
-        <translation>Asetukset OSS Plugin</translation>
+        <translation>OSS-liitännäisen asetukset</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="33"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../outputossfactory.cpp" line="36"/>
         <source>OSS Plugin</source>
-        <translation>OSS Plugin</translation>
+        <translation>OSS-liitännäinen</translation>
     </message>
     <message>
         <location filename="../outputossfactory.cpp" line="55"/>

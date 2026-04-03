@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderaacfactory.cpp" line="39"/>
         <source>AAC Plugin</source>
-        <translation>AAC Plugin</translation>
+        <translation>AAC-liitännäinen</translation>
     </message>
     <message>
         <location filename="../decoderaacfactory.cpp" line="41"/>
@@ -14,17 +14,17 @@
         <translation>AAC-tiedostot</translation>
     </message>
     <message>
-        <location filename="../decoderaacfactory.cpp" line="105"/>
+        <location filename="../decoderaacfactory.cpp" line="103"/>
         <source>About AAC Audio Plugin</source>
         <translation>Tietoja: AAC Audio Plugin</translation>
     </message>
     <message>
-        <location filename="../decoderaacfactory.cpp" line="106"/>
+        <location filename="../decoderaacfactory.cpp" line="104"/>
         <source>Qmmp AAC Audio Plugin</source>
         <translation>Qmmp AAC Audio Plugin</translation>
     </message>
     <message>
-        <location filename="../decoderaacfactory.cpp" line="107"/>
+        <location filename="../decoderaacfactory.cpp" line="105"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Kirjoittanut: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

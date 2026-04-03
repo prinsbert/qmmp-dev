@@ -19,7 +19,7 @@
     <message>
         <location filename="../lyricsfactory.cpp" line="31"/>
         <source>Lyrics Plugin</source>
-        <translation>Lyrics Plugin</translation>
+        <translation>Sanoitusliitännäinen</translation>
     </message>
     <message>
         <location filename="../lyricsfactory.cpp" line="36"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../lyricsfactory.cpp" line="69"/>
         <source>Qmmp Lyrics Plugin</source>
-        <translation>Qmmp Lyrics Plugin</translation>
+        <translation>Qmmp:n sanoitusliitännäinen</translation>
     </message>
     <message>
         <location filename="../lyricsfactory.cpp" line="70"/>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../lyricssettingsdialog.ui" line="14"/>
         <source>Lyrics Plugin Settings</source>
-        <translation>Asetukset Lyrics Plugin</translation>
+        <translation>Sanoitusliitännäisen asetukset</translation>
     </message>
     <message>
         <location filename="../lyricssettingsdialog.ui" line="29"/>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../lyricswidget.ui" line="14"/>
         <source>Lyrics Plugin</source>
-        <translation>Lyrics Plugin</translation>
+        <translation>Sanoitusliitännäinen</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="31"/>

@@ -6,7 +6,7 @@
     <message>
         <location filename="../notifierfactory.cpp" line="29"/>
         <source>Notifier Plugin</source>
-        <translation>Notifier Plugin</translation>
+        <translation>Ilmoitusliitännäinen</translation>
     </message>
     <message>
         <location filename="../notifierfactory.cpp" line="49"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../notifierfactory.cpp" line="50"/>
         <source>Qmmp Notifier Plugin</source>
-        <translation>Qmmp Notifier Plugin</translation>
+        <translation>Qmmp:n ilmoitusliitännäinen</translation>
     </message>
     <message>
         <location filename="../notifierfactory.cpp" line="51"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="14"/>
         <source>Notifier Plugin Settings</source>
-        <translation>Asetukset Notifier Plugin</translation>
+        <translation>Ilmoitusliitännäisen asetukset</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="35"/>

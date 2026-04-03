@@ -6,7 +6,7 @@
     <message>
         <location filename="../udisksfactory.cpp" line="30"/>
         <source>UDisks Plugin</source>
-        <translation>UDisks Plugin</translation>
+        <translation>UDisks-liitännäinen</translation>
     </message>
     <message>
         <location filename="../udisksfactory.cpp" line="50"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../udisksfactory.cpp" line="51"/>
         <source>Qmmp UDisks Plugin</source>
-        <translation>Qmmp UDisks Plugin</translation>
+        <translation>Qmmp:n UDisks-liitännäinen</translation>
     </message>
     <message>
         <location filename="../udisksfactory.cpp" line="52"/>

@@ -6,7 +6,7 @@
     <message>
         <location filename="../outputqtmultimediafactory.cpp" line="32"/>
         <source>Qt Multimedia Plugin</source>
-        <translation>Qt Multimedia Plugin</translation>
+        <translation>Qt:n multimedialiitännäinen</translation>
     </message>
     <message>
         <location filename="../outputqtmultimediafactory.cpp" line="56"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../qtmultimediasettingsdialog.ui" line="14"/>
         <source>Qt Multimedia Plugin Settings</source>
-        <translation>Asetukset Qt Multimedia Plugin</translation>
+        <translation>Qt-multimedialiitännäisen asetukset</translation>
     </message>
     <message>
         <location filename="../qtmultimediasettingsdialog.ui" line="46"/>

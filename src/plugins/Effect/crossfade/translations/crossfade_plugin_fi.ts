@@ -24,7 +24,7 @@
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="30"/>
         <source>Crossfade Plugin</source>
-        <translation>Crossfade Plugin</translation>
+        <translation>Ristihäivytyksen liitännäinen</translation>
     </message>
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="50"/>

@@ -6,7 +6,7 @@
     <message>
         <location filename="../outputjackfactory.cpp" line="30"/>
         <source>JACK Plugin</source>
-        <translation>JACK Plugin</translation>
+        <translation>JACK-liitännäinen</translation>
     </message>
     <message>
         <location filename="../outputjackfactory.cpp" line="54"/>

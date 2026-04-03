@@ -6,7 +6,7 @@
     <message>
         <location filename="../scrobblerfactory.cpp" line="31"/>
         <source>Scrobbler Plugin</source>
-        <translation>Scrobbler Plugin</translation>
+        <translation>Scrobbler-liitännäinen</translation>
     </message>
     <message>
         <location filename="../scrobblerfactory.cpp" line="51"/>

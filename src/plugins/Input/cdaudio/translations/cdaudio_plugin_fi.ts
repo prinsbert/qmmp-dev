@@ -59,7 +59,7 @@
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="52"/>
         <source>CD Audio Plugin</source>
-        <translation>CD Audio Plugin</translation>
+        <translation>Ääni-CD-liitännäinen</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="98"/>

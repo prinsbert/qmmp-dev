@@ -6,7 +6,7 @@
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="14"/>
         <source>BS2B Plugin Settings</source>
-        <translation>Asetukset BS2B Plugin</translation>
+        <translation>BS2B-liitännäisen asetukset</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="29"/>
@@ -45,7 +45,7 @@
     <message>
         <location filename="../effectbs2bfactory.cpp" line="31"/>
         <source>BS2B Plugin</source>
-        <translation>BS2B Plugin</translation>
+        <translation>BS2B-liitännäinen</translation>
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="50"/>

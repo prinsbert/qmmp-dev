@@ -14,22 +14,22 @@
         <translation>PCM 파일</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="318"/>
+        <location filename="../decodersndfilefactory.cpp" line="317"/>
         <source>About Sndfile Audio Plugin</source>
         <translation>Sndfile 오디오 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="319"/>
+        <location filename="../decodersndfilefactory.cpp" line="318"/>
         <source>Qmmp Sndfile Audio Plugin</source>
         <translation>Qmmp Sndfile 오디오 플러그인</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="320"/>
+        <location filename="../decodersndfilefactory.cpp" line="319"/>
         <source>Compiled against:</source>
         <translation>컴파일 대상:</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="323"/>
+        <location filename="../decodersndfilefactory.cpp" line="322"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
