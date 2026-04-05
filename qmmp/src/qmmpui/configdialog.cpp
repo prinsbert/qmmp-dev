@@ -46,7 +46,6 @@
 #include "filedialog.h"
 #include "mediaplayer.h"
 #include "qmmpuisettings.h"
-#include "playlistmodel.h"
 #include "metadataformattermenu.h"
 #include "configdialog.h"
 
@@ -504,7 +503,7 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
         d->onTreeWidgetCurrentItemChanged(current);
     });
     connect(d->cueFontButton, &QPushButton::clicked, [d] { d->on_cueFontButton_clicked(); });
-    connect(this, &QDialog::rejected, this, [d] { d->saveSettings(); });
+    connect(this, &QDialog::accepted, this, [d] { d->saveSettings(); });
     connect(d->linesPerGroupComboBox, &QComboBox::currentIndexChanged, this, [d] { d->updateGroupSettings(); });
     connect(d->showExtraRowCheckBox, &QCheckBox::clicked, this, [d] { d->updateGroupSettings(); });
 }
