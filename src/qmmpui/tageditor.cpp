@@ -22,7 +22,10 @@
 #include "tageditor_p.h"
 #include "ui_tageditor.h"
 
-TagEditor::TagEditor(TagModel *tagModel, QWidget *parent) : QWidget(parent), m_ui(new Ui::TagEditor)
+TagEditor::TagEditor(TagModel *tagModel, bool readOnly, QWidget *parent) :
+    EditorBase(parent),
+    m_ui(new Ui::TagEditor),
+    m_readOnly(readOnly)
 {
     m_ui->setupUi(this);
     m_tagModel = tagModel;
@@ -38,12 +41,30 @@ TagEditor::TagEditor(TagModel *tagModel, QWidget *parent) : QWidget(parent), m_u
     m_ui->yearSpinBox->setEnabled(m_tagModel->keys().contains(Qmmp::YEAR));
     m_ui->trackSpinBox->setEnabled(m_tagModel->keys().contains(Qmmp::TRACK));
 
-    readTag();
+    readTags();
+
+    //connections
+    connect(m_ui->titleLineEdit, &QLineEdit::textEdited, this, &TagEditor::setModified);
+    connect(m_ui->artistLineEdit, &QLineEdit::textEdited, this, &TagEditor::setModified);
+    connect(m_ui->albumLineEdit, &QLineEdit::textEdited, this, &TagEditor::setModified);
+    connect(m_ui->albumArtistLineEdit, &QLineEdit::textEdited, this, &TagEditor::setModified);
+    connect(m_ui->composerLineEdit, &QLineEdit::textEdited, this, &TagEditor::setModified);
+    connect(m_ui->genreLineEdit, &QLineEdit::textEdited, this, &TagEditor::setModified);
+    connect(m_ui->discSpinBox, &QSpinBox::valueChanged, this, &TagEditor::setModified);
+    connect(m_ui->yearSpinBox, &QSpinBox::valueChanged, this, &TagEditor::setModified);
+    connect(m_ui->trackSpinBox, &QSpinBox::valueChanged, this, &TagEditor::setModified);
+    connect(m_ui->commentBrowser, &QTextBrowser::textChanged, this, &TagEditor::setModified);
+    connect(m_ui->useCheckBox, &QCheckBox::toggled, this, &TagEditor::setModified);
 }
 
 TagEditor::~TagEditor()
 {
     delete m_ui;
+}
+
+bool TagEditor::isEditable() const
+{
+    return !m_readOnly;
 }
 
 void TagEditor::save()
@@ -69,10 +90,10 @@ void TagEditor::save()
     else
         m_tagModel->remove();
     m_tagModel->save();
-    readTag();
+    readTags();
 }
 
-void TagEditor::readTag()
+void TagEditor::readTags()
 {
     m_ui->tagWidget->setEnabled(m_tagModel->exists());
     m_ui->useCheckBox->setChecked(m_tagModel->exists());
@@ -94,4 +115,5 @@ void TagEditor::readTag()
         m_ui->discSpinBox->setValue(m_tagModel->value(Qmmp::DISCNUMBER).toInt());
     m_ui->yearSpinBox->setValue(m_tagModel->value(Qmmp::YEAR).toInt());
     m_ui->trackSpinBox->setValue(m_tagModel->value(Qmmp::TRACK).toInt());
+    setUnmodified();
 }

@@ -146,7 +146,7 @@ public:
         {
             for(TagModel *tagModel : metaDataModel->tags())
             {
-                TagEditor *editor = new TagEditor(tagModel, q);
+                TagEditor *editor = new TagEditor(tagModel, metaDataModel->isReadOnly(), q);
                 editor->setEnabled(!metaDataModel->isReadOnly());
                 tabWidget->addTab(editor, tagModel->name());
             }
@@ -172,6 +172,14 @@ public:
             {
                 CueEditor *cueEditor = new CueEditor(metaDataModel, info, q);
                 tabWidget->addTab(cueEditor, u"CUE"_s);
+            }
+        }
+
+        for(int i = 0; i < tabWidget->count(); ++i) {
+            EditorBase *editor = qobject_cast<EditorBase *>(tabWidget->widget(i));
+            if(editor)
+            {
+                CoverEditor::connect(editor, &EditorBase::modified, q, [this] { updateDialogButtons(); });
             }
         }
 
@@ -303,38 +311,33 @@ public:
 
     void onButtonBoxClicked(QAbstractButton *button)
     {
-        if(buttonBox->standardButton(button) == QDialogButtonBox::Save)
+        QDialogButtonBox::StandardButton b = buttonBox->standardButton(button);
+
+        if(b == QDialogButtonBox::Save || b == QDialogButtonBox::Ok)
         {
-            TagEditor *tagEditor = nullptr;
-            CoverEditor *coverEditor = nullptr;
-            CueEditor *cueEditor = nullptr;
+            EditorBase *editor = qobject_cast<EditorBase *>(tabWidget->currentWidget());
 
-            if((tagEditor = qobject_cast<TagEditor *>(tabWidget->currentWidget())))
+            if(editor && editor->isModified())
             {
-                tagEditor->save();
-                modifiedPaths.insert(info.path());
-            }
-            else if((coverEditor = qobject_cast<CoverEditor *>(tabWidget->currentWidget())))
-            {
-                coverEditor->save();
-                modifiedPaths.insert(info.path());
-                MetaDataManager::instance()->clearCoverCache();
-            }
-            else if((cueEditor = qobject_cast<CueEditor *>(tabWidget->currentWidget())))
-            {
-                //update all cue tracks
-                static const QRegularExpression trackNumber(u"#\\d+$"_s);
-                int count = cueEditor->trackCount();
-                QString path = info.path();
-                path.remove(trackNumber);
-                for(int i = 0; i < count; ++i)
-                    modifiedPaths.insert(QStringLiteral("%1#%2").arg(path).arg(i + 1));
+                editor->save();
                 modifiedPaths.insert(info.path());
 
-                cueEditor->save();
+                CueEditor *cueEditor = qobject_cast<CueEditor *>(editor);
+                if(cueEditor)
+                {
+                    //update all cue tracks
+                    static const QRegularExpression trackNumber(u"#\\d+$"_s);
+                    int count = cueEditor->trackCount();
+                    QString path = info.path();
+                    path.remove(trackNumber);
+                    for(int i = 0; i < count; ++i)
+                        modifiedPaths.insert(QStringLiteral("%1#%2").arg(path).arg(i + 1));
+                    modifiedPaths.insert(info.path());
+                }
             }
         }
-        else
+
+        if(b == QDialogButtonBox::Ok || b == QDialogButtonBox::Close)
         {
             //close all files before closing dialog
             if(metaDataModel)
@@ -346,18 +349,10 @@ public:
         }
     }
 
-    void onTabWidgetCurrentChanged(int index)
+    void updateDialogButtons()
     {
-        CoverEditor *coverEditor = nullptr;
-        CueEditor *cueEditor = nullptr;
-        if(qobject_cast<TagEditor *>(tabWidget->widget(index)))
-            buttonBox->button(QDialogButtonBox::Save)->setEnabled(metaDataModel && !metaDataModel->isReadOnly());
-        else if((coverEditor = qobject_cast<CoverEditor *>(tabWidget->currentWidget())))
-            buttonBox->button(QDialogButtonBox::Save)->setEnabled(coverEditor->isEditable());
-        else if((cueEditor = qobject_cast<CueEditor *>(tabWidget->currentWidget())))
-            buttonBox->button(QDialogButtonBox::Save)->setEnabled(cueEditor->isEditable());
-        else
-            buttonBox->button(QDialogButtonBox::Save)->setEnabled(false);
+        EditorBase *editor = qobject_cast<EditorBase *>(tabWidget->currentWidget());
+        buttonBox->button(QDialogButtonBox::Save)->setEnabled(editor && editor->isModified());
     }
 
     void onPrevButtonClicked()
@@ -398,10 +393,10 @@ DetailsDialog::DetailsDialog(const QList<PlayListTrack *> &tracks, QWidget *pare
     d->nextButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowRight));
     d->prevButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowLeft));
     d->updatePage();
-    d->onTabWidgetCurrentChanged(0);
+    d->updateDialogButtons();
 
     connect(d->buttonBox, &QDialogButtonBox::clicked, this, [d](QAbstractButton *button) { d->onButtonBoxClicked(button); });
-    connect(d->tabWidget, &QTabWidget::currentChanged, this, [d](int index) { d->onTabWidgetCurrentChanged(index); });
+    connect(d->tabWidget, &QTabWidget::currentChanged, this, [d] { d->updateDialogButtons(); });
     connect(d->directoryButton, &QToolButton::clicked, this, [d] { d->onDirectoryButtonClicked(); });
     connect(d->prevButton,  &QToolButton::clicked, this, [d] { d->onPrevButtonClicked(); });
     connect(d->nextButton,  &QToolButton::clicked, this, [d] { d->onNextButtonClicked(); });

@@ -55,6 +55,7 @@ set(libqmmpui_SRCS
     visualmenu.cpp
     colorwidget.cpp
     shortcutdialog.cpp
+    editorbase.cpp
     forms/detailsdialog.ui
     forms/tageditor.ui
     forms/templateeditor.ui

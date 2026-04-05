@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2026 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,39 +17,29 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-
-#ifndef TAGEDITOR_H
-#define TAGEDITOR_H
-
-#include <QWidget>
 #include "editorbase_p.h"
 
-namespace Ui {
-    class TagEditor;
+EditorBase::EditorBase(QWidget *parent)
+    : QWidget{parent}
+{}
+
+bool EditorBase::isModified() const
+{
+    return m_modified;
 }
 
-class TagModel;
+EditorBase::~EditorBase() = default;
 
-/*! @internal
- * @author Ilya Kotov <forkotov02@ya.ru>
- */
-class TagEditor : public EditorBase
+void EditorBase::setModified()
 {
-Q_OBJECT
-public:
-    explicit TagEditor(TagModel *tagModel, bool readOnly, QWidget *parent = nullptr);
-    ~TagEditor();
+    if(isEditable())
+    {
+        m_modified = true;
+        emit modified();
+    }
+}
 
-    bool isEditable() const override;
-    void save() override;
-
-private:
-    void readTags();
-    Ui::TagEditor *m_ui;
-    TagModel *m_tagModel;
-    int m_discs = -1; //Number of discs
-    bool m_readOnly = false;
-
-};
-
-#endif // TAGEDITOR_H
+void EditorBase::setUnmodified()
+{
+    m_modified = false;
+}

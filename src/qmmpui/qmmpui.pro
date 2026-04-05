@@ -31,6 +31,7 @@ win32 {
 HEADERS += general.h \
     colorwidget.h \
     coverloader_p.h \
+    editorbase_p.h \
     generalfactory.h \
     playlistformat.h \
     playlistparser.h \
@@ -83,6 +84,7 @@ HEADERS += general.h \
 SOURCES += general.cpp \
     colorwidget.cpp \
     coverloader.cpp \
+    editorbase.cpp \
     playlistparser.cpp \
     commandlinemanager.cpp \
     filedialog.cpp \
