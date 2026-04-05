@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -70,12 +70,14 @@ public:
     void showAbout(QWidget *parent);
     void showSettings(QWidget *parent);
     void setEnabled(bool enabled);
-
+    void revertState();
 
 private:
-    bool m_has_about;
-    bool m_has_config;
-    void *m_factory;
+    PluginItem(QTreeWidgetItem *parent, const QString &name, const QString &path, bool checked, int type);
+    bool m_hasAbout = false;
+    bool m_hasConfig = false;
+    bool m_prevState;
+    void *m_factory = nullptr;
 };
 
 #endif

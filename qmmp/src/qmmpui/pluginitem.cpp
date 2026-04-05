@@ -41,98 +41,88 @@
 #include "radioitemdelegate_p.h"
 #include "pluginitem_p.h"
 
-PluginItem::PluginItem(QTreeWidgetItem *parent, InputSourceFactory *factory, const QString &path)
-    : QTreeWidgetItem(parent, { factory->properties().name, path.section(QLatin1Char('/'), -1) }, TRANSPORT)
+PluginItem::PluginItem(QTreeWidgetItem *parent, InputSourceFactory *factory, const QString &path) :
+    PluginItem(parent, factory->properties().name, path, InputSource::isEnabled(factory), TRANSPORT)
 {
-    setCheckState(0, InputSource::isEnabled(factory) ? Qt::Checked : Qt::Unchecked);
-    m_has_about = factory->properties().hasAbout;
-    m_has_config = factory->properties().hasSettings;
+    m_hasAbout = factory->properties().hasAbout;
+    m_hasConfig = factory->properties().hasSettings;
     m_factory = factory;
 }
 
-
-PluginItem::PluginItem(QTreeWidgetItem *parent, DecoderFactory *factory, const QString &path)
-    : QTreeWidgetItem(parent, { factory->properties().name, path.section(QLatin1Char('/'), -1) }, DECODER)
+PluginItem::PluginItem(QTreeWidgetItem *parent, DecoderFactory *factory, const QString &path) :
+    PluginItem(parent, factory->properties().name, path, Decoder::isEnabled(factory), DECODER)
 {
-    setCheckState(0, Decoder::isEnabled(factory) ? Qt::Checked : Qt::Unchecked);
-    m_has_about = factory->properties().hasAbout;
-    m_has_config = factory->properties().hasSettings;
+    m_hasAbout = factory->properties().hasAbout;
+    m_hasConfig = factory->properties().hasSettings;
     m_factory = factory;
 }
 
-PluginItem::PluginItem(QTreeWidgetItem *parent, EngineFactory *factory, const QString &path)
-    : QTreeWidgetItem(parent, { factory->properties().name, path.section(QLatin1Char('/'), -1) }, ENGINE)
+PluginItem::PluginItem(QTreeWidgetItem *parent, EngineFactory *factory, const QString &path) :
+    PluginItem(parent, factory->properties().name, path, AbstractEngine::isEnabled(factory), ENGINE)
 {
-    setCheckState(0, AbstractEngine::isEnabled(factory) ? Qt::Checked : Qt::Unchecked);
-    m_has_about = factory->properties().hasAbout;
-    m_has_config = factory->properties().hasSettings;
+    m_hasAbout = factory->properties().hasAbout;
+    m_hasConfig = factory->properties().hasSettings;
     m_factory = factory;
 }
 
-PluginItem::PluginItem(QTreeWidgetItem *parent, EffectFactory *factory, const QString &path)
-    : QTreeWidgetItem(parent, { factory->properties().name, path.section(QLatin1Char('/'), -1) }, EFFECT)
+PluginItem::PluginItem(QTreeWidgetItem *parent, EffectFactory *factory, const QString &path) :
+    PluginItem(parent, factory->properties().name, path, Effect::isEnabled(factory), EFFECT)
 {
-    setCheckState(0, Effect::isEnabled(factory) ? Qt::Checked : Qt::Unchecked);
-    m_has_about = factory->properties().hasAbout;
-    m_has_config = factory->properties().hasSettings;
+    m_hasAbout = factory->properties().hasAbout;
+    m_hasConfig = factory->properties().hasSettings;
     m_factory = factory;
 }
 
-PluginItem::PluginItem(QTreeWidgetItem *parent, VisualFactory *factory, const QString &path)
-    : QTreeWidgetItem(parent, { factory->properties().name, path.section(QLatin1Char('/'), -1) }, VISUAL)
+PluginItem::PluginItem(QTreeWidgetItem *parent, VisualFactory *factory, const QString &path) :
+    PluginItem(parent, factory->properties().name, path, Visual::isEnabled(factory), VISUAL)
 {
-    setCheckState(0, Visual::isEnabled(factory) ? Qt::Checked : Qt::Unchecked);
-    m_has_about = factory->properties().hasAbout;
-    m_has_config = factory->properties().hasSettings;
+    m_hasAbout = factory->properties().hasAbout;
+    m_hasConfig = factory->properties().hasSettings;
     m_factory = factory;
 }
 
-PluginItem::PluginItem(QTreeWidgetItem *parent, GeneralFactory *factory, const QString &path)
-    : QTreeWidgetItem(parent, { factory->properties().name, path.section(QLatin1Char('/'), -1) }, GENERAL)
+PluginItem::PluginItem(QTreeWidgetItem *parent, GeneralFactory *factory, const QString &path) :
+    PluginItem(parent, factory->properties().name, path, General::isEnabled(factory), GENERAL)
 {
-    setCheckState(0, General::isEnabled(factory) ? Qt::Checked : Qt::Unchecked);
-    m_has_about = factory->properties().hasAbout;
-    m_has_config = factory->properties().hasSettings;
+    m_hasAbout = factory->properties().hasAbout;
+    m_hasConfig = factory->properties().hasSettings;
     m_factory = factory;
 }
 
-PluginItem::PluginItem(QTreeWidgetItem *parent, OutputFactory *factory, const QString &path)
-    : QTreeWidgetItem(parent, { factory->properties().name, path.section(QLatin1Char('/'), -1) }, OUTPUT)
+PluginItem::PluginItem(QTreeWidgetItem *parent, OutputFactory *factory, const QString &path) :
+    PluginItem(parent, factory->properties().name, path, Output::currentFactory() == factory, OUTPUT)
 {
-    setCheckState(0, (Output::currentFactory() == factory) ? Qt::Checked : Qt::Unchecked);
-    m_has_about = factory->properties().hasAbout;
-    m_has_config = factory->properties().hasSettings;
+    m_hasAbout = factory->properties().hasAbout;
+    m_hasConfig = factory->properties().hasSettings;
     m_factory = factory;
     setData(0, RadioButtonRole, true);
 }
 
-PluginItem::PluginItem(QTreeWidgetItem *parent, FileDialogFactory *factory, const QString &path)
-    : QTreeWidgetItem(parent, { factory->properties().name, path.section(QLatin1Char('/'), -1) }, FILE_DIALOG)
+PluginItem::PluginItem(QTreeWidgetItem *parent, FileDialogFactory *factory, const QString &path) :
+    PluginItem(parent, factory->properties().name, path, FileDialog::isEnabled(factory), FILE_DIALOG)
 {
-    setCheckState(0, FileDialog::isEnabled(factory) ? Qt::Checked : Qt::Unchecked);
-    m_has_about = factory->properties().hasAbout;
-    m_has_config = false;
+    m_hasAbout = factory->properties().hasAbout;
+    m_hasConfig = false;
     m_factory = factory;
     setData(0, RadioButtonRole, true);
 }
 
-PluginItem::PluginItem(QTreeWidgetItem *parent, UiFactory *factory, const QString &path)
-    : QTreeWidgetItem(parent, { factory->properties().name, path.section(QLatin1Char('/'), -1) }, USER_INTERFACE)
+PluginItem::PluginItem(QTreeWidgetItem *parent, UiFactory *factory, const QString &path) :
+    PluginItem(parent, factory->properties().name, path, UiLoader::selected() == factory, USER_INTERFACE)
 {
-    setCheckState(0, (UiLoader::selected() == factory) ? Qt::Checked : Qt::Unchecked);
-    m_has_about = factory->properties().hasAbout;
-    m_has_config = false;
+    m_hasAbout = factory->properties().hasAbout;
+    m_hasConfig = false;
     m_factory = factory;
     setData(0, RadioButtonRole, true);
 }
 
 bool PluginItem::hasAbout() const
 {
-    return m_has_about;
+    return m_hasAbout;
 }
 bool PluginItem::hasSettings() const
 {
-    return m_has_config;
+    return m_hasConfig;
 }
 
 void PluginItem::showAbout(QWidget *parent)
@@ -252,4 +242,17 @@ void PluginItem::setEnabled(bool enabled)
     default:
         ;
     }
+}
+
+void PluginItem::revertState()
+{
+    if((checkState(0) == Qt::Checked) != m_prevState)
+        setEnabled(m_prevState);
+}
+
+PluginItem::PluginItem(QTreeWidgetItem *parent, const QString &name, const QString &path, bool checked, int type) :
+    QTreeWidgetItem(parent, { name, path.section(QLatin1Char('/'), -1) }, type),
+    m_prevState(checked)
+{
+    setCheckState(0, checked ? Qt::Checked : Qt::Unchecked);
 }
