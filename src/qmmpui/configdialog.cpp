@@ -186,6 +186,20 @@ private:
         settings.setValue(u"CueEditor/use_system_font"_s, cueSystemFontCheckBox->isChecked());
     }
 
+    void revertSettings()
+    {
+        for(int i = 0; i < treeWidget->topLevelItemCount(); ++i)
+        {
+            QTreeWidgetItem *item = treeWidget->topLevelItem(i);
+
+            for(int j = 0; j < item->childCount(); ++j)
+            {
+                QTreeWidgetItem *pluginItem = item->child(j);
+                static_cast<PluginItem *>(pluginItem)->revertState();
+            }
+        }
+    }
+
     void updateGroupSettings()
     {
         int linesPerGroup = linesPerGroupComboBox->currentData().toInt();
@@ -504,6 +518,7 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     });
     connect(d->cueFontButton, &QPushButton::clicked, [d] { d->on_cueFontButton_clicked(); });
     connect(this, &QDialog::accepted, this, [d] { d->saveSettings(); });
+    connect(this, &QDialog::rejected, this, [d] { d->revertSettings(); });
     connect(d->linesPerGroupComboBox, &QComboBox::currentIndexChanged, this, [d] { d->updateGroupSettings(); });
     connect(d->showExtraRowCheckBox, &QCheckBox::clicked, this, [d] { d->updateGroupSettings(); });
 }
