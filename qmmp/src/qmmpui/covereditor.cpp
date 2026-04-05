@@ -19,16 +19,18 @@
  ***************************************************************************/
 
 #include <QVBoxLayout>
+#include <qmmp/metadatamanager.h>
 #include "ui_covereditor.h"
 #include "coverviewer_p.h"
 #include "covereditor_p.h"
 
 CoverEditor::CoverEditor(MetaDataModel *model, const QString &coverPath, QWidget *parent) :
-    QWidget(parent), m_ui(new Ui::CoverEditor)
+    EditorBase(parent),
+    m_ui(new Ui::CoverEditor),
+    m_model(model),
+    m_coverPath(coverPath)
 {
     m_ui->setupUi(this);
-    m_model = model;
-    m_coverPath = coverPath;
     m_editable = m_model && (m_model->dialogHints() & MetaDataModel::IsCoverEditable) && !m_model->isReadOnly();
 
     m_ui->sourceComboBox->addItem(tr("External File"));
@@ -63,6 +65,8 @@ bool CoverEditor::isEditable() const
 void CoverEditor::save()
 {
     m_viewer->hasImage() ? m_model->setCover(m_viewer->image()) : m_model->removeCover();
+    setUnmodified();
+    MetaDataManager::instance()->clearCoverCache();
 }
 
 void CoverEditor::on_sourceComboBox_activated(int index)
@@ -89,6 +93,7 @@ void CoverEditor::on_loadButton_clicked()
     m_viewer->load();
     m_ui->deleteButton->setEnabled(m_viewer->hasImage());
     m_ui->saveAsButton->setEnabled(m_viewer->hasImage());
+    setModified();
 }
 
 void CoverEditor::on_deleteButton_clicked()
@@ -96,6 +101,7 @@ void CoverEditor::on_deleteButton_clicked()
     m_viewer->clear();
     m_ui->deleteButton->setEnabled(m_viewer->hasImage());
     m_ui->saveAsButton->setEnabled(m_viewer->hasImage());
+    setModified();
 }
 
 void CoverEditor::on_saveAsButton_clicked()

@@ -24,6 +24,7 @@
 #include <QWidget>
 #include <qmmp/cueparser.h>
 #include <qmmp/trackinfo.h>
+#include "editorbase_p.h"
 
 namespace Ui {
 class CueEditor;
@@ -31,10 +32,9 @@ class CueEditor;
 
 class MetaDataModel;
 
-class CueEditor : public QWidget
+class CueEditor : public EditorBase
 {
     Q_OBJECT
-
 public:
     explicit CueEditor(MetaDataModel *model, const TrackInfo &info, QWidget *parent = nullptr);
     ~CueEditor();

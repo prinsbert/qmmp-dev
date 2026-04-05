@@ -64,7 +64,7 @@ private:
 };
 
 CueEditor::CueEditor(MetaDataModel *model, const TrackInfo &info, QWidget *parent) :
-    QWidget(parent),
+    EditorBase(parent),
     m_ui(new Ui::CueEditor),
     m_model(model),
     m_info(info)
@@ -90,6 +90,8 @@ CueEditor::CueEditor(MetaDataModel *model, const TrackInfo &info, QWidget *paren
         m_ui->loadButton->setEnabled(false);
         m_ui->plainTextEdit->setReadOnly(true);
     }
+
+    connect(m_ui->plainTextEdit, &QPlainTextEdit::undoAvailable, this, &CueEditor::setModified);
 }
 
 CueEditor::~CueEditor()

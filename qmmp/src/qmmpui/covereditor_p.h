@@ -24,6 +24,7 @@
 #include <QWidget>
 #include <QString>
 #include <qmmp/metadatamodel.h>
+#include "editorbase_p.h"
 
 class CoverViewer;
 
@@ -35,15 +36,15 @@ class CoverEditor;
    @internal
    @author Ilya Kotov <forkotov02@ya.ru>
 */
-class CoverEditor : public QWidget
+class CoverEditor : public EditorBase
 {
     Q_OBJECT
 public:
     explicit CoverEditor(MetaDataModel *model, const QString &coverPath, QWidget *parent = nullptr);
     ~CoverEditor();
 
-    bool isEditable() const;
-    void save();
+    bool isEditable() const override;
+    void save() override;
 
 private slots:
     void on_sourceComboBox_activated(int index);
