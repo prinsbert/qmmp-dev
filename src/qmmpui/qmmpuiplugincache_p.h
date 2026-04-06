@@ -40,7 +40,6 @@ public:
 
     QString shortName() const;
     QString file() const;
-    int priority() const;
     bool hasError() const;
 
     GeneralFactory *generalFactory();
@@ -59,7 +58,6 @@ private:
     GeneralFactory *m_generalFactory = nullptr;
     UiFactory *m_uiFactory = nullptr;
     FileDialogFactory *m_fileDialogFactory = nullptr;
-    int m_priority = 0;
 };
 
 #endif // QMMPUIPLUGINCACHE_P_H

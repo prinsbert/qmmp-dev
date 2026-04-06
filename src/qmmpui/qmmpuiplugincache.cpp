@@ -45,13 +45,12 @@ QmmpUiPluginCache::QmmpUiPluginCache(const QString &file, QSettings *settings)
 
     {
         QStringList values = settings->value(m_path).toStringList();
-        if(values.count() != 3)
+        if(values.count() != 2)
             update = true;
         else
         {
             m_shortName = values.constFirst();
-            m_priority = values.at(1).toInt();
-            update = (info.lastModified().toString(Qt::ISODate) != values.at(2));
+            update = (info.lastModified().toString(Qt::ISODate) != values.at(1));
         }
     }
     else
@@ -63,17 +62,14 @@ QmmpUiPluginCache::QmmpUiPluginCache(const QString &file, QSettings *settings)
         if(GeneralFactory *factory = generalFactory())
         {
             m_shortName = factory->properties().shortName;
-            m_priority = 0;
         }
         else if(UiFactory *factory = uiFactory())
         {
             m_shortName = factory->properties().shortName;
-            m_priority = 0;
         }
         else if(FileDialogFactory *factory = fileDialogFactory())
         {
             m_shortName = factory->properties().shortName;
-            m_priority = 0;
         }
         else
         {
@@ -85,7 +81,6 @@ QmmpUiPluginCache::QmmpUiPluginCache(const QString &file, QSettings *settings)
         {
             QStringList values;
             values << m_shortName;
-            values << QString::number(m_priority);
             values << info.lastModified().toString(Qt::ISODate);
             settings->setValue(m_path, values);
             qCDebug(core, "added cache item \"%s=%s\"", qPrintable(info.fileName()), qPrintable(values.join(QLatin1Char(','))));
@@ -101,17 +96,14 @@ QmmpUiPluginCache::QmmpUiPluginCache(QObject *instance)
     if(GeneralFactory *factory = generalFactory())
     {
         m_shortName = factory->properties().shortName;
-        m_priority = 0;
     }
     else if(UiFactory *factory = uiFactory())
     {
         m_shortName = factory->properties().shortName;
-        m_priority = 0;
     }
     else if(FileDialogFactory *factory = fileDialogFactory())
     {
         m_shortName = factory->properties().shortName;
-        m_priority = 0;
     }
     else
     {
@@ -130,11 +122,6 @@ QString QmmpUiPluginCache::shortName() const
 QString QmmpUiPluginCache::file() const
 {
     return m_path;
-}
-
-int QmmpUiPluginCache::priority() const
-{
-    return m_priority;
 }
 
 bool QmmpUiPluginCache::hasError() const
