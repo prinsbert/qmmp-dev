@@ -150,13 +150,13 @@ void UiHelper::addAction(QAction *action, MenuType type)
 void UiHelper::removeAction(QAction *action)
 {
     Q_D(UiHelper);
-    for(MenuType type : d->menus.keys())
+    for(UiHelperPrivate::MenuData &menuData : d->menus)
     {
-        d->menus[type].actions.removeAll(action);
-        if(d->menus[type].menu)
+        menuData.actions.removeAll(action);
+        if(menuData.menu)
         {
-            d->menus[type].menu->removeAction(action);
-            d->menus[type].menu->menuAction()->setVisible(!d->menus[type].autoHide || !d->menus[type].actions.isEmpty());
+            menuData.menu->removeAction(action);
+            menuData.menu->menuAction()->setVisible(!menuData.autoHide || !menuData.actions.isEmpty());
         }
     }
 }
