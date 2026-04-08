@@ -130,7 +130,7 @@ bool UiHelper::visibilityControl() const
 void UiHelper::addAction(QAction *action, MenuType type)
 {
     Q_D(UiHelper);
-    connect(action, &QAction::destroyed, this, [this](QObject *action) { removeAction(qobject_cast<QAction *>(action)); });
+    connect(action, &QAction::destroyed, this, [action, this] { removeAction(action); });
 
     if(!d->menus[type].actions.contains(action))
     {
