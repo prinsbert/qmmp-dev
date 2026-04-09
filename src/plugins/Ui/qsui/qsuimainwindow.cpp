@@ -331,15 +331,19 @@ void QSUiMainWindow::showSettings()
 {
     ConfigDialog *confDialog = new ConfigDialog(this);
     QSUiSettings *simpleSettings = new QSUiSettings(this);
+    QSUiHotkeyEditor *hotkeyEditor = new QSUiHotkeyEditor(this);
     confDialog->addPage(tr("Appearance"), simpleSettings, QIcon(u":/qsui/qsui_settings.png"_s));
-    confDialog->addPage(tr("Shortcuts"), new QSUiHotkeyEditor(this), QIcon(u":/qsui/qsui_shortcuts.png"_s));
-    confDialog->exec();
-    simpleSettings->writeSettings();
+    confDialog->addPage(tr("Shortcuts"), hotkeyEditor, QIcon(u":/qsui/qsui_shortcuts.png"_s));
+    if(confDialog->exec() == QDialog::Accepted)
+    {
+        simpleSettings->writeSettings();
+        hotkeyEditor->applyShortcuts();
+        readSettings();
+        QSUiActionManager::instance()->saveActions();
+        m_analyzer->readSettings();
+        m_seekBar->readSettings();
+    }
     confDialog->deleteLater();
-    readSettings();
-    QSUiActionManager::instance()->saveActions();
-    m_analyzer->readSettings();
-    m_seekBar->readSettings();
 }
 
 void QSUiMainWindow::showAppMenu()

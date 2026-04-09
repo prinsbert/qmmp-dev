@@ -38,6 +38,8 @@ public:
     explicit QSUiHotkeyEditor(QWidget *parent = nullptr);
     virtual ~QSUiHotkeyEditor();
 
+    void applyShortcuts();
+
 private slots:
     void on_changeShortcutButton_clicked();
     void on_restoreShortcutsButton_clicked();
