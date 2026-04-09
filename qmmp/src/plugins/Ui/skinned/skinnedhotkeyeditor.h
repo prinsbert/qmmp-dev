@@ -38,6 +38,8 @@ public:
     explicit SkinnedHotkeyEditor(QWidget *parent = nullptr);
     virtual ~SkinnedHotkeyEditor();
 
+    void applyShortcuts();
+
 private slots:
     void on_changeShortcutButton_clicked();
     void on_restoreShortcutsButton_clicked();

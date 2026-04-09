@@ -21,6 +21,7 @@
 #define SKINNEDSHORTCUTITEM_H
 
 #include <QTreeWidgetItem>
+#include <QKeySequence>
 
 class QWidget;
 class QAction;
@@ -33,10 +34,14 @@ class SkinnedShortcutItem : public QTreeWidgetItem
 {
 public:
     SkinnedShortcutItem(QTreeWidgetItem *parent, int type);
-    QAction *action();
+
+    QKeySequence shortcut() const;
+    void setShortcut(const QKeySequence &s);
+    void applyShortcut();
 
 private:
     QAction *m_action;
+    QKeySequence m_shortcut;
 
 };
 

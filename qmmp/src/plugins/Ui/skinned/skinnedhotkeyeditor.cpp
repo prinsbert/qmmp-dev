@@ -37,16 +37,28 @@ SkinnedHotkeyEditor::~SkinnedHotkeyEditor()
     delete m_ui;
 }
 
+void SkinnedHotkeyEditor::applyShortcuts()
+{
+    for(int i = 0; i < m_ui->shortcutTreeWidget->topLevelItemCount(); ++i)
+    {
+        QTreeWidgetItem *item = m_ui->shortcutTreeWidget->topLevelItem(i);
+        for(int j = 0; j < item->childCount(); ++j)
+        {
+            static_cast<SkinnedShortcutItem *>(item->child(j))->applyShortcut();
+        }
+    }
+}
+
 void SkinnedHotkeyEditor::on_changeShortcutButton_clicked()
 {
     SkinnedShortcutItem *item = dynamic_cast<SkinnedShortcutItem *>(m_ui->shortcutTreeWidget->currentItem());
     if(!item)
         return;
-    ShortcutDialog editor(item->action()->shortcut(), this);
+    ShortcutDialog editor(item->shortcut(), this);
     if(editor.exec() == QDialog::Accepted)
     {
-        item->action()->setShortcut(editor.key());
-        item->setText(1, item->action()->shortcut().toString(QKeySequence::NativeText));
+        item->setShortcut(editor.key());
+        item->setText(1, item->shortcut().toString(QKeySequence::NativeText));
     }
 }
 
@@ -54,31 +66,31 @@ void SkinnedHotkeyEditor::loadShortcuts()
 {
     m_ui->shortcutTreeWidget->clear();
     //playback
-    QTreeWidgetItem *item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, { tr("Playback") });
+    QTreeWidgetItem *item = new QTreeWidgetItem(m_ui->shortcutTreeWidget, { tr("Playback") });
     for(int i = SkinnedActionManager::PLAY; i <= SkinnedActionManager::CLEAR_QUEUE; ++i)
         new SkinnedShortcutItem(item, i);
     item->setExpanded(true);
     m_ui->shortcutTreeWidget->addTopLevelItem(item);
     //view
-    item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, { tr("View") });
+    item = new QTreeWidgetItem(m_ui->shortcutTreeWidget, { tr("View") });
     for(int i = SkinnedActionManager::SHOW_PLAYLIST; i <= SkinnedActionManager::WM_DOUBLE_SIZE; ++i)
         new SkinnedShortcutItem(item, i);
     item->setExpanded(true);
     m_ui->shortcutTreeWidget->addTopLevelItem(item);
     //volume
-    item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, { tr("Volume") });
+    item = new QTreeWidgetItem(m_ui->shortcutTreeWidget, { tr("Volume") });
     for(int i = SkinnedActionManager::VOL_ENC; i <= SkinnedActionManager::VOL_MUTE; ++i)
         new SkinnedShortcutItem(item, i);
     item->setExpanded(true);
     m_ui->shortcutTreeWidget->addTopLevelItem(item);
     //playlist
-    item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, { tr("Playlist") });
+    item = new QTreeWidgetItem(m_ui->shortcutTreeWidget, { tr("Playlist") });
     for(int i = SkinnedActionManager::PL_ADD_FILE; i <= SkinnedActionManager::PL_SHOW_TABBAR; ++i)
         new SkinnedShortcutItem(item, i);
     item->setExpanded(true);
     m_ui->shortcutTreeWidget->addTopLevelItem(item);
     //misc
-    item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, { tr("Misc") });
+    item = new QTreeWidgetItem(m_ui->shortcutTreeWidget, { tr("Misc") });
     for(int i = SkinnedActionManager::SETTINGS; i <= SkinnedActionManager::QUIT; ++i)
         new SkinnedShortcutItem(item, i);
     item->setExpanded(true);
