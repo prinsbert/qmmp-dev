@@ -26,9 +26,10 @@
 #include <taglib/id3v2framefactory.h>
 #include <taglib/flacpicture.h>
 #include <taglib/id3v2tag.h>
+#include <taglib/textidentificationframe.h>
 #include <qmmp/metadatamanager.h>
 #include "flacmetadatamodel.h"
-#include "textidentificationframe.h"
+
 
 FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly) :
     MetaDataModel(readOnly, MetaDataModel::IsCoverEditable)

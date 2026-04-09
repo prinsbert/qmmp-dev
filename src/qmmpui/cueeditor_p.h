@@ -39,8 +39,8 @@ public:
     explicit CueEditor(MetaDataModel *model, const TrackInfo &info, QWidget *parent = nullptr);
     ~CueEditor();
 
-    void save();
-    bool isEditable() const;
+    void save() override;
+    bool isEditable() const override;
     int trackCount() const;
 
 private slots:
