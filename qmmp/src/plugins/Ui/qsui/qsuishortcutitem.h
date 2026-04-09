@@ -21,6 +21,7 @@
 #define QSUISHORTCUTITEM_H
 
 #include <QTreeWidgetItem>
+#include <QKeySequence>
 
 class QWidget;
 class QAction;
@@ -34,12 +35,15 @@ class QSUiShortcutItem : public QTreeWidgetItem
 public:
     QSUiShortcutItem(QTreeWidgetItem *parent, int type);
     QSUiShortcutItem(QTreeWidgetItem *parent, QDockWidget *w);
-
     ~QSUiShortcutItem();
-    QAction *action();
+
+    QKeySequence shortcut() const;
+    void setShortcut(const QKeySequence &s);
+    void applyShortcut();
 
 private:
     QAction *m_action;
+    QKeySequence m_shortcut;
 
 };
 

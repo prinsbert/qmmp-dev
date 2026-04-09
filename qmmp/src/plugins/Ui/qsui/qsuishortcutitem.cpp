@@ -25,23 +25,35 @@
 
 QSUiShortcutItem::QSUiShortcutItem(QTreeWidgetItem *parent, int type) :
     QTreeWidgetItem(parent, { QSUiActionManager::instance()->action(type)->text().remove(QLatin1Char('&')),
-                    QSUiActionManager::instance()->action(type)->shortcut().toString(QKeySequence::NativeText) })
+                    QSUiActionManager::instance()->action(type)->shortcut().toString(QKeySequence::NativeText) }),
+    m_action(QSUiActionManager::instance()->action(type))
 {
-    m_action = QSUiActionManager::instance()->action(type);
+    m_shortcut = m_action->shortcut();
     setIcon(0, m_action->icon());
 }
 
 QSUiShortcutItem::QSUiShortcutItem(QTreeWidgetItem *parent, QDockWidget *w) :
     QTreeWidgetItem(parent, { w->toggleViewAction()->text().remove(QLatin1Char('&')),
-                    w->toggleViewAction()->shortcut().toString(QKeySequence::NativeText) })
+                    w->toggleViewAction()->shortcut().toString(QKeySequence::NativeText) }),
+    m_action(w->toggleViewAction())
 {
-    m_action = w->toggleViewAction();
+    m_shortcut = m_action->shortcut();
 }
 
 QSUiShortcutItem::~QSUiShortcutItem()
 {}
 
-QAction *QSUiShortcutItem::action()
+QKeySequence QSUiShortcutItem::shortcut() const
 {
-    return m_action;
+    return m_shortcut;
+}
+
+void QSUiShortcutItem::setShortcut(const QKeySequence &s)
+{
+    m_shortcut = s;
+}
+
+void QSUiShortcutItem::applyShortcut()
+{
+    m_action->setShortcut(m_shortcut);
 }

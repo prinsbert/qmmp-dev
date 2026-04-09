@@ -38,16 +38,28 @@ QSUiHotkeyEditor::~QSUiHotkeyEditor()
     delete m_ui;
 }
 
+void QSUiHotkeyEditor::applyShortcuts()
+{
+    for(int i = 0; i < m_ui->shortcutTreeWidget->topLevelItemCount(); ++i)
+    {
+        QTreeWidgetItem *item = m_ui->shortcutTreeWidget->topLevelItem(i);
+        for(int j = 0; j < item->childCount(); ++j)
+        {
+            static_cast<QSUiShortcutItem *> (item->child(j))->applyShortcut();
+        }
+    }
+}
+
 void QSUiHotkeyEditor::on_changeShortcutButton_clicked()
 {
     QSUiShortcutItem *item = dynamic_cast<QSUiShortcutItem *> (m_ui->shortcutTreeWidget->currentItem());
     if(!item)
         return;
-    ShortcutDialog editor(item->action()->shortcut(), this);
+    ShortcutDialog editor(item->shortcut(), this);
     if(editor.exec() == QDialog::Accepted)
     {
-        item->action()->setShortcut(editor.key());
-        item->setText(1, item->action()->shortcut().toString(QKeySequence::NativeText));
+        item->setShortcut(editor.key());
+        item->setText(1, item->shortcut().toString(QKeySequence::NativeText));
     }
 }
 
