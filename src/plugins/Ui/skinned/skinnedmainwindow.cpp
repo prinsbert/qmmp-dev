@@ -311,13 +311,17 @@ void SkinnedMainWindow::showSettings()
 {
     ConfigDialog *confDialog = new ConfigDialog(this);
     SkinnedSettings *skinnedSettings = new SkinnedSettings(this);
+    SkinnedHotkeyEditor *hotkeyEditor = new SkinnedHotkeyEditor(this);
     confDialog->addPage(tr("Appearance"), skinnedSettings, QIcon(u":/skinned/interface.png"_s));
-    confDialog->addPage(tr("Shortcuts"), new SkinnedHotkeyEditor(this), QIcon(u":/skinned/shortcuts.png"_s));
-    confDialog->exec();
-    skinnedSettings->writeSettings();
+    confDialog->addPage(tr("Shortcuts"), hotkeyEditor, QIcon(u":/skinned/shortcuts.png"_s));
+    if(confDialog->exec() == QDialog::Accepted)
+    {
+        skinnedSettings->writeSettings();
+        hotkeyEditor->applyShortcuts();
+        updateSettings();
+        SkinnedActionManager::instance()->saveActions();
+    }
     confDialog->deleteLater();
-    updateSettings();
-    SkinnedActionManager::instance()->saveActions();
 }
 
 void SkinnedMainWindow::toggleVisibility()

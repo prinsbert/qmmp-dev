@@ -25,13 +25,23 @@
 SkinnedShortcutItem::SkinnedShortcutItem(QTreeWidgetItem *parent, int type) :
     QTreeWidgetItem(parent, {
                     SkinnedActionManager::instance()->action(type)->text().remove(QLatin1Char('&')),
-                    SkinnedActionManager::instance()->action(type)->shortcut().toString(QKeySequence::NativeText) })
+                    SkinnedActionManager::instance()->action(type)->shortcut().toString(QKeySequence::NativeText) }),
+    m_action(SkinnedActionManager::instance()->action(type))
 {
-    m_action = SkinnedActionManager::instance()->action(type);
     setIcon(0, m_action->icon());
 }
 
-QAction *SkinnedShortcutItem::action()
+QKeySequence SkinnedShortcutItem::shortcut() const
 {
-    return m_action;
+    return m_shortcut;
+}
+
+void SkinnedShortcutItem::setShortcut(const QKeySequence &s)
+{
+    m_shortcut = s;
+}
+
+void SkinnedShortcutItem::applyShortcut()
+{
+    m_action->setShortcut(m_shortcut);
 }
