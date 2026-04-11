@@ -26,8 +26,6 @@
 #include "generalfactory.h"
 #include "qmmpui_export.h"
 
-class QmmpUiPluginCache;
-
 /*! @brief The General class provides simple access to general plugins
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
