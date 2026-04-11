@@ -70,7 +70,13 @@ private:
         QTreeWidgetItem *item = treeWidget->currentItem();
         if(item && item->type() >= PluginItem::TRANSPORT)
             dynamic_cast<PluginItem *>(item)->showSettings(q_ptr);
+    }
 
+    void onPriorityActionTriggeted()
+    {
+        QTreeWidgetItem *item = treeWidget->currentItem();
+        if(item && item->type() >= PluginItem::TRANSPORT)
+            dynamic_cast<PluginItem *>(item)->showPriority(q_ptr);
     }
 
     void onInformationButtonClicked()
@@ -88,15 +94,17 @@ private:
 
     void onTreeWidgetCurrentItemChanged(QTreeWidgetItem *current)
     {
-        if(current->type() >= PluginItem::TRANSPORT)
+        if(current && current->type() >= PluginItem::TRANSPORT)
         {
             preferencesButton->setEnabled(dynamic_cast<PluginItem *>(current)->hasSettings());
             informationButton->setEnabled(dynamic_cast<PluginItem *>(current)->hasAbout());
+            priorityAction->setVisible(current->type() == PluginItem::DECODER || current->type() == PluginItem::ENGINE);
         }
         else
         {
             preferencesButton->setEnabled(false);
             informationButton->setEnabled(false);
+            priorityAction->setVisible(false);
         }
         preferencesAction->setEnabled(preferencesButton->isEnabled());
         informationAction->setEnabled(informationButton->isEnabled());
@@ -409,13 +417,15 @@ private:
         });
 
         treeWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
-        preferencesAction = new QAction(QIcon::fromTheme(u"configure"_s), tr("Preferences"), treeWidget);
+        preferencesAction = treeWidget->addAction(QIcon::fromTheme(u"configure"_s), tr("Preferences"));
         preferencesAction->setEnabled(false);
-        treeWidget->addAction(preferencesAction);
-        informationAction = new QAction(QIcon::fromTheme(u"dialog-information"_s), tr("Information"), treeWidget);
+        priorityAction = treeWidget->addAction(QIcon::fromTheme(u"format-list-ordered"_s), tr("Priority"));
+        priorityAction->setVisible(false);
+        informationAction = treeWidget->addAction(QIcon::fromTheme(u"dialog-information"_s), tr("Information"));
         informationAction->setEnabled(false);
         treeWidget->addAction(informationAction);
         q->connect(preferencesAction, &QAction::triggered, q, [this] { onPreferencesButtonClicked(); });
+        q->connect(priorityAction, &QAction::triggered, q, [this] { onPriorityActionTriggeted(); });
         q->connect(informationAction, &QAction::triggered, q, [this] { onInformationButtonClicked(); });
     }
 
@@ -470,6 +480,7 @@ private:
     ::ConfigDialog *q_ptr;
     int insertRow = 0;
     QAction *preferencesAction;
+    QAction *priorityAction;
     QAction *informationAction;
 };
 
