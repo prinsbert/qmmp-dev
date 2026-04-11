@@ -18,6 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <array>
 #include <qmmp/metadatamanager.h>
 #include "qmmpuisettings.h"
 #include "metadatahelper_p.h"
@@ -289,7 +290,7 @@ void PlayListTrackPrivate::formatGroup() const
     }
 
     //suitable for grouping
-    static const QList<Qmmp::MetaData> groupingKeys = {
+    static const std::array<Qmmp::MetaData, 8> groupingKeys = {
         Qmmp::ARTIST,
         Qmmp::ALBUMARTIST,
         Qmmp::ALBUM,

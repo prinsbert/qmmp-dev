@@ -10,7 +10,6 @@
 #include <math.h>
 #include <algorithm>
 #include "qmmpplugincache_p.h"
-#include "output.h"
 #include "decoderfactory.h"
 #include "decoder.h"
 
