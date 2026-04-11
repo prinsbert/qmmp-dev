@@ -27,7 +27,6 @@
 #include "buffer.h"
 #include "effectfactory.h"
 
-class QmmpPluginCache;
 class EffectPrivate;
 
 /*! @brief The Effect class provides the base interface class of audio effects.

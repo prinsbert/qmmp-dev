@@ -16,7 +16,6 @@
 #include "audioparameters.h"
 #include "channelmap.h"
 
-class QmmpPluginCache;
 class DecoderFactory;
 class DecoderPrivate;
 

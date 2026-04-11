@@ -27,8 +27,6 @@
 #include "uifactory.h"
 #include "qmmpui_export.h"
 
-class QmmpUiPluginCache;
-
 /*! @brief The UiLoader provides user interface plugins access.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */

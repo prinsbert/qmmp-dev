@@ -28,7 +28,6 @@
 
 class QIODevice;
 class InputSource;
-class QmmpPluginCache;
 class EngineFactory;
 class AbstractEnginePrivate;
 

@@ -18,7 +18,6 @@
 
 class QTimer;
 class QmmpSettings;
-class QmmpPluginCache;
 class OutputPrivate;
 
 /*! @brief The Output class provides the base interface class of audio outputs.

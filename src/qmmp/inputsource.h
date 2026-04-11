@@ -30,7 +30,6 @@
 #include "qmmp.h"
 #include "inputsourcefactory.h"
 
-class QmmpPluginCache;
 class InputSourcePrivate;
 
 /*! @brief The InputSource class provides the base interface class of transports.
