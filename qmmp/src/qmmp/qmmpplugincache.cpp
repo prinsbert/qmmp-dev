@@ -79,7 +79,7 @@ QmmpPluginCache::QmmpPluginCache(const QString &file, QSettings *settings)
         else if(engineFactory())
         {
             m_shortName = m_engineFactory->properties().shortName;
-            m_priority = 0;
+            m_priority = m_engineFactory->properties().priority;
             m_protocols = m_engineFactory->properties().protocols;
             m_filters = m_engineFactory->properties().filters;
             m_contentTypes = m_engineFactory->properties().contentTypes;
@@ -103,17 +103,19 @@ QmmpPluginCache::QmmpPluginCache(const QString &file, QSettings *settings)
 
         if(!m_error)
         {
-            QStringList values;
-            values << m_shortName;
-            values << QString::number(m_priority);
-            values << m_protocols.join(QLatin1Char(';'));
-            values << m_filters.join(QLatin1Char(';'));
-            values << m_contentTypes.join(QLatin1Char(';'));
-            values << info.lastModified().toString(Qt::ISODate);
+            const QStringList values = {
+                m_shortName,
+                QString::number(m_priority),
+                m_protocols.join(QLatin1Char(';')),
+                m_filters.join(QLatin1Char(';')),
+                m_contentTypes.join(QLatin1Char(';')),
+                info.lastModified().toString(Qt::ISODate)
+            };
             settings->setValue(m_path, values);
             qCDebug(core, "added cache item \"%s=%s\"", qPrintable(info.fileName()), qPrintable(values.join(QLatin1Char(','))));
         }
     }
+
     settings->endGroup();
 }
 
@@ -151,6 +153,11 @@ QStringList QmmpPluginCache::protocols() const
 int QmmpPluginCache::priority() const
 {
     return m_priority;
+}
+
+void QmmpPluginCache::setPriority(int priority)
+{
+    m_priority = priority;
 }
 
 DecoderFactory *QmmpPluginCache::decoderFactory()

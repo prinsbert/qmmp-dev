@@ -126,6 +126,10 @@ public:
      */
     static QStringList protocols();
 
+    static void setPriority(const EngineFactory *factory, int priority);
+
+    static int priority(const EngineFactory *factory);
+
 protected:
     /*!
      * Returns mutex pointer.
