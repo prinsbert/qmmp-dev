@@ -46,6 +46,7 @@ public:
     QStringList contentTypes() const;
     QStringList protocols() const;
     int priority() const;
+    void setPriority(int priority);
     bool hasError() const;
 
     DecoderFactory *decoderFactory();

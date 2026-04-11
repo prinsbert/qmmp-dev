@@ -184,6 +184,10 @@ public:
      */
     static bool isEnabled(const DecoderFactory* factory);
 
+    static void setPriority(const DecoderFactory *factory, int priority);
+
+    static int priority(const DecoderFactory *factory);
+
 protected:
     /*!
      * Use this function inside initialize() reimplementation to tell other plugins about audio parameters.

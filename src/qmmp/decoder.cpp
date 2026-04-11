@@ -32,6 +32,7 @@ public:
             return;
 
         QSettings settings;
+        QVariantHash priorities = settings.value(u"Decoder/priorities"_s).toHash();
         for(const QString &filePath : Qmmp::findPlugins(u"Input"_s))
         {
             QmmpPluginCache *item = new QmmpPluginCache(filePath, &settings);
@@ -40,12 +41,12 @@ public:
                 delete item;
                 continue;
             }
+            item->setPriority(priorities.value(item->shortName(), item->priority()).toInt());
             decoderCache->append(item);
         }
         disabledNames = settings.value(u"Decoder/disabled_plugins"_s).toStringList();
         std::stable_sort(decoderCache->begin(), decoderCache->end(), _pluginCacheLessComparator);
         QmmpPluginCache::cleanup(&settings);
-
         qAddPostRoutine(DecoderPrivate::cleanup);
     }
 
@@ -328,6 +329,35 @@ bool Decoder::isEnabled(const DecoderFactory *factory)
 {
     DecoderPrivate::loadPlugins();
     return !DecoderPrivate::disabledNames.contains(factory->properties().shortName);
+}
+
+void Decoder::setPriority(const DecoderFactory *factory, int priority)
+{
+    DecoderPrivate::loadPlugins();
+    for(QmmpPluginCache *item : std::as_const(*decoderCache))
+    {
+        if(item->shortName() == factory->properties().shortName)
+        {
+            item->setPriority(priority);
+            QSettings settings;
+            QVariantHash priorities = settings.value(u"Decoder/priorities"_s).toHash();
+            priorities.insert(item->shortName(), priority);
+            settings.setValue(u"Decoder/priorities"_s, priorities);
+            std::stable_sort(decoderCache->begin(), decoderCache->end(), DecoderPrivate::_pluginCacheLessComparator);
+            break;
+        }
+    }
+}
+
+int Decoder::priority(const DecoderFactory *factory)
+{
+    DecoderPrivate::loadPlugins();
+    for(const QmmpPluginCache *item : std::as_const(*decoderCache))
+    {
+        if(item->shortName() == factory->properties().shortName)
+            return item->priority();
+    }
+    return 0;
 }
 
 QList<DecoderFactory *> Decoder::factories()
