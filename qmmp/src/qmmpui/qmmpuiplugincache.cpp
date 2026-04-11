@@ -59,17 +59,17 @@ QmmpUiPluginCache::QmmpUiPluginCache(const QString &file, QSettings *settings)
 
     if(update)
     {
-        if(GeneralFactory *factory = generalFactory())
+        if(generalFactory())
         {
-            m_shortName = factory->properties().shortName;
+            m_shortName = m_generalFactory->properties().shortName;
         }
-        else if(UiFactory *factory = uiFactory())
+        else if(uiFactory())
         {
-            m_shortName = factory->properties().shortName;
+            m_shortName = m_uiFactory->properties().shortName;
         }
-        else if(FileDialogFactory *factory = fileDialogFactory())
+        else if(fileDialogFactory())
         {
-            m_shortName = factory->properties().shortName;
+            m_shortName = m_fileDialogFactory->properties().shortName;
         }
         else
         {
