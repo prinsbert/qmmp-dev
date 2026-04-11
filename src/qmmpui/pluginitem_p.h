@@ -69,6 +69,7 @@ public:
     bool hasSettings() const;
     void showAbout(QWidget *parent);
     void showSettings(QWidget *parent);
+    void showPriority(QWidget *parent);
     void setEnabled(bool enabled);
     void revertState();
 

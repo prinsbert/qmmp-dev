@@ -20,6 +20,7 @@
 
 #include <QSettings>
 #include <QDir>
+#include <QInputDialog>
 #include <qmmp/inputsourcefactory.h>
 #include <qmmp/inputsource.h>
 #include <qmmp/decoderfactory.h>
@@ -196,6 +197,40 @@ void PluginItem::showSettings(QWidget *parent)
     {
         settingDialog->exec();
         settingDialog->deleteLater();
+    }
+}
+
+void PluginItem::showPriority(QWidget *parent)
+{
+    if(type() == PluginItem::DECODER)
+    {
+        DecoderFactory *factory = static_cast<DecoderFactory *>(m_factory);
+        int priority = Decoder::priority(factory);
+        bool ok;
+        priority = QInputDialog::getInt(parent,
+                                        factory->properties().name,
+                                        QObject::tr("Hint: the higher the value, the lower the priority.") +
+                                            QStringLiteral("<br>") + QObject::tr("Priority:"),
+                                        priority, 0, 100, 1, &ok);
+        if(ok)
+        {
+            Decoder::setPriority(factory, priority);
+        }
+    }
+    else if(type() == PluginItem::ENGINE)
+    {
+        EngineFactory *factory = static_cast<EngineFactory *>(m_factory);
+        int priority = AbstractEngine::priority(factory);
+        bool ok;
+        priority = QInputDialog::getInt(parent,
+                                        factory->properties().name,
+                                        QObject::tr("Hint: the higher the value, the lower the priority.") +
+                                            QStringLiteral("<br>") + QObject::tr("Priority:"),
+                                        priority, 0, 100, 1, &ok);
+        if(ok)
+        {
+            AbstractEngine::setPriority(factory, priority);
+        }
     }
 }
 
