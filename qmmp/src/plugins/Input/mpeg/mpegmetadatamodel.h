@@ -39,6 +39,7 @@ public:
     void setCover(const QImage &img) override;
     void removeCover() override;
     QString lyrics() const override;
+    void setLyrics(const QString &content) override;
 
 private:
     QList<TagModel* > m_tags;
@@ -59,7 +60,9 @@ public:
     void create() override;
     void remove() override;
     void save() override;
+    TagLib::MPEG::File::TagTypes type() const;
     QString lyrics() const;
+    void setLyrics(const QString &content);
 
 private:
     bool m_using_rusxmms;
