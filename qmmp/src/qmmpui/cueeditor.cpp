@@ -29,7 +29,7 @@
 #include <qmmp/metadatamodel.h>
 #include "cueeditor_p.h"
 #include "filedialog.h"
-#include "ui_cueeditor.h"
+#include "ui_texteditor.h"
 
 class CueSyntaxHighlighter : public QSyntaxHighlighter
 {
@@ -65,7 +65,7 @@ private:
 
 CueEditor::CueEditor(MetaDataModel *model, const TrackInfo &info, QWidget *parent) :
     EditorBase(parent),
-    m_ui(new Ui::CueEditor),
+    m_ui(new Ui::TextEditor),
     m_model(model),
     m_info(info)
 {

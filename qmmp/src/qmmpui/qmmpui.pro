@@ -138,7 +138,7 @@ FORMS += forms/detailsdialog.ui \
     forms/addurldialog.ui \
     forms/columneditor.ui \
     forms/covereditor.ui \
-    forms/cueeditor.ui
+    forms/texteditor.ui
 
 unix:DESTDIR = .
 RESOURCES += translations/libqmmpui_locales.qrc \

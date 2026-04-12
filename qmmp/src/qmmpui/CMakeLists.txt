@@ -65,7 +65,7 @@ set(libqmmpui_SRCS
     forms/addurldialog.ui
     forms/columneditor.ui
     forms/covereditor.ui
-    forms/cueeditor.ui
+    forms/texteditor.ui
     forms/shortcutdialog.ui
     translations/libqmmpui_locales.qrc
     txt/txt.qrc

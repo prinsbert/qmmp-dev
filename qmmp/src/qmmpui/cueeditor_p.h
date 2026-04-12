@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2021 by Ilya Kotov                                      *
+ *   Copyright (C) 2021-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -27,7 +27,7 @@
 #include "editorbase_p.h"
 
 namespace Ui {
-class CueEditor;
+class TextEditor;
 }
 
 class MetaDataModel;
@@ -49,7 +49,7 @@ private slots:
     void on_saveAsButton_clicked();
 
 private:
-    Ui::CueEditor *m_ui;
+    Ui::TextEditor *m_ui;
     MetaDataModel *m_model;
     QString m_lastDir;
     bool m_editable;
