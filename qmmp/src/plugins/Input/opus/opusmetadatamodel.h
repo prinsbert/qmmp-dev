@@ -38,6 +38,8 @@ public:
     void setCover(const QImage &img) override;
     void removeCover() override;
     QString lyrics() const override;
+    void setLyrics(const QString &content) override;
+    void removeLyrics() override;
 
 private:
     QString m_path;

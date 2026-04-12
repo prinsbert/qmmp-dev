@@ -32,7 +32,7 @@
 
 
 FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly) :
-    MetaDataModel(readOnly, MetaDataModel::IsCoverEditable)
+    MetaDataModel(readOnly, MetaDataModel::IsCoverEditable | MetaDataModel::IsLyricsEditable)
 {
     m_path = path.contains(u"://"_s) ? TrackInfo::pathFromUrl(path) : path;
 
@@ -221,6 +221,36 @@ QString FLACMetaDataModel::lyrics() const
     }
 
     return QString();
+}
+
+void FLACMetaDataModel::setLyrics(const QString &content)
+{
+    if(!m_tag && m_nativeFlacFile)
+        m_tag = m_nativeFlacFile->xiphComment(true);
+
+    if(m_tag)
+    {
+        m_tag->addField("UNSYNCEDLYRICS", QStringToTString(content), true);
+        m_tag->removeFields("LYRICS");
+    }
+
+    if(m_nativeFlacFile)
+        m_nativeFlacFile->save();
+    else if(m_oggFlacFile)
+        m_oggFlacFile->save();
+}
+
+void FLACMetaDataModel::removeLyrics()
+{
+    if(m_tag)
+    {
+        m_tag->removeFields("UNSYNCEDLYRICS");
+        m_tag->removeFields("LYRICS");
+        if(m_nativeFlacFile)
+            m_nativeFlacFile->save();
+        else if(m_oggFlacFile)
+            m_oggFlacFile->save();
+    }
 }
 
 FLACVorbisCommentModel::FLACVorbisCommentModel(TagLib::FLAC::File *file) :

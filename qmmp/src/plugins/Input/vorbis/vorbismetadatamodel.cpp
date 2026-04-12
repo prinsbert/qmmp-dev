@@ -29,7 +29,7 @@
 #include "vorbismetadatamodel.h"
 
 VorbisMetaDataModel::VorbisMetaDataModel(const QString &path, bool readOnly) :
-    MetaDataModel(readOnly, MetaDataModel::IsCoverEditable),
+    MetaDataModel(readOnly, MetaDataModel::IsCoverEditable | MetaDataModel::IsLyricsEditable),
     m_path(path)
 {
     m_stream = new TagLib::FileStream(QStringToFileName(path), readOnly);
@@ -124,6 +124,26 @@ QString VorbisMetaDataModel::lyrics() const
     }
 
     return QString();
+}
+
+void VorbisMetaDataModel::setLyrics(const QString &content)
+{
+    if(m_tag)
+    {
+        m_tag->addField("UNSYNCEDLYRICS", QStringToTString(content), true);
+        m_tag->removeFields("LYRICS");
+        m_file->save();
+    }
+}
+
+void VorbisMetaDataModel::removeLyrics()
+{
+    if(m_tag && !m_tag->isEmpty())
+    {
+        m_tag->removeFields("UNSYNCEDLYRICS");
+        m_tag->removeFields("LYRICS");
+        m_file->save();
+    }
 }
 
 VorbisCommentModel::VorbisCommentModel(VorbisMetaDataModel *model) : TagModel(TagModel::Save)
