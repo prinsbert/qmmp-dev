@@ -723,7 +723,7 @@
     <message>
         <location filename="../configdialog.cpp" line="424"/>
         <source>Priority</source>
-        <translation type="unfinished"></translation>
+        <translation>Приоритет</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="434"/>
@@ -1410,7 +1410,7 @@
         <location filename="../pluginitem.cpp" line="212"/>
         <location filename="../pluginitem.cpp" line="226"/>
         <source>Priority (a higher value means lower priority):</source>
-        <translation type="unfinished"></translation>
+        <translation>Приоритет (выше значение - ниже приоритет):</translation>
     </message>
 </context>
 <context>
