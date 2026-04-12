@@ -30,16 +30,11 @@ bool EditorBase::isModified() const
 
 EditorBase::~EditorBase() = default;
 
-void EditorBase::setModified()
+void EditorBase::setModified(bool modified)
 {
-    if(isEditable())
+    if(isEditable() && modified != m_modified)
     {
-        m_modified = true;
-        emit modified();
+        m_modified = modified;
+        emit modifiedChanged(modified);
     }
-}
-
-void EditorBase::setUnmodified()
-{
-    m_modified = false;
 }

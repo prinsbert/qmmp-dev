@@ -94,9 +94,10 @@ public:
      */
     enum DialogHint
     {
-        IsCoverEditable = 0x1,      /*!< Enable cover editor. */
-        CompletePropertyList = 0x2, /*!< Show properties from \b extraProperties() only (ignore other sources) */
-        IsCueEditable = 0x4         /*!< Enable CUE editor. */
+        IsCoverEditable = 0x01,      /*!< Enable cover editor. */
+        CompletePropertyList = 0x02, /*!< Show properties from \b extraProperties() only (ignore other sources) */
+        IsCueEditable = 0x04,        /*!< Enable CUE editor. */
+        IsLyricsEitable = 0x08
     };
     Q_DECLARE_FLAGS(DialogHints, DialogHint)
     /*!
@@ -157,9 +158,13 @@ public:
      */
     virtual void removeCue();
     /*!
-     * Returns song lyrics. Default returns empty string.
+     * Returns song lyrics. Default implementation returns empty string.
      */
     virtual QString lyrics() const;
+
+    virtual void setLyrics(const QString &content);
+    virtual void removeLyrics();
+
     /*!
      * Returns \b true if file is opened in read only mode. Otherwise returns \b false.
      */

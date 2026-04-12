@@ -93,6 +93,11 @@ void TagEditor::save()
     readTags();
 }
 
+void TagEditor::setModified()
+{
+    EditorBase::setModified(true);
+}
+
 void TagEditor::readTags()
 {
     m_ui->tagWidget->setEnabled(m_tagModel->exists());
@@ -115,5 +120,5 @@ void TagEditor::readTags()
         m_ui->discSpinBox->setValue(m_tagModel->value(Qmmp::DISCNUMBER).toInt());
     m_ui->yearSpinBox->setValue(m_tagModel->value(Qmmp::YEAR).toInt());
     m_ui->trackSpinBox->setValue(m_tagModel->value(Qmmp::TRACK).toInt());
-    setUnmodified();
+    EditorBase::setModified(false);
 }
