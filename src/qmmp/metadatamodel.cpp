@@ -174,7 +174,9 @@ void MetaDataModel::setLyrics(const QString &content)
 }
 
 void MetaDataModel::removeLyrics()
-{}
+{
+    setLyrics(QString());
+}
 
 bool MetaDataModel::isReadOnly() const
 {
