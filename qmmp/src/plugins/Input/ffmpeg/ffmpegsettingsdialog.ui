@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>364</width>
-    <height>503</height>
+    <width>370</width>
+    <height>518</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -129,6 +129,13 @@
        <widget class="QCheckBox" name="mkaCheckBox">
         <property name="text">
          <string>Matroska Audio (Dolby TrueHD Lossless)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="webmCheckBox">
+        <property name="text">
+         <string>WebM Vorbis/Opus</string>
         </property>
        </widget>
       </item>

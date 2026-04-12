@@ -59,8 +59,10 @@ FFmpegSettingsDialog::FFmpegSettingsDialog(QWidget *parent)
                                   avcodec_find_decoder(AV_CODEC_ID_EAC3)));
     m_ui->dtsCheckBox->setEnabled(avcodec_find_decoder(AV_CODEC_ID_DTS));
     m_ui->dtsCheckBox->setChecked(!disabledFilters.contains(u"*.dts"_s) && avcodec_find_decoder(AV_CODEC_ID_DTS));
-    m_ui->mkaCheckBox->setEnabled(avcodec_find_decoder(AV_CODEC_ID_TRUEHD));
-    m_ui->mkaCheckBox->setChecked(!disabledFilters.contains(u"*.mka"_s) && avcodec_find_decoder(AV_CODEC_ID_TRUEHD));
+    m_ui->mkaCheckBox->setEnabled(av_find_input_format("matroska") && avcodec_find_decoder(AV_CODEC_ID_TRUEHD));
+    m_ui->mkaCheckBox->setChecked(m_ui->mkaCheckBox->isEnabled() && !disabledFilters.contains(u"*.mka"_s));
+    m_ui->webmCheckBox->setEnabled(av_find_input_format("webm") && (avcodec_find_decoder(AV_CODEC_ID_OPUS) || avcodec_find_decoder(AV_CODEC_ID_VORBIS)));
+    m_ui->webmCheckBox->setChecked(m_ui->webmCheckBox->isEnabled() && !disabledFilters.contains(u"*.webm"_s));
     m_ui->vqfCheckBox->setEnabled(avcodec_find_decoder(AV_CODEC_ID_TWINVQ));
     m_ui->vqfCheckBox->setChecked(!disabledFilters.contains(u"*.vqf"_s) && avcodec_find_decoder(AV_CODEC_ID_TWINVQ));
     m_ui->takCheckBox->setEnabled(avcodec_find_decoder(AV_CODEC_ID_TAK));
@@ -77,33 +79,35 @@ FFmpegSettingsDialog::~FFmpegSettingsDialog()
 void FFmpegSettingsDialog::accept()
 {
     QStringList disabledFilters;
-    if (!m_ui->mp3CheckBox->isChecked())
+    if(!m_ui->mp3CheckBox->isChecked())
         disabledFilters << u"*.mp3"_s;
-    if (!m_ui->wmaCheckBox->isChecked())
+    if(!m_ui->wmaCheckBox->isChecked())
         disabledFilters << u"*.wma"_s;
-    if (!m_ui->apeCheckBox->isChecked())
+    if(!m_ui->apeCheckBox->isChecked())
         disabledFilters << u"*.ape"_s;
-    if (!m_ui->ttaCheckBox->isChecked())
+    if(!m_ui->ttaCheckBox->isChecked())
         disabledFilters << u"*.tta"_s;
-    if (!m_ui->aacCheckBox->isChecked())
+    if(!m_ui->aacCheckBox->isChecked())
         disabledFilters << u"*.aac"_s;
-    if (!m_ui->mp4CheckBox->isChecked())
+    if(!m_ui->mp4CheckBox->isChecked())
         disabledFilters << u"*.m4a"_s << u"*.m4b"_s;
-    if (!m_ui->raCheckBox->isChecked())
+    if(!m_ui->raCheckBox->isChecked())
         disabledFilters << u"*.ra"_s;
-    if (!m_ui->shCheckBox->isChecked())
+    if(!m_ui->shCheckBox->isChecked())
         disabledFilters << u"*.shn"_s;
-    if (!m_ui->ac3CheckBox->isChecked())
+    if(!m_ui->ac3CheckBox->isChecked())
         disabledFilters << u"*.ac3"_s;
-    if (!m_ui->dtsCheckBox->isChecked())
+    if(!m_ui->dtsCheckBox->isChecked())
         disabledFilters << u"*.dts"_s;
-    if (!m_ui->mkaCheckBox->isChecked())
-        disabledFilters << u"*.mka"_s << u"*.webm"_s;
-    if (!m_ui->vqfCheckBox->isChecked())
+    if(!m_ui->mkaCheckBox->isChecked())
+        disabledFilters << u"*.mka"_s;
+    if(!m_ui->webmCheckBox->isChecked())
+        disabledFilters << u"*.webm"_s;
+    if(!m_ui->vqfCheckBox->isChecked())
         disabledFilters << u"*.vqf"_s;
-    if (!m_ui->takCheckBox->isChecked())
+    if(!m_ui->takCheckBox->isChecked())
         disabledFilters << u"*.tak"_s;
-    if (!m_ui->dsdCheckBox->isChecked())
+    if(!m_ui->dsdCheckBox->isChecked())
         disabledFilters << u"*.dsf"_s << u"*.dsdiff"_s;
     QSettings settings;
     settings.setValue(u"FFMPEG/disabled_filters"_s, disabledFilters);

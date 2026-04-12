@@ -79,6 +79,9 @@ bool DecoderFFmpegFactory::canDecode(QIODevice *i) const
         return true;
     if(filters.contains(u"*.mka"_s) && (formats.contains(u"mka"_s) || formats.contains(u"matroska"_s)))
         return true;
+    if(filters.contains(u"*.webm"_s) && formats.contains(u"webm"_s) &&
+        (avcodec_find_decoder(AV_CODEC_ID_OPUS) || avcodec_find_decoder(AV_CODEC_ID_VORBIS)))
+        return true;
     if(filters.contains(u"*.vqf"_s) && formats.contains(u"vqf"_s))
         return true;
     if(filters.contains(u"*.ape"_s) && formats.contains(u"ape"_s))
@@ -132,8 +135,10 @@ DecoderProperties DecoderFFmpegFactory::properties() const
         filters.remove(u"*.ac3"_s);
     if(!avcodec_find_decoder(AV_CODEC_ID_DTS))
         filters.remove(u"*.dts"_s);
-    if(!avcodec_find_decoder(AV_CODEC_ID_TRUEHD))
+    if(!av_find_input_format("matroska") || !avcodec_find_decoder(AV_CODEC_ID_TRUEHD))
         filters.remove(u"*.mka"_s);
+    if(!av_find_input_format("webm") || (!avcodec_find_decoder(AV_CODEC_ID_OPUS) && !avcodec_find_decoder(AV_CODEC_ID_VORBIS)))
+        filters.remove(u"*.webm"_s);
     if(!avcodec_find_decoder(AV_CODEC_ID_TWINVQ))
         filters.remove(u"*.vqf"_s);
     if(!avcodec_find_decoder(AV_CODEC_ID_TAK))
@@ -167,7 +172,9 @@ DecoderProperties DecoderFFmpegFactory::properties() const
     if(filters.contains(u"*.dts"_s))
         properties.contentTypes << u"audio/dts"_s;
     if(filters.contains(u"*.mka"_s))
-        properties.contentTypes << u"audio/true-hd"_s << u"audio/x-matroska"_s << u"audio/webm"_s;
+        properties.contentTypes << u"audio/true-hd"_s << u"audio/x-matroska"_s;
+    if(filters.contains(u"*.webm"_s))
+        properties.contentTypes << u"audio/webm"_s;
     properties.shortName = "ffmpeg"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
