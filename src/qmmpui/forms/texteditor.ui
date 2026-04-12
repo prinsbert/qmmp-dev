@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CueEditor</class>
- <widget class="QWidget" name="CueEditor">
+ <class>TextEditor</class>
+ <widget class="QWidget" name="TextEditor">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string notr="true">CUE Editor</string>
+   <string notr="true">Text Editor</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" rowspan="5">
