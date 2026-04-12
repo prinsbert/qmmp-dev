@@ -209,8 +209,7 @@ void PluginItem::showPriority(QWidget *parent)
         bool ok;
         priority = QInputDialog::getInt(parent,
                                         factory->properties().name,
-                                        QObject::tr("Hint: the higher the value, the lower the priority.") +
-                                            QStringLiteral("<br>") + QObject::tr("Priority:"),
+                                        QCoreApplication::translate("PluginItem", "Priority (a higher value means lower priority):"),
                                         priority, 0, 100, 1, &ok);
         if(ok)
         {
@@ -224,8 +223,7 @@ void PluginItem::showPriority(QWidget *parent)
         bool ok;
         priority = QInputDialog::getInt(parent,
                                         factory->properties().name,
-                                        QObject::tr("Hint: the higher the value, the lower the priority.") +
-                                            QStringLiteral("<br>") + QObject::tr("Priority:"),
+                                        QCoreApplication::translate("PluginItem", "Priority (a higher value means lower priority):"),
                                         priority, 0, 100, 1, &ok);
         if(ok)
         {

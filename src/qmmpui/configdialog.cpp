@@ -72,18 +72,18 @@ private:
             dynamic_cast<PluginItem *>(item)->showSettings(q_ptr);
     }
 
-    void onPriorityActionTriggeted()
-    {
-        QTreeWidgetItem *item = treeWidget->currentItem();
-        if(item && item->type() >= PluginItem::TRANSPORT)
-            dynamic_cast<PluginItem *>(item)->showPriority(q_ptr);
-    }
-
     void onInformationButtonClicked()
     {
         QTreeWidgetItem *item = treeWidget->currentItem();
         if(item && item->type() >= PluginItem::TRANSPORT)
             dynamic_cast<PluginItem *>(item)->showAbout(q_ptr);
+    }
+
+    void onPriorityActionTriggeted()
+    {
+        QTreeWidgetItem *item = treeWidget->currentItem();
+        if(item && item->type() >= PluginItem::TRANSPORT)
+            dynamic_cast<PluginItem *>(item)->showPriority(q_ptr);
     }
 
     void onTreeWidgetItemChanged(QTreeWidgetItem *item, int column)
@@ -419,14 +419,13 @@ private:
         treeWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
         preferencesAction = treeWidget->addAction(QIcon::fromTheme(u"configure"_s), tr("Preferences"));
         preferencesAction->setEnabled(false);
-        priorityAction = treeWidget->addAction(QIcon::fromTheme(u"format-list-ordered"_s), tr("Priority"));
-        priorityAction->setVisible(false);
         informationAction = treeWidget->addAction(QIcon::fromTheme(u"dialog-information"_s), tr("Information"));
         informationAction->setEnabled(false);
-        treeWidget->addAction(informationAction);
+        priorityAction = treeWidget->addAction(QIcon::fromTheme(u"format-list-ordered"_s), tr("Priority"));
+        priorityAction->setVisible(false);
         q->connect(preferencesAction, &QAction::triggered, q, [this] { onPreferencesButtonClicked(); });
-        q->connect(priorityAction, &QAction::triggered, q, [this] { onPriorityActionTriggeted(); });
         q->connect(informationAction, &QAction::triggered, q, [this] { onInformationButtonClicked(); });
+        q->connect(priorityAction, &QAction::triggered, q, [this] { onPriorityActionTriggeted(); });
     }
 
     void loadLanguages()
@@ -480,8 +479,8 @@ private:
     ::ConfigDialog *q_ptr;
     int insertRow = 0;
     QAction *preferencesAction;
-    QAction *priorityAction;
     QAction *informationAction;
+    QAction *priorityAction;
 };
 
 ConfigDialog::ConfigDialog(QWidget *parent) :
