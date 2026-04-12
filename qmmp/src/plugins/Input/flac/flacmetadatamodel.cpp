@@ -32,8 +32,9 @@
 
 
 FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly) :
-    MetaDataModel(readOnly, MetaDataModel::IsCoverEditable | MetaDataModel::IsLyricsEditable)
+    MetaDataModel(readOnly, MetaDataModel::IsCoverEditable)
 {
+    bool valid = false;
     m_path = path.contains(u"://"_s) ? TrackInfo::pathFromUrl(path) : path;
 
     if(m_path.endsWith(u".flac"_s, Qt::CaseInsensitive))
@@ -49,7 +50,7 @@ FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly) :
         {
             m_tags << new FLACVorbisCommentModel(m_nativeFlacFile);
             m_tags << new FLACID3v2TagModel(m_nativeFlacFile);
-            setDialogHints(dialogHints() | MetaDataModel::IsCueEditable);
+            valid = true;
             setReadOnly(m_nativeFlacFile->readOnly());
         }
     }
@@ -61,9 +62,17 @@ FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly) :
         if(m_oggFlacFile->isValid())
         {
             m_tags << new FLACVorbisCommentModel(m_oggFlacFile);
-            setDialogHints(dialogHints() | MetaDataModel::IsCueEditable);
+            valid = true;
             setReadOnly(m_oggFlacFile->readOnly());
         }
+    }
+
+    if(valid)
+    {
+        MetaDataModel::DialogHints hints = dialogHints() | MetaDataModel::IsCueEditable;
+        if(!path.contains(u"://"_s)) //hide lyrics editor for files with embedded CUE
+            hints |= MetaDataModel::IsLyricsEditable;
+        setDialogHints(hints);
     }
 }
 
