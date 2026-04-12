@@ -139,12 +139,14 @@ void CueEditor::on_loadButton_clicked()
             m_ui->plainTextEdit->setPlainText(QString::fromUtf8(file.readAll()));
         else
             m_ui->plainTextEdit->clear();
+        setModified();
     }
 }
 
 void CueEditor::on_deleteButton_clicked()
 {
     m_ui->plainTextEdit->clear();
+    setModified();
 }
 
 void CueEditor::on_saveAsButton_clicked()
