@@ -708,37 +708,37 @@
         <translation>Sneltoets</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="57"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
         <source>Playback</source>
         <translation>Afspelen</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="63"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
         <source>View</source>
         <translation>Weergave</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
         <source>Volume</source>
         <translation>Volume</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="87"/>
         <source>Playlist</source>
         <translation>Afspeellijst</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
         <source>Misc</source>
         <translation>Overig</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="105"/>
         <source>Reset Shortcuts</source>
         <translation>Sneltoetsen herstellen</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="94"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="106"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation>Wil je de standaard sneltoetsen herstellen?</translation>
     </message>
@@ -746,37 +746,37 @@
 <context>
     <name>SkinnedMainWindow</name>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="314"/>
+        <location filename="../skinnedmainwindow.cpp" line="315"/>
         <source>Appearance</source>
         <translation>Uiterlijk</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="315"/>
+        <location filename="../skinnedmainwindow.cpp" line="316"/>
         <source>Shortcuts</source>
         <translation>Sneltoetsen</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="389"/>
+        <location filename="../skinnedmainwindow.cpp" line="393"/>
         <source>View</source>
         <translation>Weergave</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="398"/>
+        <location filename="../skinnedmainwindow.cpp" line="402"/>
         <source>Playlist</source>
         <translation>Afspeellijst</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="417"/>
+        <location filename="../skinnedmainwindow.cpp" line="421"/>
         <source>Audio</source>
         <translation>Audio</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="425"/>
+        <location filename="../skinnedmainwindow.cpp" line="429"/>
         <source>Tools</source>
         <translation>Hulpmiddelen</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="496"/>
+        <location filename="../skinnedmainwindow.cpp" line="500"/>
         <source>Qmmp</source>
         <translation>Qmmp</translation>
     </message>

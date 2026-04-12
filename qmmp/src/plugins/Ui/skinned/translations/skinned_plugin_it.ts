@@ -708,37 +708,37 @@
         <translation>Scorciatoia</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="57"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
         <source>Playback</source>
         <translation>Riproduzione</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="63"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
         <source>View</source>
         <translation>Visualizza</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
         <source>Volume</source>
         <translation>Volume</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="87"/>
         <source>Playlist</source>
         <translation>Playlist</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
         <source>Misc</source>
         <translation>Varie</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="105"/>
         <source>Reset Shortcuts</source>
         <translation>Ripristina scorciatoie</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="94"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="106"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation>Vuoi ripristinare le scorciatoie predefinite?</translation>
     </message>
@@ -746,37 +746,37 @@
 <context>
     <name>SkinnedMainWindow</name>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="314"/>
+        <location filename="../skinnedmainwindow.cpp" line="315"/>
         <source>Appearance</source>
         <translation>Aspetto</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="315"/>
+        <location filename="../skinnedmainwindow.cpp" line="316"/>
         <source>Shortcuts</source>
         <translation>Scorciatoie</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="389"/>
+        <location filename="../skinnedmainwindow.cpp" line="393"/>
         <source>View</source>
         <translation>Visualizza</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="398"/>
+        <location filename="../skinnedmainwindow.cpp" line="402"/>
         <source>Playlist</source>
         <translation>Playlist</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="417"/>
+        <location filename="../skinnedmainwindow.cpp" line="421"/>
         <source>Audio</source>
         <translation>Audio</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="425"/>
+        <location filename="../skinnedmainwindow.cpp" line="429"/>
         <source>Tools</source>
         <translation>Strumenti</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="496"/>
+        <location filename="../skinnedmainwindow.cpp" line="500"/>
         <source>Qmmp</source>
         <translation>Qmmp</translation>
     </message>

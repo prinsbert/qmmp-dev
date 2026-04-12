@@ -708,37 +708,37 @@
         <translation>단축키</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="57"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
         <source>Playback</source>
         <translation>플레이백</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="63"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
         <source>View</source>
         <translation>보기</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
         <source>Volume</source>
         <translation>볼륨</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="87"/>
         <source>Playlist</source>
         <translation>재생목록</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
         <source>Misc</source>
         <translation>기타</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="105"/>
         <source>Reset Shortcuts</source>
         <translation>단축키 재설정</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="94"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="106"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation>기본 단축키를 복원하시겠습니까?</translation>
     </message>
@@ -746,37 +746,37 @@
 <context>
     <name>SkinnedMainWindow</name>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="314"/>
+        <location filename="../skinnedmainwindow.cpp" line="315"/>
         <source>Appearance</source>
         <translation>모양새</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="315"/>
+        <location filename="../skinnedmainwindow.cpp" line="316"/>
         <source>Shortcuts</source>
         <translation>단축키</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="389"/>
+        <location filename="../skinnedmainwindow.cpp" line="393"/>
         <source>View</source>
         <translation>보기</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="398"/>
+        <location filename="../skinnedmainwindow.cpp" line="402"/>
         <source>Playlist</source>
         <translation>재생목록</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="417"/>
+        <location filename="../skinnedmainwindow.cpp" line="421"/>
         <source>Audio</source>
         <translation>오디오</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="425"/>
+        <location filename="../skinnedmainwindow.cpp" line="429"/>
         <source>Tools</source>
         <translation>도구</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="496"/>
+        <location filename="../skinnedmainwindow.cpp" line="500"/>
         <source>Qmmp</source>
         <translation>Qmmp</translation>
     </message>

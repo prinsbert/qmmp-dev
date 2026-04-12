@@ -708,37 +708,37 @@
         <translation>快捷键</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="57"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
         <source>Playback</source>
         <translation>播放</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="63"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
         <source>View</source>
         <translation>视图</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
         <source>Volume</source>
         <translation>音量</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="87"/>
         <source>Playlist</source>
         <translation>播放列表</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
         <source>Misc</source>
         <translation>杂项</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="105"/>
         <source>Reset Shortcuts</source>
         <translation>重置快捷键</translation>
     </message>
     <message>
-        <location filename="../skinnedhotkeyeditor.cpp" line="94"/>
+        <location filename="../skinnedhotkeyeditor.cpp" line="106"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation>您希望将快捷键恢复到默认值吗？</translation>
     </message>
@@ -746,37 +746,37 @@
 <context>
     <name>SkinnedMainWindow</name>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="314"/>
+        <location filename="../skinnedmainwindow.cpp" line="315"/>
         <source>Appearance</source>
         <translation>外观</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="315"/>
+        <location filename="../skinnedmainwindow.cpp" line="316"/>
         <source>Shortcuts</source>
         <translation>快捷键</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="389"/>
+        <location filename="../skinnedmainwindow.cpp" line="393"/>
         <source>View</source>
         <translation>视图</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="398"/>
+        <location filename="../skinnedmainwindow.cpp" line="402"/>
         <source>Playlist</source>
         <translation>播放列表</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="417"/>
+        <location filename="../skinnedmainwindow.cpp" line="421"/>
         <source>Audio</source>
         <translation>音频</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="425"/>
+        <location filename="../skinnedmainwindow.cpp" line="429"/>
         <source>Tools</source>
         <translation>工具</translation>
     </message>
     <message>
-        <location filename="../skinnedmainwindow.cpp" line="496"/>
+        <location filename="../skinnedmainwindow.cpp" line="500"/>
         <source>Qmmp</source>
         <translation>Qmmp</translation>
     </message>
