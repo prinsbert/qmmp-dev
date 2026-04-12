@@ -33,6 +33,7 @@
 #include "tageditor_p.h"
 #include "covereditor_p.h"
 #include "cueeditor_p.h"
+#include "lyricseditor_p.h"
 #include "detailsdialog.h"
 
 class DetailsDialogPrivate : public Ui::DetailsDialog
@@ -160,12 +161,10 @@ public:
             }
 
             QString lyrics = metaDataModel->lyrics();
-            if(!lyrics.isEmpty())
+            if(!lyrics.isEmpty() || metaDataModel->dialogHints() & MetaDataModel::IsLyricsEitable)
             {
-                QTextEdit *textEdit = new QTextEdit(q);
-                textEdit->setReadOnly(true);
-                textEdit->setPlainText(lyrics);
-                tabWidget->addTab(textEdit, tr("Lyrics"));
+                LyricsEditor *lyricsEditor = new LyricsEditor(metaDataModel, info, q);
+                tabWidget->addTab(lyricsEditor, tr("Lyrics"));
             }
 
             if(metaDataModel->dialogHints() & MetaDataModel::IsCueEditable)
@@ -179,7 +178,7 @@ public:
             EditorBase *editor = qobject_cast<EditorBase *>(tabWidget->widget(i));
             if(editor)
             {
-                CoverEditor::connect(editor, &EditorBase::modified, q, [this] { updateDialogButtons(); });
+                CoverEditor::connect(editor, &EditorBase::modifiedChanged, q, [this] { updateDialogButtons(); });
             }
         }
 
@@ -334,6 +333,8 @@ public:
                         modifiedPaths.insert(QStringLiteral("%1#%2").arg(path).arg(i + 1));
                     modifiedPaths.insert(info.path());
                 }
+
+                updateDialogButtons();
             }
         }
 

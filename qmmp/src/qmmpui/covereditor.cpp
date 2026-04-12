@@ -65,7 +65,7 @@ bool CoverEditor::isEditable() const
 void CoverEditor::save()
 {
     m_viewer->hasImage() ? m_model->setCover(m_viewer->image()) : m_model->removeCover();
-    setUnmodified();
+    setModified(false);
     MetaDataManager::instance()->clearCoverCache();
 }
 

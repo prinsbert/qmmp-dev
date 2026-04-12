@@ -79,6 +79,7 @@ HEADERS += general.h \
     covereditor_p.h \
     commandlinehandler.h \
     cueeditor_p.h \
+    lyricseditor_p.h \
     visualmenu.h
 
 SOURCES += general.cpp \
@@ -125,6 +126,7 @@ SOURCES += general.cpp \
     commandlinehandler.cpp \
     generalfactory.cpp \
     cueeditor.cpp \
+    lyricseditor.cpp \
     tageditor.cpp \
     visualmenu.cpp
 

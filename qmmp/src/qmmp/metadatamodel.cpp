@@ -168,6 +168,14 @@ QString MetaDataModel::lyrics() const
     return QString();
 }
 
+void MetaDataModel::setLyrics(const QString &content)
+{
+     Q_UNUSED(content);
+}
+
+void MetaDataModel::removeLyrics()
+{}
+
 bool MetaDataModel::isReadOnly() const
 {
     return d_ptr->readOnly;

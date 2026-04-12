@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2026 by Ilya Kotov                                 *
+ *   Copyright (C) 2021-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,41 +18,40 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef TAGEDITOR_H
-#define TAGEDITOR_H
+#ifndef LYRICSEDITOR_P_H
+#define LYRICSEDITOR_P_H
 
 #include <QWidget>
+#include <qmmp/trackinfo.h>
 #include "editorbase_p.h"
 
 namespace Ui {
-    class TagEditor;
+class TextEditor;
 }
 
-class TagModel;
+class MetaDataModel;
 
-/*! @internal
- * @author Ilya Kotov <forkotov02@ya.ru>
- */
-class TagEditor : public EditorBase
+class LyricsEditor : public EditorBase
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-    explicit TagEditor(TagModel *tagModel, bool readOnly, QWidget *parent = nullptr);
-    ~TagEditor();
+    explicit LyricsEditor(MetaDataModel *model, const TrackInfo &info, QWidget *parent = nullptr);
+    ~LyricsEditor();
 
-    bool isEditable() const override;
     void save() override;
+    bool isEditable() const override;
 
 private slots:
-    void setModified();
+    void on_loadButton_clicked();
+    void on_deleteButton_clicked();
+    void on_saveAsButton_clicked();
 
 private:
-    void readTags();
-    Ui::TagEditor *m_ui;
-    TagModel *m_tagModel;
-    int m_discs = -1; //Number of discs
-    bool m_readOnly = false;
-
+    Ui::TextEditor *m_ui;
+    MetaDataModel *m_model;
+    QString m_lastDir;
+    bool m_editable;
+    TrackInfo m_info;
 };
 
-#endif // TAGEDITOR_H
+#endif // LYRICSEDITOR_P_H

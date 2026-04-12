@@ -34,11 +34,10 @@ public:
     virtual void save() = 0;
 
 signals:
-    void modified();
+    void modifiedChanged(bool modified);
 
 protected slots:
-    void setModified();
-    void setUnmodified();
+    void setModified(bool modified = true);
 
 private:
     bool m_modified = false;

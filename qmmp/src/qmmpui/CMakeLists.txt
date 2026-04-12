@@ -52,6 +52,7 @@ set(libqmmpui_SRCS
     coverloader.cpp
     generalfactory.cpp
     cueeditor.cpp
+    lyricseditor.cpp
     visualmenu.cpp
     colorwidget.cpp
     shortcutdialog.cpp
