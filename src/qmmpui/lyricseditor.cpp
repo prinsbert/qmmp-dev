@@ -63,6 +63,7 @@ void LyricsEditor::save()
     if(data.isEmpty())
     {
         m_model->removeLyrics();
+        setModified(false);
     }
     else
     {

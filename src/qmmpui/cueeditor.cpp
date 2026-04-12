@@ -109,6 +109,7 @@ void CueEditor::save()
     {
         m_model->removeCue();
         m_parser.clear();
+        setModified(false);
     }
     else
     {
