@@ -102,7 +102,7 @@ DecoderProperties DecoderFFmpegFactory::properties() const
     QSettings settings;
     QSet<QString> filters = {
         u"*.wma"_s, u"*.ape"_s, u"*.tta"_s, u"*.m4a"_s, u"*.m4b"_s, u"*.aac"_s, u"*.mp3"_s, u"*.ra"_s, u"*.shn"_s,
-        u"*.ac3"_s, u"*.dts"_s, u"*.mka"_s,  u"*.vqf"_s, u"*.tak"_s, u"*.dsf"_s, u"*.dsdiff"_s
+        u"*.ac3"_s, u"*.dts"_s, u"*.mka"_s,  u"*.vqf"_s, u"*.tak"_s, u"*.dsf"_s, u"*.dsdiff"_s, u"*.webm"_s
     };
     const QStringList disabledFilters = settings.value(u"FFMPEG/disabled_filters"_s, { u"*.mp3"_s }).toStringList();
 
@@ -167,7 +167,7 @@ DecoderProperties DecoderFFmpegFactory::properties() const
     if(filters.contains(u"*.dts"_s))
         properties.contentTypes << u"audio/dts"_s;
     if(filters.contains(u"*.mka"_s))
-        properties.contentTypes << u"audio/true-hd"_s << u"audio/x-matroska"_s;
+        properties.contentTypes << u"audio/true-hd"_s << u"audio/x-matroska"_s << u"audio/webm"_s;
     properties.shortName = "ffmpeg"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
