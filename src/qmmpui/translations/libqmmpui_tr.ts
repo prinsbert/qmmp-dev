@@ -936,33 +936,18 @@
 <context>
     <name>CueEditor</name>
     <message>
-        <location filename="../forms/cueeditor.ui" line="40"/>
-        <source>Load</source>
-        <translation>Yükle</translation>
-    </message>
-    <message>
-        <location filename="../forms/cueeditor.ui" line="47"/>
-        <source>Delete</source>
-        <translation>Sil</translation>
-    </message>
-    <message>
-        <location filename="../forms/cueeditor.ui" line="54"/>
-        <source>Save as...</source>
-        <translation>Olarak kaydet...</translation>
-    </message>
-    <message>
-        <location filename="../cueeditor.cpp" line="133"/>
+        <location filename="../cueeditor.cpp" line="134"/>
         <source>Open CUE File</source>
         <translation>CUE Dosyası Aç</translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="133"/>
-        <location filename="../cueeditor.cpp" line="154"/>
+        <location filename="../cueeditor.cpp" line="134"/>
+        <location filename="../cueeditor.cpp" line="157"/>
         <source>CUE Files</source>
         <translation>CUE Dosyaları</translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="152"/>
+        <location filename="../cueeditor.cpp" line="155"/>
         <source>Save CUE File</source>
         <translation>CUE Dosyası Kaydet</translation>
     </message>
@@ -990,132 +975,132 @@
         <translation>Özet</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="90"/>
+        <location filename="../detailsdialog.cpp" line="91"/>
         <source>%1/%2</source>
         <translation>%1/%2</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="142"/>
+        <location filename="../detailsdialog.cpp" line="143"/>
         <source>Cover</source>
         <translation>Kapak</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="168"/>
+        <location filename="../detailsdialog.cpp" line="167"/>
         <source>Lyrics</source>
         <translation>Şarkı Sözleri</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="197"/>
+        <location filename="../detailsdialog.cpp" line="196"/>
         <source>Title</source>
         <translation>Başlık</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="198"/>
+        <location filename="../detailsdialog.cpp" line="197"/>
         <source>Artist</source>
         <translation>Sanatçı</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="199"/>
+        <location filename="../detailsdialog.cpp" line="198"/>
         <source>Album artist</source>
         <translation>Albüm sanatçısı</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="200"/>
+        <location filename="../detailsdialog.cpp" line="199"/>
         <source>Album</source>
         <translation>Albüm</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="201"/>
+        <location filename="../detailsdialog.cpp" line="200"/>
         <source>Comment</source>
         <translation>Yorum</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="202"/>
+        <location filename="../detailsdialog.cpp" line="201"/>
         <source>Genre</source>
         <translation>Tarz</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="203"/>
+        <location filename="../detailsdialog.cpp" line="202"/>
         <source>Composer</source>
         <translation>Besteci</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="204"/>
+        <location filename="../detailsdialog.cpp" line="203"/>
         <source>Year</source>
         <translation>Yıl</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="205"/>
+        <location filename="../detailsdialog.cpp" line="204"/>
         <source>Track</source>
         <translation>Parça</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="206"/>
+        <location filename="../detailsdialog.cpp" line="205"/>
         <source>Disc number</source>
         <translation>Disk numarası</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="225"/>
+        <location filename="../detailsdialog.cpp" line="224"/>
         <source>Duration</source>
         <translation>Süre</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="228"/>
+        <location filename="../detailsdialog.cpp" line="227"/>
         <source>Bitrate</source>
         <translation>Bit hızı</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="228"/>
+        <location filename="../detailsdialog.cpp" line="227"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="229"/>
+        <location filename="../detailsdialog.cpp" line="228"/>
         <source>Sample rate</source>
         <translation>Örnekleme oranı</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="229"/>
+        <location filename="../detailsdialog.cpp" line="228"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="230"/>
+        <location filename="../detailsdialog.cpp" line="229"/>
         <source>Channels</source>
         <translation>Kanallar</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="231"/>
+        <location filename="../detailsdialog.cpp" line="230"/>
         <source>Sample size</source>
         <translation>Örnekleme boyutu</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="231"/>
+        <location filename="../detailsdialog.cpp" line="230"/>
         <source>bits</source>
         <translation>bitler</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="232"/>
+        <location filename="../detailsdialog.cpp" line="231"/>
         <source>Format name</source>
         <translation>Biçim adı</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="233"/>
+        <location filename="../detailsdialog.cpp" line="232"/>
         <source>File size</source>
         <translation>Dosya boyutu</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="233"/>
+        <location filename="../detailsdialog.cpp" line="232"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="278"/>
+        <location filename="../detailsdialog.cpp" line="277"/>
         <source>Yes</source>
         <translation>Evet</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="278"/>
+        <location filename="../detailsdialog.cpp" line="277"/>
         <source>No</source>
         <translation>Hayır</translation>
     </message>
@@ -1159,6 +1144,25 @@
         <location filename="../jumptotrackdialog.cpp" line="148"/>
         <source>Unqueue</source>
         <translation>Sırayı kaldır</translation>
+    </message>
+</context>
+<context>
+    <name>LyricsEditor</name>
+    <message>
+        <location filename="../lyricseditor.cpp" line="82"/>
+        <source>Load Lyrics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lyricseditor.cpp" line="82"/>
+        <location filename="../lyricseditor.cpp" line="103"/>
+        <source>Text Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lyricseditor.cpp" line="101"/>
+        <source>Save Lyrics</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1533,6 +1537,24 @@
         <location filename="../forms/templateeditor.ui" line="30"/>
         <source>Insert</source>
         <translation>Araya Ekle</translation>
+    </message>
+</context>
+<context>
+    <name>TextEditor</name>
+    <message>
+        <location filename="../forms/texteditor.ui" line="40"/>
+        <source>Load</source>
+        <translation type="unfinished">Yükle</translation>
+    </message>
+    <message>
+        <location filename="../forms/texteditor.ui" line="47"/>
+        <source>Delete</source>
+        <translation type="unfinished">Sil</translation>
+    </message>
+    <message>
+        <location filename="../forms/texteditor.ui" line="54"/>
+        <source>Save as...</source>
+        <translation type="unfinished">Olarak kaydet...</translation>
     </message>
 </context>
 <context>

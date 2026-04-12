@@ -936,33 +936,18 @@
 <context>
     <name>CueEditor</name>
     <message>
-        <location filename="../forms/cueeditor.ui" line="40"/>
-        <source>Load</source>
-        <translation type="unfinished">Načítať</translation>
-    </message>
-    <message>
-        <location filename="../forms/cueeditor.ui" line="47"/>
-        <source>Delete</source>
-        <translation type="unfinished">Vymazať</translation>
-    </message>
-    <message>
-        <location filename="../forms/cueeditor.ui" line="54"/>
-        <source>Save as...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../cueeditor.cpp" line="133"/>
+        <location filename="../cueeditor.cpp" line="134"/>
         <source>Open CUE File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="133"/>
-        <location filename="../cueeditor.cpp" line="154"/>
+        <location filename="../cueeditor.cpp" line="134"/>
+        <location filename="../cueeditor.cpp" line="157"/>
         <source>CUE Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="152"/>
+        <location filename="../cueeditor.cpp" line="155"/>
         <source>Save CUE File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -990,132 +975,132 @@
         <translation>Sumár</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="90"/>
+        <location filename="../detailsdialog.cpp" line="91"/>
         <source>%1/%2</source>
         <translation>%1/%2</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="142"/>
+        <location filename="../detailsdialog.cpp" line="143"/>
         <source>Cover</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="168"/>
+        <location filename="../detailsdialog.cpp" line="167"/>
         <source>Lyrics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="197"/>
+        <location filename="../detailsdialog.cpp" line="196"/>
         <source>Title</source>
         <translation>Názov</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="198"/>
+        <location filename="../detailsdialog.cpp" line="197"/>
         <source>Artist</source>
         <translation>Interprét</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="199"/>
+        <location filename="../detailsdialog.cpp" line="198"/>
         <source>Album artist</source>
         <translation>Interprét albumu</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="200"/>
+        <location filename="../detailsdialog.cpp" line="199"/>
         <source>Album</source>
         <translation>Album</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="201"/>
+        <location filename="../detailsdialog.cpp" line="200"/>
         <source>Comment</source>
         <translation>Komentár</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="202"/>
+        <location filename="../detailsdialog.cpp" line="201"/>
         <source>Genre</source>
         <translation>Žáner</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="203"/>
+        <location filename="../detailsdialog.cpp" line="202"/>
         <source>Composer</source>
         <translation>Skladateľ</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="204"/>
+        <location filename="../detailsdialog.cpp" line="203"/>
         <source>Year</source>
         <translation>Rok</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="205"/>
+        <location filename="../detailsdialog.cpp" line="204"/>
         <source>Track</source>
         <translation>Stop</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="206"/>
+        <location filename="../detailsdialog.cpp" line="205"/>
         <source>Disc number</source>
         <translation>Číslo disku</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="225"/>
+        <location filename="../detailsdialog.cpp" line="224"/>
         <source>Duration</source>
         <translation>Dĺžka</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="228"/>
+        <location filename="../detailsdialog.cpp" line="227"/>
         <source>Bitrate</source>
         <translation>Bitový tok</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="228"/>
+        <location filename="../detailsdialog.cpp" line="227"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="229"/>
+        <location filename="../detailsdialog.cpp" line="228"/>
         <source>Sample rate</source>
         <translation>Vzorkovacia frekvencia</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="229"/>
+        <location filename="../detailsdialog.cpp" line="228"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="230"/>
+        <location filename="../detailsdialog.cpp" line="229"/>
         <source>Channels</source>
         <translation>Kanály</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="231"/>
+        <location filename="../detailsdialog.cpp" line="230"/>
         <source>Sample size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="231"/>
+        <location filename="../detailsdialog.cpp" line="230"/>
         <source>bits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="232"/>
+        <location filename="../detailsdialog.cpp" line="231"/>
         <source>Format name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="233"/>
+        <location filename="../detailsdialog.cpp" line="232"/>
         <source>File size</source>
         <translation>Veľkosť súboru</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="233"/>
+        <location filename="../detailsdialog.cpp" line="232"/>
         <source>KiB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="278"/>
+        <location filename="../detailsdialog.cpp" line="277"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="278"/>
+        <location filename="../detailsdialog.cpp" line="277"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1158,6 +1143,25 @@
         <location filename="../jumptotrackdialog.cpp" line="117"/>
         <location filename="../jumptotrackdialog.cpp" line="148"/>
         <source>Unqueue</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>LyricsEditor</name>
+    <message>
+        <location filename="../lyricseditor.cpp" line="82"/>
+        <source>Load Lyrics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lyricseditor.cpp" line="82"/>
+        <location filename="../lyricseditor.cpp" line="103"/>
+        <source>Text Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lyricseditor.cpp" line="101"/>
+        <source>Save Lyrics</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1533,6 +1537,24 @@
         <location filename="../forms/templateeditor.ui" line="30"/>
         <source>Insert</source>
         <translation>Vložiť</translation>
+    </message>
+</context>
+<context>
+    <name>TextEditor</name>
+    <message>
+        <location filename="../forms/texteditor.ui" line="40"/>
+        <source>Load</source>
+        <translation type="unfinished">Načítať</translation>
+    </message>
+    <message>
+        <location filename="../forms/texteditor.ui" line="47"/>
+        <source>Delete</source>
+        <translation type="unfinished">Vymazať</translation>
+    </message>
+    <message>
+        <location filename="../forms/texteditor.ui" line="54"/>
+        <source>Save as...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
