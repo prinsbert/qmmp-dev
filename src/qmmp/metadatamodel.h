@@ -97,7 +97,7 @@ public:
         IsCoverEditable = 0x01,      /*!< Enable cover editor. */
         CompletePropertyList = 0x02, /*!< Show properties from \b extraProperties() only (ignore other sources) */
         IsCueEditable = 0x04,        /*!< Enable CUE editor. */
-        IsLyricsEitable = 0x08
+        IsLyricsEditable = 0x08
     };
     Q_DECLARE_FLAGS(DialogHints, DialogHint)
     /*!

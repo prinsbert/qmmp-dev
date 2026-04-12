@@ -41,6 +41,8 @@ public:
     void setCue(const QString &content) override;
     void removeCue() override;
     QString lyrics() const override;
+    void setLyrics(const QString &content) override;
+    void removeLyrics() override;
 
 private:
     QString m_path;

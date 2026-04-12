@@ -163,11 +163,11 @@ QString MPEGMetaDataModel::lyrics() const
     return QString();
 }
 
-MpegFileTagModel::MpegFileTagModel(bool using_rusxmms, TagLib::MPEG::File *file, TagLib::MPEG::File::TagTypes type)
-        : TagModel(),
-          m_using_rusxmms(using_rusxmms),
-          m_file(file),
-          m_type(type)
+MpegFileTagModel::MpegFileTagModel(bool using_rusxmms, TagLib::MPEG::File *file, TagLib::MPEG::File::TagTypes type) :
+    TagModel(),
+    m_using_rusxmms(using_rusxmms),
+    m_file(file),
+    m_type(type)
 {
     QByteArray codecName;
     QSettings settings;

@@ -37,7 +37,7 @@ LyricsEditor::LyricsEditor(MetaDataModel *model, const TrackInfo &info, QWidget 
     m_ui->plainTextEdit->setPlainText(model->lyrics());
     QSettings settings;
     m_lastDir = settings.value(u"LyricsEditor/last_dir"_s,  QDir::homePath()).toString();
-    m_editable = m_model && (m_model->dialogHints() & MetaDataModel::IsLyricsEitable) && !m_model->isReadOnly();
+    m_editable = m_model && (m_model->dialogHints() & MetaDataModel::IsLyricsEditable) && !m_model->isReadOnly();
 
     if(!m_editable)
     {

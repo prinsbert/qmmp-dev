@@ -161,7 +161,7 @@ public:
             }
 
             QString lyrics = metaDataModel->lyrics();
-            if(!lyrics.isEmpty() || metaDataModel->dialogHints() & MetaDataModel::IsLyricsEitable)
+            if(!lyrics.isEmpty() || metaDataModel->dialogHints() & MetaDataModel::IsLyricsEditable)
             {
                 LyricsEditor *lyricsEditor = new LyricsEditor(metaDataModel, info, q);
                 tabWidget->addTab(lyricsEditor, tr("Lyrics"));

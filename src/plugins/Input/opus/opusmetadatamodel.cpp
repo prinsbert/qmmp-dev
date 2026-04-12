@@ -29,7 +29,7 @@
 #include "opusmetadatamodel.h"
 
 OpusMetaDataModel::OpusMetaDataModel(const QString &path, bool readOnly):
-    MetaDataModel(readOnly, MetaDataModel::IsCoverEditable),
+    MetaDataModel(readOnly, MetaDataModel::IsCoverEditable | MetaDataModel::IsLyricsEditable),
     m_path(path)
 {
     m_stream = new TagLib::FileStream(QStringToFileName(path), readOnly);
@@ -141,6 +141,30 @@ QString OpusMetaDataModel::lyrics() const
     }
 
     return QString();
+}
+
+void OpusMetaDataModel::setLyrics(const QString &content)
+{
+    TagLib::Ogg::XiphComment *tag = m_file->tag();
+
+    if(tag)
+    {
+        tag->addField("UNSYNCEDLYRICS", QStringToTString(content), true);
+        tag->removeFields("LYRICS");
+        m_file->save();
+    }
+}
+
+void OpusMetaDataModel::removeLyrics()
+{
+    TagLib::Ogg::XiphComment *tag = m_file->tag();
+
+    if(tag)
+    {
+        tag->removeFields("UNSYNCEDLYRICS");
+        tag->removeFields("LYRICS");
+        m_file->save();
+    }
 }
 
 OpusVorbisCommentModel::OpusVorbisCommentModel(TagLib::Ogg::Opus::File *file) : TagModel(TagModel::Save)
