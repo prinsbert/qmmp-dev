@@ -1107,42 +1107,42 @@
         <translation>重置为默认值</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="56"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="68"/>
         <source>Reset Shortcuts</source>
         <translation>重置快捷键</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="69"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation>您希望将快捷键恢复到默认值吗？</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="69"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="81"/>
         <source>Playback</source>
         <translation>播放</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="75"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="87"/>
         <source>View</source>
         <translation>视图</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="81"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="93"/>
         <source>Volume</source>
         <translation>音量</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="87"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="99"/>
         <source>Playlist</source>
         <translation>播放列表</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="93"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="105"/>
         <source>Misc</source>
         <translation>杂项</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="101"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="113"/>
         <source>Tools</source>
         <translation>工具</translation>
     </message>
@@ -1151,7 +1151,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="923"/>
+        <location filename="../qsuimainwindow.cpp" line="927"/>
         <source>Qmmp</source>
         <translation>Qmmp</translation>
     </message>
@@ -1313,168 +1313,168 @@
         <translation>播放列表名：</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="334"/>
+        <location filename="../qsuimainwindow.cpp" line="335"/>
         <source>Appearance</source>
         <translation>外观</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="335"/>
+        <location filename="../qsuimainwindow.cpp" line="336"/>
         <source>Shortcuts</source>
         <translation>快捷键</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="653"/>
+        <location filename="../qsuimainwindow.cpp" line="657"/>
         <source>Menu Bar</source>
         <translation>菜单栏</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="443"/>
+        <location filename="../qsuimainwindow.cpp" line="447"/>
         <source>Add new playlist</source>
         <translation>添加新播放列表</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="449"/>
+        <location filename="../qsuimainwindow.cpp" line="453"/>
         <source>Show all tabs</source>
         <translation>显示全部标签页</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="476"/>
+        <location filename="../qsuimainwindow.cpp" line="480"/>
         <source>Ctrl+0</source>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="482"/>
+        <location filename="../qsuimainwindow.cpp" line="486"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="487"/>
+        <location filename="../qsuimainwindow.cpp" line="491"/>
         <source>Position</source>
         <translation>位置</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="489"/>
+        <location filename="../qsuimainwindow.cpp" line="493"/>
         <source>Volume</source>
         <translation>音量</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="491"/>
+        <location filename="../qsuimainwindow.cpp" line="495"/>
         <source>Balance</source>
         <translation>平衡</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="494"/>
+        <location filename="../qsuimainwindow.cpp" line="498"/>
         <source>Quick Search</source>
         <translation>快捷搜索</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="553"/>
+        <location filename="../qsuimainwindow.cpp" line="557"/>
         <source>Edit Toolbars</source>
         <translation>编辑工具栏</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="554"/>
+        <location filename="../qsuimainwindow.cpp" line="558"/>
         <source>Edit Statusbar</source>
         <translation>编辑状态栏</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="556"/>
+        <location filename="../qsuimainwindow.cpp" line="560"/>
         <source>Sort List</source>
         <translation>清单排序</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="558"/>
-        <location filename="../qsuimainwindow.cpp" line="574"/>
+        <location filename="../qsuimainwindow.cpp" line="562"/>
+        <location filename="../qsuimainwindow.cpp" line="578"/>
         <source>By Title</source>
         <translation>按标题</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="559"/>
-        <location filename="../qsuimainwindow.cpp" line="575"/>
+        <location filename="../qsuimainwindow.cpp" line="563"/>
+        <location filename="../qsuimainwindow.cpp" line="579"/>
         <source>By Album</source>
         <translation>按专辑</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="560"/>
-        <location filename="../qsuimainwindow.cpp" line="576"/>
+        <location filename="../qsuimainwindow.cpp" line="564"/>
+        <location filename="../qsuimainwindow.cpp" line="580"/>
         <source>By Artist</source>
         <translation>按艺术家</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="561"/>
-        <location filename="../qsuimainwindow.cpp" line="577"/>
+        <location filename="../qsuimainwindow.cpp" line="565"/>
+        <location filename="../qsuimainwindow.cpp" line="581"/>
         <source>By Album Artist</source>
         <translation>按专辑 艺术家</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="562"/>
-        <location filename="../qsuimainwindow.cpp" line="578"/>
+        <location filename="../qsuimainwindow.cpp" line="566"/>
+        <location filename="../qsuimainwindow.cpp" line="582"/>
         <source>By Filename</source>
         <translation>按文件名</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="563"/>
-        <location filename="../qsuimainwindow.cpp" line="579"/>
+        <location filename="../qsuimainwindow.cpp" line="567"/>
+        <location filename="../qsuimainwindow.cpp" line="583"/>
         <source>By Path + Filename</source>
         <translation>按路径+文件名称</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="564"/>
-        <location filename="../qsuimainwindow.cpp" line="580"/>
+        <location filename="../qsuimainwindow.cpp" line="568"/>
+        <location filename="../qsuimainwindow.cpp" line="584"/>
         <source>By Date</source>
         <translation>按日期</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="565"/>
-        <location filename="../qsuimainwindow.cpp" line="581"/>
+        <location filename="../qsuimainwindow.cpp" line="569"/>
+        <location filename="../qsuimainwindow.cpp" line="585"/>
         <source>By Track Number</source>
         <translation>按曲目编号</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="566"/>
-        <location filename="../qsuimainwindow.cpp" line="582"/>
+        <location filename="../qsuimainwindow.cpp" line="570"/>
+        <location filename="../qsuimainwindow.cpp" line="586"/>
         <source>By Disc Number</source>
         <translation>按光盘编号</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="567"/>
-        <location filename="../qsuimainwindow.cpp" line="583"/>
+        <location filename="../qsuimainwindow.cpp" line="571"/>
+        <location filename="../qsuimainwindow.cpp" line="587"/>
         <source>By File Creation Date</source>
         <translation>按文件创建日期</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="568"/>
-        <location filename="../qsuimainwindow.cpp" line="584"/>
+        <location filename="../qsuimainwindow.cpp" line="572"/>
+        <location filename="../qsuimainwindow.cpp" line="588"/>
         <source>By File Modification Date</source>
         <translation>按文件修改日期</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="569"/>
+        <location filename="../qsuimainwindow.cpp" line="573"/>
         <source>By Group</source>
         <translation>按分组</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="572"/>
+        <location filename="../qsuimainwindow.cpp" line="576"/>
         <source>Sort Selection</source>
         <translation>排序选中项</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="588"/>
+        <location filename="../qsuimainwindow.cpp" line="592"/>
         <source>Randomize List</source>
         <translation>随机列表</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="590"/>
+        <location filename="../qsuimainwindow.cpp" line="594"/>
         <source>Reverse List</source>
         <translation>反序列表</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="631"/>
+        <location filename="../qsuimainwindow.cpp" line="635"/>
         <source>Actions</source>
         <translation>操作</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="944"/>
+        <location filename="../qsuimainwindow.cpp" line="948"/>
         <source>&amp;New PlayList</source>
         <translation>新建播放列表(&amp;N)</translation>
     </message>

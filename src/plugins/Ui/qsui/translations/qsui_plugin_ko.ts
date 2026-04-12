@@ -1107,42 +1107,42 @@
         <translation>기본값 복원</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="56"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="68"/>
         <source>Reset Shortcuts</source>
         <translation>단축키 재설정</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="69"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation>기본 단축키를 복원하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="69"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="81"/>
         <source>Playback</source>
         <translation>플레이백</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="75"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="87"/>
         <source>View</source>
         <translation>보기</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="81"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="93"/>
         <source>Volume</source>
         <translation>볼륨</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="87"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="99"/>
         <source>Playlist</source>
         <translation>재생목록</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="93"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="105"/>
         <source>Misc</source>
         <translation>기타</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="101"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="113"/>
         <source>Tools</source>
         <translation>도구</translation>
     </message>
@@ -1151,7 +1151,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="923"/>
+        <location filename="../qsuimainwindow.cpp" line="927"/>
         <source>Qmmp</source>
         <translation>Qmmp</translation>
     </message>
@@ -1313,168 +1313,168 @@
         <translation>재생목록 이름:</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="334"/>
+        <location filename="../qsuimainwindow.cpp" line="335"/>
         <source>Appearance</source>
         <translation>모양새</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="335"/>
+        <location filename="../qsuimainwindow.cpp" line="336"/>
         <source>Shortcuts</source>
         <translation>단축키</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="653"/>
+        <location filename="../qsuimainwindow.cpp" line="657"/>
         <source>Menu Bar</source>
         <translation>메뉴 표시줄</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="443"/>
+        <location filename="../qsuimainwindow.cpp" line="447"/>
         <source>Add new playlist</source>
         <translation>새 재생목록 추가</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="449"/>
+        <location filename="../qsuimainwindow.cpp" line="453"/>
         <source>Show all tabs</source>
         <translation>모든 탭 표시</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="476"/>
+        <location filename="../qsuimainwindow.cpp" line="480"/>
         <source>Ctrl+0</source>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="482"/>
+        <location filename="../qsuimainwindow.cpp" line="486"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="487"/>
+        <location filename="../qsuimainwindow.cpp" line="491"/>
         <source>Position</source>
         <translation>위치</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="489"/>
+        <location filename="../qsuimainwindow.cpp" line="493"/>
         <source>Volume</source>
         <translation>볼륨</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="491"/>
+        <location filename="../qsuimainwindow.cpp" line="495"/>
         <source>Balance</source>
         <translation>밸런스</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="494"/>
+        <location filename="../qsuimainwindow.cpp" line="498"/>
         <source>Quick Search</source>
         <translation>빠른 검색</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="553"/>
+        <location filename="../qsuimainwindow.cpp" line="557"/>
         <source>Edit Toolbars</source>
         <translation>도구모음 편집</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="554"/>
+        <location filename="../qsuimainwindow.cpp" line="558"/>
         <source>Edit Statusbar</source>
         <translation>상태표시줄 편집</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="556"/>
+        <location filename="../qsuimainwindow.cpp" line="560"/>
         <source>Sort List</source>
         <translation>목록 정렬</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="558"/>
-        <location filename="../qsuimainwindow.cpp" line="574"/>
+        <location filename="../qsuimainwindow.cpp" line="562"/>
+        <location filename="../qsuimainwindow.cpp" line="578"/>
         <source>By Title</source>
         <translation>제목별</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="559"/>
-        <location filename="../qsuimainwindow.cpp" line="575"/>
+        <location filename="../qsuimainwindow.cpp" line="563"/>
+        <location filename="../qsuimainwindow.cpp" line="579"/>
         <source>By Album</source>
         <translation>앨범별</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="560"/>
-        <location filename="../qsuimainwindow.cpp" line="576"/>
+        <location filename="../qsuimainwindow.cpp" line="564"/>
+        <location filename="../qsuimainwindow.cpp" line="580"/>
         <source>By Artist</source>
         <translation>아티스트별</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="561"/>
-        <location filename="../qsuimainwindow.cpp" line="577"/>
+        <location filename="../qsuimainwindow.cpp" line="565"/>
+        <location filename="../qsuimainwindow.cpp" line="581"/>
         <source>By Album Artist</source>
         <translation>앨범 아티스트별</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="562"/>
-        <location filename="../qsuimainwindow.cpp" line="578"/>
+        <location filename="../qsuimainwindow.cpp" line="566"/>
+        <location filename="../qsuimainwindow.cpp" line="582"/>
         <source>By Filename</source>
         <translation>파일이름별</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="563"/>
-        <location filename="../qsuimainwindow.cpp" line="579"/>
+        <location filename="../qsuimainwindow.cpp" line="567"/>
+        <location filename="../qsuimainwindow.cpp" line="583"/>
         <source>By Path + Filename</source>
         <translation>경로 + 파일이름별</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="564"/>
-        <location filename="../qsuimainwindow.cpp" line="580"/>
+        <location filename="../qsuimainwindow.cpp" line="568"/>
+        <location filename="../qsuimainwindow.cpp" line="584"/>
         <source>By Date</source>
         <translation>날짜별</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="565"/>
-        <location filename="../qsuimainwindow.cpp" line="581"/>
+        <location filename="../qsuimainwindow.cpp" line="569"/>
+        <location filename="../qsuimainwindow.cpp" line="585"/>
         <source>By Track Number</source>
         <translation>트랙 번호별</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="566"/>
-        <location filename="../qsuimainwindow.cpp" line="582"/>
+        <location filename="../qsuimainwindow.cpp" line="570"/>
+        <location filename="../qsuimainwindow.cpp" line="586"/>
         <source>By Disc Number</source>
         <translation>CD 번호별</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="567"/>
-        <location filename="../qsuimainwindow.cpp" line="583"/>
+        <location filename="../qsuimainwindow.cpp" line="571"/>
+        <location filename="../qsuimainwindow.cpp" line="587"/>
         <source>By File Creation Date</source>
         <translation>파일 생성 날짜별</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="568"/>
-        <location filename="../qsuimainwindow.cpp" line="584"/>
+        <location filename="../qsuimainwindow.cpp" line="572"/>
+        <location filename="../qsuimainwindow.cpp" line="588"/>
         <source>By File Modification Date</source>
         <translation>파일 수정 날짜별</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="569"/>
+        <location filename="../qsuimainwindow.cpp" line="573"/>
         <source>By Group</source>
         <translation>그룹별</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="572"/>
+        <location filename="../qsuimainwindow.cpp" line="576"/>
         <source>Sort Selection</source>
         <translation>선택 항목 정렬</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="588"/>
+        <location filename="../qsuimainwindow.cpp" line="592"/>
         <source>Randomize List</source>
         <translation>목록 무작위화</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="590"/>
+        <location filename="../qsuimainwindow.cpp" line="594"/>
         <source>Reverse List</source>
         <translation>역방향 목록</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="631"/>
+        <location filename="../qsuimainwindow.cpp" line="635"/>
         <source>Actions</source>
         <translation>동작</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="944"/>
+        <location filename="../qsuimainwindow.cpp" line="948"/>
         <source>&amp;New PlayList</source>
         <translation>새 재생목록(&amp;N)</translation>
     </message>

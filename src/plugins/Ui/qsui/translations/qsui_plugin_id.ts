@@ -1107,42 +1107,42 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="56"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="68"/>
         <source>Reset Shortcuts</source>
         <translation type="unfinished">Setel ulang Pintasan</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="69"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation type="unfinished">Apakah kamu ingin memulihkan pintasan baku?</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="69"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="81"/>
         <source>Playback</source>
         <translation type="unfinished">Pemutaran</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="75"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="87"/>
         <source>View</source>
         <translation type="unfinished">Tinjau</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="81"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="93"/>
         <source>Volume</source>
         <translation type="unfinished">Volume</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="87"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="99"/>
         <source>Playlist</source>
         <translation type="unfinished">Daftarmain</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="93"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="105"/>
         <source>Misc</source>
         <translation type="unfinished">Lainnya</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="101"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="113"/>
         <source>Tools</source>
         <translation type="unfinished">Alat</translation>
     </message>
@@ -1151,7 +1151,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="923"/>
+        <location filename="../qsuimainwindow.cpp" line="927"/>
         <source>Qmmp</source>
         <translation type="unfinished">Qmmp</translation>
     </message>
@@ -1313,168 +1313,168 @@
         <translation type="unfinished">Nama daftarmain:</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="334"/>
+        <location filename="../qsuimainwindow.cpp" line="335"/>
         <source>Appearance</source>
         <translation type="unfinished">Tampilan</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="335"/>
+        <location filename="../qsuimainwindow.cpp" line="336"/>
         <source>Shortcuts</source>
         <translation type="unfinished">Pintasan</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="653"/>
+        <location filename="../qsuimainwindow.cpp" line="657"/>
         <source>Menu Bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="443"/>
+        <location filename="../qsuimainwindow.cpp" line="447"/>
         <source>Add new playlist</source>
         <translation type="unfinished">Tambah daftarmain baru</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="449"/>
+        <location filename="../qsuimainwindow.cpp" line="453"/>
         <source>Show all tabs</source>
         <translation type="unfinished">Tampakkan semua tab</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="476"/>
+        <location filename="../qsuimainwindow.cpp" line="480"/>
         <source>Ctrl+0</source>
         <translation type="unfinished">Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="482"/>
+        <location filename="../qsuimainwindow.cpp" line="486"/>
         <source>P</source>
         <translation type="unfinished">P</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="487"/>
+        <location filename="../qsuimainwindow.cpp" line="491"/>
         <source>Position</source>
         <translation type="unfinished">Posisi</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="489"/>
+        <location filename="../qsuimainwindow.cpp" line="493"/>
         <source>Volume</source>
         <translation type="unfinished">Volume</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="491"/>
+        <location filename="../qsuimainwindow.cpp" line="495"/>
         <source>Balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="494"/>
+        <location filename="../qsuimainwindow.cpp" line="498"/>
         <source>Quick Search</source>
         <translation type="unfinished">Pencarian Cepat</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="553"/>
+        <location filename="../qsuimainwindow.cpp" line="557"/>
         <source>Edit Toolbars</source>
         <translation type="unfinished">Edit Bilah-alat</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="554"/>
+        <location filename="../qsuimainwindow.cpp" line="558"/>
         <source>Edit Statusbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="556"/>
+        <location filename="../qsuimainwindow.cpp" line="560"/>
         <source>Sort List</source>
         <translation type="unfinished">Daftar Surtir</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="558"/>
-        <location filename="../qsuimainwindow.cpp" line="574"/>
+        <location filename="../qsuimainwindow.cpp" line="562"/>
+        <location filename="../qsuimainwindow.cpp" line="578"/>
         <source>By Title</source>
         <translation type="unfinished">Menurut Judul</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="559"/>
-        <location filename="../qsuimainwindow.cpp" line="575"/>
+        <location filename="../qsuimainwindow.cpp" line="563"/>
+        <location filename="../qsuimainwindow.cpp" line="579"/>
         <source>By Album</source>
         <translation type="unfinished">Menurut Album</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="560"/>
-        <location filename="../qsuimainwindow.cpp" line="576"/>
+        <location filename="../qsuimainwindow.cpp" line="564"/>
+        <location filename="../qsuimainwindow.cpp" line="580"/>
         <source>By Artist</source>
         <translation type="unfinished">Menurut Artist</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="561"/>
-        <location filename="../qsuimainwindow.cpp" line="577"/>
+        <location filename="../qsuimainwindow.cpp" line="565"/>
+        <location filename="../qsuimainwindow.cpp" line="581"/>
         <source>By Album Artist</source>
         <translation type="unfinished">Menurut Album Artist</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="562"/>
-        <location filename="../qsuimainwindow.cpp" line="578"/>
+        <location filename="../qsuimainwindow.cpp" line="566"/>
+        <location filename="../qsuimainwindow.cpp" line="582"/>
         <source>By Filename</source>
         <translation type="unfinished">Menurut Filename</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="563"/>
-        <location filename="../qsuimainwindow.cpp" line="579"/>
+        <location filename="../qsuimainwindow.cpp" line="567"/>
+        <location filename="../qsuimainwindow.cpp" line="583"/>
         <source>By Path + Filename</source>
         <translation type="unfinished">Menurut Alur + Filename</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="564"/>
-        <location filename="../qsuimainwindow.cpp" line="580"/>
+        <location filename="../qsuimainwindow.cpp" line="568"/>
+        <location filename="../qsuimainwindow.cpp" line="584"/>
         <source>By Date</source>
         <translation type="unfinished">Menurut Tanggal</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="565"/>
-        <location filename="../qsuimainwindow.cpp" line="581"/>
+        <location filename="../qsuimainwindow.cpp" line="569"/>
+        <location filename="../qsuimainwindow.cpp" line="585"/>
         <source>By Track Number</source>
         <translation type="unfinished">Menurut Nomor Trek</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="566"/>
-        <location filename="../qsuimainwindow.cpp" line="582"/>
+        <location filename="../qsuimainwindow.cpp" line="570"/>
+        <location filename="../qsuimainwindow.cpp" line="586"/>
         <source>By Disc Number</source>
         <translation type="unfinished">Menurut Nomor Cakram</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="567"/>
-        <location filename="../qsuimainwindow.cpp" line="583"/>
+        <location filename="../qsuimainwindow.cpp" line="571"/>
+        <location filename="../qsuimainwindow.cpp" line="587"/>
         <source>By File Creation Date</source>
         <translation type="unfinished">Menurut Tanggal Penciptaan File</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="568"/>
-        <location filename="../qsuimainwindow.cpp" line="584"/>
+        <location filename="../qsuimainwindow.cpp" line="572"/>
+        <location filename="../qsuimainwindow.cpp" line="588"/>
         <source>By File Modification Date</source>
         <translation type="unfinished">Menurut Tanggal Modifikasi File</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="569"/>
+        <location filename="../qsuimainwindow.cpp" line="573"/>
         <source>By Group</source>
         <translation type="unfinished">Menurut Kelompok</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="572"/>
+        <location filename="../qsuimainwindow.cpp" line="576"/>
         <source>Sort Selection</source>
         <translation type="unfinished">Pilihan Surtir</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="588"/>
+        <location filename="../qsuimainwindow.cpp" line="592"/>
         <source>Randomize List</source>
         <translation type="unfinished">Daftar Acakan</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="590"/>
+        <location filename="../qsuimainwindow.cpp" line="594"/>
         <source>Reverse List</source>
         <translation type="unfinished">Daftar Mundur</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="631"/>
+        <location filename="../qsuimainwindow.cpp" line="635"/>
         <source>Actions</source>
         <translation type="unfinished">Tindakan</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="944"/>
+        <location filename="../qsuimainwindow.cpp" line="948"/>
         <source>&amp;New PlayList</source>
         <translation type="unfinished"></translation>
     </message>

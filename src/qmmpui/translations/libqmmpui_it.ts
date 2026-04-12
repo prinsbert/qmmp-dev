@@ -409,13 +409,13 @@
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="402"/>
-        <location filename="../configdialog.cpp" line="399"/>
+        <location filename="../configdialog.cpp" line="420"/>
         <source>Preferences</source>
         <translation>Impostazioni</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="419"/>
-        <location filename="../configdialog.cpp" line="402"/>
+        <location filename="../configdialog.cpp" line="422"/>
         <source>Information</source>
         <translation>Informazioni</translation>
     </message>
@@ -631,242 +631,247 @@
         <translation>Usa dithering</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="475"/>
+        <location filename="../configdialog.cpp" line="498"/>
         <source>1 row</source>
         <translation>1 riga</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="476"/>
+        <location filename="../configdialog.cpp" line="499"/>
         <source>3 rows</source>
         <translation>3 righe</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="477"/>
+        <location filename="../configdialog.cpp" line="500"/>
         <source>4 rows</source>
         <translation>4 righe</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="478"/>
+        <location filename="../configdialog.cpp" line="501"/>
         <source>5 rows</source>
         <translation>5 righe</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="479"/>
+        <location filename="../configdialog.cpp" line="502"/>
         <source>Track</source>
         <translation>Traccia</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="480"/>
+        <location filename="../configdialog.cpp" line="503"/>
         <source>Album</source>
         <translation>Album</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="481"/>
+        <location filename="../configdialog.cpp" line="504"/>
         <source>Disabled</source>
         <translation>Disabilitato</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="486"/>
+        <location filename="../configdialog.cpp" line="509"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="487"/>
+        <location filename="../configdialog.cpp" line="510"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="292"/>
+        <location filename="../configdialog.cpp" line="313"/>
         <source>Transports</source>
         <translation>Protocolli di trasporto</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="301"/>
+        <location filename="../configdialog.cpp" line="322"/>
         <source>Decoders</source>
         <translation>Decodificatori</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="310"/>
+        <location filename="../configdialog.cpp" line="331"/>
         <source>Engines</source>
         <translation>Meccanismi</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="320"/>
+        <location filename="../configdialog.cpp" line="341"/>
         <source>Effects</source>
         <translation>Effetti</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="329"/>
+        <location filename="../configdialog.cpp" line="350"/>
         <source>Visualization</source>
         <translation>Visualizzazione</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="339"/>
+        <location filename="../configdialog.cpp" line="360"/>
         <source>General</source>
         <translation>Generale</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="348"/>
+        <location filename="../configdialog.cpp" line="369"/>
         <source>Output</source>
         <translation>Uscita</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="357"/>
+        <location filename="../configdialog.cpp" line="378"/>
         <source>File Dialogs</source>
         <translation>Finestre di dialogo dei file</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="367"/>
+        <location filename="../configdialog.cpp" line="388"/>
         <source>User Interfaces</source>
         <translation>Interfacce utente</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="412"/>
+        <location filename="../configdialog.cpp" line="424"/>
+        <source>Priority</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configdialog.cpp" line="434"/>
         <source>&lt;Autodetect&gt;</source>
         <translation>&lt;Autodetect&gt;</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="413"/>
+        <location filename="../configdialog.cpp" line="435"/>
         <source>Brazilian Portuguese</source>
         <translation>Portoghese brasiliano</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="414"/>
+        <location filename="../configdialog.cpp" line="436"/>
         <source>Chinese Simplified</source>
         <translation>Cinese semplificato</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="415"/>
+        <location filename="../configdialog.cpp" line="437"/>
         <source>Chinese Traditional</source>
         <translation>Cinese tradizionale</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="416"/>
+        <location filename="../configdialog.cpp" line="438"/>
         <source>Czech</source>
         <translation>Ceco</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="417"/>
+        <location filename="../configdialog.cpp" line="439"/>
         <source>Dutch</source>
         <translation>Olandese</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="418"/>
+        <location filename="../configdialog.cpp" line="440"/>
         <source>English</source>
         <translation>Inglese</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="419"/>
+        <location filename="../configdialog.cpp" line="441"/>
         <source>French</source>
         <translation>Francese</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="420"/>
+        <location filename="../configdialog.cpp" line="442"/>
         <source>Galician</source>
         <translation>Gallego</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="421"/>
+        <location filename="../configdialog.cpp" line="443"/>
         <source>German</source>
         <translation>Tedesco</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="422"/>
+        <location filename="../configdialog.cpp" line="444"/>
         <source>Greek</source>
         <translation>Greco</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="423"/>
+        <location filename="../configdialog.cpp" line="445"/>
         <source>Hebrew</source>
         <translation>Ebraico</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="424"/>
+        <location filename="../configdialog.cpp" line="446"/>
         <source>Hungarian</source>
         <translation>Ungherese</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="425"/>
+        <location filename="../configdialog.cpp" line="447"/>
         <source>Indonesian</source>
         <translation>Indonesiano</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="426"/>
+        <location filename="../configdialog.cpp" line="448"/>
         <source>Italian</source>
         <translation>Italiano</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="427"/>
+        <location filename="../configdialog.cpp" line="449"/>
         <source>Japanese</source>
         <translation>Giapponese</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="428"/>
+        <location filename="../configdialog.cpp" line="450"/>
         <source>Kazakh</source>
         <translation>Kazako</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="429"/>
+        <location filename="../configdialog.cpp" line="451"/>
         <source>Korean</source>
         <translation>Coreano:</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="430"/>
+        <location filename="../configdialog.cpp" line="452"/>
         <source>Lithuanian</source>
         <translation>Lituano</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="431"/>
+        <location filename="../configdialog.cpp" line="453"/>
         <source>Polish</source>
         <translation>Polacco</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="432"/>
+        <location filename="../configdialog.cpp" line="454"/>
         <source>Portuguese</source>
         <translation>Portoghese</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="433"/>
+        <location filename="../configdialog.cpp" line="455"/>
         <source>Russian</source>
         <translation>Russo</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="434"/>
+        <location filename="../configdialog.cpp" line="456"/>
         <source>Serbian</source>
         <translation>Serbo</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="435"/>
+        <location filename="../configdialog.cpp" line="457"/>
         <source>Slovak</source>
         <translation>Slovacco</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="436"/>
+        <location filename="../configdialog.cpp" line="458"/>
         <source>Swedish</source>
         <translation>Svedese</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="437"/>
+        <location filename="../configdialog.cpp" line="459"/>
         <source>Spanish</source>
         <translation>Spagnolo</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="438"/>
+        <location filename="../configdialog.cpp" line="460"/>
         <source>Turkish</source>
         <translation>Turco</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="439"/>
+        <location filename="../configdialog.cpp" line="461"/>
         <source>Ukrainian</source>
         <translation>Ucraino</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="440"/>
+        <location filename="../configdialog.cpp" line="462"/>
         <source>Serbian (Ijekavian)</source>
         <translation>Serbo (Ijekavian)</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="441"/>
+        <location filename="../configdialog.cpp" line="463"/>
         <source>Serbian (Ekavian)</source>
         <translation>Serbo (Ekavian)</translation>
     </message>
@@ -894,12 +899,12 @@
         <translation>Salva come...</translation>
     </message>
     <message>
-        <location filename="../covereditor.cpp" line="34"/>
+        <location filename="../covereditor.cpp" line="36"/>
         <source>External File</source>
         <translation>File esterno</translation>
     </message>
     <message>
-        <location filename="../covereditor.cpp" line="35"/>
+        <location filename="../covereditor.cpp" line="37"/>
         <source>Tag</source>
         <translation>Etichetta</translation>
     </message>
@@ -946,18 +951,18 @@
         <translation>Salva come...</translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="131"/>
+        <location filename="../cueeditor.cpp" line="133"/>
         <source>Open CUE File</source>
         <translation>Apri file CUE</translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="131"/>
-        <location filename="../cueeditor.cpp" line="152"/>
+        <location filename="../cueeditor.cpp" line="133"/>
+        <location filename="../cueeditor.cpp" line="154"/>
         <source>CUE Files</source>
         <translation>File CUE</translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="150"/>
+        <location filename="../cueeditor.cpp" line="152"/>
         <source>Save CUE File</source>
         <translation>Salva file CUE</translation>
     </message>
@@ -1000,117 +1005,117 @@
         <translation>Testi</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="189"/>
+        <location filename="../detailsdialog.cpp" line="197"/>
         <source>Title</source>
         <translation>Titolo</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="190"/>
+        <location filename="../detailsdialog.cpp" line="198"/>
         <source>Artist</source>
         <translation>Artista</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="191"/>
+        <location filename="../detailsdialog.cpp" line="199"/>
         <source>Album artist</source>
         <translation>Artista dell&apos;album</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="192"/>
+        <location filename="../detailsdialog.cpp" line="200"/>
         <source>Album</source>
         <translation>Album</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="193"/>
+        <location filename="../detailsdialog.cpp" line="201"/>
         <source>Comment</source>
         <translation>Commento</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="194"/>
+        <location filename="../detailsdialog.cpp" line="202"/>
         <source>Genre</source>
         <translation>Genere</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="195"/>
+        <location filename="../detailsdialog.cpp" line="203"/>
         <source>Composer</source>
         <translation>Compositore</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="196"/>
+        <location filename="../detailsdialog.cpp" line="204"/>
         <source>Year</source>
         <translation>Anno</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="197"/>
+        <location filename="../detailsdialog.cpp" line="205"/>
         <source>Track</source>
         <translation>Traccia</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="198"/>
+        <location filename="../detailsdialog.cpp" line="206"/>
         <source>Disc number</source>
         <translation>Numero disco</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="217"/>
+        <location filename="../detailsdialog.cpp" line="225"/>
         <source>Duration</source>
         <translation>Durata</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="220"/>
+        <location filename="../detailsdialog.cpp" line="228"/>
         <source>Bitrate</source>
         <translation>Bit per secondo</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="220"/>
+        <location filename="../detailsdialog.cpp" line="228"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="221"/>
+        <location filename="../detailsdialog.cpp" line="229"/>
         <source>Sample rate</source>
         <translation>Campionamento</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="221"/>
+        <location filename="../detailsdialog.cpp" line="229"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="222"/>
+        <location filename="../detailsdialog.cpp" line="230"/>
         <source>Channels</source>
         <translation>Canali</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="223"/>
+        <location filename="../detailsdialog.cpp" line="231"/>
         <source>Sample size</source>
         <translation>Dimensione campione</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="223"/>
+        <location filename="../detailsdialog.cpp" line="231"/>
         <source>bits</source>
         <translation>bit</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="224"/>
+        <location filename="../detailsdialog.cpp" line="232"/>
         <source>Format name</source>
         <translation>Nome formato</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="225"/>
+        <location filename="../detailsdialog.cpp" line="233"/>
         <source>File size</source>
         <translation>Dimensione file</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="225"/>
+        <location filename="../detailsdialog.cpp" line="233"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="270"/>
+        <location filename="../detailsdialog.cpp" line="278"/>
         <source>Yes</source>
         <translation>Sì</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="270"/>
+        <location filename="../detailsdialog.cpp" line="278"/>
         <source>No</source>
         <translation>No</translation>
     </message>
@@ -1397,6 +1402,15 @@
         <location filename="../playlistmanager.cpp" line="367"/>
         <source>Playlist</source>
         <translation>Playlist</translation>
+    </message>
+</context>
+<context>
+    <name>PluginItem</name>
+    <message>
+        <location filename="../pluginitem.cpp" line="212"/>
+        <location filename="../pluginitem.cpp" line="226"/>
+        <source>Priority (a higher value means lower priority):</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
