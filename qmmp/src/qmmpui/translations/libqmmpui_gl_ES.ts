@@ -936,33 +936,18 @@
 <context>
     <name>CueEditor</name>
     <message>
-        <location filename="../forms/cueeditor.ui" line="40"/>
-        <source>Load</source>
-        <translation>Cargar</translation>
-    </message>
-    <message>
-        <location filename="../forms/cueeditor.ui" line="47"/>
-        <source>Delete</source>
-        <translation>Borrar</translation>
-    </message>
-    <message>
-        <location filename="../forms/cueeditor.ui" line="54"/>
-        <source>Save as...</source>
-        <translation>Gardar como...</translation>
-    </message>
-    <message>
-        <location filename="../cueeditor.cpp" line="133"/>
+        <location filename="../cueeditor.cpp" line="134"/>
         <source>Open CUE File</source>
         <translation>Abrir arquivo CUE</translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="133"/>
-        <location filename="../cueeditor.cpp" line="154"/>
+        <location filename="../cueeditor.cpp" line="134"/>
+        <location filename="../cueeditor.cpp" line="157"/>
         <source>CUE Files</source>
         <translation>Ficheiros CUE</translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="152"/>
+        <location filename="../cueeditor.cpp" line="155"/>
         <source>Save CUE File</source>
         <translation>Gardar arquivo CUE</translation>
     </message>
@@ -990,132 +975,132 @@
         <translation>Resumo</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="90"/>
+        <location filename="../detailsdialog.cpp" line="91"/>
         <source>%1/%2</source>
         <translation>%1%2</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="142"/>
+        <location filename="../detailsdialog.cpp" line="143"/>
         <source>Cover</source>
         <translation>Portada</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="168"/>
+        <location filename="../detailsdialog.cpp" line="167"/>
         <source>Lyrics</source>
         <translation>Letras</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="197"/>
+        <location filename="../detailsdialog.cpp" line="196"/>
         <source>Title</source>
         <translation>Título</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="198"/>
+        <location filename="../detailsdialog.cpp" line="197"/>
         <source>Artist</source>
         <translation>Artista</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="199"/>
+        <location filename="../detailsdialog.cpp" line="198"/>
         <source>Album artist</source>
         <translation>Artista do álbum</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="200"/>
+        <location filename="../detailsdialog.cpp" line="199"/>
         <source>Album</source>
         <translation>Álbum</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="201"/>
+        <location filename="../detailsdialog.cpp" line="200"/>
         <source>Comment</source>
         <translation>Comentario</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="202"/>
+        <location filename="../detailsdialog.cpp" line="201"/>
         <source>Genre</source>
         <translation>Xénero</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="203"/>
+        <location filename="../detailsdialog.cpp" line="202"/>
         <source>Composer</source>
         <translation>Compositor</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="204"/>
+        <location filename="../detailsdialog.cpp" line="203"/>
         <source>Year</source>
         <translation>Ano</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="205"/>
+        <location filename="../detailsdialog.cpp" line="204"/>
         <source>Track</source>
         <translation>Pista</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="206"/>
+        <location filename="../detailsdialog.cpp" line="205"/>
         <source>Disc number</source>
         <translation>Número de disco</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="225"/>
+        <location filename="../detailsdialog.cpp" line="224"/>
         <source>Duration</source>
         <translation>Duración</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="228"/>
+        <location filename="../detailsdialog.cpp" line="227"/>
         <source>Bitrate</source>
         <translation>Taxa de bits</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="228"/>
+        <location filename="../detailsdialog.cpp" line="227"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="229"/>
+        <location filename="../detailsdialog.cpp" line="228"/>
         <source>Sample rate</source>
         <translation>Frecuencia de mostra</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="229"/>
+        <location filename="../detailsdialog.cpp" line="228"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="230"/>
+        <location filename="../detailsdialog.cpp" line="229"/>
         <source>Channels</source>
         <translation>Canais</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="231"/>
+        <location filename="../detailsdialog.cpp" line="230"/>
         <source>Sample size</source>
         <translation>Tamaño do sample</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="231"/>
+        <location filename="../detailsdialog.cpp" line="230"/>
         <source>bits</source>
         <translation>bits</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="232"/>
+        <location filename="../detailsdialog.cpp" line="231"/>
         <source>Format name</source>
         <translation>Formatear nome</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="233"/>
+        <location filename="../detailsdialog.cpp" line="232"/>
         <source>File size</source>
         <translation>Tamaño do ficheiro</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="233"/>
+        <location filename="../detailsdialog.cpp" line="232"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="278"/>
+        <location filename="../detailsdialog.cpp" line="277"/>
         <source>Yes</source>
         <translation>Si</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="278"/>
+        <location filename="../detailsdialog.cpp" line="277"/>
         <source>No</source>
         <translation>Non</translation>
     </message>
@@ -1159,6 +1144,25 @@
         <location filename="../jumptotrackdialog.cpp" line="148"/>
         <source>Unqueue</source>
         <translation>Sacar da cola</translation>
+    </message>
+</context>
+<context>
+    <name>LyricsEditor</name>
+    <message>
+        <location filename="../lyricseditor.cpp" line="82"/>
+        <source>Load Lyrics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lyricseditor.cpp" line="82"/>
+        <location filename="../lyricseditor.cpp" line="103"/>
+        <source>Text Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lyricseditor.cpp" line="101"/>
+        <source>Save Lyrics</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1533,6 +1537,24 @@
         <location filename="../forms/templateeditor.ui" line="30"/>
         <source>Insert</source>
         <translation>Insertar</translation>
+    </message>
+</context>
+<context>
+    <name>TextEditor</name>
+    <message>
+        <location filename="../forms/texteditor.ui" line="40"/>
+        <source>Load</source>
+        <translation type="unfinished">Cargar</translation>
+    </message>
+    <message>
+        <location filename="../forms/texteditor.ui" line="47"/>
+        <source>Delete</source>
+        <translation type="unfinished">Borrar</translation>
+    </message>
+    <message>
+        <location filename="../forms/texteditor.ui" line="54"/>
+        <source>Save as...</source>
+        <translation type="unfinished">Gardar como...</translation>
     </message>
 </context>
 <context>
