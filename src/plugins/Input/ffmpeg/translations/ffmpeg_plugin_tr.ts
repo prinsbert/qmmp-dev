@@ -4,32 +4,32 @@
 <context>
     <name>DecoderFFmpegFactory</name>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="148"/>
+        <location filename="../decoderffmpegfactory.cpp" line="153"/>
         <source>FFmpeg Plugin</source>
         <translation>FFmpeg Eklentisi</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="150"/>
+        <location filename="../decoderffmpegfactory.cpp" line="155"/>
         <source>FFmpeg Formats</source>
         <translation>FFmpeg Biçimleri</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="342"/>
+        <location filename="../decoderffmpegfactory.cpp" line="349"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation>FFmpeg Ses Eklentisi Hakkında</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="343"/>
+        <location filename="../decoderffmpegfactory.cpp" line="350"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation>Qmmp FFmpeg Ses Eklentisi</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="344"/>
+        <location filename="../decoderffmpegfactory.cpp" line="351"/>
         <source>Compiled against:</source>
         <translation>Dayanarak derlendi</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="361"/>
+        <location filename="../decoderffmpegfactory.cpp" line="368"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Yazan: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -103,16 +103,21 @@
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="138"/>
+        <source>WebM Vorbis/Opus</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ffmpegsettingsdialog.ui" line="145"/>
         <source>VQF</source>
         <translation>VQF</translation>
     </message>
     <message>
-        <location filename="../ffmpegsettingsdialog.ui" line="145"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="152"/>
         <source>Tom&apos;s lossless Audio Kompressor (TAK)</source>
         <translation>Tom&apos;un kayıpsız Ses Sıkıştırıcısı (TAK)</translation>
     </message>
     <message>
-        <location filename="../ffmpegsettingsdialog.ui" line="152"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="159"/>
         <source>Direct Stream Digital (DSD)</source>
         <translation>Doğrudan Akış Sayısal (DSD)</translation>
     </message>

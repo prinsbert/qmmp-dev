@@ -4,32 +4,32 @@
 <context>
     <name>DecoderFFmpegFactory</name>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="148"/>
+        <location filename="../decoderffmpegfactory.cpp" line="153"/>
         <source>FFmpeg Plugin</source>
         <translation>FFmpeg 플러그인</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="150"/>
+        <location filename="../decoderffmpegfactory.cpp" line="155"/>
         <source>FFmpeg Formats</source>
         <translation>FFmpeg 형식</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="342"/>
+        <location filename="../decoderffmpegfactory.cpp" line="349"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation>FFmpeg 오디오 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="343"/>
+        <location filename="../decoderffmpegfactory.cpp" line="350"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation>Qmmp FFmpeg 오디오 플러그인</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="344"/>
+        <location filename="../decoderffmpegfactory.cpp" line="351"/>
         <source>Compiled against:</source>
         <translation>컴파일 대상:</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="361"/>
+        <location filename="../decoderffmpegfactory.cpp" line="368"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -103,16 +103,21 @@
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="138"/>
+        <source>WebM Vorbis/Opus</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ffmpegsettingsdialog.ui" line="145"/>
         <source>VQF</source>
         <translation>VQF</translation>
     </message>
     <message>
-        <location filename="../ffmpegsettingsdialog.ui" line="145"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="152"/>
         <source>Tom&apos;s lossless Audio Kompressor (TAK)</source>
         <translation>Tom&apos;s lossless Audio Kompressor (TAK)</translation>
     </message>
     <message>
-        <location filename="../ffmpegsettingsdialog.ui" line="152"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="159"/>
         <source>Direct Stream Digital (DSD)</source>
         <translation>Direct Stream Digital (DSD)</translation>
     </message>
