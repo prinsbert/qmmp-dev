@@ -98,7 +98,7 @@ void FFmpegSettingsDialog::accept()
     if (!m_ui->dtsCheckBox->isChecked())
         disabledFilters << u"*.dts"_s;
     if (!m_ui->mkaCheckBox->isChecked())
-        disabledFilters << u"*.mka"_s;
+        disabledFilters << u"*.mka"_s << u"*.webm"_s;
     if (!m_ui->vqfCheckBox->isChecked())
         disabledFilters << u"*.vqf"_s;
     if (!m_ui->takCheckBox->isChecked())
