@@ -52,6 +52,7 @@ LyricsWidget::LyricsWidget(bool dialog, QWidget *parent) : QWidget(parent),
     m_ui->editWidget->setVisible(false);
 
     m_http = new QNetworkAccessManager(this);
+    m_http->setTransferTimeout(10000);
      //load global proxy settings
     QmmpSettings *gs = QmmpSettings::instance();
     if (gs->isProxyEnabled())
@@ -128,7 +129,8 @@ QString LyricsWidget::cacheFilePath() const
 
 void LyricsWidget::onRequestFinished(QNetworkReply *reply)
 {
-    QString name = m_tasks.take(reply);
+    m_tasks.removeAll(reply);
+    QString name = reply->property("provider").toString();
     if(name.isEmpty() || reply->error() == QNetworkReply::OperationCanceledError)
     {
         reply->deleteLater();
@@ -150,7 +152,8 @@ void LyricsWidget::onRequestFinished(QNetworkReply *reply)
                 QNetworkRequest request;
                 request.setUrl(content);
                 request.setRawHeader("User-Agent", QStringLiteral("qmmp/%1").arg(Qmmp::strVersion()).toLatin1());
-                m_tasks.insert(m_http->get(request), provider->name());
+                m_tasks << m_http->get(request);
+                m_tasks.last()->setProperty("provider", provider->name());
                 provider->skipRules(true);
             }
             else if(!content.isEmpty())
@@ -172,12 +175,13 @@ void LyricsWidget::onRequestFinished(QNetworkReply *reply)
     }
     else if(redirectTarget.isValid())
     {
-        m_tasks.insert(m_http->get(QNetworkRequest(redirectTarget.toUrl())), name);
+        m_tasks << m_http->get(QNetworkRequest(redirectTarget.toUrl()));
+        m_tasks.last()->setProperty("provider", name);
     }
     else if(m_tasks.isEmpty() && m_ui->providerComboBox->count() == 0)
     {
         m_ui->textBrowser->clear();
-        m_ui->textBrowser->setText(tr("Error: %1 - %2").arg(code).arg(reply->errorString()));
+        m_ui->textBrowser->setHtml(tr("Error: %1 - %2").arg(code).arg(reply->errorString()));
         qCWarning(plugin) << "error:" << reply->errorString();
     }
     else
@@ -201,7 +205,7 @@ void LyricsWidget::on_refreshButton_clicked()
     m_info.setValue(Qmmp::YEAR, m_ui->yearSpinBox->value());
 
     //abort previous tasks
-    for(QNetworkReply *reply : m_tasks.keys())
+    for(QNetworkReply *reply : std::as_const(m_tasks))
         reply->abort();
 
     m_tasks.clear();
@@ -214,7 +218,8 @@ void LyricsWidget::on_refreshButton_clicked()
             QNetworkRequest request;
             request.setUrl(url);
             request.setRawHeader("User-Agent", QStringLiteral("qmmp/%1").arg(Qmmp::strVersion()).toLatin1());
-            m_tasks.insert(m_http->get(request), provider->name());
+            m_tasks << m_http->get(request);
+            m_tasks.last()->setProperty("provider", provider->name());
             provider->skipRules(false);
         }
     }
