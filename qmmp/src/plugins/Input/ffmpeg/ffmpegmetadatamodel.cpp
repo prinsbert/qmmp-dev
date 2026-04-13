@@ -24,7 +24,6 @@ extern "C" {
 #include <libavcodec/avcodec.h>
 }
 #include <taglib/apefile.h>
-#include <stdint.h>
 #include <qmmp/metadatamanager.h>
 #include "ffmpegmetadatamodel.h"
 
