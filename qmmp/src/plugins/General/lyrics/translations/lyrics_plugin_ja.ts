@@ -69,6 +69,11 @@
         <source>Lyrics providers:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../lyricssettingsdialog.ui" line="39"/>
+        <source>Fetch lyrics by user request</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LyricsWidget</name>
@@ -108,33 +113,38 @@
         <translation>年:</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="148"/>
-        <location filename="../lyricswidget.cpp" line="234"/>
+        <location filename="../lyricswidget.cpp" line="114"/>
+        <source>Fetch lyrics from the Internet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lyricswidget.cpp" line="161"/>
+        <location filename="../lyricswidget.cpp" line="256"/>
         <source>&lt;h2&gt;%1 - %2&lt;/h2&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="159"/>
+        <location filename="../lyricswidget.cpp" line="172"/>
         <source>Not found</source>
         <translation>見付かりません</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="169"/>
+        <location filename="../lyricswidget.cpp" line="184"/>
         <source>Error: %1 - %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="182"/>
+        <location filename="../lyricswidget.cpp" line="197"/>
         <source>Receiving</source>
         <translation>取得中</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="236"/>
+        <location filename="../lyricswidget.cpp" line="258"/>
         <source>Tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="257"/>
+        <location filename="../lyricswidget.cpp" line="279"/>
         <source>Cache</source>
         <translation type="unfinished"></translation>
     </message>

@@ -936,18 +936,18 @@
 <context>
     <name>CueEditor</name>
     <message>
-        <location filename="../cueeditor.cpp" line="134"/>
+        <location filename="../cueeditor.cpp" line="135"/>
         <source>Open CUE File</source>
         <translation>CUE 파일 열기</translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="134"/>
-        <location filename="../cueeditor.cpp" line="157"/>
+        <location filename="../cueeditor.cpp" line="135"/>
+        <location filename="../cueeditor.cpp" line="158"/>
         <source>CUE Files</source>
         <translation>CUE 파일</translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="155"/>
+        <location filename="../cueeditor.cpp" line="156"/>
         <source>Save CUE File</source>
         <translation>CUE 파일 저장</translation>
     </message>
@@ -1149,18 +1149,18 @@
 <context>
     <name>LyricsEditor</name>
     <message>
-        <location filename="../lyricseditor.cpp" line="82"/>
+        <location filename="../lyricseditor.cpp" line="83"/>
         <source>Load Lyrics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lyricseditor.cpp" line="82"/>
-        <location filename="../lyricseditor.cpp" line="103"/>
+        <location filename="../lyricseditor.cpp" line="83"/>
+        <location filename="../lyricseditor.cpp" line="104"/>
         <source>Text Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lyricseditor.cpp" line="101"/>
+        <location filename="../lyricseditor.cpp" line="102"/>
         <source>Save Lyrics</source>
         <translation type="unfinished"></translation>
     </message>
