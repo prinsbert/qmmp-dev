@@ -69,6 +69,11 @@
         <source>Lyrics providers:</source>
         <translation>Lyrics sağlayıcıları:</translation>
     </message>
+    <message>
+        <location filename="../lyricssettingsdialog.ui" line="39"/>
+        <source>Fetch lyrics by user request</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LyricsWidget</name>
@@ -108,33 +113,38 @@
         <translation>Yıl:</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="148"/>
-        <location filename="../lyricswidget.cpp" line="234"/>
+        <location filename="../lyricswidget.cpp" line="114"/>
+        <source>Fetch lyrics from the Internet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lyricswidget.cpp" line="161"/>
+        <location filename="../lyricswidget.cpp" line="256"/>
         <source>&lt;h2&gt;%1 - %2&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;%1 - %2&lt;/h2&gt;</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="159"/>
+        <location filename="../lyricswidget.cpp" line="172"/>
         <source>Not found</source>
         <translation>Bulunamadı</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="169"/>
+        <location filename="../lyricswidget.cpp" line="184"/>
         <source>Error: %1 - %2</source>
         <translation>Hata: %1 - %2</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="182"/>
+        <location filename="../lyricswidget.cpp" line="197"/>
         <source>Receiving</source>
         <translation>Alınıyor</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="236"/>
+        <location filename="../lyricswidget.cpp" line="258"/>
         <source>Tag</source>
         <translation>Etiket</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="257"/>
+        <location filename="../lyricswidget.cpp" line="279"/>
         <source>Cache</source>
         <translation>Önbellek</translation>
     </message>

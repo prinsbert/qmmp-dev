@@ -47,25 +47,25 @@
 <context>
     <name>MPEGMetaDataModel</name>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="70"/>
-        <location filename="../mpegmetadatamodel.cpp" line="73"/>
-        <location filename="../mpegmetadatamodel.cpp" line="76"/>
-        <location filename="../mpegmetadatamodel.cpp" line="79"/>
+        <location filename="../mpegmetadatamodel.cpp" line="71"/>
+        <location filename="../mpegmetadatamodel.cpp" line="74"/>
+        <location filename="../mpegmetadatamodel.cpp" line="77"/>
+        <location filename="../mpegmetadatamodel.cpp" line="80"/>
         <source>Mode</source>
         <translation>Modus</translation>
     </message>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="82"/>
+        <location filename="../mpegmetadatamodel.cpp" line="83"/>
         <source>Protection</source>
         <translation>Bescherming</translation>
     </message>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="83"/>
+        <location filename="../mpegmetadatamodel.cpp" line="84"/>
         <source>Copyright</source>
         <translation>Copyright</translation>
     </message>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="84"/>
+        <location filename="../mpegmetadatamodel.cpp" line="85"/>
         <source>Original</source>
         <translation>Origineel</translation>
     </message>
