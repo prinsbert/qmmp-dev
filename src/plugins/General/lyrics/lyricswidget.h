@@ -52,6 +52,7 @@ private slots:
     void on_refreshButton_clicked();
     void on_editButton_clicked(bool checked);
     void on_providerComboBox_activated(int index);
+    void on_textBrowser_anchorClicked(const QUrl &url);
     bool loadFromTag(const QString &path);
     bool loadFromCache();
     void saveToCache(const QString &text);
@@ -65,6 +66,7 @@ private:
     TrackInfo m_info;
     QHash<QNetworkReply *, QString> m_tasks;
     QStringList m_enabledProviders;
+    bool m_fetchByRequest;
 };
 
 #endif

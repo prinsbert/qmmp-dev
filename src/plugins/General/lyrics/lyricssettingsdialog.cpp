@@ -40,6 +40,8 @@ LyricsSettingsDialog::LyricsSettingsDialog(QWidget *parent) :
         item->setCheckState(enabledProviders.contains(provider->name()) ? Qt::Checked : Qt::Unchecked);
         m_ui->providersListWidget->addItem(item);
     }
+
+    m_ui->fetchByRequestCheckBox->setChecked(settings.value(u"Lyrics/fetch_by_request"_s, false).toBool());
 }
 
 LyricsSettingsDialog::~LyricsSettingsDialog()
@@ -57,5 +59,6 @@ void LyricsSettingsDialog::accept()
             enabledProviders << m_ui->providersListWidget->item(i)->text();
     }
     settings.setValue(u"Lyrics/enabled_providers"_s, enabledProviders);
+    settings.setValue(u"Lyrics/fetch_by_request"_s, m_ui->fetchByRequestCheckBox->isChecked());
     QDialog::accept();
 }

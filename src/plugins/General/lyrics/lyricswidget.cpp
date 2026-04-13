@@ -77,6 +77,7 @@ LyricsWidget::LyricsWidget(bool dialog, QWidget *parent) : QWidget(parent),
 
     QSettings settings;
     m_enabledProviders = settings.value(u"Lyrics/enabled_providers"_s, m_parser.defaultProviders()).toStringList();
+    m_fetchByRequest = settings.value(u"Lyrics/fetch_by_request"_s, false).toBool();
 
     if(dialog)
         restoreGeometry(settings.value(u"Lyrics/geometry"_s).toByteArray());
@@ -106,7 +107,16 @@ void LyricsWidget::fetch(const TrackInfo *info)
     m_ui->providerComboBox->clear();
 
     if(!loadFromTag(info->path()) && !loadFromCache())
-        on_refreshButton_clicked();
+    {
+        if(m_fetchByRequest)
+        {
+            m_ui->textBrowser->setHtml(QStringLiteral("<a href=\"load://\">%1</a>").arg(tr("Fetch lyrics from the Internet")));
+        }
+        else
+        {
+            on_refreshButton_clicked();
+        }
+    }
 }
 
 QString LyricsWidget::cacheFilePath() const
@@ -119,7 +129,7 @@ QString LyricsWidget::cacheFilePath() const
 void LyricsWidget::onRequestFinished(QNetworkReply *reply)
 {
     QString name = m_tasks.take(reply);
-    if(name.isEmpty())
+    if(name.isEmpty() || reply->error() == QNetworkReply::OperationCanceledError)
     {
         reply->deleteLater();
         return;
@@ -166,6 +176,7 @@ void LyricsWidget::onRequestFinished(QNetworkReply *reply)
     }
     else if(m_tasks.isEmpty() && m_ui->providerComboBox->count() == 0)
     {
+        m_ui->textBrowser->clear();
         m_ui->textBrowser->setText(tr("Error: %1 - %2").arg(code).arg(reply->errorString()));
         qCWarning(plugin) << "error:" << reply->errorString();
     }
@@ -217,6 +228,12 @@ void LyricsWidget::on_editButton_clicked(bool checked)
 void LyricsWidget::on_providerComboBox_activated(int index)
 {
     m_ui->textBrowser->setHtml(m_ui->providerComboBox->itemData(index).toString());
+}
+
+void LyricsWidget::on_textBrowser_anchorClicked(const QUrl &url)
+{
+    if(url.scheme() == QLatin1String("load"))
+        on_refreshButton_clicked();
 }
 
 bool LyricsWidget::loadFromTag(const QString &path)
