@@ -21,7 +21,7 @@
 #define LYRICSWIDGET_H
 
 #include <QWidget>
-#include <QHash>
+#include <QList>
 #include <qmmp/trackinfo.h>
 #include "ultimatelyricsparser.h"
 
@@ -64,7 +64,7 @@ private:
     QString m_cachePath;
     UltimateLyricsParser m_parser;
     TrackInfo m_info;
-    QHash<QNetworkReply *, QString> m_tasks;
+    QList<QNetworkReply *> m_tasks;
     QStringList m_enabledProviders;
     bool m_fetchByRequest;
 };
