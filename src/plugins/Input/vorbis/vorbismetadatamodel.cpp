@@ -119,8 +119,6 @@ QString VorbisMetaDataModel::lyrics() const
 
         if(!map["UNSYNCEDLYRICS"].isEmpty())
             return TStringToQString(map["UNSYNCEDLYRICS"].front());
-        if(!map["LYRICS"].isEmpty())
-            return TStringToQString(map["LYRICS"].front());
     }
 
     return QString();
@@ -131,7 +129,6 @@ void VorbisMetaDataModel::setLyrics(const QString &content)
     if(m_tag)
     {
         m_tag->addField("UNSYNCEDLYRICS", QStringToTString(content), true);
-        m_tag->removeFields("LYRICS");
         m_file->save();
     }
 }
@@ -141,7 +138,6 @@ void VorbisMetaDataModel::removeLyrics()
     if(m_tag && !m_tag->isEmpty())
     {
         m_tag->removeFields("UNSYNCEDLYRICS");
-        m_tag->removeFields("LYRICS");
         m_file->save();
     }
 }

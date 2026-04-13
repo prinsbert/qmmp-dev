@@ -459,9 +459,6 @@ QString MpegFileTagModel::lyrics() const
 
         if(!map["USLT"].isEmpty())
             return m_codec->toUnicode(map["USLT"].front()->toString().toCString(utf));
-
-        if(!map["SYLT"].isEmpty())
-            return m_codec->toUnicode(map["SYLT"].front()->toString().toCString(utf));
     }
 
     return QString();
@@ -476,12 +473,9 @@ void MpegFileTagModel::setLyrics(const QString &content)
         if(content.isEmpty())
         {
             id3v2_tag->removeFrames("USLT");
-            id3v2_tag->removeFrames("SYLT");
         }
         else
         {
-            id3v2_tag->removeFrames("SYLT");
-
             TagLib::String::Type type = m_codec->name().contains("UTF") ?  TagLib::String::UTF8 : TagLib::String::Latin1;
             TagLib::ID3v2::FrameFactory::instance()->setDefaultTextEncoding(type);
             TagLib::String lyrics = TagLib::String(m_codec->fromUnicode(content).constData(), type);
