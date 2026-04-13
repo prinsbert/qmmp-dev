@@ -33,6 +33,7 @@
 #include <taglib/textidentificationframe.h>
 #include <taglib/attachedpictureframe.h>
 #include <taglib/id3v2framefactory.h>
+#include <taglib/unsynchronizedlyricsframe.h>
 #include <qmmp/qmmptextcodec.h>
 #include "tagextractor.h"
 #include "mpegmetadatamodel.h"
@@ -489,7 +490,7 @@ void MpegFileTagModel::setLyrics(const QString &content)
                 id3v2_tag->frameListMap()["USLT"].front()->setText(lyrics);
             else
             {
-                TagLib::ID3v2::TextIdentificationFrame *frame = new TagLib::ID3v2::TextIdentificationFrame("USLT", type);
+                TagLib::ID3v2::UnsynchronizedLyricsFrame *frame = new TagLib::ID3v2::UnsynchronizedLyricsFrame(type);
                 frame->setText(lyrics);
                 id3v2_tag->addFrame(frame);
             }
