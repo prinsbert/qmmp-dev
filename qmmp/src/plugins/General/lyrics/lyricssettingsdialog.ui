@@ -34,6 +34,13 @@
     <widget class="QListWidget" name="providersListWidget"/>
    </item>
    <item>
+    <widget class="QCheckBox" name="fetchByRequestCheckBox">
+     <property name="text">
+      <string>Fetch lyrics by user request</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
