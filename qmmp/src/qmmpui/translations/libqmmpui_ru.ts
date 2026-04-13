@@ -1151,18 +1151,18 @@
     <message>
         <location filename="../lyricseditor.cpp" line="83"/>
         <source>Load Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить текст</translation>
     </message>
     <message>
         <location filename="../lyricseditor.cpp" line="83"/>
         <location filename="../lyricseditor.cpp" line="104"/>
         <source>Text Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Текстовые файлы</translation>
     </message>
     <message>
         <location filename="../lyricseditor.cpp" line="102"/>
         <source>Save Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить текст</translation>
     </message>
 </context>
 <context>
@@ -1544,17 +1544,17 @@
     <message>
         <location filename="../forms/texteditor.ui" line="40"/>
         <source>Load</source>
-        <translation type="unfinished">Загрузить</translation>
+        <translation>Загрузить</translation>
     </message>
     <message>
         <location filename="../forms/texteditor.ui" line="47"/>
         <source>Delete</source>
-        <translation type="unfinished">Удалить</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <location filename="../forms/texteditor.ui" line="54"/>
         <source>Save as...</source>
-        <translation type="unfinished">Сохранить как...</translation>
+        <translation>Сохранить как...</translation>
     </message>
 </context>
 <context>

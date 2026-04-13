@@ -72,7 +72,7 @@
     <message>
         <location filename="../lyricssettingsdialog.ui" line="39"/>
         <source>Fetch lyrics by user request</source>
-        <translation type="unfinished"></translation>
+        <translation>Загружать текст песни по запросу пользователя</translation>
     </message>
 </context>
 <context>
@@ -115,7 +115,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="114"/>
         <source>Fetch lyrics from the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить текст песни из сети Интернет</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="161"/>
