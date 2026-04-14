@@ -12,7 +12,8 @@ SUBDIRS += statusicon \
            rgscan \
            hotkey \
            listenbrainz \
-           library
+           library \
+           batchtageditor
 
 unix:SUBDIRS += mpris \
                 kdenotify \
