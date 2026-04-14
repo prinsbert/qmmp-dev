@@ -18,6 +18,7 @@ option(USE_COPYPASTE      "copy/paste change plugin" ON)
 option(USE_HISTORY        "history plugin" ON)
 option(USE_SLEEPINHIBITOR "sleep mode inhibition plugin" ON)
 option(USE_LIBRARY        "media library plugin" ON)
+option(USE_TAGEDITOR      "batch tag editor plugin" ON)
 option(USE_TASKBAR        "taskbar plugin (Windows)" ON)
 option(USE_RDETECT        "rdetect plugin (Windows)" ON)
 
@@ -96,6 +97,10 @@ endif(USE_HISTORY AND Qt6Sql_FOUND)
 if(USE_SLEEPINHIBITOR AND Qt6DBus_FOUND)
    add_subdirectory(sleepinhibitor)
 endif(USE_SLEEPINHIBITOR AND Qt6DBus_FOUND)
+
+if(USE_TAGEDITOR)
+   add_subdirectory(batchtageditor)
+endif(USE_TAGEDITOR)
 
 if(USE_TASKBAR AND WIN32)
    add_subdirectory(taskbar)
