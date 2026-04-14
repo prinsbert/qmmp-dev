@@ -251,6 +251,7 @@ PRINT_SUMMARY ("Copy/Paste ............................" USE_COPYPASTE 1)
 PRINT_SUMMARY ("History plugin ........................" USE_HISTORY Qt6Sql_FOUND)
 PRINT_SUMMARY ("Sleep mode inhibition plugin .........." USE_SLEEPINHIBITOR Qt6DBus_FOUND)
 PRINT_SUMMARY ("Media library plugin .................." USE_LIBRARY Qt6Sql_FOUND)
+PRINT_SUMMARY ("Batch tag editor plugin ..............." USE_TAGEDITOR 1)
 PRINT_SUMMARY ("Taskbar plugin (Windows) .............." USE_TASKBAR WIN32)
 PRINT_SUMMARY ("Removable device detection (Windows) .." USE_RDETECT WIN32)
 
