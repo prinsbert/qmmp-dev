@@ -161,7 +161,10 @@ QMMPStarter::QMMPStarter() : QObject()
         {
             m_exit_code = EXIT_SUCCESS;
             m_finished = true;
-            QString out = CommandLineManager::executeCommand(it.key(), it.value(), QDir::currentPath()).trimmed();
+            QString out = CommandLineManager::executeCommand(it.key(), it.value(), QDir::currentPath());
+            while(out.endsWith(QChar::LineFeed))
+                out.removeLast();
+
             if(!out.isEmpty())
             {
                 //show dialog with command line documentation under ms windows
@@ -170,7 +173,7 @@ QMMPStarter::QMMPStarter() : QObject()
                 tmp_stream.copyfmt(cout);
                 streambuf *old_stream = cout.rdbuf(tmp_stream.rdbuf());
 #endif
-                cout << qPrintable(out.trimmed()) << endl;
+                cout << qPrintable(out) << endl;
 #ifdef QMMP_NO_CLI
                 string text = tmp_stream.str();
                 QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromStdString(text));
@@ -432,7 +435,14 @@ void QMMPStarter::writeCommand()
     m_socket->flush();
     //reading answer
     while(m_socket->waitForReadyRead(1500))
-        cout << qPrintable(QString::fromUtf8(m_socket->readAll()).trimmed()) << endl;
+    {
+        QString answer = QString::fromUtf8(m_socket->readAll());
+        while(answer.endsWith(QChar::LineFeed))
+            answer.removeLast();
+
+        if(!answer.isEmpty())
+            cout << qPrintable(answer) << endl;
+    }
 
 #ifndef QMMP_NO_CLI
     if (argString.isEmpty())
