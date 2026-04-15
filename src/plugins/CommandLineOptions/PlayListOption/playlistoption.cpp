@@ -94,12 +94,13 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
     case PL_LIST:
     {
         QStringList names = pl_manager->playListNames();
+        int fieldWidth = QString::number(names.count()).size();
         for(int i = 0; i <  names.count(); ++i)
         {
             if(i == pl_manager->currentPlayListIndex())
-                out += QStringLiteral("%1. %2 [*]\n").arg(i + 1).arg(names.at(i));
+                out += QStringLiteral("> %1. %2\n").arg(i + 1, fieldWidth).arg(names.at(i));
             else
-                out += QStringLiteral("%1. %2\n").arg(i + 1).arg(names.at(i));
+                out += QStringLiteral("  %1. %2\n").arg(i + 1, fieldWidth).arg(names.at(i));
         }
     }
         break;
@@ -110,15 +111,15 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
         PlayListModel *model = pl_manager->playListAt(pl_id);
         if(!model)
             return tr("Invalid playlist ID");
+
+        int fieldWidth = QString::number(model->trackCount()).size();
         for(int i = 0; i < model->trackCount(); ++i)
         {
             PlayListTrack *track = model->track(i);
-            out += QStringLiteral("%1. %2").arg(track->trackIndex() + 1).arg(formatter.format(track));
             if(i == model->currentIndex())
-                out += u" [*]"_s;
-
-            if(i != model->trackCount() - 1)
-                out += QChar::LineFeed;
+                out += QStringLiteral("> %1. %2\n").arg(i + 1, fieldWidth).arg(formatter.format(track));
+            else
+                out += QStringLiteral("  %1. %2\n").arg(i + 1, fieldWidth).arg(formatter.format(track));
         }
     }
         break;
