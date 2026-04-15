@@ -44,7 +44,7 @@
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="34"/>
         <source>Quick</source>
-        <translation>至急</translation>
+        <translation>クイック</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="35"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="36"/>
         <source>Medium</source>
-        <translation>平凡な音質</translation>
+        <translation>通常</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="37"/>

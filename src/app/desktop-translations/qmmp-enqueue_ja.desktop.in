@@ -15,3 +15,4 @@ Terminal=false
 # Translations
 Name[ja]=後で QMMP で再生
 Comment[ja]=ファイルを QMMP のプレイリストに追加します
+Icon[ja]=qmmp

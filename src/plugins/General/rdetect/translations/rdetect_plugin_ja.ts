@@ -6,22 +6,22 @@
     <message>
         <location filename="../rdetectfactory.cpp" line="30"/>
         <source>Volume Detection Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Volume Detection Plugin</translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="50"/>
         <source>About Volume Detection Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>About Volume Detection Plugin</translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="51"/>
         <source>Qmmp Removable Volume Detection Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Removable Volume Detection Plugin</translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="52"/>
         <source>This plugin provides removable volume detection</source>
-        <translation type="unfinished"></translation>
+        <translation>This plugin provides removable volume detection</translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="53"/>
@@ -34,7 +34,7 @@
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="14"/>
         <source>Volume Detection Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Volume Detection Plugin Settings</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="29"/>
@@ -49,12 +49,12 @@
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation>プレイリストからトラックを自動除去</translation>
+        <translation>プレイリストからトラックを自動削除</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation>着脱可能なデバイスの検知</translation>
+        <translation>リムーバブルデバイスの検出</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="64"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation>プレイリストからファイルを自動除去</translation>
+        <translation>プレイリストからファイルを自動削除</translation>
     </message>
 </context>
 <context>
@@ -77,7 +77,7 @@
     <message>
         <location filename="../removablehelper.cpp" line="138"/>
         <source>Add Volume &quot;%1&quot;</source>
-        <translation>量目 &quot;%1&quot; を追加</translation>
+        <translation>音量 &quot;%1&quot; を追加</translation>
     </message>
 </context>
 </TS>

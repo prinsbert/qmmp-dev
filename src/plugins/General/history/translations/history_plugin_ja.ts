@@ -11,7 +11,7 @@
     <message>
         <location filename="../history.cpp" line="58"/>
         <source>Alt+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+H</translation>
     </message>
 </context>
 <context>
@@ -52,7 +52,7 @@
     <message>
         <location filename="../historysettingsdialog.ui" line="31"/>
         <source>Title format:</source>
-        <translation>表題の書式:</translation>
+        <translation>タイトルの形式:</translation>
     </message>
 </context>
 <context>
@@ -102,12 +102,12 @@
         <location filename="../historywindow.ui" line="128"/>
         <location filename="../historywindow.ui" line="177"/>
         <source>Song</source>
-        <translation>演目</translation>
+        <translation>曲</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="137"/>
         <source>Distribution</source>
-        <translation>普及</translation>
+        <translation>配布</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="150"/>
@@ -120,12 +120,12 @@
         <location filename="../historywindow.ui" line="209"/>
         <location filename="../historywindow.ui" line="236"/>
         <source>Play counts</source>
-        <translation>配信回数</translation>
+        <translation>再生回数</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="164"/>
         <source>Top Songs</source>
-        <translation>上位の演目</translation>
+        <translation>上位の曲</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="191"/>
@@ -175,12 +175,12 @@
     <message>
         <location filename="../historywindow.cpp" line="483"/>
         <source>&amp;View Track Details</source>
-        <translation>トラックの詳細を表示(&amp;D)</translation>
+        <translation>トラックの詳細を表示(&amp;V)</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="485"/>
         <source>Remove from History</source>
-        <translation type="unfinished"></translation>
+        <translation>履歴から削除</translation>
     </message>
 </context>
 </TS>

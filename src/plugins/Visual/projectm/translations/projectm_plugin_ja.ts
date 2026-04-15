@@ -36,7 +36,7 @@
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
         <source>&amp;Shuffle</source>
-        <translation>シャッフル(&amp;F)</translation>
+        <translation>シャッフル(&amp;S)</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
@@ -102,7 +102,7 @@
         <location filename="../projectmwidget.cpp" line="147"/>
         <location filename="../projectmwidget.cpp" line="159"/>
         <source>&amp;Show Preset Name</source>
-        <translation>プリセット名を表示(&amp;H)</translation>
+        <translation>プリセット名を表示(&amp;S)</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="147"/>
@@ -150,7 +150,7 @@
         <location filename="../projectmwidget.cpp" line="152"/>
         <location filename="../projectmwidget.cpp" line="164"/>
         <source>&amp;Random Preset</source>
-        <translation>プリセットを無作為に(&amp;R)</translation>
+        <translation>ランダムプリセット(&amp;R)</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="152"/>

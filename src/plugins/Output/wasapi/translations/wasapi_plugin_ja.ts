@@ -39,7 +39,7 @@
     <message>
         <location filename="../wasapisettingsdialog.ui" line="55"/>
         <source>Buffer size:</source>
-        <translation>バッファーの大きさ:</translation>
+        <translation>バッファサイズ:</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="62"/>
@@ -49,12 +49,12 @@
     <message>
         <location filename="../wasapisettingsdialog.ui" line="78"/>
         <source>Exclusive mode</source>
-        <translation type="unfinished"></translation>
+        <translation>排他モード</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.cpp" line="65"/>
         <source>Default</source>
-        <translation>標準</translation>
+        <translation>既定</translation>
     </message>
 </context>
 </TS>

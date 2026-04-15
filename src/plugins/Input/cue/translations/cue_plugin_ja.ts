@@ -21,12 +21,12 @@
     <message>
         <location filename="../cuesettingsdialog.ui" line="45"/>
         <source>CUE encoding</source>
-        <translation>CUE 文字符号化形式</translation>
+        <translation>CUE エンコーディング</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="51"/>
         <source>Automatic charset detection</source>
-        <translation>文字符号セットの自動検出</translation>
+        <translation>文字コードの自動検出</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="61"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../cuesettingsdialog.ui" line="81"/>
         <source>Default encoding:</source>
-        <translation>文字符号化形式(初期設定値):</translation>
+        <translation>既定のエンコーディング:</translation>
     </message>
 </context>
 <context>

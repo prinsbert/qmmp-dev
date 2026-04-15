@@ -39,7 +39,7 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="29"/>
         <source>Connection</source>
-        <translation type="unfinished"></translation>
+        <translation>接続</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="35"/>
@@ -69,7 +69,7 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="99"/>
         <source>Audio</source>
-        <translation type="unfinished"></translation>
+        <translation>オーディオ</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="105"/>
@@ -84,27 +84,27 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="154"/>
         <source>Metadata</source>
-        <translation type="unfinished"></translation>
+        <translation>メタデータ</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="160"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>名前:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="170"/>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="180"/>
         <source>Genre:</source>
-        <translation type="unfinished"></translation>
+        <translation>ジャンル:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="190"/>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>説明:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="89"/>

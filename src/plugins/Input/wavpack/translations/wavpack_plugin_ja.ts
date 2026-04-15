@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="179"/>
         <source>WavPack library version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>WavPack library バージョン: %1</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="181"/>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../wavpackmetadatamodel.cpp" line="71"/>
         <source>Ratio</source>
-        <translation>率</translation>
+        <translation>比率</translation>
     </message>
     <message>
         <location filename="../wavpackmetadatamodel.cpp" line="72"/>
         <source>Version</source>
-        <translation>版</translation>
+        <translation>バージョン</translation>
     </message>
 </context>
 </TS>

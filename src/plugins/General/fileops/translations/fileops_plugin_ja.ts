@@ -7,7 +7,7 @@
         <location filename="../fileops.cpp" line="107"/>
         <location filename="../fileops.cpp" line="150"/>
         <source>Error</source>
-        <translation>事故</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="108"/>
@@ -18,13 +18,13 @@
     <message>
         <location filename="../fileops.cpp" line="154"/>
         <source>Move Files</source>
-        <translation>ファイル移動</translation>
+        <translation>ファイルを移動</translation>
     </message>
     <message numerus="yes">
         <location filename="../fileops.cpp" line="155"/>
         <source>Are you sure you want to move %n file(s)?</source>
         <translation>
-            <numerusform>%n 個のファイルを移動しようとしています。 よろしいですか?</numerusform>
+            <numerusform>%n 個のファイルを移動しますか?</numerusform>
         </translation>
     </message>
     <message>
@@ -56,13 +56,13 @@
     <message>
         <location filename="../fileops.cpp" line="123"/>
         <source>Remove Files</source>
-        <translation>ファイル削除</translation>
+        <translation>ファイルの削除</translation>
     </message>
     <message numerus="yes">
         <location filename="../fileops.cpp" line="124"/>
         <source>Are you sure you want to remove %n file(s) from disk?</source>
         <translation>
-            <numerusform>%n 個のファイルをディスク上から削除しようとしています。 よろしいですか？</numerusform>
+            <numerusform>%n 個のファイルをディスク上から削除しますか？</numerusform>
         </translation>
     </message>
 </context>
@@ -99,7 +99,7 @@
     <message>
         <location filename="../fileopssettingsdialog.ui" line="51"/>
         <source>Enabled</source>
-        <translation>発効</translation>
+        <translation>有効</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="56"/>
@@ -130,7 +130,7 @@
     <message>
         <location filename="../fileopssettingsdialog.ui" line="127"/>
         <source>Destination:</source>
-        <translation>ファイル収容先:</translation>
+        <translation>ファイル保存先:</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="137"/>
@@ -142,27 +142,27 @@
         <location filename="../fileopssettingsdialog.ui" line="144"/>
         <location filename="../fileopssettingsdialog.cpp" line="158"/>
         <source>File name pattern:</source>
-        <translation>ファイル名の様式:</translation>
+        <translation>ファイル名のパターン:</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="130"/>
         <source>New action</source>
-        <translation>新しい動作</translation>
+        <translation>新しい操作</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="187"/>
         <source>Command:</source>
-        <translation type="unfinished"></translation>
+        <translation>コマンド:</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="222"/>
         <source>Copy</source>
-        <translation>複製</translation>
+        <translation>コピー</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="223"/>
         <source>Rename</source>
-        <translation>名称変更</translation>
+        <translation>名称の変更</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="224"/>
@@ -172,12 +172,12 @@
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="226"/>
         <source>Execute</source>
-        <translation>抽出</translation>
+        <translation>実行</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="238"/>
         <source>Choose a directory</source>
-        <translation>ディレクトリを選択</translation>
+        <translation>ディレクトリの選択</translation>
     </message>
 </context>
 </TS>

@@ -21,7 +21,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="418"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="419"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="428"/>
         <source>mpg123, API version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>mpg123, API version: %1</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="432"/>
@@ -67,7 +67,7 @@
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="85"/>
         <source>Original</source>
-        <translation>原作</translation>
+        <translation>オリジナル</translation>
     </message>
 </context>
 <context>
@@ -80,22 +80,22 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="35"/>
         <source>Decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>デコーダー</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="41"/>
         <source>MAD</source>
-        <translation type="unfinished"></translation>
+        <translation>MAD</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="48"/>
         <source>MPG123</source>
-        <translation type="unfinished"></translation>
+        <translation>MPG123</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="71"/>
         <source>Enable CRC checking</source>
-        <translation type="unfinished"></translation>
+        <translation>CRC チェック有効</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="87"/>
@@ -148,32 +148,32 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="253"/>
         <source>Merge selected tag types</source>
-        <translation type="unfinished"></translation>
+        <translation>選択したタグの種類を統合</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="272"/>
         <source>Encodings</source>
-        <translation>文字符号化の形式</translation>
+        <translation>エンコーディング</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="294"/>
         <source>ID3v2 encoding:</source>
-        <translation>ID3v2 用文字符号化形式:</translation>
+        <translation>ID3v2 エンコーディング:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="333"/>
         <source>ID3v1 encoding:</source>
-        <translation>ID3v1 用文字符号化形式:</translation>
+        <translation>ID3v1 エンコーディング:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="343"/>
         <source>Try to detect encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>エンコードの検出</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.cpp" line="32"/>
         <source>Detect by Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>ロケールで検出</translation>
     </message>
 </context>
 </TS>

@@ -46,7 +46,7 @@
         <location filename="../scrobblersettingsdialog.ui" line="41"/>
         <location filename="../scrobblersettingsdialog.ui" line="117"/>
         <source>Check</source>
-        <translation>試動</translation>
+        <translation>チェック</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="63"/>
@@ -89,7 +89,7 @@
         <location filename="../scrobblersettingsdialog.cpp" line="195"/>
         <location filename="../scrobblersettingsdialog.cpp" line="199"/>
         <source>Error</source>
-        <translation>エラーです</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="118"/>
@@ -112,12 +112,12 @@
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="187"/>
         <source>Permission granted</source>
-        <translation>許可</translation>
+        <translation>アクセスが許可されました</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="199"/>
         <source>Permission denied</source>
-        <translation>不許可</translation>
+        <translation>アクセスが拒否されました</translation>
     </message>
 </context>
 </TS>

@@ -6,7 +6,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>&amp;Play</source>
-        <translation>再生(&amp;Y)</translation>
+        <translation>再生(&amp;P)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>&amp;Stop</source>
-        <translation>終止(&amp;S)</translation>
+        <translation>停止(&amp;S)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="41"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>&amp;Previous</source>
-        <translation>前の曲(&amp;R)</translation>
+        <translation>前の曲(&amp;P)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
@@ -56,42 +56,42 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>&amp;Play/Pause</source>
-        <translation>再生/停止(&amp;A)</translation>
+        <translation>再生/一時停止(&amp;P)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>+10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+10 秒</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>+30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+30 秒</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>+60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+60 秒</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>-10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-10 秒</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>-30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-30 秒</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>-60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-60 秒</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
         <source>&amp;Jump to Track</source>
-        <translation>指定のトラックまで移動(&amp;J)</translation>
+        <translation>トラックへ移動(&amp;J)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
@@ -101,7 +101,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>&amp;Repeat Playlist</source>
-        <translation>プレイリストを繰り返す(&amp;L)</translation>
+        <translation>プレイリストを繰り返す(&amp;R)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="52"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="53"/>
         <source>&amp;Repeat Track</source>
-        <translation>トラックを繰り返す(&amp;T)</translation>
+        <translation>トラックを繰り返す(&amp;R)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="53"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>&amp;Shuffle</source>
-        <translation>シャッフル(&amp;F)</translation>
+        <translation>シャッフル(&amp;S)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="54"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>&amp;No Playlist Advance</source>
-        <translation>次の曲に進まず終止(&amp;N)</translation>
+        <translation>プレイリストを自動進行しない(&amp;N)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="55"/>
@@ -141,7 +141,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="56"/>
         <source>&amp;Stop After Selected</source>
-        <translation>選んだ曲を再生後に終止(&amp;S)</translation>
+        <translation>選択曲を再生後に停止(&amp;S)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="56"/>
@@ -151,7 +151,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="57"/>
         <source>&amp;Transit between playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>プレイリスト間の移動 (&amp;T)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="58"/>
@@ -186,12 +186,12 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>Always on Top</source>
-        <translation>常に前面へ</translation>
+        <translation>常に手前に表示</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>Put on All Workspaces</source>
-        <translation>常に表示中のワークスペースに置く</translation>
+        <translation>すべてのワークスペースに配置</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="64"/>
@@ -201,12 +201,12 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="64"/>
         <source>Meta+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Meta+D</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>Anti-aliasing</source>
-        <translation>アンチエイリアス化</translation>
+        <translation>アンチエイリアス</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="67"/>
@@ -241,7 +241,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="71"/>
         <source>&amp;Add File</source>
-        <translation>ファイルを追加(&amp;F)</translation>
+        <translation>ファイルを追加(&amp;A)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="71"/>
@@ -251,7 +251,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="72"/>
         <source>&amp;Add Directory</source>
-        <translation>ディレクトリを追加(&amp;D)</translation>
+        <translation>ディレクトリを追加(&amp;A)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="72"/>
@@ -261,7 +261,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="73"/>
         <source>&amp;Add Url</source>
-        <translation>URLを追加(&amp;U)</translation>
+        <translation>URLを追加(&amp;A)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="73"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>&amp;Remove Selected</source>
-        <translation>選択したものを除去(&amp;V)</translation>
+        <translation>選択項目を削除(&amp;R)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="74"/>
@@ -281,22 +281,22 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="75"/>
         <source>&amp;Remove All</source>
-        <translation>すべて除去(&amp;M)</translation>
+        <translation>すべて削除(&amp;R)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="76"/>
         <source>&amp;Remove Unselected</source>
-        <translation>選択外のものを除去(&amp;N)</translation>
+        <translation>非選択項目を削除(&amp;R)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>Remove unavailable files</source>
-        <translation>無効なファイルを除去</translation>
+        <translation>無効なファイルを削除</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>Remove duplicates</source>
-        <translation>重複分を除去</translation>
+        <translation>重複項目を削除</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="79"/>
@@ -306,7 +306,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>&amp;Queue Toggle</source>
-        <translation>選んだ曲をキューに追加/キューから撤去(&amp;Q)</translation>
+        <translation>キューの切替(&amp;Q)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="80"/>
@@ -321,12 +321,12 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>&amp;Select None</source>
-        <translation>選択を解除(&amp;N)</translation>
+        <translation>選択を解除(&amp;S)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>&amp;Select All</source>
-        <translation>すべて選択(&amp;E)</translation>
+        <translation>すべて選択(&amp;S)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="83"/>
@@ -336,7 +336,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>&amp;View Track Details</source>
-        <translation>トラックの詳細を表示(&amp;D)</translation>
+        <translation>トラックの詳細を表示(&amp;V)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="84"/>
@@ -346,7 +346,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>&amp;New List</source>
-        <translation>新規リスト(&amp;W)</translation>
+        <translation>新規リスト(&amp;N)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="85"/>
@@ -396,7 +396,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="90"/>
         <source>&amp;Select Next Playlist</source>
-        <translation>次のプレイリストを選択(&amp;N)</translation>
+        <translation>次のプレイリストを選択(&amp;S)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="90"/>
@@ -406,7 +406,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>&amp;Select Previous Playlist</source>
-        <translation>前のプレイリストを選択(&amp;P)</translation>
+        <translation>前のプレイリストを選択(&amp;S)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="91"/>
@@ -416,7 +416,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="92"/>
         <source>&amp;Show Playlists</source>
-        <translation>プレイリストを表示(&amp;H)</translation>
+        <translation>プレイリストを表示(&amp;S)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="92"/>
@@ -436,7 +436,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>&amp;Show Column Headers</source>
-        <translation>プレイリストにカラム表題を表示(&amp;S)</translation>
+        <translation>プレイリストに列ヘッダを表示(&amp;S)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="94"/>
@@ -446,12 +446,12 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="95"/>
         <source>Show &amp;Tab Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>タブバーを表示(&amp;T)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="95"/>
         <source>Alt+T</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+T</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="97"/>
@@ -471,12 +471,12 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="99"/>
         <source>&amp;About Qt</source>
-        <translation>Qt について(&amp;Q)</translation>
+        <translation>Qt について(&amp;A)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="100"/>
         <source>&amp;Exit</source>
-        <translation>終了(&amp;X)</translation>
+        <translation>終了(&amp;E)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="100"/>
@@ -514,7 +514,7 @@
     <message>
         <location filename="../skinneddisplay.cpp" line="78"/>
         <source>Play files</source>
-        <translation>ファイルより再生</translation>
+        <translation>ファイルの再生</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="83"/>
@@ -629,7 +629,7 @@
     <message>
         <location filename="../skinnedeqwidget.cpp" line="392"/>
         <source>Import Preset</source>
-        <translation>プリセットを移入</translation>
+        <translation>プリセットのインポート</translation>
     </message>
 </context>
 <context>
@@ -672,7 +672,7 @@
     <message>
         <location filename="../skinnedfactory.cpp" line="68"/>
         <source>Artwork:</source>
-        <translation>美術:</translation>
+        <translation>アートワーク:</translation>
     </message>
     <message>
         <location filename="../skinnedfactory.cpp" line="69"/>
@@ -682,7 +682,7 @@
     <message>
         <location filename="../skinnedfactory.cpp" line="70"/>
         <source>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</translation>
     </message>
 </context>
 <context>
@@ -695,7 +695,7 @@
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
         <source>Restore Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>デフォルトを復元</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>
@@ -715,7 +715,7 @@
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
         <source>View</source>
-        <translation>観容</translation>
+        <translation>表示</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
@@ -730,7 +730,7 @@
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
         <source>Misc</source>
-        <translation>その他いろいろ</translation>
+        <translation>その他</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="105"/>
@@ -740,7 +740,7 @@
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="106"/>
         <source>Do you want to restore default shortcuts?</source>
-        <translation>ショートカット設定をデフォルトに戻しますが、間違いありませんか。</translation>
+        <translation>ショートカット設定をデフォルトに戻しますか?</translation>
     </message>
 </context>
 <context>
@@ -758,7 +758,7 @@
     <message>
         <location filename="../skinnedmainwindow.cpp" line="393"/>
         <source>View</source>
-        <translation>観容</translation>
+        <translation>表示</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="402"/>
@@ -768,7 +768,7 @@
     <message>
         <location filename="../skinnedmainwindow.cpp" line="421"/>
         <source>Audio</source>
-        <translation>音響</translation>
+        <translation>オーディオ</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="429"/>
@@ -791,7 +791,7 @@
     <message>
         <location filename="../skinnedplaylist.cpp" line="198"/>
         <source>&amp;Copy Selection To</source>
-        <translation>選んだ曲目で新しいプレイリストを作る(&amp;C)</translation>
+        <translation>選択項目のコピー先(&amp;C)</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="223"/>
@@ -802,72 +802,72 @@
         <location filename="../skinnedplaylist.cpp" line="226"/>
         <location filename="../skinnedplaylist.cpp" line="266"/>
         <source>By Title</source>
-        <translation>タイトル名順に</translation>
+        <translation>タイトル名順</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="229"/>
         <location filename="../skinnedplaylist.cpp" line="269"/>
         <source>By Album</source>
-        <translation>アルバム名順に</translation>
+        <translation>アルバム名順</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="232"/>
         <location filename="../skinnedplaylist.cpp" line="272"/>
         <source>By Artist</source>
-        <translation>アーティスト名順に</translation>
+        <translation>アーティスト名順</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="235"/>
         <location filename="../skinnedplaylist.cpp" line="275"/>
         <source>By Album Artist</source>
-        <translation>アルバムのアーティスト名順に</translation>
+        <translation>アルバムのアーティスト名順</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="238"/>
         <location filename="../skinnedplaylist.cpp" line="278"/>
         <source>By Filename</source>
-        <translation>ファイル名順に</translation>
+        <translation>ファイル名順</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="241"/>
         <location filename="../skinnedplaylist.cpp" line="281"/>
         <source>By Path + Filename</source>
-        <translation>パスとファイル名の順に</translation>
+        <translation>パスとファイル名順</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="244"/>
         <location filename="../skinnedplaylist.cpp" line="284"/>
         <source>By Date</source>
-        <translation>日付順に</translation>
+        <translation>日付順</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="247"/>
         <location filename="../skinnedplaylist.cpp" line="287"/>
         <source>By Track Number</source>
-        <translation>トラック番号順に</translation>
+        <translation>トラック番号順</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="250"/>
         <location filename="../skinnedplaylist.cpp" line="290"/>
         <source>By Disc Number</source>
-        <translation>ディスク番号順に</translation>
+        <translation>ディスク番号順</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="253"/>
         <location filename="../skinnedplaylist.cpp" line="293"/>
         <source>By File Creation Date</source>
-        <translation>ファイルの作成日順に</translation>
+        <translation>ファイルの作成日順</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="256"/>
         <location filename="../skinnedplaylist.cpp" line="296"/>
         <source>By File Modification Date</source>
-        <translation>ファイルの加工日時順に</translation>
+        <translation>ファイルの変更日時順</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="259"/>
         <source>By Group</source>
-        <translation>グループ名順に</translation>
+        <translation>グループ名順</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="264"/>
@@ -877,17 +877,17 @@
     <message>
         <location filename="../skinnedplaylist.cpp" line="301"/>
         <source>Randomize List</source>
-        <translation>リストを順不同に</translation>
+        <translation>リストを順不同</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="303"/>
         <source>Reverse List</source>
-        <translation>リストを逆順に</translation>
+        <translation>リストを逆順</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="311"/>
         <source>Actions</source>
-        <translation>動作</translation>
+        <translation>操作</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="581"/>
@@ -937,7 +937,7 @@
     <message>
         <location filename="../skinnedplaylistbrowser.cpp" line="44"/>
         <source>Rename</source>
-        <translation>名称変更</translation>
+        <translation>名前の変更</translation>
     </message>
 </context>
 <context>
@@ -945,12 +945,12 @@
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="77"/>
         <source>Add Column</source>
-        <translation>カラムを追加</translation>
+        <translation>列を追加</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="78"/>
         <source>Edit Column</source>
-        <translation>カラムを編集</translation>
+        <translation>列の編集</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="79"/>
@@ -965,19 +965,19 @@
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="84"/>
         <source>Alignment</source>
-        <translation>行揃え</translation>
+        <translation>整列</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="85"/>
         <source>Left</source>
         <comment>alignment</comment>
-        <translation>左寄せ</translation>
+        <translation>左揃え</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="86"/>
         <source>Right</source>
         <comment>alignment</comment>
-        <translation>右寄せ</translation>
+        <translation>右揃え</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="87"/>
@@ -988,7 +988,7 @@
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="97"/>
         <source>Remove Column</source>
-        <translation>カラムを撤去</translation>
+        <translation>列を削除</translation>
     </message>
 </context>
 <context>
@@ -996,12 +996,12 @@
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="14"/>
         <source>Popup Information Settings</source>
-        <translation>情報吹き出しの設定</translation>
+        <translation>通知の設定</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="29"/>
         <source>Template</source>
-        <translation>ひな型</translation>
+        <translation>テンプレート</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="58"/>
@@ -1087,12 +1087,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="260"/>
         <source>Skin install path:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skinのインストールパス:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="244"/>
         <source>Random skin on every startup</source>
-        <translation type="unfinished"></translation>
+        <translation>起動ごとにランダムスキン</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="107"/>
@@ -1112,7 +1112,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="238"/>
         <source>Extra Skin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>追加のスキン設定</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="251"/>
@@ -1122,22 +1122,22 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="308"/>
         <source>Single Column Mode</source>
-        <translation>単一カラムのとき</translation>
+        <translation>単一列モード</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="341"/>
         <source>Use smooth scrolling</source>
-        <translation type="unfinished"></translation>
+        <translation>スムーズスクロールを使用</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="362"/>
         <source>Show splitters</source>
-        <translation type="unfinished"></translation>
+        <translation>区切りを表示</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="369"/>
         <source>Alternate splitter color</source>
-        <translation type="unfinished"></translation>
+        <translation>スプリッターの代替色</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="469"/>
@@ -1152,12 +1152,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="481"/>
         <source>Use skin colors</source>
-        <translation type="unfinished"></translation>
+        <translation>スキンカラーを使用</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="599"/>
         <source>Background #2:</source>
-        <translation>第二背景:</translation>
+        <translation>背景 #2:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="663"/>
@@ -1172,7 +1172,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="817"/>
         <source>Splitter:</source>
-        <translation type="unfinished"></translation>
+        <translation>スプリッター:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="631"/>
@@ -1192,27 +1192,27 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="509"/>
         <source>Background #1:</source>
-        <translation>第一背景:</translation>
+        <translation>背景 #1:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="745"/>
         <source>Load skin colors</source>
-        <translation type="unfinished"></translation>
+        <translation>スキンカラーを読み込み</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="829"/>
         <source>Override group background:</source>
-        <translation type="unfinished"></translation>
+        <translation>グループの背景を上書き:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="874"/>
         <source>Override current track background:</source>
-        <translation type="unfinished"></translation>
+        <translation>現在のトラックの背景を上書き:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="938"/>
         <source>Fonts</source>
-        <translation>書体</translation>
+        <translation>フォント</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="992"/>
@@ -1222,17 +1222,17 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1028"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>グループ:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1055"/>
         <source>Extra group row:</source>
-        <translation type="unfinished"></translation>
+        <translation>追加のグループ行:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1082"/>
         <source>Column headers:</source>
-        <translation>カラム表題:</translation>
+        <translation>列のヘッダ:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="950"/>
@@ -1257,27 +1257,27 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1137"/>
         <source>Reset fonts</source>
-        <translation>変更前の書体にリセット</translation>
+        <translation>フォントをリセット</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1146"/>
         <source>Use bitmap font if available</source>
-        <translation>あればビットマップフォントを使用する</translation>
+        <translation>利用可能な場合はビットマップフォントを使用する</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="129"/>
         <source>Window title format:</source>
-        <translation>ウィンドウタイトルの書式:</translation>
+        <translation>ウィンドウタイトルの形式:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="101"/>
         <source>General</source>
-        <translation>総合</translation>
+        <translation>全般</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="151"/>
         <source>Transparency</source>
-        <translation>透過効果</translation>
+        <translation>透明度</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="157"/>
@@ -1304,7 +1304,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="302"/>
         <source>Song Display</source>
-        <translation>演題表示</translation>
+        <translation>曲名を表示</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="348"/>
@@ -1334,12 +1334,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="417"/>
         <source>Show popup information</source>
-        <translation>情報吹き出しを表示</translation>
+        <translation>通知を表示</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="429"/>
         <source>Edit template</source>
-        <translation>ひな型を編集</translation>
+        <translation>テンプレートの編集</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="385"/>
@@ -1364,17 +1364,17 @@
     <message>
         <location filename="../skinnedsettings.cpp" line="159"/>
         <source>Default skin</source>
-        <translation type="unfinished"></translation>
+        <translation>デフォルトのスキン</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="168"/>
         <source>Unarchived skin %1</source>
-        <translation type="unfinished"></translation>
+        <translation>アーカイブされていないスキン %1</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="168"/>
         <source>Archived skin %1</source>
-        <translation type="unfinished"></translation>
+        <translation>アーカイブされたスキン %1</translation>
     </message>
 </context>
 <context>
@@ -1392,7 +1392,7 @@
     <message>
         <location filename="../skinnedtextscroller.cpp" line="122"/>
         <source>Buffering: %1%</source>
-        <translation>バッファーへ先読み: %1%</translation>
+        <translation>バッファリング: %1%</translation>
     </message>
 </context>
 <context>
@@ -1415,7 +1415,7 @@
     <message>
         <location filename="../skinnedvisualization.cpp" line="214"/>
         <source>Off</source>
-        <translation>使わない</translation>
+        <translation>オフ</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="221"/>
@@ -1435,7 +1435,7 @@
     <message>
         <location filename="../skinnedvisualization.cpp" line="226"/>
         <source>Vertical Lines</source>
-        <translation>線</translation>
+        <translation>縦線</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="227"/>
@@ -1445,12 +1445,12 @@
     <message>
         <location filename="../skinnedvisualization.cpp" line="228"/>
         <source>Bars</source>
-        <translation>点</translation>
+        <translation>バー</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="241"/>
         <source>Peaks</source>
-        <translation>峰</translation>
+        <translation>ピーク</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="245"/>
@@ -1470,12 +1470,12 @@
     <message>
         <location filename="../skinnedvisualization.cpp" line="250"/>
         <source>10 fps</source>
-        <translation>10 フレーム毎秒</translation>
+        <translation>10 fps</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="251"/>
         <source>5 fps</source>
-        <translation>5 フレーム毎秒</translation>
+        <translation>5 fps</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="258"/>
@@ -1498,7 +1498,7 @@
         <location filename="../skinnedvisualization.cpp" line="263"/>
         <location filename="../skinnedvisualization.cpp" line="277"/>
         <source>Medium</source>
-        <translation>平凡な音質</translation>
+        <translation>通常</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="264"/>
@@ -1525,7 +1525,7 @@
     <message>
         <location filename="../skinnedvisualization.cpp" line="286"/>
         <source>Transparent</source>
-        <translation>透過させる</translation>
+        <translation>透明度</translation>
     </message>
 </context>
 </TS>

@@ -39,12 +39,12 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="115"/>
         <source>Metadata encoding</source>
-        <translation>メタデータの文字符号化形式</translation>
+        <translation>メタデータのエンコーディング</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="121"/>
         <source>Automatic charset detection</source>
-        <translation>文字符号セットの自動検出</translation>
+        <translation>文字コードの自動検出</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="131"/>
@@ -54,27 +54,27 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Default encoding:</source>
-        <translation>文字符号化形式(初期設定値):</translation>
+        <translation>既定のエンコーディング:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="76"/>
         <source>User Agent:</source>
-        <translation type="unfinished"></translation>
+        <translation>ユーザーエージェント:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="34"/>
         <source>Default buffer size:</source>
-        <translation type="unfinished"></translation>
+        <translation>デフォルトのバッファサイズ:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="50"/>
         <source>This value is used if information about bitrate is &lt;b&gt;not&lt;/b&gt; available.</source>
-        <translation type="unfinished"></translation>
+        <translation>ビットレートに関する情報が &lt;b&gt;ではなく&lt;/b&gt; の場合、この値が使用されます。</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="53"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="69"/>
@@ -84,12 +84,12 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="90"/>
         <source>Buffer duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>バッファの持続時間:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="97"/>
         <source>This value is used if information about bitrate is available.</source>
-        <translation type="unfinished"></translation>
+        <translation>この値は、ビットレートに関する情報が利用可能な場合に使用されます。</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="100"/>

@@ -24,7 +24,7 @@
     <message>
         <location filename="../hotkeyfactory.cpp" line="32"/>
         <source>X11 Hotkey Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>X11 Hotkey Plugin</translation>
     </message>
     <message>
         <location filename="../hotkeyfactory.cpp" line="34"/>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../hotkeysettingsdialog.ui" line="51"/>
         <source>Action</source>
-        <translation>動作</translation>
+        <translation>操作</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.ui" line="56"/>
@@ -102,32 +102,32 @@
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="46"/>
         <source>Show/Hide</source>
-        <translation>隠す/表に出す</translation>
+        <translation>表示/非表示</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="47"/>
         <source>Volume +</source>
-        <translation>音量増加</translation>
+        <translation>音量 +</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="48"/>
         <source>Volume -</source>
-        <translation>音量減少</translation>
+        <translation>音量 -</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="49"/>
         <source>Forward 5 seconds</source>
-        <translation>5 秒すすめる</translation>
+        <translation>5 秒進める</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="50"/>
         <source>Rewind 5 seconds</source>
-        <translation>5 秒もどす</translation>
+        <translation>5 秒戻す</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="51"/>
         <source>Jump to track</source>
-        <translation>トラックを指定して移動</translation>
+        <translation>トラックへ移動</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="52"/>

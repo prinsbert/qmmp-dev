@@ -723,7 +723,7 @@
     <message>
         <location filename="../configdialog.cpp" line="424"/>
         <source>Priority</source>
-        <translation type="unfinished"></translation>
+        <translation>Priorytet</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="434"/>
@@ -1151,18 +1151,18 @@
     <message>
         <location filename="../lyricseditor.cpp" line="83"/>
         <source>Load Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Ładuj tekst piosenki</translation>
     </message>
     <message>
         <location filename="../lyricseditor.cpp" line="83"/>
         <location filename="../lyricseditor.cpp" line="104"/>
         <source>Text Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Pliki tekstowe</translation>
     </message>
     <message>
         <location filename="../lyricseditor.cpp" line="102"/>
         <source>Save Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapisz tekst piosenki</translation>
     </message>
 </context>
 <context>
@@ -1414,7 +1414,7 @@
         <location filename="../pluginitem.cpp" line="212"/>
         <location filename="../pluginitem.cpp" line="226"/>
         <source>Priority (a higher value means lower priority):</source>
-        <translation type="unfinished"></translation>
+        <translation>Priorytet (wyższa wartość oznacza niższy priorytet):</translation>
     </message>
 </context>
 <context>
@@ -1544,17 +1544,17 @@
     <message>
         <location filename="../forms/texteditor.ui" line="40"/>
         <source>Load</source>
-        <translation type="unfinished">Ładuj</translation>
+        <translation>Ładuj</translation>
     </message>
     <message>
         <location filename="../forms/texteditor.ui" line="47"/>
         <source>Delete</source>
-        <translation type="unfinished">Usuń</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <location filename="../forms/texteditor.ui" line="54"/>
         <source>Save as...</source>
-        <translation type="unfinished">Zapisz jako...</translation>
+        <translation>Zapisz jako...</translation>
     </message>
 </context>
 <context>

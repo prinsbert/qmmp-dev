@@ -39,7 +39,7 @@
     <message>
         <location filename="../udisksplugin.cpp" line="140"/>
         <source>Add Volume &quot;%1&quot;</source>
-        <translation>量目 &quot;%1&quot; を追加</translation>
+        <translation>音量 &quot;%1&quot; を追加</translation>
     </message>
 </context>
 <context>
@@ -62,12 +62,12 @@
     <message>
         <location filename="../udiskssettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation>プレイリストからトラックを自動除去</translation>
+        <translation>プレイリストからトラックを自動削除</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation>着脱可能なデバイスの検知</translation>
+        <translation>リムーバブルデバイスの検出</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="64"/>
@@ -77,7 +77,7 @@
     <message>
         <location filename="../udiskssettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation>プレイリストからファイルを自動除去</translation>
+        <translation>プレイリストからファイルを自動削除</translation>
     </message>
 </context>
 </TS>

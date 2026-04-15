@@ -39,7 +39,7 @@
     <message>
         <location filename="../qtmultimediasettingsdialog.cpp" line="36"/>
         <source>Default</source>
-        <translation>標準</translation>
+        <translation>既定</translation>
     </message>
 </context>
 </TS>
