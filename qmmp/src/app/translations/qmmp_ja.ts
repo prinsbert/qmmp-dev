@@ -11,27 +11,27 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="47"/>
         <source>Start playing current song</source>
-        <translation>今の曲から再生を開始</translation>
+        <translation>現在の曲から再生を開始</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="48"/>
         <source>Pause current song</source>
-        <translation>今の曲で一時停止</translation>
+        <translation>現在の曲で一時停止</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="49"/>
         <source>Pause if playing, play otherwise</source>
-        <translation>再生中なら一時停止、一時停止しておれば再生</translation>
+        <translation>再生中の場合は一時停止、そうでない場合は再生</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="50"/>
         <source>Stop current song</source>
-        <translation>今の曲で終止</translation>
+        <translation>現在の曲で停止</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="51"/>
         <source>Display Jump to Track dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>トラックへジャンプダイアログを表示</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="52"/>
@@ -61,12 +61,12 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="57"/>
         <source>Skip forward in playlist</source>
-        <translation>プレイリストでの次の曲にスキップ</translation>
+        <translation>プレイリストの次の曲にスキップ</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="58"/>
         <source>Skip backwards in playlist</source>
-        <translation>プレイリストで前の曲にスキップ</translation>
+        <translation>プレイリストの前の曲にスキップ</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="59"/>
@@ -81,12 +81,12 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="61"/>
         <source>Display Add File dialog</source>
-        <translation>「ファイル追加」ダイアログを表示</translation>
+        <translation>ファイル追加ダイアログを表示</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="62"/>
         <source>Display Add Directory dialog</source>
-        <translation>「ディレクトリ追加」ダイアログを表示</translation>
+        <translation>ディレクトリ追加ダイアログを表示</translation>
     </message>
 </context>
 <context>
@@ -119,12 +119,12 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="522"/>
         <source>Don&apos;t start the application</source>
-        <translation>アプリケーションを始動しない</translation>
+        <translation>アプリケーションを起動しない</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="523"/>
         <source>Print debugging messages</source>
-        <translation type="unfinished"></translation>
+        <translation>デバッグメッセージを出力</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="524"/>

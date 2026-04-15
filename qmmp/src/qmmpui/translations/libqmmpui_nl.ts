@@ -723,7 +723,7 @@
     <message>
         <location filename="../configdialog.cpp" line="424"/>
         <source>Priority</source>
-        <translation type="unfinished"></translation>
+        <translation>Prioriteit</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="434"/>
@@ -1151,18 +1151,18 @@
     <message>
         <location filename="../lyricseditor.cpp" line="83"/>
         <source>Load Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Songtekst laden</translation>
     </message>
     <message>
         <location filename="../lyricseditor.cpp" line="83"/>
         <location filename="../lyricseditor.cpp" line="104"/>
         <source>Text Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstbestanden</translation>
     </message>
     <message>
         <location filename="../lyricseditor.cpp" line="102"/>
         <source>Save Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Songtekst opslaan</translation>
     </message>
 </context>
 <context>
@@ -1300,7 +1300,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="49"/>
         <source>File Path</source>
-        <translation>Bestandspad</translation>
+        <translation>Bestandslocatie</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="44"/>
@@ -1414,7 +1414,7 @@
         <location filename="../pluginitem.cpp" line="212"/>
         <location filename="../pluginitem.cpp" line="226"/>
         <source>Priority (a higher value means lower priority):</source>
-        <translation type="unfinished"></translation>
+        <translation>Prioriteit (hogere waarde = lagere prioriteit):</translation>
     </message>
 </context>
 <context>
@@ -1544,17 +1544,17 @@
     <message>
         <location filename="../forms/texteditor.ui" line="40"/>
         <source>Load</source>
-        <translation type="unfinished">Laden</translation>
+        <translation>Laden</translation>
     </message>
     <message>
         <location filename="../forms/texteditor.ui" line="47"/>
         <source>Delete</source>
-        <translation type="unfinished">Verwijderen</translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <location filename="../forms/texteditor.ui" line="54"/>
         <source>Save as...</source>
-        <translation type="unfinished">Opslaan als...</translation>
+        <translation>Opslaan als...</translation>
     </message>
 </context>
 <context>
@@ -1568,12 +1568,12 @@
     <message>
         <location filename="../uihelper.cpp" line="209"/>
         <source>Select one or more files to open</source>
-        <translation>Kies één of meer te openen bestanden</translation>
+        <translation>Kies een of meer te openen bestanden</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="222"/>
         <source>Select one or more files to play</source>
-        <translation>Kies één of meer af te spelen bestanden</translation>
+        <translation>Kies een of meer af te spelen bestanden</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="230"/>

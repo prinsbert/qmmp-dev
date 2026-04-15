@@ -11,7 +11,7 @@
     <message>
         <location filename="../qmmpfiledialog.ui" line="198"/>
         <source>Up</source>
-        <translation>親階層へ</translation>
+        <translation>上へ</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="201"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../qmmpfiledialog.ui" line="147"/>
         <source>Files of type:</source>
-        <translation>この種のファイル:</translation>
+        <translation>ファイルの種類:</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="173"/>
@@ -107,7 +107,7 @@ Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <source>%1 already exists.
 Do you want to replace it?</source>
         <translation>%1 は既にあります。
-置き換えますか。</translation>
+置き換えますか?</translation>
     </message>
 </context>
 </TS>

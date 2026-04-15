@@ -59,7 +59,7 @@
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="57"/>
         <source>Reverberation</source>
-        <translation>反響効果 (リバーブ)</translation>
+        <translation>反響効果</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.cpp" line="39"/>

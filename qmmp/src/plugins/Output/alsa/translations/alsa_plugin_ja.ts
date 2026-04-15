@@ -36,7 +36,7 @@
     <message>
         <location filename="../alsasettingsdialog.ui" line="121"/>
         <source>Advanced Settings</source>
-        <translation>上級設定</translation>
+        <translation>高度設定</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="142"/>

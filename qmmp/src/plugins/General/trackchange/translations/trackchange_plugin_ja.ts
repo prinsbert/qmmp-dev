@@ -67,12 +67,12 @@
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="97"/>
         <source>Command to run on application startup:</source>
-        <translation type="unfinished"></translation>
+        <translation>アプリケーションの起動時に実行するコマンド:</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="104"/>
         <source>Command to run on application exit:</source>
-        <translation type="unfinished"></translation>
+        <translation>アプリケーション終了時に実行するコマンド:</translation>
     </message>
 </context>
 </TS>

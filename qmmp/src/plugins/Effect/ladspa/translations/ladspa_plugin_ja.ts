@@ -64,7 +64,7 @@
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="45"/>
         <source>Configure</source>
-        <translation>調整</translation>
+        <translation>設定</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="50"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="51"/>
         <source>Name</source>
-        <translation>局名</translation>
+        <translation>名前</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="135"/>

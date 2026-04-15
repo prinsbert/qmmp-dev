@@ -75,12 +75,12 @@
     <message>
         <location filename="../effectbs2bfactory.cpp" line="60"/>
         <source>Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="61"/>
         <source>Sebastian Pipping &amp;lt;sebastian@pipping.org&amp;gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Sebastian Pipping &amp;lt;sebastian@pipping.org&amp;gt;</translation>
     </message>
 </context>
 </TS>

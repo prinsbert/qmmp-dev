@@ -1544,17 +1544,17 @@
     <message>
         <location filename="../forms/texteditor.ui" line="40"/>
         <source>Load</source>
-        <translation type="unfinished">Carica</translation>
+        <translation>Carica</translation>
     </message>
     <message>
         <location filename="../forms/texteditor.ui" line="47"/>
         <source>Delete</source>
-        <translation type="unfinished">Elimina</translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <location filename="../forms/texteditor.ui" line="54"/>
         <source>Save as...</source>
-        <translation type="unfinished">Salva come...</translation>
+        <translation>Salva come...</translation>
     </message>
 </context>
 <context>

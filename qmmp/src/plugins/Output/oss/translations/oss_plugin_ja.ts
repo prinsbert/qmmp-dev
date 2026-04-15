@@ -26,7 +26,7 @@
     <message>
         <location filename="../osssettingsdialog.ui" line="102"/>
         <source>Advanced Settings</source>
-        <translation>上級設定</translation>
+        <translation>高度設定</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="123"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../osssettingsdialog.ui" line="236"/>
         <source>PCM over Master</source>
-        <translation type="unfinished"></translation>
+        <translation>PCM over Master</translation>
     </message>
 </context>
 <context>

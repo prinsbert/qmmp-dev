@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="110"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>制作: Илья Котов (Ilya Kotov) &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="111"/>
@@ -44,27 +44,27 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="52"/>
         <source>Number of patterns</source>
-        <translation>パターン個数</translation>
+        <translation>パターン数</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="53"/>
         <source>Number of tracks</source>
-        <translation>トラック個数</translation>
+        <translation>トラック数</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="54"/>
         <source>Tracks per pattern</source>
-        <translation>パターン毎のトラック個数</translation>
+        <translation>パターン毎のトラック数</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="55"/>
         <source>Number of instruments</source>
-        <translation>楽器個数</translation>
+        <translation>楽器数</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="56"/>
         <source>Number of samples</source>
-        <translation>サンプル個数</translation>
+        <translation>サンプル数</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="57"/>
@@ -127,7 +127,7 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="85"/>
         <source>Use vblank timing</source>
-        <translation>vblank (垂直帰線区間) 時を利用</translation>
+        <translation>vblankタイミングを使用</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="92"/>
@@ -142,12 +142,12 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="109"/>
         <source>Emulate sample loop bug</source>
-        <translation type="unfinished"></translation>
+        <translation>サンプルループのバグを再現</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="116"/>
         <source>Use Paula mixer in Amiga modules</source>
-        <translation type="unfinished"></translation>
+        <translation>AmigaモジュールでPaulaミキサーを使用</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="33"/>
@@ -167,17 +167,17 @@
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest Neighbor</source>
-        <translation type="unfinished"></translation>
+        <translation>Nearest Neighbor</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="38"/>
         <source>Cubic Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Cubic Spline</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="37"/>
         <source>Linear</source>
-        <translation>線形</translation>
+        <translation>Linear</translation>
     </message>
 </context>
 </TS>

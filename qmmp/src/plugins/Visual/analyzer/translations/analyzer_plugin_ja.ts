@@ -11,27 +11,27 @@
     <message>
         <location filename="../analyzer.cpp" line="310"/>
         <source>Peaks</source>
-        <translation>ピーク図</translation>
+        <translation>ピーク</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="313"/>
         <source>Refresh Rate</source>
-        <translation>再描画の頻度</translation>
+        <translation>リフレッシュレート</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="316"/>
         <source>50 fps</source>
-        <translation>50 フレーム毎秒</translation>
+        <translation>50 fps</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="317"/>
         <source>25 fps</source>
-        <translation>25 フレーム毎秒</translation>
+        <translation>25 fps</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="318"/>
         <source>10 fps</source>
-        <translation>10 フレーム毎秒</translation>
+        <translation>10 fps</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="319"/>
@@ -59,7 +59,7 @@
         <location filename="../analyzer.cpp" line="331"/>
         <location filename="../analyzer.cpp" line="345"/>
         <source>Medium</source>
-        <translation>適度</translation>
+        <translation>通常</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="332"/>
@@ -109,7 +109,7 @@
     <message>
         <location filename="../analyzersettingsdialog.ui" line="35"/>
         <source>General</source>
-        <translation>総合</translation>
+        <translation>全般</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="41"/>
@@ -124,7 +124,7 @@
     <message>
         <location filename="../analyzersettingsdialog.ui" line="107"/>
         <source>Peaks:</source>
-        <translation>峰:</translation>
+        <translation>ピーク:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="139"/>
@@ -139,12 +139,12 @@
     <message>
         <location filename="../analyzersettingsdialog.ui" line="203"/>
         <source>Analyzer #2:</source>
-        <translation>第二アナライザー:</translation>
+        <translation>アナライザー #2:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="248"/>
         <source>Analyzer #3:</source>
-        <translation>第三アナライザー:</translation>
+        <translation>アナライザー#3:</translation>
     </message>
 </context>
 <context>

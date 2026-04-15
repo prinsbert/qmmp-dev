@@ -16,7 +16,7 @@
     <message>
         <location filename="../twopanelfiledialog.ui" line="80"/>
         <source>Files of type:</source>
-        <translation>この種のファイル:</translation>
+        <translation>ファイルの種類:</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialog.ui" line="117"/>
@@ -40,12 +40,12 @@
         <location filename="../twopanelfiledialog.cpp" line="67"/>
         <location filename="../twopanelfiledialog.cpp" line="77"/>
         <source>Two-panel File Dialog</source>
-        <translation>二パネル式ファイルダイアログ</translation>
+        <translation>2パネルファイルダイアログ</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialog.cpp" line="76"/>
         <source>About Two-panel File Dialog</source>
-        <translation>二パネル式ファイルダイアログについて</translation>
+        <translation>2パネルファイルダイアログについて</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialog.cpp" line="78"/>
@@ -81,7 +81,7 @@
         <source>%1 already exists.
 Do you want to replace it?</source>
         <translation>%1 は既にあります。
-置き換えますか。</translation>
+置き換えますか?</translation>
     </message>
 </context>
 </TS>

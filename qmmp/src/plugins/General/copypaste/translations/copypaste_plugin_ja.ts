@@ -16,7 +16,7 @@
     <message>
         <location filename="../copypaste.cpp" line="43"/>
         <source>&amp;Copy</source>
-        <translation>写し取り(&amp;C)</translation>
+        <translation>コピー(&amp;C)</translation>
     </message>
     <message>
         <location filename="../copypaste.cpp" line="44"/>

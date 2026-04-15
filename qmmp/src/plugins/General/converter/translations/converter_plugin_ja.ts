@@ -7,28 +7,28 @@
         <location filename="../converter.cpp" line="125"/>
         <location filename="../converter.cpp" line="226"/>
         <source>Cancelled</source>
-        <translation>中止しました</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="140"/>
         <location filename="../converter.cpp" line="208"/>
         <source>Error</source>
-        <translation>事故発生</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="176"/>
         <source>Converting</source>
-        <translation>転換しています</translation>
+        <translation>変換</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="237"/>
         <source>Encoding</source>
-        <translation>符号化しています</translation>
+        <translation>エンコーディング</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="275"/>
         <source>Finished</source>
-        <translation>完了しました</translation>
+        <translation>完了</translation>
     </message>
 </context>
 <context>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../converterdialog.ui" line="14"/>
         <source>Audio Converter</source>
-        <translation>音響転換</translation>
+        <translation>音響変換</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="44"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../converterdialog.ui" line="49"/>
         <source>State</source>
-        <translation>状況</translation>
+        <translation>状態</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="63"/>
@@ -71,17 +71,17 @@
     <message>
         <location filename="../converterdialog.ui" line="124"/>
         <source>Convert</source>
-        <translation>転換</translation>
+        <translation>変換</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="131"/>
         <source>Stop</source>
-        <translation>終止</translation>
+        <translation>停止</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="116"/>
         <source>Choose a directory</source>
-        <translation>ディレクトリを選択</translation>
+        <translation>ディレクトリの選択</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="39"/>
@@ -98,12 +98,12 @@
         <location filename="../converterdialog.cpp" line="358"/>
         <location filename="../converterdialog.cpp" line="365"/>
         <source>Error</source>
-        <translation>事故発生</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="141"/>
         <source>Waiting</source>
-        <translation>待機中です</translation>
+        <translation>待機中</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="203"/>
@@ -136,22 +136,22 @@
     <message>
         <location filename="../converterfactory.cpp" line="28"/>
         <source>Converter Plugin</source>
-        <translation>ファイル形式転換プラグイン</translation>
+        <translation>ファイル形式変換プラグイン</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="49"/>
         <source>About Converter Plugin</source>
-        <translation>転換プラグインについて</translation>
+        <translation>変換プラグインについて</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="50"/>
         <source>Qmmp Converter Plugin</source>
-        <translation>QMMP 転換プラグイン</translation>
+        <translation>QMMP 変換プラグイン</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="51"/>
         <source>This plugin converts supported audio files to other file formats using external command-line encoders</source>
-        <translation>このプラグインは外部のコマンドライン方式のエンコーダーを利用してサポート対象形式間で音声ファイルを転換し別の音声ファイルを生成します。</translation>
+        <translation>このプラグインは外部のコマンドライン方式のエンコーダーを利用してサポート対象形式間で音声ファイルを変換し別の音声ファイルを生成します。</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="53"/>
@@ -164,12 +164,12 @@
     <message>
         <location filename="../converterhelper.cpp" line="33"/>
         <source>Convert</source>
-        <translation>転換</translation>
+        <translation>変換</translation>
     </message>
     <message>
         <location filename="../converterhelper.cpp" line="34"/>
         <source>Meta+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Meta+C</translation>
     </message>
 </context>
 <context>
@@ -182,12 +182,12 @@
     <message>
         <location filename="../converterpreseteditor.ui" line="29"/>
         <source>General</source>
-        <translation>総合</translation>
+        <translation>全般</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="35"/>
         <source>Name:</source>
-        <translation>名称:</translation>
+        <translation>名前:</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="45"/>

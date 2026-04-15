@@ -6,17 +6,17 @@
     <message>
         <location filename="../editstreamdialog.ui" line="14"/>
         <source>Edit Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>ストリームの編集</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="34"/>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="44"/>
         <source>Name:</source>
-        <translation>名称:</translation>
+        <translation>名前:</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="54"/>
@@ -26,12 +26,12 @@
     <message>
         <location filename="../editstreamdialog.ui" line="64"/>
         <source>Bitrate:</source>
-        <translation type="unfinished"></translation>
+        <translation>ビットレート:</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="74"/>
         <source>Type:</source>
-        <translation>分類:</translation>
+        <translation>種類:</translation>
     </message>
 </context>
 <context>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../streambrowser.cpp" line="33"/>
         <source>Add Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>ストリームの追加</translation>
     </message>
     <message>
         <location filename="../streambrowser.cpp" line="34"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../streamwindow.ui" line="47"/>
         <source>Favorites</source>
-        <translation>お気にいり</translation>
+        <translation>お気に入り</translation>
     </message>
     <message>
         <location filename="../streamwindow.ui" line="73"/>
@@ -111,7 +111,7 @@
         <location filename="../streamwindow.cpp" line="55"/>
         <location filename="../streamwindow.cpp" line="69"/>
         <source>Name</source>
-        <translation>局名</translation>
+        <translation>名前</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="55"/>
@@ -134,7 +134,7 @@
     <message>
         <location filename="../streamwindow.cpp" line="125"/>
         <source>&amp;Add to favorites</source>
-        <translation>お気にいりに追加(&amp;A)</translation>
+        <translation>お気に入りに追加(&amp;A)</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="128"/>
@@ -144,7 +144,7 @@
     <message>
         <location filename="../streamwindow.cpp" line="131"/>
         <source>&amp;Create</source>
-        <translation>生成(&amp;C)</translation>
+        <translation>作成(&amp;C)</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="132"/>
@@ -166,7 +166,7 @@
         <location filename="../streamwindow.cpp" line="155"/>
         <location filename="../streamwindow.cpp" line="156"/>
         <source>Error</source>
-        <translation>事故</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="175"/>
@@ -176,7 +176,7 @@
     <message>
         <location filename="../streamwindow.cpp" line="278"/>
         <source>Edit Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>ストリームの編集</translation>
     </message>
 </context>
 </TS>

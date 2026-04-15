@@ -21,7 +21,7 @@
     <message>
         <location filename="../statusoption.cpp" line="94"/>
         <source>Syntax:</source>
-        <translation>構文規則:</translation>
+        <translation>構文:</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="95"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../statusoption.cpp" line="98"/>
         <source>%t - title</source>
-        <translation>%t - 題名</translation>
+        <translation>%t - タイトル</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="99"/>
@@ -96,37 +96,37 @@
     <message>
         <location filename="../statusoption.cpp" line="109"/>
         <source>%{bitrate} - bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>%{bitrate} - ビットレート</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="110"/>
         <source>%{samplerate} - sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>%{samplerate} - サンプルレート</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="111"/>
         <source>%{channels} - number of channels</source>
-        <translation type="unfinished"></translation>
+        <translation>%{channels} - チャンネル数</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="112"/>
         <source>%{samplesize} - bits per sample</source>
-        <translation type="unfinished"></translation>
+        <translation>%{samplesize} - 1サンプルあたりのビット数</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="113"/>
         <source>%{format} - format name</source>
-        <translation type="unfinished"></translation>
+        <translation>%{format} - 形式名</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="114"/>
         <source>%{decoder} - decoder name</source>
-        <translation type="unfinished"></translation>
+        <translation>%{decoder} - デコーダー名</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="115"/>
         <source>%{filesize} - file size</source>
-        <translation type="unfinished"></translation>
+        <translation>%{filesize} - ファイルサイズ</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="116"/>

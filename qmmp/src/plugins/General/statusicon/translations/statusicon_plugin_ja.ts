@@ -36,7 +36,7 @@
     <message>
         <location filename="../statusicon.cpp" line="119"/>
         <source>Stopped</source>
-        <translation>終演</translation>
+        <translation>停止</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="144"/>
@@ -98,7 +98,7 @@
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="79"/>
         <source>Tooltip</source>
-        <translation>ツールティップ</translation>
+        <translation>ツールチップ</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="91"/>
@@ -133,7 +133,7 @@
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="225"/>
         <source>Edit template</source>
-        <translation>ひな型を編集</translation>
+        <translation>テンプレートの編集</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="250"/>
@@ -143,7 +143,7 @@
     <message>
         <location filename="../statusiconsettingsdialog.cpp" line="85"/>
         <source>Tooltip Template</source>
-        <translation>ツールティップのひな形</translation>
+        <translation>ツールチップのテンプレート</translation>
     </message>
 </context>
 </TS>

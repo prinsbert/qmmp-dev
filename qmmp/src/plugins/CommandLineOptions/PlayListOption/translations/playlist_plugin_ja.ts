@@ -31,22 +31,22 @@
     <message>
         <location filename="../playlistoption.cpp" line="38"/>
         <source>Activate next playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>次のプレイリストを再生</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="39"/>
         <source>Activate previous playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>前のプレイリストを再生</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="40"/>
         <source>Toggle playlist repeat</source>
-        <translation>プレイリスト繰り返しの有無を切り替え</translation>
+        <translation>プレイリスト繰り返しの切り替え</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="41"/>
         <source>Toggle playlist shuffle</source>
-        <translation>プレイリストのシャッフルの有無を切り替え</translation>
+        <translation>プレイリストのシャッフルの切り替え</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="42"/>
@@ -58,17 +58,17 @@
         <location filename="../playlistoption.cpp" line="134"/>
         <location filename="../playlistoption.cpp" line="173"/>
         <source>Invalid playlist ID</source>
-        <translation>プレイリストの ID が不正</translation>
+        <translation>不正なプレイリスト ID</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="128"/>
         <source>Invalid number of arguments</source>
-        <translation>引数の項目数が不正</translation>
+        <translation>不正な引数の項目数</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="138"/>
         <source>Invalid track ID</source>
-        <translation>トラックの ID が不正</translation>
+        <translation>不正なトラック ID</translation>
     </message>
 </context>
 </TS>

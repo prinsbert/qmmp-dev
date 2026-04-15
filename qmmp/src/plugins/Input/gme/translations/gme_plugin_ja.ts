@@ -54,7 +54,7 @@
     <message>
         <location filename="../gmesettingsdialog.ui" line="57"/>
         <source>Enable fadeout</source>
-        <translation>フェイドアウトさせる</translation>
+        <translation>フェイドアウト有効</translation>
     </message>
 </context>
 </TS>

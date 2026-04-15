@@ -39,7 +39,7 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="51"/>
         <source>Font:</source>
-        <translation>書体:</translation>
+        <translation>フォント:</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="71"/>
@@ -65,7 +65,7 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="251"/>
         <source>Edit template</source>
-        <translation>ひな型を編集</translation>
+        <translation>テンプレートの編集</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="299"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="368"/>
         <source>Song change notification</source>
-        <translation>曲名通知</translation>
+        <translation>曲変更の通知</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="375"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="378"/>
         <source>Disable for full screen windows</source>
-        <translation>全画面表示中は抑止</translation>
+        <translation>全画面表示中は無効</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="388"/>
@@ -115,7 +115,7 @@
     <message>
         <location filename="../notifiersettingsdialog.cpp" line="115"/>
         <source>Notification Template</source>
-        <translation>通知のひな形</translation>
+        <translation>通知のテンプレート</translation>
     </message>
 </context>
 <context>

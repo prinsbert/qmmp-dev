@@ -54,12 +54,12 @@
     <message>
         <location filename="../coverwidget.cpp" line="44"/>
         <source>Size</source>
-        <translation>大きさ</translation>
+        <translation>サイズ</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="46"/>
         <source>Actual Size</source>
-        <translation>実際の大きさ</translation>
+        <translation>実際のサイズ</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="47"/>

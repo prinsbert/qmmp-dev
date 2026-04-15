@@ -49,22 +49,22 @@
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="61"/>
         <source>Windows Media Audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows Media Audio</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="68"/>
         <source>Monkey&apos;s Audio (APE)</source>
-        <translation type="unfinished"></translation>
+        <translation>Monkey&apos;s Audio (APE)</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="75"/>
         <source>True Audio</source>
-        <translation type="unfinished"></translation>
+        <translation>True Audio</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="82"/>
         <source>ADTS AAC</source>
-        <translation type="unfinished"></translation>
+        <translation>ADTS AAC</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="89"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="96"/>
         <source>MPEG-4 AAC/ALAC</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG-4 AAC/ALAC</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="103"/>
@@ -89,37 +89,37 @@
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="117"/>
         <source>AC3/EAC</source>
-        <translation type="unfinished"></translation>
+        <translation>AC3/EAC</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="124"/>
         <source>DTS/DTS-Core</source>
-        <translation type="unfinished"></translation>
+        <translation>DTS/DTS-Core</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="131"/>
         <source>Matroska Audio (Dolby TrueHD Lossless)</source>
-        <translation type="unfinished"></translation>
+        <translation>Matroska Audio (Dolby TrueHD Lossless)</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="138"/>
         <source>WebM Vorbis/Opus</source>
-        <translation type="unfinished"></translation>
+        <translation>WebM Vorbis/Opus</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="145"/>
         <source>VQF</source>
-        <translation type="unfinished"></translation>
+        <translation>VQF</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="152"/>
         <source>Tom&apos;s lossless Audio Kompressor (TAK)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tom&apos;s lossless Audio Kompressor (TAK)</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="159"/>
         <source>Direct Stream Digital (DSD)</source>
-        <translation type="unfinished"></translation>
+        <translation>Direct Stream Digital (DSD)</translation>
     </message>
 </context>
 </TS>

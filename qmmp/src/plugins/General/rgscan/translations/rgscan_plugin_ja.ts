@@ -11,7 +11,7 @@
     <message>
         <location filename="../rgscandialog.ui" line="84"/>
         <source>Write track gain/peak</source>
-        <translation>トラック利得とトラックピーク値を書き込む</translation>
+        <translation>トラックゲイン/ピークを書き込む</translation>
     </message>
     <message>
         <location filename="../rgscandialog.ui" line="42"/>
@@ -26,12 +26,12 @@
     <message>
         <location filename="../rgscandialog.ui" line="52"/>
         <source>Track Gain</source>
-        <translation>トラック毎の利得</translation>
+        <translation>トラックゲイン</translation>
     </message>
     <message>
         <location filename="../rgscandialog.ui" line="57"/>
         <source>Album Gain</source>
-        <translation>アルバム全体利得</translation>
+        <translation>アルバムゲイン</translation>
     </message>
     <message>
         <location filename="../rgscandialog.ui" line="62"/>
@@ -61,7 +61,7 @@
     <message>
         <location filename="../rgscandialog.ui" line="91"/>
         <source>Write album gain/peak</source>
-        <translation>アルバム全体利得とアルバムピーク値を書き込む</translation>
+        <translation>アルバムゲイン/ピークを書き込む</translation>
     </message>
     <message>
         <location filename="../rgscandialog.cpp" line="127"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../rgscanhelper.cpp" line="33"/>
         <source>Meta+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Meta+R</translation>
     </message>
 </context>
 </TS>
