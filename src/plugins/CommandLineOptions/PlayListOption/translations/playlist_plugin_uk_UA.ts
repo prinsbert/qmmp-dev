@@ -20,53 +20,94 @@
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="36"/>
-        <source>Play track &lt;track&gt; in playlist &lt;id&gt;</source>
-        <translation>Відтворити доріжку &lt;track&gt; в переліку &lt;id&gt;</translation>
+        <source>Select playlist</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="37"/>
+        <source>Create playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="38"/>
+        <source>Play track in the specified playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="39"/>
         <source>Clear playlist</source>
         <translation>Очистити грайлист</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="38"/>
+        <location filename="../playlistoption.cpp" line="40"/>
         <source>Activate next playlist</source>
         <translation>Активувати наступний перелік</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="39"/>
+        <location filename="../playlistoption.cpp" line="41"/>
         <source>Activate previous playlist</source>
         <translation>Активувати попередній перелік</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="40"/>
+        <location filename="../playlistoption.cpp" line="42"/>
         <source>Toggle playlist repeat</source>
         <translation>Увімкнути/вимкнути повторення грайлиста</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="41"/>
+        <location filename="../playlistoption.cpp" line="43"/>
         <source>Toggle playlist shuffle</source>
         <translation>Увімкнути/вимкнути режим випадкового відтворення</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="42"/>
+        <location filename="../playlistoption.cpp" line="44"/>
         <source>Show playlist options</source>
         <translation>Показати налаштування грайлиста</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="112"/>
-        <location filename="../playlistoption.cpp" line="134"/>
-        <location filename="../playlistoption.cpp" line="173"/>
+        <location filename="../playlistoption.cpp" line="100"/>
+        <source>Arguments:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="101"/>
+        <source>%1 - index or name of the playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="102"/>
+        <source>%1 - index of the track</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="103"/>
+        <source>%1 - name of the new playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="124"/>
+        <location filename="../playlistoption.cpp" line="141"/>
+        <location filename="../playlistoption.cpp" line="166"/>
+        <location filename="../playlistoption.cpp" line="205"/>
         <source>Invalid playlist ID</source>
         <translation>Невірний номер грайлиста</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="128"/>
+        <location filename="../playlistoption.cpp" line="148"/>
+        <source>Invalid playlist name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="153"/>
+        <source>Playlist with name &quot;%1&quot; already exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="162"/>
         <source>Invalid number of arguments</source>
         <translation>Невірне число аргументів</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="138"/>
+        <location filename="../playlistoption.cpp" line="171"/>
         <source>Invalid track ID</source>
         <translation>Невірний номер доріжки</translation>
     </message>
