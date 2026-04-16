@@ -21,6 +21,7 @@
 #ifndef PLAYLISTOPTION_H
 #define PLAYLISTOPTION_H
 
+#include "qmmpui/playlistmodel.h"
 #include <QString>
 #include <QObject>
 #include <QStringList>
@@ -47,6 +48,8 @@ private:
         PL_HELP = 0,
         PL_LIST,
         PL_DUMP,
+        PL_SELECT,
+        PL_CREATE,
         PL_PLAY,
         PL_NEXT,
         PL_PREV,
@@ -57,6 +60,7 @@ private:
     };
 
     QString boolToText(bool enabled);
+    PlayListModel *findPlayList(const QString &id) const;
 };
 
 #endif
