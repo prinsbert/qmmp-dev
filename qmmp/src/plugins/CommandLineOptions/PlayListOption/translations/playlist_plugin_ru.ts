@@ -21,17 +21,17 @@
     <message>
         <location filename="../playlistoption.cpp" line="36"/>
         <source>Select playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрать список воспроизведения</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="37"/>
         <source>Create playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать список воспроизведения</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="38"/>
         <source>Play track in the specified playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Воспроизвести трек в указанном списке</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="39"/>
@@ -66,22 +66,22 @@
     <message>
         <location filename="../playlistoption.cpp" line="100"/>
         <source>Arguments:</source>
-        <translation type="unfinished"></translation>
+        <translation>Аргументы:</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="101"/>
         <source>%1 - index or name of the playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - номер или имя списка воспроизведения</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="102"/>
         <source>%1 - index of the track</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - номер трека</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="103"/>
         <source>%1 - name of the new playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - имя нового списка воспроизведения</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="124"/>
@@ -94,12 +94,12 @@
     <message>
         <location filename="../playlistoption.cpp" line="148"/>
         <source>Invalid playlist name</source>
-        <translation type="unfinished"></translation>
+        <translation>Неправильное имя списка воспроизведения</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="153"/>
         <source>Playlist with name &quot;%1&quot; already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Список воспроизведения с именем &quot;%1&quot; уже существует</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="162"/>
