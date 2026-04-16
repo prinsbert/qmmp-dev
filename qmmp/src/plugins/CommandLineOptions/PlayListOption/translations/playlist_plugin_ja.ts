@@ -20,53 +20,94 @@
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="36"/>
-        <source>Play track &lt;track&gt; in playlist &lt;id&gt;</source>
-        <translation>&lt;id&gt; 番プレイリストより &lt;track&gt; 番目を再生</translation>
+        <source>Select playlist</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="37"/>
+        <source>Create playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="38"/>
+        <source>Play track in the specified playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="39"/>
         <source>Clear playlist</source>
         <translation>プレイリストを消去</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="38"/>
+        <location filename="../playlistoption.cpp" line="40"/>
         <source>Activate next playlist</source>
         <translation>次のプレイリストを再生</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="39"/>
+        <location filename="../playlistoption.cpp" line="41"/>
         <source>Activate previous playlist</source>
         <translation>前のプレイリストを再生</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="40"/>
+        <location filename="../playlistoption.cpp" line="42"/>
         <source>Toggle playlist repeat</source>
         <translation>プレイリスト繰り返しの切り替え</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="41"/>
+        <location filename="../playlistoption.cpp" line="43"/>
         <source>Toggle playlist shuffle</source>
         <translation>プレイリストのシャッフルの切り替え</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="42"/>
+        <location filename="../playlistoption.cpp" line="44"/>
         <source>Show playlist options</source>
         <translation>プレイリストのオプションを表示</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="112"/>
-        <location filename="../playlistoption.cpp" line="134"/>
-        <location filename="../playlistoption.cpp" line="173"/>
+        <location filename="../playlistoption.cpp" line="100"/>
+        <source>Arguments:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="101"/>
+        <source>%1 - index or name of the playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="102"/>
+        <source>%1 - index of the track</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="103"/>
+        <source>%1 - name of the new playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="124"/>
+        <location filename="../playlistoption.cpp" line="141"/>
+        <location filename="../playlistoption.cpp" line="166"/>
+        <location filename="../playlistoption.cpp" line="205"/>
         <source>Invalid playlist ID</source>
         <translation>不正なプレイリスト ID</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="128"/>
+        <location filename="../playlistoption.cpp" line="148"/>
+        <source>Invalid playlist name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="153"/>
+        <source>Playlist with name &quot;%1&quot; already exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../playlistoption.cpp" line="162"/>
         <source>Invalid number of arguments</source>
         <translation>不正な引数の項目数</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="138"/>
+        <location filename="../playlistoption.cpp" line="171"/>
         <source>Invalid track ID</source>
         <translation>不正なトラック ID</translation>
     </message>
