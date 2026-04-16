@@ -32,8 +32,10 @@ void PlayListOption::registerOprions()
 {
     registerOption(PL_HELP,  u"--pl-help"_s, tr("Show playlist manipulation commands"));
     registerOption(PL_LIST,  u"--pl-list"_s, tr("List all available playlists"));
-    registerOption(PL_DUMP,  u"--pl-dump"_s, tr("Show playlist content"), QStringList{ u"id"_s });
-    registerOption(PL_PLAY,  u"--pl-play"_s, tr("Play track <track> in playlist <id>"), QStringList{ u"id"_s, u"track"_s});
+    registerOption(PL_DUMP,  u"--pl-dump"_s, tr("Show playlist content"), { u"id"_s });
+    registerOption(PL_SELECT, u"--pl-select"_s, tr("Select playlist"), { u"id"_s });
+    registerOption(PL_CREATE, u"--pl-create"_s, tr("Create playlist"), { u"name"_s });
+    registerOption(PL_PLAY,  u"--pl-play"_s, tr("Play track in the specified playlist"), { u"id"_s, u"track"_s });
     registerOption(PL_CLEAR, u"--pl-clear"_s, tr("Clear playlist"), { u"id"_s });
     registerOption(PL_NEXT,  u"--pl-next"_s, tr("Activate next playlist"));
     registerOption(PL_PREV,  u"--pl-prev"_s, tr("Activate previous playlist"));
@@ -44,6 +46,8 @@ void PlayListOption::registerOprions()
     setOptionFlags(PL_HELP, NoStart);
     setOptionFlags(PL_LIST, HiddenFromHelp);
     setOptionFlags(PL_DUMP, HiddenFromHelp);
+    setOptionFlags(PL_SELECT, HiddenFromHelp);
+    setOptionFlags(PL_CREATE, HiddenFromHelp);
     setOptionFlags(PL_PLAY, HiddenFromHelp);
     setOptionFlags(PL_CLEAR, HiddenFromHelp);
     setOptionFlags(PL_NEXT, HiddenFromHelp);
@@ -67,9 +71,9 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
 {
     Q_UNUSED(cwd);
     QString out;
-    PlayListManager *pl_manager = PlayListManager::instance();
+    PlayListManager *plManager = PlayListManager::instance();
     MediaPlayer *player = MediaPlayer::instance();
-    QmmpUiSettings *ui_settings = (id == PL_HELP) ? nullptr : QmmpUiSettings::instance();
+    QmmpUiSettings *uiSettings = (id == PL_HELP) ? nullptr : QmmpUiSettings::instance();
 
     switch (id)
     {
@@ -78,6 +82,8 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
         const QStringList list = {
             helpString(PL_LIST),
             helpString(PL_DUMP),
+            helpString(PL_SELECT),
+            helpString(PL_CREATE),
             helpString(PL_PLAY),
             helpString(PL_CLEAR),
             helpString(PL_NEXT),
@@ -89,15 +95,21 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
 
         for(const QString &line : std::as_const(list))
             out += CommandLineManager::formatHelpString(line) + QChar::LineFeed;
+
+        out += QStringLiteral("-----------\n");
+        out += tr("Arguments:") + QChar::LineFeed;
+        out += tr("%1 - index or name of the playlist").arg(u"<id>"_s) + QChar::LineFeed;
+        out += tr("%1 - index of the track").arg(u"<track>"_s) + QChar::LineFeed;
+        out += tr("%1 - name of the new playlist").arg(u"<name>"_s) + QChar::LineFeed;
     }
         break;
     case PL_LIST:
     {
-        QStringList names = pl_manager->playListNames();
+        QStringList names = plManager->playListNames();
         int fieldWidth = QString::number(names.count()).size();
         for(int i = 0; i <  names.count(); ++i)
         {
-            if(i == pl_manager->currentPlayListIndex())
+            if(i == plManager->currentPlayListIndex())
                 out += QStringLiteral("> %1. %2\n").arg(i + 1, fieldWidth).arg(names.at(i));
             else
                 out += QStringLiteral("  %1. %2\n").arg(i + 1, fieldWidth).arg(names.at(i));
@@ -107,8 +119,7 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
     case PL_DUMP:
     {
         MetaDataFormatter formatter(u"%p%if(%p&%t, - ,)%t%if(%p,,%if(%t,,%f))%if(%l, - %l,)"_s);
-        int pl_id = args.isEmpty() ? pl_manager->currentPlayListIndex() : args.constFirst().toInt() - 1;
-        PlayListModel *model = pl_manager->playListAt(pl_id);
+        PlayListModel *model = findPlayList(args.isEmpty() ? QString() : args.at(0));
         if(!model)
             return tr("Invalid playlist ID");
 
@@ -123,23 +134,44 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
         }
     }
         break;
+    case PL_SELECT:
+    {
+        PlayListModel *model = findPlayList(args.isEmpty() ? QString() : args.at(0));
+        if(!model)
+            return tr("Invalid playlist ID");
+        plManager->selectPlayList(model);
+        break;
+    }
+    case PL_CREATE:
+    {
+        if(args.isEmpty() || args.constFirst().isEmpty())
+            return tr("Invalid playlist name");
+
+        QString name = args.constFirst();
+
+        if(plManager->playListNames().contains(name))
+            return tr("Playlist with name \"%1\" already exists").arg(name);
+
+        PlayListModel *model = plManager->createPlayList(name);
+        plManager->selectPlayList(model);
+        break;
+    }
     case PL_PLAY:
     {
         if(args.count() > 2 || args.isEmpty())
             return tr("Invalid number of arguments");
 
-        int pl_id = (args.count() == 1) ? pl_manager->currentPlayListIndex() : args.constFirst().toInt() - 1;
-        int track_number = (args.count() == 1) ? args.constFirst().toInt() - 1 : args.at(1).toInt() - 1;
-        PlayListModel *model = pl_manager->playListAt(pl_id);
+        PlayListModel *model = findPlayList(args.size() > 1 ? args.constFirst() : QString());
         if(!model)
             return tr("Invalid playlist ID");
 
-        PlayListTrack *track = model->findTrack(track_number);
+        int trackIndex = (args.count() == 1) ? args.constFirst().toInt() - 1 : args.at(1).toInt() - 1;
+        PlayListTrack *track = model->findTrack(trackIndex);
         if(!track)
             return tr("Invalid track ID");
         player->stop();
-        pl_manager->activatePlayList(model);
-        pl_manager->selectPlayList(model);
+        plManager->activatePlayList(model);
+        plManager->selectPlayList(model);
         model->setCurrent(track);
         player->play();
     }
@@ -148,9 +180,9 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
     {
         bool playing = SoundCore::instance()->state() == Qmmp::Playing;
         player->stop();
-        pl_manager->selectPlayList(pl_manager->currentPlayList());
-        pl_manager->selectNextPlayList();
-        pl_manager->activateSelectedPlayList();
+        plManager->selectPlayList(plManager->currentPlayList());
+        plManager->selectNextPlayList();
+        plManager->activateSelectedPlayList();
         if(playing)
             player->play();
     }
@@ -159,33 +191,32 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
     {
         bool playing = SoundCore::instance()->state() == Qmmp::Playing;
         player->stop();
-        pl_manager->selectPlayList(pl_manager->currentPlayList());
-        pl_manager->selectPreviousPlayList();
-        pl_manager->activateSelectedPlayList();
+        plManager->selectPlayList(plManager->currentPlayList());
+        plManager->selectPreviousPlayList();
+        plManager->activateSelectedPlayList();
         if(playing)
             player->play();
     }
         break;
     case PL_CLEAR:
     {
-        int pl_id= args.isEmpty() ? pl_manager->currentPlayListIndex() : args.constFirst().toInt() - 1;
-        PlayListModel *model = pl_manager->playListAt(pl_id);
+        PlayListModel *model = findPlayList(args.isEmpty() ? QString() : args.at(0));
         if(!model)
             return tr("Invalid playlist ID");
         model->clear();
     }
         break;
     case PL_REPEATE_TOGGLE:
-        ui_settings->setRepeatableList(!ui_settings->isRepeatableList());
+        uiSettings->setRepeatableList(!uiSettings->isRepeatableList());
         break;
     case PL_SHUFFLE_TOGGLE:
-        ui_settings->setShuffle(!ui_settings->isShuffle());
+        uiSettings->setShuffle(!uiSettings->isShuffle());
         break;
     case PL_STATE:
-        out += u"SHUFFLE:             "_s + boolToText(ui_settings->isShuffle()) + QChar::LineFeed;
-        out += u"REPEAT PLAYLIST:     "_s + boolToText(ui_settings->isRepeatableList()) + QChar::LineFeed;
-        out += u"REPEAT TRACK:        "_s + boolToText(ui_settings->isRepeatableTrack()) + QChar::LineFeed;
-        out += u"NO PLAYLIST ADVANCE: "_s + boolToText(ui_settings->isNoPlayListAdvance());
+        out += u"SHUFFLE:             "_s + boolToText(uiSettings->isShuffle()) + QChar::LineFeed;
+        out += u"REPEAT PLAYLIST:     "_s + boolToText(uiSettings->isRepeatableList()) + QChar::LineFeed;
+        out += u"REPEAT TRACK:        "_s + boolToText(uiSettings->isRepeatableTrack()) + QChar::LineFeed;
+        out += u"NO PLAYLIST ADVANCE: "_s + boolToText(uiSettings->isNoPlayListAdvance());
         break;
     default:
         ;
@@ -196,4 +227,20 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
 QString PlayListOption::boolToText(bool enabled)
 {
     return enabled ? u"[+]"_s : u"[-]"_s;
+}
+
+PlayListModel *PlayListOption::findPlayList(const QString &id) const
+{
+    PlayListManager *plManager = PlayListManager::instance();
+
+    if(id.isEmpty())
+        return plManager->currentPlayList();
+
+    int index = -1;
+    bool ok;
+    index = id.toInt(&ok) - 1;
+    if(!ok)
+        index = plManager->playListNames().indexOf(id);
+
+    return plManager->playListAt(index);
 }
