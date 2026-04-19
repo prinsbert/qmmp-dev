@@ -138,13 +138,15 @@ void QSUiSettings::on_customizeToolBarButton_clicked()
 
 void QSUiSettings::on_resetFontsButton_clicked()
 {
-    QSettings settings;
-    settings.remove(u"Simple/pl_font"_s);
-    settings.remove(u"Simple/pl_group_font"_s);
-    settings.remove(u"Simple/pl_extra_row_font"_s);
-    settings.remove(u"Simple/pl_tabs_font"_s);
-    settings.remove(u"Simple/pl_header_font"_s);
-    loadFonts();
+    QFont extraRowDefaultFont = qApp->font("QAbstractItemView");
+    extraRowDefaultFont.setPointSize(extraRowDefaultFont.pointSize() - 1);
+    extraRowDefaultFont.setStyle(QFont::StyleItalic);
+
+    setFont(m_ui->plFontLabel, qApp->font("QAbstractItemView").toString());
+    setFont(m_ui->groupFontLabel, qApp->font("QAbstractItemView").toString());
+    setFont(m_ui->extraRowFontLabel, extraRowDefaultFont.toString());
+    setFont(m_ui->tabsFontLabel, qApp->font("QTabWidget").toString());
+    setFont(m_ui->columnFontLabel,qApp->font("QAbstractItemView").toString());
 }
 
 void QSUiSettings::on_resetColorsButton_clicked()

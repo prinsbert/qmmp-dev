@@ -75,13 +75,15 @@ void SkinnedSettings::on_listWidget_itemClicked(QListWidgetItem *item)
 
 void SkinnedSettings::on_resetFontsButton_clicked()
 {
-    QSettings settings;
-    settings.remove("Skinned/mw_font"_L1);
-    settings.remove("Skinned/pl_font"_L1);
-    settings.remove("Skinned/pl_group_font"_L1);
-    settings.remove("Skinned/pl_extra_row_font"_L1);
-    settings.remove("Skinned/pl_header_font"_L1);
-    loadFonts();
+    QFont extraRowDefaultFont = qApp->font();
+    extraRowDefaultFont.setPointSize(extraRowDefaultFont.pointSize() - 1);
+    extraRowDefaultFont.setStyle(QFont::StyleItalic);
+
+    setFont(m_ui->mainFontLabel, qApp->font().toString());
+    setFont(m_ui->plFontLabel, qApp->font().toString());
+    setFont(m_ui->groupFontLabel, qApp->font().toString());
+    setFont(m_ui->extraRowFontLabel, extraRowDefaultFont.toString());
+    setFont(m_ui->headerFontLabel, qApp->font().toString());
 }
 
 void SkinnedSettings::on_skinInstallButton_clicked()
