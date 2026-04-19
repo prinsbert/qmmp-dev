@@ -30,6 +30,8 @@ set(libqsui_SRCS
     qsuishortcutitem.cpp
     qsuitoolbareditor.cpp
     qsuistatusbareditor.cpp
+    qsuicolorscheme.cpp
+    qsuicolorschemewidget.cpp
     volumeslider.cpp
     forms/qsuimainwindow.ui
     forms/qsuipopupsettings.ui

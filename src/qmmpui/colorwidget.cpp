@@ -73,7 +73,17 @@ void ColorWidget::setColor(const QString &name)
     setStyleSheet(QStringLiteral("QFrame { background: %1 }").arg(d->colorName));
 }
 
+void ColorWidget::setColor(const QColor &color)
+{
+    setColor(color.name((d_ptr->options & QColorDialog::ShowAlphaChannel) ? QColor::HexArgb : QColor::HexRgb));
+}
+
 QString ColorWidget::colorName() const
 {
     return d_ptr->colorName;
+}
+
+QColor ColorWidget::color() const
+{
+    return QColor::fromString(d_ptr->colorName);
 }

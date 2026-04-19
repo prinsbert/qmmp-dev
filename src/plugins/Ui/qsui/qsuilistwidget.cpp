@@ -70,7 +70,6 @@ QSUiListWidget::QSUiListWidget(PlayListModel *model, QWidget *parent) : QWidget(
         scroll(value.toInt());
     });
     SET_ACTION(QSUiActionManager::PL_SHOW_HEADER, this, &QSUiListWidget::readSettings);
-
 }
 
 QSUiListWidget::~QSUiListWidget()
