@@ -31,6 +31,7 @@
 #include "qsuishortcutitem.h"
 #include "qsuipopupsettings.h"
 #include "qsuitoolbareditor.h"
+#include "qsuicolorschemewidget.h"
 #include "ui_qsuisettings.h"
 #include "qsuisettings.h"
 
@@ -44,12 +45,17 @@ QSUiSettings::QSUiSettings(QWidget *parent) : QWidget(parent), m_ui(new Ui::QSUI
     m_ui->toolBarIconSizeComboBox->addItem(tr("32x32"), 32);
     m_ui->toolBarIconSizeComboBox->addItem(tr("48x48"), 48);
     m_ui->toolBarIconSizeComboBox->addItem(tr("64x64"), 64);
+    //colors
+    m_ui->colorModeComboBox->addItem(tr("Light"), u"light"_s);
+    m_ui->colorModeComboBox->addItem(tr("Dark"), u"dark"_s);
+    m_ui->colorModeComboBox->addItem(tr("Automatic"), u"auto"_s);
+    m_ui->lightColorSchemeWidget->loadDefaults(false);
+    m_ui->darkColorSchemeWidget->loadDefaults(true);
     //other settings
     m_ui->tabPositionComboBox->addItem(tr("Top"), QTabBar::RoundedNorth);
     m_ui->tabPositionComboBox->addItem(tr("Bottom"), QTabBar::RoundedSouth);
     m_ui->tabPositionComboBox->addItem(tr("Left"), QTabBar::RoundedWest);
     m_ui->tabPositionComboBox->addItem(tr("Right"),  QTabBar::RoundedEast);
-    m_ui->wfsbProgressBarColor->setOptions(QColorDialog::ShowAlphaChannel);
     //connections
     connect(m_ui->plFontButton, &QToolButton::clicked, this, [this] { selectFont(m_ui->plFontLabel); });
     connect(m_ui->groupFontButton, &QToolButton::clicked, this, [this] { selectFont(m_ui->groupFontLabel); });
@@ -143,11 +149,8 @@ void QSUiSettings::on_resetFontsButton_clicked()
 
 void QSUiSettings::on_resetColorsButton_clicked()
 {
-    m_ui->vColor1->setColor(u"#BECBFF"_s);
-    m_ui->vColor2->setColor(u"#BECBFF"_s);
-    m_ui->vColor3->setColor(u"#BECBFF"_s);
-    m_ui->peaksColor->setColor(u"#DDDDDD"_s);
-    m_ui->bgColor->setColor(u"Black"_s);
+    m_ui->lightColorSchemeWidget->loadDefaults(false);
+    m_ui->darkColorSchemeWidget->loadDefaults(true);
 }
 
 void QSUiSettings::readSettings()
@@ -173,38 +176,11 @@ void QSUiSettings::readSettings()
     m_ui->hiddenCheckBox->setChecked(settings.value(u"start_hidden"_s, false).toBool());
     m_ui->hideOnCloseCheckBox->setChecked(settings.value(u"hide_on_close"_s, false).toBool());
     m_ui->windowTitleLineEdit->setText(settings.value(u"window_title_format"_s, u"%if(%p,%p - %t,%t)"_s).toString());
-    //visualization colors
-    m_ui->vColor1->setColor(settings.value(u"vis_color1"_s, u"#BECBFF"_s).toString());
-    m_ui->vColor2->setColor(settings.value(u"vis_color2"_s, u"#BECBFF"_s).toString());
-    m_ui->vColor3->setColor(settings.value(u"vis_color3"_s, u"#BECBFF"_s).toString());
-    m_ui->peaksColor->setColor(settings.value(u"vis_peak_color"_s, u"#DDDDDD"_s).toString());
-    m_ui->bgColor->setColor(settings.value(u"vis_bg_color"_s, u"Black"_s).toString());
-    //playlist colors
-    QString normal_bg = palette().color(QPalette::Base).name();
-    QString alternate = palette().color(QPalette::AlternateBase).name();
-    QString selected_bg = palette().color(QPalette::Highlight).name();
-    QString normal = palette().color(QPalette::Text).name();
-    QString current = palette().color(QPalette::Text).name();
-    QString highlighted = palette().color(QPalette::HighlightedText).name();
-    QString group_text = palette().color(QPalette::Text).name();
-    m_ui->plSystemColorsCheckBox->setChecked(settings.value(u"pl_system_colors"_s, true).toBool());
-    m_ui->plBg1Color->setColor(settings.value(u"pl_bg1_color"_s, normal_bg).toString());
-    m_ui->plBg2Color->setColor(settings.value(u"pl_bg2_color"_s, alternate).toString());
-    m_ui->plHlColor->setColor(settings.value(u"pl_highlight_color"_s, selected_bg).toString());
-    m_ui->plTextNormalColor->setColor(settings.value(u"pl_normal_text_color"_s, normal).toString());
-    m_ui->plTextCurrentColor->setColor(settings.value(u"pl_current_text_color"_s, current).toString());
-    m_ui->plTextHlCurrentColor->setColor(settings.value(u"pl_hl_text_color"_s, highlighted).toString());
-    m_ui->plGrBgColor->setColor(settings.value(u"pl_group_bg"_s, normal_bg).toString());
-    m_ui->plSplitterColor->setColor(settings.value(u"pl_splitter_color"_s, normal).toString());
-    m_ui->plGrTextColor->setColor(settings.value(u"pl_group_text"_s, group_text).toString());
-    m_ui->plCurrentTrackBgColor->setColor(settings.value(u"pl_current_bg_color"_s, normal_bg).toString());
-    m_ui->plOverrideGroupColorsCheckBox->setChecked(settings.value(u"pl_override_group_colors"_s, false).toBool());
-    m_ui->plOverrideCurrentTrackColorsCheckBox->setChecked(settings.value(u"pl_override_current_track_colors"_s, false).toBool());
-    //waveform seekbar colors
-    m_ui->wfsbBgColor->setColor(settings.value(u"wfsb_bg_color"_s, u"Black"_s).toString());
-    m_ui->wfsbRmsColor->setColor(settings.value(u"wfsb_rms_color"_s, u"#DDDDDD"_s).toString());
-    m_ui->wfsbWaveFormColor->setColor(settings.value(u"wfsb_waveform_color"_s, u"#BECBFF"_s).toString());
-    m_ui->wfsbProgressBarColor->setColor(settings.value(u"wfsb_progressbar_color"_s, u"#9633CA10"_s).toString());
+    //colors
+    m_ui->lightColorSchemeWidget->load(&settings, false);
+    m_ui->darkColorSchemeWidget->load(&settings, true);
+    index = m_ui->colorModeComboBox->findData(settings.value(u"color_mode"_s, u"auto"_s).toString());
+    m_ui->colorModeComboBox->setCurrentIndex(qMax(0, index));
     //toolbar
     index = m_ui->toolBarIconSizeComboBox->findData(settings.value(u"toolbar_icon_size"_s, -1).toInt());
     m_ui->toolBarIconSizeComboBox->setCurrentIndex(index > 0 ? index : 0);
@@ -230,24 +206,6 @@ void QSUiSettings::writeSettings()
     settings.setValue(u"start_hidden"_s, m_ui->hiddenCheckBox->isChecked());
     settings.setValue(u"hide_on_close"_s, m_ui->hideOnCloseCheckBox->isChecked());
     settings.setValue(u"window_title_format"_s, m_ui->windowTitleLineEdit->text());
-    settings.setValue(u"vis_color1"_s, m_ui->vColor1->colorName());
-    settings.setValue(u"vis_color2"_s, m_ui->vColor2->colorName());
-    settings.setValue(u"vis_color3"_s, m_ui->vColor3->colorName());
-    settings.setValue(u"vis_peak_color"_s, m_ui->peaksColor->colorName());
-    settings.setValue(u"vis_bg_color"_s, m_ui->bgColor->colorName());
-    settings.setValue(u"pl_system_colors"_s, m_ui->plSystemColorsCheckBox->isChecked());
-    settings.setValue(u"pl_bg1_color"_s, m_ui->plBg1Color->colorName());
-    settings.setValue(u"pl_bg2_color"_s, m_ui->plBg2Color->colorName());
-    settings.setValue(u"pl_highlight_color"_s, m_ui->plHlColor->colorName());
-    settings.setValue(u"pl_normal_text_color"_s, m_ui->plTextNormalColor->colorName());
-    settings.setValue(u"pl_current_text_color"_s, m_ui->plTextCurrentColor->colorName());
-    settings.setValue(u"pl_hl_text_color"_s, m_ui->plTextHlCurrentColor->colorName());
-    settings.setValue(u"pl_group_bg"_s, m_ui->plGrBgColor->colorName());
-    settings.setValue(u"pl_splitter_color"_s, m_ui->plSplitterColor->colorName());
-    settings.setValue(u"pl_group_text"_s, m_ui->plGrTextColor->colorName());
-    settings.setValue(u"pl_current_bg_color"_s, m_ui->plCurrentTrackBgColor->colorName());
-    settings.setValue(u"pl_override_group_colors"_s, m_ui->plOverrideGroupColorsCheckBox->isChecked());
-    settings.setValue(u"pl_override_current_track_colors"_s, m_ui->plOverrideCurrentTrackColorsCheckBox->isChecked());
     settings.setValue(u"pl_font"_s, m_ui->plFontLabel->font().toString());
     settings.setValue(u"pl_group_font"_s, m_ui->groupFontLabel->font().toString());
     settings.setValue(u"pl_extra_row_font"_s, m_ui->extraRowFontLabel->font().toString());
@@ -256,10 +214,10 @@ void QSUiSettings::writeSettings()
     settings.setValue(u"use_system_fonts"_s, m_ui->systemFontsCheckBox->isChecked());
     int index = m_ui->toolBarIconSizeComboBox->currentIndex();
     settings.setValue(u"toolbar_icon_size"_s, m_ui->toolBarIconSizeComboBox->itemData(index));
-    settings.setValue(u"wfsb_bg_color"_s, m_ui->wfsbBgColor->colorName());
-    settings.setValue(u"wfsb_rms_color"_s, m_ui->wfsbRmsColor->colorName());
-    settings.setValue(u"wfsb_waveform_color"_s, m_ui->wfsbWaveFormColor->colorName());
-    settings.setValue(u"wfsb_progressbar_color"_s, m_ui->wfsbProgressBarColor->colorName());
+    m_ui->lightColorSchemeWidget->write(&settings, false);
+    m_ui->darkColorSchemeWidget->write(&settings, true);
+    index = m_ui->colorModeComboBox->currentIndex();
+    settings.setValue(u"color_mode"_s, m_ui->colorModeComboBox->itemData(index));
     settings.endGroup();
 }
 

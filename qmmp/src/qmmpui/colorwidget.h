@@ -61,6 +61,8 @@ public:
      */
     QString colorName() const;
 
+    QColor color() const;
+
 signals:
     /*!
      * Emitted when the dialog options is changed.
@@ -72,6 +74,8 @@ public slots:
      * Sets color name.
      */
     void setColor(const QString &name);
+
+    void setColor(const QColor &color);
 
 protected:
     virtual void mousePressEvent(QMouseEvent *) override;

@@ -25,6 +25,7 @@
 #include <QFileInfo>
 
 class QLabel;
+class ColorWidget;
 
 namespace Ui {
 class QSUISettings;

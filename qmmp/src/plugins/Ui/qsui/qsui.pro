@@ -4,6 +4,8 @@ TARGET = $$PLUGINS_PREFIX/Ui/qsui
 
 SOURCES += \
     qsuiactionmanager.cpp \
+    qsuicolorscheme.cpp \
+    qsuicolorschemewidget.cpp \
     qsuicoverwidget.cpp \
     qsuiequalizer.cpp \
     qsuihotkeyeditor.cpp \
@@ -35,6 +37,8 @@ SOURCES += \
     dockwidgetlist.cpp
 HEADERS += \
     qsuiactionmanager.h \
+    qsuicolorscheme.h \
+    qsuicolorschemewidget.h \
     qsuicoverwidget.h \
     qsuiequalizer.h \
     qsuihotkeyeditor.h \
