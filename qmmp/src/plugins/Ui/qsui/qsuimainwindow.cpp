@@ -405,6 +405,9 @@ bool QSUiMainWindow::event(QEvent *event)
         const QWidgetList widgets = m_statusBar->findChildren<QWidget *>();
         for(QWidget *w : std::as_const(widgets))
             w->setPalette(qApp->palette(w));
+
+        m_analyzer->readSettings();
+        m_seekBar->readSettings();
     }
     return QMainWindow::event(event);
 }

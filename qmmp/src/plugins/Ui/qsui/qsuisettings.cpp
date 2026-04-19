@@ -179,7 +179,7 @@ void QSUiSettings::readSettings()
     //colors
     m_ui->lightColorSchemeWidget->load(&settings, false);
     m_ui->darkColorSchemeWidget->load(&settings, true);
-    index = m_ui->colorModeComboBox->findData(settings.value(u"color_mode"_s, u"auto"_s).toString());
+    index = m_ui->colorModeComboBox->findData(settings.value(u"color_mode"_s, u"light"_s).toString());
     m_ui->colorModeComboBox->setCurrentIndex(qMax(0, index));
     //toolbar
     index = m_ui->toolBarIconSizeComboBox->findData(settings.value(u"toolbar_icon_size"_s, -1).toInt());
