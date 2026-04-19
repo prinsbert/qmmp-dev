@@ -31,6 +31,7 @@ class QActionGroup;
 class QLabel;
 class QPainter;
 class QSUiVisualDrawer;
+class QSUiColorScheme;
 
 class QSUIVisualization : public Visual
 {
@@ -86,25 +87,24 @@ private:
 class QSUiVisualDrawer
 {
 public:
-    virtual ~QSUiVisualDrawer();
+    virtual ~QSUiVisualDrawer() = default;
     virtual QString name() const = 0;
     virtual void process(float *buffer, int width, int height) = 0;
     virtual void draw(QPainter *p, int offset) = 0;
     virtual void clear() = 0;
-    virtual void readSettings() = 0;
+    virtual void readSettings(const QSUiColorScheme *scheme) = 0;
     virtual bool useFFT() const = 0;
 };
 
 class QSUiScope : public QSUiVisualDrawer
 {
 public:
-    QSUiScope() {}
     virtual ~QSUiScope();
     QString name() const override;
     void process(float *buffer, int width, int height) override;
     void draw(QPainter *p, int offset) override;
     void clear() override;
-    void readSettings() override;
+    void readSettings(const QSUiColorScheme *scheme) override;
     bool useFFT() const override;
 
 private:
@@ -120,13 +120,12 @@ private:
 class QSUiAnalyzer : public QSUiVisualDrawer
 {
 public:
-    QSUiAnalyzer() {}
     virtual ~QSUiAnalyzer();
     QString name() const override;
     void process(float *buffer, int width, int height) override;
     void draw(QPainter *p, int offset) override;
     void clear() override;
-    void readSettings() override;
+    void readSettings(const QSUiColorScheme *scheme) override;
     bool useFFT() const override;
 
 private:

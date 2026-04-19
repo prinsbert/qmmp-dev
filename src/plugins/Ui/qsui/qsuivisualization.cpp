@@ -23,10 +23,13 @@
 #include <QMenu>
 #include <QActionGroup>
 #include <QLabel>
+#include <QApplication>
+#include <QStyleHints>
 #include <qmmp/qmmp.h>
 #include <qmmp/buffer.h>
 #include <math.h>
 #include <stdlib.h>
+#include "qsuicolorscheme.h"
 #include "qsuivisualization.h"
 
 QSUIVisualization::QSUIVisualization(QWidget *parent) : Visual (parent)
@@ -97,12 +100,12 @@ void QSUIVisualization::paintEvent (QPaintEvent * e)
     }
 }
 
-void QSUIVisualization::hideEvent (QHideEvent *)
+void QSUIVisualization::hideEvent(QHideEvent *)
 {
     m_timer->stop();
 }
 
-void QSUIVisualization::showEvent (QShowEvent *)
+void QSUIVisualization::showEvent(QShowEvent *)
 {
     if(m_running)
         m_timer->start();
@@ -212,7 +215,7 @@ void QSUIVisualization::updateCover()
     }
 }
 
-void QSUIVisualization::mousePressEvent (QMouseEvent *e)
+void QSUIVisualization::mousePressEvent(QMouseEvent *e)
 {
     if (e->button() == Qt::RightButton)
         m_menu->exec(e->globalPosition().toPoint());
@@ -226,11 +229,16 @@ void QSUIVisualization::readSettings()
     m_show_cover = settings.value(u"vis_show_cover"_s, true).toBool();
     m_timer->setInterval(1000 / settings.value(u"vis_refresh_rate"_s, 25).toInt());
     QString visName = settings.value(u"vis_type"_s, u"analyzer"_s).toString();
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    m_bgColor = QColor::fromString(settings.value(u"vis_bg_color"_s, u"Black"_s).toString());
-#else
-    m_bgColor.setNamedColor(settings.value(u"vis_bg_color"_s, u"Black"_s).toString());
-#endif
+    QString colorMode = settings.value(u"color_mode"_s, u"light"_s).toString();
+    QSUiColorScheme scheme;
+    if(colorMode == QLatin1String("light"))
+        scheme.load(&settings, false);
+    else if(colorMode == QLatin1String("dark"))
+        scheme.load(&settings, true);
+    else
+        scheme.load(&settings, qApp->styleHints()->colorScheme() == Qt::ColorScheme::Dark);
+    m_bgColor = scheme.color(QSUiColorScheme::VIS_BACKGROUND);
+
     //analyzer settings
     double peaks_falloff = settings.value(u"vis_peaks_falloff"_s, 0.2).toDouble();
     double analyzer_falloff = settings.value(u"vis_analyzer_falloff"_s, 2.2).toDouble();
@@ -283,7 +291,7 @@ void QSUIVisualization::readSettings()
         else
             m_drawer = new QSUiAnalyzer;
     }
-    m_drawer->readSettings();
+    m_drawer->readSettings(&scheme);
     m_drawer->clear();
 }
 
@@ -386,19 +394,13 @@ void QSUiScope::clear()
     m_height = 0;
 }
 
-void QSUiScope::readSettings()
+void QSUiScope::readSettings(const QSUiColorScheme *scheme)
 {
     QSettings settings;
     settings.beginGroup(u"Simple"_s);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    m_color1 = QColor::fromString(settings.value(u"vis_color1"_s, u"#BECBFF"_s).toString());
-    m_color2 = QColor::fromString(settings.value(u"vis_color2"_s, u"#BECBFF"_s).toString());
-    m_color3 = QColor::fromString(settings.value(u"vis_color3"_s, u"#BECBFF"_s).toString());
-#else
-    m_color1.setNamedColor(settings.value(u"vis_color1"_s, u"#BECBFF"_s).toString());
-    m_color2.setNamedColor(settings.value(u"vis_color2"_s, u"#BECBFF"_s).toString());
-    m_color3.setNamedColor(settings.value(u"vis_color3"_s, u"#BECBFF"_s).toString());
-#endif
+    m_color1 = scheme->color(QSUiColorScheme::VIS_COLOR_1);
+    m_color2 = scheme->color(QSUiColorScheme::VIS_COLOR_2);
+    m_color3 = scheme->color(QSUiColorScheme::VIS_COLOR_3);
     settings.endGroup();
 }
 
@@ -406,9 +408,6 @@ bool QSUiScope::useFFT() const
 {
     return false;
 }
-
-QSUiVisualDrawer::~QSUiVisualDrawer()
-{}
 
 QSUiAnalyzer::~QSUiAnalyzer()
 {
@@ -521,21 +520,14 @@ void QSUiAnalyzer::clear()
     m_cols = 0;
 }
 
-void QSUiAnalyzer::readSettings()
+void QSUiAnalyzer::readSettings(const QSUiColorScheme *scheme)
 {
     QSettings settings;
     settings.beginGroup(u"Simple"_s);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    m_color1 = QColor::fromString(settings.value(u"vis_color1"_s, u"#BECBFF"_s).toString());
-    m_color2 = QColor::fromString(settings.value(u"vis_color2"_s, u"#BECBFF"_s).toString());
-    m_color3 = QColor::fromString(settings.value(u"vis_color3"_s, u"#BECBFF"_s).toString());
-    m_peakColor = QColor::fromString(settings.value(u"vis_peak_color"_s, u"#DDDDDD"_s).toString());
-#else
-    m_color1.setNamedColor(settings.value(u"vis_color1"_s, u"#BECBFF"_s).toString());
-    m_color2.setNamedColor(settings.value(u"vis_color2"_s, u"#BECBFF"_s).toString());
-    m_color3.setNamedColor(settings.value(u"vis_color3"_s, u"#BECBFF"_s).toString());
-    m_peakColor.setNamedColor(settings.value(u"vis_peak_color"_s, u"#DDDDDD"_s).toString());
-#endif
+    m_color1 = scheme->color(QSUiColorScheme::VIS_COLOR_1);
+    m_color2 = scheme->color(QSUiColorScheme::VIS_COLOR_2);
+    m_color3 = scheme->color(QSUiColorScheme::VIS_COLOR_3);
+    m_peakColor = scheme->color(QSUiColorScheme::VIS_PEAKS);
     m_cell_size =  QSize(14, 8);
     m_peaks_falloff = settings.value(u"vis_peaks_falloff"_s, 0.2).toDouble();
     m_analyzer_falloff = settings.value(u"vis_analyzer_falloff"_s, 2.2).toDouble();

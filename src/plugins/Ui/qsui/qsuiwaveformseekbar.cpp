@@ -25,6 +25,7 @@
 #include <QMenu>
 #include <QAction>
 #include <QMutexLocker>
+#include <QStyleHints>
 #include <cmath>
 #include <numeric>
 #include <qmmp/soundcore.h>
@@ -35,6 +36,7 @@
 #include <qmmp/buffer.h>
 #include <qmmp/qmmpsettings.h>
 #include <qmmpui/metadataformatter.h>
+#include "qsuicolorscheme.h"
 #include "qsuiwaveformseekbar.h"
 
 #define NUMBER_OF_VALUES (4096)
@@ -59,17 +61,21 @@ void QSUiWaveformSeekBar::readSettings()
 {
     QSettings settings;
     settings.beginGroup(u"Simple"_s);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    m_bgColor = QColor::fromString(settings.value(u"wfsb_bg_color"_s, u"Black"_s).toString());
-    m_rmsColor = QColor::fromString(settings.value(u"wfsb_rms_color"_s, u"#DDDDDD"_s).toString());
-    m_waveFormColor = QColor::fromString(settings.value(u"wfsb_waveform_color"_s, u"#BECBFF"_s).toString());
-    m_progressBar = QColor::fromString(settings.value(u"wfsb_progressbar_color"_s, u"#9633CA10"_s).toString());
-#else
-    m_bgColor.setNamedColor(settings.value(u"wfsb_bg_color"_s, u"Black"_s).toString());
-    m_rmsColor.setNamedColor(settings.value(u"wfsb_rms_color"_s, u"#DDDDDD"_s).toString());
-    m_waveFormColor.setNamedColor(settings.value(u"wfsb_waveform_color"_s, u"#BECBFF"_s).toString());
-    m_progressBar.setNamedColor(settings.value(u"wfsb_progressbar_color"_s, u"#9633CA10"_s).toString());
-#endif
+
+    QString colorMode = settings.value(u"color_mode"_s, u"light"_s).toString();
+    QSUiColorScheme scheme;
+    if(colorMode == QLatin1String("light"))
+        scheme.load(&settings, false);
+    else if(colorMode == QLatin1String("dark"))
+        scheme.load(&settings, true);
+    else
+        scheme.load(&settings, qApp->styleHints()->colorScheme() == Qt::ColorScheme::Dark);
+
+    m_bgColor = scheme.color(QSUiColorScheme::WFSB_BACKGROUND);
+    m_rmsColor = scheme.color(QSUiColorScheme::WFSB_RMS);
+    m_waveFormColor = scheme.color(QSUiColorScheme::WFSB_WAVEFORM);
+    m_progressBar = scheme.color(QSUiColorScheme::WFSB_PROGRESSBAR);
+
     if(!m_update)
     {
         m_update = true;

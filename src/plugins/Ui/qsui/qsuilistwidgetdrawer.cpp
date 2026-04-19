@@ -21,9 +21,11 @@
 #include <QSettings>
 #include <QPainter>
 #include <QApplication>
+#include <QStyleHints>
 #include <qmmp/qmmp.h>
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/qmmpuisettings.h>
+#include "qsuicolorscheme.h"
 #include "qsuilistwidgetdrawer.h"
 
 // |= number=|=row1=|=row2=|=extra= duration=|
@@ -71,26 +73,24 @@ void QSUiListWidgetDrawer::readSettings()
     m_fonts[MAIN_FONT_EXTRA] = m_fonts[MAIN_FONT_NORMAL];
     m_fonts[MAIN_FONT_EXTRA].setPointSize(m_fonts[MAIN_FONT_NORMAL].pointSize() - 1);
 
-    m_use_system_colors = settings.value(u"pl_system_colors"_s, true).toBool();
     loadSystemColors();
+    QString colorMode = settings.value(u"color_mode"_s, u"light"_s).toString();
+    QSUiColorScheme scheme;
+    if(colorMode == QLatin1String("light"))
+        scheme.load(&settings, false);
+    else if(colorMode == QLatin1String("dark"))
+        scheme.load(&settings, true);
+    else
+        scheme.load(&settings, qApp->styleHints()->colorScheme() == Qt::ColorScheme::Dark);
 
-    if(!m_use_system_colors)
+    if(!scheme.plUseSystemColors())
     {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-        m_normal_bg = QColor::fromString(settings.value(u"pl_bg1_color"_s, m_normal_bg.name()).toString());
-        m_alternate_bg = QColor::fromString(settings.value(u"pl_bg2_color"_s, m_alternate_bg.name()).toString());
-        m_selected_bg = QColor::fromString(settings.value(u"pl_highlight_color"_s, m_selected_bg.name()).toString());
-        m_normal = QColor::fromString(settings.value(u"pl_normal_text_color"_s, m_normal.name()).toString());
-        m_highlighted = QColor::fromString(settings.value(u"pl_hl_text_color"_s ,m_highlighted.name()).toString());
-        m_splitter = QColor::fromString(settings.value(u"pl_splitter_color"_s, m_splitter).toString());
-#else
-        m_normal_bg.setNamedColor(settings.value(u"pl_bg1_color"_s, m_normal_bg.name()).toString());
-        m_alternate_bg.setNamedColor(settings.value(u"pl_bg2_color"_s, m_alternate_bg.name()).toString());
-        m_selected_bg.setNamedColor(settings.value(u"pl_highlight_color"_s, m_selected_bg.name()).toString());
-        m_normal.setNamedColor(settings.value(u"pl_normal_text_color"_s, m_normal.name()).toString());
-        m_highlighted.setNamedColor(settings.value(u"pl_hl_text_color"_s ,m_highlighted.name()).toString());
-        m_splitter.setNamedColor(settings.value(u"pl_splitter_color"_s, m_splitter).toString());
-#endif
+        m_normal_bg = scheme.color(QSUiColorScheme::PL_BACKGROUND_1);
+        m_alternate_bg = scheme.color(QSUiColorScheme::PL_BACKGROUND_2);
+        m_selected_bg = scheme.color(QSUiColorScheme::PL_HIGHLIGHTED_BACKGROUND);
+        m_normal = scheme.color(QSUiColorScheme::PL_NORMAL_TEXT);
+        m_highlighted = scheme.color(QSUiColorScheme::PL_HIGHLIGHTED_TEXT);
+        m_splitter = scheme.color(QSUiColorScheme::PL_SPLITTER);
 
         m_group_bg = m_normal_bg;
         m_group_alt_bg = m_alternate_bg;
@@ -101,30 +101,18 @@ void QSUiListWidgetDrawer::readSettings()
         m_current = m_normal;
     }
 
-    if(settings.value(u"pl_override_group_colors"_s, false).toBool())
+    if(scheme.plOverrideGroupColors())
     {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-        m_group_bg = QColor::fromString(settings.value(u"pl_group_bg"_s, m_normal_bg.name()).toString());
+        m_group_bg = scheme.color(QSUiColorScheme::PL_GROUP_BACKGROUND);
         m_group_alt_bg = m_group_bg;
-        m_group_text = QColor::fromString(settings.value(u"pl_group_text"_s, m_group_text.name()).toString());
-#else
-        m_group_bg.setNamedColor(settings.value(u"pl_group_bg"_s, m_normal_bg.name()).toString());
-        m_group_alt_bg = m_group_bg;
-        m_group_text.setNamedColor(settings.value(u"pl_group_text"_s, m_group_text.name()).toString());
-#endif
+        m_group_text = scheme.color(QSUiColorScheme::PL_GROUP_TEXT);
     }
 
-    if(settings.value(u"pl_override_current_track_colors"_s, false).toBool())
+    if(scheme.plOverrideCurrentTrackColors())
     {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-        m_current_bg = QColor::fromString(settings.value(u"pl_current_bg_color"_s, m_normal_bg.name()).toString());
+        m_current_bg = scheme.color(QSUiColorScheme::PL_CURRENT_TRACK_BACKGROUND);
         m_current_alt_bg = m_current_bg;
-        m_current = QColor::fromString(settings.value(u"pl_current_text_color"_s, m_current.name()).toString());
-#else
-        m_current_bg.setNamedColor(settings.value(u"pl_current_bg_color"_s, m_normal_bg.name()).toString());
-        m_current_alt_bg = m_current_bg;
-        m_current.setNamedColor(settings.value(u"pl_current_text_color"_s, m_current.name()).toString());
-#endif
+        m_current = scheme.color(QSUiColorScheme::PL_CURRENT_TRACK_TEXT);
     }
     
     settings.endGroup();
