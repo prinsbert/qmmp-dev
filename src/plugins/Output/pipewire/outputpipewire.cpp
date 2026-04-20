@@ -32,6 +32,7 @@
 #include <time.h>
 static uint64_t pw_stream_get_nsec(struct pw_stream *stream)
 {
+    Q_UNUSED(stream);
     struct timespec ts;
     clock_gettime(CLOCK_MONOTONIC, &ts);
     return SPA_TIMESPEC_TO_NSEC(&ts);
@@ -42,6 +43,7 @@ static uint64_t pw_stream_get_nsec(struct pw_stream *stream)
 static inline int pw_stream_get_time_n(struct pw_stream * stream,
                                        struct pw_time * time, size_t size)
 {
+    Q_UNUSED(size);
     return pw_stream_get_time(stream, time);
 }
 #endif
