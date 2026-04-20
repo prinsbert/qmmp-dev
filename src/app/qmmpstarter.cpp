@@ -163,7 +163,11 @@ QMMPStarter::QMMPStarter() : QObject()
             m_finished = true;
             QString out = CommandLineManager::executeCommand(it.key(), it.value(), QDir::currentPath());
             while(out.endsWith(QChar::LineFeed))
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
                 out.removeLast();
+#else
+                out.truncate(out.size() - 1);
+#endif
 
             if(!out.isEmpty())
             {
@@ -438,7 +442,11 @@ void QMMPStarter::writeCommand()
     {
         QString answer = QString::fromUtf8(m_socket->readAll());
         while(answer.endsWith(QChar::LineFeed))
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
             answer.removeLast();
+#else
+            answer.truncate(answer.size() - 1);
+#endif
 
         if(!answer.isEmpty())
             cout << qPrintable(answer) << endl;

@@ -85,5 +85,11 @@ QString ColorWidget::colorName() const
 
 QColor ColorWidget::color() const
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
     return QColor::fromString(d_ptr->colorName);
+#else
+    QColor color;
+    color.setNamedColor(d_ptr->colorName);
+    return color;
+#endif
 }

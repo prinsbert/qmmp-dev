@@ -48,7 +48,9 @@ QSUiSettings::QSUiSettings(QWidget *parent) : QWidget(parent), m_ui(new Ui::QSUI
     //colors
     m_ui->colorModeComboBox->addItem(tr("Light"), u"light"_s);
     m_ui->colorModeComboBox->addItem(tr("Dark"), u"dark"_s);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
     m_ui->colorModeComboBox->addItem(tr("Automatic"), u"auto"_s);
+#endif
     m_ui->lightColorSchemeWidget->loadDefaults(false);
     m_ui->darkColorSchemeWidget->loadDefaults(true);
     //other settings
