@@ -417,12 +417,24 @@ private:
         });
 
         treeWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 3, 0)
         preferencesAction = treeWidget->addAction(QIcon::fromTheme(u"configure"_s), tr("Preferences"));
         preferencesAction->setEnabled(false);
         informationAction = treeWidget->addAction(QIcon::fromTheme(u"dialog-information"_s), tr("Information"));
         informationAction->setEnabled(false);
         priorityAction = treeWidget->addAction(QIcon::fromTheme(u"format-list-ordered"_s), tr("Priority"));
         priorityAction->setVisible(false);
+#else
+        preferencesAction = new QAction(QIcon::fromTheme(u"configure"_s), tr("Preferences"), treeWidget);
+        treeWidget->addAction(preferencesAction);
+        preferencesAction->setEnabled(false);
+        informationAction = new QAction(QIcon::fromTheme(u"dialog-information"_s), tr("Information"));
+        treeWidget->addAction(informationAction);
+        informationAction->setEnabled(false);
+        priorityAction = new QAction(QIcon::fromTheme(u"format-list-ordered"_s), tr("Priority"));
+        treeWidget->addAction(priorityAction);
+        priorityAction->setVisible(false);
+#endif
         q->connect(preferencesAction, &QAction::triggered, q, [this] { onPreferencesButtonClicked(); });
         q->connect(informationAction, &QAction::triggered, q, [this] { onInformationButtonClicked(); });
         q->connect(priorityAction, &QAction::triggered, q, [this] { onPriorityActionTriggeted(); });

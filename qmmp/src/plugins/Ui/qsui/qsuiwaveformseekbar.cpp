@@ -69,7 +69,11 @@ void QSUiWaveformSeekBar::readSettings()
     else if(colorMode == QLatin1String("dark"))
         scheme.load(&settings, true);
     else
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
         scheme.load(&settings, qApp->styleHints()->colorScheme() == Qt::ColorScheme::Dark);
+#else
+        scheme.load(&settings, false);
+#endif
 
     m_bgColor = scheme.color(QSUiColorScheme::WFSB_BACKGROUND);
     m_rmsColor = scheme.color(QSUiColorScheme::WFSB_RMS);

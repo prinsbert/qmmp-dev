@@ -20,9 +20,8 @@
 
 #include <QPalette>
 #include <QApplication>
+#include <qmmp/qmmp.h>
 #include "qsuicolorscheme.h"
-
-using namespace Qt::Literals::StringLiterals;
 
 QSUiColorScheme::QSUiColorScheme()
 {
@@ -57,13 +56,29 @@ QSUiColorScheme::QSUiColorScheme()
     };
 
     for(auto it = m_descriptors.cbegin(); it != m_descriptors.cend(); ++it)
+    {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
         m_colors.insert(it.key(), QColor::fromString(it.value().defaultLightColor));
+#else
+        QColor color;
+        color.setNamedColor(it.value().defaultLightColor);
+        m_colors.insert(it.key(), color);
+#endif
+    }
 }
 
 void QSUiColorScheme::loadDefaults(bool darkMode)
 {
     for(auto it = m_descriptors.cbegin(); it != m_descriptors.cend(); ++it)
+    {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
         m_colors.insert(it.key(), QColor::fromString(darkMode ? it.value().defaultDarkColor : it.value().defaultLightColor));
+#else
+        QColor color;
+        color.setNamedColor(darkMode ? it.value().defaultDarkColor : it.value().defaultLightColor);
+        m_colors.insert(it.key(), color);
+#endif
+    }
 
     m_plSystemColors = true;
     m_plOverrideGroupColors = false;
@@ -76,8 +91,14 @@ void QSUiColorScheme::load(const QSettings *settings, bool darkMode)
 
     for(auto it = m_descriptors.cbegin(); it != m_descriptors.cend(); ++it)
     {
-        QColor defaultColor = darkMode ? it.value().defaultDarkColor : it.value().defaultLightColor;
+        QString defaultColor = darkMode ? it.value().defaultDarkColor : it.value().defaultLightColor;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
         m_colors.insert(it.key(), QColor::fromString(settings->value(it.value().name + suffix, defaultColor).toString()));
+#else
+        QColor color;
+        color.setNamedColor(settings->value(it.value().name + suffix, defaultColor).toString());
+        m_colors.insert(it.key(), color);
+#endif
     }
 
     m_plSystemColors = settings->value(u"pl_system_colors"_s + suffix, true).toBool();
