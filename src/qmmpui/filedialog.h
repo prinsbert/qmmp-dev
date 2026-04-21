@@ -127,21 +127,15 @@ public:
      * @param mode File dialog mode.
      * @param dir Default directory.
      * @param receiver Receiver QObject.
-     * @param member Receiver slot.
+     * @param slot Receiver slot.
      * @param caption Dialog title.
      * @param filters Filer used by file dialog
      * (example: "Audio (*.mp3 *.ogg);;Text files (*.txt);;XML files (*.xml)").
      *
      * Usage: FileDialog::popup(this, FileDialog::AddDirs, &m_lastDir,
-     *                 m_playListModel, SLOT(addFileList(QStringList)),
+     *                 m_playListModel, &PlayListModel::addFileList,
      *                 tr("Choose a directory"));
      */
-    static void popupImpl(QWidget *parent = nullptr,
-                          Mode mode = AddFiles,
-                          QString *dir = nullptr,
-                          const QString &caption = QString(),
-                          const QString &filters = QString());
-
     template <class Obj, typename Func1>
     static inline void popup(QWidget *parent,
                              Mode mode,
@@ -201,6 +195,11 @@ protected:
 private:
     FileDialogPrivate *d_ptr;
     static FileDialog *instance();
+    static void popupImpl(QWidget *parent = nullptr,
+                          Mode mode = AddFiles,
+                          QString *dir = nullptr,
+                          const QString &caption = QString(),
+                          const QString &filters = QString());
 };
 
 #endif

@@ -165,6 +165,30 @@ QString FileDialog::getSaveFileName (QWidget *parent, const QString &caption,
     return l.isEmpty() ? QString() : l.at(0);
 }
 
+FileDialog *FileDialog::instance()
+{
+    FileDialogPrivate::loadPlugins();
+    FileDialogFactory *selected = nullptr;
+
+    QSettings settings;
+    QString name = settings.value(u"FileDialog"_s, u"qt_dialog"_s).toString();
+
+    auto it = std::find_if(fileDialogCache->cbegin(), fileDialogCache->cend(),
+                           [name] (QmmpUiPluginCache *item){ return item->shortName() == name; } );
+    if(it != fileDialogCache->cend())
+        selected = (*it)->fileDialogFactory();
+
+    if(!selected)
+        selected = fileDialogCache->constFirst()->fileDialogFactory();
+
+    if(selected == FileDialogPrivate::currentFactory && FileDialogPrivate::instance)
+        return FileDialogPrivate::instance;
+
+    delete FileDialogPrivate::instance;
+    FileDialogPrivate::currentFactory = selected;
+    return FileDialogPrivate::currentFactory->create();
+}
+
 void FileDialog::popupImpl(QWidget *parent,
                            Mode m,
                            QString *dir,
@@ -197,30 +221,6 @@ void FileDialog::popupImpl(QWidget *parent,
         }
         QMetaObject::invokeMethod(inst, "filesSelected", Q_ARG(QStringList, files));
     }
-}
-
-FileDialog *FileDialog::instance()
-{
-    FileDialogPrivate::loadPlugins();
-    FileDialogFactory *selected = nullptr;
-
-    QSettings settings;
-    QString name = settings.value(u"FileDialog"_s, u"qt_dialog"_s).toString();
-
-    auto it = std::find_if(fileDialogCache->cbegin(), fileDialogCache->cend(),
-                           [name] (QmmpUiPluginCache *item){ return item->shortName() == name; } );
-    if(it != fileDialogCache->cend())
-        selected = (*it)->fileDialogFactory();
-
-    if(!selected)
-        selected = fileDialogCache->constFirst()->fileDialogFactory();
-
-    if(selected == FileDialogPrivate::currentFactory && FileDialogPrivate::instance)
-        return FileDialogPrivate::instance;
-
-    delete FileDialogPrivate::instance;
-    FileDialogPrivate::currentFactory = selected;
-    return FileDialogPrivate::currentFactory->create();
 }
 
 //base implementation
