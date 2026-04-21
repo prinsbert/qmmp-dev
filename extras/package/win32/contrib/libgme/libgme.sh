@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=libgme
-VERSION=0.6.4
+VERSION=0.6.5
 
 case $1 in
   --download)
