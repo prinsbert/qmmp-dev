@@ -49,8 +49,8 @@ public:
     static void createVisualization(VisualFactory *factory, QWidget *parent)
     {
         Visual *visual = factory->create(parent);
-        if (receiver && member)
-            QObject::connect(visual, SIGNAL(closedByUser()), receiver, member);
+        if(receiver && member)
+            QObject::connect(visual, &Visual::closedByUser, receiver, []{ member(); });
         visual->setWindowFlags(visual->windowFlags() | Qt::Window);
         qCDebug(core) << "added visualization:" << factory->properties().shortName;
         visualMap.insert(factory, visual);
@@ -101,8 +101,8 @@ public:
     static QList<Visual*> visuals;
     static QHash<VisualFactory*, Visual*> visualMap; //internal visualization
     static QWidget *parentWidget;
-    static QObject *receiver;
-    static const char *member;
+    static const QObject *receiver;
+    static std::function<void(void)> member;
     static VisualBuffer buffer;
 
     fft_state *state = nullptr;
@@ -115,8 +115,8 @@ QHash <const VisualFactory*, QString> *VisualPrivate::files = nullptr;
 QList<Visual*> VisualPrivate::visuals;
 QHash<VisualFactory*, Visual*> VisualPrivate::visualMap;
 QWidget *VisualPrivate::parentWidget = nullptr;
-QObject *VisualPrivate::receiver = nullptr;
-const char *VisualPrivate::member = nullptr;
+const QObject *VisualPrivate::receiver = nullptr;
+std::function<void(void)> VisualPrivate::member;
 VisualBuffer VisualPrivate::buffer;
 
 Visual::Visual(QWidget *parent, Qt::WindowFlags f) :
@@ -296,20 +296,6 @@ void Visual::remove(Visual *visual)
     VisualPrivate::visuals.removeAll(visual);
 }
 
-void Visual::initialize(QWidget *parent , QObject *receiver, const char *member)
-{
-    VisualPrivate::receiver = receiver;
-    VisualPrivate::member = member;
-    VisualPrivate::parentWidget = parent;
-    for(VisualFactory *factory : factories())
-    {
-        if(isEnabled(factory))
-        {
-            QTimer::singleShot(0, parent, [factory, parent] { VisualPrivate::createVisualization(factory, parent); });
-        }
-    }
-}
-
 const QList<Visual *> &Visual::visuals()
 {
     return VisualPrivate::visuals;
@@ -329,6 +315,20 @@ void Visual::showSettings(VisualFactory *factory, QWidget *parent)
         VisualPrivate::createVisualization(factory, VisualPrivate::parentWidget);
     }
     dialog->deleteLater();
+}
+
+void Visual::initializeImpl(QWidget *parent, QObject *receiver, const std::function<void ()> &member)
+{
+    VisualPrivate::receiver = receiver;
+    VisualPrivate::member = member;
+    VisualPrivate::parentWidget = parent;
+    for(VisualFactory *factory : factories())
+    {
+        if(isEnabled(factory))
+        {
+            QTimer::singleShot(0, parent, [factory, parent] { VisualPrivate::createVisualization(factory, parent); });
+        }
+    }
 }
 
 void Visual::addAudio(float *pcm, int samples, int channels, qint64 ts, qint64 delay)

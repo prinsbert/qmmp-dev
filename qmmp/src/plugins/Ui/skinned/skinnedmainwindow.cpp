@@ -100,7 +100,7 @@ SkinnedMainWindow::SkinnedMainWindow(QWidget *parent) : QMainWindow(parent)
 
     createActions();
     //prepare visualization
-    Visual::initialize(this, m_visMenu, SLOT(updateActions()));
+    Visual::initialize(this, m_visMenu, &VisualMenu::updateActions);
     m_vis = SkinnedVisualization::instance();
     Visual::add(m_vis);
     //connections

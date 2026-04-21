@@ -110,7 +110,7 @@ QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent), m_ui(new 
     m_positionSlider->setFocusPolicy(Qt::NoFocus);
     m_positionSlider->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     //prepare visualization
-    Visual::initialize(this, m_visMenu, SLOT(updateActions()));
+    Visual::initialize(this, m_visMenu, &VisualMenu::updateActions);
     //playlist manager
     connect(m_positionSlider, &QSUiPositionSlider::sliderReleased, this, &QSUiMainWindow::seek);
     connect(m_pl_manager, &PlayListManager::currentPlayListChanged, this, &QSUiMainWindow::onCurrentPlayListChanged);
