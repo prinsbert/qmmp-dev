@@ -409,13 +409,15 @@
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="415"/>
-        <location filename="../configdialog.cpp" line="420"/>
+        <location filename="../configdialog.cpp" line="421"/>
+        <location filename="../configdialog.cpp" line="428"/>
         <source>Preferences</source>
         <translation>参数设置</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="432"/>
-        <location filename="../configdialog.cpp" line="422"/>
+        <location filename="../configdialog.cpp" line="423"/>
+        <location filename="../configdialog.cpp" line="431"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
@@ -631,47 +633,47 @@
         <translation>使用抖动</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="498"/>
+        <location filename="../configdialog.cpp" line="510"/>
         <source>1 row</source>
         <translation>1 行</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="499"/>
+        <location filename="../configdialog.cpp" line="511"/>
         <source>3 rows</source>
         <translation>3 行</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="500"/>
+        <location filename="../configdialog.cpp" line="512"/>
         <source>4 rows</source>
         <translation>4 行</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="501"/>
+        <location filename="../configdialog.cpp" line="513"/>
         <source>5 rows</source>
         <translation>5 行</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="502"/>
+        <location filename="../configdialog.cpp" line="514"/>
         <source>Track</source>
         <translation>曲目</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="503"/>
+        <location filename="../configdialog.cpp" line="515"/>
         <source>Album</source>
         <translation>专辑</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="504"/>
+        <location filename="../configdialog.cpp" line="516"/>
         <source>Disabled</source>
         <translation>关闭</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="509"/>
+        <location filename="../configdialog.cpp" line="521"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="510"/>
+        <location filename="../configdialog.cpp" line="522"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
@@ -721,157 +723,158 @@
         <translation>用户界面</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="424"/>
+        <location filename="../configdialog.cpp" line="425"/>
+        <location filename="../configdialog.cpp" line="434"/>
         <source>Priority</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="434"/>
+        <location filename="../configdialog.cpp" line="446"/>
         <source>&lt;Autodetect&gt;</source>
         <translation>&lt;自动检测&gt;</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="435"/>
+        <location filename="../configdialog.cpp" line="447"/>
         <source>Brazilian Portuguese</source>
         <translation>葡萄牙语（巴西）</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="436"/>
+        <location filename="../configdialog.cpp" line="448"/>
         <source>Chinese Simplified</source>
         <translation>简体中文</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="437"/>
+        <location filename="../configdialog.cpp" line="449"/>
         <source>Chinese Traditional</source>
         <translation>繁体中文</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="438"/>
+        <location filename="../configdialog.cpp" line="450"/>
         <source>Czech</source>
         <translation>捷克语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="439"/>
+        <location filename="../configdialog.cpp" line="451"/>
         <source>Dutch</source>
         <translation>荷兰语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="440"/>
+        <location filename="../configdialog.cpp" line="452"/>
         <source>English</source>
         <translation>英语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="441"/>
+        <location filename="../configdialog.cpp" line="453"/>
         <source>French</source>
         <translation>法语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="442"/>
+        <location filename="../configdialog.cpp" line="454"/>
         <source>Galician</source>
         <translation>加利西亚语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="443"/>
+        <location filename="../configdialog.cpp" line="455"/>
         <source>German</source>
         <translation>德语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="444"/>
+        <location filename="../configdialog.cpp" line="456"/>
         <source>Greek</source>
         <translation>希腊语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="445"/>
+        <location filename="../configdialog.cpp" line="457"/>
         <source>Hebrew</source>
         <translation>希伯来语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="446"/>
+        <location filename="../configdialog.cpp" line="458"/>
         <source>Hungarian</source>
         <translation>匈牙利语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="447"/>
+        <location filename="../configdialog.cpp" line="459"/>
         <source>Indonesian</source>
         <translation>印度尼西亚语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="448"/>
+        <location filename="../configdialog.cpp" line="460"/>
         <source>Italian</source>
         <translation>意大利语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="449"/>
+        <location filename="../configdialog.cpp" line="461"/>
         <source>Japanese</source>
         <translation>日语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="450"/>
+        <location filename="../configdialog.cpp" line="462"/>
         <source>Kazakh</source>
         <translation>哈萨克斯坦语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="451"/>
+        <location filename="../configdialog.cpp" line="463"/>
         <source>Korean</source>
         <translation>朝鲜语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="452"/>
+        <location filename="../configdialog.cpp" line="464"/>
         <source>Lithuanian</source>
         <translation>立陶宛语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="453"/>
+        <location filename="../configdialog.cpp" line="465"/>
         <source>Polish</source>
         <translation>波兰语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="454"/>
+        <location filename="../configdialog.cpp" line="466"/>
         <source>Portuguese</source>
         <translation>葡萄牙语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="455"/>
+        <location filename="../configdialog.cpp" line="467"/>
         <source>Russian</source>
         <translation>俄语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="456"/>
+        <location filename="../configdialog.cpp" line="468"/>
         <source>Serbian</source>
         <translation>塞尔维亚语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="457"/>
+        <location filename="../configdialog.cpp" line="469"/>
         <source>Slovak</source>
         <translation>斯洛伐克语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="458"/>
+        <location filename="../configdialog.cpp" line="470"/>
         <source>Swedish</source>
         <translation>瑞典语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="459"/>
+        <location filename="../configdialog.cpp" line="471"/>
         <source>Spanish</source>
         <translation>西班牙语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="460"/>
+        <location filename="../configdialog.cpp" line="472"/>
         <source>Turkish</source>
         <translation>土耳其</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="461"/>
+        <location filename="../configdialog.cpp" line="473"/>
         <source>Ukrainian</source>
         <translation>乌克兰语</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="462"/>
+        <location filename="../configdialog.cpp" line="474"/>
         <source>Serbian (Ijekavian)</source>
         <translation>塞尔维亚语（伊耶卡维亚方言）</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="463"/>
+        <location filename="../configdialog.cpp" line="475"/>
         <source>Serbian (Ekavian)</source>
         <translation>塞尔维亚语（埃卡维亚方言）</translation>
     </message>

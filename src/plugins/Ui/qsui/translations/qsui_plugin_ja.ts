@@ -197,17 +197,17 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="214"/>
         <source>Light Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>ライトモード</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="246"/>
         <source>Dark Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>ダークモード</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="275"/>
         <source>Color mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>カラーモード:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="455"/>
@@ -889,95 +889,95 @@
 <context>
     <name>QSUiColorScheme</name>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="147"/>
+        <location filename="../qsuicolorscheme.cpp" line="168"/>
         <source>Color #1:</source>
-        <translation type="unfinished">色 #1:</translation>
+        <translation>色 #1:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="148"/>
+        <location filename="../qsuicolorscheme.cpp" line="169"/>
         <source>Color #2:</source>
-        <translation type="unfinished">色 #2:</translation>
+        <translation>色 #2:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="149"/>
+        <location filename="../qsuicolorscheme.cpp" line="170"/>
         <source>Color #3:</source>
-        <translation type="unfinished">色 #3:</translation>
+        <translation>色 #3:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="150"/>
+        <location filename="../qsuicolorscheme.cpp" line="171"/>
         <source>Peaks:</source>
-        <translation type="unfinished">ピーク:</translation>
+        <translation>ピーク:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="151"/>
-        <location filename="../qsuicolorscheme.cpp" line="162"/>
+        <location filename="../qsuicolorscheme.cpp" line="172"/>
+        <location filename="../qsuicolorscheme.cpp" line="183"/>
         <source>Background:</source>
-        <translation type="unfinished">背景:</translation>
+        <translation>背景:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="152"/>
+        <location filename="../qsuicolorscheme.cpp" line="173"/>
         <source>Background #1:</source>
-        <translation type="unfinished">背景 #1:</translation>
+        <translation>背景 #1:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="153"/>
+        <location filename="../qsuicolorscheme.cpp" line="174"/>
         <source>Background #2:</source>
-        <translation type="unfinished">背景 #2:</translation>
+        <translation>背景 #2:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="154"/>
+        <location filename="../qsuicolorscheme.cpp" line="175"/>
         <source>Highlighted background:</source>
-        <translation type="unfinished">ハイライトした背景:</translation>
+        <translation>ハイライトした背景:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="155"/>
+        <location filename="../qsuicolorscheme.cpp" line="176"/>
         <source>Splitter:</source>
-        <translation type="unfinished">スプリッター:</translation>
+        <translation>スプリッター:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="156"/>
+        <location filename="../qsuicolorscheme.cpp" line="177"/>
         <source>Normal text:</source>
-        <translation type="unfinished">通常のテキスト:</translation>
+        <translation>通常のテキスト:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="157"/>
+        <location filename="../qsuicolorscheme.cpp" line="178"/>
         <source>Highlighted text:</source>
-        <translation type="unfinished">ハイライトしたテキスト:</translation>
+        <translation>ハイライトしたテキスト:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="158"/>
+        <location filename="../qsuicolorscheme.cpp" line="179"/>
         <source>Group text:</source>
-        <translation type="unfinished">グループの文字色:</translation>
+        <translation>グループの文字色:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="159"/>
+        <location filename="../qsuicolorscheme.cpp" line="180"/>
         <source>Group background:</source>
-        <translation type="unfinished">グループの背景色:</translation>
+        <translation>グループの背景色:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="160"/>
+        <location filename="../qsuicolorscheme.cpp" line="181"/>
         <source>Current track text:</source>
-        <translation type="unfinished">現在のトラックのテキスト:</translation>
+        <translation>現在のトラックのテキスト:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="161"/>
+        <location filename="../qsuicolorscheme.cpp" line="182"/>
         <source>Current track background:</source>
-        <translation type="unfinished">現在のトラックの背景:</translation>
+        <translation>現在のトラックの背景:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="163"/>
+        <location filename="../qsuicolorscheme.cpp" line="184"/>
         <source>Progress bar:</source>
-        <translation type="unfinished">プログレスバー:</translation>
+        <translation>プログレスバー:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="164"/>
+        <location filename="../qsuicolorscheme.cpp" line="185"/>
         <source>Waveform:</source>
-        <translation type="unfinished">Waveform:</translation>
+        <translation>Waveform:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="165"/>
+        <location filename="../qsuicolorscheme.cpp" line="186"/>
         <source>RMS:</source>
-        <translation type="unfinished">RMS:</translation>
+        <translation>RMS:</translation>
     </message>
 </context>
 <context>
@@ -985,32 +985,32 @@
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="32"/>
         <source>Visualization Colors</source>
-        <translation type="unfinished">表示色</translation>
+        <translation>表示色</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="33"/>
         <source>Playlist Colors</source>
-        <translation type="unfinished">プレイリストの配色</translation>
+        <translation>プレイリストの配色</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="34"/>
         <source>Waveform Seekbar Colors</source>
-        <translation type="unfinished">Waveform シークバーの色</translation>
+        <translation>Waveform シークバーの色</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="65"/>
         <source>Use system colors</source>
-        <translation type="unfinished">システム標準の配色を使用</translation>
+        <translation>システム標準の配色を使用</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="73"/>
         <source>Override group colors</source>
-        <translation type="unfinished">グループの色を上書き</translation>
+        <translation>グループの色を上書き</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="81"/>
         <source>Override current track colors</source>
-        <translation type="unfinished">現在のトラックの色を上書き</translation>
+        <translation>現在のトラックの色を上書き</translation>
     </message>
 </context>
 <context>
@@ -1641,35 +1641,35 @@
     <message>
         <location filename="../qsuisettings.cpp" line="49"/>
         <source>Light</source>
-        <translation type="unfinished"></translation>
+        <translation>ライト</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="50"/>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>ダーク</translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="51"/>
+        <location filename="../qsuisettings.cpp" line="52"/>
         <source>Automatic</source>
-        <translation type="unfinished"></translation>
+        <translation>自動</translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="55"/>
+        <location filename="../qsuisettings.cpp" line="57"/>
         <source>Top</source>
         <translation>上</translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="56"/>
+        <location filename="../qsuisettings.cpp" line="58"/>
         <source>Bottom</source>
         <translation>下</translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="57"/>
+        <location filename="../qsuisettings.cpp" line="59"/>
         <source>Left</source>
         <translation>左揃え</translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="58"/>
+        <location filename="../qsuisettings.cpp" line="60"/>
         <source>Right</source>
         <translation>右揃え</translation>
     </message>
@@ -1879,12 +1879,12 @@
 <context>
     <name>QSUiWaveformSeekBar</name>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="342"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="346"/>
         <source>2 Channels</source>
         <translation>2 チャンネル</translation>
     </message>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="345"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="349"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation>RMS</translation>

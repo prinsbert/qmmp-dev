@@ -409,13 +409,15 @@
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="415"/>
-        <location filename="../configdialog.cpp" line="420"/>
+        <location filename="../configdialog.cpp" line="421"/>
+        <location filename="../configdialog.cpp" line="428"/>
         <source>Preferences</source>
         <translation>기본 설정</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="432"/>
-        <location filename="../configdialog.cpp" line="422"/>
+        <location filename="../configdialog.cpp" line="423"/>
+        <location filename="../configdialog.cpp" line="431"/>
         <source>Information</source>
         <translation>정보</translation>
     </message>
@@ -631,47 +633,47 @@
         <translation>디더링 사용</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="498"/>
+        <location filename="../configdialog.cpp" line="510"/>
         <source>1 row</source>
         <translation>1 행</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="499"/>
+        <location filename="../configdialog.cpp" line="511"/>
         <source>3 rows</source>
         <translation>3 행</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="500"/>
+        <location filename="../configdialog.cpp" line="512"/>
         <source>4 rows</source>
         <translation>4 행</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="501"/>
+        <location filename="../configdialog.cpp" line="513"/>
         <source>5 rows</source>
         <translation>5 행</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="502"/>
+        <location filename="../configdialog.cpp" line="514"/>
         <source>Track</source>
         <translation>트랙</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="503"/>
+        <location filename="../configdialog.cpp" line="515"/>
         <source>Album</source>
         <translation>앨범</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="504"/>
+        <location filename="../configdialog.cpp" line="516"/>
         <source>Disabled</source>
         <translation>비활성화됨</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="509"/>
+        <location filename="../configdialog.cpp" line="521"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="510"/>
+        <location filename="../configdialog.cpp" line="522"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
@@ -721,157 +723,158 @@
         <translation>사용자 인터페이스</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="424"/>
+        <location filename="../configdialog.cpp" line="425"/>
+        <location filename="../configdialog.cpp" line="434"/>
         <source>Priority</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="434"/>
+        <location filename="../configdialog.cpp" line="446"/>
         <source>&lt;Autodetect&gt;</source>
         <translation>&lt;자동감지&gt;</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="435"/>
+        <location filename="../configdialog.cpp" line="447"/>
         <source>Brazilian Portuguese</source>
         <translation>브라질 포르투갈어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="436"/>
+        <location filename="../configdialog.cpp" line="448"/>
         <source>Chinese Simplified</source>
         <translation>중국어 간체</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="437"/>
+        <location filename="../configdialog.cpp" line="449"/>
         <source>Chinese Traditional</source>
         <translation>중국어 번체</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="438"/>
+        <location filename="../configdialog.cpp" line="450"/>
         <source>Czech</source>
         <translation>체코어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="439"/>
+        <location filename="../configdialog.cpp" line="451"/>
         <source>Dutch</source>
         <translation>네덜란드어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="440"/>
+        <location filename="../configdialog.cpp" line="452"/>
         <source>English</source>
         <translation>영어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="441"/>
+        <location filename="../configdialog.cpp" line="453"/>
         <source>French</source>
         <translation>프랑스어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="442"/>
+        <location filename="../configdialog.cpp" line="454"/>
         <source>Galician</source>
         <translation>갈리시아어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="443"/>
+        <location filename="../configdialog.cpp" line="455"/>
         <source>German</source>
         <translation>독일어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="444"/>
+        <location filename="../configdialog.cpp" line="456"/>
         <source>Greek</source>
         <translation>그리스어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="445"/>
+        <location filename="../configdialog.cpp" line="457"/>
         <source>Hebrew</source>
         <translation>히브리어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="446"/>
+        <location filename="../configdialog.cpp" line="458"/>
         <source>Hungarian</source>
         <translation>헝가리어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="447"/>
+        <location filename="../configdialog.cpp" line="459"/>
         <source>Indonesian</source>
         <translation>인도네시아어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="448"/>
+        <location filename="../configdialog.cpp" line="460"/>
         <source>Italian</source>
         <translation>이탈리아어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="449"/>
+        <location filename="../configdialog.cpp" line="461"/>
         <source>Japanese</source>
         <translation>일본어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="450"/>
+        <location filename="../configdialog.cpp" line="462"/>
         <source>Kazakh</source>
         <translation>카자흐스탄어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="451"/>
+        <location filename="../configdialog.cpp" line="463"/>
         <source>Korean</source>
         <translation>한국어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="452"/>
+        <location filename="../configdialog.cpp" line="464"/>
         <source>Lithuanian</source>
         <translation>리투아니아어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="453"/>
+        <location filename="../configdialog.cpp" line="465"/>
         <source>Polish</source>
         <translation>폴란드어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="454"/>
+        <location filename="../configdialog.cpp" line="466"/>
         <source>Portuguese</source>
         <translation>포르투갈어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="455"/>
+        <location filename="../configdialog.cpp" line="467"/>
         <source>Russian</source>
         <translation>러시아어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="456"/>
+        <location filename="../configdialog.cpp" line="468"/>
         <source>Serbian</source>
         <translation>세르비아어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="457"/>
+        <location filename="../configdialog.cpp" line="469"/>
         <source>Slovak</source>
         <translation>슬로바키아어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="458"/>
+        <location filename="../configdialog.cpp" line="470"/>
         <source>Swedish</source>
         <translation>스웨덴어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="459"/>
+        <location filename="../configdialog.cpp" line="471"/>
         <source>Spanish</source>
         <translation>스페인어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="460"/>
+        <location filename="../configdialog.cpp" line="472"/>
         <source>Turkish</source>
         <translation>터키어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="461"/>
+        <location filename="../configdialog.cpp" line="473"/>
         <source>Ukrainian</source>
         <translation>우크라이나어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="462"/>
+        <location filename="../configdialog.cpp" line="474"/>
         <source>Serbian (Ijekavian)</source>
         <translation>세르비아어 (Ijekavian)</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="463"/>
+        <location filename="../configdialog.cpp" line="475"/>
         <source>Serbian (Ekavian)</source>
         <translation>세르비아어 (Ekavian)</translation>
     </message>

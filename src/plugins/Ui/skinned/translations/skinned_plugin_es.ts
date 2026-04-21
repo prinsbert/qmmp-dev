@@ -1352,27 +1352,27 @@
         <translation>Mostrar botón &apos;Nueva Lista de Reproducción&apos;</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="89"/>
+        <location filename="../skinnedsettings.cpp" line="91"/>
         <source>Select Skin Files</source>
         <translation>Seleccionar Archivos de Pieles</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="90"/>
+        <location filename="../skinnedsettings.cpp" line="92"/>
         <source>Skin files</source>
         <translation>Archivos de Pieles</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="159"/>
+        <location filename="../skinnedsettings.cpp" line="161"/>
         <source>Default skin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="168"/>
+        <location filename="../skinnedsettings.cpp" line="170"/>
         <source>Unarchived skin %1</source>
         <translation>Piel sin archivar %1</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="168"/>
+        <location filename="../skinnedsettings.cpp" line="170"/>
         <source>Archived skin %1</source>
         <translation>Piel archivada %1</translation>
     </message>

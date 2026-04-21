@@ -1352,27 +1352,27 @@
         <translation>&apos;새 재생목록&apos; 버튼 표시</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="89"/>
+        <location filename="../skinnedsettings.cpp" line="91"/>
         <source>Select Skin Files</source>
         <translation>스킨 파일 선택</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="90"/>
+        <location filename="../skinnedsettings.cpp" line="92"/>
         <source>Skin files</source>
         <translation>스킨 파일</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="159"/>
+        <location filename="../skinnedsettings.cpp" line="161"/>
         <source>Default skin</source>
         <translation>기본 스킨</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="168"/>
+        <location filename="../skinnedsettings.cpp" line="170"/>
         <source>Unarchived skin %1</source>
         <translation>압축되지 않은 스킨 %1</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="168"/>
+        <location filename="../skinnedsettings.cpp" line="170"/>
         <source>Archived skin %1</source>
         <translation>압축된 스킨 %1</translation>
     </message>
