@@ -23,6 +23,7 @@
 #include <QMutex>
 #include <QStringList>
 #include <QWidget>
+#include <functional>
 #include "qmmp_export.h"
 
 #define QMMP_VISUAL_NODE_SIZE 512 //samples
@@ -73,18 +74,22 @@ public:
     /*!
      * Adds external visualization \b visual.
      */
-    static void add(Visual*visual);
+    static void add(Visual *visual);
     /*!
      * Removes external visualization \b visual.
      */
-    static void remove(Visual*);
+    static void remove(Visual *visual);
     /*!
      * Prepares visual plugins for usage.
      * @param parent Parent widget.
      * @param receiver Receiver object.
-     * @param member A slot to receive changes of active visualizations list.
+     * @param slot A slot to receive changes of active visualizations list.
      */
-    static void initialize(QWidget *parent, QObject *receiver = nullptr, const char *member = nullptr);
+    template <class Obj, typename Func1>
+    static inline void initialize(QWidget *parent, Obj *receiver, Func1 slot)
+    {
+        initializeImpl(parent, receiver, std::bind(slot, receiver));
+    }
     /*!
      * Returns a list of created visual objects.
      */
@@ -151,6 +156,7 @@ protected:
 
 private:
     VisualPrivate *d_ptr;
+    static void initializeImpl(QWidget *parent, QObject *receiver, const std::function<void(void)> &member);
 };
 
 #endif
