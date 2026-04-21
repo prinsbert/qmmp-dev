@@ -197,17 +197,17 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="214"/>
         <source>Light Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Tryb jasny</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="246"/>
         <source>Dark Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Tryb ciemny</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="275"/>
         <source>Color mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tryb kolorów:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="455"/>
@@ -889,95 +889,95 @@
 <context>
     <name>QSUiColorScheme</name>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="147"/>
+        <location filename="../qsuicolorscheme.cpp" line="168"/>
         <source>Color #1:</source>
-        <translation type="unfinished">Kolor #1:</translation>
+        <translation>Kolor #1:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="148"/>
+        <location filename="../qsuicolorscheme.cpp" line="169"/>
         <source>Color #2:</source>
-        <translation type="unfinished">Kolor #2:</translation>
+        <translation>Kolor #2:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="149"/>
+        <location filename="../qsuicolorscheme.cpp" line="170"/>
         <source>Color #3:</source>
-        <translation type="unfinished">Kolor #3:</translation>
+        <translation>Kolor #3:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="150"/>
+        <location filename="../qsuicolorscheme.cpp" line="171"/>
         <source>Peaks:</source>
-        <translation type="unfinished">Szczyty:</translation>
+        <translation>Szczyty:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="151"/>
-        <location filename="../qsuicolorscheme.cpp" line="162"/>
+        <location filename="../qsuicolorscheme.cpp" line="172"/>
+        <location filename="../qsuicolorscheme.cpp" line="183"/>
         <source>Background:</source>
-        <translation type="unfinished">Tło:</translation>
+        <translation>Tło:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="152"/>
+        <location filename="../qsuicolorscheme.cpp" line="173"/>
         <source>Background #1:</source>
-        <translation type="unfinished">Tło #1:</translation>
+        <translation>Tło #1:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="153"/>
+        <location filename="../qsuicolorscheme.cpp" line="174"/>
         <source>Background #2:</source>
-        <translation type="unfinished">Tło #2:</translation>
+        <translation>Tło #2:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="154"/>
+        <location filename="../qsuicolorscheme.cpp" line="175"/>
         <source>Highlighted background:</source>
-        <translation type="unfinished">Podświetlone tło:</translation>
+        <translation>Podświetlone tło:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="155"/>
+        <location filename="../qsuicolorscheme.cpp" line="176"/>
         <source>Splitter:</source>
-        <translation type="unfinished">Rozdzielacz:</translation>
+        <translation>Rozdzielacz:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="156"/>
+        <location filename="../qsuicolorscheme.cpp" line="177"/>
         <source>Normal text:</source>
-        <translation type="unfinished">Normalny tekst:</translation>
+        <translation>Normalny tekst:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="157"/>
+        <location filename="../qsuicolorscheme.cpp" line="178"/>
         <source>Highlighted text:</source>
-        <translation type="unfinished">Podświetlony tekst:</translation>
+        <translation>Podświetlony tekst:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="158"/>
+        <location filename="../qsuicolorscheme.cpp" line="179"/>
         <source>Group text:</source>
-        <translation type="unfinished">Tekst grupy:</translation>
+        <translation>Tekst grupy:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="159"/>
+        <location filename="../qsuicolorscheme.cpp" line="180"/>
         <source>Group background:</source>
-        <translation type="unfinished">Tło grupy:</translation>
+        <translation>Tło grupy:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="160"/>
+        <location filename="../qsuicolorscheme.cpp" line="181"/>
         <source>Current track text:</source>
-        <translation type="unfinished">Tekst bieżącego utworu:</translation>
+        <translation>Tekst bieżącego utworu:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="161"/>
+        <location filename="../qsuicolorscheme.cpp" line="182"/>
         <source>Current track background:</source>
-        <translation type="unfinished">Tło aktualnego utworu:</translation>
+        <translation>Tło aktualnego utworu:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="163"/>
+        <location filename="../qsuicolorscheme.cpp" line="184"/>
         <source>Progress bar:</source>
-        <translation type="unfinished">Pasek postępu:</translation>
+        <translation>Pasek postępu:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="164"/>
+        <location filename="../qsuicolorscheme.cpp" line="185"/>
         <source>Waveform:</source>
-        <translation type="unfinished">Przebieg fali:</translation>
+        <translation>Przebieg fali:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="165"/>
+        <location filename="../qsuicolorscheme.cpp" line="186"/>
         <source>RMS:</source>
-        <translation type="unfinished">Średnia kwadratowa:</translation>
+        <translation>Średnia kwadratowa:</translation>
     </message>
 </context>
 <context>
@@ -985,32 +985,32 @@
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="32"/>
         <source>Visualization Colors</source>
-        <translation type="unfinished">Kolory wizualizacji</translation>
+        <translation>Kolory wizualizacji</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="33"/>
         <source>Playlist Colors</source>
-        <translation type="unfinished">Kolory list odtwarzania</translation>
+        <translation>Kolory list odtwarzania</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="34"/>
         <source>Waveform Seekbar Colors</source>
-        <translation type="unfinished">Kolory paska wyszukiwania przebiegu fali</translation>
+        <translation>Kolory paska wyszukiwania przebiegu fali</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="65"/>
         <source>Use system colors</source>
-        <translation type="unfinished">Użyj systemowych kolorów</translation>
+        <translation>Użyj systemowych kolorów</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="73"/>
         <source>Override group colors</source>
-        <translation type="unfinished">Zastąp kolory grupy</translation>
+        <translation>Zastąp kolory grupy</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="81"/>
         <source>Override current track colors</source>
-        <translation type="unfinished">Zastąp kolory bieżącej ścieżki</translation>
+        <translation>Zastąp kolory bieżącej ścieżki</translation>
     </message>
 </context>
 <context>
@@ -1641,35 +1641,35 @@
     <message>
         <location filename="../qsuisettings.cpp" line="49"/>
         <source>Light</source>
-        <translation type="unfinished"></translation>
+        <translation>Jasny</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="50"/>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Ciemny</translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="51"/>
+        <location filename="../qsuisettings.cpp" line="52"/>
         <source>Automatic</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatyczny</translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="55"/>
+        <location filename="../qsuisettings.cpp" line="57"/>
         <source>Top</source>
         <translation>Góra</translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="56"/>
+        <location filename="../qsuisettings.cpp" line="58"/>
         <source>Bottom</source>
         <translation>Dół</translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="57"/>
+        <location filename="../qsuisettings.cpp" line="59"/>
         <source>Left</source>
         <translation>Lewo</translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="58"/>
+        <location filename="../qsuisettings.cpp" line="60"/>
         <source>Right</source>
         <translation>Prawo</translation>
     </message>
@@ -1881,12 +1881,12 @@
 <context>
     <name>QSUiWaveformSeekBar</name>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="342"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="346"/>
         <source>2 Channels</source>
         <translation>2 kanały</translation>
     </message>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="345"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="349"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation>Średnia kwadratowa</translation>
