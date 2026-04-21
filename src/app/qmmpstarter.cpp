@@ -369,7 +369,7 @@ void QMMPStarter::startPlayer()
         return;
     }
     m_snTerm = new QSocketNotifier(m_sigtermFd[1], QSocketNotifier::Read, this);
-    connect(m_snTerm, SIGNAL(activated(int)), SLOT(handleSigTerm()));
+    connect(m_snTerm, &QSocketNotifier::activated, this, &QMMPStarter::handleSigTerm);
 #endif
 
     connect(qApp, &QApplication::aboutToQuit, this, &QMMPStarter::savePosition);
