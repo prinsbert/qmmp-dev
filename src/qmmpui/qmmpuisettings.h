@@ -37,7 +37,7 @@ class QMMPUI_EXPORT QmmpUiSettings : public QObject
 public:
     /*!
      * Constructor.
-     * @param parent Parent object.
+     * \param parent Parent object.
      * This functions is for internal usage only, use QmmpSettings::instance() instead.
      */
     explicit QmmpUiSettings(QObject *parent = nullptr);
@@ -107,12 +107,12 @@ public:
     bool isPlayListTransitionEnabled() const;
     /*!
      * Sets the "Convert underscores to blanks" option state to \b enabled
-     * @param enabled Option state (\b true - enabled, \b false - disabled)
+     * \param enabled Option state (\b true - enabled, \b false - disabled)
      */
     void setConvertUnderscore(bool enabled);
     /*!
      * Sets the "Convert %20 to blanks" option state to \b enabled
-     * @param enabled Option state (\b true - enabled, \b false - disabled)
+     * \param enabled Option state (\b true - enabled, \b false - disabled)
      */
     void setConvertTwenty(bool enabled);
     /*!
@@ -147,7 +147,7 @@ public:
     void setGroupDividingLineVisible(bool enabled);
     /*!
      * Sets metadata usage option state to \b enabled
-     * @param enabled Option state (\b true - enabled, \b false - disabled)
+     * \param enabled Option state (\b true - enabled, \b false - disabled)
      */
     void setUseMetaData(bool enabled);
     /*!
@@ -156,12 +156,12 @@ public:
     bool resumeOnStartup() const;
     /*!
      * Sets the "Resume on startup" option state to \b enabled
-     * @param enabled Option state (\b true - enabled, \b false - disabled)
+     * \param enabled Option state (\b true - enabled, \b false - disabled)
      */
     void setResumeOnStartup(bool enabled);
     /*!
      * Sets the "Use clipboard in the URL dialog" option state to \b enabled
-     * @param enabled Option state (\b true - enabled, \b false - disabled)
+     * \param enabled Option state (\b true - enabled, \b false - disabled)
      */
     void setUseClipboard(bool enabled);
     /*!
@@ -182,7 +182,7 @@ public:
     QStringList excludeFilters() const;
     /*!
      * Sets a list of filters which should be excluded from incoming files while directory scanning.
-     * @param filters A set of filters separated by semicolon (Example: *.cue,*.ogg).
+     * \param filters A set of filters separated by semicolon (Example: *.cue,*.ogg).
      */
     void setExcludeFilters(const QString &filters);
     /*!
@@ -196,13 +196,13 @@ public:
     QString defaultPlayListName() const;
     /*!
      * Sets default playlist options.
-     * @param name Default playlist name.
-     * @param enabled Default playlist state (\b true - enabled, \b false - disabled).
+     * \param name Default playlist name.
+     * \param enabled Default playlist state (\b true - enabled, \b false - disabled).
      */
     void setDefaultPlayList(const QString &name, bool enabled = true);
     /*!
      * Enable/disable playlist auto-saving.
-     * @param enabled New setting for the auto-save option (\b true to enable)
+     * \param enabled New setting for the auto-save option (\b true to enable)
      */
     void setAutoSavePlayList(bool enabled);
     /*!
@@ -213,7 +213,7 @@ public:
     bool autoSavePlayList() const;
     /*!
      * Enable/disable feature to clear previous playlist when opening new one.
-     * @param enabled New setting for this option (\b true to enable)
+     * \param enabled New setting for this option (\b true to enable)
      */
     void setClearPreviousPlayList(bool enabled);
     /*!
@@ -224,7 +224,7 @@ public:
     bool clearPreviousPlayList() const;
     /*!
      * Enable/disable feature to skip already existing track when adding to the playlist.
-     * @param enabled New setting for this option (\b true to enable)
+     * \param enabled New setting for this option (\b true to enable)
      */
     void setSkipExistingTracks(bool enabled);
     /*!
@@ -251,7 +251,7 @@ public:
     bool readMetaDataForPlayLists() const;
     /*!
      * Enable/disable tag reading when loading a playlist.
-     * @param enabled New setting for this option (\b true to enable).
+     * \param enabled New setting for this option (\b true to enable).
      */
     void setReadMetaDataForPlayLists(bool enabled);
     /*!
@@ -262,66 +262,66 @@ public:
 signals:
     /*!
      * Emitted when state of the "Repeat All" option has changed.
-     * @param state New state of the "Repeat All" option (\b true - enabled, \b false - disabled)
+     * \param state New state of the "Repeat All" option (\b true - enabled, \b false - disabled)
      */
     void repeatableListChanged(bool state);
     /*!
      * Emitted when state of the "Shuffle" option has changed.
-     * @param state New state of the "Shuffle" option (\b true - enabled, \b false - disabled)
+     * \param state New state of the "Shuffle" option (\b true - enabled, \b false - disabled)
      */
     void shuffleChanged(bool state);
     /*!
      * Emitted when state of the "Group tracks" option has changed.
-     * @param state New state of the "Group tracks" option (\b true - enabled, \b false - disabled
+     * \param state New state of the "Group tracks" option (\b true - enabled, \b false - disabled
      */
     void groupsChanged(bool state);
     /*!
      * Tracks current track repeat state;
-     * @param enabled New repeate state of the current track (\b true - enabled, \b false - disabled)
+     * \param enabled New repeate state of the current track (\b true - enabled, \b false - disabled)
      */
     void repeatableTrackChanged(bool enabled);
     /*!
      * Emitted when state of the "No playlist advance" option changes.
-     * @param enabled New state of this option (\b true - no playlist advance,
+     * \param enabled New state of this option (\b true - no playlist advance,
      * \b false - normal playlist behaviour)
      */
     void noPlayListAdvanceChanged(bool enabled);
     /*!
      * Emitted when state of the "transition between playlists" option changes
-     * @param enabled State of transition (\b true - enabled, \b false - disabled)
+     * \param enabled State of transition (\b true - enabled, \b false - disabled)
      */
     void playListTransitionChanged(bool enabled);
 
 public slots:
     /*!
      * Prepares all playlists for repeatable playing (loop mode).
-     * @param r State of the repeatable mode (\b true - enabled, \b false - disabled)
+     * \param r State of the repeatable mode (\b true - enabled, \b false - disabled)
      */
     void setRepeatableList(bool r);
     /*!
      * Prepares all playlists for shuffle playing.
-     * @param s State of the shuffle mode (\b true - enabled, \b false - disabled)
+     * \param s State of the shuffle mode (\b true - enabled, \b false - disabled)
      */
     void setShuffle(bool s);
     /*!
      * Enables or disables playlist groups
-     * @param enabled State of the groups (\b true - enabled, \b false - disabled)
+     * \param enabled State of the groups (\b true - enabled, \b false - disabled)
      */
     void setGroupsEnabled(bool enabled);
     /*!
      * Toggles the current track repeat.
-     * @param enabled Repeate state of the current track (\b true - to repeat, \b false - to stop repeating)
+     * \param enabled Repeate state of the current track (\b true - to repeat, \b false - to stop repeating)
      */
     void setRepeatableTrack(bool enabled);
     /*!
      * When finished playing a song, don't automatically advance to the next
-     * @param enabled State of the 'No playlist advance' option
+     * \param enabled State of the 'No playlist advance' option
      * (\b true - enabled, \b false - normal playback)
      */
     void setNoPlayListAdvance(bool enabled);
     /*!
      * Enables or disables transition between playlists
-     * @param enabled State of transition (\b true - enabled, \b false - disabled)
+     * \param enabled State of transition (\b true - enabled, \b false - disabled)
      */
     void setPlayListTransitionEnabled(bool enabled);
 

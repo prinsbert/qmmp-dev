@@ -47,11 +47,25 @@ public:
      * \param suffix Localized suffix of property (i.e. kbit, kbps, etc).
      */
     MetaDataItem(const QString &name, const QVariant &value, const QString &suffix = QString());
+    /*!
+     * Constructs a copy of \b other.
+     */
     MetaDataItem(const MetaDataItem &other);
+    /*!
+     * Move-constructs a MetaDataItem instance, making it point at the same object that \b other was pointing to.
+     */
     MetaDataItem(MetaDataItem &&other) noexcept;
+    /*!
+     * Destructor.
+     */
     ~MetaDataItem();
-
+    /*!
+     * Assigns \b other to this MetaDataItem instance and returns a reference to this instance.
+     */
     MetaDataItem &operator=(const MetaDataItem &other);
+    /*!
+     * Move-assigns \b other to this MetaDataItem instance.
+     */
     MetaDataItem &operator=(MetaDataItem &&other) noexcept;
     /*!
      * Returns localized name of property.
@@ -97,13 +111,13 @@ public:
         IsCoverEditable = 0x01,      /*!< Enable cover editor. */
         CompletePropertyList = 0x02, /*!< Show properties from \b extraProperties() only (ignore other sources) */
         IsCueEditable = 0x04,        /*!< Enable CUE editor. */
-        IsLyricsEditable = 0x08
+        IsLyricsEditable = 0x08      /*!< Enable Lyrics editor. */
     };
     Q_DECLARE_FLAGS(DialogHints, DialogHint)
     /*!
      * Constructor.
-     * @param readOnly Open file in read-only mode (\b true - enabled, \b false - disable).
-     * @param hints Details dialog settings.
+     * \param readOnly Open file in read-only mode (\b true - enabled, \b false - disable).
+     * \param hints Details dialog settings.
      */
     MetaDataModel(bool readOnly, DialogHints hints = DialogHints());
     /*!
@@ -132,7 +146,7 @@ public:
     virtual QImage cover() const;
     /*!
      * Sets cover.
-     * @param img Cover image.
+     * \param img Cover image.
      * Subclass should reimplement this function. Default implementation does nothing.
      */
     virtual void setCover(const QImage &img);
@@ -161,10 +175,14 @@ public:
      * Returns song lyrics. Default implementation returns empty string.
      */
     virtual QString lyrics() const;
-
+    /*!
+     * Sets song lyrics. Default implementation does nothing.
+     */
     virtual void setLyrics(const QString &content);
+    /*!
+     * Removes song lyrics. Default implementation calls setLyrics(QString()).
+     */
     virtual void removeLyrics();
-
     /*!
      * Returns \b true if file is opened in read only mode. Otherwise returns \b false.
      */
@@ -181,7 +199,7 @@ protected:
     void setDialogHints(const DialogHints &hints);
     /*!
      * Enables/Disables read only mode (\b true - enabled, \b false - disable).
-     * @param readOnly read only mode (\b true - enabled, \b false - disable).
+     * \param readOnly read only mode (\b true - enabled, \b false - disable).
      */
     void setReadOnly(bool readOnly);
 

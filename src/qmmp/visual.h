@@ -43,8 +43,8 @@ class QMMP_EXPORT Visual : public QWidget
 public:
     /*!
     * Object contsructor.
-    * @param parent Parent object.
-    * @param f Widget flags.
+    * \param parent Parent object.
+    * \param f Widget flags.
     */
     Visual(QWidget *parent, Qt::WindowFlags f = Qt::WindowFlags());
     /*!
@@ -57,18 +57,18 @@ public:
     static QList<VisualFactory*> factories();
     /*!
      * Returns plugin file path.
-     * @param factory Visual plugin factory.
+     * \param factory Visual plugin factory.
      */
     static QString file(const VisualFactory *factory);
     /*!
      * Sets whether the visual plugin is enabled.
-     * @param factory Visual plugin factory.
-     * @param enable Plugin enable state (\b true - enable, \b false - disable)
+     * \param factory Visual plugin factory.
+     * \param enable Plugin enable state (\b true - enable, \b false - disable)
      */
     static void setEnabled(VisualFactory *factory, bool enable = true);
     /*!
      * Returns \b true if visual plugin is enabled, otherwise returns \b false
-     * @param factory Effect plugin factory.
+     * \param factory Effect plugin factory.
      */
     static bool isEnabled(const VisualFactory *factory);
     /*!
@@ -81,9 +81,9 @@ public:
     static void remove(Visual *visual);
     /*!
      * Prepares visual plugins for usage.
-     * @param parent Parent widget.
-     * @param receiver Receiver object.
-     * @param slot A slot to receive changes of active visualizations list.
+     * \param parent Parent widget.
+     * \param receiver Receiver object.
+     * \param slot A slot to receive changes of active visualizations list.
      */
     template <class Obj, typename Func1>
     static inline void initialize(QWidget *parent, Obj *receiver, Func1 slot)
@@ -96,17 +96,17 @@ public:
     static const QList<Visual *> &visuals();
     /*!
      * Shows configuration dialog and updates settings automatically.
-     * @param factory Visual plugin factory.
-     * @param parent Parent widget.
+     * \param factory Visual plugin factory.
+     * \param parent Parent widget.
      */
     static void showSettings(VisualFactory *factory, QWidget *parent);
     /*!
      * Adds data for visualization.
-     * @param pcm Audio data.
-     * @param samples Number of samples.
-     * @param channels Number of channels.
-     * @param ts Elapsed time (in milliseconds).
-     * @param delay Audio output delay.
+     * \param pcm Audio data.
+     * \param samples Number of samples.
+     * \param channels Number of channels.
+     * \param ts Elapsed time (in milliseconds).
+     * \param delay Audio output delay.
      */
     static void addAudio(float *pcm, int samples, int channels, qint64 ts, qint64 delay);
     /*!
@@ -133,15 +133,15 @@ signals:
 protected:
     /*!
      * QWidget's close event. Reimplementation should call base function.
-     * @param event QCloseEvent instance.
+     * \param event QCloseEvent instance.
      */
     virtual void closeEvent (QCloseEvent *event) override;
     /*!
      * Takes visualization data. Caller should allocate \b QMMP_VISUAL_NODE_SIZE
      * samples for each channel. If buffer for right channel is not specified,
      * this function will average data from left and right channels.
-     * @param left Left channel buffer.
-     * @param right Right channel buffer.
+     * \param left Left channel buffer.
+     * \param right Right channel buffer.
      */
     bool takeData(float *left, float *right = nullptr);
     /*!
@@ -149,8 +149,8 @@ protected:
      * Caller should allocate \b QMMP_VISUAL_FFT_SIZE
      * points for each channel. If buffer for right channel is not specified,
      * this function will average data from left and right channels.
-     * @param left Left channel buffer.
-     * @param right Right channel buffer.
+     * \param left Left channel buffer.
+     * \param right Right channel buffer.
      */
     bool takeFFTData(float *left, float *right = nullptr);
 

@@ -39,7 +39,7 @@ class QMMP_EXPORT VolumeHandler : public QObject
 public:
     /*!
      * Object constructor.
-     * @param parent Parent object.
+     * \param parent Parent object.
      */
     VolumeHandler(QObject *parent = nullptr);
     /*!
@@ -49,8 +49,8 @@ public:
     /*!
      * Setups volume level.
      * Subclass should reimplement this fucntion.
-     * @param left Left channel volume level. It should be \b 0..100
-     * @param right Right channel volume level. It should be \b 0..100
+     * \param left Left channel volume level. It should be \b 0..100
+     * \param right Right channel volume level. It should be \b 0..100
      */
     void setVolume(int left, int right);
     /*!
@@ -59,12 +59,12 @@ public:
     void changeVolume(int delta);
     /*!
      * Sets the volume of the left and right channels with keeping of the balance.
-     * @param volume volume of the left and right channels \b [0..100].
+     * \param volume volume of the left and right channels \b [0..100].
      */
     void setVolume(int volume);
     /*!
      * Sets the balance between left and right channels.
-     * @param balance balance between left and right channels \b [-100..100].
+     * \param balance balance between left and right channels \b [-100..100].
      */
     void setBalance(int balance);
     /*!
@@ -105,12 +105,12 @@ public:
 signals:
     /*!
      * Emitted when the highest volume of the left and right channels has changed.
-     * @param volume New value of the highest volume of the left and right channels.
+     * \param volume New value of the highest volume of the left and right channels.
      */
     void volumeChanged(int volume);
     /*!
      * Emitted when the balance between left and right channels has changed.
-     * @param balance New balance value.
+     * \param balance New balance value.
      */
     void balanceChanged(int balance);
     /*!

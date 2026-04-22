@@ -36,7 +36,7 @@ class QMMPUI_EXPORT TemplateEditor : public QDialog
 public:
     /*!
      * Constructor.
-     * @param parent Parent widget.
+     * \param parent Parent widget.
      */
     explicit TemplateEditor(QWidget *parent = nullptr);
     /*!
@@ -58,11 +58,11 @@ public:
     void setDefaultTemplate(const QString &text);
     /*!
      * Static convenience function to get a template from the user.
-     * @param parent Parent widget.
-     * @param title Window title.
-     * @param text Template which is placed in the text edit.
-     * @param default_template This template will be placed in the text edit if the user pressed Reset.
-     * @param ok This varible will be set to \b true (\b false) if the user pressed OK (Cancel).
+     * \param parent Parent widget.
+     * \param title Window title.
+     * \param text Template which is placed in the text edit.
+     * \param default_template This template will be placed in the text edit if the user pressed Reset.
+     * \param ok This varible will be set to \b true (\b false) if the user pressed OK (Cancel).
      */
     static QString getTemplate (QWidget *parent, const QString &title, const QString &text = QString(),
                                 const QString &default_template = QString(), bool *ok = nullptr);

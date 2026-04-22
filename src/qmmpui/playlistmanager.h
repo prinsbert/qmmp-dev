@@ -38,7 +38,7 @@ class QMMPUI_EXPORT PlayListManager : public QObject
 public:
     /*!
      * Constructor.
-     * @param parent Parent object.
+     * \param parent Parent object.
      */
     explicit PlayListManager(QObject *parent);
     /*!
@@ -94,14 +94,14 @@ public:
 signals:
     /*!
      * Emitted when current playlist changes.
-     * @param current Current playlist.
-     * @param previous Previous playlist.
+     * \param current Current playlist.
+     * \param previous Previous playlist.
      */
     void currentPlayListChanged(PlayListModel *current, PlayListModel *previous);
     /*!
      * Emitted when selected playlist changes.
-     * @param selected Selected playlist.
-     * @param previous Previous selected playlist.
+     * \param selected Selected playlist.
+     * \param previous Previous selected playlist.
      */
     void selectedPlayListChanged(PlayListModel *selected, PlayListModel *previous);
     /*!

@@ -33,9 +33,9 @@ class QMMPUI_EXPORT CommandLineManager
 public:
     /*!
      * Executes command \b opt_str.
-     * @param name Command line option name.
-     * @param args Command arguments.
-     * @param currentWorkingDir Current working directory.
+     * \param name Command line option name.
+     * \param args Command arguments.
+     * \param currentWorkingDir Current working directory.
      * @return Command output result.
      */
     static QString executeCommand(const QString &name, const QStringList &args, const QString &currentWorkingDir);
@@ -49,7 +49,7 @@ public:
     static void printUsage();
     /*!
      * Prepares help string for output.
-     * @param line Specially formatted help string. Example: "--command||description".
+     * \param line Specially formatted help string. Example: "--command||description".
      */
     static QString formatHelpString(const QString &line);
 

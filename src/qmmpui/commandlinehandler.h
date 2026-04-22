@@ -58,9 +58,9 @@ public:
     /*!
      * Executes given command.
      * Subclass should reimplement this function.
-     * @param id Command identifier to execute
-     * @param args Command arguments
-     * @param currentWorkingDir Current working directory
+     * \param id Command identifier to execute
+     * \param args Command arguments
+     * \param currentWorkingDir Current working directory
      * @return Command output
      */
     virtual QString executeCommand(int id, const QStringList &args, const QString &currentWorkingDir) = 0;

@@ -202,7 +202,7 @@ public:
     static QString pluginPath();
     /*!
      * Returns a list of found Qmmp plugins (full paths).
-     * @param prefix Plugin type or directory name (examples: Inpunt, Transport, Output).
+     * \param prefix Plugin type or directory name (examples: Inpunt, Transport, Output).
      */
     static QStringList findPlugins(const QString &prefix);
     /*!
@@ -215,7 +215,7 @@ public:
     static QString uiLanguageID();
     /*!
      * Sets user interface language.
-     * @param code Language code; code "auto" means autodetection.
+     * \param code Language code; code "auto" means autodetection.
      */
     static void setUiLanguageID(const QString &code);
     /*!

@@ -36,7 +36,7 @@ class QMMPUI_EXPORT ConfigDialog : public QDialog
 public:
     /*!
      * Constructor.
-     * @param parent Parent widget
+     * \param parent Parent widget
      */
     ConfigDialog(QWidget *parent = nullptr);
     /*!
@@ -45,9 +45,9 @@ public:
     virtual ~ConfigDialog();
     /*!
      * Adds custom page in the configuration dialog
-     * @param name Localized name of the custom page
-     * @param widget Custom page instance
-     * @param icon Custom page icon
+     * \param name Localized name of the custom page
+     * \param widget Custom page instance
+     * \param icon Custom page icon
      */
     void addPage(const QString &name, QWidget *widget, const QIcon &icon = QIcon());
 

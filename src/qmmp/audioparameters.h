@@ -43,27 +43,35 @@ public:
         BigEndian         /*!< Samples are in big-endian byte order */
     };
     /*!
-     * Constructor.
+     * Constructs default audio parameters.
      */
     AudioParameters();
     /*!
      * Constructs audio settings with the given parameters.
-     * @param srate Sampling rate.
-     * @param map Channel map.
-     * @param format PCM data format.
+     * \param srate Sampling rate.
+     * \param map Channel map.
+     * \param format PCM data format.
      */
     AudioParameters(quint32 srate, const ChannelMap &map, Qmmp::AudioFormat format);
-
+    /*!
+     * Destructor.
+     */
     ~AudioParameters();
     /*!
      * Constructs a copy of \b other.
      */
     AudioParameters(const AudioParameters &other);
+    /*!
+     * Move-constructs a AudioParameters instance, making it point at the same object that \b other was pointing to.
+     */
     AudioParameters(AudioParameters &&other) noexcept;
     /*!
      * Assigns audio parameters \b p to this parameters.
      */
     AudioParameters &operator=(const AudioParameters &p);
+    /*!
+     * Move-assigns \b p to this AudioParameters instance.
+     */
     AudioParameters &operator=(AudioParameters &&p) noexcept;
     /*!
      * Returns \b true if parameters \b p is equal to this parameters; otherwise returns \b false.
@@ -132,8 +140,8 @@ public:
     /*!
      * Find audio format by number of bits and byte  order.
      * Returns \b Qmmp::UNKNOWN if format is not found.
-     * @param bits Number of used bits in the sample (precision).
-     * @param byteOrder Byte order.
+     * \param bits Number of used bits in the sample (precision).
+     * \param byteOrder Byte order.
      */
     static Qmmp::AudioFormat findAudioFormat(int bits, ByteOrder byteOrder = LittleEndian);
 

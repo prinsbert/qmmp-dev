@@ -48,7 +48,7 @@ class QMMPUI_EXPORT UiHelper : public QObject
 public:
     /*!
      * Object constructor,
-     * @param parent Parent object
+     * \param parent Parent object
      */
     UiHelper(QObject *parent = nullptr);
     /*!
@@ -71,8 +71,8 @@ public:
     /*!
      * Adds the newly created action to the menu with type \b type.
      * Menu with type \b type should be created first.
-     * @param action Pointer of action.
-     * @param type Menu type.
+     * \param action Pointer of action.
+     * \param type Menu type.
      */
     void addAction(QAction *action, MenuType type = TOOLS_MENU);
     /*!
@@ -85,72 +85,72 @@ public:
     QList<QAction *> actions(MenuType type = TOOLS_MENU);
     /*!
      * Creates menu with type \b type
-     * @param type Menu type.
-     * @param title Menu title.
-     * @param autoHide Hide empty menu.
-     * @param parent Parent widget
+     * \param type Menu type.
+     * \param title Menu title.
+     * \param autoHide Hide empty menu.
+     * \param parent Parent widget
      */
     QMenu *createMenu(MenuType type, const QString &title = QString(), bool autoHide = true, QWidget *parent = nullptr);
     /*!
      * Registers existing menu for access from general plugins.
-     * @param type Menu type.
-     * @param menu Menu pointer.
-     * @param autoHide Hide empty menu.
-     * @param before An action, after which the rest are added.
+     * \param type Menu type.
+     * \param menu Menu pointer.
+     * \param autoHide Hide empty menu.
+     * \param before An action, after which the rest are added.
      */
     void registerMenu(MenuType type, QMenu *menu, bool autoHide = false, QAction *before = nullptr);
     /*!
      * Opens 'Add Files' dialog
-     * @param parent Parent widget
-     * @param model Destination playlist model
+     * \param parent Parent widget
+     * \param model Destination playlist model
      */
     void addFiles(QWidget *parent = qApp->activeWindow(),
                  PlayListModel *model = PlayListManager::instance()->selectedPlayList());
     /*!
      * Opens 'Play Files' dialog
-     * @param parent Parent widget
-     * @param model Destination playlist model
+     * \param parent Parent widget
+     * \param model Destination playlist model
      */
     void playFiles(QWidget *parent = qApp->activeWindow(),
                    PlayListModel *model = PlayListManager::instance()->selectedPlayList());
     /*!
      * Opens 'Add Directory' dialog
-     * @param parent Parent widget
-     * @param model Destination playlist model
+     * \param parent Parent widget
+     * \param model Destination playlist model
      */
     void addDirectory(QWidget *parent = qApp->activeWindow(),
                       PlayListModel *model = PlayListManager::instance()->selectedPlayList());
     /*!
      * Opens 'Add URL' dialog
-     * @param parent Parent widget
-     * @param model Destination playlist model
+     * \param parent Parent widget
+     * \param model Destination playlist model
      */
     void addUrl(QWidget *parent = qApp->activeWindow(),
                 PlayListModel *model = PlayListManager::instance()->selectedPlayList());
     /*!
      * Opens 'Load Playlist' dialog
-     * @param parent Parent widget
-     * @param model Destination playlist model
+     * \param parent Parent widget
+     * \param model Destination playlist model
      */
     void loadPlayList(QWidget *parent = qApp->activeWindow(),
                      PlayListModel *model = PlayListManager::instance()->selectedPlayList());
     /*!
      * Opens 'Save Playlist' dialog
-     * @param parent Parent widget
-     * @param model Destination playlist model
+     * \param parent Parent widget
+     * \param model Destination playlist model
      */
     void savePlayList(QWidget *parent = qApp->activeWindow(),
                      PlayListModel *model = PlayListManager::instance()->selectedPlayList());
     /*!
      * Opens 'Jump To Track' dialog
-     * @param parent Parent widget
-     * @param model Destination playlist model
+     * \param parent Parent widget
+     * \param model Destination playlist model
      */
     void jumpToTrack(QWidget *parent = qApp->activeWindow(),
                      PlayListModel *model = PlayListManager::instance()->selectedPlayList());
     /*!
      * Shows about dialog
-     * @param parent Parent widget
+     * \param parent Parent widget
      */
     void about(QWidget *parent = nullptr);
     /*!

@@ -42,7 +42,9 @@ public:
      * Constructs a new TrackInfo that is a copy of the given \b other
      */
     TrackInfo(const TrackInfo &other);
-
+    /*!
+     * Move-constructs a TrackInfo instance, making it point at the same object that \b other was pointing to.
+     */
     TrackInfo(TrackInfo &&other) noexcept;
     /*!
      * Destructor.
@@ -64,6 +66,9 @@ public:
      * Makes a copy of the given \b info
      */
     TrackInfo &operator=(const TrackInfo &info);
+    /*!
+     * Move-assigns \b info to this TrackInfo instance.
+     */
     TrackInfo &operator=(TrackInfo &&info) noexcept;
     /*!
      * Returns \b true if this FileInfo object refers to \b info; otherwise returns \b false.
@@ -177,7 +182,9 @@ public:
      * Removes all track information including path.
      */
     void clear();
-
+    /*!
+     * Swaps TrackInfo object \b other with this instance.
+     */
     void swap(TrackInfo &other);
     /*!
      * Extracts path and track number \b track from URL \b url.

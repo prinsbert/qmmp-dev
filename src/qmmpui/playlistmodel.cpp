@@ -190,7 +190,7 @@ public:
     }
     /*!
      * Enabled/Disabled groped mode
-     * @param enabled State of the groups (\b true - enabled, \b false - disabled)
+     * \param enabled State of the groups (\b true - enabled, \b false - disabled)
      */
     void prepareGroups(bool enabled)
     {

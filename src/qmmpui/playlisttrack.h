@@ -45,13 +45,22 @@ public:
      * Constructs a new PlayListTrack that is a copy of the given track \b other
      */
     explicit PlayListTrack(const PlayListTrack &other);
+    /*!
+     * Constructs a new PlayListTrack that is a copy of the given track pointer \b other
+     */
     explicit PlayListTrack(const PlayListTrack *other);
+    /*!
+     * Move-constructs a PlayListTrack instance, making it point at the same object that \b other was pointing to.
+     */
     explicit PlayListTrack(PlayListTrack &&other) noexcept;
     /*!
      * Constructs plalist item with given metadata.
-     * @param info Media file information.
+     * \param info Media file information.
      */
     PlayListTrack(const TrackInfo &info);
+    /*!
+     * Move-constructs a PlayListTrack instance, making it point at the same object that \b other was pointing to.
+     */
     PlayListTrack(TrackInfo &&info);
     /*!
      * Object destructor.
@@ -61,10 +70,13 @@ public:
      * Assigns \b other to this track and returns a reference to this track.
      */
     PlayListTrack &operator=(const PlayListTrack &other);
+    /*!
+     * Move-assigns \b p to this AudioParameters instance.
+     */
     PlayListTrack &operator=(PlayListTrack &&other) noexcept;
     /*!
      * Returns formatted title of the item.
-     * @param column Number of column.
+     * \param column Number of column.
      */
     QString formattedTitle(int column) const override;
     /*!
@@ -77,7 +89,7 @@ public:
     QString formattedDuration() const override;
     /*!
      *  Updates current metadata.
-     *  @param info Track information.
+     *  \param info Track information.
      */
     void updateMetaData(const TrackInfo &info);
     /*!

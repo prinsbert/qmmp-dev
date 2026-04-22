@@ -65,13 +65,13 @@ public:
     virtual Effect *create() = 0;
     /*!
      * Creates settings dialog.
-     * @param parent Parent widget.
+     * \param parent Parent widget.
      * @return Settings dialog pointer.
      */
     virtual QDialog *createSettings(QWidget *parent) = 0;
     /*!
      * Shows about dialog.
-     * @param parent Parent widget.
+     * \param parent Parent widget.
      */
     virtual void showAbout(QWidget *parent) = 0;
     /*!

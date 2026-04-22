@@ -79,8 +79,8 @@ class QMMPUI_EXPORT PlayListModel : public QObject
 public:
     /*!
      * Constructs a playlist model.
-     * @param name Playlist name.
-     * @param parent QObject parent
+     * \param name Playlist name.
+     * \param parent QObject parent
      */
     explicit PlayListModel(const QString &name, QObject *parent = nullptr);
     /*!
@@ -121,7 +121,7 @@ public:
     PlayListTrack *nextTrack() const;
     /*!
      * Returns index of track or group.
-     * @param item track or group pointer.
+     * \param item track or group pointer.
      */
     int indexOf(PlayListItem *item) const;
     /*!
@@ -147,7 +147,7 @@ public:
     /*!
      * Sets current track index.
      * Returns \b false if the track with this index doesn't exist, otherwise returns \b true
-     * @param index Number of the track.
+     * \param index Number of the track.
      */
     bool setCurrent(int index);
     /*!
@@ -157,27 +157,27 @@ public:
     bool setCurrent(PlayListTrack *track);
     /*!
      * Sets the selected state of the item to \b select
-     * @param item Track or group pointer.
-     * @param selected Selection state (\b true - select, \b false - unselect)
+     * \param item Track or group pointer.
+     * \param selected Selection state (\b true - select, \b false - unselect)
      */
     void setSelected(PlayListItem *item, bool selected = true);
     /*!
      * Sets the selected state of the list of tracks to \b select
-     * @param tracks List of tracks.
-     * @param selected Selection state (\b true - select, \b false - unselect)
+     * \param tracks List of tracks.
+     * \param selected Selection state (\b true - select, \b false - unselect)
      */
     void setSelected(const QList<PlayListTrack *> &tracks, bool selected = true);
     /*!
      * Sets the selected state of the list of items to \b select
-     * @param items List of items.
-     * @param selected Selection state (\b true - select, \b false - unselect)
+     * \param items List of items.
+     * \param selected Selection state (\b true - select, \b false - unselect)
      */
     void setSelected(const QList<PlayListItem *> &items, bool selected = true);
     /*!
      * Sets the selected state of the list of items range.
-     * @param firstLine Firts line in the range.
-     * @param lastLine Last line in the range.
-     * @param selected Selection state (\b true - select, \b false - unselect).
+     * \param firstLine Firts line in the range.
+     * \param lastLine Last line in the range.
+     * \param selected Selection state (\b true - select, \b false - unselect).
      */
     void setSelectedLines(int firstLine, int lastLine, bool selected = true);
     /*!
@@ -204,8 +204,8 @@ public:
     PlayListTrack *trackAtLine(int lineIndex) const;
     /*!
      * Returns a list of the items, starting at line \b pos
-     * @param pos First item line.
-     * @param count A number of items. If \b count is -1 (the default), all items from pos are returned.
+     * \param pos First item line.
+     * \param count A number of items. If \b count is -1 (the default), all items from pos are returned.
      */
     QList<PlayListItem *> itemsAtLines(int pos, int count = -1) const;
     /*!
@@ -263,8 +263,8 @@ public:
     QList<int> selectedLines() const;
     /*!
      * Selects or unselects group or track at line \b line.
-     * @param line Line number.
-     * @param selected Selection state.
+     * \param line Line number.
+     * \param selected Selection state.
      */
     void setSelectedLine(int line, bool selected = true);
     /*!
@@ -297,8 +297,8 @@ public:
     void loadPlaylist(const QString& f_name);
     /*!
      * Loads playlist from content.
-     * @param fmt Playlist format (short name).
-     * @param data Content of the playlist file.
+     * \param fmt Playlist format (short name).
+     * \param data Content of the playlist file.
      */
     void loadPlaylist(const QString &fmt, const QByteArray &data);
     /*!
@@ -357,17 +357,17 @@ public:
 signals:
     /*!
      * Emitted when the state of PlayListModel has changed.
-     * @param flags Playlist updated flags. See \b UpdateFlags enum for details.
+     * \param flags Playlist updated flags. See \b UpdateFlags enum for details.
      */
     void listChanged(int flags);
     /*!
      * Emitted when new tracks have added.
-     * @param tracks A list of pointers of the new playlist tracks.
+     * \param tracks A list of pointers of the new playlist tracks.
      */
     void tracksAdded(const QList<PlayListTrack *> &tracks);
     /*!
      * Emitted when playlist name has chanded.
-     * @param name New playlist name.
+     * \param name New playlist name.
      */
     void nameChanged(const QString &name);
     /*!
@@ -380,8 +380,8 @@ signals:
     void scrollToRequest(int trackIndex);
     /*!
      * Emitted when sorting by column is finished.
-     * @param column Column index.
-     * @param reverted Sort direction.
+     * \param column Column index.
+     * \param reverted Sort direction.
      */
     void sortingByColumnFinished(int column, bool reverted);
     /*!
@@ -396,17 +396,17 @@ public slots:
     void addTrack(PlayListTrack *track);
     /*!
      * Adds a list of tracks to the playlist.
-     * @param tracks List of tracks.
+     * \param tracks List of tracks.
      */
     void addTracks(const QList<PlayListTrack *> &tracks);
     /*!
      * Adds a list of files and directories to the playlist
-     * @param path Full path of file or directory.
+     * \param path Full path of file or directory.
      */
     void addPath(const QString &path);
     /*!
      * Adds a list of files and directories to the playlist
-     * @param paths Full paths of files and directories.
+     * \param paths Full paths of files and directories.
      */
     void addPaths(const QStringList &paths);
     /*!
@@ -424,20 +424,20 @@ public slots:
     void insertJson(int index, const QByteArray &json);
     /*!
      * Inserts file or directory at index position \b index in the playlist.
-     * @param path Full path of file or directory.
-     * @param index Position in the playlist.
+     * \param path Full path of file or directory.
+     * \param index Position in the playlist.
      */
     void insertPath(int index, const QString &path);
     /*!
      * Adds a list of files and directories at index position \b index in the playlist.
-     * @param paths Full paths of files and directories.
-     * @param index Position in the playlist.
+     * \param paths Full paths of files and directories.
+     * \param index Position in the playlist.
      */
     void insertPaths(int index, const QStringList &paths);
     /*!
      * Adds a list of URLs at index position \b index in the playlist.
-     * @param urls A list of URLs.
-     * @param index Position in the playlist.
+     * \param urls A list of URLs.
+     * \param index Position in the playlist.
      */
     void insertUrls(int index, const QList<QUrl> &urls);
     /*!
@@ -482,12 +482,12 @@ public slots:
     void selectAll();
     /*!
      * Shows details for the first selected item.
-     * @param parent parent Widget.
+     * \param parent parent Widget.
      */
     void showDetails(QWidget *parent = nullptr);
     /*!
      * Shows the details for the current song (if any).
-     * @param parent parent widget.
+     * \param parent parent widget.
      */
     void showDetailsForCurrent(QWidget *parent = nullptr);
     /*!

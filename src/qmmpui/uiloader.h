@@ -43,17 +43,17 @@ public:
     static QStringList names();
     /*!
      * Returns plugin file path.
-     * @param factory User interface plugin factory.
+     * \param factory User interface plugin factory.
      */
     static QString file(UiFactory *factory);
     /*!
      * Selects active user interface factory.
-     * @param factory Ui plugin factory.
+     * \param factory Ui plugin factory.
      */
     static void select(UiFactory* factory);
     /*!
      * Selects active user interface.
-     * @param name Ui plugin factory short name.
+     * \param name Ui plugin factory short name.
      */
     static void select(const QString &name);
     /*!

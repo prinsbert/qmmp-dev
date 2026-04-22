@@ -46,12 +46,18 @@ public:
      * Constructs a copy of \b other.
      */
     EqSettings(const EqSettings &other);
+    /*!
+     * Move-constructs a EqSettings instance, making it point at the same object that \b other was pointing to.
+     */
     EqSettings(EqSettings &&other) noexcept;
     /*!
      * Constructs an empty equalizer settings (0 dB, disabled)
-     * @param bands - Number of bands (supported: 10, 15, 25, 31)
+     * \param bands - Number of bands (supported: 10, 15, 25, 31)
      */
     EqSettings(Bands bands = EQ_BANDS_10);
+    /*!
+     * Destructor.
+     */
     ~EqSettings();
     /*!
      * Returns \b true if equalizer is enabled, otherwise returns \b false.
@@ -79,8 +85,8 @@ public:
     void setEnabled(bool enabled = true);
     /*!
      * Sets gain of the equalizer channel.
-     * @param band Number of equalizer band.
-     * @param gain Channel gain (-20.0..20.0 dB)
+     * \param band Number of equalizer band.
+     * \param gain Channel gain (-20.0..20.0 dB)
      */
     void setGain(int band, double gain);
     /*!
@@ -95,6 +101,9 @@ public:
      * Assigns equalizer settings \b s to this settings.
      */
     EqSettings &operator=(const EqSettings &s);
+    /*!
+     * Move-assigns \b s to this EqSettings instance.
+     */
     EqSettings &operator=(EqSettings &&s) noexcept;
     /*!
      * Returns \b true if equalizer settins \b s is equal to this settings; otherwise returns false.
