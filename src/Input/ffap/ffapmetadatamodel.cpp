@@ -75,11 +75,11 @@ QString FFapMetaDataModel::coverPath() const
     return MetaDataManager::instance()->findCoverFile(m_path);
 }
 
-FFapFileTagModel::FFapFileTagModel(TagLib::APE::File *file, TagLib::APE::File::TagTypes tagType) : TagModel(),
+FFapFileTagModel::FFapFileTagModel(TagLib::APE::File *file, TagLib::APE::File::TagTypes tagType) : TagModel(TagModel::CreateRemove),
     m_file(file),
     m_tagType(tagType)
 {
-    if (m_tagType == TagLib::APE::File::ID3v1)
+    if(m_tagType == TagLib::APE::File::ID3v1)
     {
         m_tag = m_file->ID3v1Tag();
         m_codec = new QmmpTextCodec("ISO-8859-1");
