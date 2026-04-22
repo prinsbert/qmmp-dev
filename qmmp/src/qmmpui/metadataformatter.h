@@ -39,7 +39,7 @@ class QMMPUI_EXPORT MetaDataFormatter
 public:
     /*!
      * Constructor.
-     * @param pattern Metadata template.
+     * \param pattern Metadata template.
      * Syntax:
      * %p - artist,
      * %a - album,
@@ -68,10 +68,13 @@ public:
      * %dir - full path of the parent directory.
      */
     MetaDataFormatter(const QString &pattern = QString());
+    /*!
+     * Destructor.
+     */
     ~MetaDataFormatter();
     /*!
      * Setups metadata template.
-     * @param pattern Metadata template string.
+     * \param pattern Metadata template string.
      */
     void setPattern(const QString &pattern);
     /*!

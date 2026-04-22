@@ -34,7 +34,7 @@ class QMMPUI_EXPORT General
 public:
     /*!
      * Prepares general plugins for usage.
-     * @param parent Parent object.
+     * \param parent Parent object.
      */
     static void create(QObject *parent);
     /*!
@@ -51,7 +51,7 @@ public:
     static QStringList enabledWidgets();
     /*!
      * Returns widget description.
-     * @param id Widget ID.
+     * \param id Widget ID.
      */
     static WidgetDescription widgetDescription(const QString &id);
     /*!
@@ -63,24 +63,24 @@ public:
     static QWidget *createWidget(const QString &id, QWidget *parent);
     /*!
      * Returns plugin file path.
-     * @param factory General plugin factory.
+     * \param factory General plugin factory.
      */
     static QString file(const GeneralFactory *factory);
     /*!
      * Sets whether the general plugin is enabled.
-     * @param factory General plugin factory.
-     * @param enable Plugin enable state (\b true - enable, \b false - disable)
+     * \param factory General plugin factory.
+     * \param enable Plugin enable state (\b true - enable, \b false - disable)
      */
     static void setEnabled(GeneralFactory *factory, bool enable = true);
     /*!
      * Shows configuration dialog and updates settings automatically.
-     * @param factory General plugin factory.
-     * @param parentWidget Parent widget.
+     * \param factory General plugin factory.
+     * \param parentWidget Parent widget.
      */
     static void showSettings(GeneralFactory *factory, QWidget *parentWidget);
     /*!
      * Returns \b true if general plugin is enabled, otherwise returns \b false
-     * @param factory General plugin factory.
+     * \param factory General plugin factory.
      */
     static bool isEnabled(const GeneralFactory* factory);
 

@@ -37,7 +37,7 @@ class QMMPUI_EXPORT PlayListGroup : public PlayListItem
 public:
     /*!
      * Constructor.
-     * @param groupName Internal name of the group.
+     * \param groupName Internal name of the group.
      */
     explicit PlayListGroup(const QString &groupName);
     /*!
@@ -46,7 +46,7 @@ public:
     virtual ~PlayListGroup();
     /*!
      * Returns formatted title of the  group.
-     * @param line Number of title (0 or 1).
+     * \param line Number of title (0 or 1).
      */
     QString formattedTitle(int line = 0) const override;
     /*!

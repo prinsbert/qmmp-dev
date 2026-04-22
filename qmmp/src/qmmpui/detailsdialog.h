@@ -38,14 +38,14 @@ class QMMPUI_EXPORT DetailsDialog : public QDialog
 public:
     /*!
      * Constructor.
-     * @param tracks a list of tracks which should be used.
-     * @param parent Parent widget.
+     * \param tracks a list of tracks which should be used.
+     * \param parent Parent widget.
      */
     explicit DetailsDialog(const QList<PlayListTrack *> &tracks, QWidget *parent = nullptr);
     /*!
      * Constructor.
-     * @param track a track which should be used.
-     * @param parent Parent widget.
+     * \param track a track which should be used.
+     * \param parent Parent widget.
      */
     explicit DetailsDialog(PlayListTrack *track, QWidget *parent = nullptr);
     /*!
@@ -60,7 +60,7 @@ public:
 signals:
     /*!
      * Emitted when closed dialog has modified file paths or track URLs.
-     * @param paths A list of the modified file paths or track URLs.
+     * \param paths A list of the modified file paths or track URLs.
      */
     void metaDataChanged(const QStringList &paths);
 

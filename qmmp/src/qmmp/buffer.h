@@ -21,7 +21,7 @@ class QMMP_EXPORT Buffer
 public:
     /*!
      * Constructs an empty buffer object.
-     * @param sz Size in samples;
+     * \param sz Size in samples;
      */
     Buffer(size_t sz)
     {

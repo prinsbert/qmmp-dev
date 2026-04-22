@@ -39,7 +39,7 @@ class QMMPUI_EXPORT PlayListHeaderModel : public QObject
 public:
     /*!
      * Constructs a playlist model.
-     * @param parent QObject parent.
+     * \param parent QObject parent.
      */
     explicit PlayListHeaderModel(QObject *parent = nullptr);
     /*!
@@ -48,22 +48,22 @@ public:
     ~PlayListHeaderModel();
     /*!
      * Restores column settings using internal configuration file.
-     * @param groupName Name of the settings group (should be different for each UI plugin)
+     * \param groupName Name of the settings group (should be different for each UI plugin)
      */
     void restoreSettings(const QString &groupName);
     /*!
      * Restores column settings using provided QSettings object.
-     * @param settings Pointer to QSettings object.
+     * \param settings Pointer to QSettings object.
      */
     void restoreSettings(QSettings *settings);
     /*!
      * Saves column settings using internal configuration file.
-     * @param groupName Name of the settings group (should be different for each UI plugin)
+     * \param groupName Name of the settings group (should be different for each UI plugin)
      */
     void saveSettings(const QString &groupName);
     /*!
      * Saves column settings using provided QSettings object.
-     * @param settings Pointer to QSettings object.
+     * \param settings Pointer to QSettings object.
      */
     void saveSettings(QSettings *settings);
     /*!
@@ -72,14 +72,14 @@ public:
     bool isSettingsLoaded() const;
     /*!
      * Inserts the new column.
-     * @param index Index of the column.
-     * @param name Name of the column.
-     * @param pattern Column template. See \b MetaDataFormatter for details.
+     * \param index Index of the column.
+     * \param name Name of the column.
+     * \param pattern Column template. See \b MetaDataFormatter for details.
      */
     void insert(int index, const QString &name, const QString &pattern);
     /*!
      * Removes column.
-     * @param index Index of the column.
+     * \param index Index of the column.
      */
     void remove(int index);
     /*!
@@ -88,14 +88,14 @@ public:
     void move(int from, int to);
     /*!
      * Opens internal column editor.
-     * @param index Index of the column.
-     * @param parent Parent widget,
+     * \param index Index of the column.
+     * \param parent Parent widget,
      */
     void execEdit(int index, QWidget *parent = nullptr);
     /*!
      * Opens internal column editor and inserts new column if user press "ok".
-     * @param index Required index of the column.
-     * @param parent Parent widget.
+     * \param index Required index of the column.
+     * \param parent Parent widget.
      */
     void execInsert(int index, QWidget *parent = nullptr);
     /*!
@@ -112,32 +112,32 @@ public:
     QString pattern(int index) const;
     /*!
      * Adds extra data to column (size, geometry, etc).
-     * @param index Index of the column.
-     * @param key Key of the extra field.
-     * @param data Extra data value.
+     * \param index Index of the column.
+     * \param key Key of the extra field.
+     * \param data Extra data value.
      */
     void setData(int index, int key, const QVariant &data);
     /*!
      * Returns extra data of the column.
-     * @param index Index of the column.
-     * @param key Key of the extra field.
+     * \param index Index of the column.
+     * \param key Key of the extra field.
      */
     QVariant data(int index, int key) const;
 
 signals:
     /*!
      * Emitted when a new column is added.
-     * @param index Index of the column.
+     * \param index Index of the column.
      */
     void columnAdded(int index);
     /*!
      * Emitted when a column is removed.
-     * @param index Index of the column.
+     * \param index Index of the column.
      */
     void columnRemoved(int index);
     /*!
      * Emitted when a column is changed.
-     * @param index Index of the column.
+     * \param index Index of the column.
      */
     void columnChanged(int index);
     /*!

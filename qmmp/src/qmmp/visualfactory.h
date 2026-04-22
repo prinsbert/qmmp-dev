@@ -55,18 +55,18 @@ public:
     virtual VisualProperties properties() const = 0;
     /*!
      * Creates visualization provided by plugin.
-     * @param parent Parent object.
+     * \param parent Parent object.
      */
     virtual Visual *create(QWidget *parent) = 0;
     /*!
      * Creates configuration dialog.
-     * @param parent Parent widget.
+     * \param parent Parent widget.
      * @return Configuration dialog pointer.
      */
     virtual QDialog *createSettings(QWidget *parent) = 0;
     /*!
      * Shows about dialog.
-     * @param parent Parent widget.
+     * \param parent Parent widget.
      */
     virtual void showAbout(QWidget *parent) = 0;
     /*!

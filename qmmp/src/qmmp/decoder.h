@@ -29,7 +29,7 @@ class QMMP_EXPORT Decoder
 public:
     /*!
      * Object contsructor.
-     * @param input QIODevice-based input source.
+     * \param input QIODevice-based input source.
      */
     Decoder(QIODevice *input = nullptr);
     /*!
@@ -85,7 +85,7 @@ public:
     QMap<Qmmp::ReplayGainKey, double> replayGainInfo() const;
     /*!
      * Sets ReplayGain information. Use this function before playback.
-     * @param rg ReplayGain information
+     * \param rg ReplayGain information
      */
     void setReplayGainInfo(const QMap<Qmmp::ReplayGainKey, double> &rg);
     /*!
@@ -95,7 +95,7 @@ public:
     /*!
      * Informs decoder about new received metadata.
      * Call of this function is required for all non-local streams/files
-     * @param metaData Metadata map.
+     * \param metaData Metadata map.
      */
     void addMetaData(const QMap<Qmmp::MetaData, QString> &metaData);
     /*!
@@ -124,8 +124,8 @@ public:
     QMap<Qmmp::TrackProperty, QString> properties() const;
     /*!
      * Returns DecoderFactory pointer which supports file \b path or nullptr if file \b path is unsupported
-     * @param path Full local file path.
-     * @param useContent Content-based file type determination (\b true - enabled, \b false - disabled)
+     * \param path Full local file path.
+     * \param useContent Content-based file type determination (\b true - enabled, \b false - disabled)
      */
     static DecoderFactory *findByFilePath(const QString &path, bool useContent = false);
     /*!
@@ -143,7 +143,7 @@ public:
     static DecoderFactory *findByProtocol(const QString &p);
     /*!
      * Returns a list of DecoderFactory pointers which support extension of the required file
-     * @param path Full file path or url with correct extension.
+     * \param path Full file path or url with correct extension.
      */
     static QList<DecoderFactory *> findByFileExtension(const QString &path);
     /*!
@@ -164,7 +164,7 @@ public:
     static QStringList contentTypes();
     /*!
      * Returns plugin file path.
-     * @param factory Decoder plugin factory.
+     * \param factory Decoder plugin factory.
      */
     static QString file(const DecoderFactory *factory);
     /*!
@@ -174,38 +174,45 @@ public:
     static QStringList protocols();
     /*!
      * Sets whether the input plugin is enabled.
-     * @param factory Decoder plugin factory.
-     * @param enable Plugin enable state (\b true - enable, \b false - disable)
+     * \param factory Decoder plugin factory.
+     * \param enable Plugin enable state (\b true - enable, \b false - disable)
      */
     static void setEnabled(DecoderFactory *factory, bool enable = true);
     /*!
      * Returns \b true if input plugin is enabled, otherwise returns \b false
-     * @param factory Decoder plugin factory.
+     * \param factory Decoder plugin factory.
      */
     static bool isEnabled(const DecoderFactory* factory);
-
+    /*!
+     * Sets decoder plugin prioroty.
+     * \param factory Decoder plugin factory.
+     * \param priority Priority value (a higher value corresponds to a lower priority).
+     */
     static void setPriority(const DecoderFactory *factory, int priority);
-
+    /*!
+     * Returns plugin priority.
+     * \param factory Decoder plugin factory.
+     */
     static int priority(const DecoderFactory *factory);
 
 protected:
     /*!
      * Use this function inside initialize() reimplementation to tell other plugins about audio parameters.
-     * @param srate Sample rate.
-     * @param map Map of channels.
-     * @param f Audio format.
+     * \param srate Sample rate.
+     * \param map Map of channels.
+     * \param f Audio format.
      */
     void configure(quint32 srate, const ChannelMap &map, Qmmp::AudioFormat f = Qmmp::PCM_S16LE);
     /*!
      * Use this function inside initialize() reimplementation to tell other plugins about audio parameters.
-     * @param srate Sample rate.
-     * @param channels Number of channels (internal channel sequence).
-     * @param f Audio format.
+     * \param srate Sample rate.
+     * \param channels Number of channels (internal channel sequence).
+     * \param f Audio format.
      */
     void configure(quint32 srate, int channels, Qmmp::AudioFormat f = Qmmp::PCM_S16LE);
     /*!
      * Use this function inside initialize() reimplementation to tell other plugins about audio parameters.
-     * @param p Audio parameters.
+     * \param p Audio parameters.
      */
     void configure(const AudioParameters &p);
 

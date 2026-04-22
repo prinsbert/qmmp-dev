@@ -37,7 +37,7 @@ class QMMPUI_EXPORT MediaPlayer : public QObject
 public:
     /*!
      * Object constructor,
-     * @param parent Parent object.
+     * \param parent Parent object.
      */
     MediaPlayer(QObject *parent = nullptr);
     /*!
@@ -67,7 +67,7 @@ public slots:
     void play();
     /*!
      * Starts playback from specified position.
-     * @param offset Start position in ms.
+     * \param offset Start position in ms.
      */
     void playFromPosition(qint64 offset);
     /*!

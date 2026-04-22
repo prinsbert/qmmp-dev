@@ -44,7 +44,7 @@ public:
     virtual ~PlayListItem();
     /*!
      * Sets item selection flag to \b select
-     * @param select State of selection (\b true select, \b false unselect)
+     * \param select State of selection (\b true select, \b false unselect)
      */
     void setSelected(bool select);
     /*!
@@ -53,7 +53,7 @@ public:
     bool isSelected() const;
     /*!
      * Returns formatted title of the item.
-     * @param column Number of column.
+     * \param column Number of column.
      */
     virtual QString formattedTitle(int column) const = 0;
     /*!

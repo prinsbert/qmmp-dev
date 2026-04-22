@@ -80,13 +80,13 @@ public:
     virtual QWidget *createWidget(int id, QWidget *parent);
     /*!
      * Creates configuration dialog.
-     * @param parent Parent widget.
+     * \param parent Parent widget.
      * @return Configuration dialog pointer.
      */
     virtual QDialog *createSettings(QWidget *parent) = 0;
     /*!
      * Shows about dialog.
-     * @param parent Parent widget.
+     * \param parent Parent widget.
      */
     virtual void showAbout(QWidget *parent) = 0;
     /*!

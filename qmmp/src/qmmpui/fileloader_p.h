@@ -48,7 +48,7 @@ class FileLoader : public QThread
 public:
     /*!
      * Constructs FileLoader object.
-     * @param parent QObject parent
+     * \param parent QObject parent
      */
     FileLoader(QObject *parent = nullptr);
     /*!
@@ -74,7 +74,7 @@ public slots:
 signals:
     /*!
      * Emitted when new playlist tracks are available.
-     * @param tracks List of the pointers to the \b PlayListTrack objects.
+     * \param tracks List of the pointers to the \b PlayListTrack objects.
      */
     void newTracksToInsert(PlayListTrack *before, QList<PlayListTrack *> tracks);
 

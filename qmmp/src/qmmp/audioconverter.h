@@ -36,6 +36,9 @@ public:
      * Object constructor.
      */
     AudioConverter();
+    /*!
+     * Destructor.
+     */
     ~AudioConverter();
     /*!
      * Sets working audio format.
@@ -57,7 +60,6 @@ public:
      * \param samples Number of samples.
      */
     void fromFloat(const float *in, unsigned char *out, size_t samples);
-
 
 private:
     AudioConverterPrivate *d_ptr;

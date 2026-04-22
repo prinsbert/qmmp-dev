@@ -41,7 +41,7 @@ class QMMPUI_EXPORT ColorWidget : public QFrame
 public:
     /*!
      * Constructor.
-     * @param parent Parent object.
+     * \param parent Parent object.
      */
     ColorWidget(QWidget *parent = nullptr);
     /*!
@@ -57,10 +57,12 @@ public:
      */
     void setOptions(QColorDialog::ColorDialogOptions options);
     /*!
-     * Returns color name.
+     * Returns displaying color name.
      */
     QString colorName() const;
-
+    /*!
+     * Returns displaying color.
+     */
     QColor color() const;
 
 signals:
@@ -74,10 +76,15 @@ public slots:
      * Sets color name.
      */
     void setColor(const QString &name);
-
+    /*!
+     * Sets displaying color to the given \b color.
+     */
     void setColor(const QColor &color);
 
 protected:
+    /*!
+     * Reimplements: QWidget::mouseMoveEvent(QMouseEvent *event).
+     */
     virtual void mousePressEvent(QMouseEvent *) override;
 
 private:

@@ -26,22 +26,37 @@
 
 class QAction;
 
+/*! @brief The MetaDataFormatterMenu provided menu with frequently encountered templates.
+ * @author Ilya Kotov <forkotov02@ya.ru>
+ */
 class QMMPUI_EXPORT MetaDataFormatterMenu : public QMenu
 {
     Q_OBJECT
 public:
 
+    /*!
+     * This enum describes menu type.
+     */
     enum Type
     {
-        TITLE_MENU = 0,
-        GROUP_MENU,
-        GROUP_EXTRA_ROW_MENU,
-        COLUMN_MENU
+        TITLE_MENU = 0,        /*!< Title. */
+        GROUP_MENU,            /*!< Group. */
+        GROUP_EXTRA_ROW_MENU,  /*!< Extra row of group. */
+        COLUMN_MENU            /*!< Playlist column. */
     };
 
+    /*!
+     * Object contstructor.
+     * \param type Meny type.
+     * \param parent Parent widget.
+     */
     explicit MetaDataFormatterMenu(Type type, QWidget *parent = nullptr);
 
 signals:
+    /*!
+     * Emitted when user acticates menu item.
+     * \param pattern Template of the activated item.
+     */
     void patternSelected(const QString &pattern);
 
 private:

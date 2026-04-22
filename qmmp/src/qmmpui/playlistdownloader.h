@@ -41,21 +41,24 @@ public:
      * Object constructor.
      */
     explicit PlayListDownloader(QObject *parent = nullptr);
+    /*!
+     * Destructor
+     */
     ~PlayListDownloader();
 
 signals:
     /*!
      * Emitted when downloading is finished.
-     * @param ok Result of downloading (if an error occurs, \b ok is set to \b false; otherwise \b ok is set to \b true).
-     * @param message Error message.
+     * \param ok Result of downloading (if an error occurs, \b ok is set to \b false; otherwise \b ok is set to \b true).
+     * \param message Error message.
      */
     void finished(bool ok, const QString &message = QString());
 
 public slots:
     /*!
      * Starts playlist downloading.
-     * @param url URL of remote playlist.
-     * @param model Destination playlist model.
+     * \param url URL of remote playlist.
+     * \param model Destination playlist model.
      */
     void start(const QUrl &url, PlayListModel *model);
 

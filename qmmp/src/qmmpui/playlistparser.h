@@ -67,20 +67,20 @@ public:
     static PlayListFormat *findByUrl(const QUrl &url);
     /*!
      * Saves a list of tracks to the file.
-     * @param tracks A list of tracks.
-     * @param f_name File name the  playlist.
+     * \param tracks A list of tracks.
+     * \param f_name File name the  playlist.
      */
     static void savePlayList(QList<PlayListTrack *> tracks, const QString &f_name);
     /*!
      * Loads playlist from file \b f_name.
-     * @param f_name File name.
+     * \param f_name File name.
      * @return A list of tracks.
      */
     static QList<PlayListTrack *> loadPlaylist(const QString &f_name);
     /*!
      * Loads playlist from content \b content.
-     * @param fmt Playlist format (short name).
-     * @param content Playlist content.
+     * \param fmt Playlist format (short name).
+     * \param content Playlist content.
      * @return A list of tracks.
      */
     static QList<PlayListTrack *> loadPlaylist(const QString &fmt, const QByteArray &content);

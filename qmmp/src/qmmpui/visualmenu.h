@@ -33,7 +33,7 @@ class QMMPUI_EXPORT VisualMenu : public QMenu
 public:
     /*!
      * Object constructor.
-     * @param parent Parent object.
+     * \param parent Parent object.
      */
     explicit VisualMenu(QWidget *parent = nullptr);
 

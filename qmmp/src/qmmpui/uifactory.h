@@ -57,7 +57,7 @@ public:
     virtual QObject *create() = 0;
     /*!
      * Shows about dialog.
-     * @param parent Parent widget.
+     * \param parent Parent widget.
      */
     virtual void showAbout(QWidget *parent) = 0;
     /*!
