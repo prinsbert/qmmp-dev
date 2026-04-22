@@ -28,6 +28,8 @@
 #include <QApplication>
 #include <QListWidget>
 #include <QOpenGLContext>
+#include <QOpenGLVersionFunctionsFactory>
+#include <QOpenGLFunctions_2_0>
 #include <qmmp/soundcore.h>
 #include <qmmp/qmmp.h>
 #include <qmmp/visual.h>
@@ -66,25 +68,26 @@ void ProjectMWidget::addPCM(float *left, float *right)
 
 void ProjectMWidget::initializeGL()
 {
-    glShadeModel(GL_SMOOTH);
-    glClearColor(0,0,0,0);
+    QOpenGLFunctions_2_0 *f = QOpenGLVersionFunctionsFactory::get<QOpenGLFunctions_2_0>(context());
+    f->glShadeModel(GL_SMOOTH);
+    f->glClearColor(0,0,0,0);
     // Setup our viewport
-    glViewport(0, 0, width(), height());
+    f->glViewport(0, 0, width(), height());
     // Change to the projection matrix and set our viewing volume.
-    glMatrixMode(GL_TEXTURE);
-    glLoadIdentity();
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-    glDrawBuffer(GL_BACK);
-    glReadBuffer(GL_BACK);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glEnable(GL_LINE_SMOOTH);
-    glEnable(GL_POINT_SMOOTH);
-    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-    glLineStipple(2, 0xAAAA);
+    f->glMatrixMode(GL_TEXTURE);
+    f->glLoadIdentity();
+    f->glMatrixMode(GL_PROJECTION);
+    f->glLoadIdentity();
+    f->glMatrixMode(GL_MODELVIEW);
+    f->glLoadIdentity();
+    f->glDrawBuffer(GL_BACK);
+    f->glReadBuffer(GL_BACK);
+    f->glEnable(GL_BLEND);
+    f->glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    f->glEnable(GL_LINE_SMOOTH);
+    f->glEnable(GL_POINT_SMOOTH);
+    f->glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    f->glLineStipple(2, 0xAAAA);
 
     if (!m_projectM)
     {
