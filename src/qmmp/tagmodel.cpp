@@ -23,7 +23,7 @@
 class TagModelPrivate
 {
 public:
-     TagModel::ModelCaps caps = TagModel::DefaultCaps;
+    TagModel::ModelCaps caps = TagModel::ModelCaps();
 };
 
 TagModel::TagModel(ModelCaps f) : d_ptr(new TagModelPrivate)

@@ -109,7 +109,7 @@ void WavPackMetaDataModel::removeCue()
     WavpackWriteTag(m_ctx);
 }
 
-WavPackFileTagModel::WavPackFileTagModel(WavpackContext *ctx) : TagModel(TagModel::Save),
+WavPackFileTagModel::WavPackFileTagModel(WavpackContext *ctx) : TagModel(),
     m_ctx(ctx)
 {}
 

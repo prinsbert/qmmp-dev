@@ -142,7 +142,7 @@ void VorbisMetaDataModel::removeLyrics()
     }
 }
 
-VorbisCommentModel::VorbisCommentModel(VorbisMetaDataModel *model) : TagModel(TagModel::Save)
+VorbisCommentModel::VorbisCommentModel(VorbisMetaDataModel *model) : TagModel()
 {
     m_model = model;
 }

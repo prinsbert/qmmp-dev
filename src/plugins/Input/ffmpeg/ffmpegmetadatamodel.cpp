@@ -129,7 +129,7 @@ void FFmpegMetaDataModel::removeCue()
     }
 }
 
-ApeTagModel::ApeTagModel(TagLib::APE::File *file) : m_file(file)
+ApeTagModel::ApeTagModel(TagLib::APE::File *file) : TagModel(TagModel::CreateRemove), m_file(file)
 {}
 
 ApeTagModel::~ApeTagModel()

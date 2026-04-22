@@ -165,12 +165,12 @@ QString SndFileMetaDataModel::lyrics() const
     return QString();
 }
 
-SndFileTagModel::SndFileTagModel(TagLib::RIFF::WAV::File *file) : m_wavFile(file)
+SndFileTagModel::SndFileTagModel(TagLib::RIFF::WAV::File *file) : TagModel(TagModel::CreateRemove), m_wavFile(file)
 {
     m_tag = m_wavFile->ID3v2Tag();
 }
 
-SndFileTagModel::SndFileTagModel(TagLib::RIFF::AIFF::File *file) : TagModel(TagModel::Save), m_aiffFile(file)
+SndFileTagModel::SndFileTagModel(TagLib::RIFF::AIFF::File *file) : TagModel(), m_aiffFile(file)
 {
     m_tag = m_aiffFile->tag();
 }
