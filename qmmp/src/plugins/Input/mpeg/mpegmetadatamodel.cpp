@@ -178,7 +178,7 @@ void MPEGMetaDataModel::setLyrics(const QString &content)
 }
 
 MpegFileTagModel::MpegFileTagModel(bool using_rusxmms, TagLib::MPEG::File *file, TagLib::MPEG::File::TagTypes type) :
-    TagModel(),
+    TagModel(TagModel::CreateRemove),
     m_using_rusxmms(using_rusxmms),
     m_file(file),
     m_type(type)

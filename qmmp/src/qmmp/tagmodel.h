@@ -40,16 +40,14 @@ public:
      */
     enum ModelCap
     {
-        CreateRemove = 0x1,               /*!< Can create/remove tag */
-        Save = 0x2,                       /*!< Can save changes */
-        DefaultCaps = CreateRemove | Save /*!< Can create/remove tag and save changes */
+        CreateRemove = 0x1 /*!< Can create/remove tag */
     };
     Q_DECLARE_FLAGS(ModelCaps, ModelCap)
     /*!
      * Constructor.
      * \param f Capabilities.
      */
-    TagModel(ModelCaps f = DefaultCaps);
+    explicit TagModel(ModelCaps f = ModelCaps());
     /*!
      * Destructor.
      */
