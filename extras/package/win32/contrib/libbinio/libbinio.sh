@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp    
-    wget -nc https://github.com/adplug/libbinio/releases/download/$NAME-$VERSION/$NAME-$VERSION.tar.bz2 \
+    wget -nc ${WGET_ARGS} https://github.com/adplug/libbinio/releases/download/$NAME-$VERSION/$NAME-$VERSION.tar.bz2 \
     -O $NAME-$VERSION.tar.bz2
   ;;
   --install)

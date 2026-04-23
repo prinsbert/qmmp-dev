@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp    
-    wget -nc https://github.com/libxmp/libxmp/releases/download/${NAME}-${VERSION}/${NAME}-${VERSION}.tar.gz \
+    wget -nc ${WGET_ARGS} https://github.com/libxmp/libxmp/releases/download/${NAME}-${VERSION}/${NAME}-${VERSION}.tar.gz \
     -O $NAME-$VERSION.tar.gz
   ;;
   --install)

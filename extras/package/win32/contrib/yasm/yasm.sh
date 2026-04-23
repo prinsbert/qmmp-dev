@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc https://github.com/yasm/yasm/releases/download/v1.3.0/$NAME-$VERSION.tar.gz
+    wget -nc ${WGET_ARGS} https://github.com/yasm/yasm/releases/download/v1.3.0/$NAME-$VERSION.tar.gz
   ;;
   --install)
     cd temp

@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc https://github.com/RusXMMS/librcd/archive/refs/heads/master.zip
+    wget -nc ${WGET_ARGS} https://github.com/RusXMMS/librcd/archive/refs/heads/master.zip
   ;;
   --install)
     cd temp

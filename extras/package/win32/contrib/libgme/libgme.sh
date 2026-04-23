@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc https://github.com/libgme/game-music-emu/releases/download/$VERSION/$NAME-$VERSION-src.tar.gz -O $NAME-$VERSION.tar.gz
+    wget -nc ${WGET_ARGS} https://github.com/libgme/game-music-emu/releases/download/$VERSION/$NAME-$VERSION-src.tar.gz -O $NAME-$VERSION.tar.gz
   ;;
   --install)
     cd temp

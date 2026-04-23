@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp    
-    wget -nc https://github.com/nemtrif/utfcpp/archive/refs/tags/v${VERSION}.tar.gz 
+    wget -nc ${WGET_ARGS} https://github.com/nemtrif/utfcpp/archive/refs/tags/v${VERSION}.tar.gz 
   ;;
 
   --install)

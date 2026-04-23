@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc https://github.com/dbry/WavPack/releases/download/$VERSION/$NAME-$VERSION.tar.xz
+    wget -nc ${WGET_ARGS} https://github.com/dbry/WavPack/releases/download/$VERSION/$NAME-$VERSION.tar.xz
   ;;
   --install)
     cd temp
