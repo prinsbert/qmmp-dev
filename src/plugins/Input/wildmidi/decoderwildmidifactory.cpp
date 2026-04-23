@@ -50,15 +50,15 @@ DecoderProperties DecoderWildMidiFactory::properties() const
     properties.shortName = "wildmidi"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
-    properties.noInput = true;
+    properties.noInput = false;
     properties.protocols = QStringList { u"file"_s };
     return properties;
 }
 
 Decoder *DecoderWildMidiFactory::create(const QString &path, QIODevice *input)
 {
-    Q_UNUSED(input);
-    return new DecoderWildMidi(path);
+    Q_UNUSED(path);
+    return new DecoderWildMidi(input);
 }
 
 QList<TrackInfo> DecoderWildMidiFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)

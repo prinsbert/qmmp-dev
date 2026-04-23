@@ -33,7 +33,7 @@ public:
     ~WildMidiHelper();
     bool initialize();
     void readSettings();
-    quint32 sampleRate();
+    quint32 sampleRate() const;
     void addPtr(void *);
     void removePtr(void *);
     QStringList configFiles() const;

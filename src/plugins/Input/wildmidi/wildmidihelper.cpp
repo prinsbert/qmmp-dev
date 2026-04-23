@@ -165,7 +165,7 @@ bool WildMidiHelper::validateConfigFile(const QString &path) const
     return false;
 }
 
-quint32 WildMidiHelper::sampleRate()
+quint32 WildMidiHelper::sampleRate() const
 {
     return m_sample_rate;
 }

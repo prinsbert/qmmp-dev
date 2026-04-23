@@ -23,8 +23,7 @@
 #include "decoder_wildmidi.h"
 
 // Decoder class
-DecoderWildMidi::DecoderWildMidi(const QString &path) : Decoder(),
-    m_path(path)
+DecoderWildMidi::DecoderWildMidi(QIODevice *input) : Decoder(input)
 {}
 
 DecoderWildMidi::~DecoderWildMidi()
@@ -46,7 +45,15 @@ bool DecoderWildMidi::initialize()
         return false;
     }
     WildMidiHelper::instance()->readSettings();
-    midi_ptr = WildMidi_Open (m_path.toLocal8Bit().constData());
+
+    m_buffer = input()->readAll();
+    if(m_buffer.isEmpty())
+    {
+        qCWarning(plugin, "unable to read file");
+        return false;
+    }
+
+    midi_ptr = WildMidi_OpenBuffer((const uint8_t *)(m_buffer.constData()), m_buffer.size());
 
     if(!midi_ptr)
     {
