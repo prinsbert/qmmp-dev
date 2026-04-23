@@ -29,7 +29,7 @@ extern "C"{
 class DecoderWildMidi : public Decoder
 {
 public:
-    explicit DecoderWildMidi(const QString &path);
+    explicit DecoderWildMidi(QIODevice *input);
     virtual ~DecoderWildMidi();
 
     // Standard Decoder API
@@ -43,7 +43,7 @@ private:
     void *midi_ptr = nullptr;
     qint64 m_totalTime = 0;
     quint32 m_sample_rate = 0;
-    QString m_path;
+    QByteArray m_buffer;
 };
 
 #endif // DECODER_WILDMIDI_H
