@@ -297,7 +297,7 @@
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="94"/>
-        <location filename="../forms/configdialog.ui" line="1016"/>
+        <location filename="../forms/configdialog.ui" line="1029"/>
         <source>Audio</source>
         <translation>Audio</translation>
     </message>
@@ -329,7 +329,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="242"/>
         <location filename="../forms/configdialog.ui" line="267"/>
-        <location filename="../forms/configdialog.ui" line="730"/>
+        <location filename="../forms/configdialog.ui" line="743"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -381,14 +381,14 @@
     <message>
         <location filename="../forms/configdialog.ui" line="306"/>
         <location filename="../forms/configdialog.ui" line="323"/>
-        <location filename="../forms/configdialog.ui" line="591"/>
-        <location filename="../forms/configdialog.ui" line="605"/>
+        <location filename="../forms/configdialog.ui" line="604"/>
+        <location filename="../forms/configdialog.ui" line="618"/>
         <source>A list of file masks separated by comma.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="316"/>
-        <location filename="../forms/configdialog.ui" line="598"/>
+        <location filename="../forms/configdialog.ui" line="611"/>
         <source>Exclude files:</source>
         <translation>Kecuali file:</translation>
     </message>
@@ -408,205 +408,205 @@
         <translation>Bersihkan playlist sebelumnya ketika membuka yang baru</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="402"/>
+        <location filename="../forms/configdialog.ui" line="415"/>
         <location filename="../configdialog.cpp" line="339"/>
         <source>Preferences</source>
         <translation>Suka-suka</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="419"/>
+        <location filename="../forms/configdialog.ui" line="432"/>
         <location filename="../configdialog.cpp" line="342"/>
         <source>Information</source>
         <translation>Informasi</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="465"/>
+        <location filename="../forms/configdialog.ui" line="478"/>
         <source>Description</source>
         <translation>Deskripsi</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="470"/>
+        <location filename="../forms/configdialog.ui" line="483"/>
         <source>Filename</source>
         <translation>Filename</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="482"/>
+        <location filename="../forms/configdialog.ui" line="495"/>
         <source>Look and Feel</source>
         <translation>Lihat dan Rasakan</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="488"/>
+        <location filename="../forms/configdialog.ui" line="501"/>
         <source>Language:</source>
         <translation>Bahasa:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="521"/>
+        <location filename="../forms/configdialog.ui" line="534"/>
         <source>Display average bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="531"/>
+        <location filename="../forms/configdialog.ui" line="544"/>
         <source>Playback</source>
         <translation>Playback</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="537"/>
+        <location filename="../forms/configdialog.ui" line="550"/>
         <source>Continue playback on startup</source>
         <translation>Lanjutkan playback saat startup</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="544"/>
+        <location filename="../forms/configdialog.ui" line="557"/>
         <source>Determine file type by content</source>
         <translation>Menetapkan tipe file oleh isi</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="551"/>
+        <location filename="../forms/configdialog.ui" line="564"/>
         <source>Add files from command line to this playlist:</source>
         <translation>Tambahkan file dari baris perintah ke playlist ini:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="568"/>
+        <location filename="../forms/configdialog.ui" line="581"/>
         <source>Cover Image Retrieve</source>
         <translation>Tarik Citra Sampul</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="574"/>
+        <location filename="../forms/configdialog.ui" line="587"/>
         <source>Use separate image files</source>
         <translation>Gunakan file-file citra tersendiri</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="584"/>
+        <location filename="../forms/configdialog.ui" line="597"/>
         <source>Include files:</source>
         <translation>Cakup file:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="614"/>
+        <location filename="../forms/configdialog.ui" line="627"/>
         <source>Recursive search depth:</source>
         <translation>Kedalaman penelusuran rekursif:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="652"/>
+        <location filename="../forms/configdialog.ui" line="665"/>
         <source>URL Dialog</source>
         <translation>Dialog URL</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="658"/>
+        <location filename="../forms/configdialog.ui" line="671"/>
         <source>Auto-paste URL from clipboard</source>
         <translation>Tempel otomatis URL dari clipboard</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="668"/>
+        <location filename="../forms/configdialog.ui" line="681"/>
         <source>CUE Editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="674"/>
+        <location filename="../forms/configdialog.ui" line="687"/>
         <source>Use system font</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="695"/>
+        <location filename="../forms/configdialog.ui" line="708"/>
         <source>Font:</source>
         <translation>Fonta:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="720"/>
+        <location filename="../forms/configdialog.ui" line="733"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="759"/>
+        <location filename="../forms/configdialog.ui" line="772"/>
         <source>Proxy</source>
         <translation>Proxy</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="771"/>
+        <location filename="../forms/configdialog.ui" line="784"/>
         <source>Enable proxy usage</source>
         <translation>Aktifkan penggunaan proxy</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="778"/>
+        <location filename="../forms/configdialog.ui" line="791"/>
         <source>Proxy type:</source>
         <translation>Tipe proksi:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="788"/>
+        <location filename="../forms/configdialog.ui" line="801"/>
         <source>Proxy host name:</source>
         <translation>Nama host proxy:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="805"/>
+        <location filename="../forms/configdialog.ui" line="818"/>
         <source>Proxy port:</source>
         <translation>Port proxy:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="822"/>
+        <location filename="../forms/configdialog.ui" line="835"/>
         <source>Use authentication with proxy</source>
         <translation>Gunakan pengesahan dengan proxy</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="829"/>
+        <location filename="../forms/configdialog.ui" line="842"/>
         <source>Proxy user name:</source>
         <translation>Nama pengguna proxy:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="846"/>
+        <location filename="../forms/configdialog.ui" line="859"/>
         <source>Proxy password:</source>
         <translation>Sandi proxy:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="886"/>
+        <location filename="../forms/configdialog.ui" line="899"/>
         <source>Replay Gain</source>
         <translation>Gain Replay</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="892"/>
+        <location filename="../forms/configdialog.ui" line="905"/>
         <source>Replay Gain mode:</source>
         <translation>Mode Gain Replay:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="909"/>
+        <location filename="../forms/configdialog.ui" line="922"/>
         <source>Preamp:</source>
         <translation>Preamp:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="941"/>
-        <location filename="../forms/configdialog.ui" line="986"/>
+        <location filename="../forms/configdialog.ui" line="954"/>
+        <location filename="../forms/configdialog.ui" line="999"/>
         <source>dB</source>
         <translation>dB</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="954"/>
+        <location filename="../forms/configdialog.ui" line="967"/>
         <source>Default gain:</source>
         <translation>Gain default:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1006"/>
+        <location filename="../forms/configdialog.ui" line="1019"/>
         <source>Use  peak info to prevent clipping</source>
         <translation>Gunakan puncak info untuk mencegah clipping</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1022"/>
+        <location filename="../forms/configdialog.ui" line="1035"/>
         <source>Buffer size:</source>
         <translation>Ukuran buffer:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1048"/>
+        <location filename="../forms/configdialog.ui" line="1061"/>
         <source>ms</source>
         <translation>md</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1081"/>
+        <location filename="../forms/configdialog.ui" line="1094"/>
         <source>Use software volume control</source>
         <translation>Gunakan software kendali volume</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1121"/>
+        <location filename="../forms/configdialog.ui" line="1134"/>
         <source>Use two passes for equalizer</source>
         <translation>Gunakan dua kali proses untuk ekualizer</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1064"/>
+        <location filename="../forms/configdialog.ui" line="1077"/>
         <source>Volume adjustment step:</source>
         <translation>Langkah utak-atik volume:</translation>
     </message>
@@ -621,12 +621,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1088"/>
+        <location filename="../forms/configdialog.ui" line="1101"/>
         <source>Output bit depth:</source>
         <translation>Kedalaman bit keluaran:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1029"/>
+        <location filename="../forms/configdialog.ui" line="1042"/>
         <source>Use dithering</source>
         <translation>Gunakan dithering</translation>
     </message>

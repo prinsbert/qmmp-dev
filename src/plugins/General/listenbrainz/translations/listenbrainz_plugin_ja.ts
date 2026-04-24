@@ -6,22 +6,22 @@
     <message>
         <location filename="../listenbrainzfactory.cpp" line="30"/>
         <source>ListenBrainz Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>ListenBrainz Plugin</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="50"/>
         <source>About ListenBrainz Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>About ListenBrainz Plugin</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="51"/>
         <source>Qmmp ListenBrainz Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp ListenBrainz Plugin</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="52"/>
         <source>This plugin submits listen history to ListenBrainz server</source>
-        <translation type="unfinished"></translation>
+        <translation>This plugin submits listen history to ListenBrainz server</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="53"/>
@@ -34,12 +34,12 @@
     <message>
         <location filename="../listenbrainzsettingsdialog.ui" line="14"/>
         <source>ListenBrainz Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>ListenBrainz Plugin Settings</translation>
     </message>
     <message>
         <location filename="../listenbrainzsettingsdialog.ui" line="29"/>
         <source>ListenBrainz user token:</source>
-        <translation type="unfinished"></translation>
+        <translation>ListenBrainz user token:</translation>
     </message>
 </context>
 </TS>

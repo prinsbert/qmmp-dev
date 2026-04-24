@@ -46,7 +46,7 @@
     <message>
         <location filename="../osssettingsdialog.ui" line="236"/>
         <source>PCM over Master</source>
-        <translation type="unfinished"></translation>
+        <translation>PCM over Master</translation>
     </message>
 </context>
 <context>

@@ -136,7 +136,7 @@
     <message>
         <location filename="../rgscanhelper.cpp" line="33"/>
         <source>Meta+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Meta+R</translation>
     </message>
 </context>
 </TS>

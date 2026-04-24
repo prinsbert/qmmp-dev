@@ -6,17 +6,17 @@
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="29"/>
         <source>Mono to Stereo Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Mono to Stereo Converter Plugin</translation>
     </message>
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="49"/>
         <source>About Mono to Stereo Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>About Mono to Stereo Converter Plugin</translation>
     </message>
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="50"/>
         <source>Qmmp Mono to Stereo Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Mono to Stereo Converter Plugin</translation>
     </message>
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="51"/>

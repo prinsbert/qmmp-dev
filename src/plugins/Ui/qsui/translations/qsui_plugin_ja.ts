@@ -49,7 +49,7 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="101"/>
         <source>Replace Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>プレイリストの置き換え</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="102"/>
@@ -59,7 +59,7 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="105"/>
         <source>Tree View Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>ツリービューモード</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="107"/>
@@ -69,22 +69,22 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="116"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>並べ替え</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="110"/>
         <source>By Name</source>
-        <translation type="unfinished"></translation>
+        <translation>名前</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="111"/>
         <source>By Size</source>
-        <translation type="unfinished"></translation>
+        <translation>サイズ</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="112"/>
         <source>By Type</source>
-        <translation type="unfinished"></translation>
+        <translation>種類</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="113"/>
@@ -117,68 +117,68 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="80"/>
         <source>Use smooth scrolling</source>
-        <translation type="unfinished"></translation>
+        <translation>スムーズスクロールを使用</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="217"/>
         <source>Visualization Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>表示色</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="223"/>
         <source>Color #1:</source>
-        <translation type="unfinished"></translation>
+        <translation>色 #1:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="290"/>
         <source>Color #2:</source>
-        <translation type="unfinished"></translation>
+        <translation>色 #2:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="354"/>
         <source>Color #3:</source>
-        <translation type="unfinished"></translation>
+        <translation>色 #3:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="443"/>
         <source>Reset colors</source>
-        <translation type="unfinished"></translation>
+        <translation>色をリセット</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="710"/>
         <source>Override group colors</source>
-        <translation type="unfinished"></translation>
+        <translation>グループの色を上書き</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="813"/>
         <source>Override current track colors</source>
-        <translation type="unfinished"></translation>
+        <translation>現在のトラックの色を上書き</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="823"/>
         <source>Current track text:</source>
-        <translation type="unfinished"></translation>
+        <translation>現在のトラックのテキスト:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="922"/>
         <source>Waveform Seekbar Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Waveform シークバーの色</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="928"/>
         <source>Progress bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>プログレスバー:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1017"/>
         <source>RMS:</source>
         <extracomment>Root mean square</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>RMS:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1062"/>
         <source>Waveform:</source>
-        <translation type="unfinished"></translation>
+        <translation>Waveform:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1103"/>
@@ -273,7 +273,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="101"/>
         <source>Show splitters</source>
-        <translation type="unfinished"></translation>
+        <translation>区切りを表示</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="149"/>
@@ -329,22 +329,22 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="874"/>
         <source>Current track background:</source>
-        <translation type="unfinished"></translation>
+        <translation>現在のトラックの背景:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1275"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>グループ:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1282"/>
         <source>Extra group row:</source>
-        <translation type="unfinished"></translation>
+        <translation>追加のグループ行:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1379"/>
         <source>Tab position:</source>
-        <translation type="unfinished"></translation>
+        <translation>タブの位置:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1416"/>
@@ -379,7 +379,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="522"/>
         <source>Splitter:</source>
-        <translation type="unfinished"></translation>
+        <translation>スプリッター:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1352"/>
@@ -432,7 +432,7 @@
     <message>
         <location filename="../qsuivisualization.cpp" line="144"/>
         <source>Cells</source>
-        <translation type="unfinished"></translation>
+        <translation>セル</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="145"/>
@@ -570,32 +570,32 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="49"/>
         <source>+10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+10 秒</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="50"/>
         <source>+30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+30 秒</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="51"/>
         <source>+60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+60 秒</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="52"/>
         <source>-10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-10 秒</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="53"/>
         <source>-30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-30 秒</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="54"/>
         <source>-60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-60 秒</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="55"/>
@@ -665,7 +665,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="62"/>
         <source>&amp;Transit between playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>プレイリスト間の移動 (&amp;T)</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="63"/>
@@ -705,7 +705,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="74"/>
         <source>Block Floating Panels</source>
-        <translation type="unfinished"></translation>
+        <translation>フローティングパネルを固定</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="75"/>
@@ -960,7 +960,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="107"/>
         <source>Application Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>メニュー</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="108"/>
@@ -1104,7 +1104,7 @@
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="63"/>
         <source>Restore Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>デフォルトを復元</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="56"/>
@@ -1209,7 +1209,7 @@
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="135"/>
         <source>Waveform Seek Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Waveform シークバー</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="149"/>
@@ -1325,7 +1325,7 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="653"/>
         <source>Menu Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>メニューバー</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="443"/>
@@ -1375,7 +1375,7 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="554"/>
         <source>Edit Statusbar</source>
-        <translation type="unfinished"></translation>
+        <translation>ステータスバーの編集</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="556"/>
@@ -1621,12 +1621,12 @@
     <message>
         <location filename="../qsuisettings.cpp" line="48"/>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>上</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="49"/>
         <source>Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>下</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="50"/>
@@ -1644,12 +1644,12 @@
     <message>
         <location filename="../qsuistatusbar.cpp" line="53"/>
         <source>tracks: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>トラック: %1</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="54"/>
         <source>total time: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>合計時間: %1</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="138"/>
@@ -1664,7 +1664,7 @@
     <message>
         <location filename="../qsuistatusbar.cpp" line="148"/>
         <source>Buffering</source>
-        <translation type="unfinished"></translation>
+        <translation>バッファリング</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="153"/>
@@ -1684,23 +1684,23 @@
     <message>
         <location filename="../qsuistatusbar.cpp" line="172"/>
         <source>%1 bits</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 bits</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="174"/>
         <source>mono</source>
-        <translation type="unfinished"></translation>
+        <translation>モノラル</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="176"/>
         <source>stereo</source>
-        <translation type="unfinished"></translation>
+        <translation>スステレオ</translation>
     </message>
     <message numerus="yes">
         <location filename="../qsuistatusbar.cpp" line="178"/>
         <source>%n channels</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n チャンネル</numerusform>
         </translation>
     </message>
     <message>
@@ -1719,72 +1719,72 @@
     <message>
         <location filename="../forms/qsuistatusbareditor.ui" line="14"/>
         <source>StatusBar Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>ステータスバーエディター</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="102"/>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>状態</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="103"/>
         <source>Sample Size</source>
-        <translation type="unfinished"></translation>
+        <translation>サンプルサイズ</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="104"/>
         <source>Number of Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>チャンネル数</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="105"/>
         <source>Sample Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>サンプルレート</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="106"/>
         <source>Track Count</source>
-        <translation type="unfinished"></translation>
+        <translation>トラック数</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="107"/>
         <source>Total Time</source>
-        <translation type="unfinished"></translation>
+        <translation>合計時間</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="109"/>
         <source>Elapsed Time</source>
-        <translation type="unfinished"></translation>
+        <translation>経過時間</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="110"/>
         <source>Remaining Time</source>
-        <translation type="unfinished"></translation>
+        <translation>残り時間</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="111"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>演奏時間</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="112"/>
         <source>Elapsed Time + Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>経過時間 + 再生時間</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="113"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>形式</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="114"/>
         <source>Decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>デコーダー</translation>
     </message>
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="108"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>ビットレート</translation>
     </message>
 </context>
 <context>
@@ -1792,53 +1792,53 @@
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="14"/>
         <source>ToolBar Editor</source>
-        <translation type="unfinished">ツールバーエディター</translation>
+        <translation>ツールバーエディター</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="34"/>
         <source>Toolbar:</source>
-        <translation type="unfinished">ツールバー:</translation>
+        <translation>ツールバー:</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="57"/>
         <source>&amp;Create</source>
-        <translation type="unfinished">生成(&amp;C)</translation>
+        <translation>生成(&amp;C)</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="73"/>
         <source>Re&amp;name</source>
-        <translation type="unfinished">名前を編集(&amp;N)</translation>
+        <translation>名前を編集(&amp;N)</translation>
     </message>
     <message>
         <location filename="../forms/qsuitoolbareditor.ui" line="89"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished">削除(&amp;R)</translation>
+        <translation>削除(&amp;R)</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="104"/>
         <location filename="../qsuitoolbareditor.cpp" line="197"/>
         <source>Separator</source>
-        <translation type="unfinished">セパレーター</translation>
+        <translation>セパレーター</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="247"/>
         <source>Toolbar</source>
-        <translation type="unfinished">ツールバー</translation>
+        <translation>ツールバー</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="249"/>
         <source>Toolbar %1</source>
-        <translation type="unfinished">ツールバー %1</translation>
+        <translation>ツールバー %1</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="263"/>
         <source>Rename Toolbar</source>
-        <translation type="unfinished">ツールバーの名称変更</translation>
+        <translation>ツールバーの名称変更</translation>
     </message>
     <message>
         <location filename="../qsuitoolbareditor.cpp" line="263"/>
         <source>Toolbar name:</source>
-        <translation type="unfinished">ツールバーの名前:</translation>
+        <translation>ツールバーの名前:</translation>
     </message>
 </context>
 <context>
@@ -1846,13 +1846,13 @@
     <message>
         <location filename="../qsuiwaveformseekbar.cpp" line="335"/>
         <source>2 Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>2 チャンネル</translation>
     </message>
     <message>
         <location filename="../qsuiwaveformseekbar.cpp" line="338"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>RMS</translation>
     </message>
 </context>
 <context>
@@ -1860,7 +1860,7 @@
     <message>
         <location filename="../volumeslider.cpp" line="111"/>
         <source>%1: %2%</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: %2%</translation>
     </message>
 </context>
 </TS>

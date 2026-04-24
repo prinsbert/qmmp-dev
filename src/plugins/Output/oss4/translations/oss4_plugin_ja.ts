@@ -16,7 +16,7 @@
     <message>
         <location filename="../oss4settingsdialog.cpp" line="69"/>
         <source>Default (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>デフォルト (%1)</translation>
     </message>
 </context>
 <context>

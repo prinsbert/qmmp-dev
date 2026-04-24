@@ -297,7 +297,7 @@
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="94"/>
-        <location filename="../forms/configdialog.ui" line="1016"/>
+        <location filename="../forms/configdialog.ui" line="1029"/>
         <source>Audio</source>
         <translation>Audio</translation>
     </message>
@@ -329,7 +329,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="242"/>
         <location filename="../forms/configdialog.ui" line="267"/>
-        <location filename="../forms/configdialog.ui" line="730"/>
+        <location filename="../forms/configdialog.ui" line="743"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -381,14 +381,14 @@
     <message>
         <location filename="../forms/configdialog.ui" line="306"/>
         <location filename="../forms/configdialog.ui" line="323"/>
-        <location filename="../forms/configdialog.ui" line="591"/>
-        <location filename="../forms/configdialog.ui" line="605"/>
+        <location filename="../forms/configdialog.ui" line="604"/>
+        <location filename="../forms/configdialog.ui" line="618"/>
         <source>A list of file masks separated by comma.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="316"/>
-        <location filename="../forms/configdialog.ui" line="598"/>
+        <location filename="../forms/configdialog.ui" line="611"/>
         <source>Exclude files:</source>
         <translation>Išskirti bylas:</translation>
     </message>
@@ -408,205 +408,205 @@
         <translation>Išvalyti seną grojąraštį atveriant naują</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="402"/>
+        <location filename="../forms/configdialog.ui" line="415"/>
         <location filename="../configdialog.cpp" line="339"/>
         <source>Preferences</source>
         <translation>Nustatymai</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="419"/>
+        <location filename="../forms/configdialog.ui" line="432"/>
         <location filename="../configdialog.cpp" line="342"/>
         <source>Information</source>
         <translation>Informacija</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="465"/>
+        <location filename="../forms/configdialog.ui" line="478"/>
         <source>Description</source>
         <translation>Aprašymas</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="470"/>
+        <location filename="../forms/configdialog.ui" line="483"/>
         <source>Filename</source>
         <translation>Bylos pavadinimas</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="482"/>
+        <location filename="../forms/configdialog.ui" line="495"/>
         <source>Look and Feel</source>
         <translation>Išvaizda</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="488"/>
+        <location filename="../forms/configdialog.ui" line="501"/>
         <source>Language:</source>
         <translation>Kalba:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="521"/>
+        <location filename="../forms/configdialog.ui" line="534"/>
         <source>Display average bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="531"/>
+        <location filename="../forms/configdialog.ui" line="544"/>
         <source>Playback</source>
         <translation>Grojimas</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="537"/>
+        <location filename="../forms/configdialog.ui" line="550"/>
         <source>Continue playback on startup</source>
         <translation>Tęsti grojimą įjungus</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="544"/>
+        <location filename="../forms/configdialog.ui" line="557"/>
         <source>Determine file type by content</source>
         <translation>Nustatyti bylos tipą pagal turinį</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="551"/>
+        <location filename="../forms/configdialog.ui" line="564"/>
         <source>Add files from command line to this playlist:</source>
         <translation>Į šį grojaraštį įkelti bylas iš komandinės eilutės: </translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="568"/>
+        <location filename="../forms/configdialog.ui" line="581"/>
         <source>Cover Image Retrieve</source>
         <translation>Parsiųsti cd viršelį</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="574"/>
+        <location filename="../forms/configdialog.ui" line="587"/>
         <source>Use separate image files</source>
         <translation>Naudoti atskiras paveiksliukų bylas</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="584"/>
+        <location filename="../forms/configdialog.ui" line="597"/>
         <source>Include files:</source>
         <translation>Įtraukti bylas:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="614"/>
+        <location filename="../forms/configdialog.ui" line="627"/>
         <source>Recursive search depth:</source>
         <translation>Rekursinės paieškos gylis:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="652"/>
+        <location filename="../forms/configdialog.ui" line="665"/>
         <source>URL Dialog</source>
         <translation>Adreso dialogas</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="658"/>
+        <location filename="../forms/configdialog.ui" line="671"/>
         <source>Auto-paste URL from clipboard</source>
         <translation>Automatiškai įkelti adresą iš iškarpinės</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="668"/>
+        <location filename="../forms/configdialog.ui" line="681"/>
         <source>CUE Editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="674"/>
+        <location filename="../forms/configdialog.ui" line="687"/>
         <source>Use system font</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="695"/>
+        <location filename="../forms/configdialog.ui" line="708"/>
         <source>Font:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="720"/>
+        <location filename="../forms/configdialog.ui" line="733"/>
         <source>???</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="759"/>
+        <location filename="../forms/configdialog.ui" line="772"/>
         <source>Proxy</source>
         <translation>Proxy</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="771"/>
+        <location filename="../forms/configdialog.ui" line="784"/>
         <source>Enable proxy usage</source>
         <translation>Įjungti proxy palaikymą </translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="778"/>
+        <location filename="../forms/configdialog.ui" line="791"/>
         <source>Proxy type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="788"/>
+        <location filename="../forms/configdialog.ui" line="801"/>
         <source>Proxy host name:</source>
         <translation>Proxy serveris:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="805"/>
+        <location filename="../forms/configdialog.ui" line="818"/>
         <source>Proxy port:</source>
         <translation>Proxy portas:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="822"/>
+        <location filename="../forms/configdialog.ui" line="835"/>
         <source>Use authentication with proxy</source>
         <translation>Naudoti proxy autentifikavimą</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="829"/>
+        <location filename="../forms/configdialog.ui" line="842"/>
         <source>Proxy user name:</source>
         <translation>Proxy vartotojo vardas:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="846"/>
+        <location filename="../forms/configdialog.ui" line="859"/>
         <source>Proxy password:</source>
         <translation>Proxy slaptažodis:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="886"/>
+        <location filename="../forms/configdialog.ui" line="899"/>
         <source>Replay Gain</source>
         <translation>Replay Gain</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="892"/>
+        <location filename="../forms/configdialog.ui" line="905"/>
         <source>Replay Gain mode:</source>
         <translation>Replay Gain metodas:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="909"/>
+        <location filename="../forms/configdialog.ui" line="922"/>
         <source>Preamp:</source>
         <translation>Išankstinis stiprinimas:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="941"/>
-        <location filename="../forms/configdialog.ui" line="986"/>
+        <location filename="../forms/configdialog.ui" line="954"/>
+        <location filename="../forms/configdialog.ui" line="999"/>
         <source>dB</source>
         <translation>dB</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="954"/>
+        <location filename="../forms/configdialog.ui" line="967"/>
         <source>Default gain:</source>
         <translation>Stiprinimas pagal nutylėjima:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1006"/>
+        <location filename="../forms/configdialog.ui" line="1019"/>
         <source>Use  peak info to prevent clipping</source>
         <translation>Naudoti pikų informaciją trūkinėjimo išvengimui</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1022"/>
+        <location filename="../forms/configdialog.ui" line="1035"/>
         <source>Buffer size:</source>
         <translation>Buferio dydis:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1048"/>
+        <location filename="../forms/configdialog.ui" line="1061"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1081"/>
+        <location filename="../forms/configdialog.ui" line="1094"/>
         <source>Use software volume control</source>
         <translation>Naudoti programinį garso valdymą</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1121"/>
+        <location filename="../forms/configdialog.ui" line="1134"/>
         <source>Use two passes for equalizer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1064"/>
+        <location filename="../forms/configdialog.ui" line="1077"/>
         <source>Volume adjustment step:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -621,12 +621,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1088"/>
+        <location filename="../forms/configdialog.ui" line="1101"/>
         <source>Output bit depth:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1029"/>
+        <location filename="../forms/configdialog.ui" line="1042"/>
         <source>Use dithering</source>
         <translation type="unfinished"></translation>
     </message>

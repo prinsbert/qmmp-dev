@@ -31,12 +31,12 @@
     <message>
         <location filename="../playlistoption.cpp" line="38"/>
         <source>Activate next playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>次のプレイリストを再生</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="39"/>
         <source>Activate previous playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>前のプレイリストを再生</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="40"/>

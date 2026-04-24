@@ -11,7 +11,7 @@
     <message>
         <location filename="../history.cpp" line="58"/>
         <source>Alt+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+H</translation>
     </message>
 </context>
 <context>
@@ -180,7 +180,7 @@
     <message>
         <location filename="../historywindow.cpp" line="485"/>
         <source>Remove from History</source>
-        <translation type="unfinished"></translation>
+        <translation>履歴から削除</translation>
     </message>
 </context>
 </TS>

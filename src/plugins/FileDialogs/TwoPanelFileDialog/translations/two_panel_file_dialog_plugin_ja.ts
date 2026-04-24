@@ -6,7 +6,7 @@
     <message>
         <location filename="../twopanelfiledialog.ui" line="14"/>
         <source>Add Files</source>
-        <translation>ファイルを追加</translation>
+        <translation>ファイルの追加</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialog.ui" line="70"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../twopanelfiledialog.ui" line="80"/>
         <source>Files of type:</source>
-        <translation>この種のファイル:</translation>
+        <translation>ファイル形式:</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialog.ui" line="117"/>
@@ -69,7 +69,7 @@
     <message>
         <location filename="../twopanelfiledialogimpl.cpp" line="340"/>
         <source>Directories</source>
-        <translation>ディレクトリ</translation>
+        <translation>ディレクトリー</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialogimpl.cpp" line="352"/>
@@ -80,8 +80,8 @@
         <location filename="../twopanelfiledialogimpl.cpp" line="458"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
-        <translation>%1 は既にあります。
-置き換えますか。</translation>
+        <translation>%1 が既にあります。
+上書きしますがよろしいですか。</translation>
     </message>
 </context>
 </TS>

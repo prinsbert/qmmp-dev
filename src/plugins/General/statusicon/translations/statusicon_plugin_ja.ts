@@ -36,7 +36,7 @@
     <message>
         <location filename="../statusicon.cpp" line="119"/>
         <source>Stopped</source>
-        <translation>終演</translation>
+        <translation>終止しました</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="144"/>

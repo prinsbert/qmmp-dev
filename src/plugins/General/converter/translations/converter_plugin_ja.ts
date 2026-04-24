@@ -13,7 +13,7 @@
         <location filename="../converter.cpp" line="140"/>
         <location filename="../converter.cpp" line="210"/>
         <source>Error</source>
-        <translation>事故発生</translation>
+        <translation>エラーです</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="178"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../converterdialog.ui" line="131"/>
         <source>Stop</source>
-        <translation>終止</translation>
+        <translation>停止</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="116"/>
@@ -98,7 +98,7 @@
         <location filename="../converterdialog.cpp" line="358"/>
         <location filename="../converterdialog.cpp" line="365"/>
         <source>Error</source>
-        <translation>事故発生</translation>
+        <translation>エラーです</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="141"/>
@@ -169,7 +169,7 @@
     <message>
         <location filename="../converterhelper.cpp" line="34"/>
         <source>Meta+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Meta+C</translation>
     </message>
 </context>
 <context>

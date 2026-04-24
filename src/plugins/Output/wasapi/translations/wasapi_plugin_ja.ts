@@ -49,7 +49,7 @@
     <message>
         <location filename="../wasapisettingsdialog.ui" line="78"/>
         <source>Exclusive mode</source>
-        <translation type="unfinished"></translation>
+        <translation>排他モード</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.cpp" line="65"/>

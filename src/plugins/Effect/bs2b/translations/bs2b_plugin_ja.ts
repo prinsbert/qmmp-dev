@@ -65,7 +65,7 @@
     <message>
         <location filename="../effectbs2bfactory.cpp" line="57"/>
         <source>Compiled against libbs2b-%1</source>
-        <translation>libbs2b-%1 対応でコンパイル</translation>
+        <translation>libbs2b-%1 を使用してコンパイル</translation>
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="59"/>
@@ -75,12 +75,12 @@
     <message>
         <location filename="../effectbs2bfactory.cpp" line="60"/>
         <source>Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="61"/>
         <source>Sebastian Pipping &amp;lt;sebastian@pipping.org&amp;gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Sebastian Pipping &amp;lt;sebastian@pipping.org&amp;gt;</translation>
     </message>
 </context>
 </TS>

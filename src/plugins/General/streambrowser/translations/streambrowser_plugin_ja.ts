@@ -6,12 +6,12 @@
     <message>
         <location filename="../editstreamdialog.ui" line="14"/>
         <source>Edit Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>ストリームの編集</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="34"/>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="44"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../editstreamdialog.ui" line="64"/>
         <source>Bitrate:</source>
-        <translation type="unfinished"></translation>
+        <translation>ビットレート:</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="74"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../streambrowser.cpp" line="33"/>
         <source>Add Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>ストリームの追加</translation>
     </message>
     <message>
         <location filename="../streambrowser.cpp" line="34"/>
@@ -176,7 +176,7 @@
     <message>
         <location filename="../streamwindow.cpp" line="278"/>
         <source>Edit Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>ストリームの編集</translation>
     </message>
 </context>
 </TS>

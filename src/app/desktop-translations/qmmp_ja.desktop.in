@@ -38,3 +38,4 @@ Exec=qmmp --no-start --next
 Name[ja]=QMMP
 Comment[ja]=Qt4 を用いたマルティミディアプレイヤー
 GenericName[ja]=音楽プレイヤー
+Icon[ja]=qmmp

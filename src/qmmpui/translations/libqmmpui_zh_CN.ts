@@ -297,7 +297,7 @@
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="94"/>
-        <location filename="../forms/configdialog.ui" line="1016"/>
+        <location filename="../forms/configdialog.ui" line="1029"/>
         <source>Audio</source>
         <translation>音频</translation>
     </message>
@@ -329,7 +329,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="242"/>
         <location filename="../forms/configdialog.ui" line="267"/>
-        <location filename="../forms/configdialog.ui" line="730"/>
+        <location filename="../forms/configdialog.ui" line="743"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -381,14 +381,14 @@
     <message>
         <location filename="../forms/configdialog.ui" line="306"/>
         <location filename="../forms/configdialog.ui" line="323"/>
-        <location filename="../forms/configdialog.ui" line="591"/>
-        <location filename="../forms/configdialog.ui" line="605"/>
+        <location filename="../forms/configdialog.ui" line="604"/>
+        <location filename="../forms/configdialog.ui" line="618"/>
         <source>A list of file masks separated by comma.</source>
         <translation>用英文逗号分隔的文件掩码列表。</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="316"/>
-        <location filename="../forms/configdialog.ui" line="598"/>
+        <location filename="../forms/configdialog.ui" line="611"/>
         <source>Exclude files:</source>
         <translation>排除的文件：</translation>
     </message>
@@ -408,205 +408,205 @@
         <translation>打开新播放列表时清除先前的播放列表</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="402"/>
+        <location filename="../forms/configdialog.ui" line="415"/>
         <location filename="../configdialog.cpp" line="339"/>
         <source>Preferences</source>
         <translation>参数设置</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="419"/>
+        <location filename="../forms/configdialog.ui" line="432"/>
         <location filename="../configdialog.cpp" line="342"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="465"/>
+        <location filename="../forms/configdialog.ui" line="478"/>
         <source>Description</source>
         <translation>描述</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="470"/>
+        <location filename="../forms/configdialog.ui" line="483"/>
         <source>Filename</source>
         <translation>文件名</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="482"/>
+        <location filename="../forms/configdialog.ui" line="495"/>
         <source>Look and Feel</source>
         <translation>外观与风格</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="488"/>
+        <location filename="../forms/configdialog.ui" line="501"/>
         <source>Language:</source>
         <translation>语言：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="521"/>
+        <location filename="../forms/configdialog.ui" line="534"/>
         <source>Display average bitrate</source>
         <translation>显示平均比特率</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="531"/>
+        <location filename="../forms/configdialog.ui" line="544"/>
         <source>Playback</source>
         <translation>播放</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="537"/>
+        <location filename="../forms/configdialog.ui" line="550"/>
         <source>Continue playback on startup</source>
         <translation>启动时继续播放</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="544"/>
+        <location filename="../forms/configdialog.ui" line="557"/>
         <source>Determine file type by content</source>
         <translation>根据内容判断文件类型</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="551"/>
+        <location filename="../forms/configdialog.ui" line="564"/>
         <source>Add files from command line to this playlist:</source>
         <translation>从命令行添加文件到播放列表：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="568"/>
+        <location filename="../forms/configdialog.ui" line="581"/>
         <source>Cover Image Retrieve</source>
         <translation>检索封面图片</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="574"/>
+        <location filename="../forms/configdialog.ui" line="587"/>
         <source>Use separate image files</source>
         <translation>使用单独的图片文件</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="584"/>
+        <location filename="../forms/configdialog.ui" line="597"/>
         <source>Include files:</source>
         <translation>包括文件：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="614"/>
+        <location filename="../forms/configdialog.ui" line="627"/>
         <source>Recursive search depth:</source>
         <translation>递归搜索深度：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="652"/>
+        <location filename="../forms/configdialog.ui" line="665"/>
         <source>URL Dialog</source>
         <translation>URL 对话框</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="658"/>
+        <location filename="../forms/configdialog.ui" line="671"/>
         <source>Auto-paste URL from clipboard</source>
         <translation>自动粘贴剪贴板中的网址</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="668"/>
+        <location filename="../forms/configdialog.ui" line="681"/>
         <source>CUE Editor</source>
         <translation>CUE 编辑器</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="674"/>
+        <location filename="../forms/configdialog.ui" line="687"/>
         <source>Use system font</source>
         <translation>使用系统字体</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="695"/>
+        <location filename="../forms/configdialog.ui" line="708"/>
         <source>Font:</source>
         <translation>字体：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="720"/>
+        <location filename="../forms/configdialog.ui" line="733"/>
         <source>???</source>
         <translation>？？？</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="759"/>
+        <location filename="../forms/configdialog.ui" line="772"/>
         <source>Proxy</source>
         <translation>代理</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="771"/>
+        <location filename="../forms/configdialog.ui" line="784"/>
         <source>Enable proxy usage</source>
         <translation>启用代理</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="778"/>
+        <location filename="../forms/configdialog.ui" line="791"/>
         <source>Proxy type:</source>
         <translation>代理类型：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="788"/>
+        <location filename="../forms/configdialog.ui" line="801"/>
         <source>Proxy host name:</source>
         <translation>代理主机名：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="805"/>
+        <location filename="../forms/configdialog.ui" line="818"/>
         <source>Proxy port:</source>
         <translation>代理端口：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="822"/>
+        <location filename="../forms/configdialog.ui" line="835"/>
         <source>Use authentication with proxy</source>
         <translation>使用代理进行身份验证</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="829"/>
+        <location filename="../forms/configdialog.ui" line="842"/>
         <source>Proxy user name:</source>
         <translation>代理用户名：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="846"/>
+        <location filename="../forms/configdialog.ui" line="859"/>
         <source>Proxy password:</source>
         <translation>代理密码：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="886"/>
+        <location filename="../forms/configdialog.ui" line="899"/>
         <source>Replay Gain</source>
         <translation>回放增益</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="892"/>
+        <location filename="../forms/configdialog.ui" line="905"/>
         <source>Replay Gain mode:</source>
         <translation>回放增益模式：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="909"/>
+        <location filename="../forms/configdialog.ui" line="922"/>
         <source>Preamp:</source>
         <translation>前置放大器：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="941"/>
-        <location filename="../forms/configdialog.ui" line="986"/>
+        <location filename="../forms/configdialog.ui" line="954"/>
+        <location filename="../forms/configdialog.ui" line="999"/>
         <source>dB</source>
         <translation>分贝</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="954"/>
+        <location filename="../forms/configdialog.ui" line="967"/>
         <source>Default gain:</source>
         <translation>默认增益：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1006"/>
+        <location filename="../forms/configdialog.ui" line="1019"/>
         <source>Use  peak info to prevent clipping</source>
         <translation>使用峰值信息防止削波</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1022"/>
+        <location filename="../forms/configdialog.ui" line="1035"/>
         <source>Buffer size:</source>
         <translation>缓冲大小：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1048"/>
+        <location filename="../forms/configdialog.ui" line="1061"/>
         <source>ms</source>
         <translation>毫秒</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1081"/>
+        <location filename="../forms/configdialog.ui" line="1094"/>
         <source>Use software volume control</source>
         <translation>使用软件音量控制</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1121"/>
+        <location filename="../forms/configdialog.ui" line="1134"/>
         <source>Use two passes for equalizer</source>
         <translation>均衡器采用双通道处理</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1064"/>
+        <location filename="../forms/configdialog.ui" line="1077"/>
         <source>Volume adjustment step:</source>
         <translation>音量调节步长：</translation>
     </message>
@@ -621,12 +621,12 @@
         <translation>移除当前曲目后停止播放</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1088"/>
+        <location filename="../forms/configdialog.ui" line="1101"/>
         <source>Output bit depth:</source>
         <translation>输出比特深度：</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="1029"/>
+        <location filename="../forms/configdialog.ui" line="1042"/>
         <source>Use dithering</source>
         <translation>使用抖动</translation>
     </message>

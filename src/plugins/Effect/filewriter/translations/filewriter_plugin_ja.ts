@@ -49,7 +49,7 @@
     <message>
         <location filename="../filewritersettingsdialog.ui" line="109"/>
         <source>Write to single file if possible.</source>
-        <translation type="unfinished"></translation>
+        <translation>可能であれば、単一のファイルに書き込む。</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.cpp" line="72"/>

@@ -142,12 +142,12 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="109"/>
         <source>Emulate sample loop bug</source>
-        <translation type="unfinished"></translation>
+        <translation>サンプルループのバグを再現</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="116"/>
         <source>Use Paula mixer in Amiga modules</source>
-        <translation type="unfinished"></translation>
+        <translation>AmigaモジュールでPaulaミキサーを使用</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="33"/>
@@ -167,12 +167,12 @@
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest Neighbor</source>
-        <translation type="unfinished"></translation>
+        <translation>Nearest Neighbor</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="38"/>
         <source>Cubic Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Cubic Spline</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="37"/>

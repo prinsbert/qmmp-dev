@@ -61,32 +61,32 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>+10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+10 秒</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>+30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+30 秒</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>+60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>+60 秒</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>-10 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-10 秒</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>-30 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-30 秒</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>-60 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>-60 秒</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
@@ -151,7 +151,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="57"/>
         <source>&amp;Transit between playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>プレイリスト間の移動 (&amp;T)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="58"/>
@@ -201,7 +201,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="64"/>
         <source>Meta+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Meta+D</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="65"/>
@@ -446,12 +446,12 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="95"/>
         <source>Show &amp;Tab Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>タブバーを表示(&amp;T)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="95"/>
         <source>Alt+T</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+T</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="97"/>
@@ -682,7 +682,7 @@
     <message>
         <location filename="../skinnedfactory.cpp" line="70"/>
         <source>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</translation>
     </message>
 </context>
 <context>
@@ -695,7 +695,7 @@
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
         <source>Restore Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>デフォルトを復元</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>
@@ -1087,12 +1087,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="260"/>
         <source>Skin install path:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skinのインストールパス:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="244"/>
         <source>Random skin on every startup</source>
-        <translation type="unfinished"></translation>
+        <translation>起動ごとにランダムスキン</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="107"/>
@@ -1112,7 +1112,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="238"/>
         <source>Extra Skin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>追加のスキン設定</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="251"/>
@@ -1127,17 +1127,17 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="341"/>
         <source>Use smooth scrolling</source>
-        <translation type="unfinished"></translation>
+        <translation>スムーズスクロールを使用</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="362"/>
         <source>Show splitters</source>
-        <translation type="unfinished"></translation>
+        <translation>区切りを表示</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="369"/>
         <source>Alternate splitter color</source>
-        <translation type="unfinished"></translation>
+        <translation>スプリッターの代替色</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="469"/>
@@ -1152,7 +1152,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="481"/>
         <source>Use skin colors</source>
-        <translation type="unfinished"></translation>
+        <translation>スキンカラーを使用</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="599"/>
@@ -1172,7 +1172,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="817"/>
         <source>Splitter:</source>
-        <translation type="unfinished"></translation>
+        <translation>スプリッター:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="631"/>
@@ -1197,17 +1197,17 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="745"/>
         <source>Load skin colors</source>
-        <translation type="unfinished"></translation>
+        <translation>スキンカラーを読み込み</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="829"/>
         <source>Override group background:</source>
-        <translation type="unfinished"></translation>
+        <translation>グループの背景を上書き:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="874"/>
         <source>Override current track background:</source>
-        <translation type="unfinished"></translation>
+        <translation>現在のトラックの背景を上書き:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="938"/>
@@ -1222,12 +1222,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1028"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>グループ:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1055"/>
         <source>Extra group row:</source>
-        <translation type="unfinished"></translation>
+        <translation>追加のグループ行:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1082"/>
@@ -1364,17 +1364,17 @@
     <message>
         <location filename="../skinnedsettings.cpp" line="159"/>
         <source>Default skin</source>
-        <translation type="unfinished"></translation>
+        <translation>デフォルトのスキン</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="168"/>
         <source>Unarchived skin %1</source>
-        <translation type="unfinished"></translation>
+        <translation>アーカイブされていないスキン %1</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="168"/>
         <source>Archived skin %1</source>
-        <translation type="unfinished"></translation>
+        <translation>アーカイブされたスキン %1</translation>
     </message>
 </context>
 <context>

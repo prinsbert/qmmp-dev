@@ -21,7 +21,7 @@
     <message>
         <location filename="../seekoption.cpp" line="64"/>
         <source>Invalid position specified</source>
-        <translation type="unfinished"></translation>
+        <translation>指定された位置が無効です</translation>
     </message>
 </context>
 </TS>

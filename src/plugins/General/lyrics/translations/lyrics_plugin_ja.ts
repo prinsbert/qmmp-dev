@@ -24,12 +24,12 @@
     <message>
         <location filename="../lyricsfactory.cpp" line="36"/>
         <source>Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>歌詞</translation>
     </message>
     <message>
         <location filename="../lyricsfactory.cpp" line="36"/>
         <source>Ctrl+2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+2</translation>
     </message>
     <message>
         <location filename="../lyricsfactory.cpp" line="68"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../lyricsfactory.cpp" line="72"/>
         <source>Based on Ultimate Lyrics script by Vladimir Brkic &lt;vladimir_brkic@yahoo.com&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Based on Ultimate Lyrics script by Vladimir Brkic &lt;vladimir_brkic@yahoo.com&gt;</translation>
     </message>
 </context>
 <context>
@@ -62,12 +62,12 @@
     <message>
         <location filename="../lyricssettingsdialog.ui" line="14"/>
         <source>Lyrics Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>歌詞プラグイン設定</translation>
     </message>
     <message>
         <location filename="../lyricssettingsdialog.ui" line="29"/>
         <source>Lyrics providers:</source>
-        <translation type="unfinished"></translation>
+        <translation>歌詞プロバイダー:</translation>
     </message>
 </context>
 <context>
@@ -80,7 +80,7 @@
     <message>
         <location filename="../lyricswidget.ui" line="31"/>
         <source>Provider:</source>
-        <translation type="unfinished"></translation>
+        <translation>プロバイダー:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="115"/>
@@ -111,7 +111,7 @@
         <location filename="../lyricswidget.cpp" line="148"/>
         <location filename="../lyricswidget.cpp" line="234"/>
         <source>&lt;h2&gt;%1 - %2&lt;/h2&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h2&gt;%1 - %2&lt;/h2&gt;</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="159"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="169"/>
         <source>Error: %1 - %2</source>
-        <translation type="unfinished"></translation>
+        <translation>エラー: %1 - %2</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="182"/>
@@ -131,12 +131,12 @@
     <message>
         <location filename="../lyricswidget.cpp" line="236"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>タグ</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="257"/>
         <source>Cache</source>
-        <translation type="unfinished"></translation>
+        <translation>キャッシュ</translation>
     </message>
 </context>
 <context>
@@ -144,7 +144,7 @@
     <message>
         <location filename="../ultimatelyricsparser.cpp" line="116"/>
         <source>%1 (line: %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (行: %2)</translation>
     </message>
 </context>
 </TS>
