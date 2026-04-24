@@ -38,7 +38,7 @@ WildMidiSettingsDialog::WildMidiSettingsDialog(QWidget *parent)
     m_ui->confPathComboBox->setEditText(settings.value(u"conf_path"_s, configPath).toString());
     m_ui->sampleRateComboBox->addItem(tr("44100 Hz"), 44100);
     m_ui->sampleRateComboBox->addItem(tr("48000 Hz"), 48000);
-    int i = m_ui->sampleRateComboBox->findData(settings.value(u"sample_rate"_s, 44100).toInt());
+    int i = m_ui->sampleRateComboBox->findData(settings.value(u"sample_rate"_s, 48000).toInt());
     m_ui->sampleRateComboBox->setCurrentIndex(i);
     m_ui->enhancedResamplingCheckBox->setChecked(settings.value(u"enhanced_resampling"_s, false).toBool());
     m_ui->reverbCheckBox->setChecked(settings.value(u"reverberation"_s, false).toBool());
