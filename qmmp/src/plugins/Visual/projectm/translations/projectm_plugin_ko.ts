@@ -75,110 +75,110 @@
 <context>
     <name>ProjectMWidget</name>
     <message>
-        <location filename="../projectmwidget.cpp" line="145"/>
-        <location filename="../projectmwidget.cpp" line="157"/>
+        <location filename="../projectmwidget.cpp" line="148"/>
+        <location filename="../projectmwidget.cpp" line="160"/>
         <source>&amp;Help</source>
         <translation>도움말(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="145"/>
-        <location filename="../projectmwidget.cpp" line="157"/>
+        <location filename="../projectmwidget.cpp" line="148"/>
+        <location filename="../projectmwidget.cpp" line="160"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="146"/>
-        <location filename="../projectmwidget.cpp" line="158"/>
+        <location filename="../projectmwidget.cpp" line="149"/>
+        <location filename="../projectmwidget.cpp" line="161"/>
         <source>&amp;Show Song Title</source>
         <translation>곡 제목 표시(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="146"/>
-        <location filename="../projectmwidget.cpp" line="158"/>
+        <location filename="../projectmwidget.cpp" line="149"/>
+        <location filename="../projectmwidget.cpp" line="161"/>
         <source>F2</source>
         <translation>F2</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="147"/>
-        <location filename="../projectmwidget.cpp" line="159"/>
+        <location filename="../projectmwidget.cpp" line="150"/>
+        <location filename="../projectmwidget.cpp" line="162"/>
         <source>&amp;Show Preset Name</source>
         <translation>프리셋 이름 표시(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="147"/>
-        <location filename="../projectmwidget.cpp" line="159"/>
+        <location filename="../projectmwidget.cpp" line="150"/>
+        <location filename="../projectmwidget.cpp" line="162"/>
         <source>F3</source>
         <translation>F3</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="148"/>
-        <location filename="../projectmwidget.cpp" line="160"/>
+        <location filename="../projectmwidget.cpp" line="151"/>
+        <location filename="../projectmwidget.cpp" line="163"/>
         <source>&amp;Show Menu</source>
         <translation>메뉴 표시(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="148"/>
-        <location filename="../projectmwidget.cpp" line="160"/>
+        <location filename="../projectmwidget.cpp" line="151"/>
+        <location filename="../projectmwidget.cpp" line="163"/>
         <source>M</source>
         <translation>M</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="150"/>
-        <location filename="../projectmwidget.cpp" line="162"/>
+        <location filename="../projectmwidget.cpp" line="153"/>
+        <location filename="../projectmwidget.cpp" line="165"/>
         <source>&amp;Next Preset</source>
         <translation>다음 프리셋(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="150"/>
-        <location filename="../projectmwidget.cpp" line="162"/>
+        <location filename="../projectmwidget.cpp" line="153"/>
+        <location filename="../projectmwidget.cpp" line="165"/>
         <source>N</source>
         <translation>N</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="151"/>
-        <location filename="../projectmwidget.cpp" line="163"/>
+        <location filename="../projectmwidget.cpp" line="154"/>
+        <location filename="../projectmwidget.cpp" line="166"/>
         <source>&amp;Previous Preset</source>
         <translation>이전 프리셋(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="151"/>
-        <location filename="../projectmwidget.cpp" line="163"/>
+        <location filename="../projectmwidget.cpp" line="154"/>
+        <location filename="../projectmwidget.cpp" line="166"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="152"/>
-        <location filename="../projectmwidget.cpp" line="164"/>
+        <location filename="../projectmwidget.cpp" line="155"/>
+        <location filename="../projectmwidget.cpp" line="167"/>
         <source>&amp;Random Preset</source>
         <translation>프리셋 무작위 선택(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="152"/>
-        <location filename="../projectmwidget.cpp" line="164"/>
+        <location filename="../projectmwidget.cpp" line="155"/>
+        <location filename="../projectmwidget.cpp" line="167"/>
         <source>R</source>
         <translation>R</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="153"/>
-        <location filename="../projectmwidget.cpp" line="165"/>
+        <location filename="../projectmwidget.cpp" line="156"/>
+        <location filename="../projectmwidget.cpp" line="168"/>
         <source>&amp;Lock Preset</source>
         <translation>프리셋 잠금(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="153"/>
-        <location filename="../projectmwidget.cpp" line="165"/>
+        <location filename="../projectmwidget.cpp" line="156"/>
+        <location filename="../projectmwidget.cpp" line="168"/>
         <source>L</source>
         <translation>L</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="155"/>
-        <location filename="../projectmwidget.cpp" line="167"/>
+        <location filename="../projectmwidget.cpp" line="158"/>
+        <location filename="../projectmwidget.cpp" line="170"/>
         <source>&amp;Fullscreen</source>
         <translation>전체화면(&amp;F))</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="155"/>
-        <location filename="../projectmwidget.cpp" line="167"/>
+        <location filename="../projectmwidget.cpp" line="158"/>
+        <location filename="../projectmwidget.cpp" line="170"/>
         <source>F</source>
         <translation>F</translation>
     </message>
