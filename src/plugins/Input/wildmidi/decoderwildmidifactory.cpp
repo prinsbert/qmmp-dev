@@ -26,11 +26,6 @@
 
 // DecoderWildMidiFactory
 
-DecoderWildMidiFactory::DecoderWildMidiFactory()
-{
-    new WildMidiHelper(qApp);
-}
-
 bool DecoderWildMidiFactory::canDecode(QIODevice *input) const
 {
     char buf[4];

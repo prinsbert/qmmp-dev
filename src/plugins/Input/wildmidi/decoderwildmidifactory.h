@@ -29,7 +29,6 @@ class DecoderWildMidiFactory : public QObject, DecoderFactory
     Q_INTERFACES(DecoderFactory)
 
 public:
-    DecoderWildMidiFactory();
     bool canDecode(QIODevice *input) const override;
     DecoderProperties properties() const override;
     Decoder *create(const QString &path, QIODevice *input) override;

@@ -18,28 +18,14 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <QCoreApplication>
 #include <QSettings>
 #include <QFile>
-extern "C"{
 #include <wildmidi_lib.h>
-}
 #include <qmmp/qmmp.h>
 #include "wildmidihelper.h"
 
 WildMidiHelper *WildMidiHelper::m_instance = nullptr;
-
-WildMidiHelper::WildMidiHelper(QObject *parent) :
-    QObject(parent)
-{
-    m_instance = this;
-}
-
-WildMidiHelper::~WildMidiHelper()
-{
-    if(m_inited)
-        WildMidi_Shutdown();
-    m_instance = nullptr;
-}
 
 bool WildMidiHelper::initialize()
 {
@@ -78,7 +64,7 @@ bool WildMidiHelper::initialize()
         mixer_options |= WM_MO_REVERB;
     settings.endGroup();
 
-    m_sample_rate = sample_rate;
+    m_sampleRate = sample_rate;
     if(WildMidi_Init(qPrintable(configPath), sample_rate, mixer_options) < 0)
     {
         qCWarning(plugin, "unable to initialize WildMidi library");
@@ -153,11 +139,11 @@ bool WildMidiHelper::validateConfigFile(const QString &path) const
         if(line.startsWith(u"dir"_s))
         {
             QStringList args = line.split(QChar::Space, Qt::SkipEmptyParts);
-            if (args.count() != 2)
+            if(args.count() != 2)
                 continue;
 
             //check 'dir' option
-            if (QFile::exists(args.at(1)))
+            if(QFile::exists(args.at(1)))
                 return true;
         }
     }
@@ -167,10 +153,31 @@ bool WildMidiHelper::validateConfigFile(const QString &path) const
 
 quint32 WildMidiHelper::sampleRate() const
 {
-    return m_sample_rate;
+    return m_sampleRate;
 }
 
 WildMidiHelper *WildMidiHelper::instance()
 {
+    if(!m_instance)
+    {
+        m_instance = new WildMidiHelper;
+        qAddPostRoutine(WildMidiHelper::destroy);
+    }
     return m_instance;
+}
+
+WildMidiHelper::WildMidiHelper()
+{}
+
+WildMidiHelper::~WildMidiHelper()
+{
+    if(m_inited)
+        WildMidi_Shutdown();
+    m_instance = nullptr;
+}
+
+void WildMidiHelper::destroy()
+{
+    delete m_instance;
+    m_instance = nullptr;
 }
