@@ -51,7 +51,7 @@ bool WildMidiHelper::initialize()
 
     if(!validateConfigFile(configPath))
     {
-        qCWarning(plugin, "malformed wildmidi config: %s", qPrintable(configPath));
+        qCWarning(plugin, "malformed WildMidi config: %s", qPrintable(configPath));
         m_mutex.unlock();
         return false;
     }
@@ -126,7 +126,7 @@ bool WildMidiHelper::validateConfigFile(const QString &path) const
     QFile file(path);
     if(!file.open(QIODevice::ReadOnly))
     {
-        qCWarning(plugin) << "unable to wildmidi file; error:" << file.errorString();
+        qCWarning(plugin) << "unable to open WildMidi config file; error:" << file.errorString();
         return false;
     }
 
