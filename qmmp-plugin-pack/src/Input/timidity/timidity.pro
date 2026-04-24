@@ -15,7 +15,7 @@ SOURCES += decoder_timidity.cpp \
 FORMS += \
     timiditysettingsdialog.ui
 
-#RESOURCES = translations/translations.qrc
+RESOURCES = translations/translations.qrc
 
 PKGCONFIG += libtimidity
 

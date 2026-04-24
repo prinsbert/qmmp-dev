@@ -30,6 +30,11 @@
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="98"/>
+        <source>Compiled against libWildMidi-%1.%2.%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../decoderwildmidifactory.cpp" line="102"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
