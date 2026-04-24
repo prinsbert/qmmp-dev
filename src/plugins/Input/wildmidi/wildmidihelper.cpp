@@ -57,15 +57,14 @@ bool WildMidiHelper::initialize()
     }
 
     unsigned short int mixer_options = 0;
-    unsigned short int sample_rate = settings.value(u"sample_rate"_s, 48000).toInt();
+    m_sampleRate = settings.value(u"sample_rate"_s, 48000).toInt();
     if(settings.value(u"enhanced_resampling"_s, false).toBool())
         mixer_options |= WM_MO_ENHANCED_RESAMPLING;
     if(settings.value(u"reverberation"_s, false).toBool())
         mixer_options |= WM_MO_REVERB;
     settings.endGroup();
 
-    m_sampleRate = sample_rate;
-    if(WildMidi_Init(qPrintable(configPath), sample_rate, mixer_options) < 0)
+    if(WildMidi_Init(qPrintable(configPath), m_sampleRate, mixer_options) < 0)
     {
         qCWarning(plugin, "unable to initialize WildMidi library");
         m_mutex.unlock();
