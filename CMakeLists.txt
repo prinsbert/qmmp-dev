@@ -137,6 +137,7 @@ MESSAGE("")
 MESSAGE("Input Plugins:")
 PRINT_SUMMARY ("FFap plugin (Monkey's audio) ...." USE_FFAP TAGLIB_FOUND)
 PRINT_SUMMARY ("ModPlug plugin .................." USE_MODPLUG MODPLUG_FOUND)
+PRINT_SUMMARY ("TiMidity plugin ................." USE_TIMIDITY TIMIDITY_FOUND)
 
 MESSAGE("")
 MESSAGE("Engines:")
