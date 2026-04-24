@@ -42,8 +42,8 @@ private:
     ~TiMidityHelper();
     static TiMidityHelper *m_instance;
     static void destroy();
-
     bool m_inited = false;
+    bool m_updateSettings = false;
     QMutex m_mutex;
     QList<MidIStream *> m_ptrs;
     quint32 m_sampleRate = 0;

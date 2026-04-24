@@ -42,6 +42,7 @@ DecoderProperties DecoderTiMidityFactory::properties() const
     properties.filters = QStringList { u"*.mid"_s };
     properties.description = tr("Midi Files");
     //properties.contentType = ;
+    properties.priority = 10;
     properties.shortName = "timidity"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
@@ -78,10 +79,9 @@ QList<TrackInfo> DecoderTiMidityFactory::createPlayList(const QString &path, Tra
 
             if(song)
             {
-                //mid_song_start(song);
                 info.setValue(Qmmp::SAMPLERATE, helper->sampleRate());
-                info.setDuration(mid_song_get_total_time(song));
                 info.setValue(Qmmp::FORMAT_NAME, u"midi"_s);
+                info.setDuration(mid_song_get_total_time(song));
                 mid_song_free(song);
             }
 
@@ -109,7 +109,7 @@ void DecoderTiMidityFactory::showAbout(QWidget *parent)
     QMessageBox::about(parent, tr("About TiMidity Audio Plugin"),
                        tr("Qmmp TiMidity Audio Plugin") + QChar::LineFeed +
                            tr("This plugin uses libTiMidity library to play midi files") + QChar::LineFeed +
-                           tr("Compiled against linTiMidity-%1.%2.%3")
+                           tr("Compiled against libTiMidity-%1.%2.%3")
                                 .arg(LIBTIMIDITY_VERSION_MAJOR)
                                 .arg(LIBTIMIDITY_VERSION_MINOR)
                                 .arg(LIBTIMIDITY_PATCHLEVEL) + QChar::LineFeed +

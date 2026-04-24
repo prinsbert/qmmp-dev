@@ -29,11 +29,20 @@ TiMidityHelper *TiMidityHelper::m_instance = nullptr;
 bool TiMidityHelper::initialize()
 {
     m_mutex.lock();
+
+    if(m_updateSettings && m_inited && m_ptrs.isEmpty())
+    {
+        mid_exit();
+        m_inited = false;
+    }
+
     if(m_inited)
     {
         m_mutex.unlock();
         return true;
     }
+
+    m_updateSettings = false;
 
     QSettings settings;
     settings.beginGroup(u"TiMidity"_s);
@@ -73,16 +82,8 @@ bool TiMidityHelper::initialize()
 void TiMidityHelper::readSettings()
 {
     m_mutex.lock();
-    if(!m_ptrs.isEmpty())
-    {
-        m_mutex.unlock();
-        return;
-    }
-    if(m_inited)
-        mid_exit();
-    m_inited = false;
+    m_updateSettings = true;
     m_mutex.unlock();
-    initialize();
 }
 
 void TiMidityHelper::addPtr(MidIStream *stream)
