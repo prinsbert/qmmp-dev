@@ -44,7 +44,6 @@ bool DecoderWildMidi::initialize()
         qCWarning(plugin, "initialization failed");
         return false;
     }
-    WildMidiHelper::instance()->readSettings();
 
     m_buffer = input()->readAll();
     if(m_buffer.isEmpty())
