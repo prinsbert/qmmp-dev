@@ -8,6 +8,7 @@ Translation: https://explore.transifex.com/qmmp-development-team/
 Description:
 - FFap - enhanced Monkey's Audio (APE) decoder (24-bit samples and embedded cue support)
 - ModPlug - module player with use of the libmodplug library
+- TiMidity - MIDI player with use of the libmodplug library
 - Sample Rate Converter - resampler based on libsamplerate library
 - Goom - audio visualization based on goom project
 - FFVideo - video playback engine based on FFmpeg library
@@ -24,6 +25,7 @@ Requirements:
 - libsamplerate >= 0.1.2 (optional)
 - ffmpeg >= 3.4 (optional)
 - libmms >= 0.4 (optional)
+- libtimidity >= 0.2.7 (optional)
 - libmpv (optional)
 - mplayer (optional)
 - yt-dlp (latest version, optional)
@@ -47,7 +49,7 @@ cmake ./ -DUSE_MODPLUG:BOOL=FALSE
 
 Available options:
 - USE_FFAP, USE_MODPLUG, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_MPLAYER, USE_MPV,
-  USE_YTB, USE_MMS (plugins)
+  USE_YTB, USE_MMS, USE_TIMIDITY (plugins)
 
 Also you can use ccmake to change plugin configuration.
 By default program will be installed in /usr/local. You can change default path by running:
