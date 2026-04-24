@@ -8,6 +8,7 @@ Qmmp Plugin Pack
 Список модулей:
 - FFap - улучшенный декодер Monkey's Audio (APE) (поддержка 24-х бит и встроенного cue)
 - ModPlug - проигрыватель трекерной музыки с использованием библиотеки libmodplug
+- TiMidity - проигрыватель MIDI с использованием библиотеки libTiMidity
 - Sample Rate Converter - преобразователь частоты дискретизации с использованием библиотеки libsamplerate
 - Goom - визуализация на базе проекта goom
 - FFVideo - воспроизведение видео с использованием библиотеки FFmpeg
@@ -24,6 +25,7 @@ Qmmp Plugin Pack
 - libsamplerate >= 0.1.2 (опционально)
 - ffmpeg >= 3.4 (опционально)
 - libmms >= 0.4 (опционально)
+- libtimidity >= 0.2.7 (опционально)
 - libmpv (опционально)
 - mplayer (опционально)
 - yt-dlp (последняя версия, опционально)
@@ -46,7 +48,7 @@ cmake ./ -DUSE_USE_MODPLUG:BOOL=FALSE
 
 Доступные опции:
 - USE_FFAP, USE_MODPLUG, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_MPLAYER, USE_MPV,
-  USE_YTB, USE_MMS (модули)
+  USE_YTB, USE_MMS, USE_TIMIDITY (модули)
 
 Также вы можете использовать ccmake для изменения конфигурации модулей.
 По умолчанию программа будет установлена в /usr/local. Вы можете изменить этот путь командой:
