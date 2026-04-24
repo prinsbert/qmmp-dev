@@ -28,10 +28,10 @@ DecoderWildMidi::DecoderWildMidi(QIODevice *input) : Decoder(input)
 
 DecoderWildMidi::~DecoderWildMidi()
 {
-    if(midi_ptr)
+    if(m_midiPtr)
     {
-        WildMidiHelper::instance()->removePtr(midi_ptr);
-        WildMidi_Close(midi_ptr);
+        WildMidiHelper::instance()->removePtr(m_midiPtr);
+        WildMidi_Close(m_midiPtr);
     }
 }
 
@@ -53,20 +53,20 @@ bool DecoderWildMidi::initialize()
         return false;
     }
 
-    midi_ptr = WildMidi_OpenBuffer((const uint8_t *)(m_buffer.constData()), m_buffer.size());
+    m_midiPtr = WildMidi_OpenBuffer(reinterpret_cast<const uint8_t *>(m_buffer.constData()), m_buffer.size());
 
-    if(!midi_ptr)
+    if(!m_midiPtr)
     {
         qCWarning(plugin, "unable to open file");
         return false;
     }
-    WildMidiHelper::instance()->addPtr(midi_ptr);
+    WildMidiHelper::instance()->addPtr(m_midiPtr);
 
 
-    m_sample_rate = WildMidiHelper::instance()->sampleRate();
-    _WM_Info *wm_info = WildMidi_GetInfo(midi_ptr);
+    m_sampleRate = WildMidiHelper::instance()->sampleRate();
+    _WM_Info *wm_info = WildMidi_GetInfo(m_midiPtr);
     m_totalTime = (qint64)wm_info->approx_total_samples * 1000 / WildMidiHelper::instance()->sampleRate();
-    configure(m_sample_rate, 2, Qmmp::PCM_S16LE);
+    configure(m_sampleRate, 2, Qmmp::PCM_S16LE);
     qCDebug(plugin, "initialize succes");
     return true;
 }
@@ -78,8 +78,8 @@ qint64 DecoderWildMidi::totalTime() const
 
 void DecoderWildMidi::seek(qint64 pos)
 {
-    ulong sample = (ulong)m_sample_rate * pos / 1000;
-    WildMidi_FastSeek(midi_ptr, &sample);
+    ulong sample = (ulong)m_sampleRate * pos / 1000;
+    WildMidi_FastSeek(m_midiPtr, &sample);
 }
 
 int DecoderWildMidi::bitrate() const
@@ -89,5 +89,5 @@ int DecoderWildMidi::bitrate() const
 
 qint64 DecoderWildMidi::read(unsigned char *data, qint64 size)
 {
-    return WildMidi_GetOutput(midi_ptr, (int8_t *)data, size);
+    return WildMidi_GetOutput(m_midiPtr, reinterpret_cast<int8_t *>(data), size);
 }

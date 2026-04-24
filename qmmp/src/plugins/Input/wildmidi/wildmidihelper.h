@@ -21,31 +21,30 @@
 #ifndef WILDMIDIHELPER_H
 #define WILDMIDIHELPER_H
 
-#include <QObject>
 #include <QMutex>
 #include <QStringList>
 
-class WildMidiHelper : public QObject
+class WildMidiHelper
 {
-Q_OBJECT
 public:
-    explicit WildMidiHelper(QObject *parent = nullptr);
-    ~WildMidiHelper();
     bool initialize();
     void readSettings();
     quint32 sampleRate() const;
-    void addPtr(void *);
-    void removePtr(void *);
+    void addPtr(void *t);
+    void removePtr(void *t);
     QStringList configFiles() const;
     bool validateConfigFile(const QString &path) const;
     static WildMidiHelper *instance();
 
 private:
+    WildMidiHelper();
+    ~WildMidiHelper();
+    static void destroy();
     static WildMidiHelper *m_instance;
     bool m_inited = false;
     QMutex m_mutex;
     QList<void *> m_ptrs;
-    quint32 m_sample_rate = 0;
+    quint32 m_sampleRate = 0;
 };
 
 #endif // WILDMIDIHELPER_H

@@ -21,9 +21,7 @@
 #ifndef DECODER_WILDMIDI_H
 #define DECODER_WILDMIDI_H
 
-extern "C"{
 #include <wildmidi_lib.h>
-}
 #include <qmmp/decoder.h>
 
 class DecoderWildMidi : public Decoder
@@ -40,9 +38,9 @@ public:
     void seek(qint64) override;
 
 private:
-    void *midi_ptr = nullptr;
+    void *m_midiPtr = nullptr;
     qint64 m_totalTime = 0;
-    quint32 m_sample_rate = 0;
+    quint32 m_sampleRate = 0;
     QByteArray m_buffer;
 };
 
