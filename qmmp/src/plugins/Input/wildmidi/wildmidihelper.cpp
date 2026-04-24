@@ -57,7 +57,7 @@ bool WildMidiHelper::initialize()
     }
 
     unsigned short int mixer_options = 0;
-    unsigned short int sample_rate = settings.value(u"sample_rate"_s, 44100).toInt();
+    unsigned short int sample_rate = settings.value(u"sample_rate"_s, 48000).toInt();
     if(settings.value(u"enhanced_resampling"_s, false).toBool())
         mixer_options |= WM_MO_ENHANCED_RESAMPLING;
     if(settings.value(u"reverberation"_s, false).toBool())
