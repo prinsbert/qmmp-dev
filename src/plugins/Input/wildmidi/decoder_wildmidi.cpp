@@ -62,7 +62,6 @@ bool DecoderWildMidi::initialize()
     }
     WildMidiHelper::instance()->addPtr(m_midiPtr);
 
-
     m_sampleRate = WildMidiHelper::instance()->sampleRate();
     _WM_Info *wm_info = WildMidi_GetInfo(m_midiPtr);
     m_totalTime = (qint64)wm_info->approx_total_samples * 1000 / WildMidiHelper::instance()->sampleRate();
