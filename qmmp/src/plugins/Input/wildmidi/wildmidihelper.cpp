@@ -34,7 +34,6 @@ bool WildMidiHelper::initialize()
     if(m_updateSettings && m_inited && m_ptrs.isEmpty())
     {
         WildMidi_Shutdown();
-        m_updateSettings = false;
         m_inited = false;
     }
 
@@ -43,6 +42,8 @@ bool WildMidiHelper::initialize()
         m_mutex.unlock();
         return true;
     }
+
+    m_updateSettings = false;
 
     QSettings settings;
     settings.beginGroup(u"Midi"_s);
