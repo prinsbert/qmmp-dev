@@ -21,17 +21,17 @@
     <message>
         <location filename="../playlistoption.cpp" line="36"/>
         <source>Select playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz listę odtwarzania</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="37"/>
         <source>Create playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Utwórz listę odtwarzania</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="38"/>
         <source>Play track in the specified playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Odtwórz utwór z&#xa0;określonej liśty odtwarzania</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="39"/>
@@ -66,22 +66,22 @@
     <message>
         <location filename="../playlistoption.cpp" line="100"/>
         <source>Arguments:</source>
-        <translation type="unfinished"></translation>
+        <translation>Argumenty:</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="101"/>
         <source>%1 - index or name of the playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - indeks lub nazwa listy odtwarzania</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="102"/>
         <source>%1 - index of the track</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - indeks utworu</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="103"/>
         <source>%1 - name of the new playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - nazwa nowej listy odtwarzania</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="124"/>
@@ -89,17 +89,17 @@
         <location filename="../playlistoption.cpp" line="166"/>
         <location filename="../playlistoption.cpp" line="205"/>
         <source>Invalid playlist ID</source>
-        <translation>Niewłaściwy ID listy odtwarzania</translation>
+        <translation>Niewłaściwy identyfikator listy odtwarzania</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="148"/>
         <source>Invalid playlist name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieprawidłowa nazwa listy odtwarzania</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="153"/>
         <source>Playlist with name &quot;%1&quot; already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista odtwarzania o&#xa0;nazwie „%1” już istnieje</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="162"/>
@@ -109,7 +109,7 @@
     <message>
         <location filename="../playlistoption.cpp" line="171"/>
         <source>Invalid track ID</source>
-        <translation>Niewłaściwe ID utworu</translation>
+        <translation>Niewłaściwy identyfikator utworu</translation>
     </message>
 </context>
 </TS>
