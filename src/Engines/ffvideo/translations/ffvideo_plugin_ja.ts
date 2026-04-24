@@ -11,7 +11,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="45"/>
         <source>Video Files</source>
-        <translation>ビデオファイル</translation>
+        <translation>映像ファイル</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="191"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="50"/>
         <source>File size</source>
-        <translation>ファイルの大きさ</translation>
+        <translation>ファイルサイズ</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <source>Audio bitrate</source>
-        <translation>音響のビットレート</translation>
+        <translation>音声ビットレート</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
@@ -59,7 +59,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="50"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
@@ -92,12 +92,12 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="86"/>
         <source>Video bitrate</source>
-        <translation>映像のビットレート</translation>
+        <translation>映像ビットレート</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="89"/>
         <source>Video format</source>
-        <translation type="unfinished"></translation>
+        <translation>映像の形式</translation>
     </message>
 </context>
 <context>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../videowindow.cpp" line="80"/>
         <source>&amp;Play</source>
-        <translation type="unfinished"></translation>
+        <translation>再生(&amp;Y)</translation>
     </message>
 </context>
 </TS>

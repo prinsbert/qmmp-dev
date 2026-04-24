@@ -11,7 +11,7 @@
     <message>
         <location filename="../goomwidget.cpp" line="187"/>
         <source>Refresh Rate</source>
-        <translation>再描画の頻度</translation>
+        <translation>リフレッシュレート</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="190"/>
@@ -21,12 +21,12 @@
     <message>
         <location filename="../goomwidget.cpp" line="191"/>
         <source>50 fps</source>
-        <translation>50 フレーム毎秒</translation>
+        <translation>50 fps</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="192"/>
         <source>25 fps</source>
-        <translation>25 フレーム毎秒</translation>
+        <translation>25 fps</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="198"/>
@@ -37,7 +37,7 @@
         <location filename="../goomwidget.cpp" line="202"/>
         <location filename="../goomwidget.cpp" line="204"/>
         <source>&amp;Full Screen</source>
-        <translation>フルスクリーン(&amp;F)</translation>
+        <translation>全画面表示(&amp;F)</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="202"/>

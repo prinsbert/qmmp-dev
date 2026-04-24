@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>MpvEngineFactory</name>
     <message>
@@ -11,7 +11,7 @@
     <message>
         <location filename="../mpvenginefactory.cpp" line="51"/>
         <source>Video Files</source>
-        <translation type="unfinished"></translation>
+        <translation>映像ファイル</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="198"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../mpvenginefactory.cpp" line="201"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>制作: Илья Котов (Ilya Kotov) &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -39,45 +39,45 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="50"/>
         <source>File size</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル容量</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="50"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="51"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>ビットレート</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="51"/>
         <location filename="../mpvmetadatamodel.cpp" line="70"/>
         <location filename="../mpvmetadatamodel.cpp" line="86"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>kbps</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="70"/>
         <source>Audio bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>音響のビットレート</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
         <source>Audio sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>音声サンプルレート</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="73"/>
         <location filename="../mpvmetadatamodel.cpp" line="75"/>
         <source>Audio channels</source>
-        <translation type="unfinished"></translation>
+        <translation>音声チャンネル数</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="79"/>
@@ -87,17 +87,17 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="85"/>
         <source>Video size</source>
-        <translation type="unfinished"></translation>
+        <translation>映像の寸法</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="86"/>
         <source>Video bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>映像ビットレート</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="89"/>
         <source>Video format</source>
-        <translation type="unfinished"></translation>
+        <translation>映像の形式</translation>
     </message>
 </context>
 </TS>
