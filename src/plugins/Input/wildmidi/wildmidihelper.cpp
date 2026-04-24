@@ -30,6 +30,14 @@ WildMidiHelper *WildMidiHelper::m_instance = nullptr;
 bool WildMidiHelper::initialize()
 {
     m_mutex.lock();
+
+    if(m_updateSettings && m_inited && m_ptrs.isEmpty())
+    {
+        WildMidi_Shutdown();
+        m_updateSettings = false;
+        m_inited = false;
+    }
+
     if(m_inited)
     {
         m_mutex.unlock();
@@ -78,16 +86,8 @@ bool WildMidiHelper::initialize()
 void WildMidiHelper::readSettings()
 {
     m_mutex.lock();
-    if(!m_ptrs.isEmpty())
-    {
-        m_mutex.unlock();
-        return;
-    }
-    if(m_inited)
-        WildMidi_Shutdown();
-    m_inited = false;
+    m_updateSettings = true;
     m_mutex.unlock();
-    initialize();
 }
 
 void WildMidiHelper::addPtr(void *t)

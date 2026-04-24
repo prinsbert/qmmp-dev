@@ -42,6 +42,7 @@ private:
     static void destroy();
     static WildMidiHelper *m_instance;
     bool m_inited = false;
+    bool m_updateSettings = false;
     QMutex m_mutex;
     QList<void *> m_ptrs;
     quint32 m_sampleRate = 0;
