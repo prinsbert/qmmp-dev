@@ -44,7 +44,6 @@ bool DecoderTiMidity::initialize()
         qCWarning(plugin, "initialization failed");
         return false;
     }
-    TiMidityHelper::instance()->readSettings();
 
     m_buffer = input()->readAll();
     if(m_buffer.isEmpty())
