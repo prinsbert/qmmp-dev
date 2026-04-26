@@ -8,7 +8,7 @@ Translation: https://explore.transifex.com/qmmp-development-team/
 Description:
 - FFap - enhanced Monkey's Audio (APE) decoder (24-bit samples and embedded cue support)
 - ModPlug - module player with use of the libmodplug library
-- TiMidity - MIDI player with use of the libmodplug library
+- TiMidity - MIDI player with use of the libTiMidity library
 - Sample Rate Converter - resampler based on libsamplerate library
 - Goom - audio visualization based on goom project
 - FFVideo - video playback engine based on FFmpeg library
@@ -74,7 +74,7 @@ If someone module doesn't build or doesn't needed you can disable it in qmmp-plu
 corresponding line( symbol '#') or execute qmake with the special parameters:
 qmake DISABLED_PLUGINS+=XMP_PLUGIN DISABLED_PLUGINS+=FFAP_PLUGIN
 
-Attention! By default all plugins are enabled by default.
+Attention! All plugins are enabled by default.
 
 Changing shared library install path (for some 64-bit distributions).
 By default, all libraries and plugins will be installed to $(INSTALL PREFIX)/lib. You can change "lib"
@@ -84,16 +84,20 @@ or
 cmake ./ -DLIB_DIR=lib64
 
 
-To avoid some problems please read below carefully.
+To avoid possible problems please read below carefully.
 
-How to enable ModPlug plugin.
-By default XMP plugin has higher priority than ModPlug.
-To fix this go to the "settings"->"plugins" and disable XMP plugin.
+Plugins included in the Qmmp Plugin Pack may have a lower priority than other plugins.
+Therefore, to enable them, the following settings are recommend:
 
-How to enable FFap plugin.
-Go to the FFmpeg plugin settings and disable Monkey's Audio support.
+- to enable the ModPlug plugin, you should disable the XMP plugin;
+- to enable the TiMidity plugin, you should disable the WildMidi plugin;
+- to enable the FFap plugin, you should go to the FFmpeg plugin's settings and disable
+  Monkey's Audio support;
+- to enable the MPV plugin, you should disable FFVideo and Mplayer plugins;
+- to enable the Mplayer plugin, you should disable MPV and FFVideo plugins;
+- to enable the FFVideo plugin, you should disable MPV and Mplayer plugins.
 
-How to enable FFVideo plugin.
-Go to the "settings"->"plugins" and disable MPlayer plugin.
+Starting with Qmmp 2.4, instead of disabling them, you can change the priorities of the corresponding modules
+(higher number means lower priority).
 
 All patches, bug reports, ideas etc. send to bug tracker https://sourceforge.net/p/qmmp-dev/tickets
