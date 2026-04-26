@@ -192,6 +192,11 @@ void RGScanDialog::onScanFinished(const QString &url)
         {
             QList<ReplayGainInfoItem*> items = itemGroupMap.values(album);
             GainHandle_t **a = (GainHandle_t **) malloc(items.count()*sizeof(GainHandle_t *));
+            if(!a)
+            {
+                qCWarning(plugin, "error: unable to allocate memory");
+                break;
+            }
             double album_peak = 0;
             for(int i = 0; i < items.count(); ++i)
             {
