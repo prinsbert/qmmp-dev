@@ -84,10 +84,10 @@ bool DecoderWavPack::initialize()
             int cue_len = WavpackGetTagItem(m_context, "cuesheet", nullptr, 0);
             if(cue_len > 0)
             {
-                char *value = (char*)malloc(cue_len * 2 + 1);
-                WavpackGetTagItem(m_context, "cuesheet", value, cue_len + 1);
-                m_parser = new CueParser(value);
-                free(value);
+                char *value = new char[cue_len];
+                WavpackGetTagItem(m_context, "cuesheet", value, cue_len);
+                m_parser = new CueParser(value, cue_len);
+                delete [] value;
                 m_parser->setDuration(WavpackGetNumSamples64(m_context) * 1000 / WavpackGetSampleRate(m_context));
                 m_parser->setUrl(u"wvpack"_s, p);
                 m_track = m_path.section(QLatin1Char('#'), -1).toInt();
