@@ -48,6 +48,7 @@ DecoderProperties DecoderTiMidityFactory::properties() const
     properties.hasSettings = true;
     properties.noInput = false;
     properties.protocols = QStringList { u"file"_s };
+    properties.priority = 10;
     return properties;
 }
 

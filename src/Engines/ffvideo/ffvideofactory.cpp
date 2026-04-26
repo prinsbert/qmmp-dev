@@ -47,6 +47,7 @@ EngineProperties FFVideoFactory::properties() const
     properties.protocols = QStringList { u"file"_s };
     properties.hasAbout = true;
     properties.hasSettings = false;
+    properties.priority = 20;
     return properties;
 }
 
