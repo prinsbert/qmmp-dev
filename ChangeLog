@@ -1,6 +1,12 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 1.7.11
+* fixed build with PipeWire versions less than 0.3.50
+* fixed settings dialog layout
+* fixed default CUE encoding
+* fixed possible null pointer dereference
+
 Version 1.7.10
 * fixed determination of FLAC files with ID3v2 tags
 * fixed DSD support in the ffmpeg plugin
