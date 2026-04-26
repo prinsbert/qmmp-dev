@@ -85,6 +85,9 @@ CueParser::CueParser(const QByteArray &data, const QByteArray &codecName) : d_pt
     loadData(data, codecName);
 }
 
+CueParser::CueParser(const char *data, qsizetype size, const QByteArray &codecName) : CueParser(QByteArray(data, size), codecName)
+{}
+
 CueParser::~CueParser()
 {
     clear();
