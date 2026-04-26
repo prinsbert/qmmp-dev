@@ -38,6 +38,7 @@ EngineProperties MplayerEngineFactory::properties() const
     properties.protocols = QStringList { u"file"_s };
     properties.hasAbout = true;
     properties.hasSettings = true;
+    properties.priority = 10;
     return properties;
 }
 
