@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -389,7 +389,7 @@ void HttpStreamReader::run()
     m_mutex.unlock();
     if(!m_stream.buf)
     {
-        qCWarning(plugin, "unable to allocate stream buffer");
+        qWarning("HttpStreamReader: unable to allocate stream buffer");
         m_stream.buf_size = 0;
     }
     int return_code = curl_easy_perform(m_handle);

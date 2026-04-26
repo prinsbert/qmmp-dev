@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -243,7 +243,7 @@ bool OutputALSA::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat form
     m_prebuf = (uchar *)malloc(m_prebuf_size);
     if(!m_prebuf)
     {
-        qCWarning(plugin, "Unable to allocate buffer");
+        qWarning("OutputALSA: Unable to allocate buffer");
         return false;
     }
     m_inited = true;

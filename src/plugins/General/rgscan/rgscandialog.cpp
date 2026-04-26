@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -202,7 +202,7 @@ void RGScanDialog::onScanFinished(QString url)
             GainHandle_t **a = (GainHandle_t **) malloc(items.count()*sizeof(GainHandle_t *));
             if(!a)
             {
-                qCWarning(plugin, "error: unable to allocate memory");
+                qWarning("RGScanDialog: error: unable to allocate memory");
                 break;
             }
             double album_peak = 0;

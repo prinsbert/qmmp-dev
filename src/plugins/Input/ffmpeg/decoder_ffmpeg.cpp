@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2020 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -167,7 +167,7 @@ bool DecoderFFmpeg::initialize()
 
     if(!m_input_buf)
     {
-        qCWarning(plugin, "unable to allocate input buffer");
+        qWarning("DecoderFFmpeg: unable to allocate input buffer");
         return false;
     }
 

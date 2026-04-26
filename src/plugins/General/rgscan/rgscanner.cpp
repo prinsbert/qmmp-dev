@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -186,7 +186,7 @@ void RGScanner::run()
 
     if(InitGainAnalysis(&m_handle, ap.sampleRate()) == INIT_GAIN_ANALYSIS_ERROR)
     {
-        qCWarning(plugin, "[%s] unable to allocate memory", qPrintable(name));
+        qWarning("RGScanner: [%s] unable to allocate memory", qPrintable(name));
         deinit();
         m_is_running = false;
         emit finished(m_url);
