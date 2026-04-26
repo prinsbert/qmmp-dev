@@ -65,7 +65,7 @@ If someone module doesn't build or doesn't needed you can disable it in qmmp-plu
 corresponding line( symbol '#') or execute qmake with the special parameters:
 qmake DISABLED_PLUGINS+=XMP_PLUGIN DISABLED_PLUGINS+=FFAP_PLUGIN
 
-Attention! By default all plugins are enabled by default.
+Attention! All plugins are enabled by default.
 
 Changing shared library install path (for some 64-bit distributions).
 By default, all libraries and plugins will be installed to $(INSTALL PREFIX)/lib. You can change "lib"
