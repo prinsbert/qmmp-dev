@@ -193,16 +193,16 @@ Basic file and directories (may differ depending on distribution and architectur
 
 /usr/bin/qmmp - executable file
 /usr/share/qmmp - shared files and directories
-/usr/lib/qmmp-2.3/CommandLineOptions - command-line extensions
-/usr/lib/qmmp-2.3/Effect - effect plugin
-/usr/lib/qmmp-2.3/FileDialogs - file dialogs
-/usr/lib/qmmp-2.3/General - general plugins
-/usr/lib/qmmp-2.3/Input - input plugins (decoders)
-/usr/lib/qmmp-2.3/Output - output plugins
-/usr/lib/qmmp-2.3/PlayListFormats - playlist formats
-/usr/lib/qmmp-2.3/Transports - transports
-/usr/lib/qmmp-2.3/Ui - user interfaces
-/usr/lib/qmmp-2.3/Visual - visualization plugins
+/usr/lib/qmmp-2.4/CommandLineOptions - command-line extensions
+/usr/lib/qmmp-2.4/Effect - effect plugin
+/usr/lib/qmmp-2.4/FileDialogs - file dialogs
+/usr/lib/qmmp-2.4/General - general plugins
+/usr/lib/qmmp-2.4/Input - input plugins (decoders)
+/usr/lib/qmmp-2.4/Output - output plugins
+/usr/lib/qmmp-2.4/PlayListFormats - playlist formats
+/usr/lib/qmmp-2.4/Transports - transports
+/usr/lib/qmmp-2.4/Ui - user interfaces
+/usr/lib/qmmp-2.4/Visual - visualization plugins
 /usr/lib/libqmmp.so* - player core library
 /usr/lib/libqmmpui.so* - user interface library
 /usr/include/qmmp - headers for core library
