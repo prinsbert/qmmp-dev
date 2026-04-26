@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2025 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -43,7 +43,7 @@ public:
      * \param data Content of CUE file.
      * \param codecName Codec name ("UTF-8" by default).
      */
-    CueParser(const QByteArray &data, const QByteArray &codecName = QByteArray());
+    CueParser(const QByteArray &data, const QByteArray &codecName = "UTF-8");
     /*!
      * Object destructor.
      */
