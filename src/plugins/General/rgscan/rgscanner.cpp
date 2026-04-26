@@ -164,11 +164,25 @@ void RGScanner::run()
     qCDebug(plugin, "[%s] staring thread", qPrintable(name));
     m_is_running = true;
     m_is_pending = false;
+    m_has_values = false;
     bool error = false;
 
     AudioParameters ap = m_decoder->audioParameters();
     AudioConverter converter;
     converter.configure(ap.format());
+
+    if(m_handle)
+        DeinitGainAnalysis(m_handle);
+
+    if(InitGainAnalysis(&m_handle, ap.sampleRate()) == INIT_GAIN_ANALYSIS_ERROR)
+    {
+        qCWarning(plugin, "[%s] unable to allocate memory", qPrintable(name));
+        deinit();
+        m_is_running = false;
+        emit finished(m_url);
+        return;
+    }
+
     //buffers
     double out_left[BUFFER_FRAMES] = {0}, out_right[BUFFER_FRAMES] = {0}; //replay gain buffers
     float *float_buf = new float[BUFFER_FRAMES * ap.channels()]; //float buffer
@@ -180,10 +194,6 @@ void RGScanner::run()
     quint64 sample_counter = 0;
     quint64 samples = 0;
     double max = 0;
-
-    if(m_handle)
-        DeinitGainAnalysis(m_handle);
-    InitGainAnalysis(&m_handle, ap.sampleRate());
 
     forever
     {
