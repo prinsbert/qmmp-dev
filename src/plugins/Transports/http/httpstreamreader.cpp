@@ -384,11 +384,15 @@ void HttpStreamReader::run()
     m_stream.buf = (char *)malloc(m_stream.buf_size); //initial buffer
     m_stream.aborted = false;
     m_stream.header.clear();
-    m_ready  = false;
-    int return_code;
+    m_ready = false;
     qDebug("HttpStreamReader: starting libcurl");
     m_mutex.unlock();
-    return_code = curl_easy_perform(m_handle);
+    if(!m_stream.buf)
+    {
+        qCWarning(plugin, "unable to allocate stream buffer");
+        m_stream.buf_size = 0;
+    }
+    int return_code = curl_easy_perform(m_handle);
     qDebug("HttpStreamReader: curl thread finished with code %d (%s)", return_code, errorBuffer);
     if(!m_stream.aborted && !m_ready)
     {
