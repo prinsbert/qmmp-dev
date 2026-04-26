@@ -43,7 +43,7 @@ public:
      * \param data Content of CUE file.
      * \param codecName Codec name ("UTF-8" by default).
      */
-    CueParser(const QByteArray &data, const QByteArray &codecName = QByteArray());
+    CueParser(const QByteArray &data, const QByteArray &codecName = "UTF-8");
     /*!
      * Object destructor.
      */
