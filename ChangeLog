@@ -9,6 +9,7 @@ Version 0.12.23
 * fixed retrieving song lyrics
 * fixed determination of FLAC files with ID3v2 tags
 * fixed possible crash
+* fixed possible null pointer dereference
 
 Version 0.12.22
 * added support for float PCM format in the dsound and wasapi plugins
