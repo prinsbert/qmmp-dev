@@ -14,22 +14,22 @@
         <translation>視頻檔案</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="73"/>
+        <location filename="../mplayerenginefactory.cpp" line="74"/>
         <source>About MPlayer Plugin</source>
         <translation>關於 Mplayer插件</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="74"/>
+        <location filename="../mplayerenginefactory.cpp" line="75"/>
         <source>Qmmp MPlayer Plugin</source>
         <translation>Qmmp Mplayer插件</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="75"/>
+        <location filename="../mplayerenginefactory.cpp" line="76"/>
         <source>This plugin uses MPlayer as backend</source>
         <translation>此插件使用 Mplayer後端</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="76"/>
+        <location filename="../mplayerenginefactory.cpp" line="77"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

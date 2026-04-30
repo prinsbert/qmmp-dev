@@ -14,22 +14,22 @@
         <translation>Αρχεία βίντεο</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="73"/>
+        <location filename="../mplayerenginefactory.cpp" line="74"/>
         <source>About MPlayer Plugin</source>
         <translation>Σχετικά με το πρόσθετο MPlayer</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="74"/>
+        <location filename="../mplayerenginefactory.cpp" line="75"/>
         <source>Qmmp MPlayer Plugin</source>
         <translation>Qmmp πρόσθετο MPlayer</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="75"/>
+        <location filename="../mplayerenginefactory.cpp" line="76"/>
         <source>This plugin uses MPlayer as backend</source>
         <translation>Αυτό το πρόσθετο χρησιμοποιεί το MPlayer ως σύστημα υποστήριξης</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="76"/>
+        <location filename="../mplayerenginefactory.cpp" line="77"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>

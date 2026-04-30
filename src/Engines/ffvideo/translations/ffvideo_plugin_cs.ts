@@ -14,22 +14,22 @@
         <translation>Videosoubory</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="190"/>
+        <location filename="../ffvideofactory.cpp" line="191"/>
         <source>About FFVideo Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="191"/>
+        <location filename="../ffvideofactory.cpp" line="192"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="192"/>
+        <location filename="../ffvideofactory.cpp" line="193"/>
         <source>Compiled against:</source>
         <translation>Kompilováno s:</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="201"/>
+        <location filename="../ffvideofactory.cpp" line="202"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>

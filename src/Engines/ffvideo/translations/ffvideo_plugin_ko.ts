@@ -14,22 +14,22 @@
         <translation>비디오 파일</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="190"/>
+        <location filename="../ffvideofactory.cpp" line="191"/>
         <source>About FFVideo Plugin</source>
         <translation>FFVideo 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="191"/>
+        <location filename="../ffvideofactory.cpp" line="192"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
         <translation>Qmmp용 FFmpeg에 기반한 비디오 플러그인</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="192"/>
+        <location filename="../ffvideofactory.cpp" line="193"/>
         <source>Compiled against:</source>
         <translation>컴파일 대상:</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="201"/>
+        <location filename="../ffvideofactory.cpp" line="202"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

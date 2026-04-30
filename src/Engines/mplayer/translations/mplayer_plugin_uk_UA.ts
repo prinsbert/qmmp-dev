@@ -14,22 +14,22 @@
         <translation>Відеофайли</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="73"/>
+        <location filename="../mplayerenginefactory.cpp" line="74"/>
         <source>About MPlayer Plugin</source>
         <translation>Про втулок Mplayer</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="74"/>
+        <location filename="../mplayerenginefactory.cpp" line="75"/>
         <source>Qmmp MPlayer Plugin</source>
         <translation>Втулок Mplayer для Qmmp</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="75"/>
+        <location filename="../mplayerenginefactory.cpp" line="76"/>
         <source>This plugin uses MPlayer as backend</source>
         <translation>Цей втулок використовує MPlayer як бекенд</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="76"/>
+        <location filename="../mplayerenginefactory.cpp" line="77"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>

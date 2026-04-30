@@ -6,37 +6,37 @@
     <message>
         <location filename="../decodertimidityfactory.cpp" line="41"/>
         <source>TiMidity Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Wtyczka TiMidity</translation>
     </message>
     <message>
         <location filename="../decodertimidityfactory.cpp" line="43"/>
         <source>Midi Files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../decodertimidityfactory.cpp" line="109"/>
-        <source>About TiMidity Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Pliki MIDI</translation>
     </message>
     <message>
         <location filename="../decodertimidityfactory.cpp" line="110"/>
-        <source>Qmmp TiMidity Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <source>About TiMidity Audio Plugin</source>
+        <translation>O wtyczce dźwiękowej TiMidity</translation>
     </message>
     <message>
         <location filename="../decodertimidityfactory.cpp" line="111"/>
-        <source>This plugin uses libTiMidity library to play midi files</source>
-        <translation type="unfinished"></translation>
+        <source>Qmmp TiMidity Audio Plugin</source>
+        <translation>Wtyczka dźwiękowa TiMidity dla Qmmp</translation>
     </message>
     <message>
         <location filename="../decodertimidityfactory.cpp" line="112"/>
-        <source>Compiled against libTiMidity-%1.%2.%3</source>
-        <translation type="unfinished"></translation>
+        <source>This plugin uses libTiMidity library to play midi files</source>
+        <translation>Ta wtyczka używa biblioteki libTiMidity do odtwarzania plików MIDI</translation>
     </message>
     <message>
-        <location filename="../decodertimidityfactory.cpp" line="116"/>
+        <location filename="../decodertimidityfactory.cpp" line="113"/>
+        <source>Compiled against libTiMidity-%1.%2.%3</source>
+        <translation>Skompilowana z biblioteką libTiMidity-%1.%2.%3</translation>
+    </message>
+    <message>
+        <location filename="../decodertimidityfactory.cpp" line="117"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Napisana przez: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -44,27 +44,27 @@
     <message>
         <location filename="../timiditysettingsdialog.ui" line="14"/>
         <source>TiMidity Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia wtyczki TiMidity</translation>
     </message>
     <message>
         <location filename="../timiditysettingsdialog.ui" line="39"/>
         <source>Instrument configuration: </source>
-        <translation type="unfinished"></translation>
+        <translation>Konfiguracja instrumentów: </translation>
     </message>
     <message>
         <location filename="../timiditysettingsdialog.ui" line="46"/>
         <source>Sample rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Próbkowanie:</translation>
     </message>
     <message>
         <location filename="../timiditysettingsdialog.cpp" line="39"/>
         <source>44100 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../timiditysettingsdialog.cpp" line="40"/>
         <source>48000 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>48000 Hz</translation>
     </message>
 </context>
 </TS>

@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="151"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
-        <translation>Данный модуль добавляет поддержку Monkey&apos;s Audio (APE)</translation>
+        <translation>Этот модуль добавляет поддержку Monkey&apos;s Audio (APE)</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="152"/>
