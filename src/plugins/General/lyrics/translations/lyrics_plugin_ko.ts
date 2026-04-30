@@ -72,7 +72,7 @@
     <message>
         <location filename="../lyricssettingsdialog.ui" line="39"/>
         <source>Fetch lyrics by user request</source>
-        <translation type="unfinished"></translation>
+        <translation>사용자 요청에 따라 가사 가져오기</translation>
     </message>
 </context>
 <context>
@@ -115,7 +115,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="114"/>
         <source>Fetch lyrics from the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>인터넷에서 가사 가져오기</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="161"/>
