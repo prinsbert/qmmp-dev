@@ -14,27 +14,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodertimidityfactory.cpp" line="109"/>
+        <location filename="../decodertimidityfactory.cpp" line="110"/>
         <source>About TiMidity Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodertimidityfactory.cpp" line="110"/>
+        <location filename="../decodertimidityfactory.cpp" line="111"/>
         <source>Qmmp TiMidity Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodertimidityfactory.cpp" line="111"/>
+        <location filename="../decodertimidityfactory.cpp" line="112"/>
         <source>This plugin uses libTiMidity library to play midi files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodertimidityfactory.cpp" line="112"/>
+        <location filename="../decodertimidityfactory.cpp" line="113"/>
         <source>Compiled against libTiMidity-%1.%2.%3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodertimidityfactory.cpp" line="116"/>
+        <location filename="../decodertimidityfactory.cpp" line="117"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>

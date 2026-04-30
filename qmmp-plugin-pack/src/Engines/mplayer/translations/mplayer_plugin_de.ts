@@ -14,22 +14,22 @@
         <translation>Videodateien</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="73"/>
+        <location filename="../mplayerenginefactory.cpp" line="74"/>
         <source>About MPlayer Plugin</source>
         <translation>Über MPlayer-Modul</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="74"/>
+        <location filename="../mplayerenginefactory.cpp" line="75"/>
         <source>Qmmp MPlayer Plugin</source>
         <translation>Qmmp MPlayer-Modul</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="75"/>
+        <location filename="../mplayerenginefactory.cpp" line="76"/>
         <source>This plugin uses MPlayer as backend</source>
         <translation>Dieses Modul nutzt MPlayer als Backend</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="76"/>
+        <location filename="../mplayerenginefactory.cpp" line="77"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Geschrieben von: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

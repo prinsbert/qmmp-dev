@@ -291,7 +291,7 @@ too high may cause clipping!</source>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="700"/>
         <source>Fast playlist info</source>
-        <translation>Быстрое чтение информации</translation>
+        <translation>Быстрое чтение данных</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="710"/>
