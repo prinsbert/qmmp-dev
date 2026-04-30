@@ -726,7 +726,7 @@
         <location filename="../configdialog.cpp" line="425"/>
         <location filename="../configdialog.cpp" line="434"/>
         <source>Priority</source>
-        <translation type="unfinished"></translation>
+        <translation>우선순위</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="446"/>
@@ -1154,18 +1154,18 @@
     <message>
         <location filename="../lyricseditor.cpp" line="83"/>
         <source>Load Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>가사 불러오기</translation>
     </message>
     <message>
         <location filename="../lyricseditor.cpp" line="83"/>
         <location filename="../lyricseditor.cpp" line="104"/>
         <source>Text Files</source>
-        <translation type="unfinished"></translation>
+        <translation>텍스트 파일</translation>
     </message>
     <message>
         <location filename="../lyricseditor.cpp" line="102"/>
         <source>Save Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>가사 저장하기</translation>
     </message>
 </context>
 <context>
@@ -1417,7 +1417,7 @@
         <location filename="../pluginitem.cpp" line="212"/>
         <location filename="../pluginitem.cpp" line="226"/>
         <source>Priority (a higher value means lower priority):</source>
-        <translation type="unfinished"></translation>
+        <translation>우선순위 (값이 클수록 우선순위 낮음):</translation>
     </message>
 </context>
 <context>
@@ -1547,17 +1547,17 @@
     <message>
         <location filename="../forms/texteditor.ui" line="40"/>
         <source>Load</source>
-        <translation type="unfinished">불러오기</translation>
+        <translation>불러오기</translation>
     </message>
     <message>
         <location filename="../forms/texteditor.ui" line="47"/>
         <source>Delete</source>
-        <translation type="unfinished">삭제</translation>
+        <translation>삭제</translation>
     </message>
     <message>
         <location filename="../forms/texteditor.ui" line="54"/>
         <source>Save as...</source>
-        <translation type="unfinished">다른 이름으로 저장...</translation>
+        <translation>다른 이름으로 저장...</translation>
     </message>
 </context>
 <context>

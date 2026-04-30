@@ -21,17 +21,17 @@
     <message>
         <location filename="../playlistoption.cpp" line="36"/>
         <source>Select playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>재생목록 선택</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="37"/>
         <source>Create playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>재생목록 만들기</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="38"/>
         <source>Play track in the specified playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>지정된 재생목록에서 트랙 재생</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="39"/>
@@ -66,22 +66,22 @@
     <message>
         <location filename="../playlistoption.cpp" line="100"/>
         <source>Arguments:</source>
-        <translation type="unfinished"></translation>
+        <translation>인수:</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="101"/>
         <source>%1 - index or name of the playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - 재생목록의 인덱스 또는 이름</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="102"/>
         <source>%1 - index of the track</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - 트랙의 인덱스</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="103"/>
         <source>%1 - name of the new playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - 새 재생목록의 이름</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="124"/>
@@ -94,12 +94,12 @@
     <message>
         <location filename="../playlistoption.cpp" line="148"/>
         <source>Invalid playlist name</source>
-        <translation type="unfinished"></translation>
+        <translation>올바르지 않은 재생목록 이름</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="153"/>
         <source>Playlist with name &quot;%1&quot; already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>이름이 &quot;%1&quot;인 재생목록이 이미 존재합니다</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="162"/>

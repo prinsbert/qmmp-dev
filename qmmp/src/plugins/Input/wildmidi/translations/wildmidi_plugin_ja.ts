@@ -31,7 +31,7 @@
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="98"/>
         <source>Compiled against libWildMidi-%1.%2.%3</source>
-        <translation type="unfinished"></translation>
+        <translation>%1.%2.%3 に対してコンパイル済み</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="102"/>

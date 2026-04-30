@@ -197,17 +197,17 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="214"/>
         <source>Light Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>라이트 모드</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="246"/>
         <source>Dark Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>다크 모드</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="275"/>
         <source>Color mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>색상 모드:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="455"/>
@@ -891,93 +891,93 @@
     <message>
         <location filename="../qsuicolorscheme.cpp" line="168"/>
         <source>Color #1:</source>
-        <translation type="unfinished">색상 #1:</translation>
+        <translation>색상 #1:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="169"/>
         <source>Color #2:</source>
-        <translation type="unfinished">색상 #2:</translation>
+        <translation>색상 #2:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="170"/>
         <source>Color #3:</source>
-        <translation type="unfinished">색상 #3:</translation>
+        <translation>색상 #3:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="171"/>
         <source>Peaks:</source>
-        <translation type="unfinished">피크:</translation>
+        <translation>피크:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="172"/>
         <location filename="../qsuicolorscheme.cpp" line="183"/>
         <source>Background:</source>
-        <translation type="unfinished">배경:</translation>
+        <translation>배경:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="173"/>
         <source>Background #1:</source>
-        <translation type="unfinished">배경 #1:</translation>
+        <translation>배경 #1:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="174"/>
         <source>Background #2:</source>
-        <translation type="unfinished">배경 #2:</translation>
+        <translation>배경 #2:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="175"/>
         <source>Highlighted background:</source>
-        <translation type="unfinished">강조 표시된 배경:</translation>
+        <translation>강조 표시된 배경:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="176"/>
         <source>Splitter:</source>
-        <translation type="unfinished">스플리터:</translation>
+        <translation>스플리터:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="177"/>
         <source>Normal text:</source>
-        <translation type="unfinished">일반 텍스트:</translation>
+        <translation>일반 텍스트:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="178"/>
         <source>Highlighted text:</source>
-        <translation type="unfinished">강조 표시된 텍스트:</translation>
+        <translation>강조 표시된 텍스트:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="179"/>
         <source>Group text:</source>
-        <translation type="unfinished">그룹 텍스트:</translation>
+        <translation>그룹 텍스트:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="180"/>
         <source>Group background:</source>
-        <translation type="unfinished">그룹 배경:</translation>
+        <translation>그룹 배경:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="181"/>
         <source>Current track text:</source>
-        <translation type="unfinished">현재 트랙 텍스트:</translation>
+        <translation>현재 트랙 텍스트:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="182"/>
         <source>Current track background:</source>
-        <translation type="unfinished">현재 트랙 배경</translation>
+        <translation>현재 트랙 배경</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="184"/>
         <source>Progress bar:</source>
-        <translation type="unfinished">진행률 표시줄:</translation>
+        <translation>진행률 표시줄:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="185"/>
         <source>Waveform:</source>
-        <translation type="unfinished">파형:</translation>
+        <translation>파형:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="186"/>
         <source>RMS:</source>
-        <translation type="unfinished">RMS:</translation>
+        <translation>RMS:</translation>
     </message>
 </context>
 <context>
@@ -985,32 +985,32 @@
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="32"/>
         <source>Visualization Colors</source>
-        <translation type="unfinished">시각화 색상</translation>
+        <translation>시각화 색상</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="33"/>
         <source>Playlist Colors</source>
-        <translation type="unfinished">재생목록 색상</translation>
+        <translation>재생목록 색상</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="34"/>
         <source>Waveform Seekbar Colors</source>
-        <translation type="unfinished">파형 탐색막대 색상</translation>
+        <translation>파형 탐색막대 색상</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="65"/>
         <source>Use system colors</source>
-        <translation type="unfinished">시스템 색상 사용</translation>
+        <translation>시스템 색상 사용</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="73"/>
         <source>Override group colors</source>
-        <translation type="unfinished">그룹 색상 재정의</translation>
+        <translation>그룹 색상 재정의</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="81"/>
         <source>Override current track colors</source>
-        <translation type="unfinished">현재 트랙 색상 재정의</translation>
+        <translation>현재 트랙 색상 재정의</translation>
     </message>
 </context>
 <context>
@@ -1641,17 +1641,17 @@
     <message>
         <location filename="../qsuisettings.cpp" line="49"/>
         <source>Light</source>
-        <translation type="unfinished"></translation>
+        <translation>라이트</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="50"/>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>다크</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="52"/>
         <source>Automatic</source>
-        <translation type="unfinished"></translation>
+        <translation>자동</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="57"/>
