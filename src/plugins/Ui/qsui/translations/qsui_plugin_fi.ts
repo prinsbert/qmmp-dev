@@ -606,282 +606,292 @@
         <translation>Estä työkalupalkit</translation>
     </message>
     <message>
+        <location filename="../qsuiactionmanager.cpp" line="76"/>
+        <source>Menu Bar</source>
+        <translation type="unfinished">Valikkopalkki</translation>
+    </message>
+    <message>
         <location filename="../qsuiactionmanager.cpp" line="77"/>
+        <source>Status Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="80"/>
         <source>Volume &amp;+</source>
         <translation>Voimakkuus &amp;+</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="77"/>
+        <location filename="../qsuiactionmanager.cpp" line="80"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="78"/>
+        <location filename="../qsuiactionmanager.cpp" line="81"/>
         <source>Volume &amp;-</source>
         <translation>Voimakkuus &amp;-</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="78"/>
+        <location filename="../qsuiactionmanager.cpp" line="81"/>
         <source>9</source>
         <translation>9</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="79"/>
+        <location filename="../qsuiactionmanager.cpp" line="82"/>
         <source>&amp;Mute</source>
         <translation>&amp;Mykistä</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="79"/>
+        <location filename="../qsuiactionmanager.cpp" line="82"/>
         <source>M</source>
         <translation>M</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="81"/>
+        <location filename="../qsuiactionmanager.cpp" line="84"/>
         <source>&amp;Add File</source>
         <translation>Li&amp;sää tiedosto</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="81"/>
+        <location filename="../qsuiactionmanager.cpp" line="84"/>
         <source>F</source>
         <translation>F</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="82"/>
+        <location filename="../qsuiactionmanager.cpp" line="85"/>
         <source>&amp;Add Directory</source>
         <translation>Lis&amp;ää kansio</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="82"/>
+        <location filename="../qsuiactionmanager.cpp" line="85"/>
         <source>D</source>
         <translation>D</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="83"/>
+        <location filename="../qsuiactionmanager.cpp" line="86"/>
         <source>&amp;Add Url</source>
         <translation>&amp;Lisää verkko-osoite</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="83"/>
+        <location filename="../qsuiactionmanager.cpp" line="86"/>
         <source>U</source>
         <translation>U</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="84"/>
+        <location filename="../qsuiactionmanager.cpp" line="87"/>
         <source>&amp;Remove Selected</source>
         <translation>&amp;Poista valitut</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="84"/>
+        <location filename="../qsuiactionmanager.cpp" line="87"/>
         <source>Del</source>
         <translation>Del</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="85"/>
+        <location filename="../qsuiactionmanager.cpp" line="88"/>
         <source>&amp;Remove All</source>
         <translation>Poi&amp;sta kaikki</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="86"/>
+        <location filename="../qsuiactionmanager.cpp" line="89"/>
         <source>&amp;Remove Unselected</source>
         <translation>&amp;Poista valitsematon</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="87"/>
+        <location filename="../qsuiactionmanager.cpp" line="90"/>
         <source>Remove unavailable files</source>
         <translation>Poista tiedostot, jotka eivät ole käytettävissä</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="88"/>
+        <location filename="../qsuiactionmanager.cpp" line="91"/>
         <source>Remove duplicates</source>
         <translation>Poista kaksoiskappaleet</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="89"/>
+        <location filename="../qsuiactionmanager.cpp" line="92"/>
         <source>Refresh</source>
         <translation>Päivitä</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="90"/>
+        <location filename="../qsuiactionmanager.cpp" line="93"/>
         <source>&amp;Queue Toggle</source>
         <translation>&amp;Vaihda jono</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="90"/>
+        <location filename="../qsuiactionmanager.cpp" line="93"/>
         <source>Q</source>
         <translation>Q</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="91"/>
+        <location filename="../qsuiactionmanager.cpp" line="94"/>
         <source>Invert Selection</source>
         <translation>Käänteinen valinta</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="92"/>
+        <location filename="../qsuiactionmanager.cpp" line="95"/>
         <source>&amp;Select None</source>
         <translation>&amp;Älä valitse mitään</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="93"/>
+        <location filename="../qsuiactionmanager.cpp" line="96"/>
         <source>&amp;Select All</source>
         <translation>&amp;Valitse kaikki</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="93"/>
+        <location filename="../qsuiactionmanager.cpp" line="96"/>
         <source>Ctrl+A</source>
         <translation>Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="94"/>
+        <location filename="../qsuiactionmanager.cpp" line="97"/>
         <source>&amp;View Track Details</source>
         <translation>Näy&amp;tä kappaleen tiedot</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="94"/>
+        <location filename="../qsuiactionmanager.cpp" line="97"/>
         <source>Alt+I</source>
         <translation>Alt+I</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="95"/>
+        <location filename="../qsuiactionmanager.cpp" line="98"/>
         <source>&amp;New List</source>
         <translation>&amp;Uusi lista</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="95"/>
+        <location filename="../qsuiactionmanager.cpp" line="98"/>
         <source>Ctrl+T</source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="96"/>
+        <location filename="../qsuiactionmanager.cpp" line="99"/>
         <source>&amp;Delete List</source>
         <translation>&amp;Poista lista</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="96"/>
+        <location filename="../qsuiactionmanager.cpp" line="99"/>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="97"/>
+        <location filename="../qsuiactionmanager.cpp" line="100"/>
         <source>&amp;Load List</source>
         <translation>&amp;Lataa lista</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="97"/>
+        <location filename="../qsuiactionmanager.cpp" line="100"/>
         <source>O</source>
         <translation>O</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="98"/>
+        <location filename="../qsuiactionmanager.cpp" line="101"/>
         <source>&amp;Save List</source>
         <translation>&amp;Tallenna lista</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="98"/>
+        <location filename="../qsuiactionmanager.cpp" line="101"/>
         <source>Shift+S</source>
         <translation>Shift+S</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="99"/>
+        <location filename="../qsuiactionmanager.cpp" line="102"/>
         <source>&amp;Rename List</source>
         <translation>&amp;Nimeä lista uudelleen</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="99"/>
+        <location filename="../qsuiactionmanager.cpp" line="102"/>
         <source>F2</source>
         <translation>F2</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="100"/>
+        <location filename="../qsuiactionmanager.cpp" line="103"/>
         <source>&amp;Select Next Playlist</source>
         <translation>&amp;Valitse seuraava soittolista</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="100"/>
+        <location filename="../qsuiactionmanager.cpp" line="103"/>
         <source>Ctrl+PgDown</source>
         <translation>Ctrl+PgDown</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="101"/>
+        <location filename="../qsuiactionmanager.cpp" line="104"/>
         <source>&amp;Select Previous Playlist</source>
         <translation>V&amp;alitse edellinen soittolista</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="101"/>
+        <location filename="../qsuiactionmanager.cpp" line="104"/>
         <source>Ctrl+PgUp</source>
         <translation>Ctrl+PgUp</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="102"/>
+        <location filename="../qsuiactionmanager.cpp" line="105"/>
         <source>&amp;Group Tracks</source>
         <translation>&amp;Ryhmitä kappaleet</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="102"/>
+        <location filename="../qsuiactionmanager.cpp" line="105"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="103"/>
+        <location filename="../qsuiactionmanager.cpp" line="106"/>
         <source>&amp;Show Column Headers</source>
         <translation>&amp;Näytä sarakkeiden otsikot</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="103"/>
+        <location filename="../qsuiactionmanager.cpp" line="106"/>
         <source>Ctrl+H</source>
         <translation>Ctrl+H</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="105"/>
+        <location filename="../qsuiactionmanager.cpp" line="108"/>
         <source>&amp;Equalizer</source>
         <translation>Taa&amp;juuskorjain</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="105"/>
+        <location filename="../qsuiactionmanager.cpp" line="108"/>
         <source>Ctrl+E</source>
         <translation>Ctrl+E</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="106"/>
+        <location filename="../qsuiactionmanager.cpp" line="109"/>
         <source>&amp;Settings</source>
         <translation>&amp;Asetukset</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="106"/>
+        <location filename="../qsuiactionmanager.cpp" line="109"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="107"/>
+        <location filename="../qsuiactionmanager.cpp" line="110"/>
         <source>Application Menu</source>
         <translation>Sovellusvalikko</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="108"/>
+        <location filename="../qsuiactionmanager.cpp" line="111"/>
         <source>&amp;About Ui</source>
         <translation>&amp;Tietoja käyttöliittymästä</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="109"/>
+        <location filename="../qsuiactionmanager.cpp" line="112"/>
         <source>&amp;About</source>
         <translation>&amp;Tietoja</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="110"/>
+        <location filename="../qsuiactionmanager.cpp" line="113"/>
         <source>&amp;About Qt</source>
         <translation>&amp;Tietoja Qt:stä</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="111"/>
+        <location filename="../qsuiactionmanager.cpp" line="114"/>
         <source>&amp;Exit</source>
         <translation>&amp;Lopeta</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="111"/>
+        <location filename="../qsuiactionmanager.cpp" line="114"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="316"/>
+        <location filename="../qsuiactionmanager.cpp" line="319"/>
         <source>Toolbar</source>
         <translation>Työkalupalkki</translation>
     </message>
@@ -1171,7 +1181,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="930"/>
+        <location filename="../qsuimainwindow.cpp" line="935"/>
         <source>Qmmp</source>
         <translation>Qmmp</translation>
     </message>
@@ -1343,158 +1353,153 @@
         <translation>Pikanäppäimet</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="660"/>
-        <source>Menu Bar</source>
-        <translation>Valikkopalkki</translation>
-    </message>
-    <message>
-        <location filename="../qsuimainwindow.cpp" line="450"/>
+        <location filename="../qsuimainwindow.cpp" line="452"/>
         <source>Add new playlist</source>
         <translation>Lisää uusi soittolista</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="456"/>
+        <location filename="../qsuimainwindow.cpp" line="458"/>
         <source>Show all tabs</source>
         <translation>Näytä kaikki välilehdet</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="483"/>
+        <location filename="../qsuimainwindow.cpp" line="485"/>
         <source>Ctrl+0</source>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="489"/>
+        <location filename="../qsuimainwindow.cpp" line="491"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="494"/>
+        <location filename="../qsuimainwindow.cpp" line="496"/>
         <source>Position</source>
         <translation>Sijainti</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="496"/>
+        <location filename="../qsuimainwindow.cpp" line="498"/>
         <source>Volume</source>
         <translation>Voimakkuus:</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="498"/>
+        <location filename="../qsuimainwindow.cpp" line="500"/>
         <source>Balance</source>
         <translation>Tasapaino</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="501"/>
+        <location filename="../qsuimainwindow.cpp" line="503"/>
         <source>Quick Search</source>
         <translation>Pikahaku</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="560"/>
+        <location filename="../qsuimainwindow.cpp" line="562"/>
         <source>Edit Toolbars</source>
         <translation>Muokkaa työkalupalkkeja</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="561"/>
+        <location filename="../qsuimainwindow.cpp" line="563"/>
         <source>Edit Statusbar</source>
         <translation>Muokkaa tilapalkkia</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="563"/>
+        <location filename="../qsuimainwindow.cpp" line="565"/>
         <source>Sort List</source>
         <translation>Järjestä lista</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="565"/>
-        <location filename="../qsuimainwindow.cpp" line="581"/>
+        <location filename="../qsuimainwindow.cpp" line="567"/>
+        <location filename="../qsuimainwindow.cpp" line="583"/>
         <source>By Title</source>
         <translation>Nimi</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="566"/>
-        <location filename="../qsuimainwindow.cpp" line="582"/>
+        <location filename="../qsuimainwindow.cpp" line="568"/>
+        <location filename="../qsuimainwindow.cpp" line="584"/>
         <source>By Album</source>
         <translation>Albumi</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="567"/>
-        <location filename="../qsuimainwindow.cpp" line="583"/>
+        <location filename="../qsuimainwindow.cpp" line="569"/>
+        <location filename="../qsuimainwindow.cpp" line="585"/>
         <source>By Artist</source>
         <translation>Artisti</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="568"/>
-        <location filename="../qsuimainwindow.cpp" line="584"/>
+        <location filename="../qsuimainwindow.cpp" line="570"/>
+        <location filename="../qsuimainwindow.cpp" line="586"/>
         <source>By Album Artist</source>
         <translation>Albumin artisti</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="569"/>
-        <location filename="../qsuimainwindow.cpp" line="585"/>
+        <location filename="../qsuimainwindow.cpp" line="571"/>
+        <location filename="../qsuimainwindow.cpp" line="587"/>
         <source>By Filename</source>
         <translation>Tiedostonimellä</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="570"/>
-        <location filename="../qsuimainwindow.cpp" line="586"/>
+        <location filename="../qsuimainwindow.cpp" line="572"/>
+        <location filename="../qsuimainwindow.cpp" line="588"/>
         <source>By Path + Filename</source>
         <translation>Polku + tiedostonimi</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="571"/>
-        <location filename="../qsuimainwindow.cpp" line="587"/>
+        <location filename="../qsuimainwindow.cpp" line="573"/>
+        <location filename="../qsuimainwindow.cpp" line="589"/>
         <source>By Date</source>
         <translation>Päivä</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="572"/>
-        <location filename="../qsuimainwindow.cpp" line="588"/>
+        <location filename="../qsuimainwindow.cpp" line="574"/>
+        <location filename="../qsuimainwindow.cpp" line="590"/>
         <source>By Track Number</source>
         <translation>Raidan numero</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="573"/>
-        <location filename="../qsuimainwindow.cpp" line="589"/>
+        <location filename="../qsuimainwindow.cpp" line="575"/>
+        <location filename="../qsuimainwindow.cpp" line="591"/>
         <source>By Disc Number</source>
         <translation>Levyn numero</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="574"/>
-        <location filename="../qsuimainwindow.cpp" line="590"/>
+        <location filename="../qsuimainwindow.cpp" line="576"/>
+        <location filename="../qsuimainwindow.cpp" line="592"/>
         <source>By File Creation Date</source>
         <translation>Tiedoston luontipäivä</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="575"/>
-        <location filename="../qsuimainwindow.cpp" line="591"/>
+        <location filename="../qsuimainwindow.cpp" line="577"/>
+        <location filename="../qsuimainwindow.cpp" line="593"/>
         <source>By File Modification Date</source>
         <translation>Tiedoston muutospäivä</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="576"/>
+        <location filename="../qsuimainwindow.cpp" line="578"/>
         <source>By Group</source>
         <translation>Ryhmä</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="579"/>
+        <location filename="../qsuimainwindow.cpp" line="581"/>
         <source>Sort Selection</source>
         <translation>Järjestä valinta</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="595"/>
+        <location filename="../qsuimainwindow.cpp" line="597"/>
         <source>Randomize List</source>
         <translation>Sekoita lista</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="597"/>
+        <location filename="../qsuimainwindow.cpp" line="599"/>
         <source>Reverse List</source>
         <translation>Käänteinen lista</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="638"/>
+        <location filename="../qsuimainwindow.cpp" line="640"/>
         <source>Actions</source>
         <translation>Toiminnot</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="951"/>
+        <location filename="../qsuimainwindow.cpp" line="956"/>
         <source>&amp;New PlayList</source>
         <translation>&amp;Uusi soittolista</translation>
     </message>

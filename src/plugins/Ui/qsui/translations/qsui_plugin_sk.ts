@@ -606,282 +606,292 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../qsuiactionmanager.cpp" line="76"/>
+        <source>Menu Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qsuiactionmanager.cpp" line="77"/>
+        <source>Status Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="80"/>
         <source>Volume &amp;+</source>
         <translation type="unfinished">Hlasitosť &amp;+</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="77"/>
+        <location filename="../qsuiactionmanager.cpp" line="80"/>
         <source>0</source>
         <translation type="unfinished">0</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="78"/>
+        <location filename="../qsuiactionmanager.cpp" line="81"/>
         <source>Volume &amp;-</source>
         <translation type="unfinished">Hlasitosť &amp;-</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="78"/>
+        <location filename="../qsuiactionmanager.cpp" line="81"/>
         <source>9</source>
         <translation type="unfinished">9</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="79"/>
+        <location filename="../qsuiactionmanager.cpp" line="82"/>
         <source>&amp;Mute</source>
         <translation type="unfinished">Stlmiť</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="79"/>
+        <location filename="../qsuiactionmanager.cpp" line="82"/>
         <source>M</source>
         <translation type="unfinished">M</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="81"/>
+        <location filename="../qsuiactionmanager.cpp" line="84"/>
         <source>&amp;Add File</source>
         <translation type="unfinished">&amp;Pridať súbor</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="81"/>
+        <location filename="../qsuiactionmanager.cpp" line="84"/>
         <source>F</source>
         <translation type="unfinished">F</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="82"/>
+        <location filename="../qsuiactionmanager.cpp" line="85"/>
         <source>&amp;Add Directory</source>
         <translation type="unfinished">&amp;Pridať priečinok</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="82"/>
+        <location filename="../qsuiactionmanager.cpp" line="85"/>
         <source>D</source>
         <translation type="unfinished">D</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="83"/>
+        <location filename="../qsuiactionmanager.cpp" line="86"/>
         <source>&amp;Add Url</source>
         <translation type="unfinished">&amp;Pridať URL</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="83"/>
+        <location filename="../qsuiactionmanager.cpp" line="86"/>
         <source>U</source>
         <translation type="unfinished">U</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="84"/>
+        <location filename="../qsuiactionmanager.cpp" line="87"/>
         <source>&amp;Remove Selected</source>
         <translation type="unfinished">Odst&amp;rániť vybraté</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="84"/>
+        <location filename="../qsuiactionmanager.cpp" line="87"/>
         <source>Del</source>
         <translation type="unfinished">Del</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="85"/>
+        <location filename="../qsuiactionmanager.cpp" line="88"/>
         <source>&amp;Remove All</source>
         <translation type="unfinished">Odst&amp;rániť všetko</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="86"/>
+        <location filename="../qsuiactionmanager.cpp" line="89"/>
         <source>&amp;Remove Unselected</source>
         <translation type="unfinished">Odst&amp;rániť nevybraté</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="87"/>
+        <location filename="../qsuiactionmanager.cpp" line="90"/>
         <source>Remove unavailable files</source>
         <translation type="unfinished">Odstrániť nedostupné súbory</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="88"/>
+        <location filename="../qsuiactionmanager.cpp" line="91"/>
         <source>Remove duplicates</source>
         <translation type="unfinished">Odstrániť duplikáty</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="89"/>
+        <location filename="../qsuiactionmanager.cpp" line="92"/>
         <source>Refresh</source>
         <translation type="unfinished">Obnoviť</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="90"/>
+        <location filename="../qsuiactionmanager.cpp" line="93"/>
         <source>&amp;Queue Toggle</source>
         <translation type="unfinished">&amp;Zaradiť prepínanie</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="90"/>
+        <location filename="../qsuiactionmanager.cpp" line="93"/>
         <source>Q</source>
         <translation type="unfinished">Q</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="91"/>
+        <location filename="../qsuiactionmanager.cpp" line="94"/>
         <source>Invert Selection</source>
         <translation type="unfinished">Invertovať výber</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="92"/>
+        <location filename="../qsuiactionmanager.cpp" line="95"/>
         <source>&amp;Select None</source>
         <translation type="unfinished">Zrušiť &amp;výber</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="93"/>
+        <location filename="../qsuiactionmanager.cpp" line="96"/>
         <source>&amp;Select All</source>
         <translation type="unfinished">&amp;Vybrať všetko</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="93"/>
+        <location filename="../qsuiactionmanager.cpp" line="96"/>
         <source>Ctrl+A</source>
         <translation type="unfinished">Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="94"/>
+        <location filename="../qsuiactionmanager.cpp" line="97"/>
         <source>&amp;View Track Details</source>
         <translation type="unfinished">&amp;Zobraziť detaily o skladbe</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="94"/>
+        <location filename="../qsuiactionmanager.cpp" line="97"/>
         <source>Alt+I</source>
         <translation type="unfinished">Alt+I</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="95"/>
+        <location filename="../qsuiactionmanager.cpp" line="98"/>
         <source>&amp;New List</source>
         <translation type="unfinished">&amp;Nový zoznam</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="95"/>
+        <location filename="../qsuiactionmanager.cpp" line="98"/>
         <source>Ctrl+T</source>
         <translation type="unfinished">Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="96"/>
+        <location filename="../qsuiactionmanager.cpp" line="99"/>
         <source>&amp;Delete List</source>
         <translation type="unfinished">&amp;Vymazať zoznam</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="96"/>
+        <location filename="../qsuiactionmanager.cpp" line="99"/>
         <source>Ctrl+W</source>
         <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="97"/>
+        <location filename="../qsuiactionmanager.cpp" line="100"/>
         <source>&amp;Load List</source>
         <translation type="unfinished">&amp;Načítať zoznam</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="97"/>
+        <location filename="../qsuiactionmanager.cpp" line="100"/>
         <source>O</source>
         <translation type="unfinished">O</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="98"/>
+        <location filename="../qsuiactionmanager.cpp" line="101"/>
         <source>&amp;Save List</source>
         <translation type="unfinished">&amp;Uložiť zoznam</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="98"/>
+        <location filename="../qsuiactionmanager.cpp" line="101"/>
         <source>Shift+S</source>
         <translation type="unfinished">Shift+S</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="99"/>
+        <location filename="../qsuiactionmanager.cpp" line="102"/>
         <source>&amp;Rename List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="99"/>
+        <location filename="../qsuiactionmanager.cpp" line="102"/>
         <source>F2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="100"/>
+        <location filename="../qsuiactionmanager.cpp" line="103"/>
         <source>&amp;Select Next Playlist</source>
         <translation type="unfinished">&amp;Vybrať nasledujúci playlist</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="100"/>
+        <location filename="../qsuiactionmanager.cpp" line="103"/>
         <source>Ctrl+PgDown</source>
         <translation type="unfinished">Ctrl+Page Down</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="101"/>
+        <location filename="../qsuiactionmanager.cpp" line="104"/>
         <source>&amp;Select Previous Playlist</source>
         <translation type="unfinished">&amp;Vybrať predchádzajúci playlist</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="101"/>
+        <location filename="../qsuiactionmanager.cpp" line="104"/>
         <source>Ctrl+PgUp</source>
         <translation type="unfinished">Ctrl+Page Up</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="102"/>
+        <location filename="../qsuiactionmanager.cpp" line="105"/>
         <source>&amp;Group Tracks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="102"/>
+        <location filename="../qsuiactionmanager.cpp" line="105"/>
         <source>Ctrl+G</source>
         <translation type="unfinished">Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="103"/>
+        <location filename="../qsuiactionmanager.cpp" line="106"/>
         <source>&amp;Show Column Headers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="103"/>
+        <location filename="../qsuiactionmanager.cpp" line="106"/>
         <source>Ctrl+H</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="105"/>
+        <location filename="../qsuiactionmanager.cpp" line="108"/>
         <source>&amp;Equalizer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="105"/>
+        <location filename="../qsuiactionmanager.cpp" line="108"/>
         <source>Ctrl+E</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="106"/>
+        <location filename="../qsuiactionmanager.cpp" line="109"/>
         <source>&amp;Settings</source>
         <translation type="unfinished">Na&amp;stavenia</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="106"/>
+        <location filename="../qsuiactionmanager.cpp" line="109"/>
         <source>Ctrl+P</source>
         <translation type="unfinished">Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="107"/>
+        <location filename="../qsuiactionmanager.cpp" line="110"/>
         <source>Application Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="108"/>
+        <location filename="../qsuiactionmanager.cpp" line="111"/>
         <source>&amp;About Ui</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="109"/>
+        <location filename="../qsuiactionmanager.cpp" line="112"/>
         <source>&amp;About</source>
         <translation type="unfinished">O progr&amp;ame</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="110"/>
+        <location filename="../qsuiactionmanager.cpp" line="113"/>
         <source>&amp;About Qt</source>
         <translation type="unfinished">&amp;O Qt</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="111"/>
+        <location filename="../qsuiactionmanager.cpp" line="114"/>
         <source>&amp;Exit</source>
         <translation type="unfinished">&amp;Ukončiť</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="111"/>
+        <location filename="../qsuiactionmanager.cpp" line="114"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="316"/>
+        <location filename="../qsuiactionmanager.cpp" line="319"/>
         <source>Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1171,7 +1181,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="930"/>
+        <location filename="../qsuimainwindow.cpp" line="935"/>
         <source>Qmmp</source>
         <translation type="unfinished">Qmmp</translation>
     </message>
@@ -1343,158 +1353,153 @@
         <translation type="unfinished">Skratky</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="660"/>
-        <source>Menu Bar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qsuimainwindow.cpp" line="450"/>
+        <location filename="../qsuimainwindow.cpp" line="452"/>
         <source>Add new playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="456"/>
+        <location filename="../qsuimainwindow.cpp" line="458"/>
         <source>Show all tabs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="483"/>
+        <location filename="../qsuimainwindow.cpp" line="485"/>
         <source>Ctrl+0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="489"/>
+        <location filename="../qsuimainwindow.cpp" line="491"/>
         <source>P</source>
         <translation type="unfinished">P</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="494"/>
+        <location filename="../qsuimainwindow.cpp" line="496"/>
         <source>Position</source>
         <translation type="unfinished">Umiestnenie</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="496"/>
+        <location filename="../qsuimainwindow.cpp" line="498"/>
         <source>Volume</source>
         <translation type="unfinished">Hlasitosť</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="498"/>
+        <location filename="../qsuimainwindow.cpp" line="500"/>
         <source>Balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="501"/>
+        <location filename="../qsuimainwindow.cpp" line="503"/>
         <source>Quick Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="560"/>
+        <location filename="../qsuimainwindow.cpp" line="562"/>
         <source>Edit Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="561"/>
+        <location filename="../qsuimainwindow.cpp" line="563"/>
         <source>Edit Statusbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="563"/>
+        <location filename="../qsuimainwindow.cpp" line="565"/>
         <source>Sort List</source>
         <translation type="unfinished">Triediť zoznam</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="565"/>
-        <location filename="../qsuimainwindow.cpp" line="581"/>
+        <location filename="../qsuimainwindow.cpp" line="567"/>
+        <location filename="../qsuimainwindow.cpp" line="583"/>
         <source>By Title</source>
         <translation type="unfinished">Podľa názvu</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="566"/>
-        <location filename="../qsuimainwindow.cpp" line="582"/>
+        <location filename="../qsuimainwindow.cpp" line="568"/>
+        <location filename="../qsuimainwindow.cpp" line="584"/>
         <source>By Album</source>
         <translation type="unfinished">Podľa albumu</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="567"/>
-        <location filename="../qsuimainwindow.cpp" line="583"/>
+        <location filename="../qsuimainwindow.cpp" line="569"/>
+        <location filename="../qsuimainwindow.cpp" line="585"/>
         <source>By Artist</source>
         <translation type="unfinished">Podľa interpréta</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="568"/>
-        <location filename="../qsuimainwindow.cpp" line="584"/>
+        <location filename="../qsuimainwindow.cpp" line="570"/>
+        <location filename="../qsuimainwindow.cpp" line="586"/>
         <source>By Album Artist</source>
         <translation type="unfinished">Podľa interpréta albumu</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="569"/>
-        <location filename="../qsuimainwindow.cpp" line="585"/>
+        <location filename="../qsuimainwindow.cpp" line="571"/>
+        <location filename="../qsuimainwindow.cpp" line="587"/>
         <source>By Filename</source>
         <translation type="unfinished">Podľa názvu súboru</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="570"/>
-        <location filename="../qsuimainwindow.cpp" line="586"/>
+        <location filename="../qsuimainwindow.cpp" line="572"/>
+        <location filename="../qsuimainwindow.cpp" line="588"/>
         <source>By Path + Filename</source>
         <translation type="unfinished">Podľa cesty a názvu súboru</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="571"/>
-        <location filename="../qsuimainwindow.cpp" line="587"/>
+        <location filename="../qsuimainwindow.cpp" line="573"/>
+        <location filename="../qsuimainwindow.cpp" line="589"/>
         <source>By Date</source>
         <translation type="unfinished">Podľa dátumu</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="572"/>
-        <location filename="../qsuimainwindow.cpp" line="588"/>
+        <location filename="../qsuimainwindow.cpp" line="574"/>
+        <location filename="../qsuimainwindow.cpp" line="590"/>
         <source>By Track Number</source>
         <translation type="unfinished">Podľa čísla skladby</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="573"/>
-        <location filename="../qsuimainwindow.cpp" line="589"/>
+        <location filename="../qsuimainwindow.cpp" line="575"/>
+        <location filename="../qsuimainwindow.cpp" line="591"/>
         <source>By Disc Number</source>
         <translation type="unfinished">Podľa čísla disku</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="574"/>
-        <location filename="../qsuimainwindow.cpp" line="590"/>
+        <location filename="../qsuimainwindow.cpp" line="576"/>
+        <location filename="../qsuimainwindow.cpp" line="592"/>
         <source>By File Creation Date</source>
         <translation type="unfinished">Podľa dátumu vytvorenia súboru</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="575"/>
-        <location filename="../qsuimainwindow.cpp" line="591"/>
+        <location filename="../qsuimainwindow.cpp" line="577"/>
+        <location filename="../qsuimainwindow.cpp" line="593"/>
         <source>By File Modification Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="576"/>
+        <location filename="../qsuimainwindow.cpp" line="578"/>
         <source>By Group</source>
         <translation type="unfinished">Podľa skupiny</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="579"/>
+        <location filename="../qsuimainwindow.cpp" line="581"/>
         <source>Sort Selection</source>
         <translation type="unfinished">Potriediť výber</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="595"/>
+        <location filename="../qsuimainwindow.cpp" line="597"/>
         <source>Randomize List</source>
         <translation type="unfinished">Zamiešať zoznam</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="597"/>
+        <location filename="../qsuimainwindow.cpp" line="599"/>
         <source>Reverse List</source>
         <translation type="unfinished">Otočiť zoznam</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="638"/>
+        <location filename="../qsuimainwindow.cpp" line="640"/>
         <source>Actions</source>
         <translation type="unfinished">Činnosti</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="951"/>
+        <location filename="../qsuimainwindow.cpp" line="956"/>
         <source>&amp;New PlayList</source>
         <translation type="unfinished"></translation>
     </message>
