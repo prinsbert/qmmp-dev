@@ -85,7 +85,7 @@ void QSUiHotkeyEditor::loadShortcuts()
     m_ui->shortcutTreeWidget->addTopLevelItem(item);
     //view
     item = new QTreeWidgetItem(m_ui->shortcutTreeWidget, { tr("View") });
-    for(int i = QSUiActionManager::WM_ALLWAYS_ON_TOP; i <= QSUiActionManager::UI_BLOCK_TOOLBARS; ++i)
+    for(int i = QSUiActionManager::WM_ALLWAYS_ON_TOP; i <= QSUiActionManager::UI_SHOW_STATUSBAR; ++i)
         new QSUiShortcutItem(item, i);
     item->setExpanded(true);
     m_ui->shortcutTreeWidget->addTopLevelItem(item);

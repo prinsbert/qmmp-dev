@@ -430,8 +430,10 @@ QMenu *QSUiMainWindow::createPopupMenu()
 {
     QMenu *menu = QMainWindow::createPopupMenu();
     menu->addSeparator();
-    menu->addAction(m_menuBarAction);
-    m_menuBarAction->setChecked(menuBar()->isVisible());
+    menu->addAction(ACTION(QSUiActionManager::UI_SHOW_MENUBAR));
+    ACTION(QSUiActionManager::UI_SHOW_MENUBAR)->setChecked(menuBar()->isVisible());
+    menu->addAction(ACTION(QSUiActionManager::UI_SHOW_STATUSBAR));
+    ACTION(QSUiActionManager::UI_SHOW_STATUSBAR)->setChecked(statusBar()->isVisible());
     return menu;
 }
 
@@ -657,9 +659,9 @@ void QSUiMainWindow::createActions()
     //application menu
     SET_ACTION(QSUiActionManager::APPLICATION_MENU, this, &QSUiMainWindow::showAppMenu);
     //menu bar
-    m_menuBarAction = new QAction(tr("Menu Bar"), this);
-    m_menuBarAction->setCheckable(true);
-    connect(m_menuBarAction, &QAction::triggered, menuBar(), &QMenuBar::setVisible);
+    SET_ACTION(QSUiActionManager::UI_SHOW_MENUBAR, menuBar(), &QMenuBar::setVisible);
+    //status bar
+    SET_ACTION(QSUiActionManager::UI_SHOW_STATUSBAR, statusBar(), &QStatusBar::setVisible);
 
     addActions(QSUiActionManager::instance()->actions());
     addActions(m_key_manager->actions());
@@ -726,8 +728,10 @@ void QSUiMainWindow::readSettings()
     else
     {
         restoreGeometry(settings.value(u"mw_geometry"_s).toByteArray());
-        m_menuBarAction->setChecked(settings.value(u"show_menubar"_s, true).toBool());
-        menuBar()->setVisible(m_menuBarAction->isChecked());
+        ACTION(QSUiActionManager::UI_SHOW_MENUBAR)->setChecked(settings.value(u"show_menubar"_s, true).toBool());
+        menuBar()->setVisible(ACTION(QSUiActionManager::UI_SHOW_MENUBAR)->isChecked());
+        ACTION(QSUiActionManager::UI_SHOW_STATUSBAR)->setChecked(settings.value(u"show_statusbar"_s, true).toBool());
+        statusBar()->setVisible( ACTION(QSUiActionManager::UI_SHOW_STATUSBAR)->isChecked());
 
         QByteArray wstate = settings.value(u"mw_state"_s).toByteArray();
         if(wstate.isEmpty())
@@ -834,7 +838,8 @@ void QSUiMainWindow::writeSettings()
     settings.setValue(u"Simple/show_tabs"_s, ACTION(QSUiActionManager::UI_SHOW_TABS)->isChecked());
     settings.setValue(u"Simple/block_dockwidgets"_s, ACTION(QSUiActionManager::UI_BLOCK_DOCKWIDGETS)->isChecked());
     settings.setValue(u"Simple/block_toolbars"_s, ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS)->isChecked());
-    settings.setValue(u"Simple/show_menubar"_s, m_menuBarAction->isChecked() );
+    settings.setValue(u"Simple/show_menubar"_s, ACTION(QSUiActionManager::UI_SHOW_MENUBAR)->isChecked());
+    settings.setValue(u"Simple/show_statusbar"_s, ACTION(QSUiActionManager::UI_SHOW_STATUSBAR)->isChecked());
 }
 
 void QSUiMainWindow::savePlayList()

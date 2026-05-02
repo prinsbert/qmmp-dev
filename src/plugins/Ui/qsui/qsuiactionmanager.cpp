@@ -73,6 +73,9 @@ QSUiActionManager::QSUiActionManager(QObject *parent) :
         { UI_SHOW_TABS, createAction2(tr("Show Tabs"), u"show_tabs"_s) },
         { UI_BLOCK_DOCKWIDGETS, createAction2(tr("Block Floating Panels"), u"block_dockwidgets"_s) },
         { UI_BLOCK_TOOLBARS, createAction2(tr("Block Toolbars"), u"block_toolbars"_s) },
+        { UI_SHOW_MENUBAR, createAction2(tr("Menu Bar"), u"show_menubar"_s) },
+        { UI_SHOW_STATUSBAR, createAction2(tr("Status Bar"), u"show_statusbar"_s) },
+
         //volume
         { VOL_ENC, createAction(tr("Volume &+"), u"vol_enc"_s, tr("0")) },
         { VOL_DEC, createAction(tr("Volume &-"), u"vol_dec"_s, tr("9")) },
