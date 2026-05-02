@@ -77,6 +77,8 @@ public:
         UI_SHOW_TABS,
         UI_BLOCK_DOCKWIDGETS,
         UI_BLOCK_TOOLBARS,
+        UI_SHOW_MENUBAR,
+        UI_SHOW_STATUSBAR,
 
         VOL_ENC,
         VOL_DEC,
