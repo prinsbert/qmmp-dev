@@ -608,12 +608,12 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="76"/>
         <source>Menu Bar</source>
-        <translation type="unfinished">Панель меню</translation>
+        <translation>Панель меню</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="77"/>
         <source>Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Строка состояния</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="80"/>
