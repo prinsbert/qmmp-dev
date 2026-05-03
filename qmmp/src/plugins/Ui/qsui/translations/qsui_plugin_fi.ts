@@ -122,7 +122,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="298"/>
         <source>Reset colors</source>
-        <translation>Tyhjennä värit</translation>
+        <translation>Palauta värit</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="308"/>
@@ -197,22 +197,22 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="214"/>
         <source>Light Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaalea</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="246"/>
         <source>Dark Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Tumma</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="275"/>
         <source>Color mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Värikäs</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="455"/>
         <source>Reset fonts</source>
-        <translation>Tyhjennä fontit</translation>
+        <translation>Palauta fontit</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="404"/>
@@ -608,12 +608,12 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="76"/>
         <source>Menu Bar</source>
-        <translation type="unfinished">Valikkopalkki</translation>
+        <translation>Valikkopalkki</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="77"/>
         <source>Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilapalkki</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="80"/>
@@ -901,93 +901,93 @@
     <message>
         <location filename="../qsuicolorscheme.cpp" line="168"/>
         <source>Color #1:</source>
-        <translation type="unfinished">Väri #1:</translation>
+        <translation>Väri #1:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="169"/>
         <source>Color #2:</source>
-        <translation type="unfinished">Väri #2:</translation>
+        <translation>Väri #2:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="170"/>
         <source>Color #3:</source>
-        <translation type="unfinished">Väri #3:</translation>
+        <translation>Väri #3:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="171"/>
         <source>Peaks:</source>
-        <translation type="unfinished">Piikki:</translation>
+        <translation>Piikki:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="172"/>
         <location filename="../qsuicolorscheme.cpp" line="183"/>
         <source>Background:</source>
-        <translation type="unfinished">Tausta:</translation>
+        <translation>Tausta:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="173"/>
         <source>Background #1:</source>
-        <translation type="unfinished">Tausta #1:</translation>
+        <translation>Tausta #1:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="174"/>
         <source>Background #2:</source>
-        <translation type="unfinished">Tausta #2:</translation>
+        <translation>Tausta #2:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="175"/>
         <source>Highlighted background:</source>
-        <translation type="unfinished">Korostettu tausta:</translation>
+        <translation>Korostettu tausta:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="176"/>
         <source>Splitter:</source>
-        <translation type="unfinished">Jakaja:</translation>
+        <translation>Jakaja:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="177"/>
         <source>Normal text:</source>
-        <translation type="unfinished">Normaali teksti:</translation>
+        <translation>Normaali teksti:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="178"/>
         <source>Highlighted text:</source>
-        <translation type="unfinished">Korostettu teksti:</translation>
+        <translation>Korostettu teksti:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="179"/>
         <source>Group text:</source>
-        <translation type="unfinished">Ryhmän teksti:</translation>
+        <translation>Ryhmän teksti:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="180"/>
         <source>Group background:</source>
-        <translation type="unfinished">Ryhmän tausta:</translation>
+        <translation>Ryhmän tausta:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="181"/>
         <source>Current track text:</source>
-        <translation type="unfinished">Kappaleen teksti:</translation>
+        <translation>Kappaleen teksti:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="182"/>
         <source>Current track background:</source>
-        <translation type="unfinished">Nykyisen kappaleen tausta:</translation>
+        <translation>Nykyisen kappaleen tausta:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="184"/>
         <source>Progress bar:</source>
-        <translation type="unfinished">Edistymispalkki:</translation>
+        <translation>Edistymispalkki:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="185"/>
         <source>Waveform:</source>
-        <translation type="unfinished">Aaltomuoto:</translation>
+        <translation>Aaltomuoto:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="186"/>
         <source>RMS:</source>
-        <translation type="unfinished">RMS:</translation>
+        <translation>RMS:</translation>
     </message>
 </context>
 <context>
@@ -995,32 +995,32 @@
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="32"/>
         <source>Visualization Colors</source>
-        <translation type="unfinished">Visualisoinnin värit</translation>
+        <translation>Visualisoinnin värit</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="33"/>
         <source>Playlist Colors</source>
-        <translation type="unfinished">Soittolistan värit</translation>
+        <translation>Soittolistan värit</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="34"/>
         <source>Waveform Seekbar Colors</source>
-        <translation type="unfinished">Aaltomuodon palkkin värit</translation>
+        <translation>Aaltomuodon palkkin värit</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="65"/>
         <source>Use system colors</source>
-        <translation type="unfinished">Käytä järjestelmän värejä</translation>
+        <translation>Käytä järjestelmän värejä</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="73"/>
         <source>Override group colors</source>
-        <translation type="unfinished">Ohita ryhmän värit</translation>
+        <translation>Ohita ryhmän värit</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="81"/>
         <source>Override current track colors</source>
-        <translation type="unfinished">Ohita raidan värit</translation>
+        <translation>Ohita raidan värit</translation>
     </message>
 </context>
 <context>
@@ -1071,7 +1071,7 @@
     <message>
         <location filename="../qsuiequalizer.cpp" line="70"/>
         <source>Reset</source>
-        <translation>Tyhjennä</translation>
+        <translation>Palauta</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="83"/>
@@ -1103,7 +1103,7 @@
     <message>
         <location filename="../qsuiequalizer.cpp" line="219"/>
         <source>Preset &apos;%1&apos; already exists. Overwrite?</source>
-        <translation>Esiasetus &apos;%1&apos; on jo olemassa. Korvataanko se?</translation>
+        <translation>Asetus &apos;%1&quot; on jo olemassa. Korvataanko?</translation>
     </message>
 </context>
 <context>
@@ -1578,7 +1578,7 @@
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="58"/>
         <source>Reset</source>
-        <translation>Tyhjennä</translation>
+        <translation>Palauta</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="65"/>
@@ -1646,17 +1646,17 @@
     <message>
         <location filename="../qsuisettings.cpp" line="49"/>
         <source>Light</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaalea</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="50"/>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Tumma</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="52"/>
         <source>Automatic</source>
-        <translation type="unfinished"></translation>
+        <translation>Autom.</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="57"/>
