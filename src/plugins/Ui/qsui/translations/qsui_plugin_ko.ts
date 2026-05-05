@@ -608,7 +608,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="76"/>
         <source>Menu Bar</source>
-        <translation type="unfinished">메뉴 표시줄</translation>
+        <translation>메뉴 표시줄</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="77"/>
