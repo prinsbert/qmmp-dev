@@ -21,17 +21,17 @@
     <message>
         <location filename="../playlistoption.cpp" line="36"/>
         <source>Select playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse soittolista</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="37"/>
         <source>Create playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Luo soittolista</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="38"/>
         <source>Play track in the specified playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Toista kappale tietyltä soittolistalta</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="39"/>
@@ -66,22 +66,22 @@
     <message>
         <location filename="../playlistoption.cpp" line="100"/>
         <source>Arguments:</source>
-        <translation type="unfinished"></translation>
+        <translation>Argumentit:</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="101"/>
         <source>%1 - index or name of the playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - soittolistan indeksi tai nimi</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="102"/>
         <source>%1 - index of the track</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - kappaleen indeksi</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="103"/>
         <source>%1 - name of the new playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - uuden soittolistan nimi</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="124"/>
@@ -94,12 +94,12 @@
     <message>
         <location filename="../playlistoption.cpp" line="148"/>
         <source>Invalid playlist name</source>
-        <translation type="unfinished"></translation>
+        <translation>Virheellinen soittolistan nimeksi</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="153"/>
         <source>Playlist with name &quot;%1&quot; already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Soittolista &quot;%1&quot; on jo olemassa</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="162"/>

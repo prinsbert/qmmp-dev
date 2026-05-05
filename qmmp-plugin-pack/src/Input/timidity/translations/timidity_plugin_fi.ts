@@ -16,7 +16,7 @@
     <message>
         <location filename="../decodertimidityfactory.cpp" line="110"/>
         <source>About TiMidity Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietoja TiMidity Audio Plugin</translation>
     </message>
     <message>
         <location filename="../decodertimidityfactory.cpp" line="111"/>
@@ -26,12 +26,12 @@
     <message>
         <location filename="../decodertimidityfactory.cpp" line="112"/>
         <source>This plugin uses libTiMidity library to play midi files</source>
-        <translation type="unfinished"></translation>
+        <translation>Tämä laajennus käyttää libTiMidity-kirjastoa MIDI-tiedostoille</translation>
     </message>
     <message>
         <location filename="../decodertimidityfactory.cpp" line="113"/>
         <source>Compiled against libTiMidity-%1.%2.%3</source>
-        <translation type="unfinished"></translation>
+        <translation>Koostettu libTiMidity-%1.%2.%3</translation>
     </message>
     <message>
         <location filename="../decodertimidityfactory.cpp" line="117"/>
