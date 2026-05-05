@@ -741,7 +741,7 @@ void QSUiListWidget::dropEvent(QDropEvent *event)
 
         int index = lineAt(event->position().y());
         if(index < 0)
-            index = qMin(lastVisibleLine(), m_model->lineCount());
+            index = qMin(lastVisibleLine() + 1, m_model->lineCount());
 
         if(event->mimeData()->hasUrls())
         {
