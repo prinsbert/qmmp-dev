@@ -6,6 +6,7 @@ Version 2.3.3
 * fixed settings dialog layout
 * fixed default CUE encoding
 * fixed possible null pointer dereference
+* fixed tracks order when added using drag and drop
 
 Version 2.3.2
 * fixed preset path in the projectm plugin
