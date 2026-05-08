@@ -1,6 +1,36 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 2.3.3
+* fixed build with PipeWire versions less than 0.3.50
+* fixed settings dialog layout
+* fixed default CUE encoding
+* fixed possible null pointer dereference
+* fixed tracks order when added using drag and drop
+
+Version 2.3.2
+* fixed preset path in the projectm plugin
+* fixed determination of FLAC files with ID3v2 tags
+* fixed DSD support in the ffmpeg plugin
+* fixed some issues with CUE support
+* fixed possible crash
+* fixed build warnings
+* fixed hotkey plugin
+* improved pipewire plugin:
+  - fixed delay calculation
+  - increased buffer size
+* updated German translation (Panagiotis Papadopoulos)
+
+Version 2.3.1
+* added IMA ADPCM support
+* fixed grouping by parent directory
+* fixed sorting by file name and path
+* fixed detection of the PCM WAVE files with "JUNK",
+  "bext" and "fact" chunks
+* fixed color scheme change issues
+* fixed drawing issues in the plugin list
+* updated Chinese Simplified translation (Rain Ding)
+
 Version 2.3.0
 * added shared FFT implementation for visual plugins
 * improved group mode:
