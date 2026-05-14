@@ -29,7 +29,7 @@
 #else
 #include <sidplayfp/builders/resid.h>
 #endif
-#ifdef RESIDFP_FOUND
+#ifdef HAVE_RESIDFP_HEADER
 #include <sidplayfp/builders/residfp.h>
 #endif
 #include <sidplayfp/SidInfo.h>
@@ -106,7 +106,7 @@ bool DecoderSID::initialize()
     qCDebug(plugin, "song length: %d", m_length);
 
 #if LIBSIDPLAYFP_VERSION_MAJ >= 3
-#ifdef RESIDFP_FOUND
+#ifdef HAVE_RESIDFP_HEADER
     if(settings.value(u"engine"_s, u"sidlite"_s).toString() == "residfp"_L1)
     {
         m_builder = std::make_unique<ReSIDfpBuilder>("ReSIDfp");
@@ -117,7 +117,7 @@ bool DecoderSID::initialize()
         m_builder = std::make_unique<SIDLiteBuilder>("SIDLite");
     }
 #else
-#ifdef RESIDFP_FOUND
+#ifdef HAVE_RESIDFP_HEADER
     if(settings.value(u"engine"_s, u"residfp"_s).toString() == "residfp"_L1)
     {
         m_builder = std::make_unique<ReSIDfpBuilder>("ReSIDfp");
