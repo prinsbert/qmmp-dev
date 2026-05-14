@@ -17,6 +17,8 @@ RESOURCES = translations/translations.qrc
 FORMS += \
     sidsettingsdialog.ui
 
+DEFINES += RESIDFP_FOUND
+
 unix{
     target.path = $$PLUGIN_DIR/Input
     INSTALLS += target

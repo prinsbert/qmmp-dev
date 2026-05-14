@@ -58,6 +58,12 @@ SidSettingsDialog::SidSettingsDialog(SidDatabase *db, QWidget *parent) : QDialog
     m_ui->fastResampligCheckBox->setChecked(settings.value(u"fast_resampling"_s, false).toBool());
 #endif
 
+//TODO use QFormLayout::setRowVisible
+#ifndef RESIDFP_FOUND
+    m_ui->emulationLabel->setVisible(false);
+    m_ui->emuComboBox->setVisible(false);
+#endif
+
     m_ui->resamplingComboBox->addItem(u"Interpolate"_s, SidConfig::INTERPOLATE);
     m_ui->resamplingComboBox->addItem(u"Resample Interpolate"_s, SidConfig::RESAMPLE_INTERPOLATE);
     index = m_ui->resamplingComboBox->findData(settings.value(u"resampling_method"_s, SidConfig::INTERPOLATE).toInt());
