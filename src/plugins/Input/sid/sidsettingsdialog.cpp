@@ -59,7 +59,7 @@ SidSettingsDialog::SidSettingsDialog(SidDatabase *db, QWidget *parent) : QDialog
 #endif
 
 //TODO use QFormLayout::setRowVisible
-#ifndef RESIDFP_FOUND
+#ifndef HAVE_RESIDFP_HEADER
     m_ui->emulationLabel->setVisible(false);
     m_ui->emuComboBox->setVisible(false);
 #endif
