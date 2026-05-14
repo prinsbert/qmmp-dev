@@ -38,7 +38,7 @@
 #ifdef Q_OS_UNIX
 static int setupUnixSignalHandlers()
 {
-    struct sigaction term;
+    struct sigaction term = {};
 
     term.sa_handler = QMMPStarter::termSignalHandler;
     sigemptyset(&term.sa_mask);
