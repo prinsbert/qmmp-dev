@@ -22,6 +22,7 @@
 #include <QFileInfo>
 #include <qmmp/qmmp.h>
 #include <sidplayfp/SidConfig.h>
+#include <sidplayfp/sidplayfp.h>
 #include "sidsettingsdialog.h"
 #include "ui_sidsettingsdialog.h"
 
@@ -40,20 +41,33 @@ SidSettingsDialog::SidSettingsDialog(SidDatabase *db, QWidget *parent) : QDialog
 
     m_ui->sampleRateComboBox->addItem(tr("44100 Hz"), 44100);
     m_ui->sampleRateComboBox->addItem(tr("48000 Hz"), 48000);
-    int i = m_ui->sampleRateComboBox->findData(settings.value(u"sample_rate"_s, 48000).toInt());
-    m_ui->sampleRateComboBox->setCurrentIndex(i);
+    int index = m_ui->sampleRateComboBox->findData(settings.value(u"sample_rate"_s, 48000).toInt());
+    m_ui->sampleRateComboBox->setCurrentIndex(index);
 
+#if LIBSIDPLAYFP_VERSION_MAJ >= 3
+    m_ui->emuComboBox->addItem(u"SIDLite"_s, u"sidlite"_s);
+    m_ui->emuComboBox->addItem(u"ReSIDfp"_s, u"residfp"_s);
+    index = m_ui->emuComboBox->findData(settings.value(u"engine"_s, u"sidlite"_s).toString());
+    m_ui->emuComboBox->setCurrentIndex(index);
+    m_ui->fastResampligCheckBox->setVisible(false);
+#else
     m_ui->emuComboBox->addItem(u"ReSID"_s, u"resid"_s);
     m_ui->emuComboBox->addItem(u"ReSIDfp"_s, u"residfp"_s);
-    i = m_ui->emuComboBox->findData(settings.value(u"engine"_s, u"residfp"_s).toString());
-    m_ui->emuComboBox->setCurrentIndex(i);
-
+    index = m_ui->emuComboBox->findData(settings.value(u"engine"_s, u"residfp"_s).toString());
+    m_ui->emuComboBox->setCurrentIndex(index);
     m_ui->fastResampligCheckBox->setChecked(settings.value(u"fast_resampling"_s, false).toBool());
+#endif
+
+//TODO use QFormLayout::setRowVisible
+#ifndef HAVE_RESIDFP_HEADER
+    m_ui->emulationLabel->setVisible(false);
+    m_ui->emuComboBox->setVisible(false);
+#endif
 
     m_ui->resamplingComboBox->addItem(u"Interpolate"_s, SidConfig::INTERPOLATE);
     m_ui->resamplingComboBox->addItem(u"Resample interpolate"_s, SidConfig::RESAMPLE_INTERPOLATE);
-    i = m_ui->resamplingComboBox->findData(settings.value(u"resampling_method"_s, SidConfig::INTERPOLATE).toInt());
-    m_ui->resamplingComboBox->setCurrentIndex(i);
+    index = m_ui->resamplingComboBox->findData(settings.value(u"resampling_method"_s, SidConfig::INTERPOLATE).toInt());
+    m_ui->resamplingComboBox->setCurrentIndex(index);
 
     settings.endGroup();
 }
