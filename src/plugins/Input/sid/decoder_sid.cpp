@@ -127,7 +127,7 @@ bool DecoderSID::initialize()
     {
         m_builder = std::make_unique<ReSIDBuilder>("ReSID");
     }
-    rs->create(m_player->info().maxsids());
+    m_builder->create(m_player->info().maxsids());
 #endif
 
     qCDebug(plugin, "using %s emulation", m_builder->name());
