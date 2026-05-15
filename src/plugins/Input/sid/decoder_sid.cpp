@@ -24,8 +24,14 @@
 #include <sidplayfp/SidTune.h>
 #include <sidplayfp/sidbuilder.h>
 #include <sidplayfp/SidConfig.h>
-#include <sidplayfp/builders/residfp.h>
+#if LIBSIDPLAYFP_VERSION_MAJ >= 3
+#include <sidplayfp/builders/sidlite.h>
+#else
 #include <sidplayfp/builders/resid.h>
+#endif
+#ifdef HAVE_RESIDFP_HEADER
+#include <sidplayfp/builders/residfp.h>
+#endif
 #include <sidplayfp/SidInfo.h>
 #include <sidplayfp/SidTuneInfo.h>
 #include <sidplayfp/SidDatabase.h>
@@ -52,13 +58,14 @@ bool DecoderSID::initialize()
     int track = -1;
     QString path = TrackInfo::pathFromUrl(m_url, &track);
 
-    m_tune.load(qPrintable(path));
-    if(!m_tune.getInfo())
+    m_tune = std::make_unique<SidTune>(nullptr);
+    m_tune->load(qPrintable(path));
+    if(!m_tune->getInfo())
     {
-        qCWarning(plugin, "unable to load tune, error: %s", m_tune.statusString());
+        qCWarning(plugin, "unable to load tune, error: %s", m_tune->statusString());
         return false;
     }
-    int count = m_tune.getInfo()->songs();
+    int count = m_tune->getInfo()->songs();
 
     if(track > count || track < 1)
     {
@@ -66,16 +73,16 @@ bool DecoderSID::initialize()
         return false;
     }
 
-    m_tune.selectSong(track);
+    m_tune->selectSong(track);
 
-    if(!m_tune.getStatus())
+    if(!m_tune->getStatus())
     {
-        qCWarning(plugin, "error: %s", m_tune.statusString());
+        qCWarning(plugin, "error: %s", m_tune->statusString());
         return false;
     }
 
     //send metadata for pseudo-protocol
-    const SidTuneInfo *tune_info = m_tune.getInfo();
+    const SidTuneInfo *tune_info = m_tune->getInfo();
     QMap<Qmmp::MetaData, QString> metadata;
     metadata.insert(Qmmp::TITLE, QString::fromUtf8(tune_info->infoString(0)));
     metadata.insert(Qmmp::ARTIST, QString::fromUtf8(tune_info->infoString(1)));
@@ -89,7 +96,7 @@ bool DecoderSID::initialize()
     if(settings.value(u"use_hvsc"_s, false).toBool())
     {
         char md5[SidTune::MD5_LENGTH + 1];
-        m_tune.createMD5(md5);
+        m_tune->createMD5(md5);
         m_length = m_db->length(md5, track);
     }
 
@@ -98,26 +105,43 @@ bool DecoderSID::initialize()
 
     qCDebug(plugin, "song length: %d", m_length);
 
-    sidbuilder *rs = nullptr;
-    if(settings.value(u"engine"_s, u"residfp"_s).toString() == "residfp"_L1)
+#if LIBSIDPLAYFP_VERSION_MAJ >= 3
+#ifdef HAVE_RESIDFP_HEADER
+    if(settings.value(u"engine"_s, u"sidlite"_s).toString() == "residfp"_L1)
     {
-        rs = new ReSIDfpBuilder("ReSIDfp builder");
-        qCDebug(plugin, "using ReSIDfp emulation");
+        m_builder = std::make_unique<ReSIDfpBuilder>("ReSIDfp");
     }
     else
+#endif
     {
-        rs = new ReSIDBuilder("ReSID builder");
-        qCDebug(plugin, "using ReSID emulation");
+        m_builder = std::make_unique<SIDLiteBuilder>("SIDLite");
+    }
+#else
+#ifdef HAVE_RESIDFP_HEADER
+    if(settings.value(u"engine"_s, u"residfp"_s).toString() == "residfp"_L1)
+    {
+        m_builder = std::make_unique<ReSIDfpBuilder>("ReSIDfp");
+    }
+    else
+#endif
+    {
+        m_builder = std::make_unique<ReSIDBuilder>("ReSID");
     }
     rs->create(m_player->info().maxsids());
+#endif
+
+    qCDebug(plugin, "using %s emulation", m_builder->name());
 
     SidConfig cfg = m_player->config();
     cfg.frequency    = settings.value(u"sample_rate"_s, 48000).toInt();
     int sm = settings.value(u"resampling_method"_s, SidConfig::INTERPOLATE).toInt();
-    cfg.samplingMethod = (SidConfig::sampling_method_t) sm;
+    cfg.samplingMethod = static_cast<SidConfig::sampling_method_t>(sm);
+
+    cfg.sidEmulation = m_builder.get();
+#if LIBSIDPLAYFP_VERSION_MAJ < 3
     cfg.playback     = SidConfig::STEREO;
-    cfg.sidEmulation = rs;
     cfg.fastSampling = settings.value(u"fast_resampling"_s, false).toBool();
+#endif
     settings.endGroup();
 
     if(!m_player->config(cfg))
@@ -126,7 +150,7 @@ bool DecoderSID::initialize()
         return false;
     }
 
-    if(!m_player->load(&m_tune))
+    if(!m_player->load(m_tune.get()))
     {
         qCWarning(plugin, "unable to load tune, error: %s", m_player->error());
         return false;
