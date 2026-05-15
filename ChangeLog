@@ -6,6 +6,11 @@ Version 1.7.11
 * fixed settings dialog layout
 * fixed default CUE encoding
 * fixed possible null pointer dereference
+* fixed uninitialized structure usage
+* improved sid plugin:
+  - added libsidplayfp 3.0 support
+  - added feature to build without residfp engine
+  - fixed memory leak
 
 Version 1.7.10
 * fixed determination of FLAC files with ID3v2 tags
