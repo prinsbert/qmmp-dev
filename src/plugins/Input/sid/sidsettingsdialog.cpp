@@ -48,13 +48,13 @@ SidSettingsDialog::SidSettingsDialog(SidDatabase *db, QWidget *parent) : QDialog
     m_ui->emuComboBox->addItem(u"SIDLite"_s, u"sidlite"_s);
     m_ui->emuComboBox->addItem(u"ReSIDfp"_s, u"residfp"_s);
     index = m_ui->emuComboBox->findData(settings.value(u"engine"_s, u"sidlite"_s).toString());
-    m_ui->emuComboBox->setCurrentIndex(index);
+    m_ui->emuComboBox->setCurrentIndex(qMax(index, 0));
     m_ui->fastResampligCheckBox->setVisible(false);
 #else
     m_ui->emuComboBox->addItem(u"ReSID"_s, u"resid"_s);
     m_ui->emuComboBox->addItem(u"ReSIDfp"_s, u"residfp"_s);
     index = m_ui->emuComboBox->findData(settings.value(u"engine"_s, u"residfp"_s).toString());
-    m_ui->emuComboBox->setCurrentIndex(index);
+    m_ui->emuComboBox->setCurrentIndex(qMax(index, 0));
     m_ui->fastResampligCheckBox->setChecked(settings.value(u"fast_resampling"_s, false).toBool());
 #endif
 
