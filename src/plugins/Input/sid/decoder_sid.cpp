@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,8 +21,6 @@
 #include <QFileInfo>
 #include <QSettings>
 #include <sidplayfp/sidplayfp.h>
-#include <sidplayfp/SidTune.h>
-#include <sidplayfp/sidbuilder.h>
 #include <sidplayfp/SidConfig.h>
 #include <sidplayfp/builders/residfp.h>
 #include <sidplayfp/builders/resid.h>
@@ -32,7 +30,7 @@
 #include "decoder_sid.h"
 
 // Decoder class
-DecoderSID::DecoderSID(SidDatabase *db, const QString &url) : Decoder(), m_tune(0)
+DecoderSID::DecoderSID(SidDatabase *db, const QString &url) : Decoder(), m_tune(0), m_builder(0)
 {
     m_db = db;
     m_url = url;
@@ -45,6 +43,7 @@ DecoderSID::DecoderSID(SidDatabase *db, const QString &url) : Decoder(), m_tune(
 DecoderSID::~DecoderSID()
 {
     delete m_player;
+    delete m_builder;
 }
 
 bool DecoderSID::initialize()
@@ -102,25 +101,24 @@ bool DecoderSID::initialize()
 
     qDebug("DecoderSID: song length: %d", m_length);
 
-    sidbuilder *rs = 0;
     if(settings.value("engine", "residfp").toString() == "residfp")
     {
-        rs = new ReSIDfpBuilder("ReSIDfp builder");
+        m_builder = new ReSIDfpBuilder("ReSIDfp builder");
         qDebug("DecoderSID: using ReSIDfp emulation");
     }
     else
     {
-        rs = new ReSIDBuilder("ReSID builder");
+        m_builder = new ReSIDBuilder("ReSID builder");
         qDebug("DecoderSID: using ReSID emulation");
     }
-    rs->create(m_player->info().maxsids());
+    m_builder->create(m_player->info().maxsids());
 
     SidConfig cfg = m_player->config();
     cfg.frequency    = settings.value("sample_rate", 44100).toInt();
     int sm = settings.value("resampling_method", SidConfig::INTERPOLATE).toInt();
     cfg.samplingMethod = (SidConfig::sampling_method_t) sm;
     cfg.playback     = SidConfig::STEREO;
-    cfg.sidEmulation = rs;
+    cfg.sidEmulation = m_builder;
     cfg.fastSampling = settings.value("fast_resampling", false).toBool();
     settings.endGroup();
 

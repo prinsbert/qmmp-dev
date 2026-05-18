@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,10 +22,11 @@
 #define DECODER_SID_H
 
 #include <qmmp/decoder.h>
+#include <sidplayfp/sidbuilder.h>
+#include <sidplayfp/SidTune.h>
 
 class sidplayfp;
 class SidDatabase;
-class SidTune;
 
 /**
    @author Ilya Kotov <forkotov02@ya.ru>
@@ -51,6 +52,7 @@ private:
     qint64 m_length_in_bytes;
     qint64 m_read_bytes;
     SidTune m_tune;
+    sidbuilder *m_builder;
 };
 
 #endif // DECODER_SID_H
