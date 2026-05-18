@@ -42,47 +42,47 @@
         <translation type="unfinished">Setelan Plugin SID</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.ui" line="55"/>
+        <location filename="../sidsettingsdialog.ui" line="95"/>
         <source>Fast resampling</source>
         <translation type="unfinished">Resampling cepat</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.ui" line="62"/>
+        <location filename="../sidsettingsdialog.ui" line="65"/>
         <source>Sample rate:</source>
         <translation type="unfinished">Sample rate:</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.ui" line="69"/>
+        <location filename="../sidsettingsdialog.ui" line="31"/>
         <source>HVSC database file:</source>
         <translation type="unfinished">File database HVSC:</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.ui" line="76"/>
+        <location filename="../sidsettingsdialog.ui" line="85"/>
         <source>Resampling method:</source>
         <translation type="unfinished">Metode resampling:</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.ui" line="93"/>
+        <location filename="../sidsettingsdialog.ui" line="45"/>
         <source>Defaults song length, sec:</source>
         <translation type="unfinished">Panjang lagu baku, det:</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.ui" line="100"/>
+        <location filename="../sidsettingsdialog.ui" line="102"/>
         <source>Enable HVSC song length database</source>
         <translation type="unfinished">Aktifkan database panjang lagu HVSC</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.ui" line="107"/>
+        <location filename="../sidsettingsdialog.ui" line="75"/>
         <source>Emulation:</source>
         <translation type="unfinished">Emulasi:</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.cpp" line="41"/>
+        <location filename="../sidsettingsdialog.cpp" line="42"/>
         <source>44100 Hz</source>
         <translation type="unfinished">44100 Hz</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.cpp" line="42"/>
+        <location filename="../sidsettingsdialog.cpp" line="43"/>
         <source>48000 Hz</source>
         <translation type="unfinished">48000 Hz</translation>
     </message>

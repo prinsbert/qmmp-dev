@@ -11,7 +11,7 @@
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="48"/>
         <source>Midi Files</source>
-        <translation>Pliki Midi</translation>
+        <translation>Pliki MIDI</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="99"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="101"/>
         <source>This plugin uses WildMidi library to play midi files</source>
-        <translation>Ta wtyczka używa biblioteki WildMidi do odtwarzania plików midi</translation>
+        <translation>Ta wtyczka używa biblioteki WildMidi do odtwarzania plików MIDI</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="102"/>

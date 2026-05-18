@@ -42,47 +42,47 @@
         <translation>SID 插件设置</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.ui" line="55"/>
+        <location filename="../sidsettingsdialog.ui" line="95"/>
         <source>Fast resampling</source>
         <translation>快速重新取样</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.ui" line="62"/>
+        <location filename="../sidsettingsdialog.ui" line="65"/>
         <source>Sample rate:</source>
         <translation>取样率：</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.ui" line="69"/>
+        <location filename="../sidsettingsdialog.ui" line="31"/>
         <source>HVSC database file:</source>
         <translation>HVSC 数据库文件：</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.ui" line="76"/>
+        <location filename="../sidsettingsdialog.ui" line="85"/>
         <source>Resampling method:</source>
         <translation>重取样方式：</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.ui" line="93"/>
+        <location filename="../sidsettingsdialog.ui" line="45"/>
         <source>Defaults song length, sec:</source>
         <translation>默认歌曲长度，秒：</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.ui" line="100"/>
+        <location filename="../sidsettingsdialog.ui" line="102"/>
         <source>Enable HVSC song length database</source>
         <translation>开启 HVSC 歌曲长度数据库</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.ui" line="107"/>
+        <location filename="../sidsettingsdialog.ui" line="75"/>
         <source>Emulation:</source>
         <translation>模拟：</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.cpp" line="41"/>
+        <location filename="../sidsettingsdialog.cpp" line="42"/>
         <source>44100 Hz</source>
         <translation>44100 赫兹</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.cpp" line="42"/>
+        <location filename="../sidsettingsdialog.cpp" line="43"/>
         <source>48000 Hz</source>
         <translation>48000 赫兹</translation>
     </message>

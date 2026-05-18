@@ -442,7 +442,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="534"/>
         <source>Display average bitrate</source>
-        <translation>Wyświetlaj średnią szybkość transmisji</translation>
+        <translation>Wyświetlaj średnią przepływność</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="544"/>
@@ -1057,7 +1057,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="337"/>
         <source>Bitrate</source>
-        <translation>Szybkość transmisji</translation>
+        <translation>Przepływność</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="337"/>
@@ -1221,12 +1221,12 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="61"/>
         <source>Duration | Format | Bitrate</source>
-        <translation>Długość | Format | Szybkość transmisji</translation>
+        <translation>Długość | Format | Przepływność</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>Year | Duration | Bitrate</source>
-        <translation>Rok | Długość | Szybkość transmisji</translation>
+        <translation>Rok | Długość | Przepływność</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="65"/>
@@ -1246,7 +1246,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="71"/>
         <source>Bitrate</source>
-        <translation>Szybkość transmisji</translation>
+        <translation>Przepływność</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="72"/>

@@ -1786,7 +1786,7 @@
     <message>
         <location filename="../qsuistatusbareditor.cpp" line="108"/>
         <source>Bitrate</source>
-        <translation>Szybkość transmisji</translation>
+        <translation>Przepływność</translation>
     </message>
 </context>
 <context>

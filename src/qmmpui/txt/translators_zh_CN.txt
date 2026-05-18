@@ -1,4 +1,4 @@
-葡萄牙语（巴西）：
+巴西葡萄牙语：
     Bruno Goncalves
     Klaos Lacerda
     Heitor Thury Barreiros Barbosa<hthury@gmail.com>
@@ -11,14 +11,14 @@
 繁体中文：
     Edouard.J.K Li <edouardlicn@gmail.com>
     Cosmos Chen
-    艾昂<Ion83129@126.com>
-    杰夫.黄
+    lon <lon83129@126.com>
+    Jeff Huang
 
 简体中文：
-    艾昂<Ion83129@126.com>
-    马兵儿
-    Mingcong Bai
-    Mingye Wang
+    lon <lon83129@126.com>
+    mabier
+    白铭骢
+    王铭烨
     Rain Ding
 
 捷克语：

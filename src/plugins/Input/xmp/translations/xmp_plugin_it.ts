@@ -102,7 +102,7 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation>Impostazioni estensione XMP</translation>
+        <translation>Impostazioni dell&apos;estensione XMP</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="34"/>
@@ -117,7 +117,7 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation>Tipo interpolazione:</translation>
+        <translation>Tipo di interpolazione:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="78"/>
@@ -127,27 +127,27 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="85"/>
         <source>Use vblank timing</source>
-        <translation>Usa intervallo vblank</translation>
+        <translation>Usa l&apos;intervallo vblank</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="92"/>
         <source>Emulate Protracker 2.x FX9 bug</source>
-        <translation>Emula bug Protracker 2.x FX9</translation>
+        <translation>Emula il bug di Protracker 2.x FX9</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation>Frequenza campionamento:</translation>
+        <translation>Frequenza di campionamento:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="109"/>
         <source>Emulate sample loop bug</source>
-        <translation>Emula bug loop campione</translation>
+        <translation>Emula il bug del loop di esempio</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="116"/>
         <source>Use Paula mixer in Amiga modules</source>
-        <translation>Nei moduli Amiga usa il mixer Paula</translation>
+        <translation>Usa il mixer Paula nei moduli Amiga</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="33"/>
