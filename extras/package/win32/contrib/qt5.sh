@@ -2,7 +2,7 @@
 
 LIB_NAMES+='qtbase qttools qttranslations qtwinextras qtimageformats'
 
-export QT_VERSION=5.15.18
+export QT_VERSION=5.15.19
 export DEV_PATH=/c/devel
 
 if [ "$1" == "--install-win64" ]; then
