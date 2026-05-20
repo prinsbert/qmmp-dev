@@ -1,24 +1,7 @@
-diff -U 3 -r enca-1.18-old/configure.ac enca-1.18-new/configure.ac
---- enca-1.18-old/configure.ac	2016-01-07 11:40:26 +0300
-+++ enca-1.18-new/configure.ac	2016-05-26 11:34:43 +0300
-@@ -38,13 +38,15 @@
- AC_GNU_SOURCE
- AC_AIX
- AC_ISC_POSIX
--AC_PROG_LIBTOOL
-+#AC_PROG_LIBTOOL
- AC_PROG_CC
- AM_PROG_CC_C_O
- AC_PROG_INSTALL
- AC_PROG_LN_S
- AC_PATH_PROG(MKTEMP_PROG, mktemp)
- 
-+LT_INIT
-+
- dnl With GCC, be paranoiac.  It should compile really cleanly.
- dnl Except -Wno-sign-compare, but older gcc's don't know it.
- if test "$GCC" = yes; then
-@@ -99,6 +101,14 @@
+diff -U3 -r enca-1.21-old/configure.ac enca-1.21-new/configure.ac
+--- enca-1.21-old/configure.ac	2025-10-20 18:33:40 +0300
++++ enca-1.21-new/configure.ac	2026-05-20 22:23:27 +0300
+@@ -100,6 +100,14 @@
  dnl Checks for libraries.
  ye_CHECK_LIBM
  
@@ -33,9 +16,9 @@ diff -U 3 -r enca-1.18-old/configure.ac enca-1.18-new/configure.ac
  dnl Checks for header files.
  AC_HEADER_STDC
  AC_HEADER_SYS_WAIT
-diff -U 3 -r enca-1.18-old/lib/Makefile.am enca-1.18-new/lib/Makefile.am
---- enca-1.18-old/lib/Makefile.am	2016-01-04 21:12:05 +0300
-+++ enca-1.18-new/lib/Makefile.am	2016-05-26 11:30:41 +0300
+diff -U3 -r enca-1.21-old/lib/Makefile.am enca-1.21-new/lib/Makefile.am
+--- enca-1.21-old/lib/Makefile.am	2025-10-20 18:33:40 +0300
++++ enca-1.21-new/lib/Makefile.am	2026-05-20 22:23:27 +0300
 @@ -6,7 +6,7 @@
  # Any iface change    C++: 0:   A
  # Adding ifaces       C:   R:   A++
