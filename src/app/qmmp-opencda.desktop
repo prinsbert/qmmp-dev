@@ -5,6 +5,7 @@ Actions=open;
 
 [Desktop Action open]
 Name=Open with Qmmp
+Name[de]=Mit Qmmp öffnen
 Name[el]=Άνοιγμα με το Qmmp
 Name[es]=Abrir con Qmmp
 Name[fi]=Avaa Qmmp:llä
@@ -18,6 +19,7 @@ Name[pl_PL]=Otwórz za pomocą Qmmp
 Name[pt]=Abrir com Qmmp
 Name[ru]=Открыть с помощью Qmmp
 Name[tr]=Qmmp ile aç
+Name[zh_CN]=使用 Qmmp 打开
 Name[zh_TW]=用Qmmp打開
 Exec=qmmp cdda://%d
 Icon=qmmp
