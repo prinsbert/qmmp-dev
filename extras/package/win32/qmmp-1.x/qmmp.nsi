@@ -10,7 +10,7 @@
  ;-------------------------------
  ;Defines
  
-   !define QMMP_VERSION "1.7.10"
+   !define QMMP_VERSION "1.7.11"
    !define WIN64 "1"
    !define QMMP_DEF_PROGS_KEY "Software\Clients\Media\Qmmp"
    !define QMMP_UNINSTALL_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\Qmmp"
@@ -75,6 +75,7 @@
   !insertmacro MUI_LANGUAGE "Finnish"
   !insertmacro MUI_LANGUAGE "French"
   !insertmacro MUI_LANGUAGE "Italian"
+  !insertmacro MUI_LANGUAGE "Japanese"
   !insertmacro MUI_LANGUAGE "Korean"
   !insertmacro MUI_LANGUAGE "Polish"  
   !insertmacro MUI_LANGUAGE "Russian"
@@ -88,6 +89,7 @@
   !include "nsis-translations\Finnish.nsh"
   !include "nsis-translations\French.nsh"
   !include "nsis-translations\Italian.nsh"
+  !include "nsis-translations\Japanese.nsh"
   !include "nsis-translations\Korean.nsh"
   !include "nsis-translations\Polish.nsh"
   !include "nsis-translations\Russian.nsh"
