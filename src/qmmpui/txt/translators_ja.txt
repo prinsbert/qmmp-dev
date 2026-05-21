@@ -67,6 +67,7 @@
 
 日本語:
     Ryota Shimamoto <liangtai.s16@gmail.com>
+    coolvitto
 
 カザフ語:
     Baurzhan Muftakhidinov <baurthefirst@gmail.com>
