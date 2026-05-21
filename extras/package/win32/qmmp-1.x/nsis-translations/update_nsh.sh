@@ -22,5 +22,6 @@ update_nsh ko.txt Korean.nsh
 update_nsh nl.txt Dutch.nsh
 update_nsh pl_PL.txt Polish.nsh
 update_nsh ru.txt Russian.nsh
+update_nsh ja.txt Japanese.nsh
 update_nsh zh_TW.txt TradChinese.nsh
 update_nsh zh_CN.txt SimpChinese.nsh

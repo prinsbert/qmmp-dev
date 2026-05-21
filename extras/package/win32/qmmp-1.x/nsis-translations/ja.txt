@@ -1,0 +1,14 @@
+Qt-based multimedia player with support of many formats
+Windows 10 以降が必要です
+Windows 7 以降が必要です
+Qt ベースのマルチメディアプレーヤー
+ポータブル設定
+ポータブルモードを無効にするには、このファイルを削除してください
+追加のスキン
+デフォルトでシンプルなUIを使用
+Automatic ID3v1/ID3v2 charset detection (libRCD)
+AdLib formats support (AdPlug)
+スタートメニューのショートカット
+このソフトウェアをインストールするには、64ビット版のWindowsオペレーティングシステムが必要です。
+後で QMMP で再生
+Windows 11 スタイルを使用

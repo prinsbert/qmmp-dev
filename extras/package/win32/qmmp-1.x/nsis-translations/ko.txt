@@ -11,4 +11,4 @@ AdLib 포맷 지원 (AdPlug)
 시작 메뉴 단축키
 이 소프트웨어를 설치하려면 64비트 Windows 운영 체제가 필요합니다.
 Qmmp의 대기열에 넣기
-Use Windows 11 style
+Windows 11 스타일 사용
