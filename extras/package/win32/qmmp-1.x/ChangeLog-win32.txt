@@ -4,6 +4,13 @@ LEGEND
 [-] Bug fix
 [!] Enhancement
 
+1.7.11
+[*] qmmp-1.7.11
+[*] wavpack-5.9.0
+[*] ffmpeg-7.1.4
+[*] libxmp-4.7.0
+[*] mpg123-1.33.5
+
 1.7.10
 [*] qmmp-1.7.10
 [*] taglib-2.2.1

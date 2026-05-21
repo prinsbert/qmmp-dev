@@ -32,7 +32,7 @@ List of the third-party libraries.
   libogg              1.3.6      https://xiph.org/ogg/
   libvorbis           1.3.7      https://xiph.org/vorbis/
   flac                1.4.3      https://xiph.org/flac/
-  wavpack             5.8.1      https://www.wavpack.com/
+  wavpack             5.9.0      https://www.wavpack.com/
   libsndfile          1.2.2      https://github.com/libsndfile/libsndfile
   opus                1.6        https://www.opus-codec.org/
   opusfile            0.12       https://www.opus-codec.org/
@@ -42,8 +42,8 @@ List of the third-party libraries.
   libcdio-paranoia    10.2+2.0.2 https://github.com/libcdio/libcdio-paranoia/  
   mingw-libgnurx      2.5.1      https://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      https://libcddb.sourceforge.net/
-  ffmpeg              7.1.3      https://ffmpeg.org/
-  libxmp              4.6.3      https://github.com/libxmp/libxmp
+  ffmpeg              7.1.4      https://ffmpeg.org/
+  libxmp              4.7.0      https://github.com/libxmp/libxmp
   libgme              0.6.4      https://github.com/libgme/game-music-emu
   musepack            r475       https://www.musepack.net/
   glew                2.2.0      https://glew.sourceforge.net/
@@ -52,7 +52,7 @@ List of the third-party libraries.
   enca                1.19       https://github.com/Project-OSS-Revival/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
   librcd              0.1.14     https://github.com/RusXMMS/librcd
-  mpg123              1.33.4     https://www.mpg123.de/
+  mpg123              1.33.5     https://www.mpg123.de/
   adplug              2.3.3      https://github.com/adplug/adplug
   libbinio            1.5        https://github.com/adplug/libbinio
 

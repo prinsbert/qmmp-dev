@@ -4,6 +4,13 @@ LEGEND
 [-] Bug fix
 [!] Enhancement
 
+2.3.3
+[*] qmmp-2.3.3
+[*] wavpack-5.9.0
+[*] ffmpeg-7.1.4
+[*] libxmp-4.7.0
+[*] mpg123-1.33.5
+
 2.3.2
 [*] qmmp-2.3.2
 [*] qt-6.10.3
