@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2025 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,6 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <QSettings>
 #include <sidplayfp/SidDatabase.h>
 #include "sidhelper.h"
 
@@ -57,6 +58,9 @@ QList<TrackInfo *> SIDHelper::createPlayList(TrackInfo::Parts parts)
     char md5[SidTune::MD5_LENGTH+1];
     m_tune->createMD5(md5);
 
+    QSettings settings;
+    int sampleRate = settings.value("SID/sample_rate"_L1, 48000).toInt();
+
     for(int i = 1; i <= count; ++i)
     {
         m_tune->selectSong(i+1);
@@ -69,12 +73,16 @@ QList<TrackInfo *> SIDHelper::createPlayList(TrackInfo::Parts parts)
             info->setValue(Qmmp::ARTIST, tune_info->infoString(1));
             info->setValue(Qmmp::COMMENT, tune_info->commentString(0));
             info->setValue(Qmmp::TRACK, i);
+            info->setValue(Qmmp::FORMAT_NAME, QString::fromLatin1(tune_info->formatString()));
         }
         int length = m_db->length(md5, i);
         if(length > -1)
             info->setDuration(length * 1000);
 
         info->setPath(QStringLiteral("sid://%1#%2").arg(m_path).arg(i));
+        info->setValue(Qmmp::CHANNELS, 2);
+        info->setValue(Qmmp::BITS_PER_SAMPLE, 16);
+        info->setValue(Qmmp::SAMPLERATE, sampleRate);
         list << info;
     }
     return list;

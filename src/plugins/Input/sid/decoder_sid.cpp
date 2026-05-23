@@ -133,7 +133,7 @@ bool DecoderSID::initialize()
     qCDebug(plugin, "using %s emulation", m_builder->name());
 
     SidConfig cfg = m_player->config();
-    cfg.frequency    = settings.value(u"sample_rate"_s, 48000).toInt();
+    cfg.frequency = settings.value(u"sample_rate"_s, 48000).toInt();
     int sm = settings.value(u"resampling_method"_s, SidConfig::INTERPOLATE).toInt();
     cfg.samplingMethod = static_cast<SidConfig::sampling_method_t>(sm);
 
