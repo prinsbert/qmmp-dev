@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="43"/>
         <source>FFap Plugin</source>
-        <translation>FFap Plugin</translation>
+        <translation>FFap-liitännäinen</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="45"/>
@@ -16,17 +16,17 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="150"/>
         <source>About FFap Audio Plugin</source>
-        <translation>Tietoja: FFap Audio Plugin</translation>
+        <translation>Tietoja FFap-ääniliitännäisestä</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="151"/>
         <source>Qmmp FFap Audio Plugin</source>
-        <translation>Qmmp FFap Audio Plugin</translation>
+        <translation>Qmmp:n FFap-ääniliitännäinen</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="152"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
-        <translation>Tämä laajennus tarjoaa tuen Monkey&apos;s Audio (APE)</translation>
+        <translation>Tämä liitännäinen tarjoaa Monkey&apos;s Audio (APE) -tuen</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="153"/>

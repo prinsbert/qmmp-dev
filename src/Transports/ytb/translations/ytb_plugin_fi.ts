@@ -6,7 +6,7 @@
     <message>
         <location filename="../ytbinputfactory.cpp" line="36"/>
         <source>Youtube Plugin</source>
-        <translation>Youtube Plugin</translation>
+        <translation>Youtube-liitännäinen</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="70"/>

@@ -6,7 +6,7 @@
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="30"/>
         <source>SRC Plugin</source>
-        <translation>SRC Plugin</translation>
+        <translation>SRC-liitännäinen</translation>
     </message>
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="50"/>
