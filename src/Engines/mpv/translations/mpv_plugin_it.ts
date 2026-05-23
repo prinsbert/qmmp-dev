@@ -16,7 +16,7 @@
     <message>
         <location filename="../mpvenginefactory.cpp" line="198"/>
         <source>About MPV Plugin</source>
-        <translation>Informazioni sull&apos;estensione MPV</translation>
+        <translation>Informazioni estensione MPV</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="199"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="51"/>
         <source>Bitrate</source>
-        <translation>Bit al secondo</translation>
+        <translation>Bit/secondo</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="51"/>
@@ -61,12 +61,12 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="70"/>
         <source>Audio bitrate</source>
-        <translation>Bit al secondo audio</translation>
+        <translation>Bit7secondo audio</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
         <source>Audio sample rate</source>
-        <translation>Frequenza di campionamento audio</translation>
+        <translation>Frequenza campionamento audio</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="86"/>
         <source>Video bitrate</source>
-        <translation>Bit al secondo video</translation>
+        <translation>Bit/secondo video</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="89"/>

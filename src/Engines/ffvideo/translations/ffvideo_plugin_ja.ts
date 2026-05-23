@@ -82,7 +82,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="79"/>
         <source>Audio format</source>
-        <translation type="unfinished"></translation>
+        <translation>オーディオ形式</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="85"/>
@@ -147,7 +147,7 @@
     <message>
         <location filename="../videowindow.cpp" line="75"/>
         <source>&amp;Resume</source>
-        <translation type="unfinished"></translation>
+        <translation>再開(&amp;R)</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="80"/>

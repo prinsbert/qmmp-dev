@@ -16,7 +16,7 @@
     <message>
         <location filename="../mplayerenginefactory.cpp" line="73"/>
         <source>About MPlayer Plugin</source>
-        <translation>Informazioni sull&apos;estensione MPlayer</translation>
+        <translation>Informazioni estensione MPlayer</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="74"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../mplayerenginefactory.cpp" line="75"/>
         <source>This plugin uses MPlayer as backend</source>
-        <translation>Estensione che usa MPlayer come motore</translation>
+        <translation>Questa estensione usa MPlayer come motore</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="76"/>
@@ -69,12 +69,12 @@
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="63"/>
         <source>Aspect ratio</source>
-        <translation>Rapporto dello schermo</translation>
+        <translation>Rapporto schermo</translation>
     </message>
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="64"/>
         <source>Video bitrate</source>
-        <translation>Bit al secondo video</translation>
+        <translation>Bit/secondo video</translation>
     </message>
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="64"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="68"/>
         <source>Audio bitrate</source>
-        <translation>Bit al secondo audio</translation>
+        <translation>Bit/secondo audio</translation>
     </message>
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="69"/>
@@ -138,7 +138,7 @@
     <message>
         <location filename="../mplayersettingsdialog.ui" line="72"/>
         <source>Synchronization factor:</source>
-        <translation>Fattore di sincronizzazione</translation>
+        <translation>Fattore sincronizzazione</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="89"/>
@@ -148,7 +148,7 @@
     <message>
         <location filename="../mplayersettingsdialog.ui" line="96"/>
         <source>Extra command line options</source>
-        <translation>Opzioni aggiuntive a riga di comando</translation>
+        <translation>Opzioni aggiuntive riga di comando</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.cpp" line="29"/>

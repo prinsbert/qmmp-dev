@@ -6,7 +6,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="41"/>
         <source>FFmpeg Video Plugin</source>
-        <translation>FFmpeg Video Plugin</translation>
+        <translation>FFmpeg-videoliitännäinen</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="45"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="191"/>
         <source>About FFVideo Plugin</source>
-        <translation>Tietoja: FFVideo Plugin</translation>
+        <translation>Tietoja FFVideo-liitännäisestä</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="192"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
-        <translation>Qmmp FFmpeg video plugin</translation>
+        <translation>Qmmp:n FFmpeg-videoliitännäinen</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="193"/>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="79"/>
         <source>Audio format</source>
-        <translation>Audio formaatti</translation>
+        <translation>Äänimuoto</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="85"/>
@@ -118,7 +118,7 @@
         <location filename="../videowindow.cpp" line="46"/>
         <location filename="../videowindow.cpp" line="51"/>
         <source>Space</source>
-        <translation>Välilyötni</translation>
+        <translation>Välilyönti</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="47"/>

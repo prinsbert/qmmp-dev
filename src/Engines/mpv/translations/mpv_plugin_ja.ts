@@ -6,7 +6,7 @@
     <message>
         <location filename="../mpvenginefactory.cpp" line="47"/>
         <source>MPV Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>MPV プラグイン</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="51"/>
@@ -16,17 +16,17 @@
     <message>
         <location filename="../mpvenginefactory.cpp" line="198"/>
         <source>About MPV Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>MPV プラグイン について</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="199"/>
         <source>Qmmp MPV Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp MPV プラグイン</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="200"/>
         <source>This plugin uses mpv as backend</source>
-        <translation type="unfinished"></translation>
+        <translation>このプラグインはバックエンドとして mpv を使用します</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="201"/>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="79"/>
         <source>Audio format</source>
-        <translation type="unfinished"></translation>
+        <translation>オーディオ形式</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="85"/>

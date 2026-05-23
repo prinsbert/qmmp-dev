@@ -6,7 +6,7 @@
     <message>
         <location filename="../mplayerenginefactory.cpp" line="33"/>
         <source>Mplayer Plugin</source>
-        <translation>Mplayer Plugin</translation>
+        <translation>Mplayer-liitännäinen</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="36"/>
@@ -16,17 +16,17 @@
     <message>
         <location filename="../mplayerenginefactory.cpp" line="73"/>
         <source>About MPlayer Plugin</source>
-        <translation>Tietoja: MPlayer Plugin</translation>
+        <translation>Tietoja MPlayer-liitännäisestä</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="74"/>
         <source>Qmmp MPlayer Plugin</source>
-        <translation>Qmmp MPlayer Plugin</translation>
+        <translation>Qmmp:n MPlayer-liitännäinen</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="75"/>
         <source>This plugin uses MPlayer as backend</source>
-        <translation>Tämä laajennus käyttää tausta-ohjelmana MPlayeria</translation>
+        <translation>Tämä liitännäinen käyttää tausta-ohjelmana MPlayeria</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="76"/>
@@ -118,7 +118,7 @@
     <message>
         <location filename="../mplayersettingsdialog.ui" line="14"/>
         <source>MPlayer Settings</source>
-        <translation>Asetukset MPlayer</translation>
+        <translation>MPlayer-asetukset</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="34"/>

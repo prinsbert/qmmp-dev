@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="43"/>
         <source>FFap Plugin</source>
-        <translation>FFap 插件</translation>
+        <translation>FFap&#x3000;插件</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="45"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="150"/>
         <source>About FFap Audio Plugin</source>
-        <translation>关于 FFap 音频插件</translation>
+        <translation>关于FFap音频插件</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="151"/>
         <source>Qmmp FFap Audio Plugin</source>
-        <translation>Qmmp FFap 音频插件</translation>
+        <translation>Qmmp FFap&#x3000;音频插件</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="152"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="154"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
-        <translation>基于 deadbeef、FFmpeg 及 rockbox 所含代码</translation>
+        <translation>基于deadbeef、FFmpeg及rockbox所含代码</translation>
     </message>
 </context>
 <context>

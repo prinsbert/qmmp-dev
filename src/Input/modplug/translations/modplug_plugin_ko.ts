@@ -301,17 +301,17 @@ too high may cause clipping!</source>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="720"/>
         <source>Looping</source>
-        <translation>반복 재생</translation>
+        <translation>루핑</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="726"/>
         <source>Don&apos;t loop</source>
-        <translation>반복 안함</translation>
+        <translation>루프하지 않음</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="733"/>
         <source>Loop</source>
-        <translation>반복</translation>
+        <translation>루프</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="750"/>
@@ -321,7 +321,7 @@ too high may cause clipping!</source>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="770"/>
         <source>Loop forever</source>
-        <translation>무한 반복</translation>
+        <translation>끊임없이 루프</translation>
     </message>
 </context>
 </TS>

@@ -11,7 +11,7 @@
     <message>
         <location filename="../mmsinputfactory.cpp" line="51"/>
         <source>About MMS Transport Plugin</source>
-        <translation>Informazioni sull&apos;estensione transporto MMS</translation>
+        <translation>Informazioni estensione transporto MMS</translation>
     </message>
     <message>
         <location filename="../mmsinputfactory.cpp" line="52"/>

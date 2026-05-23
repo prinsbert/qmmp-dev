@@ -6,7 +6,7 @@
     <message>
         <location filename="../mmsinputfactory.cpp" line="32"/>
         <source>MMS Plugin</source>
-        <translation>MMS Plugin</translation>
+        <translation>MMS-liitännäinen</translation>
     </message>
     <message>
         <location filename="../mmsinputfactory.cpp" line="51"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../mmssettingsdialog.ui" line="14"/>
         <source>MMS Plugin Settings</source>
-        <translation>Asetukset MMS Plugin</translation>
+        <translation>MMS-liitännäisen asetukset</translation>
     </message>
     <message>
         <location filename="../mmssettingsdialog.ui" line="29"/>

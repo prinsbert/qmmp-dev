@@ -6,7 +6,7 @@
     <message>
         <location filename="../mpvenginefactory.cpp" line="47"/>
         <source>MPV Plugin</source>
-        <translation>MPV Plugin</translation>
+        <translation>MPV-liitännäinen</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="51"/>
@@ -16,17 +16,17 @@
     <message>
         <location filename="../mpvenginefactory.cpp" line="198"/>
         <source>About MPV Plugin</source>
-        <translation>Tietoja MPV Plugin</translation>
+        <translation>Tietoja MPV-liitännäisestä</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="199"/>
         <source>Qmmp MPV Plugin</source>
-        <translation>Qmmp MPV Plugin</translation>
+        <translation>Qmmp:n MPV-liitännäinen</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="200"/>
         <source>This plugin uses mpv as backend</source>
-        <translation>Tämä laajennus käyttää mpv:tä</translation>
+        <translation>Tämä liitännäinen käyttää mpv:tä taustaosana</translation>
     </message>
     <message>
         <location filename="../mpvenginefactory.cpp" line="201"/>
@@ -61,12 +61,12 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="70"/>
         <source>Audio bitrate</source>
-        <translation>Audio nopeus</translation>
+        <translation>Äänen bittinopeus</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
         <source>Audio sample rate</source>
-        <translation>Audio taajuus</translation>
+        <translation>Äänen näytteenottotaajuus</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="71"/>
@@ -77,12 +77,12 @@
         <location filename="../mpvmetadatamodel.cpp" line="73"/>
         <location filename="../mpvmetadatamodel.cpp" line="75"/>
         <source>Audio channels</source>
-        <translation>Audiokanavat</translation>
+        <translation>Äänikanavat</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="79"/>
         <source>Audio format</source>
-        <translation>Audio formaatti</translation>
+        <translation>Äänimuoto</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="85"/>
@@ -92,12 +92,12 @@
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="86"/>
         <source>Video bitrate</source>
-        <translation>Videon nopeus</translation>
+        <translation>Videon bittinopeus</translation>
     </message>
     <message>
         <location filename="../mpvmetadatamodel.cpp" line="89"/>
         <source>Video format</source>
-        <translation>Videoformaatti</translation>
+        <translation>Videomuoto</translation>
     </message>
 </context>
 </TS>

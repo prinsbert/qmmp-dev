@@ -21,12 +21,12 @@
     <message>
         <location filename="../goomwidget.cpp" line="191"/>
         <source>50 fps</source>
-        <translation>50 幀/秒</translation>
+        <translation>50 fps</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="192"/>
         <source>25 fps</source>
-        <translation>25 幀/秒</translation>
+        <translation>25 fps</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="198"/>

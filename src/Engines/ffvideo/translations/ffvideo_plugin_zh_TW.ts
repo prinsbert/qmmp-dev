@@ -112,7 +112,7 @@
         <location filename="../videowindow.cpp" line="51"/>
         <location filename="../videowindow.cpp" line="70"/>
         <source>&amp;Pause</source>
-        <translation>暫停(&amp;P)</translation>
+        <translation>貼上(&amp;P)</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="46"/>

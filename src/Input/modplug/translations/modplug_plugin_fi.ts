@@ -6,7 +6,7 @@
     <message>
         <location filename="../decodermodplugfactory.cpp" line="45"/>
         <source>ModPlug Plugin</source>
-        <translation>ModPlug Plugin</translation>
+        <translation>ModPlug-liitännäinen</translation>
     </message>
     <message>
         <location filename="../decodermodplugfactory.cpp" line="51"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../decodermodplugfactory.cpp" line="135"/>
         <source>About ModPlug Audio Plugin</source>
-        <translation>Tietoja: ModPlug Audio Plugin</translation>
+        <translation>Tietoja ModPlug-ääniliitännäisestä</translation>
     </message>
     <message>
         <location filename="../decodermodplugfactory.cpp" line="136"/>
         <source>Qmmp ModPlug Audio Plugin</source>
-        <translation>Qmmp ModPlug Audio Plugin</translation>
+        <translation>Qmmp:n ModPlug-ääniliitännäinen</translation>
     </message>
     <message>
         <location filename="../decodermodplugfactory.cpp" line="137"/>
@@ -31,12 +31,12 @@
     <message>
         <location filename="../decodermodplugfactory.cpp" line="138"/>
         <source>Based on the Modplug Plugin for Xmms</source>
-        <translation>Perustuu Xmms Modplug Plugin</translation>
+        <translation>Perustuu Xmms:n Modplug-liitännäiseen</translation>
     </message>
     <message>
         <location filename="../decodermodplugfactory.cpp" line="139"/>
         <source>Modplug Plugin developers:</source>
-        <translation>Modplug Plugin kehittäjät:</translation>
+        <translation>Modplug-liitännäisen kehittäjät:</translation>
     </message>
     <message>
         <location filename="../decodermodplugfactory.cpp" line="140"/>
@@ -99,7 +99,7 @@
     <message>
         <location filename="../modplugsettingsdialog.ui" line="14"/>
         <source>ModPlug Plugin Settings</source>
-        <translation>Asetukset ModPlug Plugin</translation>
+        <translation>ModPlug-liitännäisen asetukset</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="33"/>

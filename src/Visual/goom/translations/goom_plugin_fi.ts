@@ -56,12 +56,12 @@
     <message>
         <location filename="../visualgoomfactory.cpp" line="49"/>
         <source>About Goom Visual Plugin</source>
-        <translation>Tietoja: Goom Visual Plugin</translation>
+        <translation>Tietoja Goom-visuaaliliitännäisestä</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="50"/>
         <source>Qmmp Goom Visual Plugin</source>
-        <translation>Qmmp Goom Visual Plugin</translation>
+        <translation>Qmmp:n Goom-visuaaliliitännäinen</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="51"/>
