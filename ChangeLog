@@ -12,6 +12,7 @@ Version 2.3.3
   - added libsidplayfp 3.0 support
   - added feature to build without residfp engine
   - fixed memory leak
+  - fixed displaying audio information
 * updated Japanese translation (coolvitto)
 
 Version 2.3.2
