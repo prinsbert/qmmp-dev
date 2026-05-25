@@ -1,4 +1,4 @@
-謝辞:
+謝辞 :
 
     Adria Arrufat <swiftscythe@gmail.com> - bug reports
     Adrian Knoth <adi@drcomp.erfurt.thur.de> - JACK plugin fixes, bug reports

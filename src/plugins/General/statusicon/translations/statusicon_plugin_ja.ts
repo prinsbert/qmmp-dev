@@ -16,7 +16,7 @@
     <message>
         <location filename="../statusicon.cpp" line="72"/>
         <source>Stop</source>
-        <translation>終止</translation>
+        <translation>停止</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="74"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../statusiconfactory.cpp" line="51"/>
         <source>Written by:</source>
-        <translation>制作:</translation>
+        <translation>制作 :</translation>
     </message>
     <message>
         <location filename="../statusiconfactory.cpp" line="52"/>
@@ -93,7 +93,7 @@
         <location filename="../statusiconsettingsdialog.ui" line="38"/>
         <location filename="../statusiconsettingsdialog.ui" line="105"/>
         <source>Delay, ms:</source>
-        <translation>残映時間 (ミリ秒):</translation>
+        <translation>残映時間 (ミリ秒) :</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="79"/>
@@ -113,7 +113,7 @@
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="131"/>
         <source>Transparency:</source>
-        <translation>透明度:</translation>
+        <translation>透明度 :</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="165"/>
@@ -123,7 +123,7 @@
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="174"/>
         <source>Cover size:</source>
-        <translation>表紙画像の大きさ:</translation>
+        <translation>表紙画像の大きさ :</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="214"/>

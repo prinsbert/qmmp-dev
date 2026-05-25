@@ -67,7 +67,7 @@
     <message>
         <location filename="../lyricssettingsdialog.ui" line="29"/>
         <source>Lyrics providers:</source>
-        <translation>歌詞プロバイダー:</translation>
+        <translation>歌詞プロバイダー :</translation>
     </message>
     <message>
         <location filename="../lyricssettingsdialog.ui" line="39"/>
@@ -85,32 +85,32 @@
     <message>
         <location filename="../lyricswidget.ui" line="31"/>
         <source>Provider:</source>
-        <translation>プロバイダー:</translation>
+        <translation>プロバイダー :</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="115"/>
         <source>Title:</source>
-        <translation>タイトル:</translation>
+        <translation>タイトル :</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="132"/>
         <source>Album:</source>
-        <translation>アルバム:</translation>
+        <translation>アルバム :</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="142"/>
         <source>Artist:</source>
-        <translation>アーティスト:</translation>
+        <translation>アーティスト :</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="159"/>
         <source>Track:</source>
-        <translation>トラック:</translation>
+        <translation>トラック :</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="171"/>
         <source>Year:</source>
-        <translation>年:</translation>
+        <translation>年 :</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="114"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="184"/>
         <source>Error: %1 - %2</source>
-        <translation>エラー: %1 - %2</translation>
+        <translation>エラー : %1 - %2</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="197"/>
@@ -154,7 +154,7 @@
     <message>
         <location filename="../ultimatelyricsparser.cpp" line="116"/>
         <source>%1 (line: %2)</source>
-        <translation>%1 (行: %2)</translation>
+        <translation>%1 (行 : %2)</translation>
     </message>
 </context>
 </TS>

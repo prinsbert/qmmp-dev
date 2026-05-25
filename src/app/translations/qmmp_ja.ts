@@ -104,7 +104,7 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="532"/>
         <source>Options:</source>
-        <translation>オプション:</translation>
+        <translation>オプション :</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="538"/>
@@ -139,17 +139,17 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="545"/>
         <source>Home page: %1</source>
-        <translation>ホームページ: %1</translation>
+        <translation>ホームページ : %1</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="546"/>
         <source>Development page: %1</source>
-        <translation>開発者のページ: %1</translation>
+        <translation>開発者のページ : %1</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="547"/>
         <source>Bug tracker: %1</source>
-        <translation>バグトラッカー: %1</translation>
+        <translation>バグトラッカー : %1</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="183"/>
@@ -160,17 +160,17 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="565"/>
         <source>QMMP version: %1</source>
-        <translation>QMMP のバージョン: %1</translation>
+        <translation>QMMP のバージョン : %1</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="566"/>
         <source>Compiled with Qt version: %1</source>
-        <translation>コンパイルに使用した Qt のバージョン: %1</translation>
+        <translation>コンパイルに使用した Qt のバージョン : %1</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="567"/>
         <source>Using Qt version: %1</source>
-        <translation>現在使用中の Qt のバージョン: %1</translation>
+        <translation>現在使用中の Qt のバージョン : %1</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="570"/>

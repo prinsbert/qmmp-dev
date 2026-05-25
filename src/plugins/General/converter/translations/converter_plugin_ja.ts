@@ -51,17 +51,17 @@
     <message>
         <location filename="../converterdialog.ui" line="63"/>
         <source>Output directory:</source>
-        <translation>出力先ディレクトリ:</translation>
+        <translation>出力先ディレクトリ :</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="80"/>
         <source>Output file name:</source>
-        <translation>出力ファイルの名前:</translation>
+        <translation>出力ファイル名 :</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="97"/>
         <source>Preset:</source>
-        <translation>プリセット:</translation>
+        <translation>プリセット :</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="114"/>
@@ -187,12 +187,12 @@
     <message>
         <location filename="../converterpreseteditor.ui" line="35"/>
         <source>Name:</source>
-        <translation>名前:</translation>
+        <translation>名前 :</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="45"/>
         <source>Extension:</source>
-        <translation>拡張:</translation>
+        <translation>拡張 :</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="58"/>

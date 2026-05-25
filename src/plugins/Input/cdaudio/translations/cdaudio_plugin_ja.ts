@@ -11,12 +11,12 @@
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="139"/>
         <source>Override device:</source>
-        <translation>オーバーライドするデバイス:</translation>
+        <translation>オーバーライドするデバイス :</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="129"/>
         <source>Limit cd speed:</source>
-        <translation>CD 回転速度の限度:</translation>
+        <translation>CD 回転速度の限度 :</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="122"/>
@@ -36,17 +36,17 @@
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="58"/>
         <source>Server:</source>
-        <translation>サーバー:</translation>
+        <translation>サーバー :</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="65"/>
         <source>Path:</source>
-        <translation>パス:</translation>
+        <translation>パス :</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="75"/>
         <source>Port:</source>
-        <translation>ポート:</translation>
+        <translation>ポート :</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="87"/>
@@ -74,12 +74,12 @@
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="101"/>
         <source>Compiled against libcdio-%1 and libcddb-%2</source>
-        <translation>libcdio-%1 と libcddb-%2 を使用してコンパイル</translation>
+        <translation>libcdio-%1 と libcddb-%2 に対してコンパイル済み</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="104"/>
         <source>Compiled against libcdio-%1</source>
-        <translation>Compiled against libcdio-%1</translation>
+        <translation>libcdio-%1 に対してコンパイル済み</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="107"/>

@@ -40,7 +40,7 @@
         <location filename="../scrobblersettingsdialog.ui" line="31"/>
         <location filename="../scrobblersettingsdialog.ui" line="104"/>
         <source>Session:</source>
-        <translation>セッション:</translation>
+        <translation>セッション :</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="41"/>

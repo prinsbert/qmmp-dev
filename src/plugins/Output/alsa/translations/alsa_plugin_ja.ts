@@ -26,12 +26,12 @@
     <message>
         <location filename="../alsasettingsdialog.ui" line="94"/>
         <source>Mixer card:</source>
-        <translation>ミキサーカード:</translation>
+        <translation>ミキサーカード :</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="104"/>
         <source>Mixer device:</source>
-        <translation>ミキサーデバイス:</translation>
+        <translation>ミキサーデバイス :</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="121"/>
@@ -46,12 +46,12 @@
     <message>
         <location filename="../alsasettingsdialog.ui" line="148"/>
         <source>Buffer time (ms):</source>
-        <translation>バッファー時間 (ミリ秒):</translation>
+        <translation>バッファー時間 (ミリ秒) :</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="184"/>
         <source>Period time (ms):</source>
-        <translation>割り込み間隔 (ミリ秒):</translation>
+        <translation>割り込み間隔 (ミリ秒) :</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="220"/>

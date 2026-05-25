@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderffmpegfactory.cpp" line="351"/>
         <source>Compiled against:</source>
-        <translation>コンパイルに使用したライブラリ:</translation>
+        <translation>コンパイルに使用したライブラリ :</translation>
     </message>
     <message>
         <location filename="../decoderffmpegfactory.cpp" line="368"/>

@@ -26,12 +26,12 @@
     <message>
         <location filename="../decoderflacfactory.cpp" line="280"/>
         <source>Compiled against:</source>
-        <translation>コンパイルに使用したライブラリ:</translation>
+        <translation>コンパイルに使用したライブラリ :</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="281"/>
         <source>FLAC, API version: %1</source>
-        <translation>FLAC, API バージョン: %1</translation>
+        <translation>FLAC, API バージョン : %1</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="283"/>

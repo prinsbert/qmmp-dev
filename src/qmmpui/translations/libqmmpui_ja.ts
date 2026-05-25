@@ -26,7 +26,7 @@
     <message>
         <location filename="../forms/aboutdialog.ui" line="91"/>
         <source>Thanks To</source>
-        <translation>謝辞:</translation>
+        <translation>謝辞 :</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="105"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../aboutdialog.cpp" line="72"/>
         <source>Version: %1</source>
-        <translation>バージョン: %1</translation>
+        <translation>バージョン : %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="79"/>
@@ -56,32 +56,32 @@
     <message>
         <location filename="../aboutdialog.cpp" line="90"/>
         <source>Decoders:</source>
-        <translation>デコーダー:</translation>
+        <translation>デコーダー :</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="98"/>
         <source>Engines:</source>
-        <translation>エンジン:</translation>
+        <translation>エンジン :</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="105"/>
         <source>Effects:</source>
-        <translation>音響効果:</translation>
+        <translation>音響効果 :</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="134"/>
         <source>File dialogs:</source>
-        <translation>ファイルダイアログ:</translation>
+        <translation>ファイルダイアログ :</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="143"/>
         <source>User interfaces:</source>
-        <translation>ユーザーインターフェイス:</translation>
+        <translation>ユーザーインターフェイス :</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="126"/>
         <source>Output plugins:</source>
-        <translation>出力側プラグイン:</translation>
+        <translation>出力側プラグイン :</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="73"/>
@@ -91,27 +91,27 @@
     <message>
         <location filename="../aboutdialog.cpp" line="74"/>
         <source>Qt platform: %1</source>
-        <translation>Qt プラットフォーム: %1</translation>
+        <translation>Qt プラットフォーム : %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="75"/>
         <source>System: %1</source>
-        <translation>システム: %1</translation>
+        <translation>システム : %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="76"/>
         <source>Build ABI: %1</source>
-        <translation>ビルド ABI: %1</translation>
+        <translation>ビルド ABI : %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="113"/>
         <source>Visual plugins:</source>
-        <translation>視覚効果プラグイン:</translation>
+        <translation>視覚効果プラグイン :</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="120"/>
         <source>General plugins:</source>
-        <translation>一般プラグイン:</translation>
+        <translation>一般プラグイン :</translation>
     </message>
 </context>
 <context>
@@ -150,12 +150,12 @@
     <message>
         <location filename="../forms/columneditor.ui" line="36"/>
         <source>Name:</source>
-        <translation>名前:</translation>
+        <translation>名前 :</translation>
     </message>
     <message>
         <location filename="../forms/columneditor.ui" line="76"/>
         <source>Format:</source>
-        <translation>形式:</translation>
+        <translation>形式 :</translation>
     </message>
     <message>
         <location filename="../forms/columneditor.ui" line="64"/>
@@ -165,7 +165,7 @@
     <message>
         <location filename="../forms/columneditor.ui" line="29"/>
         <source>Type:</source>
-        <translation>種類:</translation>
+        <translation>種類 :</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="86"/>
@@ -324,7 +324,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="226"/>
         <source>Group format:</source>
-        <translation>グループの形式:</translation>
+        <translation>グループの形式 :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="242"/>
@@ -346,7 +346,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="202"/>
         <source>Group size:</source>
-        <translation>グループサイズ:</translation>
+        <translation>グループサイズ :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="219"/>
@@ -356,7 +356,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="251"/>
         <source>Extra row format:</source>
-        <translation>追加行の形式:</translation>
+        <translation>追加行の形式 :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="276"/>
@@ -376,7 +376,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="299"/>
         <source>Restrict files to:</source>
-        <translation>ファイルを限定(拡張子による):</translation>
+        <translation>ファイルを限定(拡張子による) :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="306"/>
@@ -390,7 +390,7 @@
         <location filename="../forms/configdialog.ui" line="316"/>
         <location filename="../forms/configdialog.ui" line="611"/>
         <source>Exclude files:</source>
-        <translation>除外ファイル形式:</translation>
+        <translation>除外ファイル形式 :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="336"/>
@@ -439,7 +439,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="501"/>
         <source>Language:</source>
-        <translation>言語:</translation>
+        <translation>言語 :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="534"/>
@@ -464,7 +464,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="564"/>
         <source>Add files from command line to this playlist:</source>
-        <translation>コマンドラインからこのプレイリストにファイルを追加:</translation>
+        <translation>コマンドラインからこのプレイリストにファイルを追加 :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="581"/>
@@ -479,12 +479,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="597"/>
         <source>Include files:</source>
-        <translation>含めるファイル:</translation>
+        <translation>含めるファイル :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="627"/>
         <source>Recursive search depth:</source>
-        <translation>再帰検索の深度:</translation>
+        <translation>再帰検索の深度 :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="665"/>
@@ -509,7 +509,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="708"/>
         <source>Font:</source>
-        <translation>フォント:</translation>
+        <translation>フォント :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="733"/>
@@ -529,17 +529,17 @@
     <message>
         <location filename="../forms/configdialog.ui" line="791"/>
         <source>Proxy type:</source>
-        <translation>プロキシの種類:</translation>
+        <translation>プロキシの種類 :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="801"/>
         <source>Proxy host name:</source>
-        <translation>プロキシホスト名:</translation>
+        <translation>プロキシホスト名 :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="818"/>
         <source>Proxy port:</source>
-        <translation>プロキシポート:</translation>
+        <translation>プロキシポート :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="835"/>
@@ -549,12 +549,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="842"/>
         <source>Proxy user name:</source>
-        <translation>プロキシユーザー名:</translation>
+        <translation>プロキシユーザー名 :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="859"/>
         <source>Proxy password:</source>
-        <translation>プロキシパスワード:</translation>
+        <translation>プロキシパスワード :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="899"/>
@@ -564,12 +564,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="905"/>
         <source>Replay Gain mode:</source>
-        <translation>リプレイゲインモード:</translation>
+        <translation>リプレイゲインモード :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="922"/>
         <source>Preamp:</source>
-        <translation>プリアンプ:</translation>
+        <translation>プリアンプ :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="954"/>
@@ -580,7 +580,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="967"/>
         <source>Default gain:</source>
-        <translation>デフォルトゲイン:</translation>
+        <translation>デフォルトゲイン :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1019"/>
@@ -590,7 +590,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="1035"/>
         <source>Buffer size:</source>
-        <translation>バッファーサイズ:</translation>
+        <translation>バッファーサイズ :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1061"/>
@@ -610,7 +610,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="1077"/>
         <source>Volume adjustment step:</source>
-        <translation>音量調整ステップ:</translation>
+        <translation>音量調整ステップ :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="356"/>
@@ -625,7 +625,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="1101"/>
         <source>Output bit depth:</source>
-        <translation>出力ビット深度:</translation>
+        <translation>出力ビット深度 :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1042"/>
@@ -884,7 +884,7 @@
     <message>
         <location filename="../forms/covereditor.ui" line="22"/>
         <source>Image source:</source>
-        <translation>画像のソース:</translation>
+        <translation>画像のソース :</translation>
     </message>
     <message>
         <location filename="../forms/covereditor.ui" line="76"/>
@@ -947,7 +947,7 @@
         <location filename="../cueeditor.cpp" line="135"/>
         <location filename="../cueeditor.cpp" line="158"/>
         <source>CUE Files</source>
-        <translation>CUE ファイル</translation>
+        <translation>キューファイル</translation>
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="156"/>
@@ -1469,37 +1469,37 @@
     <message>
         <location filename="../forms/tageditor.ui" line="38"/>
         <source>Title:</source>
-        <translation>タイトル:</translation>
+        <translation>タイトル :</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="64"/>
         <source>Artist:</source>
-        <translation>アーティスト:</translation>
+        <translation>アーティスト :</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="90"/>
         <source>Album:</source>
-        <translation>アルバム:</translation>
+        <translation>アルバム :</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="113"/>
         <source>Album artist:</source>
-        <translation>アルバムアーティスト:</translation>
+        <translation>アルバムアーティスト :</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="123"/>
         <source>Composer:</source>
-        <translation>作曲者:</translation>
+        <translation>作曲者 :</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="143"/>
         <source>Genre:</source>
-        <translation>ジャンル:</translation>
+        <translation>ジャンル :</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="169"/>
         <source>Track:</source>
-        <translation>トラック:</translation>
+        <translation>トラック :</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="190"/>
@@ -1511,17 +1511,17 @@
     <message>
         <location filename="../forms/tageditor.ui" line="203"/>
         <source>Year:</source>
-        <translation>年:</translation>
+        <translation>年 :</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="250"/>
         <source>Disc number:</source>
-        <translation>ディスク番号:</translation>
+        <translation>ディスク番号 :</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="275"/>
         <source>Comment:</source>
-        <translation>コメント:</translation>
+        <translation>コメント :</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="311"/>
@@ -1621,7 +1621,7 @@ Do you want to replace it?</source>
     <message>
         <location filename="../forms/winfileassocpage.ui" line="43"/>
         <source>Media files handled by Qmmp:</source>
-        <translation>QMMP が扱うメディアファイル:</translation>
+        <translation>QMMP が扱うメディアファイル :</translation>
     </message>
     <message>
         <location filename="../forms/winfileassocpage.ui" line="17"/>

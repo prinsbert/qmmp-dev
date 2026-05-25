@@ -39,7 +39,7 @@
     <message>
         <location filename="../qmmpfiledialog.ui" line="124"/>
         <source>File name:</source>
-        <translation>ファイル名:</translation>
+        <translation>ファイル名 :</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="140"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../qmmpfiledialog.ui" line="147"/>
         <source>Files of type:</source>
-        <translation>ファイルの種類:</translation>
+        <translation>ファイルの種類 :</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="173"/>

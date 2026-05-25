@@ -26,12 +26,12 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="419"/>
         <source>Compiled against:</source>
-        <translation>コンパイルに使用したライブラリ:</translation>
+        <translation>コンパイルに使用したライブラリ :</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="428"/>
         <source>mpg123, API version: %1</source>
-        <translation>mpg123, API version: %1</translation>
+        <translation>mpg123, API バージョン : %1</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="432"/>
@@ -105,7 +105,7 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="99"/>
         <source>First:</source>
-        <translation>第一:</translation>
+        <translation>第一 :</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="119"/>
@@ -138,12 +138,12 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="148"/>
         <source>Second:</source>
-        <translation>第二:</translation>
+        <translation>第二 :</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="197"/>
         <source>Third:</source>
-        <translation>第三:</translation>
+        <translation>第三 :</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="253"/>
@@ -158,12 +158,12 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="294"/>
         <source>ID3v2 encoding:</source>
-        <translation>ID3v2 エンコーディング:</translation>
+        <translation>ID3v2 エンコーディング :</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="333"/>
         <source>ID3v1 encoding:</source>
-        <translation>ID3v1 エンコーディング:</translation>
+        <translation>ID3v1 エンコーディング :</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="343"/>

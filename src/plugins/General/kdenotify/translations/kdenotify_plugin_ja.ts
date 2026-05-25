@@ -6,7 +6,7 @@
     <message>
         <location filename="../kdenotify.cpp" line="120"/>
         <source>Qmmp now playing:</source>
-        <translation>QMMP | 今の曲:</translation>
+        <translation>QMMPで再生中 :</translation>
     </message>
 </context>
 <context>
@@ -14,7 +14,7 @@
     <message>
         <location filename="../kdenotifyfactory.cpp" line="29"/>
         <source>KDE notification plugin</source>
-        <translation>KDE notification plugin</translation>
+        <translation>KDE 通知プラグイン</translation>
     </message>
     <message>
         <location filename="../kdenotifyfactory.cpp" line="49"/>
@@ -24,7 +24,7 @@
     <message>
         <location filename="../kdenotifyfactory.cpp" line="50"/>
         <source>KDE notification plugin for Qmmp</source>
-        <translation>KDE notification plugin for Qmmp</translation>
+        <translation>KDE 通知プラグイン for Qmmp</translation>
     </message>
 </context>
 <context>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="14"/>
         <source>KDE Notification Plugin Settings</source>
-        <translation>KDE Notification Plugin 設定</translation>
+        <translation>KDE 通知プラグイン 設定</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="39"/>
@@ -42,7 +42,7 @@
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="45"/>
         <source>Notification delay:</source>
-        <translation>通知の遅延:</translation>
+        <translation>通知の遅延 :</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="52"/>

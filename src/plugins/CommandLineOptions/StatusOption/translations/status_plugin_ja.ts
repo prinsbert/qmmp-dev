@@ -21,7 +21,7 @@
     <message>
         <location filename="../statusoption.cpp" line="94"/>
         <source>Syntax:</source>
-        <translation>構文:</translation>
+        <translation>構文 :</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="95"/>

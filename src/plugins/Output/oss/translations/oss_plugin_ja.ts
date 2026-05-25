@@ -36,12 +36,12 @@
     <message>
         <location filename="../osssettingsdialog.ui" line="196"/>
         <source>Buffer time (ms):</source>
-        <translation>バッファー時間 (ミリ秒):</translation>
+        <translation>バッファー時間 (ミリ秒) :</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="206"/>
         <source>Period time (ms):</source>
-        <translation>割り込み間隔 (ミリ秒):</translation>
+        <translation>割り込み間隔 (ミリ秒) :</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="236"/>

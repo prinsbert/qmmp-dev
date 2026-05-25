@@ -67,6 +67,7 @@ Włoski:
 
 Japoński:
     Ryota Shimamoto <liangtai.s16@gmail.com>
+    coolvitto
 
 Kazachski:
     Baurzhan Muftakhidinov <baurthefirst@gmail.com>

@@ -21,7 +21,7 @@
     <message>
         <location filename="../outputshoutfactory.cpp" line="65"/>
         <source>Compiled against libshout-%1</source>
-        <translation>libshout-%1 を使用してコンパイル</translation>
+        <translation>libshout-%1  に対してコンパイル済み</translation>
     </message>
     <message>
         <location filename="../outputshoutfactory.cpp" line="66"/>
@@ -44,27 +44,27 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="35"/>
         <source>Host:</source>
-        <translation>ホスト:</translation>
+        <translation>ホスト :</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="45"/>
         <source>Port:</source>
-        <translation>ポート:</translation>
+        <translation>ポート :</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="59"/>
         <source>Mount point:</source>
-        <translation>マウントポイント:</translation>
+        <translation>マウントポイント :</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="69"/>
         <source>User:</source>
-        <translation>ユーザー:</translation>
+        <translation>ユーザー :</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="79"/>
         <source>Password:</source>
-        <translation>パスワード:</translation>
+        <translation>パスワード :</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="99"/>
@@ -74,12 +74,12 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="105"/>
         <source>Quality:</source>
-        <translation>音質:</translation>
+        <translation>音質 :</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="125"/>
         <source>Sample rate:</source>
-        <translation>サンプルレート:</translation>
+        <translation>サンプルレート :</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="154"/>
@@ -89,22 +89,22 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="160"/>
         <source>Name:</source>
-        <translation>名前:</translation>
+        <translation>名前 :</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="170"/>
         <source>URL:</source>
-        <translation>URL:</translation>
+        <translation>URL :</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="180"/>
         <source>Genre:</source>
-        <translation>ジャンル:</translation>
+        <translation>ジャンル :</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="190"/>
         <source>Description:</source>
-        <translation>説明:</translation>
+        <translation>説明 :</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="89"/>

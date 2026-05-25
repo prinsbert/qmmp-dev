@@ -30,7 +30,7 @@
     <message>
         <location filename="../libraryfactory.cpp" line="33"/>
         <source>Media Library Plugin</source>
-        <translation>Media Library Plugin</translation>
+        <translation>メディアライブラリ プラグイン</translation>
     </message>
     <message>
         <location filename="../libraryfactory.cpp" line="38"/>
@@ -45,12 +45,12 @@
     <message>
         <location filename="../libraryfactory.cpp" line="84"/>
         <source>About Media Library Plugin</source>
-        <translation>About Media Library Plugin</translation>
+        <translation>メディアライブラリ プラグイン について</translation>
     </message>
     <message>
         <location filename="../libraryfactory.cpp" line="85"/>
         <source>Qmmp Media Library Plugin</source>
-        <translation>Qmmp Media Library Plugin</translation>
+        <translation>Qmmp メディアライブラリ プラグイン</translation>
     </message>
     <message>
         <location filename="../libraryfactory.cpp" line="86"/>
@@ -129,22 +129,22 @@
     <message>
         <location filename="../librarymodel.cpp" line="391"/>
         <source>Number of tracks: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation>トラック数: &lt;b&gt;%1&lt;/b&gt;</translation>
+        <translation>トラック数 : &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="392"/>
         <source>Number of albums: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation>アルバム数: &lt;b&gt;%1&lt;/b&gt;</translation>
+        <translation>アルバム数 : &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="393"/>
         <source>Number of artists: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation>アーティスト数: &lt;b&gt;%1&lt;/b&gt;</translation>
+        <translation>アーティスト数 : &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="394"/>
         <source>Total duration: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation>合計再生時間: &lt;b&gt;%1&lt;/b&gt;</translation>
+        <translation>合計再生時間 : &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="397"/>
@@ -182,7 +182,7 @@
     <message>
         <location filename="../librarysettingsdialog.ui" line="95"/>
         <source>List of directories for scanning:</source>
-        <translation>スキャン対象のディレクトリ一:</translation>
+        <translation>スキャン対象のディレクトリ :</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.cpp" line="65"/>
@@ -215,7 +215,7 @@
     <message>
         <location filename="../librarywidget.cpp" line="56"/>
         <source>&amp;Library Information</source>
-        <translation>ライブラリ情(&amp;L)</translation>
+        <translation>ライブラリ情報(&amp;L)</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="90"/>

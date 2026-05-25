@@ -11,7 +11,7 @@
     <message>
         <location filename="../oss4settingsdialog.ui" line="61"/>
         <source>Device:</source>
-        <translation>出力デバイス:</translation>
+        <translation>出力デバイス :</translation>
     </message>
     <message>
         <location filename="../oss4settingsdialog.cpp" line="69"/>

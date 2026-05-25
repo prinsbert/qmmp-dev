@@ -26,7 +26,7 @@
     <message>
         <location filename="../decodersndfilefactory.cpp" line="319"/>
         <source>Compiled against:</source>
-        <translation>コンパイルに使用したライブラリ:</translation>
+        <translation>コンパイルに使用したライブラリ :</translation>
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="322"/>

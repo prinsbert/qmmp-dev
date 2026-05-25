@@ -67,6 +67,7 @@ Italia:
 
 Japani:
     Ryota Shimamoto <liangtai.s16@gmail.com>
+    coolvitto
 
 Kazakstan:
     Baurzhan Muftakhidinov <baurthefirst@gmail.com>

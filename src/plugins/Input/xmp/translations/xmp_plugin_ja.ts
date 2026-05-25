@@ -31,7 +31,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>Compiled against libxmp-%1</source>
-        <translation>libxmp-%1 を使用してコンパイル</translation>
+        <translation>libxmp-%1  に対してコンパイル済み</translation>
     </message>
 </context>
 <context>
@@ -107,12 +107,12 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="34"/>
         <source>Amplification factor:</source>
-        <translation> 増幅率:</translation>
+        <translation> 増幅率 :</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="51"/>
         <source>Stereo mixing:</source>
-        <translation>ステレオミキシング:</translation>
+        <translation>ステレオミキシング :</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="68"/>
@@ -137,7 +137,7 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation>サンプルレート:</translation>
+        <translation>サンプルレート :</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="109"/>

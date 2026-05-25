@@ -34,12 +34,12 @@
     <message>
         <location filename="../soxrsettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation>サンプルレート (Hz):</translation>
+        <translation>サンプルレート (Hz) :</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.ui" line="40"/>
         <source>Quality:</source>
-        <translation>音質:</translation>
+        <translation>音質 :</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="34"/>
