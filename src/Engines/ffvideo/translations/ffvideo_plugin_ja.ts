@@ -59,7 +59,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="50"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="79"/>
         <source>Audio format</source>
-        <translation type="unfinished"></translation>
+        <translation>オーディオ形式</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="85"/>
@@ -97,7 +97,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="89"/>
         <source>Video format</source>
-        <translation type="unfinished"></translation>
+        <translation>映像の形式</translation>
     </message>
 </context>
 <context>
@@ -147,12 +147,12 @@
     <message>
         <location filename="../videowindow.cpp" line="75"/>
         <source>&amp;Resume</source>
-        <translation type="unfinished"></translation>
+        <translation>再開(&amp;R)</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="80"/>
         <source>&amp;Play</source>
-        <translation type="unfinished"></translation>
+        <translation>再生(&amp;Y)</translation>
     </message>
 </context>
 </TS>
