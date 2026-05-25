@@ -6,17 +6,17 @@
     <message>
         <location filename="../listenbrainzfactory.cpp" line="30"/>
         <source>ListenBrainz Plugin</source>
-        <translation>ListenBrainz Plugin</translation>
+        <translation>ListenBrainz プラグイン</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="50"/>
         <source>About ListenBrainz Plugin</source>
-        <translation>About ListenBrainz Plugin</translation>
+        <translation>ListenBrainz プラグイン について</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="51"/>
         <source>Qmmp ListenBrainz Plugin</source>
-        <translation>Qmmp ListenBrainz Plugin</translation>
+        <translation>Qmmp ListenBrainz プラグイン</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="52"/>
@@ -34,12 +34,12 @@
     <message>
         <location filename="../listenbrainzsettingsdialog.ui" line="14"/>
         <source>ListenBrainz Plugin Settings</source>
-        <translation>ListenBrainz Plugin Settings</translation>
+        <translation>ListenBrainz プラグインの設定</translation>
     </message>
     <message>
         <location filename="../listenbrainzsettingsdialog.ui" line="29"/>
         <source>ListenBrainz user token:</source>
-        <translation>ListenBrainz user token:</translation>
+        <translation>ListenBrainz user token :</translation>
     </message>
 </context>
 </TS>

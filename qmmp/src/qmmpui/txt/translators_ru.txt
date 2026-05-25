@@ -67,6 +67,7 @@
 
 Японский:
     Рёта Симамото <liangtai.s16@gmail.com>
+    coolvitto
 
 Казахский:
     Бауржан Муфтахидинов <baurthefirst@gmail.com>

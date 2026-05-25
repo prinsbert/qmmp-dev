@@ -39,7 +39,7 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="51"/>
         <source>Font:</source>
-        <translation>フォント:</translation>
+        <translation>フォント :</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="71"/>
@@ -55,7 +55,7 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="85"/>
         <source>Transparency:</source>
-        <translation>透明度:</translation>
+        <translation>透明度 :</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="229"/>
@@ -70,7 +70,7 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="299"/>
         <source>Cover size:</source>
-        <translation>表紙画像の大きさ:</translation>
+        <translation>表紙画像の大きさ :</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="325"/>
@@ -80,7 +80,7 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="332"/>
         <source>Delay (ms):</source>
-        <translation>待ち時間 (ミリ秒):</translation>
+        <translation>遅延 (ミリ秒) :</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="361"/>
@@ -123,7 +123,7 @@
     <message>
         <location filename="../popupwidget.cpp" line="115"/>
         <source>Volume:</source>
-        <translation>音量:</translation>
+        <translation>音量 :</translation>
     </message>
 </context>
 </TS>

@@ -34,12 +34,12 @@
     <message>
         <location filename="../wasapisettingsdialog.ui" line="35"/>
         <source>Device:</source>
-        <translation>出力デバイス:</translation>
+        <translation>出力デバイス :</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="55"/>
         <source>Buffer size:</source>
-        <translation>バッファサイズ:</translation>
+        <translation>バッファサイズ :</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="62"/>

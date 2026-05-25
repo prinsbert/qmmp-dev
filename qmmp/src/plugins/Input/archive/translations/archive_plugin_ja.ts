@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderarchivefactory.cpp" line="168"/>
         <source>Compiled against:</source>
-        <translation>コンパイルに使用したライブラリ:</translation>
+        <translation>コンパイルに使用したライブラリ :</translation>
     </message>
     <message>
         <location filename="../decoderarchivefactory.cpp" line="171"/>

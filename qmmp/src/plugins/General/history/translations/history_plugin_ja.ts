@@ -52,7 +52,7 @@
     <message>
         <location filename="../historysettingsdialog.ui" line="31"/>
         <source>Title format:</source>
-        <translation>タイトルの形式:</translation>
+        <translation>タイトルの形式 :</translation>
     </message>
 </context>
 <context>
@@ -71,12 +71,12 @@
     <message>
         <location filename="../historywindow.ui" line="35"/>
         <source>From:</source>
-        <translation>自:</translation>
+        <translation>自 :</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="49"/>
         <source>To:</source>
-        <translation>至:</translation>
+        <translation>至 :</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="63"/>

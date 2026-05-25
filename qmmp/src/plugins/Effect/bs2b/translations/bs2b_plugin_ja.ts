@@ -65,12 +65,12 @@
     <message>
         <location filename="../effectbs2bfactory.cpp" line="57"/>
         <source>Compiled against libbs2b-%1</source>
-        <translation>libbs2b-%1 対応でコンパイル</translation>
+        <translation>libbs2b-%1  に対してコンパイル済み</translation>
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="59"/>
         <source>Developers:</source>
-        <translation>開発者:</translation>
+        <translation>開発者 :</translation>
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="60"/>

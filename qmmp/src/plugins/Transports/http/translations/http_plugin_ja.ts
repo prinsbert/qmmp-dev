@@ -21,7 +21,7 @@
     <message>
         <location filename="../httpinputfactory.cpp" line="54"/>
         <source>Compiled against libcurl-%1</source>
-        <translation>libcurl-%1 対応でコンパイル</translation>
+        <translation>libcurl-%1  に対してコンパイル済み</translation>
     </message>
     <message>
         <location filename="../httpinputfactory.cpp" line="55"/>
@@ -49,22 +49,22 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="131"/>
         <source>Language:</source>
-        <translation>言語:</translation>
+        <translation>言語 :</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Default encoding:</source>
-        <translation>既定のエンコーディング:</translation>
+        <translation>既定のエンコーディング :</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="76"/>
         <source>User Agent:</source>
-        <translation>ユーザーエージェント:</translation>
+        <translation>ユーザーエージェント :</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="34"/>
         <source>Default buffer size:</source>
-        <translation>デフォルトのバッファサイズ:</translation>
+        <translation>デフォルトのバッファサイズ :</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="50"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="90"/>
         <source>Buffer duration:</source>
-        <translation>バッファの持続時間:</translation>
+        <translation>バッファの持続時間 :</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="97"/>

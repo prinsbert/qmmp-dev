@@ -36,7 +36,7 @@
         <location filename="../fileops.cpp" line="178"/>
         <location filename="../fileops.cpp" line="275"/>
         <source>Stop</source>
-        <translation>中止</translation>
+        <translation>停止</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="223"/>
@@ -130,7 +130,7 @@
     <message>
         <location filename="../fileopssettingsdialog.ui" line="127"/>
         <source>Destination:</source>
-        <translation>ファイル保存先:</translation>
+        <translation>ファイル保存先 :</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="137"/>
@@ -142,7 +142,7 @@
         <location filename="../fileopssettingsdialog.ui" line="144"/>
         <location filename="../fileopssettingsdialog.cpp" line="158"/>
         <source>File name pattern:</source>
-        <translation>ファイル名のパターン:</translation>
+        <translation>ファイル名のパターン :</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="130"/>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="187"/>
         <source>Command:</source>
-        <translation>コマンド:</translation>
+        <translation>コマンド :</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="222"/>

@@ -66,7 +66,7 @@
     <message>
         <location filename="../playlistoption.cpp" line="100"/>
         <source>Arguments:</source>
-        <translation>引数:</translation>
+        <translation>引数 :</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="101"/>

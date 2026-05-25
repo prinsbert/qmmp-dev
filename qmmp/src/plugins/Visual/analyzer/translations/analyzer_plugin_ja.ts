@@ -36,7 +36,7 @@
     <message>
         <location filename="../analyzer.cpp" line="319"/>
         <source>5 fps</source>
-        <translation>5 フレーム毎秒</translation>
+        <translation>5 fps</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="326"/>
@@ -114,7 +114,7 @@
     <message>
         <location filename="../analyzersettingsdialog.ui" line="41"/>
         <source>Cells size:</source>
-        <translation>セルサイズ:</translation>
+        <translation>セルサイズ :</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="101"/>
@@ -124,27 +124,27 @@
     <message>
         <location filename="../analyzersettingsdialog.ui" line="107"/>
         <source>Peaks:</source>
-        <translation>ピーク:</translation>
+        <translation>ピーク :</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="139"/>
         <source>Analyzer #1:</source>
-        <translation>第一アナライザー:</translation>
+        <translation>アナライザー #1 :</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="171"/>
         <source>Background:</source>
-        <translation>背景:</translation>
+        <translation>背景 :</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="203"/>
         <source>Analyzer #2:</source>
-        <translation>アナライザー #2:</translation>
+        <translation>アナライザー #2 :</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="248"/>
         <source>Analyzer #3:</source>
-        <translation>アナライザー#3:</translation>
+        <translation>アナライザー#3 :</translation>
     </message>
 </context>
 <context>

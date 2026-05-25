@@ -24,7 +24,7 @@
     <message>
         <location filename="../hotkeyfactory.cpp" line="32"/>
         <source>X11 Hotkey Plugin</source>
-        <translation>X11 Hotkey Plugin</translation>
+        <translation>X11 ホットキープラグイン</translation>
     </message>
     <message>
         <location filename="../hotkeyfactory.cpp" line="34"/>

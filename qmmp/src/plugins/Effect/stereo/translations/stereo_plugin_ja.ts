@@ -39,7 +39,7 @@
     <message>
         <location filename="../stereosettingsdialog.ui" line="31"/>
         <source>Effect intensity:</source>
-        <translation>効果の強度:</translation>
+        <translation>効果の強度 :</translation>
     </message>
     <message>
         <location filename="../stereosettingsdialog.ui" line="54"/>

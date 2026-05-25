@@ -67,6 +67,7 @@
 
 일본어:
     Ryota Shimamoto <liangtai.s16@gmail.com>
+    coolvitto
 
 카자흐스탄어:
     Baurzhan Muftakhidinov <baurthefirst@gmail.com>

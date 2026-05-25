@@ -34,17 +34,17 @@
     <message>
         <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation>保存先ディレクトリ:</translation>
+        <translation>保存先ディレクトリ :</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="36"/>
         <source>Quality:</source>
-        <translation>音質:</translation>
+        <translation>音質 :</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="95"/>
         <source>Output file name:</source>
-        <translation>書き出すファイルの名前:</translation>
+        <translation>出力ファイル名 :</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="109"/>

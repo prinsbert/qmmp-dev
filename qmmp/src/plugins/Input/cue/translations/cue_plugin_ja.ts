@@ -31,12 +31,12 @@
     <message>
         <location filename="../cuesettingsdialog.ui" line="61"/>
         <source>Language:</source>
-        <translation>言語:</translation>
+        <translation>言語 :</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="81"/>
         <source>Default encoding:</source>
-        <translation>既定のエンコーディング:</translation>
+        <translation>既定のエンコーディング :</translation>
     </message>
 </context>
 <context>

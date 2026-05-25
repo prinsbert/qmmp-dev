@@ -6,12 +6,12 @@
     <message>
         <location filename="../sleepinhibitorfactory.cpp" line="28"/>
         <source>Sleep Mode Inhibition Plugin</source>
-        <translation>Sleep Mode Inhibition Plugin</translation>
+        <translation>Sleep Mode Inhibition プラグイン</translation>
     </message>
     <message>
         <location filename="../sleepinhibitorfactory.cpp" line="49"/>
         <source>About Sleep Mode Inhibit Plugin</source>
-        <translation>About Sleep Mode Inhibit Plugin</translation>
+        <translation>Sleep Mode Inhibit プラグイン について</translation>
     </message>
     <message>
         <location filename="../sleepinhibitorfactory.cpp" line="50"/>

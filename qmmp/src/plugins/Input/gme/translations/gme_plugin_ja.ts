@@ -44,7 +44,7 @@
     <message>
         <location filename="../gmesettingsdialog.ui" line="34"/>
         <source>Fadeout length:</source>
-        <translation>フェイドアウト時間幅:</translation>
+        <translation>フェイドアウト時間幅 :</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="44"/>

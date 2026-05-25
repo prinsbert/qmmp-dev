@@ -11,12 +11,12 @@
     <message>
         <location filename="../twopanelfiledialog.ui" line="70"/>
         <source>File name:</source>
-        <translation>ファイル名:</translation>
+        <translation>ファイル名 :</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialog.ui" line="80"/>
         <source>Files of type:</source>
-        <translation>ファイルの種類:</translation>
+        <translation>ファイルの種類 :</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialog.ui" line="117"/>

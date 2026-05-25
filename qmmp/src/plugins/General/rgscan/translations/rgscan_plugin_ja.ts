@@ -108,7 +108,7 @@
     <message>
         <location filename="../rgscanfactory.cpp" line="53"/>
         <source>Based on source code by:</source>
-        <translation>元になったコードの作者:</translation>
+        <translation>元になったコードの作者 :</translation>
     </message>
     <message>
         <location filename="../rgscanfactory.cpp" line="54"/>

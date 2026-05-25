@@ -6,17 +6,17 @@
     <message>
         <location filename="../taskbarfactory.cpp" line="28"/>
         <source>Taskbar Plugin</source>
-        <translation>Taskbar Plugin</translation>
+        <translation>タスクバー プラグイン</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="49"/>
         <source>About Taskbar Plugin</source>
-        <translation>About Taskbar Plugin</translation>
+        <translation>タスクバー プラグイン について</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="50"/>
         <source>Qmmp Taskbar Plugin</source>
-        <translation>Qmmp Taskbar Plugin</translation>
+        <translation>Qmmp タスクバー プラグイン</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="51"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../taskbarfactory.cpp" line="54"/>
         <source>QtWinExtras developers:</source>
-        <translation>QtWinExtras developers:</translation>
+        <translation>QtWinExtras developers :</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="55"/>

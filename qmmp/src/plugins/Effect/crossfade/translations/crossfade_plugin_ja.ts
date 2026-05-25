@@ -11,7 +11,7 @@
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="29"/>
         <source>Overlap:</source>
-        <translation>オーバーラップ:</translation>
+        <translation>オーバーラップ :</translation>
     </message>
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="42"/>

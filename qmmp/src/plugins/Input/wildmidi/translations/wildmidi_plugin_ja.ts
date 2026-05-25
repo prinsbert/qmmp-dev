@@ -49,12 +49,12 @@
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="29"/>
         <source>Instrument configuration: </source>
-        <translation>楽器編成ファイル(.cfg)のフルパス:</translation>
+        <translation>楽器編成ファイル(.cfg)のフルパス :</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="43"/>
         <source>Sample rate:</source>
-        <translation>サンプルレート:</translation>
+        <translation>サンプルレート :</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="50"/>

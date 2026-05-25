@@ -34,7 +34,7 @@
     <message>
         <location filename="../qtmultimediasettingsdialog.ui" line="46"/>
         <source>Device:</source>
-        <translation>出力デバイス:</translation>
+        <translation>出力デバイス :</translation>
     </message>
     <message>
         <location filename="../qtmultimediasettingsdialog.cpp" line="36"/>

@@ -321,7 +321,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>&amp;Select None</source>
-        <translation>選択を解除(&amp;S)</translation>
+        <translation>選択解除(&amp;S)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="83"/>
@@ -550,22 +550,22 @@
         <location filename="../skinneddisplay.cpp" line="297"/>
         <location filename="../skinneddisplay.cpp" line="323"/>
         <source>Volume: %1%</source>
-        <translation>音量: %1%</translation>
+        <translation>音量 : %1%</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="301"/>
         <source>Balance: %1% right</source>
-        <translation>バランス: %1% 右へ</translation>
+        <translation>バランス : %1% 右へ</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="303"/>
         <source>Balance: %1% left</source>
-        <translation>バランス: %1% 左へ</translation>
+        <translation>バランス : %1% 左へ</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="305"/>
         <source>Balance: center</source>
-        <translation>バランス: 中央に</translation>
+        <translation>バランス : 中央に</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="311"/>
@@ -604,7 +604,7 @@
     <message>
         <location filename="../skinnedeqwidget.cpp" line="265"/>
         <source>&amp;Import</source>
-        <translation>移入(&amp;I)</translation>
+        <translation>インポート(&amp;I)</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="267"/>
@@ -619,7 +619,7 @@
     <message>
         <location filename="../skinnedeqwidget.cpp" line="297"/>
         <source>Preset name:</source>
-        <translation>プリセット名:</translation>
+        <translation>プリセット名 :</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="298"/>
@@ -657,7 +657,7 @@
     <message>
         <location filename="../skinnedfactory.cpp" line="65"/>
         <source>Written by:</source>
-        <translation>製作者:</translation>
+        <translation>製作者 :</translation>
     </message>
     <message>
         <location filename="../skinnedfactory.cpp" line="66"/>
@@ -672,7 +672,7 @@
     <message>
         <location filename="../skinnedfactory.cpp" line="68"/>
         <source>Artwork:</source>
-        <translation>アートワーク:</translation>
+        <translation>アートワーク :</translation>
     </message>
     <message>
         <location filename="../skinnedfactory.cpp" line="69"/>
@@ -897,7 +897,7 @@
     <message>
         <location filename="../skinnedplaylist.cpp" line="581"/>
         <source>Playlist name:</source>
-        <translation>プレイリスト名:</translation>
+        <translation>プレイリスト名 :</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="602"/>
@@ -915,7 +915,7 @@
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="31"/>
         <source>Filter:</source>
-        <translation>フィルター:</translation>
+        <translation>フィルター :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="47"/>
@@ -1021,17 +1021,17 @@
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="89"/>
         <source>Cover size:</source>
-        <translation>表紙画像の大きさ:</translation>
+        <translation>表紙画像の大きさ :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="115"/>
         <source>Transparency:</source>
-        <translation>透明度:</translation>
+        <translation>透明度 :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="145"/>
         <source>Delay:</source>
-        <translation>残映時間:</translation>
+        <translation>残映時間 :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="178"/>
@@ -1087,7 +1087,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="260"/>
         <source>Skin install path:</source>
-        <translation>Skinのインストールパス:</translation>
+        <translation>スキンのインストールパス :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="244"/>
@@ -1157,42 +1157,42 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="599"/>
         <source>Background #2:</source>
-        <translation>背景 #2:</translation>
+        <translation>背景 #2 :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="663"/>
         <source>Highlighted background:</source>
-        <translation>ハイライトした背景:</translation>
+        <translation>ハイライトした背景 :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="554"/>
         <source>Normal text:</source>
-        <translation>通常のテキスト:</translation>
+        <translation>通常のテキスト :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="817"/>
         <source>Splitter:</source>
-        <translation>スプリッター:</translation>
+        <translation>スプリッター :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="631"/>
         <source>Current text:</source>
-        <translation>現在位置のテキスト:</translation>
+        <translation>現在位置のテキスト :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="695"/>
         <source>Highlighted text:</source>
-        <translation>ハイライトしたテキスト:</translation>
+        <translation>ハイライトしたテキスト :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="754"/>
         <source>Group text:</source>
-        <translation>グループの文字色:</translation>
+        <translation>グループの文字色 :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="509"/>
         <source>Background #1:</source>
-        <translation>背景 #1:</translation>
+        <translation>背景 #1 :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="745"/>
@@ -1202,12 +1202,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="829"/>
         <source>Override group background:</source>
-        <translation>グループの背景を上書き:</translation>
+        <translation>グループの背景を上書き :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="874"/>
         <source>Override current track background:</source>
-        <translation>現在のトラックの背景を上書き:</translation>
+        <translation>現在のトラックの背景を上書き :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="938"/>
@@ -1217,27 +1217,27 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="992"/>
         <source>Playlist:</source>
-        <translation>プレイリスト:</translation>
+        <translation>プレイリスト :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1028"/>
         <source>Groups:</source>
-        <translation>グループ:</translation>
+        <translation>グループ :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1055"/>
         <source>Extra group row:</source>
-        <translation>追加のグループ行:</translation>
+        <translation>追加のグループ行 :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1082"/>
         <source>Column headers:</source>
-        <translation>列のヘッダ:</translation>
+        <translation>列のヘッダ :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="950"/>
         <source>Player:</source>
-        <translation>プレイヤー:</translation>
+        <translation>プレイヤー :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="972"/>
@@ -1267,7 +1267,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="129"/>
         <source>Window title format:</source>
-        <translation>ウィンドウタイトルの形式:</translation>
+        <translation>ウィンドウタイトルの形式 :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="101"/>
@@ -1344,7 +1344,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="385"/>
         <source>Playlist separator:</source>
-        <translation>プレイリストの区切り:</translation>
+        <translation>プレイリストの区切り :</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="376"/>
@@ -1392,7 +1392,7 @@
     <message>
         <location filename="../skinnedtextscroller.cpp" line="122"/>
         <source>Buffering: %1%</source>
-        <translation>バッファリング: %1%</translation>
+        <translation>バッファリング : %1%</translation>
     </message>
 </context>
 <context>
