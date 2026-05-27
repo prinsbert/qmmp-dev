@@ -44,12 +44,12 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
         <source>Bitrate</source>
-        <translation>Szybkość transmisji</translation>
+        <translation>Przepływność</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <source>Audio bitrate</source>
-        <translation>Bitrate dźwięku</translation>
+        <translation>Przepływność dźwięku</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="86"/>
         <source>Video bitrate</source>
-        <translation>Bitrate</translation>
+        <translation>Przepływność wideo</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="89"/>

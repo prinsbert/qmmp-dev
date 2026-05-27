@@ -49,7 +49,7 @@
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="58"/>
         <source>Demuxer</source>
-        <translation>Demuxer</translation>
+        <translation>Demultiplekser</translation>
     </message>
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="60"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="64"/>
         <source>Video bitrate</source>
-        <translation>Bitrate wideo</translation>
+        <translation>Przepływność wideo</translation>
     </message>
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="64"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="68"/>
         <source>Audio bitrate</source>
-        <translation>Bitrate dźwięku</translation>
+        <translation>Przepływność dźwięku</translation>
     </message>
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="69"/>
