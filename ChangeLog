@@ -1,6 +1,12 @@
 Changelog of Qmmp Plugin Pack
 --------------
 
+Version 1.7.3
+* fixed playback stopping when connection was lost in the
+  ytb plugin
+* fixed documentation
+* updated Chinese Simplified translation (Rain Ding)
+
 Version 1.7.2
 * added Windows 64 bit support
 * fixed cmake warning
