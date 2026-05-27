@@ -1,6 +1,10 @@
 Changelog of Qmmp Plugin Pack
 --------------
 
+Version 2.3.1
+* fixed documentation
+* updated Chinese Simplified translation (Rain Ding)
+
 Version 2.3.0
 * ported to qmmp 2.3 API
 * added mms plugin
