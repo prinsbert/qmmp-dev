@@ -7,6 +7,13 @@ Version 2.3.3
 * fixed default CUE encoding
 * fixed possible null pointer dereference
 * fixed tracks order when added using drag and drop
+* fixed uninitialized structure usage
+* improved sid plugin:
+  - added libsidplayfp 3.0 support
+  - added feature to build without residfp engine
+  - fixed memory leak
+  - fixed displaying audio information
+* updated Japanese translation (coolvitto)
 
 Version 2.3.2
 * fixed preset path in the projectm plugin
