@@ -1,6 +1,16 @@
 Changelog of Qmmp Plugin Pack
 --------------
 
+Version 2.3.1
+* fixed documentation
+* updated Chinese Simplified translation (Rain Ding)
+* updated Finnish translation (Jiri Grönroos)
+* updated Polish translation (Marek Adamski)
+* updated Japanese translation (coolvitto)
+* updated Chinese Traditional translation (Edouard.J.K Li)
+* updated Italian translation (Luigi Toscano)
+* updated Korean translation (Junghee Lee)
+
 Version 2.3.0
 * ported to qmmp 2.3 API
 * added mms plugin
