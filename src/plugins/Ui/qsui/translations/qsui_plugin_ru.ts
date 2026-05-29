@@ -598,12 +598,12 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="74"/>
         <source>Block Floating Panels</source>
-        <translation>Заблокировать плавающие панели</translation>
+        <translation>Зафиксировать плавающие панели</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="75"/>
         <source>Block Toolbars</source>
-        <translation>Заблокировать панели инструментов</translation>
+        <translation>Зафиксировать панели инструментов</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="76"/>
