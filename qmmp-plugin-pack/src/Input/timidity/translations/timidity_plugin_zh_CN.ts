@@ -11,7 +11,7 @@
     <message>
         <location filename="../decodertimidityfactory.cpp" line="43"/>
         <source>Midi Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Midi 文件</translation>
     </message>
     <message>
         <location filename="../decodertimidityfactory.cpp" line="110"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../decodertimidityfactory.cpp" line="117"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -49,22 +49,22 @@
     <message>
         <location filename="../timiditysettingsdialog.ui" line="39"/>
         <source>Instrument configuration: </source>
-        <translation type="unfinished"></translation>
+        <translation>乐器配置</translation>
     </message>
     <message>
         <location filename="../timiditysettingsdialog.ui" line="46"/>
         <source>Sample rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>取样率：</translation>
     </message>
     <message>
         <location filename="../timiditysettingsdialog.cpp" line="39"/>
         <source>44100 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>44100 赫兹</translation>
     </message>
     <message>
         <location filename="../timiditysettingsdialog.cpp" line="40"/>
         <source>48000 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>48000 赫兹</translation>
     </message>
 </context>
 </TS>
