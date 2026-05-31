@@ -40,31 +40,31 @@ public:
 
     static Skin *instance();
     int ratio() const;
-    const QPixmap &getMain() const;
-    const QPixmap getButton(uint bt) const;
-    const QCursor getCursor(uint cu) const;
-    const QPixmap getTitleBar(uint tb) const;
-    const QPixmap &getPosBar() const;
-    const QPixmap &getNumber(uint n) const;
+    QPixmap getMain() const;
+    QPixmap getButton(uint bt) const;
+    QCursor getCursor(uint cu) const;
+    QPixmap getTitleBar(uint tb) const;
+    QPixmap getPosBar() const;
+    QPixmap getNumber(uint n) const;
     /*!
      * Returns count of numbers in number list.
      * We need this to check if we have "-" in pixmaps.
      * if no we should draw it manually.
      */
-    uint getNumCount(void) const;
-    const QPixmap getPlPart(uint p) const;
-    const QPixmap getEqPart(uint p) const;
-    const QPixmap &getEqSlider(uint n) const;
-    const QPixmap &getEqSpline(uint n) const;
-    const QPixmap getMSPart(uint n) const;
-    const QPixmap getLetter(const QChar& ch) const;
-    const QPixmap getItem(uint n) const;
-    const QPixmap &getVolumeBar(int n) const;
-    const QPixmap &getBalanceBar(int n) const;
-    QString getPLValue(QByteArray c) const;
-    const QColor getMainColor(int n) const;
-    const QColor &getVisColor(int n) const;
-    const QRegion getRegion(uint r) const;
+    uint getNumCount() const;
+    QPixmap getPlPart(uint p) const;
+    QPixmap getEqPart(uint p) const;
+    QPixmap getEqSlider(uint n) const;
+    QPixmap getEqSpline(uint n) const;
+    QPixmap getMSPart(uint n) const;
+    QPixmap getLetter(QChar ch) const;
+    QPixmap getItem(uint n) const;
+    QPixmap getVolumeBar(int n) const;
+    QPixmap getBalanceBar(int n) const;
+    QString getPLValue(const QByteArray &c) const;
+    QColor getMainColor(int n) const;
+    QColor getVisColor(int n) const;
+    QRegion getRegion(uint r) const;
     void setSkin(const QString &path, bool force);
 
     enum Button
@@ -329,8 +329,8 @@ private:
     void loadVolume();
     void loadBalance();
     void loadRegion();
-    QRegion createRegion(const QString &path, const QString &group);
-    QPixmap *correctSize(QPixmap *pixmap, int w, int h);
+    QRegion createRegion(const QString &path, const QString &group) const;
+    QPixmap *correctSize(QPixmap *pixmap, int w, int h) const;
 };
 
 #endif

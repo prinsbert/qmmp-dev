@@ -51,7 +51,7 @@ void ShadedBar::mousePressEvent(QMouseEvent *e)
     {
         m_value = convert(qMax(qMin(width() - 3, qRound(e->position().x()) - 1), 0));
         m_press_pos = 1;
-        if (m_value != m_old)
+        if(m_value != m_old)
         {
             emit sliderMoved(m_value);
         }
@@ -59,7 +59,7 @@ void ShadedBar::mousePressEvent(QMouseEvent *e)
     draw();
 }
 
-void ShadedBar::mouseMoveEvent (QMouseEvent *e)
+void ShadedBar::mouseMoveEvent(QMouseEvent *e)
 {
     if(m_moving)
     {
