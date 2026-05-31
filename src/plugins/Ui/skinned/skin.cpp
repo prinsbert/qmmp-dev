@@ -74,11 +74,13 @@ Skin::Skin(QObject *parent) : QObject(parent)
 }
 
 Skin::~Skin()
-{}
+{
+    m_instance = nullptr;
+}
 
 Skin *Skin::instance()
 {
-    if (!m_instance)
+    if(!m_instance)
         m_instance = new Skin();
     return m_instance;
 }
@@ -88,34 +90,34 @@ int Skin::ratio() const
     return m_double_size ? 2 : 1;
 }
 
-const QPixmap &Skin::getMain() const
+QPixmap Skin::getMain() const
 {
     return m_main;
 }
 
-const QPixmap Skin::getButton(uint bt) const
+QPixmap Skin::getButton(uint bt) const
 {
-    return m_buttons[bt];
+    return m_buttons.value(bt);
 }
 
-const QCursor Skin::getCursor(uint cu) const
+QCursor Skin::getCursor(uint cu) const
 {
-    return m_cursors[cu];
+    return m_cursors.value(cu);
 }
 
-const QPixmap Skin::getTitleBar(uint tb) const
+QPixmap Skin::getTitleBar(uint tb) const
 {
-    return m_titlebar[tb];
+    return m_titlebar.value(tb);
 }
 
-const QPixmap &Skin::getPosBar() const
+QPixmap Skin::getPosBar() const
 {
     return m_posbar;
 }
 
-const QPixmap &Skin::getNumber(uint n) const
+QPixmap Skin::getNumber(uint n) const
 {
-    return m_numbers[n];
+    return m_numbers.value(n);
 }
 
 uint Skin::getNumCount() const
@@ -123,69 +125,69 @@ uint Skin::getNumCount() const
     return m_numbers.count();
 }
 
-const QPixmap Skin::getPlPart(uint p) const
+QPixmap Skin::getPlPart(uint p) const
 {
-    return m_pl_parts[p];
+    return m_pl_parts.value(p);
 }
 
-const QPixmap Skin::getEqPart(uint p) const
+QPixmap Skin::getEqPart(uint p) const
 {
-    return m_eq_parts[p];
+    return m_eq_parts.value(p);
 }
 
-const QPixmap &Skin::getEqSlider(uint n) const
+QPixmap Skin::getEqSlider(uint n) const
 {
-    return m_eq_bar[n];
+    return m_eq_bar.value(n);
 }
 
-const QPixmap &Skin::getEqSpline(uint n) const
+QPixmap Skin::getEqSpline(uint n) const
 {
-    return m_eq_spline[n];
+    return m_eq_spline.value(n);
 }
 
-const QPixmap Skin::getMSPart(uint n) const
+QPixmap Skin::getMSPart(uint n) const
 {
-    return m_ms_parts[n];
+    return m_ms_parts.value(n);
 }
 
-const QPixmap Skin::getLetter(const QChar &ch) const
+QPixmap Skin::getLetter(QChar ch) const
 {
-    return m_letters[ch];
+    return m_letters.value(ch);
 }
 
-const QPixmap Skin::getItem(uint n) const
+QPixmap Skin::getItem(uint n) const
 {
-    return m_parts[n];
+    return m_parts.value(n);
 }
 
-const QPixmap &Skin::getVolumeBar(int n) const
+QPixmap Skin::getVolumeBar(int n) const
 {
-    return m_volume[n];
+    return m_volume.value(n);
 }
 
-const QPixmap &Skin::getBalanceBar(int n) const
+QPixmap Skin::getBalanceBar(int n) const
 {
-    return m_balance[n];
+    return m_balance.value(n);
 }
 
-QString Skin::getPLValue(QByteArray c) const
+QString Skin::getPLValue(const QByteArray &c) const
 {
-    return QString::fromLatin1(m_pledit_txt[c]);
+    return QString::fromLatin1(m_pledit_txt.value(c));
 }
 
-const QColor Skin::getMainColor(int n) const
+QColor Skin::getMainColor(int n) const
 {
-    return m_main_colors[n];
+    return m_main_colors.value(n);
 }
 
-const QColor &Skin::getVisColor(int n) const
+QColor Skin::getVisColor(int n) const
 {
-    return m_vis_colors[n];
+    return m_vis_colors.value(n);
 }
 
-const QRegion Skin::getRegion(uint r) const
+QRegion Skin::getRegion(uint r) const
 {
-    return m_regions[r];
+    return m_regions.value(r);
 }
 
 void Skin::setSkin(const QString &path, bool force)
@@ -448,7 +450,7 @@ void Skin::loadNumbers()
 {
     QPixmap *pixmap = getPixmap(u"nums_ex"_s, u"numbers"_s);
 
-    for (uint i = 0; i < 10; i++)
+    for(uint i = 0; i < 10; i++)
         m_numbers << pixmap->copy(i*9, 0, 9, pixmap->height());
 
     if (pixmap->width() > 107)
@@ -550,7 +552,7 @@ QString Skin::getPath(const QString& name)
     m_skin_dir.setFilter (QDir::Files | QDir::Hidden);
     QFileInfoList f = m_skin_dir.entryInfoList({ name + u".*"_s });
     bool nameHasExt = name.contains(QLatin1Char('.'));
-    for (int j = 0; j < f.size(); ++j)
+    for(int j = 0; j < f.size(); ++j)
     {
         QFileInfo fileInfo = f.at (j);
         QString fn = fileInfo.fileName().toLower();
@@ -570,13 +572,13 @@ QString Skin::getPath(const QString& name)
 void Skin::loadPLEdit()
 {
     QByteArray key, value;
-    QString path = findFile("pledit.txt"_L1);
+    QString path = findFile(u"pledit.txt"_s);
 
-    if (path.isEmpty())
+    if(path.isEmpty())
         qCFatal(plugin) << "invalid default skin";
 
     QFile file(path);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
         qCFatal(plugin) << "unable to open" << path;
         return;
@@ -586,7 +588,7 @@ void Skin::loadPLEdit()
 
     while (!stream.atEnd ())
     {
-        QString line = stream.readLine ();
+        QString line = stream.readLine();
 
         line = line.trimmed ();
         line.replace(u"\""_s, QString());
@@ -616,44 +618,44 @@ void Skin::loadEqMain()
     QPixmap *pixmap = getPixmap(u"eqmain"_s);
     pixmap = correctSize(pixmap, pixmap->width(), 292);
 
-    m_eq_parts[ EQ_MAIN ] = pixmap->copy(0,0,275,116);
-    m_eq_parts[ EQ_TITLEBAR_A ] = pixmap->copy(0,134,275,14);
-    m_eq_parts[ EQ_TITLEBAR_I ] = pixmap->copy(0,149,275,14);
+    m_eq_parts[EQ_MAIN] = pixmap->copy(0,0,275,116);
+    m_eq_parts[EQ_TITLEBAR_A] = pixmap->copy(0,134,275,14);
+    m_eq_parts[EQ_TITLEBAR_I] = pixmap->copy(0,149,275,14);
 
     if (pixmap->height() > 295)
-        m_eq_parts[ EQ_GRAPH ] = pixmap->copy(0,294,113,19);
+        m_eq_parts[EQ_GRAPH] = pixmap->copy(0,294,113,19);
     else
-        m_eq_parts[ EQ_GRAPH ] = QPixmap();
+        m_eq_parts[EQ_GRAPH] = QPixmap();
 
-    for (int i = 0; i < 14; ++i)
+    for(int i = 0; i < 14; ++i)
     {
         m_eq_bar << pixmap->copy(13 + i*15,164,14,63);
     }
-    for (int i = 0; i < 14; ++i)
+    for(int i = 0; i < 14; ++i)
     {
         m_eq_bar << pixmap->copy(13 + i*15,229,14,63);
     }
-    m_buttons[ EQ_BT_BAR_N ] = pixmap->copy(0,164,11,11);
-    m_buttons[ EQ_BT_BAR_P ] = pixmap->copy(0,164+12,11,11);
+    m_buttons[EQ_BT_BAR_N] = pixmap->copy(0,164,11,11);
+    m_buttons[EQ_BT_BAR_P] = pixmap->copy(0,164+12,11,11);
 
-    m_buttons[ EQ_BT_ON_N ] = pixmap->copy(69,119,28,12);
-    m_buttons[ EQ_BT_ON_P ] = pixmap->copy(128,119,28,12);
-    m_buttons[ EQ_BT_OFF_N ] = pixmap->copy(10, 119,28,12);
-    m_buttons[ EQ_BT_OFF_P ] = pixmap->copy(187,119,28,12);
+    m_buttons[EQ_BT_ON_N] = pixmap->copy(69,119,28,12);
+    m_buttons[EQ_BT_ON_P] = pixmap->copy(128,119,28,12);
+    m_buttons[EQ_BT_OFF_N] = pixmap->copy(10, 119,28,12);
+    m_buttons[EQ_BT_OFF_P] = pixmap->copy(187,119,28,12);
 
-    m_buttons[ EQ_BT_PRESETS_N ] = pixmap->copy(224,164,44,12);
-    m_buttons[ EQ_BT_PRESETS_P ] = pixmap->copy(224,176,44,12);
+    m_buttons[EQ_BT_PRESETS_N] = pixmap->copy(224,164,44,12);
+    m_buttons[EQ_BT_PRESETS_P] = pixmap->copy(224,176,44,12);
 
-    m_buttons[ EQ_BT_AUTO_1_N ] = pixmap->copy(94,119,33,12);
-    m_buttons[ EQ_BT_AUTO_1_P ] = pixmap->copy(153,119,33,12);
-    m_buttons[ EQ_BT_AUTO_0_N ] = pixmap->copy(35, 119,33,12);
-    m_buttons[ EQ_BT_AUTO_0_P ] = pixmap->copy(212,119,33,12);
+    m_buttons[EQ_BT_AUTO_1_N] = pixmap->copy(94,119,33,12);
+    m_buttons[EQ_BT_AUTO_1_P] = pixmap->copy(153,119,33,12);
+    m_buttons[EQ_BT_AUTO_0_N] = pixmap->copy(35, 119,33,12);
+    m_buttons[EQ_BT_AUTO_0_P] = pixmap->copy(212,119,33,12);
 
-    m_buttons[ EQ_BT_CLOSE_N ] = pixmap->copy(0,116,9,9);
-    m_buttons[ EQ_BT_CLOSE_P ] = pixmap->copy(0,125,9,9);
-    m_buttons[ EQ_BT_SHADE1_N ] = pixmap->copy(254,137,9,9);
+    m_buttons[EQ_BT_CLOSE_N] = pixmap->copy(0,116,9,9);
+    m_buttons[EQ_BT_CLOSE_P] = pixmap->copy(0,125,9,9);
+    m_buttons[EQ_BT_SHADE1_N] = pixmap->copy(254,137,9,9);
 
-    for (int i = 0; i < 19; ++i)
+    for(int i = 0; i < 19; ++i)
     {
         m_eq_spline << pixmap->copy(115, 294+i, 1, 1);
     }
@@ -664,17 +666,17 @@ void Skin::loadEq_ex()
 {
     QPixmap *pixmap = getPixmap(u"eq_ex"_s);
 
-    m_buttons[ EQ_BT_SHADE1_P ] = pixmap->copy(1,38,9,9);
-    m_buttons[ EQ_BT_SHADE2_N ] = pixmap->copy(254,3,9,9);
-    m_buttons[ EQ_BT_SHADE2_P ] = pixmap->copy(1,47,9,9);
-    m_eq_parts[ EQ_TITLEBAR_SHADED_A ] = pixmap->copy(0,0,275,14);
-    m_eq_parts[ EQ_TITLEBAR_SHADED_I ] = pixmap->copy(0,15,275,14);
-    m_eq_parts[ EQ_VOLUME1 ] = pixmap->copy(1,30,3,8);
-    m_eq_parts[ EQ_VOLUME2 ] = pixmap->copy(4,30,3,8);
-    m_eq_parts[ EQ_VOLUME3 ] = pixmap->copy(7,30,3,8);
-    m_eq_parts[ EQ_BALANCE1 ] = pixmap->copy(11,30,3,8);
-    m_eq_parts[ EQ_BALANCE2 ] = pixmap->copy(14,30,3,8);
-    m_eq_parts[ EQ_BALANCE3 ] = pixmap->copy(17,30,3,8);
+    m_buttons[EQ_BT_SHADE1_P] = pixmap->copy(1,38,9,9);
+    m_buttons[EQ_BT_SHADE2_N] = pixmap->copy(254,3,9,9);
+    m_buttons[EQ_BT_SHADE2_P] = pixmap->copy(1,47,9,9);
+    m_eq_parts[EQ_TITLEBAR_SHADED_A] = pixmap->copy(0,0,275,14);
+    m_eq_parts[EQ_TITLEBAR_SHADED_I] = pixmap->copy(0,15,275,14);
+    m_eq_parts[EQ_VOLUME1] = pixmap->copy(1,30,3,8);
+    m_eq_parts[EQ_VOLUME2] = pixmap->copy(4,30,3,8);
+    m_eq_parts[EQ_VOLUME3] = pixmap->copy(7,30,3,8);
+    m_eq_parts[EQ_BALANCE1] = pixmap->copy(11,30,3,8);
+    m_eq_parts[EQ_BALANCE2] = pixmap->copy(14,30,3,8);
+    m_eq_parts[EQ_BALANCE3] = pixmap->copy(17,30,3,8);
 
     delete pixmap;
 }
@@ -727,18 +729,18 @@ void Skin::loadShufRep()
 {
     QPixmap *pixmap = getPixmap(u"shufrep"_s);
 
-    m_buttons[ BT_EQ_ON_N ] = pixmap->copy(0,73,23,12);
-    m_buttons[ BT_EQ_ON_P ] = pixmap->copy(46,73,23,12);
-    m_buttons[ BT_EQ_OFF_N ] = pixmap->copy(0,61,23,12);
-    m_buttons[ BT_EQ_OFF_P ] = pixmap->copy(46,61,23,12);
+    m_buttons[BT_EQ_ON_N] = pixmap->copy(0,73,23,12);
+    m_buttons[BT_EQ_ON_P] = pixmap->copy(46,73,23,12);
+    m_buttons[BT_EQ_OFF_N] = pixmap->copy(0,61,23,12);
+    m_buttons[BT_EQ_OFF_P] = pixmap->copy(46,61,23,12);
 
-    m_buttons[ BT_PL_ON_N ] = pixmap->copy(23,73,23,12);
-    m_buttons[ BT_PL_ON_P ] = pixmap->copy(69,73,23,12);
-    m_buttons[ BT_PL_OFF_N ] = pixmap->copy(23,61,23,12);
-    m_buttons[ BT_PL_OFF_P ] = pixmap->copy(69,61,23,12);
+    m_buttons[BT_PL_ON_N] = pixmap->copy(23,73,23,12);
+    m_buttons[BT_PL_ON_P] = pixmap->copy(69,73,23,12);
+    m_buttons[BT_PL_OFF_N] = pixmap->copy(23,61,23,12);
+    m_buttons[BT_PL_OFF_P] = pixmap->copy(69,61,23,12);
 
-    //buttons[ BT_PL_CLOSE_N ] = pixmap->copy();
-    //buttons[ BT_PL_CLOSE_P ] = pixmap->copy();
+    //buttons[BT_PL_CLOSE_N] = pixmap->copy();
+    //buttons[BT_PL_CLOSE_P] = pixmap->copy();
 
     m_buttons[REPEAT_ON_N] = pixmap->copy(0,30, 28, 15);
     m_buttons[REPEAT_ON_P] = pixmap->copy(0,45, 28, 15);
@@ -755,34 +757,34 @@ void Skin::loadShufRep()
     delete pixmap;
 }
 
-void Skin::loadLetters(void)
+void Skin::loadLetters()
 {
     QPixmap *img = getPixmap(u"text"_s);
 
     QList<QList<QPixmap> > letters;
-    for (int i = 0; i < 3; i++)
+    for(int i = 0; i < 3; i++)
     {
         QList<QPixmap> l;
-        for (int j = 0; j < 31; j++)
+        for(int j = 0; j < 31; j++)
         {
-            l.append (img->copy(j*5, i*6, 5, 6));
+            l.append(img->copy(j * 5, i * 6, 5, 6));
         }
-        letters.append (l);
+        letters.append(l);
     }
 
     delete img;
 
 
     /* alphabet */
-    for (uint i = 97; i < 123; i++)
+    for(uint i = 97; i < 123; i++)
     {
         m_letters.insert(QChar(i), letters[0][i-97]);
     }
 
     /* digits */
-    for (uint i = 0; i <= 9; i++)
+    for(uint i = 0; i <= 9; i++)
     {
-        m_letters.insert (QChar(i + 48), letters[1][i]);
+        m_letters.insert(QChar(i + 48), letters[1][i]);
     }
 
     /* special characters */
@@ -826,10 +828,10 @@ void Skin::loadMonoSter()
     QPixmap *pixmap = getPixmap(u"monoster"_s);
 
     m_ms_parts.clear();
-    m_ms_parts[ MONO_A ] = pixmap->copy(29,0,27,12);
-    m_ms_parts[ MONO_I ] = pixmap->copy(29,12,27,12);
-    m_ms_parts[ STEREO_A ] = pixmap->copy(0,0,27,12);
-    m_ms_parts[ STEREO_I ] = pixmap->copy(0,12,27,12);
+    m_ms_parts[MONO_A] = pixmap->copy(29,0,27,12);
+    m_ms_parts[MONO_I] = pixmap->copy(29,12,27,12);
+    m_ms_parts[STEREO_A] = pixmap->copy(0,0,27,12);
+    m_ms_parts[STEREO_I] = pixmap->copy(0,12,27,12);
 
     delete pixmap;
 
@@ -842,21 +844,21 @@ void Skin::loadMonoSter()
     paint.drawPixmap(0, 0, 3, 9, *pixmap, 36, 0, 3, 9);
     paint.drawPixmap(3, 0, 8, 9, *pixmap,  1, 0, 8, 9);
     paint.end();
-    m_parts [PLAY] = part.copy();
+    m_parts[PLAY] = part.copy();
 
     part = QPixmap(11, 9);
     paint.begin(&part);
     paint.drawPixmap(0, 0, 2, 9, *pixmap, 27, 0, 2, 9);
     paint.drawPixmap(2, 0, 9, 9, *pixmap,  9, 0, 9, 9);
     paint.end();
-    m_parts [PAUSE] = part.copy();
+    m_parts[PAUSE] = part.copy();
 
     part = QPixmap(11, 9);
     paint.begin(&part);
     paint.drawPixmap(0, 0, 2, 9, *pixmap, 27, 0, 2, 9);
     paint.drawPixmap(2, 0, 9, 9, *pixmap, 18, 0, 9, 9);
     paint.end();
-    m_parts [STOP]  = part.copy();
+    m_parts[STOP] = part.copy();
 
     delete pixmap;
 }
@@ -866,17 +868,17 @@ void Skin::loadVolume()
     QPixmap *pixmap = getPixmap(u"volume"_s);
 
     m_volume.clear();
-    for (int i = 0; i < 28; ++i)
+    for(int i = 0; i < 28; ++i)
         m_volume.append(pixmap->copy(0, i * 15, qMin(pixmap->width(), 68), 13));
     if (pixmap->height() > 425)
     {
-        m_buttons [BT_VOL_N] = pixmap->copy(15, 422, 14, pixmap->height() - 422);
-        m_buttons [BT_VOL_P] = pixmap->copy(0, 422, 14, pixmap->height() - 422);
+        m_buttons[BT_VOL_N] = pixmap->copy(15, 422, 14, pixmap->height() - 422);
+        m_buttons[BT_VOL_P] = pixmap->copy(0, 422, 14, pixmap->height() - 422);
     }
     else
     {
-        m_buttons [BT_VOL_N] = QPixmap();
-        m_buttons [BT_VOL_P] = QPixmap();
+        m_buttons[BT_VOL_N] = QPixmap();
+        m_buttons[BT_VOL_P] = QPixmap();
     }
     delete pixmap;
 }
@@ -886,17 +888,17 @@ void Skin::loadBalance()
     QPixmap *pixmap = getPixmap(u"balance"_s, u"volume"_s);
 
     m_balance.clear();
-    for (int i = 0; i < 28; ++i)
+    for(int i = 0; i < 28; ++i)
         m_balance.append(pixmap->copy(9,i*15,38,13));
     if (pixmap->height() > 427)
     {
-        m_buttons [BT_BAL_N] = pixmap->copy(15, 422,14,pixmap->height()-422);
-        m_buttons [BT_BAL_P] = pixmap->copy(0,422,14,pixmap->height()-422);
+        m_buttons[BT_BAL_N] = pixmap->copy(15, 422,14,pixmap->height()-422);
+        m_buttons[BT_BAL_P] = pixmap->copy(0,422,14,pixmap->height()-422);
     }
     else
     {
-        m_buttons [BT_BAL_N] = QPixmap();
-        m_buttons [BT_BAL_P] = QPixmap();
+        m_buttons[BT_BAL_N] = QPixmap();
+        m_buttons[BT_BAL_P] = QPixmap();
     }
     delete pixmap;
 }
@@ -917,7 +919,7 @@ void Skin::loadRegion()
     m_regions[EQUALIZER_WS] = createRegion(path, u"EqualizerWS"_s);
 }
 
-QRegion Skin::createRegion(const QString &path, const QString &group)
+QRegion Skin::createRegion(const QString &path, const QString &group) const
 {
     QRegion region;
     QSettings settings(path, QSettings::IniFormat);
@@ -935,12 +937,12 @@ QRegion Skin::createRegion(const QString &path, const QString &group)
     for(const QString &str : std::as_const(value))
         numbers << str.split(QChar::Space, Qt::SkipEmptyParts);
 
-    QList<QString>::const_iterator n = numbers.constBegin();
+    QStringList::const_iterator n = numbers.constBegin();
     int r = m_double_size ? 2 : 1;
     for(int i = 0; i < numPoints.size(); ++i)
     {
         QList<int> lp;
-        for (int j = 0; j < numPoints.at(i).toInt() * 2 && n != numbers.constEnd(); j++)
+        for(int j = 0; j < numPoints.at(i).toInt() * 2 && n != numbers.constEnd(); j++)
         {
             lp << n->toInt();
             ++n;
@@ -956,7 +958,7 @@ QRegion Skin::createRegion(const QString &path, const QString &group)
     return region;
 }
 
-QPixmap *Skin::correctSize(QPixmap *pixmap, int w, int h)
+QPixmap *Skin::correctSize(QPixmap *pixmap, int w, int h) const
 {
     if(pixmap->width() < w || pixmap->height() < h)
     {
@@ -970,7 +972,7 @@ QPixmap *Skin::correctSize(QPixmap *pixmap, int w, int h)
     return pixmap;
 }
 
-QPixmap * Skin::getDummyPixmap(const QString &name, const QString &fallback)
+QPixmap *Skin::getDummyPixmap(const QString &name, const QString &fallback)
 {
     QDir dir(SkinReader::defaultSkinPath());
     dir.setFilter (QDir::Files | QDir::Hidden);
@@ -1004,7 +1006,7 @@ QPixmap Skin::scalePixmap(const QPixmap &pix, int ratio)
 
 const QString Skin::findFile(const QString &name)
 {
-    m_skin_dir.setFilter (QDir::Files | QDir::Hidden);
+    m_skin_dir.setFilter(QDir::Files | QDir::Hidden);
     QFileInfoList f = m_skin_dir.entryInfoList(QStringList() << name);
     if(!f.isEmpty())
     {
