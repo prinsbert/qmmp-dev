@@ -23,7 +23,7 @@ LEGEND
 [*] taglib-2.2.1
 [*] libsidplayfp-2.16.1
 [*] mpg123-1.33.4
-[!] feature to select Window11 style
+[!] feature to select Windows 11 style
 
 2.3.1
 [*] qmmp-2.3.1
