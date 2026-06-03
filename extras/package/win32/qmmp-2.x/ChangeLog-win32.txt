@@ -6,10 +6,16 @@ LEGEND
 
 2.3.3
 [*] qmmp-2.3.3
+[*] qmmp-plugin-pack-2.3.1
 [*] wavpack-5.9.0
 [*] ffmpeg-7.1.4
 [*] libxmp-4.7.0
 [*] mpg123-1.33.5
+[*] flac-1.5.0
+[*] opus-1.6.1
+[*] libcdio-2.3.0
+[*] libgme-0.6.5
+[*] glew-2.3.1
 
 2.3.2
 [*] qmmp-2.3.2

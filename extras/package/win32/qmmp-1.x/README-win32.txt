@@ -25,28 +25,28 @@ List of the third-party libraries.
   Name                Version    Web page
 
   MinGW-w64           5.0.0      https://mingw-w64.sourceforge.net/
-  Qt                  5.15.18    https://qt.io/
+  Qt                  5.15.19    https://qt.io/
   7-Zip               24.08      https://www.7-zip.org/
   taglib              2.2.1      https://taglib.github.io/
   libmad              0.15.1b    https://www.underbit.com/products/mad/
   libogg              1.3.6      https://xiph.org/ogg/
   libvorbis           1.3.7      https://xiph.org/vorbis/
-  flac                1.4.3      https://xiph.org/flac/
+  flac                1.5.0      https://xiph.org/flac/
   wavpack             5.9.0      https://www.wavpack.com/
   libsndfile          1.2.2      https://github.com/libsndfile/libsndfile
-  opus                1.6        https://www.opus-codec.org/
+  opus                1.6.1      https://www.opus-codec.org/
   opusfile            0.12       https://www.opus-codec.org/
   libbs2b             3.1.0      https://bs2b.sourceforge.net/
   curl                8.17.0     https://curl.se/
-  libcdio             2.1.0      https://github.com/libcdio/libcdio/
+  libcdio             2.3.0      https://github.com/libcdio/libcdio/
   libcdio-paranoia    10.2+2.0.2 https://github.com/libcdio/libcdio-paranoia/  
   mingw-libgnurx      2.5.1      https://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      https://libcddb.sourceforge.net/
   ffmpeg              7.1.4      https://ffmpeg.org/
   libxmp              4.7.0      https://github.com/libxmp/libxmp
-  libgme              0.6.4      https://github.com/libgme/game-music-emu
+  libgme              0.6.5      https://github.com/libgme/game-music-emu
   musepack            r475       https://www.musepack.net/
-  glew                2.2.0      https://glew.sourceforge.net/
+  glew                2.3.1      https://glew.sourceforge.net/
   projectm            2.1.0      https://github.com/projectM-visualizer/projectm/
   libsidplayfp        2.16.1     https://sourceforge.net/projects/sidplay-residfp/
   enca                1.19       https://github.com/Project-OSS-Revival/enca/

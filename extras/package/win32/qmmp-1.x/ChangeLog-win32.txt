@@ -6,10 +6,17 @@ LEGEND
 
 1.7.11
 [*] qmmp-1.7.11
+[*] qmmp-plugin-pack-1.7.3
+[*] qt-5.15.19
 [*] wavpack-5.9.0
 [*] ffmpeg-7.1.4
 [*] libxmp-4.7.0
 [*] mpg123-1.33.5
+[*] flac-1.5.0
+[*] opus-1.6.1
+[*] libcdio-2.3.0
+[*] libgme-0.6.5
+[*] glew-2.3.1
 
 1.7.10
 [*] qmmp-1.7.10
