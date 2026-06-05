@@ -51,7 +51,6 @@ download_qmmp_adplug_archive()
   echo 'downloading qmmp-adplug...'
   wget -nc https://github.com/cspiegel/qmmp-adplug/archive/master.zip
   7za x -y master.zip
-  cat ../adplug.patch | patch -p2 -d qmmp-adplug-master
   cd ..
 }
 
