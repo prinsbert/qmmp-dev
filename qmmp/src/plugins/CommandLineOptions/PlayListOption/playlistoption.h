@@ -54,6 +54,7 @@ private:
         PL_NEXT,
         PL_PREV,
         PL_CLEAR,
+        PL_DELETE,
         PL_REPEATE_TOGGLE,
         PL_SHUFFLE_TOGGLE,
         PL_STATE

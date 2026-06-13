@@ -37,6 +37,7 @@ void PlayListOption::registerOprions()
     registerOption(PL_CREATE, u"--pl-create"_s, tr("Create playlist"), { u"name"_s });
     registerOption(PL_PLAY,  u"--pl-play"_s, tr("Play track in the specified playlist"), { u"id"_s, u"track"_s });
     registerOption(PL_CLEAR, u"--pl-clear"_s, tr("Clear playlist"), { u"id"_s });
+    registerOption(PL_DELETE, u"--pl-delete"_s, tr("Remove playlist"), { u"id"_s });
     registerOption(PL_NEXT,  u"--pl-next"_s, tr("Activate next playlist"));
     registerOption(PL_PREV,  u"--pl-prev"_s, tr("Activate previous playlist"));
     registerOption(PL_REPEATE_TOGGLE, u"--pl-repeat-toggle"_s, tr("Toggle playlist repeat"));
@@ -79,22 +80,15 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
     {
     case PL_HELP:
     {
-        const QStringList list = {
-            helpString(PL_LIST),
-            helpString(PL_DUMP),
-            helpString(PL_SELECT),
-            helpString(PL_CREATE),
-            helpString(PL_PLAY),
-            helpString(PL_CLEAR),
-            helpString(PL_NEXT),
-            helpString(PL_PREV),
-            helpString(PL_REPEATE_TOGGLE),
-            helpString(PL_SHUFFLE_TOGGLE),
-            helpString(PL_STATE)
+        static const QList<Command> commands = {
+            PL_LIST, PL_DUMP, PL_SELECT, PL_CREATE, PL_PLAY, PL_CLEAR, PL_DELETE,
+            PL_NEXT, PL_PREV, PL_REPEATE_TOGGLE, PL_SHUFFLE_TOGGLE, PL_STATE
         };
 
-        for(const QString &line : std::as_const(list))
+        for(Command c : std::as_const(commands)) {
+            QString line = helpString(c);
             out += CommandLineManager::formatHelpString(line) + QChar::LineFeed;
+        }
 
         out += QStringLiteral("-----------\n");
         out += tr("Arguments:") + QChar::LineFeed;
@@ -204,6 +198,20 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
         if(!model)
             return tr("Invalid playlist ID");
         model->clear();
+    }
+        break;
+    case PL_DELETE:
+    {
+        if(plManager->count() < 2)
+            return tr("Unable to remove last remaining playlist");
+
+        if(args.isEmpty())
+            return tr("Missing playlist ID");
+
+        PlayListModel *model = findPlayList(args.at(0));
+        if(!model)
+            return tr("Invalid playlist ID");
+        plManager->removePlayList(model);
     }
         break;
     case PL_REPEATE_TOGGLE:
