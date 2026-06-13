@@ -33,7 +33,7 @@ Version 2.4.0
 * added support for right modifiers under Windows in the hotkey plugin
 * reduced memory usage in the hotkey plugin
 * improved command-line support:
-  - added "--pl-select" and "--pl-create" command-line options
+  - added "--pl-select", "--pl-create" and "--pl-delete" options
   - added support for playlist name as argument of "--pl-dump",
     "--pl-clear" and "--pl-play" options
   - changed output of "--pl-list" and "--pl-dump" options
