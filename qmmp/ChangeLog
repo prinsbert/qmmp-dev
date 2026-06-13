@@ -1,6 +1,44 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 2.4.0
+* added batch tag editor plugin (experimental)
+* added built-in lyrics editor
+* added feature to display album/artist in the extra title of the group
+* added plugin priority settings
+* added "OK" button in the track details dialog
+* added "OK" and "Cancel" buttons in the settings dialog
+* improved libqmmp/libqmmpui API:
+  - added some implicit shared classes to reduce pointer manipulation
+  - using PIMPL idiom
+  - using move assignment constructors and operators
+* improved simple user interface:
+  - added dark mode support for playlist and visualization
+  - added feature to hide status bar
+  - reworked color settings
+* improved wilmidi plugin:
+  - using QIODevice-based input
+  - added information about file format
+  - added displaying of the libWildMidi version 
+  - changed default sample rate to 48000 Hz
+* improved lyrics plugin:
+  - added feature to fetch lyrics by user request
+  - reduced timeout
+* added id3v2 tags support in the flac plugin
+* added QIODevice-based input in the wavpack plugin
+* added more information in the archive plugin
+* added metadata settings in the shout plugin
+* added webm opus support in the ffmeg plugin
+* added some optimizations in the mpeg plugin
+* added support for right modifiers under Windows in the hotkey plugin
+* reduced memory usage in the hotkey plugin
+* improved command-line support:
+  - added "--pl-select" and "--pl-create" command-line options
+  - added support for playlist name as argument of "--pl-dump",
+    "--pl-clear" and "--pl-play" options
+  - changed output of "--pl-list" and "--pl-dump" options
+* using QOpenGLFunctions_2_0 header in the projectm plugin
+
 Version 2.3.3
 * fixed build with PipeWire versions less than 0.3.50
 * fixed settings dialog layout
