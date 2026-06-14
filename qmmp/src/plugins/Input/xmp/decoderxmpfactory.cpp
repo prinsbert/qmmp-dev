@@ -74,9 +74,10 @@ QList<TrackInfo> DecoderXmpFactory::createPlayList(const QString &path, TrackInf
     if(parts & (TrackInfo::MetaData | TrackInfo::Properties))
     {
         xmp_context ctx = xmp_create_context();
-        if(xmp_load_module(ctx, path.toLocal8Bit().data()) != 0)
+        int error = xmp_load_module(ctx, path.toLocal8Bit().constData());
+        if(error != 0)
         {
-            qCWarning(plugin, "unable to load module");
+            qCWarning(plugin, "unable to load module, error = %d", error);
             xmp_free_context(ctx);
             return list;
         }
