@@ -14,22 +14,22 @@
         <translation>Ficheiros Module</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="108"/>
+        <location filename="../decoderxmpfactory.cpp" line="109"/>
         <source>About XMP Audio Plugin</source>
         <translation>Acerca de suplemento XMP Audio</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="109"/>
+        <location filename="../decoderxmpfactory.cpp" line="110"/>
         <source>Qmmp XMP Audio Plugin</source>
         <translation>Suplemento Qmmp XMP Audio</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="110"/>
+        <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Desenvolvido por: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="111"/>
+        <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Compiled against libxmp-%1</source>
         <translation>Compilado com libxmp-%1</translation>
     </message>

@@ -41,7 +41,7 @@
     <message>
         <location filename="../playlistoption.cpp" line="40"/>
         <source>Remove playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń listę odtwarzania</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="41"/>
@@ -120,12 +120,12 @@
     <message>
         <location filename="../playlistoption.cpp" line="206"/>
         <source>Unable to remove last remaining playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można usunąć ostatniej pozostałej listy odtwarzania</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="209"/>
         <source>Missing playlist ID</source>
-        <translation type="unfinished"></translation>
+        <translation>Brak identyfikatora listy odtwarzania</translation>
     </message>
 </context>
 </TS>

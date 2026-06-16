@@ -14,22 +14,22 @@
         <translation>モジュールファイル</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="108"/>
+        <location filename="../decoderxmpfactory.cpp" line="109"/>
         <source>About XMP Audio Plugin</source>
         <translation>XMP 音響プラグインについて</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="109"/>
+        <location filename="../decoderxmpfactory.cpp" line="110"/>
         <source>Qmmp XMP Audio Plugin</source>
         <translation>QMMP XMP 音響プラグイン</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="110"/>
+        <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="111"/>
+        <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Compiled against libxmp-%1</source>
         <translation>libxmp-%1  に対してコンパイル済み</translation>
     </message>
