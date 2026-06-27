@@ -3,7 +3,7 @@ Changelog of Qt-based Multimedia Player
 
 Version 0.12.23
 * added IMA ADPCM support
-* increased minimum Qt version to to 4.8.0
+* increased minimum Qt version to 4.8.0
 * increased minimum TagLib version to 1.9
 * fixed default output under Windows
 * fixed retrieving song lyrics
