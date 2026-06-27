@@ -1,6 +1,11 @@
 Changelog of Qmmp Plugin Pack
 --------------
 
+Version 0.12.5
+* increased minimum Qt version to 4.8.0
+* increased minimum TagLib version to 1.9
+* fixed documentation
+
 Version 0.12.4
 * fixed documentation
 
