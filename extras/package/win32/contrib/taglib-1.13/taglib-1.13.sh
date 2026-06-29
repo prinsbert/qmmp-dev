@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp    
-    wget -nc https://taglib.org/releases/$NAME-$VERSION.tar.gz 
+    wget -nc ${WGET_ARGS} https://github.com/taglib/taglib/releases/download/v${VERSION}/taglib-${VERSION}.tar.gz 
   ;;
 
   --install)
