@@ -33,17 +33,17 @@ List of the third-party libraries.
   flac                1.5.0      https://xiph.org/flac/
   wavpack             5.6.0      https://www.wavpack.com/
   libsndfile          1.2.2      https://github.com/libsndfile/libsndfile
-  opus                1.5.2      https://www.opus-codec.org/
+  opus                1.6.1      https://www.opus-codec.org/
   opusfile            0.12       https://www.opus-codec.org/
   libbs2b             3.1.0      https://bs2b.sourceforge.net/
-  curl                8.14.1     https://curl.se/
+  curl                8.17.0     https://curl.se/
   libcdio             2.1.0      https://github.com/libcdio/libcdio/
   libcdio-paranoia    10.2+2.0.1 https://github.com/libcdio/libcdio-paranoia/
   mingw-libgnurx      2.5.1      https://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      https://libcddb.sourceforge.net/
   ffmpeg              3.4.14     https://ffmpeg.org/
-  libxmp              4.6.3      https://github.com/libxmp/libxmp
-  libgme              0.6.4      https://github.com/libgme/game-music-emu
+  libxmp              4.7.0      https://github.com/libxmp/libxmp
+  libgme              0.6.5      https://github.com/libgme/game-music-emu
   musepack            r475       https://www.musepack.net/
   glew                2.2.0      https://glew.sourceforge.net/
   projectm            2.1.0      https://github.com/projectM-visualizer/projectm/
@@ -51,7 +51,7 @@ List of the third-party libraries.
   enca                1.19       https://github.com/Project-OSS-Revival/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
   librcd              0.1.14     https://github.com/RusXMMS/librcd  
-  mpg123              1.33.0     https://www.mpg123.de/
+  mpg123              1.33.5     https://www.mpg123.de/
 
 List of the third-party artwork.
 

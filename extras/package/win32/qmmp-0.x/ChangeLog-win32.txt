@@ -4,6 +4,15 @@ LEGEND
 [-] Bug fix
 [!] Enhancement
 
+0.12.23
+[*] qmmp-0.12.23
+[*] qmmp-plugin-pack-0.12.5
+[*] opus-1.6.1
+[*] curl-8.17.0
+[*] libxmp-4.7.0
+[*] libgme-0.6.5
+[*] mpg123-1.33.5
+
 0.12.22
 [*] qmmp-0.12.22
 [*] qmmp-plugin-pack-0.12.4
