@@ -608,7 +608,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="76"/>
         <source>Menu Bar</source>
-        <translation type="unfinished">Barra del menu</translation>
+        <translation>Barra del menu</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="77"/>
@@ -901,93 +901,93 @@
     <message>
         <location filename="../qsuicolorscheme.cpp" line="168"/>
         <source>Color #1:</source>
-        <translation type="unfinished">Colore #1:</translation>
+        <translation>Colore #1:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="169"/>
         <source>Color #2:</source>
-        <translation type="unfinished">Colore #2:</translation>
+        <translation>Colore #2:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="170"/>
         <source>Color #3:</source>
-        <translation type="unfinished">Colore #3:</translation>
+        <translation>Colore #3:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="171"/>
         <source>Peaks:</source>
-        <translation type="unfinished">Picchi:</translation>
+        <translation>Picchi:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="172"/>
         <location filename="../qsuicolorscheme.cpp" line="183"/>
         <source>Background:</source>
-        <translation type="unfinished">Sfondo:</translation>
+        <translation>Sfondo:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="173"/>
         <source>Background #1:</source>
-        <translation type="unfinished">Sfondo n° 1:</translation>
+        <translation>Sfondo n° 1:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="174"/>
         <source>Background #2:</source>
-        <translation type="unfinished">Sfondo n° 2:</translation>
+        <translation>Sfondo n° 2:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="175"/>
         <source>Highlighted background:</source>
-        <translation type="unfinished">Sfondo evidenziato:</translation>
+        <translation>Sfondo evidenziato:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="176"/>
         <source>Splitter:</source>
-        <translation type="unfinished">Separatore:</translation>
+        <translation>Separatore:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="177"/>
         <source>Normal text:</source>
-        <translation type="unfinished">Testo normale:</translation>
+        <translation>Testo normale:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="178"/>
         <source>Highlighted text:</source>
-        <translation type="unfinished">Testo evidenziato:</translation>
+        <translation>Testo evidenziato:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="179"/>
         <source>Group text:</source>
-        <translation type="unfinished">Testo di gruppo:</translation>
+        <translation>Testo di gruppo:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="180"/>
         <source>Group background:</source>
-        <translation type="unfinished">Sfondo di gruppo:</translation>
+        <translation>Sfondo di gruppo:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="181"/>
         <source>Current track text:</source>
-        <translation type="unfinished">Testo della traccia attuale:</translation>
+        <translation>Testo della traccia attuale:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="182"/>
         <source>Current track background:</source>
-        <translation type="unfinished">Sfondo della traccia corrente:</translation>
+        <translation>Sfondo della traccia corrente:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="184"/>
         <source>Progress bar:</source>
-        <translation type="unfinished">Barra di avanzamento</translation>
+        <translation>Barra di avanzamento</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="185"/>
         <source>Waveform:</source>
-        <translation type="unfinished">Forma d&apos;onda:</translation>
+        <translation>Forma d&apos;onda:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="186"/>
         <source>RMS:</source>
-        <translation type="unfinished">Val.efficace:</translation>
+        <translation>Val.efficace:</translation>
     </message>
 </context>
 <context>
@@ -995,32 +995,32 @@
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="32"/>
         <source>Visualization Colors</source>
-        <translation type="unfinished">Colori della visualizzazione</translation>
+        <translation>Colori della visualizzazione</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="33"/>
         <source>Playlist Colors</source>
-        <translation type="unfinished">Colori playlist</translation>
+        <translation>Colori playlist</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="34"/>
         <source>Waveform Seekbar Colors</source>
-        <translation type="unfinished">Colori barra di posizionamento con forma d&apos;onda</translation>
+        <translation>Colori barra di posizionamento con forma d&apos;onda</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="65"/>
         <source>Use system colors</source>
-        <translation type="unfinished">Usa colori di sistema</translation>
+        <translation>Usa colori di sistema</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="73"/>
         <source>Override group colors</source>
-        <translation type="unfinished">Sovrascrivi colori di gruppo</translation>
+        <translation>Sovrascrivi colori di gruppo</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="81"/>
         <source>Override current track colors</source>
-        <translation type="unfinished">Sovrascrivi colori della traccia corrente</translation>
+        <translation>Sovrascrivi colori della traccia corrente</translation>
     </message>
 </context>
 <context>
