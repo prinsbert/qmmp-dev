@@ -1,7 +1,7 @@
 #!/bin/sh
 
-QMMP_VERSION=2.3.3
-QMMP_PLUGIN_PACK_VERSION=2.3.1
+QMMP_VERSION=2.4.0
+QMMP_PLUGIN_PACK_VERSION=2.4.0
 
 export DEV_PATH=/c/devel
 
@@ -59,7 +59,7 @@ download_qmmp_svn()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp...'
-  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp qmmp-${QMMP_VERSION}
+  svn checkout https://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp qmmp-${QMMP_VERSION}
   #svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-2.2 qmmp-${QMMP_VERSION}
   cd ..
 }
@@ -69,7 +69,7 @@ download_plugins_svn()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp-plugin-pack...'
-  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp-plugin-pack qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
+  svn checkout https://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp-plugin-pack qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
   #svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-plugin-pack-2.2 qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
   cd ..
 }
