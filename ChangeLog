@@ -38,6 +38,12 @@ Version 2.4.0
     "--pl-clear" and "--pl-play" options
   - changed output of "--pl-list" and "--pl-dump" options
 * using QOpenGLFunctions_2_0 header in the projectm plugin
+* updated Dutch translation (Heimen Stoffels)
+* updated Finnish translation (Kimmo Kujansuu)
+* updated Japanese translation (coolvitto)
+* updated Polish translation (Marek Adamski)
+* updated Russian translation
+* updated Korean translation (Jung Hee Lee)
 
 Version 2.3.3
 * fixed build with PipeWire versions less than 0.3.50
