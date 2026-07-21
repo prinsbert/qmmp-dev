@@ -4,6 +4,13 @@ Changelog of Qmmp Plugin Pack
 Version 2.4.0
 * ported to qmmp 2.4 API
 * added timidity plugin
+* updated Dutch translation (Heimen Stoffels)
+* updated Finnish translation (Kimmo Kujansuu)
+* updated Japanese translation (coolvitto)
+* updated Polish translation (Marek Adamski)
+* updated Russian translation
+* updated Korean translation (Jung Hee Lee)
+
 
 Version 2.3.1
 * fixed documentation
