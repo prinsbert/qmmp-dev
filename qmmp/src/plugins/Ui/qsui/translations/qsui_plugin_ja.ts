@@ -708,7 +708,7 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="92"/>
         <source>Refresh</source>
-        <translation>回復</translation>
+        <translation>更新</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="93"/>

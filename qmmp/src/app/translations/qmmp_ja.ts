@@ -51,7 +51,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="55"/>
         <source>Mute/Restore volume</source>
-        <translation>消音/奏音</translation>
+        <translation>消音/音量復元</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="56"/>

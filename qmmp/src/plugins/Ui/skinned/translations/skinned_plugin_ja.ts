@@ -301,7 +301,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>Refresh</source>
-        <translation>回復</translation>
+        <translation>更新</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="80"/>
@@ -1082,7 +1082,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="74"/>
         <source>Refresh</source>
-        <translation>回復</translation>
+        <translation>更新</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="260"/>
