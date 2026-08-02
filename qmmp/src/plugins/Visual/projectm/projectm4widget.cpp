@@ -74,12 +74,15 @@ projectm_handle ProjectM4Widget::handle()
 
 void ProjectM4Widget::addPCM(float *left, float *right)
 {
-    for(size_t i = 0; i < QMMP_VISUAL_NODE_SIZE; ++i)
+    if(m_handle)
     {
-        m_buf[i * 2] = left[i];
-        m_buf[i * 2 + 1] = right[i];
+        for(size_t i = 0; i < QMMP_VISUAL_NODE_SIZE; ++i)
+        {
+            m_buf[i * 2] = left[i];
+            m_buf[i * 2 + 1] = right[i];
+        }
+        projectm_pcm_add_float(m_handle, m_buf, QMMP_VISUAL_NODE_SIZE, PROJECTM_STEREO);
     }
-    projectm_pcm_add_float(m_handle, m_buf, QMMP_VISUAL_NODE_SIZE, PROJECTM_STEREO);
 }
 
 void ProjectM4Widget::initializeGL()
@@ -176,7 +179,7 @@ void ProjectM4Widget::findPresets(const QString &path)
 {
     QDir presetDir(path);
     presetDir.setFilter(QDir::Files);
-    const QFileInfoList files = presetDir.entryInfoList({ "*.prjm", "*.milk" }, QDir::Files);
+    const QFileInfoList files = presetDir.entryInfoList({ u"*.prjm"_s, u"*.milk"_s }, QDir::Files);
 
     for(const QFileInfo &info : std::as_const(files))
     {
