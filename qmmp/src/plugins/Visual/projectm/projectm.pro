@@ -14,13 +14,16 @@ RESOURCES = translations/translations.qrc
 
 #DEFINES += PROJECTM_31
 #DEFINES += PROJECTM_4
+DEFINES += PROJECTM_FORCE_GLES
 
 freebsd:DEFINES += PROJECTM_31
 
 contains(DEFINES, PROJECTM_4) {
-    HEADERS += projectm4widget.h
+    HEADERS += \
+    projectm4window.h
 
-    SOURCES += projectm4widget.cpp
+    SOURCES += \
+    projectm4window.cpp
 } else {
     HEADERS += projectmwidget.h \
                projectmwrapper.h

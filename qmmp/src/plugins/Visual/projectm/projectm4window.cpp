@@ -27,12 +27,14 @@
 #include <QMenu>
 #include <QApplication>
 #include <QListWidget>
+#include <QColorSpace>
 #include <QOpenGLContext>
+#include <QOpenGLWindow>
 #include <projectM-4/projectM.h>
 #include <projectM-4/playlist.h>
 #include <qmmp/soundcore.h>
 #include <qmmp/qmmp.h>
-#include "projectm4widget.h"
+#include "projectm4window.h"
 
 #ifndef PROJECTM_PRESET_PATH
 #define PROJECTM_PRESET_PATH "/usr/share/projectM/presets"
@@ -42,13 +44,20 @@
 #define PROJECTM_TEXTURE_PATH "/usr/share/projectM/textures"
 #endif
 
-
 ProjectM4Widget::ProjectM4Widget(QListWidget *listWidget, QWidget *parent)
-        : QOpenGLWidget(parent)
+    : QOpenGLWindow(QOpenGLWindow::NoPartialUpdate), m_parent(parent)
 {
-    setMouseTracking(true);
+#ifdef PROJECTM_FORCE_GLES
+    QSurfaceFormat f = format();
+    if(f.renderableType() != QSurfaceFormat::OpenGLES)
+    {
+        f.setRenderableType(QSurfaceFormat::OpenGLES);
+        setFormat(f);
+    }
+#endif
+
     m_listWidget = listWidget;
-    m_menu = new QMenu(this);
+    m_menu = new QMenu(parent);
     createActions();
 }
 
@@ -87,25 +96,14 @@ void ProjectM4Widget::addPCM(float *left, float *right)
 
 void ProjectM4Widget::initializeGL()
 {
-    glShadeModel(GL_SMOOTH);
-    glClearColor(0,0,0,0);
-    // Setup our viewport
-    glViewport(0, 0, width(), height());
-    // Change to the projection matrix and set our viewing volume.
-    glMatrixMode(GL_TEXTURE);
-    glLoadIdentity();
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
+    initializeOpenGLFunctions();
+
+    glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
+    glViewport(0, 0, width() * devicePixelRatio(), height() * devicePixelRatio());
     glDrawBuffer(GL_BACK);
     glReadBuffer(GL_BACK);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glEnable(GL_LINE_SMOOTH);
-    glEnable(GL_POINT_SMOOTH);
-    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-    glLineStipple(2, 0xAAAA);
 
     if(!m_handle)
     {
@@ -127,6 +125,7 @@ void ProjectM4Widget::initializeGL()
         projectm_set_hard_cut_sensitivity(m_handle, 1.0);
         projectm_set_beat_sensitivity(m_handle, 1.0);
         projectm_set_easter_egg(m_handle, 1.0);
+        projectm_set_window_size(m_handle, width(), height());
 
         m_playlistHandle = projectm_playlist_create(m_handle);
         projectm_playlist_set_shuffle(m_playlistHandle, false);
@@ -141,7 +140,7 @@ void ProjectM4Widget::resizeGL(int w, int h)
     if(m_handle)
     {
         initializeGL();
-        projectm_set_window_size(m_handle, w, h);
+        projectm_set_window_size(m_handle, w * devicePixelRatio(), h * devicePixelRatio());
     }
 }
 
@@ -155,9 +154,9 @@ void ProjectM4Widget::paintGL()
     }
 }
 
-void ProjectM4Widget::mousePressEvent (QMouseEvent *event)
+void ProjectM4Widget::mousePressEvent(QMouseEvent *event)
 {
-    if(event->button() == Qt::RightButton)
+     if(event->button() == Qt::RightButton)
         m_menu->exec(event->globalPosition().toPoint());
 }
 
@@ -172,7 +171,7 @@ void ProjectM4Widget::createActions()
     m_menu->addSeparator();
     m_menu->addAction(tr("&Fullscreen"), tr("F"), this, &ProjectM4Widget::fullscreenToggled)->setCheckable(true);
     m_menu->addSeparator();
-    addActions(m_menu->actions());
+    m_parent->addActions(m_menu->actions());
 }
 
 void ProjectM4Widget::findPresets(const QString &path)

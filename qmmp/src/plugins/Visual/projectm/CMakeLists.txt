@@ -10,10 +10,14 @@ if(QT_FEATURE_opengl)
         set(PROJECTM_FOUND TRUE CACHE INTERNAL "projectm")
         set(PROJECTM_PRESET_PATH ${CMAKE_INSTALL_DATADIR}/presets CACHE STRING "projectM preset search path")
         set(PROJECTM_TEXTURE_PATH ${CMAKE_INSTALL_DATADIR}/textures CACHE STRING "projectM texture search path")
+        option(PROJECTM_FORCE_GLES "force OpenGL ES for projectM" OFF)
         set(libprojectm_DEFINES ${libprojectm_DEFINES}
            PROJECTM_PRESET_PATH=\"${PROJECTM_PRESET_PATH}\"
            PROJECTM_TEXTURE_PATH=\"${PROJECTM_TEXTURE_PATH}\"
         )
+        if(PROJECTM_FORCE_GLES)
+            set(libprojectm_DEFINES ${libprojectm_DEFINES} PROJECTM_FORCE_GLES)
+        endif()
         message(STATUS "Found projectM 4.x")
     else(projectM4_FOUND)
         # projectM 2.x/3.x 
@@ -45,7 +49,7 @@ set(libprojectm_SRCS
 )
 
 if(projectM4_FOUND)
-    set(libprojectm_SRCS ${libprojectm_SRCS} projectm4widget.cpp)
+    set(libprojectm_SRCS ${libprojectm_SRCS} projectm4window.cpp)
 else(projectM4_FOUND)
     set(libprojectm_SRCS ${libprojectm_SRCS} projectmwidget.cpp projectmwrapper.cpp)
 endif(projectM4_FOUND)
