@@ -29,7 +29,7 @@
 #include <locale.h>
 #include <qmmp/qmmp.h>
 #ifdef PROJECTM_4
-#include "projectm4widget.h"
+#include "projectm4window.h"
 #else
 #include "projectmwidget.h"
 #endif
@@ -48,21 +48,21 @@ ProjectMPlugin::ProjectMPlugin (QWidget *parent)
     m_splitter->addWidget(listWidget);
 #ifdef PROJECTM_4
     m_projectMWidget = new ProjectM4Widget(listWidget, m_splitter);
+    m_splitter->addWidget(createWindowContainer(m_projectMWidget, this));
 #else
     m_projectMWidget = new ProjectMWidget(listWidget, m_splitter);
-#endif
     m_splitter->addWidget(m_projectMWidget);
-
-    m_splitter->setStretchFactor(1,1);
+#endif
+    m_splitter->setStretchFactor(1, 1);
     QHBoxLayout *layout = new QHBoxLayout;
     layout->addWidget(m_splitter);
-    layout->setContentsMargins(0,0,0,0);
+    layout->setContentsMargins(0, 0, 0, 0);
     setLayout(layout);
-    addActions(m_projectMWidget->actions());
 #ifdef PROJECTM_4
     connect(m_projectMWidget, &ProjectM4Widget::showMenuToggled, listWidget, &QListWidget::setVisible);
     connect(m_projectMWidget, &ProjectM4Widget::fullscreenToggled, this, &ProjectMPlugin::setFullScreen);
 #else
+    addActions(m_projectMWidget->actions());
     connect(m_projectMWidget, &ProjectMWidget::showMenuToggled, listWidget, &QListWidget::setVisible);
     connect(m_projectMWidget, &ProjectMWidget::fullscreenToggled, this, &ProjectMPlugin::setFullScreen);
 #endif

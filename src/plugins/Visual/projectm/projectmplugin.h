@@ -59,7 +59,6 @@ private:
     ProjectMWidget *m_projectMWidget;
 #endif
     QSplitter *m_splitter;
-    short m_buf[2][512];
     float m_left[QMMP_VISUAL_NODE_SIZE];
     float m_right[QMMP_VISUAL_NODE_SIZE];
 };
