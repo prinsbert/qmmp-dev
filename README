@@ -148,7 +148,12 @@ Available options:
 - USE_LIBRCD (using LibRCD library for charset detection of ID3v1/v2 tags, disabled by default);
 - USE_LIBCDDB (using libcddb library for looking for information about audio CDs, enabled by default);
 - QMMP_DEFAULT_OUTPUT (default output plugin, example: -DQMMP_DEFAULT_OUTPUT=pulse);
-- QMMP_DEFAULT_UI (default user interface, example: -DQMMP_DEFAULT_UI=qsui).
+- QMMP_DEFAULT_UI (default user interface, example: -DQMMP_DEFAULT_UI=qsui);
+- PROJECTM_PRESET_PATH (override projectM 4.x preset search path, example: 
+                        -DPROJECTM_PRESET_PATH="/usr/local/share/projectM/presets");
+- PROJECTM_TEXTURE_PATH (override projectM 4.x texture search path, example:
+                         -DPROJECTM_TEXTURE_PATH="/usr/local/share/projectM/textures");
+- PROJECTM_FORCE_GLES (force OpenGL ES for projectM 4.x, disabled by default).
 
 Also you can use ccmake for changing plugins configuration.
 By default program will be installed in /usr/local. You can change default path by running:
