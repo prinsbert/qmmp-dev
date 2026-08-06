@@ -147,7 +147,12 @@ cmake ./ -DUSE_JACK:BOOL=FALSE
 - USE_LIBRCD (использование библиотеки LibRCD для определения кодировок ID3v1/v2-тегов, по умолчанию отключено);
 - USE_LIBCDDB (использование библиотеки libcddb для получения информации о компакт-дисках, по умолчанию включено);
 - QMMP_DEFAULT_OUTPUT (модуль вывода по умолчанию, пример использования: -DQMMP_DEFAULT_OUTPUT=pulse);
-- QMMP_DEFAULT_UI (интерфейс пользователя по умолчанию, пример использования: -DQMMP_DEFAULT_UI=qsui).
+- QMMP_DEFAULT_UI (интерфейс пользователя по умолчанию, пример использования: -DQMMP_DEFAULT_UI=qsui);
+- PROJECTM_PRESET_PATH (переопределить путь для поиска предустановок projectM 4.x, пример использования: 
+                        -DPROJECTM_PRESET_PATH="/usr/local/share/projectM/presets");
+- PROJECTM_TEXTURE_PATH (переопределить путь для поиска текстур projectM 4.x, пример использования:
+                         -DPROJECTM_TEXTURE_PATH="/usr/local/share/projectM/textures");
+- PROJECTM_FORCE_GLES (принудительно включить OpenGL ES для projectM 4.x, по умолчанию отключено).
 
 Также вы можете использовать ccmake для изменения конфигурации модулей.
 По умолчанию программа будет установлена в /usr/local. Вы можете изменить этот путь командой:
