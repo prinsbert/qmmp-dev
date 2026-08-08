@@ -967,7 +967,7 @@
     <message>
         <location filename="../qsuicolorscheme.cpp" line="181"/>
         <source>Current track text:</source>
-        <translation>Текст текущей дорожки:</translation>
+        <translation>Текст текущего трека:</translation>
     </message>
     <message>
         <location filename="../qsuicolorscheme.cpp" line="182"/>
@@ -1020,7 +1020,7 @@
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="81"/>
         <source>Override current track colors</source>
-        <translation>Переопределить цвета текущей дорожки</translation>
+        <translation>Переопределить цвета текущего трека</translation>
     </message>
 </context>
 <context>

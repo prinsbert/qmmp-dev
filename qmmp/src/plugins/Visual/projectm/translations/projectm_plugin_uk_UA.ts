@@ -4,62 +4,62 @@
 <context>
     <name>ProjectM4Widget</name>
     <message>
-        <location filename="../projectm4widget.cpp" line="163"/>
+        <location filename="../projectm4window.cpp" line="165"/>
         <source>&amp;Show Menu</source>
         <translation>&amp;Показати меню</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="163"/>
+        <location filename="../projectm4window.cpp" line="165"/>
         <source>M</source>
         <translation>M</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="165"/>
+        <location filename="../projectm4window.cpp" line="167"/>
         <source>&amp;Next Preset</source>
         <translation>&amp;Наступний пресет</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="165"/>
+        <location filename="../projectm4window.cpp" line="167"/>
         <source>N</source>
         <translation>N</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="166"/>
+        <location filename="../projectm4window.cpp" line="168"/>
         <source>&amp;Previous Preset</source>
         <translation>&amp;Попередній пресет</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="166"/>
+        <location filename="../projectm4window.cpp" line="168"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="167"/>
+        <location filename="../projectm4window.cpp" line="169"/>
         <source>&amp;Shuffle</source>
         <translation>&amp;Перемішати</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="167"/>
+        <location filename="../projectm4window.cpp" line="169"/>
         <source>R</source>
         <translation>R</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="168"/>
+        <location filename="../projectm4window.cpp" line="170"/>
         <source>&amp;Lock Preset</source>
         <translation>&amp;Заблокувати пресет</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="168"/>
+        <location filename="../projectm4window.cpp" line="170"/>
         <source>L</source>
         <translation>L</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="170"/>
+        <location filename="../projectm4window.cpp" line="172"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Повноекранно</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="170"/>
+        <location filename="../projectm4window.cpp" line="172"/>
         <source>F</source>
         <translation>F</translation>
     </message>
