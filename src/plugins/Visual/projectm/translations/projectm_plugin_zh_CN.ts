@@ -4,62 +4,62 @@
 <context>
     <name>ProjectM4Widget</name>
     <message>
-        <location filename="../projectm4widget.cpp" line="163"/>
+        <location filename="../projectm4window.cpp" line="165"/>
         <source>&amp;Show Menu</source>
         <translation>显示菜单(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="163"/>
+        <location filename="../projectm4window.cpp" line="165"/>
         <source>M</source>
         <translation>M</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="165"/>
+        <location filename="../projectm4window.cpp" line="167"/>
         <source>&amp;Next Preset</source>
         <translation>下一边框形式(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="165"/>
+        <location filename="../projectm4window.cpp" line="167"/>
         <source>N</source>
         <translation>N</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="166"/>
+        <location filename="../projectm4window.cpp" line="168"/>
         <source>&amp;Previous Preset</source>
         <translation>上一边框形式(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="166"/>
+        <location filename="../projectm4window.cpp" line="168"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="167"/>
+        <location filename="../projectm4window.cpp" line="169"/>
         <source>&amp;Shuffle</source>
         <translation>乱序(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="167"/>
+        <location filename="../projectm4window.cpp" line="169"/>
         <source>R</source>
         <translation>R</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="168"/>
+        <location filename="../projectm4window.cpp" line="170"/>
         <source>&amp;Lock Preset</source>
         <translation>锁定边框形式(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="168"/>
+        <location filename="../projectm4window.cpp" line="170"/>
         <source>L</source>
         <translation>L</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="170"/>
+        <location filename="../projectm4window.cpp" line="172"/>
         <source>&amp;Fullscreen</source>
         <translation>全屏(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="170"/>
+        <location filename="../projectm4window.cpp" line="172"/>
         <source>F</source>
         <translation>F</translation>
     </message>

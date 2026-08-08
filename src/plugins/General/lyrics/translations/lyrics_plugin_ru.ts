@@ -105,7 +105,7 @@
     <message>
         <location filename="../lyricswidget.ui" line="159"/>
         <source>Track:</source>
-        <translation>Дорожка:</translation>
+        <translation>Трек:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="171"/>

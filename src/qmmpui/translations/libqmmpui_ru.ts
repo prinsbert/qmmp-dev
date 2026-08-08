@@ -615,12 +615,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="356"/>
         <source>Skip already existing tracks when adding</source>
-        <translation>Пропустить существующие дорожки при добавлении</translation>
+        <translation>Пропустить уже существующие треки при добавлении</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="363"/>
         <source>Stop playback after removing of current track</source>
-        <translation>Остановить воспроизведение после удаления текущей дорожки</translation>
+        <translation>Остановить воспроизведение после удаления текущего трека</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1101"/>
@@ -655,7 +655,7 @@
     <message>
         <location filename="../configdialog.cpp" line="514"/>
         <source>Track</source>
-        <translation>Дорожка</translation>
+        <translation>Трек</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="515"/>
@@ -1035,7 +1035,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="204"/>
         <source>Track</source>
-        <translation>Дорожка</translation>
+        <translation>Трек</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="205"/>
