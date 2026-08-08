@@ -2,6 +2,10 @@ project(liboss4)
 
 INCLUDE(CheckCXXSourceCompiles)
 
+if(POLICY CMP0219)
+    cmake_policy(SET CMP0219 OLD)
+endif()
+
 #oss4
 include_directories(/usr/lib/oss/include /usr/local/lib/oss/include)
 check_include_file(sys/soundcard.h SYS_SOUNDCARD_H_FOUND)
