@@ -88,7 +88,7 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
     WId rootWindow = DefaultRootWindow(HotkeyManager::display());
     QSettings settings; //load settings
     settings.beginGroup(u"Hotkey"_s);
-    for(int i = Hotkey::PLAY, j = 0; i <= Hotkey::VOLUME_MUTE; ++i, ++j)
+    for(int i = Hotkey::PLAY; i <= Hotkey::VOLUME_MUTE; ++i)
     {
         quint32 key = settings.value(QStringLiteral("key_%1").arg(i), Hotkey::defaultKey(i)).toUInt();
         quint32 mod = settings.value(QStringLiteral("modifiers_%1").arg(i), 0).toUInt();
