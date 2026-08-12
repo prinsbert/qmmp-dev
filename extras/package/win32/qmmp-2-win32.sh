@@ -49,7 +49,7 @@ download_qmmp_adplug_archive()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp-adplug...'
-  wget -nc https://github.com/cspiegel/qmmp-adplug/archive/master.zip
+  wget -nc https://github.com/TTK-qmmp/qmmp-adplug/archive/refs/heads/master.zip
   7za x -y master.zip
   cd ..
 }
