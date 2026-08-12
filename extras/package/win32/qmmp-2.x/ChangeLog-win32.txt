@@ -4,6 +4,14 @@ LEGEND
 [-] Bug fix
 [!] Enhancement
 
+2.4.0
+[*] qmmp-2.4.0
+[*] qmmp-plugin-pack-2.4.0
+[*] ffmpeg-7.1.5
+[*] libxmp-4.7.1
+[*] mpg123-1.33.6
+[*] adplug-2.4
+
 2.3.3
 [*] qmmp-2.3.3
 [*] qmmp-plugin-pack-2.3.1
