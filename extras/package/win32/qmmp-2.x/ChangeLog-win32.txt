@@ -11,6 +11,7 @@ LEGEND
 [*] libxmp-4.7.1
 [*] mpg123-1.33.6
 [*] adplug-2.4
+[!] using adplug plugin from TTK-qmmp
 
 2.3.3
 [*] qmmp-2.3.3
