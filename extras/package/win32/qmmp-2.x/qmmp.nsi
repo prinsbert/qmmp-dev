@@ -314,7 +314,7 @@ SectionEnd
 Section /o $(text_enable_adlib)
   SetOutPath "$INSTDIR\bin"
   File adplug\libbinio*.dll adplug\libadplug*.dll
-  SetOutPath "$INSTDIR\lib\qmmp-2.3\Input" 
+  SetOutPath "$INSTDIR\lib\qmmp-2.4\Input" 
   File adplug\adplug.dll
 SectionEnd
 
