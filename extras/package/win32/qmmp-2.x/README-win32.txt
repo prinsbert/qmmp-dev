@@ -14,7 +14,7 @@ Extra plugins (see https://qmmp.ylsoftware.com/plugins.php):
   - Goom - audio visualization based on goom project.
 
 Third-party plugins:
-  - qmmp-adplug - AdPlug-based AdLib input plugin for Qmmp (Web page: https://github.com/cspiegel/qmmp-adplug)
+  - qmmp-adplug - AdPlug-based AdLib input plugin for Qmmp (Web page: https://github.com/TTK-qmmp/qmmp-adplug/)
 
 This archive also contains third-party libraries. Source code of these libraries
 is freely available on the Internet.

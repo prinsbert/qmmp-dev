@@ -10,7 +10,7 @@
 ;-------------------------------
 ;Defines
  
-   !define QMMP_VERSION "2.3.3"
+   !define QMMP_VERSION "2.4.0"
    !define QMMP_PRODUCT_VERSION "${QMMP_VERSION}.0"
    !define WIN64 "1"
    !define QMMP_DEF_PROGS_KEY "Software\Clients\Media\Qmmp"
@@ -315,7 +315,7 @@ Section /o $(text_enable_adlib)
   SetOutPath "$INSTDIR\bin"
   File adplug\libbinio*.dll adplug\libadplug*.dll
   SetOutPath "$INSTDIR\lib\qmmp-2.3\Input" 
-  File adplug\cas-adplug.dll
+  File adplug\adplug.dll
 SectionEnd
 
 Section $(text_startmenu_shortcuts) SHORTCUTS
