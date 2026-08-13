@@ -21,6 +21,7 @@
 #define PROJECTMWIDGET_H
 
 #include <QOpenGLWidget>
+#include <QOpenGLFunctions>
 
 class QMenu;
 class QTimer;
@@ -31,7 +32,7 @@ class projectM;
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class ProjectMWidget : public QOpenGLWidget
+class ProjectMWidget : public QOpenGLWidget, protected QOpenGLFunctions
 {
     Q_OBJECT
 public:
