@@ -76,11 +76,6 @@ ProjectM4Widget::~ProjectM4Widget()
     }
 }
 
-projectm_handle ProjectM4Widget::handle()
-{
-    return m_handle;
-}
-
 void ProjectM4Widget::addPCM(float *left, float *right)
 {
     if(m_handle)

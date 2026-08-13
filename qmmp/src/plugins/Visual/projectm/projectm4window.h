@@ -42,7 +42,6 @@ public:
 
     ~ProjectM4Widget();
 
-    projectm_handle handle();
     void addPCM(float *left, float *right);
 
 signals:
