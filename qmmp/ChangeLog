@@ -28,16 +28,16 @@ Version 2.4.0
 * added QIODevice-based input in the wavpack plugin
 * added more information in the archive plugin
 * added metadata settings in the shout plugin
-* added webm opus support in the ffmeg plugin
+* added WebM Opus support in the ffmeg plugin
 * added some optimizations in the mpeg plugin
 * added support for right modifiers under Windows in the hotkey plugin
 * reduced memory usage in the hotkey plugin
 * improved command-line support:
   - added "--pl-select", "--pl-create" and "--pl-delete" options
-  - added support for playlist name as argument of "--pl-dump",
+  - added support for playlist name as argument of the "--pl-dump",
     "--pl-clear" and "--pl-play" options
-  - changed output of "--pl-list" and "--pl-dump" options
-* using QOpenGLFunctions_2_0 header in the projectm plugin
+  - changed output of the "--pl-list" and "--pl-dump" options
+* using QOpenGLFunctions class in the projectm plugin
 * fixed projectM 4.x support
 * updated Dutch translation (Heimen Stoffels)
 * updated Finnish translation (Kimmo Kujansuu)
