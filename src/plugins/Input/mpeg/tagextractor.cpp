@@ -125,11 +125,10 @@ QByteArray TagExtractor::detectCharset(const TagLib::Tag *tag)
             return "UTF-8"_ba;
         if(charsets.contains(RUSSIAN_CHARSET_LATIN))
             return "ISO-8859-1"_ba;
-#else
-        return QByteArray();
 #endif
+        return QByteArray();
     }
-    return "UTF-8";
+    return "UTF-8"_ba;
 }
 
 QByteArray TagExtractor::charsetForLocale()
