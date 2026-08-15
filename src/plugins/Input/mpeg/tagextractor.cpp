@@ -124,11 +124,10 @@ QByteArray TagExtractor::detectCharset(const TagLib::Tag *tag)
             return "UTF-8"_ba;
         if(charsets.contains(RUSSIAN_CHARSET_LATIN))
             return "ISO-8859-1"_ba;
-#else
-        return QByteArray();
 #endif
+        return QByteArray();
     }
-    return "UTF-8";
+    return "UTF-8"_ba;
 }
 
 ID3v2Tag::ID3v2Tag(QByteArray *array, long offset) : TagLib::ID3v2::Tag(),
