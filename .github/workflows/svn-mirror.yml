@@ -115,13 +115,11 @@ jobs:
           cd mirror
           # Fetch the metadata branch into a temporary tracking ref
           git fetch origin svn-to-git-sync:refs/remotes/origin/svn-to-git-sync || true
-
           # If the branch exists, extract the folder directly
           if git rev-parse --verify --quiet refs/remotes/origin/svn-to-git-sync >/dev/null; then
             echo "Found svn-to-git-sync branch. Extracting metadata..."
-            mkdir -p .git/svn
-            # Extract the contents of the svn-meta folder directly into .git/svn. Using git archive avoids dirtying the index/working tree of the main clone
-            git archive refs/remotes/origin/svn-to-git-sync:svn-meta | tar -x -C .git/svn
+            # Extract the tarball directly into .git
+            git archive refs/remotes/origin/svn-to-git-sync:svn-meta.tar.gz | tar -xz -C .git
             echo "Metadata restored successfully."
           else
             echo "No svn-to-git-sync branch found. (First run?)"
@@ -134,17 +132,19 @@ jobs:
           for i in 1 2 3 4 5; do
             out=$(git svn fetch --use-log-author 2>&1) && { success=true; echo "$out"; break; }
             echo "$out"
-            if echo "$out" | grep -q 'Invalid revision range'; then
-              echo "Restored rev-map points at a commit that no longer exists"
-              echo "(likely orphaned by an earlier force-push). Clearing it so"
-              echo "git-svn rebuilds the map from git-svn-id trailers already"
-              echo "in this clone's history, instead of resuming from a dead SHA."
+            if echo "$out" | grep -q 'but we are about to fetch'; then
+              echo "Rev-map is missing from the backup. Running 'git svn rebuild'"
+              echo "to reconstruct it locally from git-svn-id trailers (one-time fix)..."
+              git svn rebuild
+            elif echo "$out" | grep -q 'Invalid revision range'; then
+              echo "Restored rev-map points at a commit that no longer exists. Clearing it..."
               rm -rf .git/svn
+              git svn rebuild
             fi
             echo "fetch failed, retry $i..."; sleep 20
           done
           $success || { echo "git svn fetch failed after 5 attempts"; exit 1; }
-      - name: Materialise SVN refs as Git branches/tags
+       - name: Materialise SVN refs as Git branches/tags
         run: |
           cd mirror
           set -euo pipefail
@@ -214,7 +214,6 @@ jobs:
           done
           git push --force github 'refs/heads/*:refs/heads/*'
           git push --force github 'refs/tags/*:refs/tags/*'
-
       - name: Backup git-svn metadata to remote branch
         run: |
           set -euo pipefail
@@ -224,12 +223,11 @@ jobs:
           git checkout -q -b svn-to-git-sync
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Prevent line-ending corruption
-          echo "* -text" > .gitattributes
-          git add .gitattributes
-          # Copy the live .git/svn directory into the temp repo
-          cp -r "$GITHUB_WORKSPACE/mirror/.git/svn" ./svn-meta
-          git add svn-meta
+
+          # Pack the .git/svn directory into a tarball to preserve empty dirs and binary files
+          tar -czf svn-meta.tar.gz -C "$GITHUB_WORKSPACE/mirror/.git" svn
+          git add svn-meta.tar.gz
           git commit -q -m "Update git-svn metadata"
+
           REMOTE="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git push --force "$REMOTE" svn-to-git-sync:refs/heads/svn-to-git-sync
