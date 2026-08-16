@@ -1,5 +1,4 @@
 name: SVN → Git mirror
-
 on:
   schedule:
     - cron: '17 */12 * * *'      # (offset to avoid GH load)
@@ -14,10 +13,8 @@ permissions:
 concurrency:
   group: svn-mirror
   cancel-in-progress: false
-
 env:
   SVN_URL: svn://svn.code.sf.net/p/qmmp-dev/code/
-
 jobs:
   mirror:
     runs-on: ubuntu-latest
