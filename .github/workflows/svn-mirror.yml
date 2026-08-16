@@ -1,4 +1,5 @@
 name: SVN → Git mirror
+
 on:
   schedule:
     - cron: '17 */12 * * *'      # (offset to avoid GH load)
@@ -9,222 +10,194 @@ on:
       - '.github/workflows/svn-mirror.yml'
 permissions:
   contents: write               # so GITHUB_TOKEN can push
-  # workflows: write              # allows pushing refs that contain workflow files (i.e. branch `svn-to-git-sync`)
 concurrency:
   group: svn-mirror
   cancel-in-progress: false
+
 env:
   SVN_URL: svn://svn.code.sf.net/p/qmmp-dev/code/
+
 jobs:
   mirror:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: Install git-svn + subversion
+      - name: Install subversion
         run: |
-          sudo add-apt-repository ppa:git-core/ppa -y
           sudo apt-get update -y
-          sudo apt-get install -y git-svn subversion libsvn-perl
+          sudo apt-get install -y subversion
 
       - name: Configure Git identity
         run: |
           git config --global user.name  "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      # Initial seed was already performed; task is here for reference
-
-      # - name: Check if mirror was restored from cache
-      #   id: check
-      #   run: echo "exists=$([ -d mirror/.git/svn ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
-
-      #  #- name: Restore mirror cache
-      #  #  id: cache
-      #  # uses: actions/cache@v4
-      #  # with:
-      #  #   path: mirror
-      #  #   key:  svn-mirror-v1-${{ github.run_id }}
-      #  #   restore-keys: svn-mirror-v1-
-
-      # - name: Detect SVN layout (first run only)
-      #   if: steps.check.outputs.exists != 'true'
-      #   run: |
-      #     set -euo pipefail
-      #     STDLAYOUT=--stdlayout # Assume this will always be true for svn://svn.code.sf.net/p/qmmp-dev/code/
-      #     echo "Probing $SVN_URL ..."
-      #     for i in 1 2 3 4 5; do
-      #       if svn ls --non-interactive "$SVN_URL" > /tmp/ls.txt 2>/dev/null; then break; fi
-      #       echo "retry $i..."; sleep 15
-      #     done
-      #     if grep -qE '^trunk/?$'        /tmp/ls.txt && \
-      #        grep -qE '^(branches|tags)/?$' /tmp/ls.txt; then
-      #       echo "STDLAYOUT=--stdlayout" >> "$GITHUB_ENV"
-      #     else
-      #       echo "STDLAYOUT=" >> "$GITHUB_ENV"
-      #     fi
-      #     cat /tmp/ls.txt
-
-      # - name: Initial git svn clone (first run only)
-      #   if: steps.check.outputs.exists != 'true'
-      #   run: |
-      #     mkdir -p mirror
-      #     # Can't use --use-log-author here :(
-      #     git svn clone $STDLAYOUT "$SVN_URL" mirror
-      - name: Verify git-svn Perl bindings
-        run: |
-          git svn --version
-          perl -MSVN::Core -e 'print "SVN::Core OK: $SVN::Core::VERSION\n"'
-
       - name: Clone existing mirror from GitHub
         run: |
           set -euo pipefail
-          success=false
-          for i in 1 2 3 4 5; do
-            if git clone "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" mirror; then
-              success=true; break
-            fi
-            echo "clone failed, retry $i..."; sleep 20
-            rm -rf mirror
-          done
-          $success || { echo "git clone failed after 5 attempts"; exit 1; }
+          git clone "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" mirror
           cd mirror
-          # Restore git-svn tracking refs persisted from the previous run
-          git fetch origin '+refs/svn-to-git-sync/*:refs/remotes/origin/*' || true
-          git config svn-remote.svn.url      "$SVN_URL"
-          git config svn-remote.svn.fetch    "trunk:refs/remotes/origin/trunk"
-          git config svn-remote.svn.branches "branches/*:refs/remotes/origin/*"
-          git config svn-remote.svn.tags     "tags/*:refs/remotes/origin/tags/*"
-          #git svn rebuild --all # This command does not exist (rebuild is an internal Perl function name inside git-svn's implementation) and the incremental fetch step will automatically rebuild the map and pull in any new SVN commits
-          # Point git-svn's expected trunk ref at what the clone actually gave us (if not already restored from svn-to-git-sync)
-          if ! git rev-parse --verify --quiet refs/remotes/origin/trunk >/dev/null; then
-            git update-ref refs/remotes/origin/trunk refs/remotes/origin/master
-          fi
-          # Same for tags: plain clone puts them at refs/tags/*, git-svn wants refs/remotes/origin/tags/*
-          for t in $(git tag -l); do
-            if ! git rev-parse --verify --quiet "refs/remotes/origin/tags/$t" >/dev/null; then
-              git update-ref "refs/remotes/origin/tags/$t" "refs/tags/$t"
-            fi
-          done
+          git fetch origin '+refs/heads/*:refs/heads/*'
+          git fetch origin '+refs/tags/*:refs/tags/*'
 
-      - name: Restore git-svn metadata from remote branch
-        run: |
-          set -euo pipefail
-          cd mirror
-          # Fetch the metadata branch into a temporary tracking ref
-          git fetch origin svn-to-git-sync:refs/remotes/origin/svn-to-git-sync || true
-          # If the branch exists, extract the folder directly
-          if git rev-parse --verify --quiet refs/remotes/origin/svn-to-git-sync >/dev/null; then
-            echo "Found svn-to-git-sync branch. Extracting metadata..."
-            # Extract the tarball directly into .git
-            git archive refs/remotes/origin/svn-to-git-sync:svn-meta.tar.gz | tar -xz -C .git
-            echo "Metadata restored successfully."
-          else
-            echo "No svn-to-git-sync branch found. (First run?)"
-          fi
-      - name: Incremental fetch
-        run: |
-          set -euo pipefail
-          cd mirror
-          success=false
-          for i in 1 2 3 4 5; do
-            out=$(git svn fetch --use-log-author 2>&1) && { success=true; echo "$out"; break; }
-            echo "$out"
-            if echo "$out" | grep -q 'but we are about to fetch'; then
-              echo "Rev-map is missing from the backup. Running 'git svn rebuild'"
-              echo "to reconstruct it locally from git-svn-id trailers (one-time fix)..."
-              git svn rebuild
-            elif echo "$out" | grep -q 'Invalid revision range'; then
-              echo "Restored rev-map points at a commit that no longer exists. Clearing it..."
-              rm -rf .git/svn
-              git svn rebuild
-            fi
-            echo "fetch failed, retry $i..."; sleep 20
-          done
-          $success || { echo "git svn fetch failed after 5 attempts"; exit 1; }
-       - name: Materialise SVN refs as Git branches/tags
+      - name: Sync new SVN revisions
         run: |
           cd mirror
-          set -euo pipefail
+          python3 << 'EOF'
+          import subprocess
+          import xml.etree.ElementTree as ET
+          import os
+          import re
+          import sys
+          from datetime import datetime
 
-          trunk_ref=""
-          for r in refs/remotes/origin/trunk refs/remotes/git-svn; do
-            if git rev-parse --verify --quiet "$r" >/dev/null; then
-              trunk_ref="$r"; break
-            fi
-          done
-          [ -n "$trunk_ref" ] || { echo "No trunk ref found"; exit 1; }
-          git update-ref refs/heads/master "$trunk_ref"
-          git update-ref refs/remotes/origin/master "$trunk_ref"
+          SVN_URL = os.environ.get('SVN_URL', '').rstrip('/')
 
-          #
-          # Try to match branches
-          #
-          # NOTE: inital tags (from the seed run) created annotated tags, while the run below creates lightweight tags
-          #
-          #   for ref in $(git branch -r | grep 'origin/tags/'); do
-          #     # Extract tag name by stripping 'origin/tags/'
-          #     tag="${ref#origin/tags/}"
-          #     # Create an annotated Git tag using the original SVN commit author and timestamp
-          #     GIT_COMMITTER_DATE="$(git log -1 --format=%aD "$ref")" \
-          #     GIT_COMMITTER_NAME="$(git log -1 --format=%an "$ref")" \
-          #     GIT_COMMITTER_EMAIL="$(git log -1 --format=%ae "$ref")" \
-          #     git tag -a -m "Imported SVN tag $tag" "$tag" "$ref"
-          #   done
-          #
-          for ref in $(git for-each-ref --format='%(refname)' refs/remotes/origin/ refs/remotes/git-svn/); do
-            name="${ref#refs/remotes/origin/}"
-            name="${name#refs/remotes/git-svn/}"
-            case "$name" in
-              trunk|git-svn|tags/*|master|HEAD|svn-to-git-sync|svn-sync-entrypoint) continue ;;
-              *@*) continue ;;   # skip "recreated at revision" refs
-              "") continue ;;
-            esac
-            git update-ref "refs/heads/$name" "$ref"
-          done
+          def run(cmd, check=True, capture=True):
+              if capture:
+                  return subprocess.run(cmd, check=check, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+              else:
+                  return subprocess.run(cmd, check=check)
 
-          for ref in $(git for-each-ref --format='%(refname)' refs/remotes/origin/tags/); do
-            name="${ref#refs/remotes/origin/tags/}"
-            case "$name" in
-              *@*) continue ;;   # skip "recreated at revision" tag variants
-            esac
-            git update-ref "refs/tags/$name" "$ref"
-          done
+          # 1. Find the last synced SVN revision from the master branch's git-svn-id trailer
+          res = run(['git', 'log', '-1', 'master', '--format=%B'], check=False)
+          last_rev = 0
+          if res.returncode == 0:
+              match = re.search(r'git-svn-id: .*@(\d+)', res.stdout)
+              if match:
+                  last_rev = int(match.group(1))
 
-          # git checkout --quiet master || true # ? Why was this here?
-          git log --oneline -1
+          print(f"Current mirrored SVN revision: r{last_rev}")
+
+          # 2. Fetch SVN logs for all new revisions
+          start_rev = last_rev + 1
+          res = run(['svn', 'log', '-r', f'{start_rev}:HEAD', '--xml', '-v', SVN_URL])
+          if not res.stdout.strip():
+              print("No new revisions to sync.")
+              sys.exit(0)
+
+          root = ET.fromstring(res.stdout)
+          logentries = root.findall('logentry')
+          if not logentries:
+              print("No new revisions to sync.")
+              sys.exit(0)
+
+          # 3. Process each new SVN revision
+          for entry in logentries:
+              rev = entry.get('revision')
+              author = entry.find('author').text or 'unknown'
+              date_str = entry.find('date').text
+              msg = entry.find('msg').text or ''
+              
+              # Parse SVN timestamp to Git format
+              dt = datetime.strptime(date_str[:19], '%Y-%m-%dT%H:%M:%S')
+              git_date = dt.strftime('%Y-%m-%dT%H:%M:%S')
+
+              print(f"Processing r{rev} by {author} on {git_date}...")
+              
+              paths_elem = entry.find('paths')
+              if paths_elem is None:
+                  continue
+
+              branch_changes = {}
+              
+              # Group changes by Git branch
+              for path_elem in paths_elem.findall('path'):
+                  action = path_elem.get('action', 'M')
+                  p = path_elem.text.strip().strip('/')
+                  copyfrom_path = path_elem.get('copyfrom-path', '').strip('/')
+                  kind = path_elem.get('kind', 'file')
+
+                  # Handle SVN branch/tag copies natively
+                  if action == 'A' and copyfrom_path:
+                      src_git_ref = 'master'
+                      if copyfrom_path.startswith('branches/'):
+                          src_git_ref = copyfrom_path.split('/')[1]
+                      elif copyfrom_path.startswith('tags/'):
+                          src_git_ref = copyfrom_path.split('/')[1]
+                      
+                      if p.startswith('branches/'):
+                          new_branch = p.split('/')[1]
+                          if run(['git', 'rev-parse', '--verify', new_branch], check=False).returncode != 0:
+                              run(['git', 'branch', new_branch, src_git_ref])
+                              print(f"Created branch {new_branch} from {src_git_ref}")
+                      elif p.startswith('tags/'):
+                          new_tag = p.split('/')[1]
+                          if run(['git', 'rev-parse', '--verify', f'refs/tags/{new_tag}'], check=False).returncode != 0:
+                              run(['git', 'tag', new_tag, src_git_ref])
+                              print(f"Created tag {new_tag} from {src_git_ref}")
+                      continue
+
+                  # Map SVN paths to Git branches
+                  if p.startswith('trunk/'):
+                      git_ref = 'master'
+                      local_path = p[len('trunk/'):]
+                      svn_path = f"{SVN_URL}/trunk/{local_path}"
+                  elif p.startswith('branches/'):
+                      parts = p.split('/', 2)
+                      if len(parts) == 3:
+                          git_ref = parts[1]
+                          local_path = parts[2]
+                          svn_path = f"{SVN_URL}/branches/{git_ref}/{local_path}"
+                      else:
+                          continue
+                  elif p.startswith('tags/'):
+                      # Ignore file modifications inside tags (tags should be immutable snapshots)
+                      continue
+                  else:
+                      continue
+
+                  local_path = local_path.rstrip('/')
+                  if git_ref not in branch_changes:
+                      branch_changes[git_ref] = []
+                  branch_changes[git_ref].append((action, local_path, svn_path, kind))
+
+              # Apply file changes and commit per branch
+              for git_ref, changes in branch_changes.items():
+                  if run(['git', 'rev-parse', '--verify', git_ref], check=False).returncode != 0:
+                      print(f"Branch {git_ref} does not exist in Git, skipping.")
+                      continue
+                  
+                  run(['git', 'checkout', '-f', git_ref], check=False)
+                  
+                  for action, local_path, svn_path, kind in changes:
+                      if action in ['A', 'M', 'R']:
+                          if kind == 'dir':
+                              os.makedirs(local_path, exist_ok=True)
+                              run(['svn', 'export', '-r', rev, '--force', svn_path, local_path])
+                              run(['git', 'add', '-A', local_path])
+                          else:
+                              os.makedirs(os.path.dirname(local_path) or '.', exist_ok=True)
+                              # Fetch file contents directly from SVN
+                              res_cat = subprocess.run(['svn', 'cat', '-r', rev, svn_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                              if res_cat.returncode == 0:
+                                  with open(local_path, 'wb') as f:
+                                      f.write(res_cat.stdout)
+                              else:
+                                  print(f"Failed to cat {svn_path}: {res_cat.stderr.decode()}")
+                              run(['git', 'add', local_path])
+                      elif action == 'D':
+                          run(['git', 'rm', '-rf', '--ignore-unmatch', local_path], check=False)
+
+                  # Create the Git commit
+                  status = run(['git', 'status', '--porcelain'])
+                  if status.stdout.strip():
+                      run(['git', 'config', 'user.name', author])
+                      run(['git', 'config', 'user.email', f'{author}@users.noreply.github.com'])
+                      commit_msg = f"{msg}\n\ngit-svn-id: {SVN_URL}@{rev}"
+                      env = os.environ.copy()
+                      env['GIT_AUTHOR_DATE'] = git_date
+                      env['GIT_COMMITTER_DATE'] = git_date
+                      subprocess.run(['git', 'commit', '-m', commit_msg], env=env, check=False)
+                      print(f"Committed r{rev} to {git_ref}")
+                  else:
+                      print(f"No changes to commit for r{rev} on {git_ref}")
+
+          print("Sync complete.")
+          EOF
 
       - name: Push mirror to GitHub
         run: |
-          set -euo pipefail
           cd mirror
-          REMOTE="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git remote remove github 2>/dev/null || true
-          git remote add github "$REMOTE"
-          # If 'svn-to-git-sync' was checked out as the default branch, delete the local ref so we don't push it here
-          git update-ref -d refs/heads/svn-to-git-sync 2>/dev/null || true
-          # Prioritize pushing master:
-          git push --force github refs/heads/master:refs/heads/master
-          # Push all git-svn tracking refs (excluding HEAD and the svn-to-git-sync metadata branch)
-          for ref in $(git for-each-ref --format='%(refname)' refs/remotes/origin/ | grep -v -E '(refs/remotes/origin/HEAD$|refs/remotes/origin/svn-to-git-sync$)'); do
-            name="${ref#refs/remotes/origin/}"
-            git push --force github "$ref:refs/svn-to-git-sync/$name"
-          done
-          git push --force github 'refs/heads/*:refs/heads/*'
-          git push --force github 'refs/tags/*:refs/tags/*'
-      - name: Backup git-svn metadata to remote branch
-        run: |
-          set -euo pipefail
-          TMP_REPO=$(mktemp -d)
-          cd "$TMP_REPO"
-          git init -q
-          git checkout -q -b svn-to-git-sync
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Pack the .git/svn directory into a tarball to preserve empty dirs and binary files
-          tar -czf svn-meta.tar.gz -C "$GITHUB_WORKSPACE/mirror/.git" svn
-          git add svn-meta.tar.gz
-          git commit -q -m "Update git-svn metadata"
-
-          REMOTE="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git push --force "$REMOTE" svn-to-git-sync:refs/heads/svn-to-git-sync
+          REMOTE="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+          git push --force "$REMOTE" 'refs/heads/*:refs/heads/*'
+          git push --force "$REMOTE" 'refs/tags/*:refs/tags/*'
