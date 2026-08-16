@@ -1,0 +1,227 @@
+name: SVN → Git mirror
+
+on:
+  schedule:
+    - cron: '17 */12 * * *'      # (offset to avoid GH load)
+  workflow_dispatch:            # manual "Run workflow" button
+  push:
+    branches: [ never-because-the-repository-was-seeded-already ]
+    paths:
+      - '.github/workflows/svn-mirror.yml'
+permissions:
+  contents: write               # so GITHUB_TOKEN can push
+  # workflows: write              # allows pushing refs that contain workflow files (i.e. branch `svn-to-git-sync`)
+concurrency:
+  group: svn-mirror
+  cancel-in-progress: false
+
+env:
+  SVN_URL: svn://svn.code.sf.net/p/qmmp-dev/code/
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Install git-svn + subversion
+        run: |
+          sudo add-apt-repository ppa:git-core/ppa -y
+          sudo apt-get update -y
+          sudo apt-get install -y git-svn subversion libsvn-perl
+
+      - name: Configure Git identity
+        run: |
+          git config --global user.name  "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      # Initial seed was already performed; task is here for reference
+
+      # - name: Check if mirror was restored from cache
+      #   id: check
+      #   run: echo "exists=$([ -d mirror/.git/svn ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
+      #  #- name: Restore mirror cache
+      #  #  id: cache
+      #  # uses: actions/cache@v4
+      #  # with:
+      #  #   path: mirror
+      #  #   key:  svn-mirror-v1-${{ github.run_id }}
+      #  #   restore-keys: svn-mirror-v1-
+
+      # - name: Detect SVN layout (first run only)
+      #   if: steps.check.outputs.exists != 'true'
+      #   run: |
+      #     set -euo pipefail
+      #     STDLAYOUT=--stdlayout # Assume this will always be true for svn://svn.code.sf.net/p/qmmp-dev/code/
+      #     echo "Probing $SVN_URL ..."
+      #     for i in 1 2 3 4 5; do
+      #       if svn ls --non-interactive "$SVN_URL" > /tmp/ls.txt 2>/dev/null; then break; fi
+      #       echo "retry $i..."; sleep 15
+      #     done
+      #     if grep -qE '^trunk/?$'        /tmp/ls.txt && \
+      #        grep -qE '^(branches|tags)/?$' /tmp/ls.txt; then
+      #       echo "STDLAYOUT=--stdlayout" >> "$GITHUB_ENV"
+      #     else
+      #       echo "STDLAYOUT=" >> "$GITHUB_ENV"
+      #     fi
+      #     cat /tmp/ls.txt
+
+      # - name: Initial git svn clone (first run only)
+      #   if: steps.check.outputs.exists != 'true'
+      #   run: |
+      #     mkdir -p mirror
+      #     # Can't use --use-log-author here :(
+      #     git svn clone $STDLAYOUT "$SVN_URL" mirror
+      - name: Verify git-svn Perl bindings
+        run: |
+          git svn --version
+          perl -MSVN::Core -e 'print "SVN::Core OK: $SVN::Core::VERSION\n"'
+
+      - name: Clone existing mirror from GitHub
+        run: |
+          set -euo pipefail
+          success=false
+          for i in 1 2 3 4 5; do
+            if git clone "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" mirror; then
+              success=true; break
+            fi
+            echo "clone failed, retry $i..."; sleep 20
+            rm -rf mirror
+          done
+          $success || { echo "git clone failed after 5 attempts"; exit 1; }
+          cd mirror
+          # Restore git-svn tracking refs persisted from the previous run
+          git fetch origin '+refs/svn-to-git-sync/*:refs/remotes/origin/*' || true
+          git config svn-remote.svn.url      "$SVN_URL"
+          git config svn-remote.svn.fetch    "trunk:refs/remotes/origin/trunk"
+          git config svn-remote.svn.branches "branches/*:refs/remotes/origin/*"
+          git config svn-remote.svn.tags     "tags/*:refs/remotes/origin/tags/*"
+          #git svn rebuild --all # This command does not exist (rebuild is an internal Perl function name inside git-svn's implementation) and the incremental fetch step will automatically rebuild the map and pull in any new SVN commits          
+          # Point git-svn's expected trunk ref at what the clone actually gave us
+          git update-ref refs/remotes/origin/trunk refs/remotes/origin/master
+          # Same for tags: plain clone puts them at refs/tags/*, git-svn wants refs/remotes/origin/tags/*
+          for t in $(git tag -l); do
+            git update-ref "refs/remotes/origin/tags/$t" "refs/tags/$t"
+          done
+
+      - name: Restore git-svn metadata from remote branch
+        run: |
+          set -euo pipefail
+          cd mirror
+          # Fetch the metadata branch into a temporary tracking ref
+          git fetch origin svn-to-git-sync:refs/remotes/origin/svn-to-git-sync || true
+          
+          # If the branch exists, extract the folder directly
+          if git rev-parse --verify --quiet refs/remotes/origin/svn-to-git-sync >/dev/null; then
+            echo "Found svn-to-git-sync branch. Extracting metadata..."
+            mkdir -p .git/svn
+            # Extract the contents of the svn-meta folder directly into .git/svn. Using git archive avoids dirtying the index/working tree of the main clone
+            git archive refs/remotes/origin/svn-to-git-sync:svn-meta | tar -x -C .git/svn
+            echo "Metadata restored successfully."
+          else
+            echo "No svn-to-git-sync branch found. (First run?)"
+          fi
+
+      - name: Incremental fetch
+        run: |
+          set -euo pipefail
+          cd mirror
+          success=false
+          for i in 1 2 3 4 5; do
+            if git svn fetch --use-log-author; then success=true; break; fi
+            echo "fetch failed, retry $i..."; sleep 20
+          done
+          $success || { echo "git svn fetch failed after 5 attempts"; exit 1; }
+
+      - name: Backup git-svn metadata to remote branch
+        run: |
+          set -euo pipefail
+          TMP_REPO=$(mktemp -d)
+          cd "$TMP_REPO"
+          git init -q
+          git checkout -q -b svn-to-git-sync
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Prevent line-ending corruption
+          echo "* -text" > .gitattributes
+          git add .gitattributes
+          
+          # Copy the live .git/svn directory into the temp repo
+          cp -r "$GITHUB_WORKSPACE/mirror/.git/svn" ./svn-meta
+          git add svn-meta
+          git commit -q -m "Update git-svn metadata"
+          
+          REMOTE="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push --force "$REMOTE" svn-to-git-sync:refs/heads/svn-to-git-sync
+
+      - name: Materialise SVN refs as Git branches/tags
+        run: |
+          cd mirror
+          set -euo pipefail
+
+          trunk_ref=""
+          for r in refs/remotes/origin/trunk refs/remotes/git-svn; do
+            if git rev-parse --verify --quiet "$r" >/dev/null; then
+              trunk_ref="$r"; break
+            fi
+          done
+          [ -n "$trunk_ref" ] || { echo "No trunk ref found"; exit 1; }
+          git update-ref refs/heads/master "$trunk_ref"
+
+          #
+          # Try to match branches
+          #
+          # NOTE: inital tags (from the seed run) created annotated tags, while the run below creates lightweight tags
+          #
+          #   for ref in $(git branch -r | grep 'origin/tags/'); do
+          #     # Extract tag name by stripping 'origin/tags/'
+          #     tag="${ref#origin/tags/}"
+          #     # Create an annotated Git tag using the original SVN commit author and timestamp
+          #     GIT_COMMITTER_DATE="$(git log -1 --format=%aD "$ref")" \
+          #     GIT_COMMITTER_NAME="$(git log -1 --format=%an "$ref")" \
+          #     GIT_COMMITTER_EMAIL="$(git log -1 --format=%ae "$ref")" \
+          #     git tag -a -m "Imported SVN tag $tag" "$tag" "$ref"
+          #   done
+          #
+          for ref in $(git for-each-ref --format='%(refname)' refs/remotes/origin/ refs/remotes/git-svn/); do
+            name="${ref#refs/remotes/origin/}"
+            name="${name#refs/remotes/git-svn/}"
+            case "$name" in
+              trunk|git-svn|tags/*|master|HEAD|svn-to-git-sync) continue ;;
+              *@*) continue ;;   # skip "recreated at revision" refs
+              "") continue ;;
+            esac
+            git update-ref "refs/heads/$name" "$ref"
+          done
+
+          for ref in $(git for-each-ref --format='%(refname)' refs/remotes/origin/tags/); do
+            name="${ref#refs/remotes/origin/tags/}"
+            case "$name" in
+              *@*) continue ;;   # skip "recreated at revision" tag variants
+            esac
+            git update-ref "refs/tags/$name" "$ref"
+          done
+
+          # git checkout --quiet master || true # ? Why was this here?
+          git log --oneline -1
+
+      - name: Push mirror to GitHub
+        run: |
+          set -euo pipefail
+          cd mirror
+          REMOTE="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git remote remove github 2>/dev/null || true
+          git remote add github "$REMOTE"
+          # If 'svn-to-git-sync' was checked out as the default branch, delete the local ref so we don't push it here
+          git update-ref -d refs/heads/svn-to-git-sync 2>/dev/null || true
+          # Prioritize pushing master:
+          git push --force github refs/heads/master:refs/heads/master
+          # Push all git-svn tracking refs (excluding HEAD and the svn-to-git-sync metadata branch)
+          for ref in $(git for-each-ref --format='%(refname)' refs/remotes/origin/ | grep -v -E '(refs/remotes/origin/HEAD$|refs/remotes/origin/svn-to-git-sync$)'); do
+            name="${ref#refs/remotes/origin/}"
+            git push --force github "$ref:refs/svn-to-git-sync/$name"
+          done
+          git push --force github 'refs/heads/*:refs/heads/*'
+          git push --force github 'refs/tags/*:refs/tags/*'
