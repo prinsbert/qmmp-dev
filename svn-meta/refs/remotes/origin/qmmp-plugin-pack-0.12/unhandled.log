@@ -1,0 +1,99 @@
+r7752
+r7756
+r7767
+r7817
+  -empty_dir: branches/qmmp-plugin-pack-0.12/src/Input/mpg123
+r7846
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp-plugin-pack:7844
+r7873
+r7887
+r7899
+r8003
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp-plugin-pack:7844%2C8001
+r8026
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp-plugin-pack:7844%2C7887-8001
+r8029
+  -empty_dir: branches/qmmp-plugin-pack-0.12/src/Input/ffap/replaygainreader.cpp
+  -empty_dir: branches/qmmp-plugin-pack-0.12/src/Input/ffap/replaygainreader.h
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp-plugin-pack:7844%2C7887-8001%2C8027-8028
+r8050
+r8052
+r8078
+r8082
+r8085
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp-plugin-pack:7844%2C7887-8001%2C8027-8028%2C8084
+r8114
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:8113%0A/trunk/qmmp-plugin-pack:7844%2C7887-8001%2C8027-8028%2C8084
+r8155
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:8113%0A/trunk/qmmp-plugin-pack:7844%2C7887-8001%2C8027-8028%2C8084%2C8153
+r8167
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:8113%0A/trunk/qmmp-plugin-pack:7844%2C7887-8001%2C8027-8028%2C8084%2C8153%2C8164
+r8186
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:8113%0A/trunk/qmmp-plugin-pack:7844%2C7887-8001%2C8027-8028%2C8084%2C8153%2C8164%2C8184
+r8205
+r8215
+r8238
+r8241
+r8244
+r8283
+r8292
+r8304
+r8333
+r8338
+r8372
+  -empty_dir: branches/qmmp-plugin-pack-0.12/src/General
+r8443
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:8113%0A/trunk/qmmp-plugin-pack:7844%2C7887-8001%2C8027-8028%2C8084%2C8153%2C8164%2C8184%2C8433-8434%2C8437-8440
+r8445
+r8462
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:8113%0A/trunk/qmmp-plugin-pack:7844%2C7887-8001%2C8027-8028%2C8084%2C8153%2C8164%2C8184%2C8433-8434%2C8437-8440%2C8460
+r8503
+r8560
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:8113%0A/trunk/qmmp-plugin-pack:7844%2C7887-8001%2C8027-8028%2C8084%2C8153%2C8164%2C8184%2C8433-8434%2C8437-8440%2C8460%2C8559
+r8568
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:8113%0A/trunk/qmmp-plugin-pack:7844%2C7887-8001%2C8027-8028%2C8084%2C8153%2C8164%2C8184%2C8433-8434%2C8437-8440%2C8460%2C8559%2C8567
+r8576
+r8597
+r8622
+r8628
+r8631
+r8634
+r8637
+r8641
+r8644
+r8649
+r8651
+r8682
+r8693
+r8817
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:8113%0A/trunk/qmmp-plugin-pack:7844%2C7887-8001%2C8027-8028%2C8084%2C8153%2C8164%2C8184%2C8433-8434%2C8437-8440%2C8460%2C8559%2C8567%2C8815
+r8850
+r8948
+r9043
+r9303
+r9305
+r9316
+r9806
+r9968
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:8113%0A/trunk/qmmp-plugin-pack:7844%2C7887-8001%2C8027-8028%2C8084%2C8153%2C8164%2C8184%2C8433-8434%2C8437-8440%2C8460%2C8559%2C8567%2C8815%2C9964-9965
+r9981
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:8113%2C9978%0A/trunk/qmmp-plugin-pack:7844%2C7887-8001%2C8027-8028%2C8084%2C8153%2C8164%2C8184%2C8433-8434%2C8437-8440%2C8460%2C8559%2C8567%2C8815%2C9964-9965
+r10177
+r10229
+  +dir_prop: branches/qmmp-plugin-pack-0.12 svn:mergeinfo /branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:8113%2C9978%0A/trunk/qmmp-plugin-pack:7844%2C7887-8001%2C8027-8028%2C8084%2C8153%2C8164%2C8184%2C8433-8434%2C8437-8440%2C8460%2C8559%2C8567%2C8815%2C9964-9965%2C10224
+r10231
+r10448
+r10948
+r10964
+  -empty_dir: branches/qmmp-plugin-pack-0.12/.tx
+  -empty_dir: branches/qmmp-plugin-pack-0.12/utils/update_tx.sh
+r10968
+r11715
+r12081
+r12096
+r12271
+r12272
+r12841
+r12842
+r13111
+r13199

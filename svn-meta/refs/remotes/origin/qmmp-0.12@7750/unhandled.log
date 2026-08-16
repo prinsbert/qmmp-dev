@@ -1,0 +1,5832 @@
+r11
+r12
+  +file_prop: trunk/qmmp/lib/qmmp/Input/ffmpeg/translations/ffmpeg_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/lib/qmmp/Input/flac/translations/flac_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/lib/qmmp/Input/mad/translations/mad_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/lib/qmmp/Input/mpc/translations/mpc_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/lib/qmmp/Input/vorbis/translations/vorbis_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/lib/qmmp/Output/alsa/translations/alsa_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/lib/qmmp/Output/jack/translations/jack_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/default/balance.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/default/cbuttons.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/default/eq_ex.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/default/eqmain.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/default/main.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/default/monoster.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/default/numbers.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/default/playpaus.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/default/pledit.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/default/posbar.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/default/shufrep.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/default/text.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/default/titlebar.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/default/volume.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/images/advanced.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/images/interface.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/images/logo-qmmp.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/images/pause.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/images/play.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/images/playlist.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/images/plugins.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/images/stop.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/translations/qmmp_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/translations/qmmp_tr.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/translations/qmmp_zh_CN.qm svn:mime-type application/octet-stream
+r16
+r18
+r19
+r20
+r21
+r23
+  +file_prop: trunk/qmmp/lib/streamreader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/lib/streamreader.h svn:eol-style native
+r25
+r26
+r27
+r29
+r31
+r37
+r38
+r40
+  +file_prop: trunk/qmmp/lib/downloader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/lib/downloader.h svn:eol-style native
+r41
+r42
+r43
+r45
+r46
+r48
+r49
+r50
+r58
+r59
+r60
+r61
+r63
+r65
+r67
+r69
+r70
+r72
+r75
+r77
+r79
+r80
+r83
+r84
+r85
+r86
+r87
+r88
+r91
+r92
+r94
+r96
+  -empty_dir: trunk/qmmp/lib/fileinfo.cpp
+  -empty_dir: trunk/qmmp/lib/fileinfo.h
+r98
+r100
+r102
+r103
+  -empty_dir: trunk/qmmp/lib/qmmp/Input/vorbis/tag.cpp
+  -empty_dir: trunk/qmmp/lib/qmmp/Input/vorbis/tag.h
+  +file_prop: trunk/qmmp/lib/filetag.cpp svn:eol-style native
+r104
+r105
+r106
+r107
+  -empty_dir: trunk/qmmp/lib/qmmp/Input/ffmpeg/tag.cpp
+  -empty_dir: trunk/qmmp/lib/qmmp/Input/ffmpeg/tag.h
+  -empty_dir: trunk/qmmp/lib/qmmp/Input/flac/tag.cpp
+  -empty_dir: trunk/qmmp/lib/qmmp/Input/flac/tag.h
+  -empty_dir: trunk/qmmp/lib/qmmp/Input/mad/id3tag.cpp
+  -empty_dir: trunk/qmmp/lib/qmmp/Input/mad/id3tag.h
+  -empty_dir: trunk/qmmp/lib/qmmp/Input/mpc/tag.cpp
+  -empty_dir: trunk/qmmp/lib/qmmp/Input/mpc/tag.h
+r108
+r109
+r110
+r113
+r115
+r116
+r117
+r119
+r120
+r123
+r124
+r127
+r128
+r129
+r130
+r131
+r132
+  +file_prop: trunk/qmmp/src/skinreader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/skinreader.h svn:eol-style native
+r134
+r136
+r143
+  -empty_dir: trunk/qmmp/bin/qmmp
+r144
+r155
+  +file_prop: trunk/qmmp/src/html/authors_cs.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/html/thanks_cs.txt svn:eol-style native
+r156
+r157
+r160
+r161
+r162
+  -empty_dir: trunk/qmmp/src/guard.cpp
+  -empty_dir: trunk/qmmp/src/guard.h
+  -empty_dir: trunk/qmmp/src/tcpserver.cpp
+  -empty_dir: trunk/qmmp/src/tcpserver.h
+r163
+r164
+r166
+r167
+r168
+r169
+  -empty_dir: trunk/qmmp/lib/visualization.h
+  +file_prop: trunk/qmmp/lib/visual.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/lib/visual.h svn:eol-style native
+r171
+  +file_prop: trunk/qmmp/lib/visualfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/visualmenu.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/visualmenu.h svn:eol-style native
+r172
+  +file_prop: trunk/qmmp/lib/qmmp/Visual/analyzer/analyzer.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Visual/analyzer/analyzer.h svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Visual/analyzer/colorwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Visual/analyzer/colorwidget.h svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Visual/analyzer/fft.c svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Visual/analyzer/fft.h svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Visual/analyzer/inlines.h svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Visual/analyzer/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Visual/analyzer/settingsdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Visual/analyzer/visualanalyzerfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Visual/analyzer/visualanalyzerfactory.h svn:eol-style native
+r173
+  -empty_dir: trunk/qmmp/lib/qmmp/Input/flac/decoderflacfactory_interface.h
+r176
+  +file_prop: trunk/qmmp/lib/qmmp/Visual/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Visual/analyzer/CMakeLists.txt svn:eol-style native
+r177
+r179
+r180
+r181
+r183
+  +file_prop: trunk/qmmp/src/shadedvisual.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/shadedvisual.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/titlebarcontrol.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/titlebarcontrol.h svn:eol-style native
+r184
+  +file_prop: trunk/qmmp/src/shadedbar.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/shadedbar.h svn:eol-style native
+r185
+r186
+r188
+r189
+r190
+  -empty_dir: trunk/qmmp/lib/iir.c
+  -empty_dir: trunk/qmmp/lib/iir.h
+  -empty_dir: trunk/qmmp/lib/iir_cfs.c
+  -empty_dir: trunk/qmmp/lib/iir_cfs.h
+  -empty_dir: trunk/qmmp/lib/iir_fpu.c
+  -empty_dir: trunk/qmmp/lib/iir_fpu.h
+  +file_prop: trunk/qmmp/lib/effect.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/lib/effect.h svn:eol-style native
+  +file_prop: trunk/qmmp/lib/effectfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Effect/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Effect/srconverter/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Effect/srconverter/effectsrconverterfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Effect/srconverter/effectsrconverterfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Effect/srconverter/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Effect/srconverter/settingsdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Effect/srconverter/srconverter.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Effect/srconverter/srconverter.h svn:eol-style native
+r191
+r192
+r194
+  +file_prop: trunk/qmmp/lib/qmmp/Input/sndfile/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Input/sndfile/decoder_sndfile.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Input/sndfile/decoder_sndfile.h svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Input/sndfile/decodersndfilefactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/lib/qmmp/Input/sndfile/decodersndfilefactory.h svn:eol-style native
+r199
+r232
+  +empty_dir: trunk/qmmp/lib/qmmp/Effect
+  +empty_dir: trunk/qmmp/lib/qmmp/General
+  +empty_dir: trunk/qmmp/lib/qmmp/Input
+  +empty_dir: trunk/qmmp/lib/qmmp/Output
+  +empty_dir: trunk/qmmp/lib/qmmp/Visual
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/images/tray_pause.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/images/tray_play.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/images/tray_stop.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/ffmpeg/translations/ffmpeg_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/flac/translations/flac_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/mad/translations/mad_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/mpc/translations/mpc_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/vorbis/translations/vorbis_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Misc/FileDialogs/QmmpFileDialog/images/cdup.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Misc/FileDialogs/QmmpFileDialog/images/detail.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Misc/FileDialogs/QmmpFileDialog/images/list.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Misc/FileDialogs/libQmmpFileDialog.so svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Misc/FileDialogs/libQt3FileDialog.so svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Misc/PlaylistFormats/libCSVPlaylistFormat.so svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/alsa/translations/alsa_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/jack/translations/jack_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/default/balance.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/default/cbuttons.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/default/eq_ex.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/default/eqmain.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/default/main.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/default/monoster.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/default/numbers.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/default/playpaus.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/default/pledit.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/default/posbar.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/default/shufrep.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/default/text.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/default/titlebar.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/default/volume.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/images/advanced.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/images/interface.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/images/logo-qmmp.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/images/network.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/images/playlist.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/images/plugins.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/translations/qmmp_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/translations/qmmp_tr.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/translations/qmmp_zh_CN.qm svn:mime-type application/octet-stream
+r233
+  -empty_dir: trunk/qmmp/lib
+r234
+  -empty_dir: trunk/qmmp/src/plugins/Input/mpc/Makefile
+  -empty_dir: trunk/qmmp/src/plugins/Misc/CommandLineOptions/IncDecVolumeOption/Makefile
+  -empty_dir: trunk/qmmp/src/plugins/Misc/FileDialogs/Makefile
+  -empty_dir: trunk/qmmp/src/plugins/Misc/PlaylistFormats/CSVPlaylistFormat/Makefile
+  -empty_dir: trunk/qmmp/src/plugins/Misc/PlaylistFormats/Makefile
+r235
+r236
+  -empty_dir: trunk/qmmp/src/CMakeLists.txt
+  -empty_dir: trunk/qmmp/src/plugins/Input/mad/ui_detailsdialog.h
+  -empty_dir: trunk/qmmp/src/plugins/Input/mad/ui_settingsdialog.h
+  +file_prop: trunk/qmmp/src/plugins/General/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/dbuscontrol/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/CMakeLists.txt svn:eol-style native
+r237
+r238
+r239
+r240
+r241
+r242
+  +file_prop: trunk/qmmp/src/ui/txt/description_en.txt svn:eol-style native
+r243
+r244
+  +file_prop: trunk/qmmp/src/ui/default/readme.txt svn:eol-style native
+r245
+r246
+r247
+r248
+r249
+r250
+r251
+r252
+r253
+r254
+r255
+r256
+r257
+r258
+r259
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/notifier.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/notifier.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/notifierfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/notifierfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/popupwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/popupwidget.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/settingsdialog.h svn:eol-style native
+r260
+r261
+r262
+r263
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/decoder_wavpack.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/decoder_wavpack.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/decoderwavpackfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/decoderwavpackfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/detailsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/detailsdialog.h svn:eol-style native
+r264
+r265
+r267
+r268
+r270
+r272
+r274
+  +file_prop: trunk/qmmp/src/qmmpui/control.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/control.h svn:eol-style native
+r275
+r276
+r277
+r278
+r279
+r280
+r281
+r282
+r284
+r285
+r286
+r287
+r290
+r291
+r292
+  +file_prop: trunk/qmmp/src/plugins/Output/pulseaudio/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Output/pulseaudio/outputpulseaudio.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Output/pulseaudio/outputpulseaudio.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Output/pulseaudio/outputpulseaudiofactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Output/pulseaudio/outputpulseaudiofactory.h svn:eol-style native
+r293
+r294
+  -empty_dir: trunk/qmmp/src/plugins/General/statusicon/images/images.qrc
+r295
+r296
+r298
+r299
+r300
+r301
+r304
+r305
+  -empty_dir: trunk/qmmp/src/ui/html/authors_cs.txt
+  -empty_dir: trunk/qmmp/src/ui/html/authors_en.txt
+  -empty_dir: trunk/qmmp/src/ui/html/authors_ru.txt
+  -empty_dir: trunk/qmmp/src/ui/html/authors_zh_CN.txt
+  -empty_dir: trunk/qmmp/src/ui/html/thanks_cs.txt
+  -empty_dir: trunk/qmmp/src/ui/html/thanks_en.txt
+  -empty_dir: trunk/qmmp/src/ui/html/thanks_ru.txt
+  -empty_dir: trunk/qmmp/src/ui/html/thanks_zh_CN.txt
+  +file_prop: trunk/qmmp/src/ui/txt/authors_cs.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/authors_en.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/authors_ru.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/authors_uk_UA.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/authors_zh_CN.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/authors_zh_TW.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/thanks_cs.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/thanks_en.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/thanks_ru.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/thanks_uk_UA.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/thanks_zh_CN.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/thanks_zh_TW.txt svn:eol-style native
+r306
+  +file_prop: trunk/qmmp/src/ui/translations/qmmp_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/translations/qmmp_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/translations/qmmp_pt_BR.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/translations/qmmp_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/translations/qmmp_zh_TW.qm svn:mime-type application/octet-stream
+r307
+  +file_prop: trunk/qmmp/src/ui/txt/thanks_de.txt svn:eol-style native
+r309
+  +file_prop: trunk/qmmp/src/ui/txt/authors_de.txt svn:eol-style native
+r310
+r311
+  +file_prop: trunk/qmmp/src/ui/txt/translators_en.txt svn:eol-style native
+r312
+r313
+  +file_prop: trunk/qmmp/src/plugins/Input/ffmpeg/translations/ffmpeg_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/ffmpeg/translations/ffmpeg_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/ffmpeg/translations/ffmpeg_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/ffmpeg/translations/ffmpeg_plugin_zh_TW.qm svn:mime-type application/octet-stream
+r314
+  +file_prop: trunk/qmmp/src/plugins/Input/flac/translations/flac_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/flac/translations/flac_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/flac/translations/flac_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/flac/translations/flac_plugin_zh_TW.qm svn:mime-type application/octet-stream
+r315
+  +file_prop: trunk/qmmp/src/plugins/Input/mpc/translations/mpc_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/mpc/translations/mpc_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/mpc/translations/mpc_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/mpc/translations/mpc_plugin_zh_TW.qm svn:mime-type application/octet-stream
+r316
+  +file_prop: trunk/qmmp/src/plugins/Input/mad/translations/mad_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/mad/translations/mad_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/mad/translations/mad_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/mad/translations/mad_plugin_zh_TW.qm svn:mime-type application/octet-stream
+r317
+  +file_prop: trunk/qmmp/src/plugins/Input/vorbis/translations/vorbis_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/vorbis/translations/vorbis_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/vorbis/translations/vorbis_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/vorbis/translations/vorbis_plugin_zh_TW.qm svn:mime-type application/octet-stream
+r318
+  +file_prop: trunk/qmmp/src/plugins/Output/alsa/translations/alsa_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/alsa/translations/alsa_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/alsa/translations/alsa_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/alsa/translations/alsa_plugin_zh_TW.qm svn:mime-type application/octet-stream
+r319
+  +file_prop: trunk/qmmp/src/plugins/Output/jack/translations/jack_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/jack/translations/jack_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/jack/translations/jack_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/jack/translations/jack_plugin_zh_TW.qm svn:mime-type application/octet-stream
+r320
+  +file_prop: trunk/qmmp/src/plugins/Output/oss/translations/oss_plugin_cs.qm svn:mime-type application/octet-stream
+r321
+  +file_prop: trunk/qmmp/src/plugins/Input/ffmpeg/translations/ffmpeg_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/flac/translations/flac_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/mad/translations/mad_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/mpc/translations/mpc_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/vorbis/translations/vorbis_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/alsa/translations/alsa_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/jack/translations/jack_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/oss/translations/oss_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/txt/description_de.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/translators_de.txt svn:eol-style native
+r325
+r326
+r328
+r330
+r331
+r336
+r337
+r338
+r339
+r340
+r341
+r342
+r343
+r344
+r345
+r346
+r347
+r348
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/archivereader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/archivereader.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/decoder_modplug.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/decoder_modplug.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/decodermodplugfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/decodermodplugfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/detailsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/detailsdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/settingsdialog.h svn:eol-style native
+r349
+r350
+r351
+r352
+r353
+  -empty_dir: trunk/qmmp/src/ui/images/qmmp.xpm
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/notifier_icon.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/images/16x16/qmmp.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/images/32x32/qmmp.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/images/48x48/qmmp.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/images/56x56/qmmp.png svn:mime-type application/octet-stream
+r354
+r355
+r356
+r357
+r360
+r361
+r362
+r363
+r364
+r365
+r366
+r367
+r368
+r369
+r370
+  +file_prop: trunk/qmmp/src/ui/txt/description_cs.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/translators_cs.txt svn:eol-style native
+r371
+  +file_prop: trunk/qmmp/src/plugins/Effect/srconverter/translations/srconverter_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Effect/srconverter/translations/srconverter_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/translations/notifier_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/translations/notifier_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/translations/scrobbler_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/translations/scrobbler_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/translations/statusicon_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/translations/statusicon_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/translations/modplug_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/translations/modplug_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/sndfile/translations/sndfile_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/sndfile/translations/sndfile_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/translations/wavpack_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/translations/wavpack_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/pulseaudio/translations/pulseaudio_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/pulseaudio/translations/pulseaudio_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Visual/analyzer/translations/analyzer_plugin_cs.qm svn:mime-type application/octet-stream
+r372
+r373
+r374
+r375
+r376
+r377
+r378
+r379
+  +file_prop: trunk/qmmp/src/plugins/Visual/analyzer/translations/analyzer_plugin_de.qm svn:mime-type application/octet-stream
+r380
+r381
+r382
+r383
+r384
+  +file_prop: trunk/qmmp/src/plugins/Input/mad/tagextractor.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/mad/tagextractor.h svn:eol-style native
+r385
+r386
+r387
+r388
+  +file_prop: trunk/qmmp/src/ui/playlistitem.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/playlistitem.h svn:eol-style native
+r390
+r391
+r392
+r393
+r394
+r395
+  -empty_dir: trunk/qmmp/src/ui/mediafile.cpp
+  -empty_dir: trunk/qmmp/src/ui/mediafile.h
+r396
+r397
+  -empty_dir: trunk/qmmp/src/ui/playlistformat.cpp
+  -empty_dir: trunk/qmmp/src/ui/playlistformat.h
+  +file_prop: trunk/qmmp/src/plugins/PlaylistFormats/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlaylistFormats/m3u/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlaylistFormats/m3u/m3uplaylistformat.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlaylistFormats/m3u/m3uplaylistformat.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlaylistFormats/pls/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlaylistFormats/pls/plsplaylistformat.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlaylistFormats/pls/plsplaylistformat.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlaylistFormats/xspf/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlaylistFormats/xspf/xspfplaylistformat.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlaylistFormats/xspf/xspfplaylistformat.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/playlistformat.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/playlistparser.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/playlistparser.h svn:eol-style native
+r398
+r399
+r400
+r401
+  -empty_dir: trunk/qmmp/src/plugins/Misc/CommandLineOptions
+  -empty_dir: trunk/qmmp/src/ui/commandlineoption.cpp
+  -empty_dir: trunk/qmmp/src/ui/commandlineoption.h
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/incdecvolumeoption.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/incdecvolumeoption.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/commandlinemanager.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/commandlinemanager.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/commandlineoption.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/builtincommandlineoption.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/builtincommandlineoption.h svn:eol-style native
+r402
+r403
+r404
+r405
+r406
+r407
+r408
+r409
+  +file_prop: trunk/qmmp/src/plugins/Effect/srconverter/translations/srconverter_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/translations/notifier_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/translations/scrobbler_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/translations/statusicon_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/translations/modplug_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/sndfile/translations/sndfile_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/translations/wavpack_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/oss/translations/oss_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/pulseaudio/translations/pulseaudio_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Visual/analyzer/translations/analyzer_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/txt/description_zh_CN.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/txt/translators_zh_CN.txt svn:eol-style native
+r410
+  +file_prop: trunk/qmmp/src/plugins/Effect/srconverter/translations/srconverter_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/translations/scrobbler_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/translations/statusicon_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/translations/modplug_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/sndfile/translations/sndfile_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/translations/wavpack_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/oss/translations/oss_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/pulseaudio/translations/pulseaudio_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Visual/analyzer/translations/analyzer_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/txt/description_zh_TW.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/txt/translators_zh_TW.txt svn:eol-style native
+r411
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/translations/notifier_plugin_zh_TW.qm svn:mime-type application/octet-stream
+r412
+r413
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/translations/modplug_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/sndfile/translations/sndfile_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/translations/wavpack_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/oss/translations/oss_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/pulseaudio/translations/pulseaudio_plugin_ru.qm svn:mime-type application/octet-stream
+r414
+  -empty_dir: trunk/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/translations/incdevvolume_plugin_de.ts
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/translations/incdecvolume_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/translations/incdecvolume_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/translations/incdecvolume_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/translations/notifier_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/translations/scrobbler_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/translations/statusicon_plugin_ru.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Visual/analyzer/translations/analyzer_plugin_ru.qm svn:mime-type application/octet-stream
+r415
+r416
+r417
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/translations/incdecvolume_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Effect/srconverter/translations/srconverter_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/notifier/translations/notifier_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/translations/scrobbler_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/translations/statusicon_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/translations/modplug_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/sndfile/translations/sndfile_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/translations/wavpack_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/oss/translations/oss_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Output/pulseaudio/translations/pulseaudio_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Visual/analyzer/translations/analyzer_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/txt/description_uk_UA.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/txt/translators_uk_UA.txt svn:eol-style native
+r418
+  +file_prop: trunk/qmmp/src/plugins/Effect/srconverter/translations/srconverter_plugin_ru.qm svn:mime-type application/octet-stream
+r419
+  -empty_dir: trunk/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/translations/incdecvolume_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/translations/incdecvolume_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/translations/incdecvolume_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/translations/incdecvolume_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/Effect/srconverter/translations/srconverter_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/Effect/srconverter/translations/srconverter_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/Effect/srconverter/translations/srconverter_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/Effect/srconverter/translations/srconverter_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/Effect/srconverter/translations/srconverter_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/Effect/srconverter/translations/srconverter_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/notifier/translations/notifier_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/notifier/translations/notifier_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/notifier/translations/notifier_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/notifier/translations/notifier_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/notifier/translations/notifier_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/notifier/translations/notifier_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/scrobbler/translations/scrobbler_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/scrobbler/translations/scrobbler_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/scrobbler/translations/scrobbler_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/scrobbler/translations/scrobbler_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/scrobbler/translations/scrobbler_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/scrobbler/translations/scrobbler_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/statusicon/translations/statusicon_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/statusicon/translations/statusicon_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/statusicon/translations/statusicon_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/statusicon/translations/statusicon_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/statusicon/translations/statusicon_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/General/statusicon/translations/statusicon_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/ffmpeg/translations/ffmpeg_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/ffmpeg/translations/ffmpeg_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/ffmpeg/translations/ffmpeg_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/ffmpeg/translations/ffmpeg_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/ffmpeg/translations/ffmpeg_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/ffmpeg/translations/ffmpeg_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/flac/translations/flac_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/flac/translations/flac_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/flac/translations/flac_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/flac/translations/flac_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/flac/translations/flac_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/flac/translations/flac_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/mad/translations/mad_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/mad/translations/mad_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/mad/translations/mad_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/mad/translations/mad_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/mad/translations/mad_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/mad/translations/mad_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/modplug/translations/modplug_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/modplug/translations/modplug_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/modplug/translations/modplug_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/modplug/translations/modplug_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/modplug/translations/modplug_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/modplug/translations/modplug_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/mpc/translations/mpc_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/mpc/translations/mpc_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/mpc/translations/mpc_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/mpc/translations/mpc_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/mpc/translations/mpc_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/mpc/translations/mpc_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/sndfile/translations/sndfile_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/sndfile/translations/sndfile_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/sndfile/translations/sndfile_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/sndfile/translations/sndfile_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/sndfile/translations/sndfile_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/sndfile/translations/sndfile_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/vorbis/translations/vorbis_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/vorbis/translations/vorbis_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/vorbis/translations/vorbis_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/vorbis/translations/vorbis_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/vorbis/translations/vorbis_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/vorbis/translations/vorbis_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/wavpack/translations/wavpack_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/wavpack/translations/wavpack_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/wavpack/translations/wavpack_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/wavpack/translations/wavpack_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/wavpack/translations/wavpack_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/Input/wavpack/translations/wavpack_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/alsa/translations/alsa_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/alsa/translations/alsa_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/alsa/translations/alsa_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/alsa/translations/alsa_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/alsa/translations/alsa_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/alsa/translations/alsa_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/jack/translations/jack_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/jack/translations/jack_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/jack/translations/jack_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/jack/translations/jack_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/jack/translations/jack_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/jack/translations/jack_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/oss/translations/oss_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/oss/translations/oss_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/oss/translations/oss_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/oss/translations/oss_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/oss/translations/oss_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/oss/translations/oss_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/pulseaudio/translations/pulseaudio_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/pulseaudio/translations/pulseaudio_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/pulseaudio/translations/pulseaudio_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/pulseaudio/translations/pulseaudio_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/pulseaudio/translations/pulseaudio_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/Output/pulseaudio/translations/pulseaudio_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/plugins/Visual/analyzer/translations/analyzer_plugin_cs.qm
+  -empty_dir: trunk/qmmp/src/plugins/Visual/analyzer/translations/analyzer_plugin_de.qm
+  -empty_dir: trunk/qmmp/src/plugins/Visual/analyzer/translations/analyzer_plugin_ru.qm
+  -empty_dir: trunk/qmmp/src/plugins/Visual/analyzer/translations/analyzer_plugin_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/plugins/Visual/analyzer/translations/analyzer_plugin_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/plugins/Visual/analyzer/translations/analyzer_plugin_zh_TW.qm
+  -empty_dir: trunk/qmmp/src/ui/translations/qmmp_cs.qm
+  -empty_dir: trunk/qmmp/src/ui/translations/qmmp_de.qm
+  -empty_dir: trunk/qmmp/src/ui/translations/qmmp_pt_BR.qm
+  -empty_dir: trunk/qmmp/src/ui/translations/qmmp_ru.qm
+  -empty_dir: trunk/qmmp/src/ui/translations/qmmp_tr.qm
+  -empty_dir: trunk/qmmp/src/ui/translations/qmmp_uk_UA.qm
+  -empty_dir: trunk/qmmp/src/ui/translations/qmmp_zh_CN.qm
+  -empty_dir: trunk/qmmp/src/ui/translations/qmmp_zh_TW.qm
+r420
+  -empty_dir: trunk/qmmp/src/plugins/Misc/FileDialogs/libQmmpFileDialog.so
+  -empty_dir: trunk/qmmp/src/plugins/Misc/FileDialogs/libQt3FileDialog.so
+  -empty_dir: trunk/qmmp/src/plugins/Misc/PlaylistFormats/libCSVPlaylistFormat.so
+r421
+r422
+r423
+r424
+r425
+r426
+r427
+  -empty_dir: trunk/qmmp/clear_cmake.sh
+r428
+  -empty_dir: trunk/qmmp/src/plugins/Misc/FileDialogs/QmmpFileDialog
+  -empty_dir: trunk/qmmp/src/ui/filedialog.cpp
+  -empty_dir: trunk/qmmp/src/ui/filedialog.h
+  +file_prop: trunk/qmmp/src/plugins/FileDialogs/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/FileDialogs/QmmpFileDialog/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/FileDialogs/QmmpFileDialog/qmmpfiledialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/FileDialogs/QmmpFileDialog/qmmpfiledialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/FileDialogs/QmmpFileDialog/qmmpfiledialogimpl.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/FileDialogs/QmmpFileDialog/qmmpfiledialogimpl.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/filedialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/filedialog.h svn:eol-style native
+r429
+r430
+r431
+  +file_prop: trunk/qmmp/clear_qmake.sh svn:eol-style native
+r432
+r433
+r434
+r435
+r436
+r437
+r438
+r439
+r440
+r441
+r442
+r443
+  +file_prop: trunk/qmmp/src/qmmpui/filedialogfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/qtfiledialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/qtfiledialog.h svn:eol-style native
+r444
+r445
+r446
+r447
+r448
+r449
+r450
+r451
+r452
+r453
+r454
+r455
+r456
+r457
+r458
+r459
+r460
+r461
+r462
+  -empty_dir: trunk/qmmp/src/ui/html
+  +file_prop: trunk/qmmp/src/ui/txt/description_ru.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/txt/translators_ru.txt svn:eol-style native
+r463
+r464
+r465
+r469
+r473
+r476
+r477
+r482
+r486
+r490
+r495
+r497
+r498
+r501
+r503
+r505
+r508
+r514
+r515
+r517
+r519
+r524
+r526
+r528
+r535
+r539
+r540
+r543
+r544
+r546
+  +file_prop: trunk/qmmp/src/qmmp/qmmp.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/qmmp.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/statehandler.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/statehandler.h svn:eol-style native
+r548
+r549
+r550
+r551
+r552
+r553
+r554
+r556
+r558
+r560
+r561
+  -empty_dir: trunk/qmmp/src/qmmp/filetag.cpp
+  -empty_dir: trunk/qmmp/src/qmmp/filetag.h
+  +file_prop: trunk/qmmp/src/qmmp/fileinfo.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/fileinfo.h svn:eol-style native
+r562
+r563
+r565
+r566
+r567
+r568
+  +file_prop: trunk/qmmp/src/qmmp/volumecontrol.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/volumecontrol.h svn:eol-style native
+r569
+r570
+r571
+r572
+r573
+r574
+r575
+  +file_prop: trunk/qmmp/src/plugins/Input/cue/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/cue/cueparser.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/cue/cueparser.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/cue/decoder_cue.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/cue/decoder_cue.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/cue/decodercuefactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/cue/decodercuefactory.h svn:eol-style native
+r576
+r577
+r578
+r579
+r580
+r581
+r582
+r583
+  +file_prop: trunk/qmmp/src/plugins/Input/cue/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/cue/settingsdialog.h svn:eol-style native
+r584
+r585
+r587
+r589
+r592
+r593
+r595
+r596
+r597
+r598
+r599
+r600
+r601
+  +file_prop: trunk/qmmp/src/plugins/Input/aac/aacfile.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/aac/aacfile.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/aac/decoder_aac.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/aac/decoder_aac.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/aac/decoderaacfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/aac/decoderaacfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/aac/detailsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/aac/detailsdialog.h svn:eol-style native
+r603
+r604
+r605
+  +file_prop: trunk/qmmp/src/plugins/Input/aac/CMakeLists.txt svn:eol-style native
+r606
+  +file_prop: trunk/qmmp/src/plugins/Input/aac/tagextractor.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/aac/tagextractor.h svn:eol-style native
+r607
+  -empty_dir: trunk/qmmp/src/plugins/Input/aac/tagextractor.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Input/aac/tagextractor.h
+r609
+r610
+r612
+r615
+r619
+r620
+r622
+r623
+r624
+r625
+r626
+r627
+r628
+r629
+r631
+  -empty_dir: trunk/qmmp/src/qmmpui/control.cpp
+  -empty_dir: trunk/qmmp/src/qmmpui/control.h
+r632
+r633
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/CMakeLists.txt
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/dbusadaptor.cpp
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/dbusadaptor.h
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/dbuscontrol.cpp
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/dbuscontrol.h
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/dbuscontrol.pro
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/dbuscontrolfactory.cpp
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/dbuscontrolfactory.h
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_cs.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_de.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_ru.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_uk_UA.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_zh_CN.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/translations/dbuscontrol_plugin_zh_TW.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol/translations/translations.qrc
+  +empty_dir: trunk/qmmp/src/plugins/General/mpris/translations
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/mpris.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/mpris.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/mprisfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/mprisfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/playerobject.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/playerobject.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/rootobject.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/rootobject.h svn:eol-style native
+r634
+r635
+  -empty_dir: trunk/qmmp/src/plugins/General/dbuscontrol
+r636
+r637
+r638
+r639
+r640
+r641
+r642
+r643
+  +file_prop: trunk/qmmp/src/plugins/Input/flac/cueparser.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/flac/cueparser.h svn:eol-style native
+r644
+r646
+r647
+  -empty_dir: trunk/qmmp/src/qmmpui/songinfo.cpp
+  -empty_dir: trunk/qmmp/src/qmmpui/songinfo.h
+  +file_prop: trunk/qmmp/src/qmmpui/abstractplaylist.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/abstractplaylist.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/abstractplaylistitem.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/abstractplaylistitem.h svn:eol-style native
+r649
+r652
+r656
+r658
+r659
+r662
+r669
+r671
+r672
+  +file_prop: trunk/qmmp/src/plugins/Input/wildmidi/decoder_wildmidi.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wildmidi/decoder_wildmidi.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wildmidi/decoderwildmidifactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wildmidi/decoderwildmidifactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wildmidi/detailsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wildmidi/detailsdialog.h svn:eol-style native
+r673
+r674
+  -empty_dir: trunk/qmmp/src/plugins/Input/wildmidi
+r675
+r676
+r677
+r678
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/qmmptrayicon.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/qmmptrayicon.h svn:eol-style native
+r679
+  -empty_dir: trunk/qmmp/src/qmmpui/abstractplaylist.cpp
+  -empty_dir: trunk/qmmp/src/qmmpui/abstractplaylist.h
+  -empty_dir: trunk/qmmp/src/ui/fileloader.cpp
+  -empty_dir: trunk/qmmp/src/ui/fileloader.h
+  -empty_dir: trunk/qmmp/src/ui/playlistitem.cpp
+  -empty_dir: trunk/qmmp/src/ui/playlistitem.h
+  -empty_dir: trunk/qmmp/src/ui/playlistmodel.cpp
+  -empty_dir: trunk/qmmp/src/ui/playlistmodel.h
+  -empty_dir: trunk/qmmp/src/ui/playstate.cpp
+  -empty_dir: trunk/qmmp/src/ui/playstate.h
+  +file_prop: trunk/qmmp/src/qmmpui/fileloader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/fileloader.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/playlistitem.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/playlistitem.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/playlistmodel.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/playlistmodel.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/playstate.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/playstate.h svn:eol-style native
+r680
+r681
+  +file_prop: trunk/qmmp/src/qmmpui/mediaplayer.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/mediaplayer.h svn:eol-style native
+r682
+r683
+r684
+r686
+r687
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/tracklistobject.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/tracklistobject.h svn:eol-style native
+r689
+r690
+r691
+r692
+  +file_prop: trunk/qmmp/src/plugins/Input/ffmpeg/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/ffmpeg/settingsdialog.h svn:eol-style native
+r693
+r694
+r695
+r696
+r697
+r698
+r699
+r700
+r701
+r702
+r703
+r704
+  -empty_dir: trunk/qmmp/src/ui/version.h
+  +file_prop: trunk/qmmp/src/qmmp/svn_revision.sh svn:eol-style native
+r705
+r706
+r707
+r708
+r709
+r710
+r711
+r712
+r713
+r714
+r715
+r716
+r717
+r718
+r719
+r720
+r721
+r722
+  +file_prop: trunk/qmmp/src/plugins/Input/mplayer/decoder_mplayer.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/mplayer/decoder_mplayer.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/mplayer/decodermplayerfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/mplayer/decodermplayerfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/phonon/decoder_phonon.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/phonon/decoder_phonon.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/phonon/decoderphononfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/phonon/decoderphononfactory.h svn:eol-style native
+r723
+  +file_prop: trunk/qmmp/src/plugins/Input/mplayer/CMakeLists.txt svn:eol-style native
+r724
+  +file_prop: trunk/qmmp/src/plugins/Input/mplayer/detailsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/mplayer/detailsdialog.h svn:eol-style native
+r725
+r726
+r727
+r728
+r729
+r730
+r731
+r732
+  +file_prop: trunk/qmmp/src/plugins/Input/cdaudio/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/cdaudio/decoder_cdaudio.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/cdaudio/decoder_cdaudio.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/cdaudio/decodercdaudiofactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/cdaudio/decodercdaudiofactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/cdaudio/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/cdaudio/settingsdialog.h svn:eol-style native
+r733
+r734
+r735
+r737
+r738
+r739
+r740
+r741
+r742
+r743
+r744
+r745
+  +file_prop: trunk/qmmp/src/plugins/General/lyrics/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/lyrics/lyrics.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/lyrics/lyrics.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/lyrics/lyricsfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/lyrics/lyricsfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/lyrics/lyricswindow.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/lyrics/lyricswindow.h svn:eol-style native
+r746
+r747
+r748
+r749
+r750
+r751
+r752
+  +file_prop: trunk/qmmp/src/plugins/General/hal/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hal/haldevice.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hal/haldevice.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hal/halfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hal/halfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hal/halmanager.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hal/halmanager.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hal/halplugin.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hal/halplugin.h svn:eol-style native
+r753
+r754
+r755
+r756
+r757
+r758
+r759
+r760
+r761
+r762
+r763
+r764
+  +file_prop: trunk/qmmp/src/plugins/General/hal/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hal/settingsdialog.h svn:eol-style native
+r765
+r767
+r768
+r769
+r771
+r773
+r775
+r776
+r777
+r778
+r780
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/cueparser.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/cueparser.h svn:eol-style native
+r781
+r783
+r784
+r786
+r787
+  +file_prop: trunk/qmmp/src/plugins/General/hotkey/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hotkey/hotkeydialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hotkey/hotkeydialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hotkey/hotkeyfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hotkey/hotkeyfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hotkey/hotkeymanager.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hotkey/hotkeymanager.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hotkey/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/hotkey/settingsdialog.h svn:eol-style native
+r788
+r789
+r790
+r791
+r792
+r793
+r794
+r795
+r797
+r798
+r799
+r800
+r802
+r803
+r804
+r806
+r807
+  +file_prop: trunk/qmmp/src/plugins/Visual/projectm/analyzer.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Visual/projectm/analyzer.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Visual/projectm/projectmwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Visual/projectm/projectmwidget.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Visual/projectm/qprojectm.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Visual/projectm/visualprojectmfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Visual/projectm/visualprojectmfactory.h svn:eol-style native
+r809
+r810
+  +file_prop: trunk/qmmp/src/plugins/Effect/bs2b/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/bs2b/bs2bplugin.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/bs2b/bs2bplugin.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/bs2b/effectbs2bfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/bs2b/effectbs2bfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/bs2b/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/bs2b/settingsdialog.h svn:eol-style native
+r811
+r812
+  -empty_dir: trunk/qmmp/src/plugins/Visual/projectm/analyzer.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Visual/projectm/analyzer.h
+  -empty_dir: trunk/qmmp/src/plugins/Visual/projectm/qprojectm.h
+  +file_prop: trunk/qmmp/src/plugins/Visual/projectm/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Visual/projectm/projectmplugin.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Visual/projectm/projectmplugin.h svn:eol-style native
+r813
+r814
+r815
+r816
+r819
+r820
+r821
+r822
+  +file_prop: trunk/qmmp/src/qmmpui/playlistsettings.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/playlistsettings.h svn:eol-style native
+r823
+  +file_prop: trunk/qmmp/src/plugins/Input/mplayer/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/mplayer/settingsdialog.h svn:eol-style native
+r824
+r825
+r826
+r827
+r828
+r829
+r830
+r831
+r832
+r833
+r834
+r835
+r836
+r837
+r838
+r839
+r840
+r841
+r842
+r843
+r844
+r845
+r846
+r847
+r848
+r849
+r850
+r851
+r852
+r853
+r854
+r855
+r856
+r857
+r858
+r859
+r860
+r861
+r862
+r864
+r866
+r867
+r868
+r869
+  -empty_dir: trunk/qmmp/src/plugins/Input/phonon
+r872
+r873
+r874
+r875
+r876
+r877
+r878
+r879
+r882
+r883
+r884
+r885
+r886
+r887
+r889
+  -empty_dir: trunk/qmmp/ChangeLog.svn
+r890
+r891
+r892
+r893
+r895
+r896
+r897
+r898
+r899
+r900
+r901
+  +empty_dir: trunk/qmmp/src/plugins/Output/waveout/translations
+r902
+r903
+r904
+r905
+r906
+r907
+r908
+r909
+r910
+r911
+r912
+r913
+r914
+r915
+r916
+r917
+r918
+r919
+r920
+r921
+r922
+r923
+r924
+r925
+r926
+r927
+  +file_prop: trunk/qmmp/src/plugins/General/fileops/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/fileops/Makefile svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/fileops/fileops.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/fileops/fileops.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/fileops/fileopsfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/fileops/fileopsfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/fileops/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/fileops/settingsdialog.h svn:eol-style native
+r928
+r929
+r930
+r931
+r932
+r933
+r934
+r935
+  -empty_dir: trunk/qmmp/src/plugins/General/fileops/Makefile
+r936
+  +file_prop: trunk/qmmp/src/plugins/General/fileops/hotkeydialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/fileops/hotkeydialog.h svn:eol-style native
+r937
+r938
+r939
+r940
+r941
+r942
+r943
+r944
+r945
+  +file_prop: trunk/qmmp/src/ui/txt/authors_it.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/description_it.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/thanks_it.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/translators_it.txt svn:eol-style native
+r946
+r947
+  -empty_dir: trunk/qmmp/src/plugins/Misc
+r948
+r949
+r950
+r951
+r952
+r953
+r955
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/scrobblerhandler.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/scrobblerhandler.h svn:eol-style native
+r956
+r957
+r958
+r959
+r960
+r961
+r962
+r963
+r964
+r965
+r966
+r967
+r968
+r969
+r970
+r971
+r972
+r973
+r974
+r975
+r976
+r977
+r978
+r979
+r980
+r981
+r982
+r983
+r985
+r986
+r987
+r988
+r989
+r990
+r991
+r992
+r993
+  -empty_dir: trunk/qmmp/qmmp.spec
+r998
+r1001
+r1002
+r1004
+r1006
+r1007
+r1010
+r1011
+r1013
+r1014
+r1016
+  -empty_dir: trunk/qmmp/src/qmmp/constants.h
+r1017
+r1019
+r1020
+r1021
+r1024
+  +file_prop: trunk/qmmp/src/plugins/Output/waveout/CMakeLists.txt svn:eol-style native
+r1025
+r1033
+r1035
+r1037
+r1038
+r1041
+r1043
+r1044
+r1046
+r1048
+r1049
+r1050
+r1051
+r1052
+r1053
+r1054
+r1056
+r1058
+r1059
+r1061
+r1062
+r1063
+r1064
+r1065
+r1066
+r1067
+r1069
+r1070
+  +file_prop: trunk/qmmp/src/ui/txt/authors_tr.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/description_tr.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/thanks_tr.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/translators_tr.txt svn:eol-style native
+r1072
+r1075
+r1076
+  -empty_dir: trunk/qmmp/src/plugins/FileDialogs/QmmpFileDialog/translations/qmmp_file_dialog_plugin_it.tr
+  +file_prop: trunk/qmmp/src/ui/txt/authors_lt.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/description_lt.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/thanks_lt.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/translators_lt.txt svn:eol-style native
+r1077
+r1080
+r1082
+r1083
+r1084
+r1085
+r1086
+r1087
+r1088
+  +file_prop: trunk/qmmp/src/plugins/Input/mad/coverwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/mad/coverwidget.h svn:eol-style native
+r1089
+r1090
+r1091
+r1093
+r1094
+r1097
+r1099
+  +file_prop: trunk/qmmp/src/qmmp/forms/coverwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/forms/coverwidget.h svn:eol-style native
+r1100
+r1103
+r1104
+r1105
+r1107
+r1109
+r1110
+  -empty_dir: trunk/qmmp/src/plugins/Input/flac/detailsdialog.ui
+  -empty_dir: trunk/qmmp/src/qmmp/forms/coverwidget.cpp
+  -empty_dir: trunk/qmmp/src/qmmp/forms/coverwidget.h
+  -empty_dir: trunk/qmmp/src/qmmp/forms/detailsdialog.ui
+  +file_prop: trunk/qmmp/src/qmmp/abstractdetailsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/abstractdetailsdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/coverwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/coverwidget.h svn:eol-style native
+r1111
+r1112
+r1113
+r1115
+r1116
+r1118
+r1120
+r1121
+r1122
+r1123
+  -empty_dir: trunk/qmmp/src/plugins/Input/vorbis/detailsdialog.ui
+r1124
+r1125
+  -empty_dir: trunk/qmmp/src/plugins/Input/ffmpeg/detailsdialog.ui
+r1126
+  -empty_dir: trunk/qmmp/src/plugins/Input/wavpack/detailsdialog.ui
+r1127
+  -empty_dir: trunk/qmmp/src/plugins/Input/mpc/detailsdialog.ui
+r1128
+r1130
+r1131
+r1132
+r1134
+r1135
+r1136
+r1137
+r1138
+r1139
+r1140
+r1141
+r1142
+r1145
+r1146
+r1148
+r1149
+r1150
+r1151
+r1152
+r1155
+r1156
+r1157
+r1159
+r1160
+r1161
+r1168
+r1169
+r1171
+r1172
+r1174
+r1177
+r1178
+r1188
+r1192
+r1194
+  -empty_dir: trunk/qmmp/src/plugins/Input/mad/coverwidget.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Input/mad/coverwidget.h
+  -empty_dir: trunk/qmmp/src/plugins/Input/mad/detailsdialog.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Input/mad/detailsdialog.h
+  -empty_dir: trunk/qmmp/src/plugins/Input/mad/detailsdialog.ui
+  -empty_dir: trunk/qmmp/src/qmmp/abstractdetailsdialog.cpp
+  -empty_dir: trunk/qmmp/src/qmmp/abstractdetailsdialog.h
+  -empty_dir: trunk/qmmp/src/qmmp/forms
+  -empty_dir: trunk/qmmp/src/qmmp/translations
+  +file_prop: trunk/qmmp/src/plugins/General/covermanager/coverwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/covermanager/coverwidget.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/mad/mpegmetadatamodel.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/mad/mpegmetadatamodel.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/metadatamodel.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/metadatamodel.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/tagmodel.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/tagmodel.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/detailsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/detailsdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/tageditor.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/tageditor.h svn:eol-style native
+r1195
+r1196
+r1197
+  -empty_dir: trunk/qmmp/src/qmmp/coverwidget.cpp
+  -empty_dir: trunk/qmmp/src/qmmp/coverwidget.h
+r1200
+r1201
+r1205
+r1207
+  +file_prop: trunk/qmmp/src/qmmp/abstractengine.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/abstractengine.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/audioparameters.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/audioparameters.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/qmmpaudioengine.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/qmmpaudioengine.h svn:eol-style native
+r1208
+r1221
+r1222
+  +file_prop: trunk/qmmp/src/qmmp/inputsource.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/inputsource.h svn:eol-style native
+r1223
+r1224
+r1226
+r1227
+r1228
+r1229
+r1230
+r1231
+  -empty_dir: trunk/qmmp/src/qmmp/downloader.cpp
+  -empty_dir: trunk/qmmp/src/qmmp/downloader.h
+  -empty_dir: trunk/qmmp/src/qmmp/streamreader.cpp
+  -empty_dir: trunk/qmmp/src/qmmp/streamreader.h
+  +file_prop: trunk/qmmp/src/plugins/Transports/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/http/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/http/downloader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/http/downloader.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/http/httpinputfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/http/httpinputfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/http/httpinputsource.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/http/httpinputsource.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/http/streamreader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/http/streamreader.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/emptyinputsource.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/emptyinputsource.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/fileinputsource.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/fileinputsource.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/inputsourcefactory.h svn:eol-style native
+r1233
+r1234
+  -empty_dir: trunk/qmmp/src/plugins/Input/vorbis/detailsdialog.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Input/vorbis/detailsdialog.h
+  +file_prop: trunk/qmmp/src/plugins/Input/vorbis/vorbismetadatamodel.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/vorbis/vorbismetadatamodel.h svn:eol-style native
+r1235
+r1236
+r1237
+r1238
+r1239
+r1240
+r1241
+r1242
+r1243
+r1244
+r1245
+r1246
+  -empty_dir: trunk/qmmp/src/plugins/Input/flac/detailsdialog.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Input/flac/detailsdialog.h
+  +file_prop: trunk/qmmp/src/plugins/Input/flac/flacmetadatamodel.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/flac/flacmetadatamodel.h svn:eol-style native
+r1248
+r1249
+r1250
+  -empty_dir: trunk/qmmp/src/plugins/Input/mpc/detailsdialog.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Input/mpc/detailsdialog.h
+  +file_prop: trunk/qmmp/src/plugins/Input/mpc/mpcmetadatamodel.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/mpc/mpcmetadatamodel.h svn:eol-style native
+r1251
+r1252
+  -empty_dir: trunk/qmmp/src/plugins/Input/wavpack/detailsdialog.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Input/wavpack/detailsdialog.h
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/wavpackmetadatamodel.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/wavpackmetadatamodel.h svn:eol-style native
+r1253
+r1254
+  -empty_dir: trunk/qmmp/src/plugins/Input/ffmpeg/detailsdialog.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Input/ffmpeg/detailsdialog.h
+  +file_prop: trunk/qmmp/src/plugins/Input/ffmpeg/ffmpegmetadatamodel.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/ffmpeg/ffmpegmetadatamodel.h svn:eol-style native
+r1255
+r1256
+r1259
+r1260
+r1261
+r1262
+r1263
+r1264
+r1265
+r1268
+  -empty_dir: trunk/qmmp/src/plugins/Input/modplug/detailsdialog.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Input/modplug/detailsdialog.h
+  -empty_dir: trunk/qmmp/src/plugins/Input/modplug/detailsdialog.ui
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/modplugmetadatamodel.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/modplug/modplugmetadatamodel.h svn:eol-style native
+r1269
+  -empty_dir: trunk/qmmp/src/plugins/Input/aac/detailsdialog.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Input/aac/detailsdialog.h
+  -empty_dir: trunk/qmmp/src/plugins/Input/aac/detailsdialog.ui
+  +file_prop: trunk/qmmp/src/plugins/Input/aac/aacmetadatamodel.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/aac/aacmetadatamodel.h svn:eol-style native
+r1270
+r1273
+r1275
+  +file_prop: trunk/qmmp/update_ts.sh svn:eol-style native
+r1276
+r1277
+r1278
+r1279
+r1281
+r1282
+r1285
+r1287
+r1288
+  +file_prop: trunk/qmmp/src/qmmp/enginefactory.h svn:eol-style native
+r1289
+r1290
+r1291
+r1292
+r1293
+r1295
+r1296
+  -empty_dir: trunk/qmmp/src/plugins/Input/mplayer
+  +file_prop: trunk/qmmp/src/plugins/Engines/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Engines/mplayer/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Engines/mplayer/mplayerengine.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Engines/mplayer/mplayerengine.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Engines/mplayer/mplayerenginefactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Engines/mplayer/mplayerenginefactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Engines/mplayer/mplayermetadatamodel.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Engines/mplayer/mplayermetadatamodel.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Engines/mplayer/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Engines/mplayer/settingsdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/metadatamanager.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/metadatamanager.h svn:eol-style native
+r1297
+r1298
+r1299
+r1300
+r1301
+r1302
+r1303
+r1304
+r1305
+r1306
+r1307
+r1308
+r1309
+r1310
+r1311
+r1312
+r1313
+r1315
+  +file_prop: trunk/qmmp/src/plugins/General/covermanager/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/covermanager/covermanager.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/covermanager/covermanager.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/covermanager/covermanagerfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/covermanager/covermanagerfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/covermanager/coverwindow.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/covermanager/coverwindow.h svn:eol-style native
+r1316
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/images/empty_cover.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/statusiconpopupwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/statusiconpopupwidget.h svn:eol-style native
+r1317
+r1318
+r1319
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/coverwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/statusicon/coverwidget.h svn:eol-style native
+r1320
+r1321
+r1323
+r1325
+r1326
+r1328
+r1329
+r1330
+  +file_prop: trunk/qmmp/src/plugins/Input/cue/cuemetadatamodel.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/cue/cuemetadatamodel.h svn:eol-style native
+r1331
+r1332
+r1333
+r1334
+r1336
+r1337
+  +file_prop: trunk/qmmp/src/plugins/General/kdenotify/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/kdenotify/images/app_icon.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/General/kdenotify/images/empty_cover.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/General/kdenotify/kdenotify.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/kdenotify/kdenotify.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/kdenotify/kdenotifyfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/kdenotify/kdenotifyfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/kdenotify/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/kdenotify/settingsdialog.h svn:eol-style native
+r1338
+  +file_prop: trunk/qmmp/src/ui/cursorimage.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/cursorimage.h svn:eol-style native
+r1339
+r1341
+r1342
+r1344
+r1345
+r1346
+r1347
+r1350
+r1351
+r1352
+r1353
+r1354
+r1355
+r1356
+r1357
+r1358
+r1359
+r1360
+r1361
+r1362
+r1363
+  +file_prop: trunk/qmmp/src/qmmpui/playlistmanager.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/playlistmanager.h svn:eol-style native
+r1364
+  +file_prop: trunk/qmmp/src/ui/playlistbrowser.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/playlistbrowser.h svn:eol-style native
+r1365
+r1366
+r1367
+r1368
+r1369
+r1370
+r1371
+r1372
+  +file_prop: trunk/qmmp/src/ui/playlistselector.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/playlistselector.h svn:eol-style native
+r1374
+r1376
+r1377
+r1378
+r1379
+r1380
+r1381
+r1382
+r1383
+r1384
+r1385
+r1386
+r1387
+r1388
+r1389
+  +file_prop: trunk/qmmp/src/qmmpui/metadataformatter.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/metadataformatter.h svn:eol-style native
+r1390
+r1391
+r1392
+r1393
+r1394
+r1395
+r1396
+r1397
+r1398
+r1399
+  +file_prop: trunk/qmmp/src/ui/popupsettings.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/popupsettings.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/popupwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/popupwidget.h svn:eol-style native
+r1400
+r1401
+r1402
+r1404
+r1405
+r1406
+r1407
+r1408
+r1409
+r1410
+r1411
+r1412
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/ladspa.h svn:eol-style native
+r1413
+r1414
+r1415
+r1416
+r1417
+r1419
+r1421
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/effectladspafactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/effectladspafactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/ladspaplugin.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/ladspaplugin.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/settingsdialog.h svn:eol-style native
+r1422
+r1423
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/ladspaslider.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/ladspaslider.h svn:eol-style native
+r1424
+r1425
+r1426
+  -empty_dir: trunk/qmmp/src/plugins/Effect/ladspa/ladspaplugin.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Effect/ladspa/ladspaplugin.h
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/ladspahost.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/ladspahost.h svn:eol-style native
+r1427
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/ladspahelper.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/ladspahelper.h svn:eol-style native
+r1428
+r1429
+r1430
+r1431
+r1432
+r1433
+r1434
+r1436
+r1437
+  +file_prop: trunk/qmmp/src/ui/images/replaygain.png svn:mime-type image/png
+r1438
+  +file_prop: trunk/qmmp/src/qmmp/replaygaininfo.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/replaygaininfo.h svn:eol-style native
+r1439
+r1440
+r1441
+r1442
+r1443
+r1444
+  +file_prop: trunk/qmmp/src/qmmp/replaygain.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/replaygain.h svn:eol-style native
+r1445
+r1446
+  +file_prop: trunk/qmmp/src/qmmp/replaygainsettings.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/replaygainsettings.h svn:eol-style native
+r1447
+r1448
+r1449
+r1450
+r1451
+r1452
+  -empty_dir: trunk/qmmp/src/qmmp/replaygaininfo.cpp
+  -empty_dir: trunk/qmmp/src/qmmp/replaygaininfo.h
+r1453
+  +file_prop: trunk/qmmp/src/plugins/Input/mad/replaygainreader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/mad/replaygainreader.h svn:eol-style native
+r1454
+r1455
+r1457
+  +file_prop: trunk/qmmp/src/plugins/Input/vorbis/replaygainreader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/vorbis/replaygainreader.h svn:eol-style native
+r1458
+r1459
+  +file_prop: trunk/qmmp/src/plugins/Input/flac/replaygainreader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/flac/replaygainreader.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/replaygainreader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wavpack/replaygainreader.h svn:eol-style native
+r1460
+r1461
+r1462
+r1463
+r1464
+r1465
+r1466
+  -empty_dir: trunk/qmmp/src/plugins/General/covermanager/coverwindow.cpp
+  -empty_dir: trunk/qmmp/src/plugins/General/covermanager/coverwindow.h
+  -empty_dir: trunk/qmmp/src/plugins/General/covermanager/coverwindow.ui
+r1467
+r1468
+r1469
+r1470
+r1472
+r1474
+r1475
+r1476
+r1478
+r1479
+r1480
+r1481
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/ladspabutton.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/ladspa/ladspabutton.h svn:eol-style native
+r1482
+r1483
+r1484
+r1485
+r1486
+r1487
+r1488
+r1489
+r1490
+r1491
+r1493
+r1497
+r1498
+  +file_prop: trunk/qmmp/src/plugins/General/covermanager/images/cm_no_cover.png svn:mime-type image/png
+r1499
+r1502
+r1503
+r1504
+r1505
+r1506
+r1507
+r1508
+r1509
+r1510
+r1511
+r1512
+r1513
+r1514
+r1516
+r1517
+r1518
+r1519
+r1520
+r1521
+  -empty_dir: trunk/qmmp/src/qmmp/replaygainsettings.cpp
+  -empty_dir: trunk/qmmp/src/qmmp/replaygainsettings.h
+  +file_prop: trunk/qmmp/src/qmmp/audioconverter.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/audioconverter.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/audiosettings.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/audiosettings.h svn:eol-style native
+r1522
+r1523
+  -empty_dir: trunk/qmmp/src/qmmp/audiosettings.cpp
+  -empty_dir: trunk/qmmp/src/qmmp/audiosettings.h
+  +file_prop: trunk/qmmp/src/qmmp/qmmpsettings.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/qmmpsettings.h svn:eol-style native
+r1524
+r1525
+r1526
+r1527
+r1528
+r1529
+r1530
+  +file_prop: trunk/qmmp/src/qmmpui/templateeditor.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/templateeditor.h svn:eol-style native
+r1531
+r1532
+r1533
+r1534
+r1536
+r1537
+r1538
+r1539
+  +file_prop: trunk/qmmp/src/plugins/Transports/http/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/http/settingsdialog.h svn:eol-style native
+r1540
+r1541
+r1542
+r1543
+r1544
+r1545
+r1546
+r1547
+r1548
+r1549
+r1550
+  +file_prop: trunk/qmmp/src/plugins/Output/null/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Output/null/outputnull.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Output/null/outputnull.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Output/null/outputnullfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Output/null/outputnullfactory.h svn:eol-style native
+r1552
+r1553
+r1554
+r1557
+r1558
+r1559
+r1560
+r1561
+r1562
+r1563
+r1564
+r1565
+r1566
+r1567
+r1568
+r1570
+r1573
+r1574
+r1576
+r1577
+r1578
+r1579
+r1580
+r1581
+r1582
+r1583
+r1584
+r1585
+r1586
+r1587
+r1588
+r1589
+r1590
+r1591
+r1592
+r1593
+r1594
+r1595
+r1597
+r1598
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/SeekOption/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/SeekOption/seekoption.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/SeekOption/seekoption.h svn:eol-style native
+r1599
+r1600
+r1601
+  +file_prop: trunk/qmmp/src/ui/images/ui_no_cover.png svn:mime-type image/png
+r1602
+r1603
+r1604
+r1606
+r1607
+r1611
+r1613
+r1616
+r1617
+r1618
+r1619
+r1620
+r1621
+r1622
+r1623
+r1624
+r1625
+r1627
+r1628
+r1629
+r1630
+r1631
+r1632
+r1633
+r1634
+r1635
+r1636
+r1637
+r1638
+r1639
+r1640
+r1641
+r1642
+r1643
+r1644
+r1646
+r1648
+r1650
+r1651
+r1652
+r1654
+r1656
+r1657
+  +file_prop: trunk/qmmp/src/ui/txt/authors_pl.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/description_pl.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/thanks_pl.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/translators_pl.txt svn:eol-style native
+r1658
+  +file_prop: trunk/qmmp/src/plugins/Transports/mms/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/mms/downloader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/mms/downloader.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/mms/mmsinputfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/mms/mmsinputfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/mms/mmsinputsource.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/mms/mmsinputsource.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/mms/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/mms/settingsdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/mms/streamreader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/mms/streamreader.h svn:eol-style native
+r1659
+r1660
+r1661
+r1662
+r1664
+r1665
+r1666
+r1667
+r1668
+r1670
+r1671
+r1672
+r1673
+r1674
+r1676
+r1677
+r1678
+r1679
+r1681
+r1685
+r1686
+r1690
+r1691
+r1692
+r1693
+r1694
+r1696
+r1697
+  +file_prop: trunk/qmmp/src/ui/images/scalable/qmmp-simple.svgz svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/ui/images/scalable/qmmp.svgz svn:mime-type application/octet-stream
+r1698
+r1699
+r1702
+r1704
+r1706
+r1709
+r1710
+r1712
+r1714
+r1717
+r1719
+r1720
+r1722
+r1723
+r1724
+r1725
+r1726
+r1728
+r1729
+r1730
+r1731
+r1733
+r1734
+r1736
+  +file_prop: trunk/qmmp/src/ui/windowsystem.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/windowsystem.h svn:eol-style native
+r1737
+r1738
+r1739
+r1740
+r1741
+r1743
+r1746
+  +file_prop: trunk/qmmp/src/ui/viewmenu.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/viewmenu.h svn:eol-style native
+r1747
+r1749
+r1751
+r1753
+r1754
+r1757
+r1760
+r1763
+  +file_prop: trunk/qmmp/src/ui/txt/authors_nl.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/description_nl.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/thanks_nl.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/translators_nl.txt svn:eol-style native
+r1766
+r1768
+r1769
+r1776
+r1777
+r1778
+r1780
+r1782
+r1786
+r1789
+r1790
+r1792
+r1795
+r1796
+  +file_prop: trunk/qmmp/src/qmmp/eqsettings.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/eqsettings.h svn:eol-style native
+r1797
+r1799
+r1801
+r1802
+r1804
+r1806
+r1809
+r1811
+r1813
+r1815
+  +file_prop: trunk/qmmp/src/plugins/Input/wildmidi/decoder_wildmidi.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wildmidi/decoder_wildmidi.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wildmidi/decoderwildmidifactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wildmidi/decoderwildmidifactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wildmidi/wildmidihelper.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wildmidi/wildmidihelper.h svn:eol-style native
+r1816
+  +file_prop: trunk/qmmp/src/plugins/Input/wildmidi/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/wildmidi/settingsdialog.h svn:eol-style native
+r1817
+r1818
+  +file_prop: trunk/qmmp/src/plugins/Input/wildmidi/CMakeLists.txt svn:eol-style native
+r1819
+r1820
+r1821
+r1822
+r1823
+r1824
+r1825
+r1827
+r1829
+r1831
+r1832
+r1834
+r1837
+r1839
+r1842
+  +file_prop: trunk/qmmp/src/ui/txt/description_ja.txt svn:mime-type application/octet-stream
+r1844
+  +file_prop: trunk/qmmp/src/ui/txt/authors_es.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/description_es.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/thanks_es.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/txt/translators_es.txt svn:eol-style native
+r1845
+r1847
+r1849
+r1850
+r1853
+r1855
+r1856
+  +file_prop: trunk/qmmp/src/plugins/General/udisks/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/udisks/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/udisks/settingsdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/udisks/udisksdevice.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/udisks/udisksdevice.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/udisks/udisksfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/udisks/udisksfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/udisks/udisksmanager.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/udisks/udisksmanager.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/udisks/udisksplugin.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/udisks/udisksplugin.h svn:eol-style native
+r1858
+r1859
+r1860
+r1862
+r1864
+r1866
+r1868
+r1870
+r1872
+r1873
+r1874
+  +file_prop: trunk/qmmp/src/plugins/Effect/crossfade/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/crossfade/crossfadeplugin.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/crossfade/crossfadeplugin.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/crossfade/effectcrossfadefactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/crossfade/effectcrossfadefactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/crossfade/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/crossfade/settingsdialog.h svn:eol-style native
+r1875
+r1876
+r1879
+r1880
+r1881
+r1883
+r1884
+r1885
+r1886
+r1888
+r1889
+r1890
+  -empty_dir: trunk/qmmp/src/ui/unixdomainsocket.cpp
+  -empty_dir: trunk/qmmp/src/ui/unixdomainsocket.h
+r1891
+r1893
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/StatusOption/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/StatusOption/statusoption.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/StatusOption/statusoption.h svn:eol-style native
+r1894
+r1896
+r1898
+r1899
+r1900
+r1901
+r1902
+r1903
+r1904
+r1905
+r1907
+r1909
+  +file_prop: trunk/qmmp/src/plugins/Input/gme/decoder_gme.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/gme/decoder_gme.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/gme/decodergmefactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/gme/decodergmefactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/gme/gmehelper.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Input/gme/gmehelper.h svn:eol-style native
+r1910
+  +file_prop: trunk/qmmp/src/plugins/Input/gme/CMakeLists.txt svn:eol-style native
+r1911
+r1912
+r1913
+r1914
+r1915
+r1916
+r1917
+r1918
+r1919
+r1921
+r1923
+r1924
+  +file_prop: trunk/qmmp/src/ui/lxdesupport.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/lxdesupport.h svn:eol-style native
+r1925
+r1926
+r1928
+  -empty_dir: trunk/qmmp/src/ui/logscale.cpp
+  -empty_dir: trunk/qmmp/src/ui/logscale.h
+r1929
+r1930
+r1931
+r1932
+r1933
+r1934
+r1935
+r1936
+r1937
+r1938
+r1940
+r1941
+r1942
+r1943
+r1945
+r1946
+r1947
+r1948
+r1950
+r1951
+r1952
+r1953
+r1957
+r1959
+r1961
+r1964
+r1966
+r1968
+r1970
+  +file_prop: trunk/qmmp/src/ui/actionmanager.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/actionmanager.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/shortcutitem.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/shortcutitem.h svn:eol-style native
+r1971
+r1972
+r1973
+r1975
+r1980
+  +file_prop: trunk/qmmp/src/ui/images/shortcuts.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/ui/shortcutdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/ui/shortcutdialog.h svn:eol-style native
+r1981
+r1982
+r1983
+  +file_prop: trunk/qmmp/src/plugins/Output/oss4/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Output/oss4/outputoss4.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Output/oss4/outputoss4.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Output/oss4/outputoss4factory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Output/oss4/outputoss4factory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Output/oss4/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Output/oss4/settingsdialog.h svn:eol-style native
+r1984
+r1985
+r1986
+  -empty_dir: trunk/qmmp/src/ui/viewmenu.cpp
+  -empty_dir: trunk/qmmp/src/ui/viewmenu.h
+r1987
+r1988
+r1989
+r1990
+r1991
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/root2object.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/root2object.h svn:eol-style native
+r1992
+  -empty_dir: trunk/qmmp/src/plugins/General/mpris/playerobject.cpp
+  -empty_dir: trunk/qmmp/src/plugins/General/mpris/playerobject.h
+  -empty_dir: trunk/qmmp/src/plugins/General/mpris/root2object.cpp
+  -empty_dir: trunk/qmmp/src/plugins/General/mpris/root2object.h
+  -empty_dir: trunk/qmmp/src/plugins/General/mpris/rootobject.cpp
+  -empty_dir: trunk/qmmp/src/plugins/General/mpris/rootobject.h
+  -empty_dir: trunk/qmmp/src/plugins/General/mpris/tracklistobject.cpp
+  -empty_dir: trunk/qmmp/src/plugins/General/mpris/tracklistobject.h
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/mpris1/playerobject.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/mpris1/playerobject.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/mpris1/rootobject.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/mpris1/rootobject.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/mpris1/tracklistobject.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/mpris1/tracklistobject.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/mpris2/player2object.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/mpris2/player2object.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/mpris2/root2object.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/mpris/mpris2/root2object.h svn:eol-style native
+r1993
+r1995
+r1996
+r1997
+r1998
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/scrobbler2.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/scrobbler2.h svn:eol-style native
+r1999
+r2000
+r2001
+r2002
+r2004
+r2005
+r2006
+r2007
+r2008
+r2009
+r2010
+r2011
+r2012
+r2014
+r2015
+r2016
+r2017
+r2019
+r2020
+r2021
+r2023
+r2024
+r2025
+r2027
+r2028
+r2029
+r2032
+r2033
+r2035
+r2036
+r2038
+r2040
+r2041
+r2042
+r2045
+r2046
+r2049
+r2051
+r2055
+r2056
+r2057
+r2058
+r2060
+r2061
+r2062
+r2063
+r2064
+r2066
+r2067
+r2068
+r2069
+r2070
+r2071
+r2072
+r2073
+r2074
+  -empty_dir: trunk/qmmp/src/plugins/Transports/http/downloader.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Transports/http/downloader.h
+  +file_prop: trunk/qmmp/src/plugins/Transports/http/httpstreamreader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/http/httpstreamreader.h svn:eol-style native
+r2075
+  -empty_dir: trunk/qmmp/src/plugins/Transports/http/streamreader.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Transports/http/streamreader.h
+r2076
+  -empty_dir: trunk/qmmp/src/plugins/Transports/mms/downloader.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Transports/mms/downloader.h
+  -empty_dir: trunk/qmmp/src/plugins/Transports/mms/streamreader.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Transports/mms/streamreader.h
+  +file_prop: trunk/qmmp/src/plugins/Transports/mms/mmsstreamreader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Transports/mms/mmsstreamreader.h svn:eol-style native
+r2077
+r2078
+r2079
+r2080
+r2082
+r2084
+  +file_prop: trunk/qmmp/src/plugins/Effect/stereo/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/stereo/effectstereofactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/stereo/effectstereofactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/stereo/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/stereo/settingsdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/stereo/stereoplugin.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Effect/stereo/stereoplugin.h svn:eol-style native
+r2085
+r2086
+r2087
+r2088
+r2089
+r2091
+r2092
+r2093
+r2094
+r2095
+r2097
+r2098
+r2099
+r2100
+r2102
+r2103
+r2104
+r2106
+r2107
+r2108
+r2109
+r2110
+r2111
+r2112
+r2115
+r2116
+r2119
+r2120
+r2121
+r2122
+r2123
+r2124
+r2125
+r2126
+r2127
+r2128
+r2129
+r2130
+r2134
+r2137
+r2139
+r2140
+r2142
+r2143
+r2145
+r2146
+r2148
+r2150
+r2152
+r2154
+r2156
+r2158
+r2160
+r2162
+r2163
+r2164
+r2167
+r2169
+r2172
+r2174
+r2175
+r2177
+r2179
+r2182
+r2183
+r2185
+r2187
+r2188
+r2189
+r2191
+r2193
+r2196
+r2197
+r2198
+r2200
+r2203
+r2205
+r2209
+r2211
+r2213
+r2216
+r2218
+r2219
+r2220
+r2222
+r2224
+r2226
+r2228
+r2229
+r2233
+r2235
+  +file_prop: trunk/qmmp/src/qmmp/metadatachangedevent.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/metadatachangedevent.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/statechangedevent.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/statechangedevent.h svn:eol-style native
+r2236
+r2237
+r2238
+r2240
+  -empty_dir: trunk/qmmp/src/qmmp/audioconverter.h
+  -empty_dir: trunk/qmmp/src/qmmp/emptyinputsource.h
+  -empty_dir: trunk/qmmp/src/qmmp/fileinputsource.h
+  -empty_dir: trunk/qmmp/src/qmmp/metadatachangedevent.h
+  -empty_dir: trunk/qmmp/src/qmmp/qmmpaudioengine.h
+  -empty_dir: trunk/qmmp/src/qmmp/replaygain.h
+  -empty_dir: trunk/qmmp/src/qmmp/statechangedevent.h
+  -empty_dir: trunk/qmmp/src/qmmpui/abstractplaylistitem.cpp
+  -empty_dir: trunk/qmmp/src/qmmpui/abstractplaylistitem.h
+  -empty_dir: trunk/qmmp/src/qmmpui/fileloader.h
+  -empty_dir: trunk/qmmp/src/qmmpui/playlistsettings.h
+  -empty_dir: trunk/qmmp/src/qmmpui/playstate.h
+  -empty_dir: trunk/qmmp/src/qmmpui/qtfiledialog.h
+  -empty_dir: trunk/qmmp/src/qmmpui/tageditor.h
+  +file_prop: trunk/qmmp/src/qmmp/audioconverter_p.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/emptyinputsource_p.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/fileinputsource_p.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/metadatachangedevent_p.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/qmmpaudioengine_p.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/replaygain_p.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/statechangedevent_p.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/fileloader_p.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/playlistsettings_p.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/playstate_p.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/qtfiledialog_p.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/tageditor_p.h svn:eol-style native
+r2243
+r2244
+  -empty_dir: trunk/qmmp/src/qmmp/metadatachangedevent.cpp
+  -empty_dir: trunk/qmmp/src/qmmp/metadatachangedevent_p.h
+  -empty_dir: trunk/qmmp/src/qmmp/statechangedevent.cpp
+  -empty_dir: trunk/qmmp/src/qmmp/statechangedevent_p.h
+  +file_prop: trunk/qmmp/src/qmmp/qmmpevents.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/qmmpevents_p.h svn:eol-style native
+r2245
+r2246
+r2247
+  -empty_dir: trunk/qmmp/src/qmmpui/detailsdialog.ui
+  -empty_dir: trunk/qmmp/src/qmmpui/tageditor.ui
+  -empty_dir: trunk/qmmp/src/qmmpui/templateeditor.ui
+r2248
+r2250
+r2251
+r2252
+  -empty_dir: trunk/qmmp/src/ui/aboutdialog.cpp
+  -empty_dir: trunk/qmmp/src/ui/aboutdialog.h
+  -empty_dir: trunk/qmmp/src/ui/actionmanager.cpp
+  -empty_dir: trunk/qmmp/src/ui/actionmanager.h
+  -empty_dir: trunk/qmmp/src/ui/addurldialog.cpp
+  -empty_dir: trunk/qmmp/src/ui/addurldialog.h
+  -empty_dir: trunk/qmmp/src/ui/balancebar.cpp
+  -empty_dir: trunk/qmmp/src/ui/balancebar.h
+  -empty_dir: trunk/qmmp/src/ui/button.cpp
+  -empty_dir: trunk/qmmp/src/ui/button.h
+  -empty_dir: trunk/qmmp/src/ui/configdialog.cpp
+  -empty_dir: trunk/qmmp/src/ui/configdialog.h
+  -empty_dir: trunk/qmmp/src/ui/cursorimage.cpp
+  -empty_dir: trunk/qmmp/src/ui/cursorimage.h
+  -empty_dir: trunk/qmmp/src/ui/default
+  -empty_dir: trunk/qmmp/src/ui/display.cpp
+  -empty_dir: trunk/qmmp/src/ui/display.h
+  -empty_dir: trunk/qmmp/src/ui/dock.cpp
+  -empty_dir: trunk/qmmp/src/ui/dock.h
+  -empty_dir: trunk/qmmp/src/ui/eqgraph.cpp
+  -empty_dir: trunk/qmmp/src/ui/eqgraph.h
+  -empty_dir: trunk/qmmp/src/ui/eqpreset.cpp
+  -empty_dir: trunk/qmmp/src/ui/eqpreset.h
+  -empty_dir: trunk/qmmp/src/ui/eqslider.cpp
+  -empty_dir: trunk/qmmp/src/ui/eqslider.h
+  -empty_dir: trunk/qmmp/src/ui/eqtitlebar.cpp
+  -empty_dir: trunk/qmmp/src/ui/eqtitlebar.h
+  -empty_dir: trunk/qmmp/src/ui/eqwidget.cpp
+  -empty_dir: trunk/qmmp/src/ui/eqwidget.h
+  -empty_dir: trunk/qmmp/src/ui/fft.c
+  -empty_dir: trunk/qmmp/src/ui/fft.h
+  -empty_dir: trunk/qmmp/src/ui/forms
+  -empty_dir: trunk/qmmp/src/ui/inlines.h
+  -empty_dir: trunk/qmmp/src/ui/jumptotrackdialog.cpp
+  -empty_dir: trunk/qmmp/src/ui/jumptotrackdialog.h
+  -empty_dir: trunk/qmmp/src/ui/keyboardmanager.cpp
+  -empty_dir: trunk/qmmp/src/ui/keyboardmanager.h
+  -empty_dir: trunk/qmmp/src/ui/listwidget.cpp
+  -empty_dir: trunk/qmmp/src/ui/listwidget.h
+  -empty_dir: trunk/qmmp/src/ui/mainvisual.cpp
+  -empty_dir: trunk/qmmp/src/ui/mainvisual.h
+  -empty_dir: trunk/qmmp/src/ui/mainwindow.cpp
+  -empty_dir: trunk/qmmp/src/ui/mainwindow.h
+  -empty_dir: trunk/qmmp/src/ui/monostereo.cpp
+  -empty_dir: trunk/qmmp/src/ui/monostereo.h
+  -empty_dir: trunk/qmmp/src/ui/mp3player.cpp
+  -empty_dir: trunk/qmmp/src/ui/number.cpp
+  -empty_dir: trunk/qmmp/src/ui/number.h
+  -empty_dir: trunk/qmmp/src/ui/pixmapwidget.cpp
+  -empty_dir: trunk/qmmp/src/ui/pixmapwidget.h
+  -empty_dir: trunk/qmmp/src/ui/playlist.cpp
+  -empty_dir: trunk/qmmp/src/ui/playlist.h
+  -empty_dir: trunk/qmmp/src/ui/playlistbrowser.cpp
+  -empty_dir: trunk/qmmp/src/ui/playlistbrowser.h
+  -empty_dir: trunk/qmmp/src/ui/playlistcontrol.cpp
+  -empty_dir: trunk/qmmp/src/ui/playlistcontrol.h
+  -empty_dir: trunk/qmmp/src/ui/playlistselector.cpp
+  -empty_dir: trunk/qmmp/src/ui/playlistselector.h
+  -empty_dir: trunk/qmmp/src/ui/playlistslider.cpp
+  -empty_dir: trunk/qmmp/src/ui/playlistslider.h
+  -empty_dir: trunk/qmmp/src/ui/playlisttitlebar.cpp
+  -empty_dir: trunk/qmmp/src/ui/playlisttitlebar.h
+  -empty_dir: trunk/qmmp/src/ui/playstatus.cpp
+  -empty_dir: trunk/qmmp/src/ui/playstatus.h
+  -empty_dir: trunk/qmmp/src/ui/pluginitem.cpp
+  -empty_dir: trunk/qmmp/src/ui/pluginitem.h
+  -empty_dir: trunk/qmmp/src/ui/popupsettings.cpp
+  -empty_dir: trunk/qmmp/src/ui/popupsettings.h
+  -empty_dir: trunk/qmmp/src/ui/popupwidget.cpp
+  -empty_dir: trunk/qmmp/src/ui/popupwidget.h
+  -empty_dir: trunk/qmmp/src/ui/positionbar.cpp
+  -empty_dir: trunk/qmmp/src/ui/positionbar.h
+  -empty_dir: trunk/qmmp/src/ui/preseteditor.cpp
+  -empty_dir: trunk/qmmp/src/ui/preseteditor.h
+  -empty_dir: trunk/qmmp/src/ui/shadedbar.cpp
+  -empty_dir: trunk/qmmp/src/ui/shadedbar.h
+  -empty_dir: trunk/qmmp/src/ui/shadedvisual.cpp
+  -empty_dir: trunk/qmmp/src/ui/shadedvisual.h
+  -empty_dir: trunk/qmmp/src/ui/shortcutdialog.cpp
+  -empty_dir: trunk/qmmp/src/ui/shortcutdialog.h
+  -empty_dir: trunk/qmmp/src/ui/shortcutitem.cpp
+  -empty_dir: trunk/qmmp/src/ui/shortcutitem.h
+  -empty_dir: trunk/qmmp/src/ui/skin.cpp
+  -empty_dir: trunk/qmmp/src/ui/skin.h
+  -empty_dir: trunk/qmmp/src/ui/skinreader.cpp
+  -empty_dir: trunk/qmmp/src/ui/skinreader.h
+  -empty_dir: trunk/qmmp/src/ui/stuff.qrc
+  -empty_dir: trunk/qmmp/src/ui/symboldisplay.cpp
+  -empty_dir: trunk/qmmp/src/ui/symboldisplay.h
+  -empty_dir: trunk/qmmp/src/ui/textscroller.cpp
+  -empty_dir: trunk/qmmp/src/ui/textscroller.h
+  -empty_dir: trunk/qmmp/src/ui/timeindicator.cpp
+  -empty_dir: trunk/qmmp/src/ui/timeindicator.h
+  -empty_dir: trunk/qmmp/src/ui/titlebar.cpp
+  -empty_dir: trunk/qmmp/src/ui/titlebar.h
+  -empty_dir: trunk/qmmp/src/ui/titlebarcontrol.cpp
+  -empty_dir: trunk/qmmp/src/ui/titlebarcontrol.h
+  -empty_dir: trunk/qmmp/src/ui/togglebutton.cpp
+  -empty_dir: trunk/qmmp/src/ui/togglebutton.h
+  -empty_dir: trunk/qmmp/src/ui/visualmenu.cpp
+  -empty_dir: trunk/qmmp/src/ui/visualmenu.h
+  -empty_dir: trunk/qmmp/src/ui/volumebar.cpp
+  -empty_dir: trunk/qmmp/src/ui/volumebar.h
+  -empty_dir: trunk/qmmp/src/ui/windowsystem.cpp
+  -empty_dir: trunk/qmmp/src/ui/windowsystem.h
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/aboutdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/aboutdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/actionmanager.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/actionmanager.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/addurldialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/addurldialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/balancebar.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/balancebar.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/button.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/button.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/configdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/configdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/cursorimage.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/cursorimage.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/balance.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/cbuttons.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/eq_ex.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/eqmain.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/main.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/monoster.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/numbers.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/playpaus.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/pledit.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/pledit.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/posbar.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/readme.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/shufrep.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/text.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/titlebar.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/viscolor.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/default/volume.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/display.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/display.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/dock.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/dock.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/eqgraph.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/eqgraph.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/eqpreset.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/eqpreset.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/eqslider.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/eqslider.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/eqtitlebar.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/eqtitlebar.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/eqwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/eqwidget.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/fft.c svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/fft.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/images/16x16/qmmp.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/images/32x32/qmmp.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/images/48x48/qmmp.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/images/56x56/qmmp.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/images/advanced.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/images/interface.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/images/logo-qmmp.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/images/network.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/images/playlist.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/images/plugins.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/images/replaygain.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/images/scalable/qmmp-simple.svgz svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/images/scalable/qmmp.svgz svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/images/shortcuts.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/images/ui_no_cover.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/inlines.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/jumptotrackdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/jumptotrackdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/keyboardmanager.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/keyboardmanager.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/listwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/listwidget.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/lxdesupport.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/lxdesupport.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/mainvisual.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/mainvisual.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/mainwindow.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/mainwindow.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/monostereo.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/monostereo.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/number.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/number.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/pixmapwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/pixmapwidget.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/playlist.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/playlist.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/playlistbrowser.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/playlistbrowser.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/playlistcontrol.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/playlistcontrol.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/playlistselector.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/playlistselector.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/playlistslider.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/playlistslider.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/playlisttitlebar.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/playlisttitlebar.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/playstatus.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/playstatus.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/pluginitem.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/pluginitem.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/popupsettings.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/popupsettings.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/popupwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/popupwidget.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/positionbar.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/positionbar.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/preseteditor.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/preseteditor.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/shadedbar.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/shadedbar.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/shadedvisual.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/shadedvisual.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/shortcutdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/shortcutdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/shortcutitem.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/shortcutitem.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/skin.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/skin.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/skinnedfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/skinnedfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/skinreader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/skinreader.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/symboldisplay.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/symboldisplay.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/textscroller.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/textscroller.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/timeindicator.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/timeindicator.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/titlebar.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/titlebar.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/titlebarcontrol.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/titlebarcontrol.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/togglebutton.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/togglebutton.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/authors_cs.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/authors_de.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/authors_en.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/authors_es.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/authors_it.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/authors_ja.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/authors_lt.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/authors_nl.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/authors_pl.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/authors_ru.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/authors_tr.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/authors_uk_UA.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/authors_zh_CN.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/authors_zh_TW.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/description_cs.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/description_de.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/description_en.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/description_es.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/description_it.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/description_ja.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/description_ru.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/description_uk_UA.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/description_zh_CN.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/description_zh_TW.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/txt/translators_it.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/visualmenu.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/visualmenu.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/volumebar.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/volumebar.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/windowsystem.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/windowsystem.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/uifactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/uiloader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/uiloader.h svn:eol-style native
+r2253
+  -empty_dir: trunk/qmmp/src/ui
+  +file_prop: trunk/qmmp/src/app/images/16x16/qmmp.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/images/32x32/qmmp.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/images/48x48/qmmp.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/images/56x56/qmmp.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/images/advanced.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/images/interface.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/images/logo-qmmp.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/images/network.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/images/playlist.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/images/plugins.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/images/replaygain.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/images/scalable/qmmp-simple.svgz svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/images/scalable/qmmp.svgz svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/images/shortcuts.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/images/ui_no_cover.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/txt/authors_cs.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/authors_de.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/authors_en.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/authors_es.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/authors_it.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/authors_ja.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/authors_lt.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/authors_nl.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/authors_pl.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/authors_ru.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/authors_tr.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/authors_uk_UA.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/authors_zh_CN.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/authors_zh_TW.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/description_cs.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/description_de.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/description_en.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/description_es.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/description_it.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/txt/description_ja.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/txt/description_ru.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/txt/description_uk_UA.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/txt/description_zh_CN.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/txt/description_zh_TW.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/txt/translators_it.txt svn:eol-style native
+r2254
+r2255
+r2256
+  +file_prop: trunk/qmmp/src/plugins/Ui/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/CMakeLists.txt svn:eol-style native
+r2257
+r2258
+r2259
+r2260
+  -empty_dir: trunk/qmmp/src/qmmpui/generalhandler.cpp
+  -empty_dir: trunk/qmmp/src/qmmpui/generalhandler.h
+r2261
+r2262
+r2263
+r2264
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/qmmp.desktop
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/qmmp_enqueue.desktop
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_cs.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_de.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_es.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_fr.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_hu.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_it.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_ja.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_kk.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_locales.qrc
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_lt.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_nl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_pl_PL.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_pt_BR.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_ru.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_sk.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_tr.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_uk_UA.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_zh_CN.ts
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/translations/qmmp_zh_TW.ts
+r2265
+r2266
+r2267
+r2268
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/forms/jumptotrackdialog.ui
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/jumptotrackdialog.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/jumptotrackdialog.h
+  +file_prop: trunk/qmmp/src/qmmpui/jumptotrackdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/jumptotrackdialog_p.h svn:eol-style native
+r2269
+r2270
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/configdialog.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/configdialog.h
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/forms/configdialog.ui
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/pluginitem.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/pluginitem.h
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/hotkeyeditor.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/hotkeyeditor.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/skinnedsettings.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/skinnedsettings.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/configdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/configdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/images/advanced.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/qmmpui/images/logo-qmmp.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/qmmpui/images/network.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/qmmpui/images/playlist.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/qmmpui/images/plugins.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/qmmpui/images/replaygain.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/qmmpui/pluginitem.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/pluginitem_p.h svn:eol-style native
+r2271
+r2272
+r2273
+r2274
+r2275
+r2277
+r2278
+r2279
+r2280
+r2281
+r2282
+r2283
+r2285
+  -empty_dir: trunk/qmmp/src/app/images/advanced.png
+  -empty_dir: trunk/qmmp/src/app/images/interface.png
+  -empty_dir: trunk/qmmp/src/app/images/logo-qmmp.png
+  -empty_dir: trunk/qmmp/src/app/images/network.png
+  -empty_dir: trunk/qmmp/src/app/images/playlist.png
+  -empty_dir: trunk/qmmp/src/app/images/plugins.png
+  -empty_dir: trunk/qmmp/src/app/images/replaygain.png
+  -empty_dir: trunk/qmmp/src/app/images/shortcuts.png
+  -empty_dir: trunk/qmmp/src/app/images/ui_no_cover.png
+  -empty_dir: trunk/qmmp/src/app/txt
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/aboutdialog.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/aboutdialog.h
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/forms/aboutdialog.ui
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/images/16x16
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/images/32x32
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/images/48x48
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/images/56x56
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/images/advanced.png
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/images/images.qrc
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/images/logo-qmmp.png
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/images/network.png
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/images/playlist.png
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/images/plugins.png
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/images/replaygain.png
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/images/scalable
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/txt
+  -empty_dir: trunk/qmmp/src/qmmpui/images/images.qrc
+  +file_prop: trunk/qmmp/src/qmmpui/aboutdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/aboutdialog_p.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/txt/description_ja.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/qmmpui/txt/description_ru.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/qmmpui/txt/description_uk_UA.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/qmmpui/txt/description_zh_CN.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/qmmpui/txt/description_zh_TW.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/qmmpui/txt/translators_it.txt svn:eol-style native
+r2286
+  -empty_dir: trunk/qmmp/src/qmmpui/txt/authors_en.txt
+  -empty_dir: trunk/qmmp/src/qmmpui/txt/description_en.txt
+  -empty_dir: trunk/qmmp/src/qmmpui/txt/thanks_en.txt
+  -empty_dir: trunk/qmmp/src/qmmpui/txt/translators_en.txt
+r2287
+r2289
+r2290
+r2291
+r2292
+r2293
+  -empty_dir: trunk/qmmp/src/qmmpui/translations/libqmmpui_pl.ts
+r2294
+r2295
+r2296
+r2297
+r2299
+r2301
+r2302
+r2303
+r2306
+r2307
+r2308
+r2310
+r2311
+r2313
+r2316
+r2317
+r2318
+r2321
+r2323
+r2325
+r2326
+r2328
+r2329
+r2330
+r2333
+r2336
+r2338
+r2339
+r2342
+r2343
+r2344
+r2345
+r2346
+r2347
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/images
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/stuff.qrc
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/resources/interface.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/resources/shortcuts.png svn:mime-type image/png
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/resources/ui_no_cover.png svn:mime-type image/png
+r2348
+r2349
+r2350
+r2351
+r2352
+r2353
+r2354
+r2355
+r2356
+r2357
+r2359
+r2361
+r2362
+  +file_prop: trunk/qmmp/src/plugins/General/converter/converter.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/converter/converter.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/converter/converterdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/converter/converterdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/converter/converterfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/converter/converterfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/converter/converterhelper.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/converter/converterhelper.h svn:eol-style native
+r2363
+r2364
+  +file_prop: trunk/qmmp/src/plugins/General/converter/CMakeLists.txt svn:eol-style native
+r2365
+r2366
+r2367
+r2368
+r2369
+  +file_prop: trunk/qmmp/src/plugins/General/converter/preseteditor.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/converter/preseteditor.h svn:eol-style native
+r2370
+r2371
+r2373
+  +file_prop: trunk/qmmp/src/plugins/General/converter/preset.h svn:eol-style native
+r2374
+r2376
+r2377
+r2378
+  -empty_dir: trunk/qmmp/src/plugins/General/converter/preset.h
+r2379
+r2380
+r2381
+r2382
+r2383
+r2384
+r2385
+r2386
+r2388
+r2389
+r2390
+r2391
+r2392
+r2393
+r2394
+r2395
+r2397
+r2398
+r2399
+r2401
+r2402
+r2403
+r2404
+r2407
+r2408
+r2409
+r2410
+r2411
+r2412
+r2413
+r2414
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/PlayListOption/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/PlayListOption/playlistoption.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/CommandLineOptions/PlayListOption/playlistoption.h svn:eol-style native
+r2415
+r2416
+r2423
+r2424
+r2426
+r2429
+r2431
+r2434
+r2436
+r2437
+r2438
+r2442
+r2444
+r2450
+r2452
+r2453
+r2459
+r2472
+r2473
+r2477
+r2478
+r2482
+r2485
+r2486
+r2490
+r2493
+r2495
+r2498
+r2500
+r2501
+r2502
+r2503
+r2504
+r2510
+r2512
+r2519
+r2520
+r2522
+r2524
+r2528
+r2529
+r2530
+r2535
+r2536
+r2537
+  +file_prop: trunk/qmmp/src/app/images/56x56/qmmp.ico svn:mime-type application/octet-stream
+r2538
+r2539
+r2540
+r2542
+r2544
+r2545
+r2546
+r2547
+r2548
+r2551
+r2552
+r2553
+r2559
+r2560
+r2561
+r2563
+r2564
+r2565
+r2568
+r2569
+r2570
+r2571
+r2572
+r2573
+r2576
+r2577
+r2578
+r2581
+r2584
+r2585
+r2586
+r2587
+r2588
+  -empty_dir: trunk/qmmp/src/qmmpui/playlistsettings.cpp
+  -empty_dir: trunk/qmmp/src/qmmpui/playlistsettings_p.h
+  +file_prop: trunk/qmmp/src/qmmpui/qmmpuisettings.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/qmmpuisettings.h svn:eol-style native
+r2589
+r2590
+r2591
+r2592
+r2594
+r2595
+r2596
+r2597
+r2599
+r2600
+r2601
+r2602
+r2603
+r2606
+r2607
+r2608
+r2609
+r2612
+r2613
+r2615
+r2620
+r2621
+r2625
+r2626
+r2627
+r2628
+r2629
+r2632
+r2633
+r2634
+r2635
+r2636
+r2637
+r2638
+  +file_prop: trunk/qmmp/src/plugins/General/streambrowser/streambrowser.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/streambrowser/streambrowser.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/streambrowser/streambrowserfactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/streambrowser/streambrowserfactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/streambrowser/streamwindow.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/streambrowser/streamwindow.h svn:eol-style native
+r2639
+  +file_prop: trunk/qmmp/src/plugins/General/streambrowser/CMakeLists.txt svn:eol-style native
+r2640
+r2641
+r2642
+r2643
+r2644
+r2645
+r2646
+r2652
+r2654
+r2655
+r2658
+r2659
+r2666
+r2667
+r2668
+r2669
+r2673
+  -empty_dir: trunk/qmmp/src/qmmp/volumecontrol.h
+  +file_prop: trunk/qmmp/src/qmmp/volume.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/volumecontrol_p.h svn:eol-style native
+r2674
+r2675
+r2682
+r2684
+r2685
+r2688
+r2694
+r2696
+r2697
+r2698
+r2699
+r2706
+r2707
+r2708
+r2710
+r2711
+r2714
+r2715
+r2718
+r2720
+r2725
+r2726
+r2729
+r2730
+r2731
+r2735
+r2736
+r2738
+r2739
+r2742
+r2743
+r2745
+r2746
+  +file_prop: trunk/qmmp/src/app/qmmpapplication.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/app/qmmpapplication.h svn:eol-style native
+r2747
+r2748
+r2749
+r2750
+r2751
+r2752
+r2753
+r2762
+r2763
+r2764
+r2766
+r2773
+r2777
+r2779
+r2781
+r2784
+r2786
+r2788
+r2790
+r2791
+r2792
+r2793
+r2794
+r2796
+r2797
+r2807
+r2809
+r2818
+r2827
+r2828
+r2829
+r2831
+r2838
+r2842
+r2844
+r2845
+r2847
+r2849
+r2851
+r2855
+r2858
+r2866
+r2868
+r2873
+r2874
+r2880
+r2881
+r2882
+r2888
+r2889
+r2890
+r2891
+r2893
+r2894
+r2895
+r2897
+  -empty_dir: trunk/qmmp/remove_svn_tags
+  -empty_dir: trunk/qmmp/remove_svn_tags.cmd
+  -empty_dir: trunk/qmmp/update_ts.sh
+  +file_prop: trunk/qmmp/utils/remove_svn_tags.sh svn:eol-style native
+  +file_prop: trunk/qmmp/utils/update_ts.sh svn:eol-style native
+r2898
+r2899
+r2900
+r2906
+r2908
+  +file_prop: trunk/qmmp/src/qmmpui/radioitemdelegate.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/radioitemdelegate_p.h svn:eol-style native
+r2909
+r2910
+r2911
+r2912
+  -file_prop: trunk/qmmp/src/qmmpui/txt/description_ja.txt svn:mime-type
+  -file_prop: trunk/qmmp/src/qmmpui/txt/description_ru.txt svn:mime-type
+  -file_prop: trunk/qmmp/src/qmmpui/txt/description_uk_UA.txt svn:mime-type
+  -file_prop: trunk/qmmp/src/qmmpui/txt/description_zh_CN.txt svn:mime-type
+  -file_prop: trunk/qmmp/src/qmmpui/txt/description_zh_TW.txt svn:mime-type
+r2914
+r2915
+r2917
+r2919
+r2920
+r2921
+r2922
+r2923
+r2924
+r2926
+r2927
+r2929
+r2930
+r2931
+r2937
+r2938
+r2942
+r2944
+r2945
+r2947
+r2949
+r2950
+r2953
+r2956
+r2958
+r2959
+r2963
+r2964
+r2966
+r2971
+r2972
+r2973
+r2974
+r2976
+r2983
+r2985
+r2987
+r2989
+r2991
+r2994
+r2996
+r3002
+r3005
+r3006
+r3007
+  +file_prop: trunk/qmmp/src/qmmpui/txt/authors_he.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/txt/description_he.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/txt/thanks_he.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/txt/translators_he.txt svn:eol-style native
+r3011
+r3012
+r3015
+r3016
+r3020
+r3023
+r3024
+r3026
+r3030
+r3034
+  +file_prop: trunk/qmmp/src/qmmp/outputwriter.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmp/outputwriter_p.h svn:eol-style native
+r3035
+r3037
+  -empty_dir: trunk/qmmp/src/qmmp/recycler.h
+r3038
+r3039
+r3040
+r3041
+r3042
+r3043
+r3044
+r3055
+r3057
+r3058
+r3062
+r3063
+r3065
+r3066
+r3067
+r3071
+r3072
+r3075
+r3077
+r3079
+r3081
+r3082
+r3083
+r3084
+r3085
+  -empty_dir: trunk/qmmp/src/plugins/PlaylistFormats
+  +file_prop: trunk/qmmp/src/plugins/PlayListFormats/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlayListFormats/m3u/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlayListFormats/m3u/m3uplaylistformat.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlayListFormats/m3u/m3uplaylistformat.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlayListFormats/pls/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlayListFormats/pls/plsplaylistformat.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlayListFormats/pls/plsplaylistformat.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlayListFormats/xspf/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlayListFormats/xspf/xspfplaylistformat.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/PlayListFormats/xspf/xspfplaylistformat.h svn:eol-style native
+r3086
+  -empty_dir: trunk/qmmp/src/plugins/PlayListFormats/PlaylistFormats.pro
+r3087
+r3088
+r3089
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/addurldialog.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/addurldialog.h
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/forms/addurldialog.ui
+  +file_prop: trunk/qmmp/src/qmmpui/addurldialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/addurldialog_p.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/playlistdownloader.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/qmmpui/playlistdownloader.h svn:eol-style native
+r3090
+r3091
+r3093
+r3094
+r3095
+r3097
+r3098
+r3103
+r3104
+r3105
+r3111
+r3112
+r3114
+r3117
+r3120
+r3122
+r3125
+r3127
+r3128
+r3130
+r3131
+r3133
+r3135
+r3136
+  +file_prop: trunk/qmmp/src/plugins/General/songchange/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/songchange/settingsdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/songchange/songchange.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/songchange/songchange.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/songchange/songchangefactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/songchange/songchangefactory.h svn:eol-style native
+r3138
+r3140
+r3141
+r3142
+r3144
+r3155
+r3156
+  -empty_dir: trunk/qmmp/src/plugins/General/songchange
+  +file_prop: trunk/qmmp/src/plugins/General/trackchange/settingsdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/trackchange/settingsdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/trackchange/songchange.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/trackchange/songchange.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/trackchange/songchangefactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/trackchange/songchangefactory.h svn:eol-style native
+r3157
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/songchange.cpp
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/songchange.h
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/songchange.pro
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/songchangefactory.cpp
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/songchangefactory.h
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_cs.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_de.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_es.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_fr.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_he.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_hu.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_it.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_ja.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_kk.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_lt.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_nl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_pl_PL.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_pt_BR.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_ru.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_sk.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_tr.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_uk_UA.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_zh_CN.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/trackchange/translations/songchange_plugin_zh_TW.ts
+  +file_prop: trunk/qmmp/src/plugins/General/trackchange/trackchange.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/trackchange/trackchange.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/trackchange/trackchangefactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/trackchange/trackchangefactory.h svn:eol-style native
+r3158
+r3159
+r3160
+r3161
+r3162
+  +file_prop: trunk/qmmp/src/plugins/General/trackchange/CMakeLists.txt svn:eol-style native
+r3163
+r3164
+r3165
+r3166
+r3167
+r3169
+r3171
+r3173
+r3174
+r3175
+r3179
+r3182
+r3183
+r3186
+r3187
+  -empty_dir: trunk/qmmp/src/plugins/General/scrobbler/scrobbler.cpp
+  -empty_dir: trunk/qmmp/src/plugins/General/scrobbler/scrobbler.h
+  -empty_dir: trunk/qmmp/src/plugins/General/scrobbler/scrobbler2.cpp
+  -empty_dir: trunk/qmmp/src/plugins/General/scrobbler/scrobbler2.h
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/lastfmscrobbler.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/lastfmscrobbler.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/scrobblercache.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/scrobblercache.h svn:eol-style native
+r3188
+r3189
+r3191
+r3193
+r3194
+r3195
+r3196
+r3197
+r3198
+r3199
+r3200
+r3201
+r3202
+r3203
+r3204
+r3205
+r3208
+r3209
+r3210
+r3212
+  -empty_dir: trunk/qmmp/src/plugins/General/hotkey/hotkeymanager.cpp
+  +file_prop: trunk/qmmp/src/plugins/General/hotkey/hotkeymanager_x11.cpp svn:eol-style native
+r3213
+r3214
+r3216
+r3217
+r3218
+r3219
+r3220
+r3221
+r3222
+r3223
+r3224
+r3225
+r3226
+r3227
+r3228
+r3229
+r3230
+r3232
+r3233
+r3234
+r3235
+r3236
+r3238
+r3239
+r3240
+r3242
+r3248
+r3252
+r3255
+r3256
+r3257
+r3258
+r3259
+r3260
+r3261
+r3262
+r3266
+r3267
+r3275
+r3276
+r3277
+r3278
+r3279
+r3280
+r3281
+r3289
+r3299
+r3300
+r3302
+r3303
+r3306
+r3307
+  -empty_dir: trunk/qmmp/src/app/qmmp_unity.desktop
+r3308
+r3309
+r3310
+r3311
+r3312
+r3313
+r3314
+r3315
+r3317
+r3318
+r3319
+r3320
+r3321
+r3322
+r3325
+r3326
+r3327
+r3328
+r3331
+r3332
+r3336
+r3337
+r3344
+r3345
+r3348
+r3357
+r3359
+r3360
+r3361
+r3362
+r3368
+r3369
+r3371
+r3372
+r3373
+r3374
+r3375
+r3376
+r3378
+r3379
+r3380
+r3387
+r3398
+r3399
+r3400
+r3401
+r3403
+r3405
+r3406
+r3407
+r3409
+r3410
+r3411
+r3412
+r3413
+r3414
+r3415
+r3417
+r3420
+r3421
+r3422
+r3423
+r3424
+r3425
+r3426
+r3428
+r3429
+r3430
+r3431
+r3432
+r3435
+r3436
+r3440
+r3441
+r3442
+r3443
+  -empty_dir: trunk/qmmp/src/qmmp/plugincache.cpp
+  -empty_dir: trunk/qmmp/src/qmmp/plugincache.h
+r3444
+r3445
+r3446
+r3447
+r3448
+r3449
+r3450
+r3451
+r3452
+r3453
+r3454
+r3455
+r3458
+r3463
+r3464
+r3465
+r3466
+r3467
+r3468
+r3469
+r3471
+r3472
+r3477
+r3478
+r3479
+r3482
+r3483
+r3484
+r3486
+r3489
+r3493
+r3494
+r3501
+r3503
+r3504
+r3507
+r3511
+r3513
+r3516
+r3522
+r3525
+r3527
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/lxdesupport.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/lxdesupport.h
+r3528
+r3529
+r3533
+r3534
+r3535
+r3536
+r3538
+r3539
+r3540
+  -empty_dir: trunk/qmmp/src/qmmpui/tagupdater.h
+r3541
+r3542
+r3543
+r3544
+r3545
+r3546
+r3548
+r3550
+r3552
+r3554
+r3557
+r3558
+r3560
+r3564
+r3565
+r3566
+r3567
+r3568
+r3569
+r3570
+r3571
+r3572
+r3573
+r3574
+r3575
+r3576
+r3577
+  -empty_dir: trunk/qmmp/NOTICE
+r3578
+r3579
+r3580
+r3586
+r3587
+r3588
+r3589
+r3590
+r3591
+r3592
+r3593
+r3594
+r3595
+  -empty_dir: trunk/qmmp/src/qmmpui/playlistcontainer.h
+r3596
+r3597
+  -empty_dir: trunk/qmmp/src/qmmpui/playlistcontainer.cpp
+r3598
+r3599
+  -empty_dir: trunk/qmmp/src/qmmpui/playlistcontainer.cpp
+r3600
+r3601
+r3602
+r3603
+r3604
+r3605
+r3606
+r3607
+r3608
+r3609
+r3610
+r3611
+r3612
+r3615
+r3616
+r3617
+r3618
+r3619
+r3620
+r3621
+r3622
+r3624
+r3625
+r3626
+r3627
+r3628
+r3629
+r3630
+r3631
+r3632
+r3633
+r3634
+r3635
+r3637
+r3644
+r3648
+r3649
+r3650
+r3651
+r3652
+r3655
+r3656
+r3667
+r3669
+r3670
+r3671
+r3672
+r3673
+r3674
+r3675
+r3677
+r3678
+r3679
+r3680
+r3681
+r3683
+r3685
+r3688
+r3689
+r3692
+r3693
+r3694
+r3696
+r3697
+r3698
+r3700
+r3702
+r3704
+r3705
+r3706
+r3707
+r3708
+r3710
+r3711
+r3713
+r3715
+r3716
+r3717
+r3718
+r3719
+r3720
+r3722
+r3723
+r3724
+r3725
+r3726
+r3728
+r3729
+r3731
+r3732
+r3733
+r3734
+r3736
+r3747
+r3750
+r3752
+r3753
+r3754
+r3755
+r3756
+r3757
+r3758
+r3759
+r3762
+r3763
+r3764
+r3765
+r3766
+r3767
+r3768
+r3769
+r3770
+r3771
+  -empty_dir: trunk/qmmp/src/plugins/General/rgscan/rgscaner.cpp
+  -empty_dir: trunk/qmmp/src/plugins/General/rgscan/rgscaner.h
+r3772
+r3773
+r3774
+r3775
+r3776
+r3777
+r3778
+r3779
+r3780
+r3781
+r3782
+r3784
+r3785
+  -empty_dir: trunk/qmmp/src/qmmpui/configdialog.cpp.orig
+r3786
+r3787
+r3788
+r3790
+r3791
+r3792
+r3793
+r3794
+r3795
+r3796
+r3797
+r3798
+r3799
+r3800
+r3801
+r3803
+r3804
+r3805
+r3806
+r3807
+r3809
+r3811
+r3814
+r3817
+r3818
+r3819
+r3820
+r3822
+r3823
+r3824
+r3825
+r3828
+r3829
+r3830
+r3831
+r3832
+r3833
+r3834
+r3835
+r3836
+r3838
+r3839
+r3840
+r3841
+r3842
+r3843
+r3844
+r3850
+r3851
+r3852
+r3853
+r3872
+r3873
+r3874
+r3875
+r3878
+r3879
+r3880
+r3881
+r3887
+r3888
+r3889
+r3890
+r3891
+r3892
+r3901
+r3904
+r3908
+r3910
+r3913
+  -empty_dir: trunk/qmmp/src/plugins/General/scrobbler/lastfmscrobbler.cpp
+  -empty_dir: trunk/qmmp/src/plugins/General/scrobbler/lastfmscrobbler.h
+  -empty_dir: trunk/qmmp/src/plugins/General/scrobbler/librefmscrobbler.cpp
+  -empty_dir: trunk/qmmp/src/plugins/General/scrobbler/librefmscrobbler.h
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/scrobbler.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/General/scrobbler/scrobbler.h svn:eol-style native
+r3914
+r3916
+r3918
+r3919
+r3920
+r3921
+r3922
+r3923
+r3924
+r3925
+r3926
+r3927
+r3929
+r3930
+r3931
+r3937
+r3938
+r3939
+r3941
+r3942
+r3943
+r3944
+r3945
+r3948
+r3949
+r3950
+r3951
+r3952
+r3953
+r3954
+r3955
+r3956
+r3957
+r3958
+r3959
+r3960
+r3961
+r3962
+r3964
+r3965
+r3967
+r3974
+r3981
+r3988
+r3989
+r3992
+r3993
+r3995
+r3996
+r4004
+  +file_prop: trunk/qmmp/src/qmmpui/txt/description_sr_BA.txt svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/qmmpui/txt/description_sr_RS.txt svn:mime-type application/octet-stream
+r4005
+  -file_prop: trunk/qmmp/src/qmmpui/txt/description_sr_BA.txt svn:mime-type
+  -file_prop: trunk/qmmp/src/qmmpui/txt/description_sr_RS.txt svn:mime-type
+r4006
+r4007
+r4008
+r4010
+r4011
+r4012
+r4013
+r4014
+r4019
+r4034
+r4038
+r4049
+r4055
+r4056
+r4058
+r4059
+r4060
+r4061
+r4062
+r4063
+r4064
+r4067
+r4069
+r4070
+r4087
+r4089
+r4090
+r4091
+r4092
+r4093
+r4094
+r4095
+r4096
+r4097
+r4098
+r4099
+r4102
+r4103
+r4104
+r4105
+r4106
+r4108
+r4109
+r4112
+r4118
+r4121
+r4123
+r4124
+r4125
+r4126
+r4127
+r4128
+r4129
+r4131
+r4133
+r4134
+r4135
+  +file_prop: trunk/qmmp/src/qmmpui/images/associations.png svn:mime-type application/octet-stream
+r4136
+r4137
+r4138
+r4139
+r4140
+  -empty_dir: trunk/qmmp/src/qmmpui/forms/prefassociations.ui
+  -empty_dir: trunk/qmmp/src/qmmpui/prefassociations.cpp
+  -empty_dir: trunk/qmmp/src/qmmpui/prefassociations.h
+r4141
+r4142
+r4144
+r4145
+r4146
+r4148
+r4152
+  -empty_dir: trunk/qmmp/src/app/images/56x56/icon.rc
+  -empty_dir: trunk/qmmp/src/app/images/56x56/qmmp.ico
+  +file_prop: trunk/qmmp/src/app/images/ico/qmmp.ico svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/app/images/ico/qmmp_file.ico svn:mime-type application/octet-stream
+r4153
+r4154
+r4155
+r4156
+r4157
+r4158
+r4159
+r4161
+r4166
+r4176
+r4179
+r4181
+r4187
+r4188
+r4193
+r4194
+r4195
+r4196
+r4198
+r4203
+r4204
+r4205
+r4206
+r4207
+r4208
+r4209
+r4212
+r4215
+r4216
+r4222
+r4223
+r4226
+r4228
+r4243
+r4244
+r4245
+r4246
+r4247
+r4249
+r4250
+r4252
+r4255
+r4256
+r4257
+r4258
+r4260
+r4261
+r4262
+r4263
+r4264
+r4265
+r4266
+r4269
+r4270
+r4271
+r4272
+r4275
+r4276
+  -empty_dir: trunk/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/translations/incdecvolume_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/CommandLineOptions/PlayListOption/translations/playlist_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/CommandLineOptions/SeekOption/translations/seek_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/CommandLineOptions/StatusOption/translations/status_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Effect/bs2b/translations/bs2b_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Effect/crossfade/translations/crossfade_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Effect/ladspa/translations/ladspa_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Effect/srconverter/translations/srconverter_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Effect/stereo/translations/stereo_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Engines/mplayer/translations/mplayer_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/FileDialogs/QmmpFileDialog/translations/qmmp_file_dialog_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/converter/translations/converter_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/covermanager/translations/covermanager_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/fileops/translations/fileops_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/hal/translations/hal_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/hotkey/translations/hotkey_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/kdenotify/translations/kdenotify_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/lyrics/translations/lyrics_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/mpris/translations/mpris_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/notifier/translations/notifier_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/rgscan/translations/rgscan_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/scrobbler/translations/scrobbler_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/statusicon/translations/statusicon_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/streambrowser/translations/streambrowser_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/udisks/translations/udisks_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/General/udisks2/translations/udisks2_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/aac/translations/aac_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/cdaudio/translations/cdaudio_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/cue/translations/cue_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/ffmpeg/translations/ffmpeg_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/ffmpeg_legacy/translations/ffmpeg_legacy_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/flac/translations/flac_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/gme/translations/gme_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/mad/translations/mad_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/modplug/translations/modplug_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/mpc/translations/mpc_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/opus/translations/opus_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/sid/translations/sid_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/sndfile/translations/sndfile_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/vorbis/translations/vorbis_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/wavpack/translations/wavpack_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Input/wildmidi/translations/wildmidi_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Output/alsa/translations/alsa_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Output/directsound/translations/directsound_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Output/jack/translations/jack_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Output/null/translations/null_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Output/oss/translations/oss_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Output/oss4/translations/oss4_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Output/pulseaudio/translations/pulseaudio_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Output/waveout/translations/waveout_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Transports/http/translations/http_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Transports/mms/translations/mms_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Visual/analyzer/translations/analyzer_plugin_pl.ts
+  -empty_dir: trunk/qmmp/src/plugins/Visual/projectm/translations/projectm_plugin_pl.ts
+r4277
+  -empty_dir: trunk/qmmp/src/qmmpui/txt/authors_pl.txt
+  -empty_dir: trunk/qmmp/src/qmmpui/txt/description_pl.txt
+  -empty_dir: trunk/qmmp/src/qmmpui/txt/thanks_pl.txt
+  -empty_dir: trunk/qmmp/src/qmmpui/txt/translators_pl.txt
+r4281
+r4282
+r4283
+r4309
+r4310
+r4315
+r4316
+r4317
+r4318
+r4319
+r4320
+r4324
+r4325
+r4327
+r4328
+r4331
+r4343
+r4344
+r4348
+r4349
+r4351
+r4360
+r4364
+r4366
+r4370
+r4372
+r4375
+r4377
+r4378
+r4382
+r4385
+r4389
+r4392
+r4393
+r4400
+r4403
+  -empty_dir: trunk/qmmp/src/app/images/ico/icon.rc
+r4410
+r4411
+r4425
+r4428
+r4429
+r4432
+r4435
+r4437
+r4438
+r4453
+r4455
+r4460
+r4462
+r4464
+r4468
+r4471
+r4473
+r4475
+r4477
+r4480
+r4485
+r4486
+r4491
+r4496
+  +empty_dir: trunk/qmmp/src/app/desktop-translations
+r4498
+r4501
+r4502
+r4505
+r4507
+r4509
+r4510
+r4511
+r4512
+r4513
+r4516
+r4519
+r4523
+r4528
+r4530
+r4531
+r4532
+r4533
+r4534
+r4535
+r4536
+r4537
+r4538
+r4539
+r4540
+r4541
+r4542
+r4543
+r4544
+r4548
+r4549
+r4551
+r4553
+r4555
+r4558
+r4572
+r4573
+r4574
+r4575
+r4576
+r4577
+r4578
+r4579
+r4580
+r4581
+r4582
+r4583
+r4584
+r4585
+r4586
+r4587
+r4588
+r4589
+r4590
+r4591
+r4592
+r4593
+r4594
+r4595
+r4596
+r4597
+r4598
+r4600
+r4601
+r4675
+r4678
+r4679
+r4680
+r4681
+r4682
+r4683
+r4684
+r4685
+r4686
+r4688
+r4690
+r4691
+r4692
+r4693
+r4694
+r4695
+  -empty_dir: trunk/qmmp/src/plugins/Input/cue/qmmp_cue.desktop
+r4697
+r4698
+r4700
+r4701
+r4703
+r4705
+r4706
+r4707
+r4708
+r4709
+r4710
+  -empty_dir: trunk/qmmp/src/qmmpui/metadataformatter.cpp
+  -empty_dir: trunk/qmmp/src/qmmpui/metadataformatter.h
+  -empty_dir: trunk/qmmp/src/qmmpui/metadataformatter2.cpp
+  -empty_dir: trunk/qmmp/src/qmmpui/metadataformatter2.h
+r4711
+r4712
+r4713
+r4714
+r4715
+r4716
+r4718
+r4719
+r4721
+r4722
+r4723
+r4724
+r4725
+r4726
+r4727
+r4728
+r4729
+r4730
+r4731
+r4732
+r4733
+r4734
+r4735
+r4736
+r4737
+r4738
+r4740
+r4741
+r4742
+r4743
+r4744
+r4745
+r4746
+r4747
+r4748
+r4749
+r4750
+r4751
+r4752
+r4753
+r4754
+r4756
+r4757
+r4758
+r4759
+r4760
+r4761
+r4762
+r4763
+r4764
+r4765
+r4766
+r4767
+r4768
+r4769
+r4770
+r4772
+r4773
+r4774
+r4776
+r4777
+r4779
+r4780
+r4781
+r4782
+r4783
+r4784
+r4785
+r4786
+r4787
+r4788
+r4789
+r4790
+r4791
+r4792
+r4793
+r4794
+r4795
+r4796
+r4797
+r4798
+r4799
+r4800
+r4802
+r4804
+r4805
+r4806
+r4814
+r4815
+r4819
+r4825
+r4826
+r4827
+r4828
+r4829
+  -empty_dir: trunk/qmmp/src/qmmpui/columnmanager.cpp
+  -empty_dir: trunk/qmmp/src/qmmpui/columnmanager.h
+r4830
+r4831
+r4832
+r4833
+r4836
+r4837
+r4838
+r4839
+r4840
+r4841
+r4842
+r4843
+r4844
+r4845
+r4846
+r4847
+r4848
+r4849
+r4850
+r4851
+r4852
+r4853
+r4858
+r4859
+r4860
+r4861
+r4862
+r4863
+r4864
+r4865
+r4866
+r4867
+r4868
+r4869
+r4870
+r4872
+r4873
+r4874
+r4875
+r4876
+r4877
+r4879
+r4880
+r4881
+r4882
+r4883
+r4884
+r4885
+r4886
+r4887
+r4888
+r4889
+r4890
+r4891
+r4894
+r4895
+r4905
+r4910
+r4913
+r4914
+r4915
+r4917
+r4919
+r4927
+r4928
+r4929
+r4932
+r4933
+r4934
+r4935
+r4936
+r4937
+r4940
+r4941
+r4942
+r4943
+r4944
+r4945
+r4946
+r4947
+r4948
+r4949
+r4950
+r4951
+r4952
+r4953
+r4954
+r4956
+r4957
+r4960
+r4966
+r4967
+r4968
+r4969
+r4970
+r4971
+r4976
+r4978
+r4979
+r4985
+r4994
+r4996
+r4997
+r4998
+r4999
+r5000
+r5005
+r5006
+r5007
+r5009
+r5010
+r5011
+r5012
+r5013
+r5015
+r5018
+r5019
+r5020
+r5022
+r5023
+r5024
+r5027
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/default
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/glare/balance.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/glare/cbuttons.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/glare/eq_ex.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/glare/eqmain.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/glare/main.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/glare/monoster.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/glare/nums_ex.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/glare/playpaus.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/glare/pledit.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/glare/posbar.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/glare/shufrep.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/glare/text.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/glare/titlebar.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/skinned/glare/volume.png svn:mime-type application/octet-stream
+r5028
+r5029
+r5030
+r5031
+r5033
+r5034
+r5037
+r5038
+r5042
+r5043
+r5044
+r5045
+r5046
+r5047
+r5048
+r5049
+r5052
+r5054
+r5055
+r5056
+r5058
+r5059
+r5065
+r5066
+r5067
+r5069
+r5071
+r5073
+r5074
+r5077
+r5080
+r5088
+r5089
+r5093
+r5099
+r5101
+r5102
+r5103
+r5117
+r5119
+r5120
+r5124
+r5125
+r5126
+r5127
+r5128
+r5129
+r5130
+r5131
+r5132
+r5133
+r5135
+r5136
+r5137
+r5142
+r5145
+r5146
+r5150
+r5152
+r5153
+r5155
+r5156
+r5157
+r5158
+r5159
+r5160
+r5161
+r5162
+r5163
+r5164
+r5165
+r5166
+r5167
+r5168
+r5169
+r5171
+r5173
+r5174
+r5175
+r5177
+r5183
+r5184
+r5185
+r5186
+r5187
+r5188
+r5189
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/horizontalslider.cpp
+  -empty_dir: trunk/qmmp/src/plugins/Ui/skinned/horizontalslider.h
+r5191
+r5192
+r5193
+r5194
+r5195
+r5196
+r5197
+r5198
+r5199
+r5200
+r5201
+r5202
+r5203
+r5204
+r5206
+r5207
+r5208
+r5209
+r5210
+r5216
+r5222
+r5223
+r5226
+r5228
+r5230
+r5231
+r5233
+r5234
+r5238
+r5239
+r5240
+r5241
+r5242
+r5243
+r5247
+r5248
+r5249
+r5250
+r5251
+r5252
+r5255
+r5256
+r5257
+r5259
+r5272
+r5275
+r5282
+r5283
+r5296
+r5297
+r5298
+r5299
+r5300
+r5304
+r5305
+r5306
+r5307
+r5310
+r5315
+r5316
+r5321
+r5331
+r5333
+r5337
+r5353
+r5356
+r5357
+r5358
+  +file_prop: trunk/qmmp/src/qmmpui/txt/description_el.txt svn:mime-type application/octet-stream
+r5359
+  +file_prop: trunk/qmmp/src/qmmpui/txt/description_el.txt svn:mime-type text/plain
+r5360
+r5362
+r5367
+  +dir_prop: trunk/qmmp/src/plugins/Ui/qsui svn:mergeinfo /trunk/qmmp/src/plugins/Ui/skinned:5223
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/CMakeLists.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/aboutqsuidialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/aboutqsuidialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/actionmanager.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/actionmanager.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/colorwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/colorwidget.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/equalizer.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/equalizer.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/fft.c svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/fft.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/inlines.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/keyboardmanager.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/keyboardmanager.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/listwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/listwidget.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/logo.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/logo.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/mainwindow.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/mainwindow.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/popupsettings.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/popupsettings.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/popupwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/popupwidget.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/positionslider.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/positionslider.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/qsuianalyzer.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/qsuianalyzer.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/qsuifactory.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/qsuifactory.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/qsuisettings.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/qsuisettings.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/qsuitabbar.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/qsuitabbar.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/qsuitabwidget.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/qsuitabwidget.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/resources/audio-volume-high.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/resources/audio-volume-low.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/resources/audio-volume-medium.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/resources/audio-volume-muted.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/resources/media-eject.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/resources/media-playback-pause.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/resources/media-playback-start.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/resources/media-playback-stop.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/resources/media-skip-backward.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/resources/media-skip-forward.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/resources/qsui_settings.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/resources/qsui_shortcuts.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/resources/terminus.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/resources/ui_no_cover.png svn:mime-type application/octet-stream
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/shortcutdialog.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/shortcutdialog.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/shortcutitem.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/shortcutitem.h svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/txt/ascii_logo.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_he.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_ja.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_lt_LT.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_nl.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_pl_PL.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_ru.txt svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/visualmenu.cpp svn:eol-style native
+  +file_prop: trunk/qmmp/src/plugins/Ui/qsui/visualmenu.h svn:eol-style native
+r5368
+r5369
+r5370
+r5371
+r5372
+  -empty_dir: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors.txt
+  -empty_dir: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_cs.txt
+  -empty_dir: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_de.txt
+  -empty_dir: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_he.txt
+  -empty_dir: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_ja.txt
+  -empty_dir: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_lt_LT.txt
+  -empty_dir: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_nl.txt
+  -empty_dir: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_pl_PL.txt
+  -empty_dir: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_pt.txt
+  -empty_dir: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_ru.txt
+  -empty_dir: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_sr_BA.txt
+  -empty_dir: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_sr_RS.txt
+  -empty_dir: trunk/qmmp/src/plugins/Ui/qsui/txt/qsui_authors_uk_UA.txt
+r5373
+r5374
+r5375
+r5376
+r5377
+r5378
+r5379
+r5386
+r5388
+r5389
+r5390
+r5391
+r5392
+r5393
+r5394
+r5395
+r5420
+r5424
+r5425
+r5426
+r5428
+r5430
+r5431
+r5432
+r5433
+r5434
+r5435
+r5436
+r5437
+r5438
+r5439
+r5440
+r5441
+r5442
+r5443
+r5444
+r5454
+r5456
+r5458
+r5463
+r5466
+r5469
+r5471
+r5475
+r5476
+r5479
+r5481
+r5492
+r5494
+r5496
+r5497
+r5499
+r5508
+r5509
+r5512
+r5514
+r5517
+r5521
+r5525
+r5532
+r5538
+r5542
+r5550
+r5553
+r5556
+r5570
+r5573
+r5578
+r5588
+r5598
+  +dir_prop: trunk/qmmp svn:mergeinfo /branches/qmmp-1.0:5596
+r5599
+r5600
+r5605
+r5612
+r5616
+r5618
+r5621
+r5624
+r5642
+r5648
+r5672
+r5677
+r5696
+r5700
+r5702
+r5703
+r5721
+r5722
+r5729
+r5735
+r5740
+r5741
+r5742
+r5743
+r5744
+r5745
+r5746
+r5752
+r5758
+r5759
+r5762
+r5763
+r5764
+r5766
+r5778
+r5789
+r5792
+r5793
+  -empty_dir: trunk/qmmp/src/plugins/Ui/qsui/resources/eq16.preset
+r5797
+r5807
+  +file_prop: trunk/qmmp/src/app/images/mac/icons.icns svn:mime-type application/octet-stream
+r5810
+r5812
+r5813
+r5815
+r5820
+  +dir_prop: trunk/qmmp svn:mergeinfo /branches/qmmp-1.0:5596%0A/branches/qmmp-1.1:5819
+r5821
+r5824
+r5828
+r5865
+r5866
+r5868
+r5869
+r5870
+r5871
+r5872
+r5873
+r5874
+r5876
+r5880
+r5881
+r5882
+r5883
+r5884
+r5885
+r5886
+r5887
+r5888
+r5889
+r5892
+r5893
+r5894
+r5897
+r5898
+r5899
+r5902
+r5903
+r5904
+r5905
+r5907
+r5908
+r5911
+r5912
+  -empty_dir: trunk/qmmp/src/qmmp/audioconverter_p.h
+  +file_prop: trunk/qmmp/src/qmmp/audioconverter.h svn:eol-style native
+r5913
+r5914
+r5915
+r5917
+r5919
+r5920
+r5928
+r5934
+r5936
+r5942
+r5944
+r5949
+r5956
+r5957
+r5958
+r5969
+  +dir_prop: trunk/qmmp svn:mergeinfo /branches/qmmp-1.0:5596%0A/branches/qmmp-1.1:5819%2C5968
+r5970
+r5972
+r5974
+r5976
+r5978
+r5980
+r5982
+r5983
+r5984
+r5985
+r5986
+r5987
+r5988
+r5989
+r5990
+r5991
+r5999
+  -empty_dir: trunk/qmmp/src/plugins/Effect/srconverter
+r6000
+r6008
+r6010
+r6012
+r6014
+r6016
+r6018
+r6019
+r6021
+r6022
+r6024
+r6025
+r6026
+  +dir_prop: trunk/qmmp/src/plugins/Ui/qsui svn:mergeinfo /trunk/qmmp/src/plugins/Ui/skinned:5223%2C6018%2C6022
+r6027
+  +dir_prop: trunk/qmmp/src/plugins/Ui/qsui svn:mergeinfo /trunk/qmmp/src/plugins/Ui/skinned:5223%2C6018-6019%2C6022
+r6029
+r6030
+r6031
+r6032
+r6033
+r6034
+r6035
+r6036
+r6037
+r6044
+  +dir_prop: trunk/qmmp svn:mergeinfo /branches/qmmp-1.0:5596%0A/branches/qmmp-1.1:5819%2C5968%2C6043
+r6047
+r6051
+r6052
+r6053
+r6059
+r6060
+r6061
+r6063
+r6064
+r6065
+r6067
+r6068
+r6069
+r6070
+r6071
+r6073
+r6074
+r6075
+r6080
+r6085
+r6112
+r6115
+r6117
+r6119
+r6120
+r6121
+  -empty_dir: trunk/qmmp/src/plugins/FileDialogs/ClassicFileDialog
+r6122
+r6123
+r6124
+r6126
+r6127
+r6130
+r6131
+r6135
+r6139
+r6140
+r6141
+r6142
+r6143
+r6144
+r6145
+r6146
+r6149
+r6150
+r6151
+r6152
+r6153
+r6157
+r6159
+r6163
+r6165
+r6167
+r6169
+r6175
+  +dir_prop: trunk/qmmp svn:mergeinfo /branches/qmmp-1.0:5596%0A/branches/qmmp-1.1:5819%2C5968%2C6043%2C6172
+  +dir_prop: trunk/qmmp/src/plugins/Ui/qsui svn:mergeinfo /branches/qmmp-1.1/src/plugins/Ui/qsui:6172%0A/trunk/qmmp/src/plugins/Ui/skinned:5223%2C6018-6019%2C6022
+r6177
+r6179
+r6185
+r6186
+r6187
+r6196
+r6198
+r6200
+r6202
+r6203
+r6204
+r6205
+r6206
+r6208
+r6212
+r6214
+r6215
+r6225
+r6226
+r6229
+r6231
+r6234
+  +dir_prop: trunk/qmmp svn:mergeinfo /branches/qmmp-1.0:5596%0A/branches/qmmp-1.1:5819%2C5968%2C6043%2C6172%2C6233
+r6235
+r6236
+r6238
+r6240
+r6242
+r6244
+r6246
+r6250
+r6254
+r6260
+r6261
+r6262
+r6266
+r6267
+r6268
+r6269
+r6270
+r6273
+r6275
+r6276
+r6319
+r6324
+r6327
+r6329
+r6330
+r6331
+r6337
+r6342
+r6344
+r6345
+r6346
+r6347
+r6351
+r6352
+r6354
+r6356
+r6359
+r6361
+r6363
+r6364
+r6365
+r6366
+r6369
+r6370
+r6371
+r6372
+r6378
+r6384
+r6385
+r6386
+r6388
+r6402
+r6403
+r6413
+r6414
+r6421
+r6426
+r6427
+r6429
+r6431
+r6433
+r6435
+r6443
+  +dir_prop: trunk/qmmp svn:mergeinfo /branches/qmmp-1.0:5596%0A/branches/qmmp-1.1:5819%2C5968%2C6043%2C6172%2C6233%2C6442
+r6447
+r6449
+r6451
+r6453
+r6456
+r6457
+r6459
+r6468
+r6469
+r6471
+r6472
+  -empty_dir: trunk/qmmp/src/app/unitysupport.cpp
+  -empty_dir: trunk/qmmp/src/app/unitysupport.h
+r6474
+r6477
+r6478
+r6479
+r6481
+r6484
+r6488
+r6500
+r6515
+r6519
+r6521
+r6534
+r6535
+r6539
+r6545
+r6546
+r6547
+r6552
+r6553
+r6577
+r6581
+r6584
+r6586
+r6599
+r6600
+r6602
+r6603
+r6612
+r6616
+r6620
+r6624
+r6628
+r6629
+r6630
+r6637
+r6650
+r6654
+r6658
+r6669
+r6671
+r6675
+r6677
+r6683
+r6689
+r6704
+r6708
+r6710
+r6715
+r6721
+r6723
+r6727
+r6728
+r6729
+r6730
+r6731
+r6732
+r6733
+r6740
+r6741
+r6744
+r6769
+r6770
+r6772
+r6773
+r6777
+r6779
+r6781
+r6783
+r6784
+r6785
+r6789
+r6796
+r6801
+  +dir_prop: trunk/qmmp svn:mergeinfo /branches/qmmp-1.0:5596%0A/branches/qmmp-1.1:5819%2C5968%2C6043%2C6172%2C6233%2C6442%0A/branches/qmmp-1.2:6799
+r6803
+r6811
+r6813
+r6814
+r6815
+r6819
+r6825
+r6831
+r6868
+r6869
+r6874
+r6875
+r6877
+r6878
+r6879
+r6888
+r6897
+r6901
+r6905
+r6909
+r6919
+r6926
+r6928
+r6929
+r6930
+r6931
+r6932
+r6933
+r6934
+r6935
+r6939
+r6940
+r6941
+r6942
+r6945
+r6947
+r6949
+r6950
+r6952
+r6954
+r6955
+  -empty_dir: trunk/qmmp/src/qmmp/visualbuffer.h
+r6956
+r6957
+r6958
+r6959
+r6972
+r6976
+  +dir_prop: trunk/qmmp svn:mergeinfo /branches/qmmp-1.0:5596%0A/branches/qmmp-1.1:5819%2C5968%2C6043%2C6172%2C6233%2C6442%0A/branches/qmmp-1.2:6799%2C6945
+r6977
+  +dir_prop: trunk/qmmp svn:mergeinfo /branches/qmmp-1.0:5596%0A/branches/qmmp-1.1:5819%2C5968%2C6043%2C6172%2C6233%2C6442%0A/branches/qmmp-1.2:6799%2C6945%2C6975
+r6982
+r6983
+r6984
+r6985
+r6986
+r6987
+r6988
+r6989
+r6990
+r6991
+r6992
+r6993
+r6995
+r7000
+r7003
+r7010
+r7016
+r7028
+r7030
+r7036
+r7040
+r7044
+r7045
+r7046
+r7047
+r7050
+r7052
+r7054
+r7056
+r7065
+r7066
+r7069
+r7072
+r7074
+r7077
+r7079
+r7081
+r7083
+r7084
+r7086
+r7088
+r7090
+r7092
+r7094
+r7098
+r7112
+r7114
+r7116
+r7118
+r7121
+r7122
+r7123
+r7128
+r7135
+r7136
+r7137
+r7138
+r7139
+r7142
+r7146
+r7151
+r7155
+r7159
+r7163
+r7167
+r7169
+r7174
+  +dir_prop: trunk/qmmp svn:mergeinfo /branches/qmmp-1.0:5596%0A/branches/qmmp-1.1:5819%2C5968%2C6043%2C6172%2C6233%2C6442%0A/branches/qmmp-1.2:6799%2C6945%2C6975%2C7173
+r7177
+r7180
+r7186
+r7190
+r7200
+r7213
+r7215
+r7217
+r7221
+r7223
+r7224
+r7227
+r7228
+r7237
+r7239
+r7243
+r7245
+r7250
+r7254
+r7258
+r7262
+r7266
+r7270
+r7272
+r7276
+r7280
+r7284
+r7286
+r7303
+r7305
+r7306
+r7310
+r7312
+r7315
+r7319
+r7328
+r7329
+r7336
+r7338
+r7348
+r7370
+r7374
+r7376
+r7380
+r7385
+  +dir_prop: trunk/qmmp svn:mergeinfo /branches/qmmp-1.0:5596%0A/branches/qmmp-1.1:5819%2C5968%2C6043%2C6172%2C6233%2C6442%0A/branches/qmmp-1.2:6799%2C6945%2C6975%2C7173%2C7382
+  +dir_prop: trunk/qmmp/src/plugins/Ui/qsui svn:mergeinfo /branches/qmmp-1.1/src/plugins/Ui/qsui:6172%0A/branches/qmmp-1.2/src/plugins/Ui/qsui:7382%0A/trunk/qmmp/src/plugins/Ui/skinned:5223%2C6018-6019%2C6022
+r7387
+r7388
+r7389
+r7390
+r7391
+r7392
+r7394
+r7396
+r7397
+r7400
+r7404
+r7405
+r7408
+r7415
+r7419
+r7420
+r7421
+r7422
+r7423
+r7424
+  -empty_dir: trunk/qmmp/clear_qmake.sh
+r7425
+r7426
+r7427
+r7428
+r7429
+r7431
+r7433
+r7440
+r7441
+r7448
+r7450
+r7451
+r7453
+r7455
+r7457
+r7459
+r7463
+r7464
+r7466
+r7467
+r7471
+r7477
+r7487
+r7492
+r7510
+r7514
+r7515
+r7519
+r7523
+  +dir_prop: trunk/qmmp svn:mergeinfo /branches/qmmp-0.10:7522%0A/branches/qmmp-1.0:5596%0A/branches/qmmp-1.1:5819%2C5968%2C6043%2C6172%2C6233%2C6442%0A/branches/qmmp-1.2:6799%2C6945%2C6975%2C7173%2C7382%2C7520
+r7531
+r7537
+r7541
+r7558
+r7579
+r7582
+r7594
+r7612
+r7613
+r7618
+r7630
+r7632
+r7637
+r7641
+r7642
+r7645
+r7647
+r7649
+r7651
+r7652
+r7653
+r7660
+r7663
+r7665
+r7669
+r7672
+r7674
+r7675
+r7676
+r7677
+r7682
+r7686
+r7689
+r7691
+r7702
+r7703
+r7705
+r7707
+r7710
+r7711
+r7712
+r7713
+r7714
+r7715
+r7716
+r7717
+r7718
+r7721
+r7725
+r7729
+r7732
+r7735
+r7737
+r7740
+r7744
+r7745
+r7747

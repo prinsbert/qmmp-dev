@@ -1,0 +1,157 @@
+r2756
+r2760
+r2765
+r2767
+r2774
+r2778
+r2780
+r2782
+r2785
+r2787
+r2789
+r2798
+r2799
+r2806
+r2808
+r2812
+r2819
+r2820
+r2825
+r2830
+r2832
+r2833
+r2834
+r2837
+r2840
+r2841
+r2843
+r2850
+r2852
+r2854
+r2856
+r2860
+r2864
+r2867
+r2869
+r2870
+r2871
+r2872
+r2875
+r2878
+r2886
+r2892
+r2896
+r2902
+  -empty_dir: branches/qmmp-0.6/remove_svn_tags
+  -empty_dir: branches/qmmp-0.6/remove_svn_tags.cmd
+  -empty_dir: branches/qmmp-0.6/update_ts.sh
+  +file_prop: branches/qmmp-0.6/utils/remove_svn_tags.sh svn:eol-style native
+  +file_prop: branches/qmmp-0.6/utils/update_ts.sh svn:eol-style native
+r2904
+r2907
+r2913
+  -file_prop: branches/qmmp-0.6/src/qmmpui/txt/description_ja.txt svn:mime-type
+  -file_prop: branches/qmmp-0.6/src/qmmpui/txt/description_ru.txt svn:mime-type
+  -file_prop: branches/qmmp-0.6/src/qmmpui/txt/description_uk_UA.txt svn:mime-type
+  -file_prop: branches/qmmp-0.6/src/qmmpui/txt/description_zh_CN.txt svn:mime-type
+  -file_prop: branches/qmmp-0.6/src/qmmpui/txt/description_zh_TW.txt svn:mime-type
+r2916
+r2918
+r2925
+r2928
+r2932
+r2936
+r2939
+r2941
+r2946
+r2948
+r2951
+r2952
+r2957
+r2960
+r2961
+r2962
+r2965
+r2970
+r2977
+r2984
+r2986
+r2988
+r2990
+r2995
+r2997
+r2998
+r3003
+r3004
+r3010
+  +file_prop: branches/qmmp-0.6/src/qmmpui/txt/authors_he.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.6/src/qmmpui/txt/description_he.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.6/src/qmmpui/txt/thanks_he.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.6/src/qmmpui/txt/translators_he.txt svn:eol-style native
+r3013
+r3014
+r3017
+r3021
+r3022
+r3025
+r3027
+r3028
+r3031
+r3033
+r3036
+r3045
+r3052
+r3056
+r3061
+r3068
+r3073
+r3074
+r3078
+r3080
+r3106
+r3113
+r3115
+r3116
+r3119
+r3121
+r3123
+r3126
+r3132
+r3134
+r3137
+r3139
+r3143
+r3145
+r3146
+r3153
+r3170
+r3172
+r3178
+r3206
+r3211
+r3215
+r3231
+r3237
+r3241
+r3243
+r3244
+r3246
+r3247
+r3249
+r3253
+r3263
+r3264
+r3265
+r3268
+r3270
+r3273
+r3316
+r3323
+r3324
+r3338
+r3339
+r3343
+r3346
+r3347
+r3350
+r3354

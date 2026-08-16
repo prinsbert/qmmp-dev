@@ -1,0 +1,182 @@
+r3381
+r3385
+r3402
+r3404
+r3408
+r3416
+r3418
+r3427
+r3433
+r3438
+r3457
+r3460
+r3461
+r3470
+r3480
+r3481
+r3485
+r3487
+r3488
+r3490
+r3492
+r3495
+r3496
+r3500
+r3502
+r3505
+r3506
+r3508
+r3510
+r3512
+r3514
+r3515
+r3520
+r3523
+r3524
+r3526
+  -empty_dir: branches/qmmp-0.7/src/plugins/Ui/skinned/lxdesupport.cpp
+  -empty_dir: branches/qmmp-0.7/src/plugins/Ui/skinned/lxdesupport.h
+r3530
+r3531
+r3532
+r3547
+r3549
+r3553
+r3555
+r3556
+r3559
+r3561
+r3582
+r3583
+r3584
+r3585
+r3613
+r3614
+r3623
+r3657
+r3665
+r3695
+r3699
+r3701
+r3703
+r3709
+r3712
+r3714
+r3721
+r3727
+r3730
+r3735
+r3737
+r3738
+r3743
+r3746
+r3751
+r3760
+r3761
+r3783
+r3789
+r3802
+r3821
+r3826
+r3837
+r3882
+r3905
+r3907
+r3911
+r3915
+r3933
+r3936
+r3940
+r3946
+r3947
+r3966
+r3968
+r3969
+r3971
+r3978
+r3980
+r3994
+r3997
+r4009
+r4045
+r4050
+r4051
+r4052
+r4057
+r4065
+r4071
+r4072
+r4075
+r4088
+r4113
+r4150
+r4185
+r4197
+r4200
+r4201
+r4218
+r4220
+r4224
+r4227
+r4229
+r4235
+r4251
+r4253
+r4267
+r4279
+  -empty_dir: branches/qmmp-0.7/src/plugins/CommandLineOptions/IncDecVolumeOption/translations/incdecvolume_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/CommandLineOptions/PlayListOption/translations/playlist_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/CommandLineOptions/SeekOption/translations/seek_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/CommandLineOptions/StatusOption/translations/status_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Effect/bs2b/translations/bs2b_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Effect/crossfade/translations/crossfade_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Effect/ladspa/translations/ladspa_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Effect/srconverter/translations/srconverter_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Effect/stereo/translations/stereo_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Engines/mplayer/translations/mplayer_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/FileDialogs/QmmpFileDialog/translations/qmmp_file_dialog_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/General/converter/translations/converter_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/General/covermanager/translations/covermanager_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/General/fileops/translations/fileops_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/General/hal/translations/hal_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/General/hotkey/translations/hotkey_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/General/kdenotify/translations/kdenotify_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/General/lyrics/translations/lyrics_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/General/mpris/translations/mpris_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/General/notifier/translations/notifier_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/General/scrobbler/translations/scrobbler_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/General/statusicon/translations/statusicon_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/General/streambrowser/translations/streambrowser_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/General/udisks/translations/udisks_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/General/udisks2/translations/udisks2_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Input/aac/translations/aac_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Input/cdaudio/translations/cdaudio_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Input/cue/translations/cue_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Input/ffmpeg/translations/ffmpeg_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Input/ffmpeg_legacy/translations/ffmpeg_legacy_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Input/flac/translations/flac_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Input/gme/translations/gme_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Input/mad/translations/mad_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Input/modplug/translations/modplug_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Input/mpc/translations/mpc_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Input/opus/translations/opus_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Input/sndfile/translations/sndfile_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Input/vorbis/translations/vorbis_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Input/wavpack/translations/wavpack_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Input/wildmidi/translations/wildmidi_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Output/alsa/translations/alsa_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Output/jack/translations/jack_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Output/null/translations/null_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Output/oss/translations/oss_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Output/oss4/translations/oss4_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Output/pulseaudio/translations/pulseaudio_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Output/waveout/translations/waveout_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Transports/http/translations/http_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Transports/mms/translations/mms_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Visual/analyzer/translations/analyzer_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/plugins/Visual/projectm/translations/projectm_plugin_pl.ts
+  -empty_dir: branches/qmmp-0.7/src/qmmpui/txt/authors_pl.txt
+  -empty_dir: branches/qmmp-0.7/src/qmmpui/txt/description_pl.txt
+  -empty_dir: branches/qmmp-0.7/src/qmmpui/txt/thanks_pl.txt
+  -empty_dir: branches/qmmp-0.7/src/qmmpui/txt/translators_pl.txt
+r4286

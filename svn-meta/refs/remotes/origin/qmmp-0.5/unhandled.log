@@ -1,0 +1,637 @@
+r2131
+r2132
+  +file_prop: branches/qmmp-0.5/qmmp/clear_qmake.sh svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/CommandLineOptions/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/incdecvolumeoption.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/CommandLineOptions/IncDecVolumeOption/incdecvolumeoption.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/CommandLineOptions/SeekOption/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/CommandLineOptions/SeekOption/seekoption.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/CommandLineOptions/SeekOption/seekoption.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/CommandLineOptions/StatusOption/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/CommandLineOptions/StatusOption/statusoption.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/CommandLineOptions/StatusOption/statusoption.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/bs2b/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/bs2b/bs2bplugin.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/bs2b/bs2bplugin.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/bs2b/effectbs2bfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/bs2b/effectbs2bfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/bs2b/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/bs2b/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/crossfade/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/crossfade/crossfadeplugin.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/crossfade/crossfadeplugin.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/crossfade/effectcrossfadefactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/crossfade/effectcrossfadefactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/crossfade/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/crossfade/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/ladspa/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/ladspa/effectladspafactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/ladspa/effectladspafactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/ladspa/ladspa.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/ladspa/ladspabutton.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/ladspa/ladspabutton.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/ladspa/ladspahelper.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/ladspa/ladspahelper.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/ladspa/ladspahost.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/ladspa/ladspahost.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/ladspa/ladspaslider.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/ladspa/ladspaslider.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/ladspa/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/ladspa/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/stereo/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/stereo/effectstereofactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/stereo/effectstereofactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/stereo/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/stereo/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/stereo/stereoplugin.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Effect/stereo/stereoplugin.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Engines/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Engines/mplayer/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Engines/mplayer/mplayerengine.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Engines/mplayer/mplayerengine.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Engines/mplayer/mplayerenginefactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Engines/mplayer/mplayerenginefactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Engines/mplayer/mplayermetadatamodel.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Engines/mplayer/mplayermetadatamodel.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Engines/mplayer/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Engines/mplayer/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/FileDialogs/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/FileDialogs/QmmpFileDialog/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/FileDialogs/QmmpFileDialog/qmmpfiledialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/FileDialogs/QmmpFileDialog/qmmpfiledialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/FileDialogs/QmmpFileDialog/qmmpfiledialogimpl.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/FileDialogs/QmmpFileDialog/qmmpfiledialogimpl.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/covermanager/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/covermanager/covermanager.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/covermanager/covermanager.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/covermanager/covermanagerfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/covermanager/covermanagerfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/covermanager/coverwidget.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/covermanager/coverwidget.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/covermanager/images/cm_no_cover.png svn:mime-type image/png
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/fileops/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/fileops/fileops.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/fileops/fileops.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/fileops/fileopsfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/fileops/fileopsfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/fileops/hotkeydialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/fileops/hotkeydialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/fileops/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/fileops/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hal/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hal/haldevice.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hal/haldevice.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hal/halfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hal/halfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hal/halmanager.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hal/halmanager.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hal/halplugin.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hal/halplugin.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hal/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hal/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hotkey/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hotkey/hotkeydialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hotkey/hotkeydialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hotkey/hotkeyfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hotkey/hotkeyfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hotkey/hotkeymanager.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hotkey/hotkeymanager.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hotkey/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/hotkey/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/kdenotify/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/kdenotify/images/app_icon.png svn:mime-type image/png
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/kdenotify/images/empty_cover.png svn:mime-type image/png
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/kdenotify/kdenotify.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/kdenotify/kdenotify.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/kdenotify/kdenotifyfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/kdenotify/kdenotifyfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/kdenotify/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/kdenotify/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/lyrics/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/lyrics/lyrics.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/lyrics/lyrics.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/lyrics/lyricsfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/lyrics/lyricsfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/lyrics/lyricswindow.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/lyrics/lyricswindow.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/mpris/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/mpris/mpris.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/mpris/mpris.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/mpris/mpris1/playerobject.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/mpris/mpris1/playerobject.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/mpris/mpris1/rootobject.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/mpris/mpris1/rootobject.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/mpris/mpris1/tracklistobject.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/mpris/mpris1/tracklistobject.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/mpris/mpris2/player2object.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/mpris/mpris2/player2object.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/mpris/mpris2/root2object.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/mpris/mpris2/root2object.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/mpris/mprisfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/mpris/mprisfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/notifier/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/notifier/notifier.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/notifier/notifier.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/notifier/notifier_icon.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/notifier/notifierfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/notifier/notifierfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/notifier/popupwidget.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/notifier/popupwidget.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/notifier/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/notifier/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/scrobbler/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/scrobbler/scrobbler2.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/scrobbler/scrobbler2.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/scrobbler/scrobblerhandler.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/scrobbler/scrobblerhandler.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/statusicon/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/statusicon/coverwidget.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/statusicon/coverwidget.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/statusicon/images/empty_cover.png svn:mime-type image/png
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/statusicon/images/tray_pause.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/statusicon/images/tray_play.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/statusicon/images/tray_stop.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/statusicon/qmmptrayicon.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/statusicon/qmmptrayicon.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/statusicon/statusiconpopupwidget.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/statusicon/statusiconpopupwidget.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/udisks/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/udisks/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/udisks/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/udisks/udisksdevice.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/udisks/udisksdevice.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/udisks/udisksfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/udisks/udisksfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/udisks/udisksmanager.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/udisks/udisksmanager.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/udisks/udisksplugin.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/General/udisks/udisksplugin.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/aac/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/aac/aacfile.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/aac/aacfile.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/aac/aacmetadatamodel.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/aac/aacmetadatamodel.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/aac/decoder_aac.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/aac/decoder_aac.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/aac/decoderaacfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/aac/decoderaacfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cdaudio/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cdaudio/decoder_cdaudio.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cdaudio/decoder_cdaudio.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cdaudio/decodercdaudiofactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cdaudio/decodercdaudiofactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cdaudio/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cdaudio/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cue/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cue/cuemetadatamodel.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cue/cuemetadatamodel.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cue/cueparser.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cue/cueparser.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cue/decoder_cue.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cue/decoder_cue.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cue/decodercuefactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cue/decodercuefactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cue/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/cue/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/ffmpeg/ffmpegmetadatamodel.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/ffmpeg/ffmpegmetadatamodel.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/ffmpeg/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/ffmpeg/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/flac/cueparser.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/flac/cueparser.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/flac/flacmetadatamodel.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/flac/flacmetadatamodel.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/flac/replaygainreader.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/flac/replaygainreader.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/gme/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/gme/decoder_gme.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/gme/decoder_gme.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/gme/decodergmefactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/gme/decodergmefactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/gme/gmehelper.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/gme/gmehelper.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/mad/mpegmetadatamodel.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/mad/mpegmetadatamodel.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/mad/replaygainreader.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/mad/replaygainreader.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/mad/tagextractor.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/mad/tagextractor.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/modplug/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/modplug/archivereader.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/modplug/archivereader.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/modplug/decoder_modplug.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/modplug/decoder_modplug.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/modplug/decodermodplugfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/modplug/decodermodplugfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/modplug/modplugmetadatamodel.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/modplug/modplugmetadatamodel.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/modplug/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/modplug/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/mpc/mpcmetadatamodel.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/mpc/mpcmetadatamodel.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/vorbis/replaygainreader.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/vorbis/replaygainreader.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/vorbis/vorbismetadatamodel.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/vorbis/vorbismetadatamodel.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wavpack/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wavpack/cueparser.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wavpack/cueparser.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wavpack/decoder_wavpack.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wavpack/decoder_wavpack.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wavpack/decoderwavpackfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wavpack/decoderwavpackfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wavpack/replaygainreader.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wavpack/replaygainreader.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wavpack/wavpackmetadatamodel.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wavpack/wavpackmetadatamodel.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wildmidi/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wildmidi/decoder_wildmidi.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wildmidi/decoder_wildmidi.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wildmidi/decoderwildmidifactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wildmidi/decoderwildmidifactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wildmidi/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wildmidi/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wildmidi/wildmidihelper.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Input/wildmidi/wildmidihelper.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/null/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/null/outputnull.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/null/outputnull.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/null/outputnullfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/null/outputnullfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/oss4/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/oss4/outputoss4.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/oss4/outputoss4.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/oss4/outputoss4factory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/oss4/outputoss4factory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/oss4/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/oss4/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/pulseaudio/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/pulseaudio/outputpulseaudio.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/pulseaudio/outputpulseaudio.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/pulseaudio/outputpulseaudiofactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/pulseaudio/outputpulseaudiofactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Output/waveout/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/PlaylistFormats/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/PlaylistFormats/m3u/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/PlaylistFormats/m3u/m3uplaylistformat.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/PlaylistFormats/m3u/m3uplaylistformat.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/PlaylistFormats/pls/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/PlaylistFormats/pls/plsplaylistformat.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/PlaylistFormats/pls/plsplaylistformat.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/PlaylistFormats/xspf/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/PlaylistFormats/xspf/xspfplaylistformat.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/PlaylistFormats/xspf/xspfplaylistformat.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/http/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/http/httpinputfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/http/httpinputfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/http/httpinputsource.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/http/httpinputsource.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/http/httpstreamreader.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/http/httpstreamreader.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/http/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/http/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/mms/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/mms/mmsinputfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/mms/mmsinputfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/mms/mmsinputsource.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/mms/mmsinputsource.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/mms/mmsstreamreader.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/mms/mmsstreamreader.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/mms/settingsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Transports/mms/settingsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Visual/projectm/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Visual/projectm/projectmplugin.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Visual/projectm/projectmplugin.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Visual/projectm/projectmwidget.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Visual/projectm/projectmwidget.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Visual/projectm/visualprojectmfactory.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/plugins/Visual/projectm/visualprojectmfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/abstractengine.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/abstractengine.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/audioconverter.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/audioconverter.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/audioparameters.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/audioparameters.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/emptyinputsource.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/emptyinputsource.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/enginefactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/eqsettings.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/eqsettings.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/fileinfo.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/fileinfo.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/fileinputsource.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/fileinputsource.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/inputsource.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/inputsource.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/inputsourcefactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/metadatamanager.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/metadatamanager.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/metadatamodel.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/metadatamodel.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/qmmp.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/qmmp.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/qmmpaudioengine.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/qmmpaudioengine.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/qmmpsettings.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/qmmpsettings.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/replaygain.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/replaygain.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/statehandler.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/statehandler.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/svn_revision.sh svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/tagmodel.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/tagmodel.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/volumecontrol.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmp/volumecontrol.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/abstractplaylistitem.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/abstractplaylistitem.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/commandlinemanager.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/commandlinemanager.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/commandlineoption.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/detailsdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/detailsdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/filedialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/filedialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/filedialogfactory.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/fileloader.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/fileloader.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/mediaplayer.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/mediaplayer.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/metadataformatter.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/metadataformatter.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/playlistformat.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/playlistitem.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/playlistitem.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/playlistmanager.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/playlistmanager.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/playlistmodel.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/playlistmodel.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/playlistparser.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/playlistparser.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/playlistsettings.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/playlistsettings.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/playstate.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/playstate.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/qtfiledialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/qtfiledialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/tageditor.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/tageditor.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/templateeditor.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/qmmpui/templateeditor.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/CMakeLists.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/actionmanager.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/actionmanager.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/builtincommandlineoption.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/builtincommandlineoption.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/cursorimage.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/cursorimage.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/default/balance.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/default/cbuttons.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/default/eq_ex.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/default/eqmain.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/default/main.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/default/monoster.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/default/numbers.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/default/playpaus.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/default/pledit.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/default/posbar.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/default/readme.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/default/shufrep.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/default/text.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/default/titlebar.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/default/volume.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/images/16x16/qmmp.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/images/32x32/qmmp.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/images/48x48/qmmp.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/images/56x56/qmmp.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/images/advanced.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/images/interface.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/images/logo-qmmp.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/images/network.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/images/playlist.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/images/plugins.png svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/images/replaygain.png svn:mime-type image/png
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/images/scalable/qmmp-simple.svgz svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/images/scalable/qmmp.svgz svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/images/shortcuts.png svn:mime-type image/png
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/images/ui_no_cover.png svn:mime-type image/png
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/lxdesupport.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/lxdesupport.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/playlistbrowser.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/playlistbrowser.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/playlistselector.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/playlistselector.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/popupsettings.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/popupsettings.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/popupwidget.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/popupwidget.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/shortcutdialog.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/shortcutdialog.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/shortcutitem.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/shortcutitem.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/authors_cs.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/authors_de.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/authors_en.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/authors_es.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/authors_it.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/authors_lt.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/authors_nl.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/authors_pl.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/authors_ru.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/authors_tr.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/authors_uk_UA.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/authors_zh_CN.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/authors_zh_TW.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/description_cs.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/description_de.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/description_en.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/description_es.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/description_it.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/description_ja.txt svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/description_lt.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/description_nl.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/description_pl.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/description_ru.txt svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/description_tr.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/description_uk_UA.txt svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/description_zh_CN.txt svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/description_zh_TW.txt svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/thanks_cs.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/thanks_de.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/thanks_en.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/thanks_es.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/thanks_it.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/thanks_lt.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/thanks_nl.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/thanks_pl.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/thanks_ru.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/thanks_tr.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/thanks_uk_UA.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/thanks_zh_CN.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/thanks_zh_TW.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/translators_cs.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/translators_de.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/translators_en.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/translators_es.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/translators_it.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/translators_lt.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/translators_nl.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/translators_pl.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/translators_ru.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/translators_tr.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/translators_uk_UA.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/translators_zh_CN.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/txt/translators_zh_TW.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/windowsystem.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/src/ui/windowsystem.h svn:eol-style native
+  +file_prop: branches/qmmp-0.5/qmmp/update_ts.sh svn:eol-style native
+r2135
+r2136
+  -empty_dir: branches/qmmp-0.5/qmmp
+r2138
+r2141
+r2144
+r2147
+r2149
+r2151
+r2153
+r2155
+r2157
+r2159
+r2161
+r2165
+r2166
+r2168
+r2170
+r2171
+r2173
+r2176
+r2178
+r2180
+r2181
+r2184
+r2186
+r2190
+r2192
+r2194
+r2195
+r2199
+r2201
+r2202
+r2204
+r2206
+r2207
+r2208
+r2210
+r2212
+r2215
+r2217
+r2221
+r2223
+r2225
+r2227
+r2230
+r2231
+r2232
+r2234
+r2239
+r2241
+  -empty_dir: branches/qmmp-0.5/src/qmmpui/abstractplaylistitem.cpp
+  -empty_dir: branches/qmmp-0.5/src/qmmpui/abstractplaylistitem.h
+r2242
+r2249
+r2284
+r2288
+r2298
+r2300
+r2304
+r2305
+r2309
+r2312
+r2314
+r2315
+r2319
+r2320
+r2322
+r2324
+r2327
+r2331
+r2332
+r2335
+r2337
+r2340
+r2341
+r2358
+r2360
+r2372
+r2375
+r2387
+r2396
+r2400
+r2405
+r2406
+r2439
+r2445
+r2451
+r2454
+r2474
+r2491
+r2492
+r2496
+r2497
+r2499
+r2513
+r2514
+r2521
+r2525
+r2541
+r2543
+r2549
+r2550
+r2554
+r2555
+r2557
+r2558
+r2566
+r2567
+r2575
+r2579
+r2580
+r2583
+r2604
+r2622
+r2623
+r2624
+r2630
+r2631
+r2647
+r2649
+r2650
+r2651
+r2653
+r2656
+r2657
+r2670
+r2683
+r2693
+r2695
+r2701
+r2702
+r2703
+r2704
+r2712
+r2716
+r2717
+r2719
+r2721
+r2722
+r2723
+r2727
+r2728
+r2734
+r2740
+r2741

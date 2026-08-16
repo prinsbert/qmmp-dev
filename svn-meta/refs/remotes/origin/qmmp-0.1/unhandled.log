@@ -1,0 +1,167 @@
+r8
+r15
+r17
+r22
+r24
+r28
+r30
+r32
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/ffmpeg/translations/ffmpeg_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/src/html/authors_uk_UA.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.1/src/html/thanks_uk_UA.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.1/src/translations/qmmp_uk_UA.qm svn:mime-type application/octet-stream
+r33
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/flac/translations/flac_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/mad/translations/mad_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/mpc/translations/mpc_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/vorbis/translations/vorbis_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Output/alsa/translations/alsa_plugin_uk_UA.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Output/jack/translations/jack_plugin_uk_UA.qm svn:mime-type application/octet-stream
+r34
+r35
+r36
+r44
+r47
+r51
+r52
+r53
+r54
+r57
+r62
+r64
+r66
+r68
+r71
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/ffmpeg/translations/ffmpeg_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/flac/translations/flac_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/mad/translations/mad_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/mpc/translations/mpc_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/vorbis/translations/vorbis_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Output/alsa/translations/alsa_plugin_zh_CN.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Output/jack/translations/jack_plugin_zh_CN.qm svn:mime-type application/octet-stream
+r73
+r74
+r76
+r78
+r81
+r82
+r89
+r90
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/ffmpeg/translations/ffmpeg_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/flac/translations/flac_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/mad/translations/mad_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/mpc/translations/mpc_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/vorbis/translations/vorbis_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Output/alsa/translations/alsa_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Output/jack/translations/jack_plugin_zh_TW.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/src/html/authors_zh_TW.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.1/src/html/thanks_zh_TW.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.1/src/translations/qmmp_zh_TW.qm svn:mime-type application/octet-stream
+r93
+r95
+r97
+  -empty_dir: branches/qmmp-0.1/lib/fileinfo.cpp
+  -empty_dir: branches/qmmp-0.1/lib/fileinfo.h
+r99
+r101
+r111
+r112
+r114
+r118
+r121
+r122
+r125
+r126
+r133
+r135
+r137
+  +file_prop: branches/qmmp-0.1/src/html/authors_cs.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.1/src/html/thanks_cs.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.1/src/translations/qmmp_cs.qm svn:mime-type application/octet-stream
+r138
+r139
+  -empty_dir: branches/qmmp-0.1/bin/qmmp
+r140
+r141
+r142
+  +file_prop: branches/qmmp-0.1/src/skinreader.cpp svn:eol-style native
+  +file_prop: branches/qmmp-0.1/src/skinreader.h svn:eol-style native
+r145
+  -empty_dir: branches/qmmp-0.1/src/tcpserver.cpp
+  -empty_dir: branches/qmmp-0.1/src/tcpserver.h
+r146
+r147
+  -empty_dir: branches/qmmp-0.1/src/guard.cpp
+  -empty_dir: branches/qmmp-0.1/src/guard.h
+r148
+r149
+r150
+r151
+r152
+r153
+r154
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/ffmpeg/translations/ffmpeg_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/flac/translations/flac_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/mad/translations/mad_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/mpc/translations/mpc_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/vorbis/translations/vorbis_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Output/alsa/translations/alsa_plugin_cs.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Output/jack/translations/jack_plugin_cs.qm svn:mime-type application/octet-stream
+r158
+r159
+r165
+r170
+  +file_prop: branches/qmmp-0.1/src/translations/qmmp_pt_BR.qm svn:mime-type application/octet-stream
+r174
+  -empty_dir: branches/qmmp-0.1/lib/qmmp/Input/flac/decoderflacfactory_interface.h
+r175
+r178
+r182
+r187
+r193
+  -empty_dir: branches/qmmp-0.1/lib/iir.c
+  -empty_dir: branches/qmmp-0.1/lib/iir.h
+  -empty_dir: branches/qmmp-0.1/lib/iir_cfs.c
+  -empty_dir: branches/qmmp-0.1/lib/iir_cfs.h
+  -empty_dir: branches/qmmp-0.1/lib/iir_fpu.c
+  -empty_dir: branches/qmmp-0.1/lib/iir_fpu.h
+r195
+r196
+r197
+r198
+r200
+r201
+r202
+r205
+r206
+r223
+r226
+r266
+r269
+r271
+r273
+r283
+r288
+r289
+r297
+r302
+r303
+r308
+  +file_prop: branches/qmmp-0.1/src/html/authors_de.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.1/src/html/thanks_de.txt svn:eol-style native
+  +file_prop: branches/qmmp-0.1/src/translations/qmmp_de.qm svn:mime-type application/octet-stream
+r322
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/ffmpeg/translations/ffmpeg_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/flac/translations/flac_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/mad/translations/mad_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/mpc/translations/mpc_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Input/vorbis/translations/vorbis_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Output/alsa/translations/alsa_plugin_de.qm svn:mime-type application/octet-stream
+  +file_prop: branches/qmmp-0.1/lib/qmmp/Output/jack/translations/jack_plugin_de.qm svn:mime-type application/octet-stream
+r323
+r324
+r327
+r329
+r332
+r333
+r334

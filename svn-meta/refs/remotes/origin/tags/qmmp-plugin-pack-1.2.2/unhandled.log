@@ -1,0 +1,60 @@
+r8172
+r8173
+  +empty_dir: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Output
+  +dir_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2 svn:mergeinfo /trunk/qmmp:6076%2C6440%2C8164%0A/trunk/qmmp-plugin-pack:5518%2C5561%2C5801%2C5822%2C5932%2C5998%2C6005%2C6049%2C6438%2C6440%2C6606%2C6608%2C6638%2C6717%2C6756%2C6775%2C6821%2C6837%2C6851%2C6853%2C6862-6866%2C6892-6893%2C6895%2C6997%2C7032%2C7409%2C7411-7412%2C7441%2C7491%2C7551%2C7567%2C7572%2C7574-7575%2C7580%2C7598%2C7614%2C7633%2C7639%2C7656%2C7658%2C7708%2C7722%2C7740%2C7844%2C8001%2C8132%2C8153%2C8164
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/CMakeLists.txt svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/CMakeLists.txt svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/CMakeLists.txt svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/ffap/CMakeLists.txt svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/ffap/cueparser.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/ffap/cueparser.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/ffap/decoder_ffap.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/ffap/decoder_ffap.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/ffap/decoder_ffapcue.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/ffap/decoder_ffapcue.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/ffap/decoderffapfactory.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/ffap/decoderffapfactory.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/ffap/ffap.c svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/ffap/ffap.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/ffap/ffapmetadatamodel.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/ffap/ffapmetadatamodel.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/ffap/replaygainreader.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/ffap/replaygainreader.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/mpg123/CMakeLists.txt svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/mpg123/decoder_mpg123.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/mpg123/decoder_mpg123.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/mpg123/decodermpg123factory.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/mpg123/decodermpg123factory.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/mpg123/mpegmetadatamodel.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/mpg123/mpegmetadatamodel.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/mpg123/replaygainreader.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/mpg123/replaygainreader.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/mpg123/settingsdialog.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/mpg123/settingsdialog.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/mpg123/tagextractor.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/src/Input/mpg123/tagextractor.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/utils/remove_svn_tags.sh svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2/utils/update_ts.sh svn:eol-style native
+r8174
+  -empty_dir: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.2
+r12228
+  +empty_dir: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/src/Output
+  +dir_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/branches/qmmp-plugin-pack-2.2:12018%2C12223%0A/trunk/qmmp:9978%2C10224%2C10270%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241%2C10245%2C10270%2C10306%2C10332%2C10480%2C10604%2C10611%2C10626%2C11854%2C11899%2C11940%2C12017%2C12107%2C12220
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/CMakeLists.txt svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/src/CMakeLists.txt svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/src/Input/CMakeLists.txt svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/src/Input/ffap/CMakeLists.txt svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/src/Input/ffap/decoder_ffap.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/src/Input/ffap/decoder_ffap.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/src/Input/ffap/decoder_ffapcue.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/src/Input/ffap/decoder_ffapcue.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/src/Input/ffap/decoderffapfactory.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/src/Input/ffap/decoderffapfactory.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/src/Input/ffap/ffap.c svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/src/Input/ffap/ffap.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/src/Input/ffap/ffapmetadatamodel.cpp svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/src/Input/ffap/ffapmetadatamodel.h svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/utils/remove_svn_tags.sh svn:eol-style native
+  +file_prop: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7/utils/update_ts.sh svn:eol-style native
+r12231
+  -empty_dir: tags/qmmp-plugin-pack-1.2.2/qmmp-plugin-pack-1.7

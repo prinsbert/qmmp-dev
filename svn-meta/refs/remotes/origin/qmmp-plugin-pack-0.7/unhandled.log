@@ -1,0 +1,54 @@
+r3382
+r3386
+r3389
+r3390
+r3392
+r3393
+r3396
+r3439
+r3462
+r3491
+r3498
+r3499
+r3509
+r3521
+r3562
+r3641
+r3659
+r3661
+r3662
+r3666
+r3686
+r3739
+r3744
+r3748
+r3849
+r3883
+r3906
+r3912
+r3934
+r3935
+r3979
+r3983
+r4043
+r4044
+r4047
+r4066
+r4076
+r4086
+r4117
+r4151
+r4186
+r4217
+r4219
+r4221
+r4225
+r4230
+r4236
+r4254
+r4280
+  -empty_dir: branches/qmmp-plugin-pack-0.7/src/Input/ffap/translations/ffap_plugin_pl.ts
+  -empty_dir: branches/qmmp-plugin-pack-0.7/src/Input/mpg123/translations/mpg123_plugin_pl.ts
+  -empty_dir: branches/qmmp-plugin-pack-0.7/src/Ui/qsui/txt/qsui_authors_pl.txt
+  +file_prop: branches/qmmp-plugin-pack-0.7/src/Ui/qsui/txt/qsui_authors_pl_PL.txt svn:eol-style native
+r4287

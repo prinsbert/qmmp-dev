@@ -1,0 +1,70 @@
+r10192
+r10193
+r10194
+r10196
+r10225
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052
+r10226
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224
+r10237
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235
+r10239
+r10242
+  -empty_dir: branches/qmmp-plugin-pack-2.1/src/Visual/goom/gfontrle.c
+  -empty_dir: branches/qmmp-plugin-pack-2.1/src/Visual/goom/mathtools.c
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241
+r10246
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241%2C10245
+r10271
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%2C10270%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241%2C10245
+r10272
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%2C10270%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241%2C10245%2C10270
+r10276
+r10308
+  -empty_dir: branches/qmmp-plugin-pack-2.1/src/Input/xmp
+r10310
+r10312
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%2C10270%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241%2C10245%2C10270%2C10306
+r10315
+r10333
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%2C10270%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241%2C10245%2C10270%2C10306%2C10332
+r10365
+r10416
+r10481
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%2C10270%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241%2C10245%2C10270%2C10306%2C10332%2C10480
+r10517
+r10526
+r10533
+r10596
+r10598
+r10603
+r10607
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%2C10270%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241%2C10245%2C10270%2C10306%2C10332%2C10480%2C10604
+r10609
+r10612
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%2C10270%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241%2C10245%2C10270%2C10306%2C10332%2C10480%2C10604%2C10611
+r10627
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%2C10270%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241%2C10245%2C10270%2C10306%2C10332%2C10480%2C10604%2C10611%2C10626
+r10665
+r10676
+r10890
+r10895
+r10917
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%2C10270%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241%2C10245%2C10270%2C10306%2C10332%2C10480%2C10604%2C10611%2C10626%2C10912
+r10924
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%2C10270%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241%2C10245%2C10270%2C10306%2C10332%2C10480%2C10604%2C10611%2C10626%2C10912%2C10922
+r10927
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/trunk/qmmp:9978%2C10224%2C10270%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241%2C10245%2C10270%2C10306%2C10332%2C10480%2C10604%2C10611%2C10626%2C10912%2C10922%2C10926
+r10936
+r10947
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/branches/qmmp-plugin-pack-1.6:10946%0A/trunk/qmmp:9978%2C10224%2C10270%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241%2C10245%2C10270%2C10306%2C10332%2C10480%2C10604%2C10611%2C10626%2C10912%2C10922%2C10926
+r10963
+r10983
+  +dir_prop: branches/qmmp-plugin-pack-2.1 svn:mergeinfo /branches/qmmp-plugin-pack-0.12:8082%0A/branches/qmmp-plugin-pack-1.2:6860%0A/branches/qmmp-plugin-pack-1.6:10946%0A/trunk/qmmp:9978%2C10224%2C10270%0A/trunk/qmmp-plugin-pack:9964-9965%2C10052%2C10224%2C10235%2C10240-10241%2C10245%2C10270%2C10306%2C10332%2C10480%2C10604%2C10611%2C10626%2C10912%2C10922%2C10926%2C10982
+r10987
+r10991
+r11561
+r11562
+r11618
+r11711
+r11713
