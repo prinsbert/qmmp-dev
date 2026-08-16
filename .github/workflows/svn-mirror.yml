@@ -1,4 +1,5 @@
 name: SVN → Git mirror
+
 on:
   schedule:
     - cron: '17 */12 * * *'      # (offset to avoid GH load)
@@ -9,12 +10,13 @@ on:
       - '.github/workflows/svn-mirror.yml'
 permissions:
   contents: write               # so GITHUB_TOKEN can push
-  # workflows: write              # allows pushing refs that contain workflow files (i.e. branch `svn-to-git-sync`)
 concurrency:
   group: svn-mirror
   cancel-in-progress: false
+
 env:
   SVN_URL: svn://svn.code.sf.net/p/qmmp-dev/code/
+
 jobs:
   mirror:
     runs-on: ubuntu-latest
@@ -23,10 +25,12 @@ jobs:
         run: |
           sudo apt-get update -y
           sudo apt-get install -y subversion
+
       - name: Configure Git identity
         run: |
           git config --global user.name  "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
       - name: Clone existing mirror from GitHub
         run: |
           set -euo pipefail
@@ -36,142 +40,168 @@ jobs:
           git checkout --detach
           git fetch origin '+refs/heads/*:refs/heads/*'
           git fetch origin '+refs/tags/*:refs/tags/*'
+
       - name: Sync new SVN revisions
         run: |
+          set -euo pipefail
           cd mirror
-          python3 << 'EOF'
-          import subprocess
-          import xml.etree.ElementTree as ET
-          import os
-          import re
-          import sys
-          from datetime import datetime
-          SVN_URL = os.environ.get('SVN_URL', '').rstrip('/')
-          def run(cmd, check=True, capture=True):
-              if capture:
-                  return subprocess.run(cmd, check=check, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-              else:
-                  return subprocess.run(cmd, check=check)
-          # 1. Find the last synced SVN revision from the master branch's git-svn-id trailer
-          res = run(['git', 'log', '-1', 'master', '--format=%B'], check=False)
-          last_rev = 0
-          if res.returncode == 0:
-              match = re.search(r'git-svn-id: .*@(\d+)', res.stdout)
-              if match:
-                  last_rev = int(match.group(1))
-          print(f"Current mirrored SVN revision: r{last_rev}")
-          # 2. Fetch SVN logs for all new revisions
-          start_rev = last_rev + 1
-          res = run(['svn', 'log', '-r', f'{start_rev}:HEAD', '--xml', '-v', SVN_URL])
-          if not res.stdout.strip():
-              print("No new revisions to sync.")
-              sys.exit(0)
-          root = ET.fromstring(res.stdout)
-          logentries = root.findall('logentry')
-          if not logentries:
-              print("No new revisions to sync.")
-              sys.exit(0)
-          # 3. Process each new SVN revision
-          for entry in logentries:
-              rev = entry.get('revision')
-              author = entry.find('author').text or 'unknown'
-              date_str = entry.find('date').text
-              msg = entry.find('msg').text or ''
-              # Parse SVN timestamp to Git format
-              dt = datetime.strptime(date_str[:19], '%Y-%m-%dT%H:%M:%S')
-              git_date = dt.strftime('%Y-%m-%dT%H:%M:%S')
-              print(f"Processing r{rev} by {author} on {git_date}...")
-              paths_elem = entry.find('paths')
-              if paths_elem is None:
-                  continue
-              branch_changes = {}
-              # Group changes by Git branch
-              for path_elem in paths_elem.findall('path'):
-                  action = path_elem.get('action', 'M')
-                  p = path_elem.text.strip().strip('/')
-                  copyfrom_path = path_elem.get('copyfrom-path', '').strip('/')
-                  kind = path_elem.get('kind', 'file')
-                  # Handle SVN branch/tag copies natively
-                  if action == 'A' and copyfrom_path:
-                      src_git_ref = 'master'
-                      if copyfrom_path.startswith('branches/'):
-                          src_git_ref = copyfrom_path.split('/')[1]
-                      elif copyfrom_path.startswith('tags/'):
-                          src_git_ref = copyfrom_path.split('/')[1]
-                      if p.startswith('branches/'):
-                          new_branch = p.split('/')[1]
-                          if run(['git', 'rev-parse', '--verify', new_branch], check=False).returncode != 0:
-                              run(['git', 'branch', new_branch, src_git_ref])
-                              print(f"Created branch {new_branch} from {src_git_ref}")
-                      elif p.startswith('tags/'):
-                          new_tag = p.split('/')[1]
-                          if run(['git', 'rev-parse', '--verify', f'refs/tags/{new_tag}'], check=False).returncode != 0:
-                              run(['git', 'tag', new_tag, src_git_ref])
-                              print(f"Created tag {new_tag} from {src_git_ref}")
-                      continue
-                  # Map SVN paths to Git branches
-                  if p.startswith('trunk/'):
-                      git_ref = 'master'
-                      local_path = p[len('trunk/'):]
-                      svn_path = f"{SVN_URL}/trunk/{local_path}"
-                  elif p.startswith('branches/'):
-                      parts = p.split('/', 2)
-                      if len(parts) == 3:
-                          git_ref = parts[1]
-                          local_path = parts[2]
-                          svn_path = f"{SVN_URL}/branches/{git_ref}/{local_path}"
-                      else:
-                          continue
-                  elif p.startswith('tags/'):
-                      # Ignore file modifications inside tags (tags should be immutable snapshots)
-                      continue
-                  else:
-                      continue
-                  local_path = local_path.rstrip('/')
-                  if git_ref not in branch_changes:
-                      branch_changes[git_ref] = []
-                  branch_changes[git_ref].append((action, local_path, svn_path, kind))
-              # Apply file changes and commit per branch
-              for git_ref, changes in branch_changes.items():
-                  if run(['git', 'rev-parse', '--verify', git_ref], check=False).returncode != 0:
-                      print(f"Branch {git_ref} does not exist in Git, skipping.")
-                      continue
-                  run(['git', 'checkout', '-f', git_ref], check=False)
-                  for action, local_path, svn_path, kind in changes:
-                      if action in ['A', 'M', 'R']:
-                          if kind == 'dir':
-                              os.makedirs(local_path, exist_ok=True)
-                              run(['svn', 'export', '-r', rev, '--force', svn_path, local_path])
-                              run(['git', 'add', '-A', local_path])
-                          else:
-                              os.makedirs(os.path.dirname(local_path) or '.', exist_ok=True)
-                              # Fetch file contents directly from SVN
-                              res_cat = subprocess.run(['svn', 'cat', '-r', rev, svn_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-                              if res_cat.returncode == 0:
-                                  with open(local_path, 'wb') as f:
-                                      f.write(res_cat.stdout)
-                              else:
-                                  print(f"Failed to cat {svn_path}: {res_cat.stderr.decode()}")
-                              run(['git', 'add', local_path])
-                      elif action == 'D':
-                          run(['git', 'rm', '-rf', '--ignore-unmatch', local_path], check=False)
-                  # Create the Git commit
-                  status = run(['git', 'status', '--porcelain'])
-                  if status.stdout.strip():
-                      run(['git', 'config', 'user.name', author])
-                      run(['git', 'config', 'user.email', f'{author}@users.noreply.github.com'])
-                      commit_msg = f"{msg}\n\ngit-svn-id: {SVN_URL}@{rev}"
-                      env = os.environ.copy()
-                      env['GIT_AUTHOR_DATE'] = git_date
-                      env['GIT_COMMITTER_DATE'] = git_date
-                      subprocess.run(['git', 'commit', '-m', commit_msg], env=env, check=False)
-                      print(f"Committed r{rev} to {git_ref}")
-                  else:
-                      print(f"No changes to commit for r{rev} on {git_ref}")
-          print("Sync complete.")
-          EOF
+          
+          # Find the last synced SVN revision from the master branch's git-svn-id trailer
+          LAST_REV=$(git log -1 master --format=%B 2>/dev/null | grep -oP 'git-svn-id: .*@\K[0-9]+' || echo 0)
+          echo "Current mirrored SVN revision: r$LAST_REV"
+          
+          START_REV=$((LAST_REV + 1))
+          
+          # Fetch new SVN logs in plain text
+          svn log -v -r "$START_REV:HEAD" "$SVN_URL" > /tmp/svn_log.txt
+          
+          # If the log is empty or only contains the dashed line, there are no new revisions
+          if [ ! -s /tmp/svn_log.txt ] || [ "$(wc -l < /tmp/svn_log.txt)" -le 1 ]; then
+            echo "No new revisions to sync."
+            exit 0
+          fi
+          
+          # Parse the log and process each revision using a Bash state machine
+          awk 'BEGIN{RS="-{72}"} NF>0 {print $0 "\x00"}' /tmp/svn_log.txt | while IFS= read -r -d '' block; do
+            rev=$(echo "$block" | head -n1 | awk '{print $1}' | tr -d 'r')
+            author=$(echo "$block" | head -n1 | awk -F'|' '{print $2}' | sed 's/^ *//;s/ *$//')
+            git_date=$(echo "$block" | head -n1 | awk -F'|' '{print $3}' | awk '{print $1"T"$2}')
+            
+            mapfile -t path_lines < <(echo "$block" | sed -n '/Changed paths:/,/^$/p' | grep -E '^   [A-Z]')
+            msg=$(echo "$block" | awk '/^$/{p=1; next} p')
+            [ -z "$msg" ] && msg="<empty SVN commit message>"
+            
+            echo "Processing r$rev by $author..."
+            
+            # Group changes by Git branch
+            declare -A branch_changes
+            for pline in "${path_lines[@]}"; do
+              action=${pline:0:1}
+              rest=$(echo "${pline:1}" | sed 's/^ *//')
+              
+              copyfrom=""
+              if [[ "$rest" =~ \(.from\ (.*)\) ]]; then
+                copyfrom=$(echo "$rest" | sed -n 's/.* (from \(.*\))/\1/p')
+                rest=$(echo "$rest" | sed 's/ (from.*//')
+              fi
+              
+              git_branch=""
+              local_path=""
+              
+              if [[ "$rest" == "/trunk"* ]]; then
+                git_branch="master"
+                local_path="${rest#/trunk/}"
+                [ "$local_path" == "$rest" ] && local_path=""
+              elif [[ "$rest" == "/branches/"* ]]; then
+                tmp=${rest#/branches/}
+                git_branch=${tmp%%/*}
+                if [[ "$tmp" == */* ]]; then
+                  local_path=${tmp#*/}
+                else
+                  local_path=""
+                fi
+              elif [[ "$rest" == "/tags/"* ]]; then
+                tmp=${rest#/tags/}
+                tag_name=${tmp%%/*}
+                git_branch="tag_$tag_name"
+                if [[ "$tmp" == */* ]]; then
+                  local_path=${tmp#*/}
+                else
+                  local_path=""
+                fi
+              fi
+              
+              [ -z "$git_branch" ] && continue
+              
+              if [ -z "${branch_changes[$git_branch]}" ]; then
+                branch_changes[$git_branch]="$action|$local_path|$copyfrom"
+              else
+                branch_changes[$git_branch]+=$'\n'"$action|$local_path|$copyfrom"
+              fi
+            done
+            
+            for git_branch in "${!branch_changes[@]}"; do
+              # Handle Tags
+              if [[ "$git_branch" == tag_* ]]; then
+                tag_name=${git_branch#tag_}
+                while IFS= read -r change; do
+                  IFS='|' read -r action local_path copyfrom <<< "$change"
+                  if [ "$action" == "A" ] && [ -n "$copyfrom" ]; then
+                    src_ref="master"
+                    if [[ "$copyfrom" == "/branches/"* ]]; then
+                      src_ref=$(echo "$copyfrom" | sed 's|/branches/\([^/]*\).*|\1|')
+                    fi
+                    if ! git rev-parse --verify --quiet "refs/tags/$tag_name" >/dev/null; then
+                      git tag "$tag_name" "$src_ref"
+                      echo "Created tag $tag_name from $src_ref"
+                    fi
+                  fi
+                done <<< "${branch_changes[$git_branch]}"
+                continue
+              fi
+              
+              # Handle Branches: Check for branch creation (SVN copy)
+              while IFS= read -r change; do
+                IFS='|' read -r action local_path copyfrom <<< "$change"
+                if [ "$action" == "A" ] && [ -n "$copyfrom" ] && [ -z "$local_path" ]; then
+                  src_ref="master"
+                  if [[ "$copyfrom" == "/branches/"* ]]; then
+                    src_ref=$(echo "$copyfrom" | sed 's|/branches/\([^/]*\).*|\1|')
+                  fi
+                  if ! git rev-parse --verify --quiet "$git_branch" >/dev/null; then
+                    git branch "$git_branch" "$src_ref"
+                    echo "Created branch $git_branch from $src_ref"
+                  fi
+                fi
+              done <<< "${branch_changes[$git_branch]}"
+              
+              if ! git rev-parse --verify --quiet "$git_branch" >/dev/null; then
+                echo "Branch $git_branch does not exist, skipping."
+                continue
+              fi
+              
+              git checkout -f "$git_branch"
+              
+              while IFS= read -r change; do
+                IFS='|' read -r action local_path copyfrom <<< "$change"
+                [ -z "$local_path" ] && continue
+                
+                if [ "$action" == "D" ]; then
+                  git rm -rf --ignore-unmatch "$local_path"
+                else
+                  if [[ "$git_branch" == "master" ]]; then
+                    svn_target="$SVN_URL/trunk/$local_path"
+                  else
+                    svn_target="$SVN_URL/branches/$git_branch/$local_path"
+                  fi
+                  
+                  # Try svn cat for files, fall back to svn export for directories
+                  mkdir -p "$(dirname "$local_path")"
+                  if svn cat -r "$rev" "$svn_target" > "$local_path" 2>/dev/null; then
+                    git add "$local_path"
+                  else
+                    svn export -r "$rev" --force "$svn_target" "$local_path"
+                    git add -A "$local_path"
+                  fi
+                fi
+              done <<< "${branch_changes[$git_branch]}"
+              
+              if ! git diff --cached --quiet; then
+                git config user.name "$author"
+                git config user.email "$author@users.noreply.github.com"
+                commit_msg="$msg"$'\n\n'"git-svn-id: $SVN_URL@$rev"
+                GIT_AUTHOR_DATE="$git_date" GIT_COMMITTER_DATE="$git_date" git commit -m "$commit_msg"
+                echo "Committed r$rev to $git_branch"
+              else
+                echo "No changes to commit for r$rev on $git_branch"
+              fi
+            done
+          done
+          echo "Sync complete."
+
       - name: Push mirror to GitHub
         run: |
+          set -euo pipefail
           cd mirror
           REMOTE="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
           git push --force "$REMOTE" 'refs/heads/*:refs/heads/*'
