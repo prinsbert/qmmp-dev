@@ -157,6 +157,16 @@ void ProjectM4Widget::mousePressEvent(QMouseEvent *event)
 
 void ProjectM4Widget::createActions()
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 3, 0)
+    m_menu->addAction(tr("&Show Menu"), this, &ProjectM4Widget::showMenuToggled, tr("M"))->setCheckable(true);
+    m_menu->addSeparator();
+    m_menu->addAction(tr("&Next Preset"), this, &ProjectM4Widget::nextPreset, tr("M"));
+    m_menu->addAction(tr("&Previous Preset"), this, &ProjectM4Widget::previousPreset, tr("P"));
+    m_menu->addAction(tr("&Shuffle"), this, &ProjectM4Widget::setShuffle, tr("R"))->setCheckable(true);
+    m_menu->addAction(tr("&Lock Preset"), this, &ProjectM4Widget::lockPreset, tr("L"))->setCheckable(true);
+    m_menu->addSeparator();
+    m_menu->addAction(tr("&Fullscreen"), this, &ProjectM4Widget::fullscreenToggled, tr("F"))->setCheckable(true);
+#else
     m_menu->addAction(tr("&Show Menu"), tr("M"), this, &ProjectM4Widget::showMenuToggled)->setCheckable(true);
     m_menu->addSeparator();
     m_menu->addAction(tr("&Next Preset"), tr("N"), this, &ProjectM4Widget::nextPreset);
@@ -165,6 +175,7 @@ void ProjectM4Widget::createActions()
     m_menu->addAction(tr("&Lock Preset"), tr("L"), this, &ProjectM4Widget::lockPreset)->setCheckable(true);
     m_menu->addSeparator();
     m_menu->addAction(tr("&Fullscreen"), tr("F"), this, &ProjectM4Widget::fullscreenToggled)->setCheckable(true);
+#endif
     m_menu->addSeparator();
     m_parent->addActions(m_menu->actions());
 }
