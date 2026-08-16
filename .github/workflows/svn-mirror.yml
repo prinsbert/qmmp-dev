@@ -76,10 +76,11 @@ jobs:
           # ── 4a: Determine the last SVN revision already mirrored ──────────
           # Every commit we create ends with a trailer like:
           #   git-svn-id: svn://svn.code.sf.net/p/qmmp-dev/code/@1234
-          # We grep the master branch's latest commit for that trailer and
-          # extract the revision number.  If master doesn't exist yet (very
-          # first run), default to 0 so we start from revision 1.
-          LAST_REV=$(git log -1 master --format=%B 2>/dev/null | grep -oP 'git-svn-id: .*@\K[0-9]+' || echo 0)
+          # We search across ALL branches (not just master) to find the
+          # absolute highest synced revision. This prevents re-walking logs
+          # if the latest SVN activity only touched branches/tags.
+          LAST_REV=$(git log --all --format=%B 2>/dev/null | grep -oP 'git-svn-id: .*@\K[0-9]+' | sort -n | tail -1)
+          LAST_REV=${LAST_REV:-0}  # Default to 0 if no commits exist yet
           echo "Current mirrored SVN revision: r$LAST_REV"
 
           START_REV=$((LAST_REV + 1))
@@ -87,11 +88,7 @@ jobs:
           # ── 4b: Fetch the SVN log for all new revisions ───────────────────
           # `svn log -r START:HEAD` returns all revisions from START to the
           # latest.  If START is beyond HEAD (no new revisions), svn log exits
-          # non-zero — we must handle that gracefully because of `set -e`.
-          #
-          # BUG FIX: The original code ran svn log directly under `set -e`,
-          # so when there were no new revisions the step would crash instead
-          # of exiting cleanly.
+          # non-zero — we handle that gracefully.
           if ! svn log -v -r "$START_REV:HEAD" "$SVN_URL" > /tmp/svn_log.txt 2>/dev/null; then
             echo "No new revisions to sync (svn log returned no results or failed)."
             exit 0
@@ -108,81 +105,45 @@ jobs:
           # SVN log entries are separated by a line of exactly 72 dashes.
           # We use awk with RS="-{72}" to split the file into records, then
           # pipe each record (delimited by NUL) to a Bash while-loop.
-          #
-          # A single SVN log record looks like:
-          #
-          #   r123 | author | 2023-01-15 13:45:56 +0000 (Sun, 15 Jan 2023) | 1 line
-          #   Changed paths:
-          #      M /trunk/src/main.c
-          #      A /branches/feature (from /trunk:122)
-          #
-          #   This is the commit message.
-          #
           awk 'BEGIN{RS="-{72}"} NF>0 {print $0 "\x00"}' /tmp/svn_log.txt | while IFS= read -r -d '' block; do
 
-            # BUG FIX: awk records start with a newline (the \n that follows
-            # the 72-dash separator line is not part of the RS match).  This
-            # leading \n caused `head -n1` to return an empty line, making
-            # rev, author, and git_date all empty.  Strip leading whitespace.
+            # Strip leading whitespace (awk records start with a newline)
             block="${block#"${block%%[![:space:]]*}"}"
-
-            # Skip if the block is empty after stripping
             [ -z "$block" ] && continue
 
             # ── Parse the header line: "r123 | author | date | n lines" ────
             rev=$(echo "$block" | head -n1 | awk '{print $1}' | tr -d 'r')
             author=$(echo "$block" | head -n1 | awk -F'|' '{print $2}' | sed 's/^ *//;s/ *$//')
-
-            # BUG FIX: The original code only captured "$1T$2" (date + time),
-            # dropping the timezone (e.g. "+0000").  Git then interpreted the
-            # timestamp as local time, producing wrong commit dates.
-            # SVN date field: "2023-01-15 13:45:56 +0000 (Sun, 15 Jan 2023)"
-            # We produce:      "2023-01-15T13:45:56 +0000"  (Git-compatible)
             git_date=$(echo "$block" | head -n1 | awk -F'|' '{print $3}' | awk '{print $1"T"$2" "$3}')
 
             # ── Parse the "Changed paths" section ───────────────────────────
-            # Extract lines between "Changed paths:" and the next blank line,
-            # filtering for path entries (start with 3 spaces + action letter).
-            # Each entry looks like:  "   M /trunk/file.c"
-            # or with a copy source:  "   A /branches/foo (from /trunk:122)"
+            # Extract lines matching "   M /path" (3 spaces, action, space, path)
             mapfile -t path_lines < <(echo "$block" | sed -n '/Changed paths:/,/^$/p' | grep -E '^   [A-Z]')
 
-            # ── Parse the commit message (everything after the first blank line)
-            # BUG FIX: The original awk '/^$/{p=1; next} p' skipped ALL blank
-            # lines, including interior blank lines in multi-paragraph commit
-            # messages.  The corrected version sets the flag on the first blank
-            # line (the separator after paths) but then prints subsequent lines
-            # unconditionally, preserving paragraph breaks.
+            # ── Parse the commit message ────────────────────────────────────
+            # Preserve multi-paragraph messages (don't skip interior blank lines)
             msg=$(echo "$block" | awk 'BEGIN{p=0} p{print} /^$/{p=1}')
             [ -z "$msg" ] && msg="<empty SVN commit message>"
-
-            # Handle missing author (some SVN repos allow anonymous commits)
             [ -z "$author" ] && author="unknown"
 
             echo "Processing r$rev by $author..."
 
             # ── Group changed paths by their target Git branch ──────────────
-            # SVN path conventions → Git branch mapping:
-            #   /trunk/...           → "master"
-            #   /branches/foo/...    → "foo"
-            #   /tags/bar/...        → "tag_bar" (special prefix for tag handling)
-            #
-            # We build an associative array: branch → newline-separated list
-            # of "action|local_path|copyfrom" entries.
             declare -A branch_changes
             for pline in "${path_lines[@]}"; do
-              # Action is the first character: M (modified), A (added),
-              # D (deleted), R (replaced)
-              action=${pline:0:1}
-              # Everything after the action char, with leading spaces trimmed
-              rest=$(echo "${pline:1}" | sed 's/^ *//')
+              # BUG FIX: path_lines entries look like "   M /trunk/file.c".
+              # The action letter is at index 3 (after 3 spaces). The path
+              # starts at index 4 (space after action). Stripping just 1 char
+              # missed the action letter and glued it to the path, breaking
+              # branch routing. Now we slice exactly:
+              #   action = index 3
+              #   rest   = index 4 onward, with leading spaces trimmed
+              action=${pline:3:1}
+              rest=$(echo "${pline:4}" | sed 's/^ *//')
 
-              # Extract copyfrom info if present (SVN copy operations)
-              # Format: "/path (from /source/path:revision)"
-              copyfrom=""
+              # Extract copyfrom info if present
               copyfrom=$(echo "$rest" | sed -n 's/.* (from \(.*\))/\1/p')
               if [ -n "$copyfrom" ]; then
-                # Strip the "(from ...)" suffix from rest so only the path remains
                 rest=$(echo "$rest" | sed 's/ (from.*//')
               fi
 
@@ -192,21 +153,19 @@ jobs:
               if [[ "$rest" == "/trunk"* ]]; then
                 git_branch="master"
                 local_path="${rest#/trunk/}"
-                # If rest was exactly "/trunk" (no trailing slash), the
-                # parameter expansion didn't change it — treat as root.
                 [ "$local_path" == "$rest" ] && local_path=""
               elif [[ "$rest" == "/branches/"* ]]; then
-                tmp=${rest#/branches/}       # "foo/path/to/file" or "foo"
-                git_branch=${tmp%%/*}        # "foo" (first path component = branch name)
+                tmp=${rest#/branches/}
+                git_branch=${tmp%%/*}
                 if [[ "$tmp" == */* ]]; then
-                  local_path=${tmp#*/}       # "path/to/file"
+                  local_path=${tmp#*/}
                 else
-                  local_path=""              # Just the branch root itself
+                  local_path=""
                 fi
               elif [[ "$rest" == "/tags/"* ]]; then
                 tmp=${rest#/tags/}
                 tag_name=${tmp%%/*}
-                git_branch="tag_$tag_name"   # Prefix to distinguish tags in the array
+                git_branch="tag_$tag_name"
                 if [[ "$tmp" == */* ]]; then
                   local_path=${tmp#*/}
                 else
@@ -214,7 +173,6 @@ jobs:
                 fi
               fi
 
-              # Skip paths that don't match any known SVN layout component
               [ -z "$git_branch" ] && continue
 
               # Accumulate this change into the branch's change list
@@ -229,31 +187,20 @@ jobs:
             for git_branch in "${!branch_changes[@]}"; do
 
               # ── Tag handling ──────────────────────────────────────────────
-              # SVN tags are created via "svn copy" (action A with a copyfrom).
-              # We create a lightweight Git tag pointing to the appropriate commit.
               if [[ "$git_branch" == tag_* ]]; then
                 tag_name=${git_branch#tag_}
                 while IFS= read -r change; do
                   IFS='|' read -r action local_path copyfrom <<< "$change"
                   if [ "$action" == "A" ] && [ -n "$copyfrom" ]; then
-                    # Determine the source branch from the copyfrom path
                     src_ref="master"
                     if [[ "$copyfrom" == "/branches/"* ]]; then
                       src_ref=$(echo "$copyfrom" | sed 's|/branches/\([^/]*\).*|\1|')
                     fi
 
-                    # BUG FIX: The original code always tagged the current HEAD
-                    # of src_ref, ignoring the source revision specified in the
-                    # SVN copy.  SVN copies from a specific revision (e.g.
-                    # "/trunk:122"), so we should tag the Git commit that
-                    # corresponds to that SVN revision.
-                    # Extract the revision number from copyfrom (handles both
-                    # ":123" and ":r123" formats).
+                    # Create tags at the exact source revision if possible
                     src_rev=$(echo "$copyfrom" | sed -n 's/.*:r\{0,1\}\([0-9]*\)$/\1/p')
                     src_commit=""
                     if [ -n "$src_rev" ]; then
-                      # Find the Git commit whose message contains the matching
-                      # git-svn-id trailer for this source revision.
                       src_commit=$(git log --all --grep="git-svn-id:.*@${src_rev}$" --format=%H 2>/dev/null | head -1)
                     fi
 
@@ -262,20 +209,16 @@ jobs:
                         git tag "$tag_name" "$src_commit"
                         echo "  Created tag $tag_name at commit $src_commit (SVN r$src_rev)"
                       else
-                        # Fallback: tag the current HEAD of the source branch
                         git tag "$tag_name" "$src_ref"
-                        echo "  Created tag $tag_name from $src_ref (fallback: source commit not found)"
+                        echo "  Created tag $tag_name from $src_ref (fallback)"
                       fi
                     fi
                   fi
                 done <<< "${branch_changes[$git_branch]}"
-                continue  # Tags don't need file-level processing
+                continue
               fi
 
               # ── Branch creation detection ────────────────────────────────
-              # An SVN branch is created when action is A, copyfrom is set,
-              # and local_path is empty (meaning the entire branch root was
-              # copied, not just a subdirectory).
               while IFS= read -r change; do
                 IFS='|' read -r action local_path copyfrom <<< "$change"
                 if [ "$action" == "A" ] && [ -n "$copyfrom" ] && [ -z "$local_path" ]; then
@@ -284,8 +227,7 @@ jobs:
                     src_ref=$(echo "$copyfrom" | sed 's|/branches/\([^/]*\).*|\1|')
                   fi
 
-                  # BUG FIX: Same as tags — create the branch at the correct
-                  # source revision's commit, not just the current HEAD.
+                  # Create branches at the exact source revision if possible
                   src_rev=$(echo "$copyfrom" | sed -n 's/.*:r\{0,1\}\([0-9]*\)$/\1/p')
                   src_commit=""
                   if [ -n "$src_rev" ]; then
@@ -298,13 +240,12 @@ jobs:
                       echo "  Created branch $git_branch at commit $src_commit (SVN r$src_rev)"
                     else
                       git branch "$git_branch" "$src_ref"
-                      echo "  Created branch $git_branch from $src_ref (fallback: source commit not found)"
+                      echo "  Created branch $git_branch from $src_ref (fallback)"
                     fi
                   fi
                 fi
               done <<< "${branch_changes[$git_branch]}"
 
-              # If the branch still doesn't exist for some reason, skip it
               if ! git rev-parse --verify --quiet "$git_branch" >/dev/null; then
                 echo "  Branch $git_branch does not exist, skipping."
                 continue
@@ -315,25 +256,20 @@ jobs:
 
               while IFS= read -r change; do
                 IFS='|' read -r action local_path copyfrom <<< "$change"
-                # Skip entries with no local path (branch/tag creation itself)
                 [ -z "$local_path" ] && continue
 
                 if [ "$action" == "D" ]; then
-                  # Delete: remove the file or directory from Git
                   git rm -rf --ignore-unmatch "$local_path"
                 else
-                  # Add or Modify: fetch the content from SVN at this revision
                   if [[ "$git_branch" == "master" ]]; then
                     svn_target="$SVN_URL/trunk/$local_path"
                   else
                     svn_target="$SVN_URL/branches/$git_branch/$local_path"
                   fi
 
-                  # Ensure parent directories exist
                   mkdir -p "$(dirname "$local_path")"
 
-                  # Try `svn cat` first (works for individual files).
-                  # Fall back to `svn export` (works for directories).
+                  # Try `svn cat` first (files), fall back to `svn export` (directories)
                   if svn cat -r "$rev" "$svn_target" > "$local_path" 2>/dev/null; then
                     git add "$local_path"
                   else
@@ -345,16 +281,10 @@ jobs:
 
               # ── Commit if there are staged changes ───────────────────────
               if ! git diff --cached --quiet; then
-                # Set per-commit author info (overrides the global config)
                 git config user.name "$author"
                 git config user.email "$author@users.noreply.github.com"
 
-                # Commit message includes the original SVN log message plus
-                # a git-svn-id trailer so we can find the last synced revision
-                # on the next run.
                 commit_msg="$msg"$'\n\n'"git-svn-id: $SVN_URL@$rev"
-
-                # Use the original SVN timestamp for both author and committer dates
                 GIT_AUTHOR_DATE="$git_date" GIT_COMMITTER_DATE="$git_date" git commit -m "$commit_msg"
                 echo "  Committed r$rev to $git_branch"
               else
@@ -366,8 +296,6 @@ jobs:
 
       # ─────────────────────────────────────────────────────────────────────
       # Step 5: Push the updated mirror back to GitHub
-      # Force-push is used because we may rewrite history (e.g. when
-      # re-syncing or correcting commits).  This is safe for a mirror.
       # ─────────────────────────────────────────────────────────────────────
       - name: Push mirror to GitHub
         run: |
