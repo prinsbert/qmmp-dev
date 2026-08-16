@@ -214,6 +214,8 @@ jobs:
           REMOTE="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git remote remove github 2>/dev/null || true
           git remote add github "$REMOTE"
+          # If 'svn-to-git-sync' was checked out as the default branch, delete the local ref so we don't push it here
+          git update-ref -d refs/heads/svn-to-git-sync 2>/dev/null || true
           # Prioritize pushing master:
           git push --force github refs/heads/master:refs/heads/master
           # Push all git-svn tracking refs (excluding HEAD and the svn-to-git-sync metadata branch)
