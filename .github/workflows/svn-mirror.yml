@@ -127,23 +127,23 @@ jobs:
             echo "No svn-to-git-sync branch found. (First run?)"
           fi
       - name: Incremental fetch
-          run: |
-            set -euo pipefail
-            cd mirror
-            success=false
-            for i in 1 2 3 4 5; do
-              out=$(git svn fetch --use-log-author 2>&1) && { success=true; echo "$out"; break; }
-              echo "$out"
-              if echo "$out" | grep -q 'Invalid revision range'; then
-                echo "Restored rev-map points at a commit that no longer exists"
-                echo "(likely orphaned by an earlier force-push). Clearing it so"
-                echo "git-svn rebuilds the map from git-svn-id trailers already"
-                echo "in this clone's history, instead of resuming from a dead SHA."
-                rm -rf .git/svn
-              fi
-              echo "fetch failed, retry $i..."; sleep 20
-            done
-            $success || { echo "git svn fetch failed after 5 attempts"; exit 1; }
+        run: |
+          set -euo pipefail
+          cd mirror
+          success=false
+          for i in 1 2 3 4 5; do
+            out=$(git svn fetch --use-log-author 2>&1) && { success=true; echo "$out"; break; }
+            echo "$out"
+            if echo "$out" | grep -q 'Invalid revision range'; then
+              echo "Restored rev-map points at a commit that no longer exists"
+              echo "(likely orphaned by an earlier force-push). Clearing it so"
+              echo "git-svn rebuilds the map from git-svn-id trailers already"
+              echo "in this clone's history, instead of resuming from a dead SHA."
+              rm -rf .git/svn
+            fi
+            echo "fetch failed, retry $i..."; sleep 20
+          done
+          $success || { echo "git svn fetch failed after 5 attempts"; exit 1; }
       - name: Materialise SVN refs as Git branches/tags
         run: |
           cd mirror
