@@ -149,7 +149,7 @@ Available options:
 - USE_LIBCDDB (using libcddb library for looking for information about audio CDs, enabled by default);
 - QMMP_DEFAULT_OUTPUT (default output plugin, example: -DQMMP_DEFAULT_OUTPUT=pulse);
 - QMMP_DEFAULT_UI (default user interface, example: -DQMMP_DEFAULT_UI=qsui);
-- PROJECTM_PRESET_PATH (override projectM 4.x preset search path, example: 
+- PROJECTM_PRESET_PATH (override projectM 4.x preset search path, example:
                         -DPROJECTM_PRESET_PATH="/usr/local/share/projectM/presets");
 - PROJECTM_TEXTURE_PATH (override projectM 4.x texture search path, example:
                          -DPROJECTM_TEXTURE_PATH="/usr/local/share/projectM/textures");
