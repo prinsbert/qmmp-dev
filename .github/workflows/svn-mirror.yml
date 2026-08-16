@@ -10,7 +10,7 @@ on:
       - '.github/workflows/svn-mirror.yml'
 permissions:
   contents: write               # so GITHUB_TOKEN can push
-  workflows: write              # allows pushing refs that contain workflow files (i.e. branch `svn-to-git-sync`)
+  # workflows: write              # allows pushing refs that contain workflow files (i.e. branch `svn-to-git-sync`)
 concurrency:
   group: svn-mirror
   cancel-in-progress: false
