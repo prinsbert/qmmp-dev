@@ -79,8 +79,8 @@ jobs:
           # We search across ALL branches (not just master) to find the
           # absolute highest synced revision. This prevents re-walking logs
           # if the latest SVN activity only touched branches/tags.
-          LAST_REV=$(git log --all --format=%B 2>/dev/null | grep -oP 'git-svn-id: .*@\K[0-9]+' | sort -n | tail -1)
-          LAST_REV=${LAST_REV:-0}  # Default to 0 if no commits exist yet
+          LAST_REV=$(git log --all --format=%B 2>/dev/null | grep -oP 'git-svn-id: .*@\K[0-9]+' | sort -n | tail -1 || true)
+          LAST_REV=${LAST_REV:-0}
           echo "Current mirrored SVN revision: r$LAST_REV"
 
           START_REV=$((LAST_REV + 1))
