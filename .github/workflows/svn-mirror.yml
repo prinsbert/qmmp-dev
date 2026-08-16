@@ -126,37 +126,24 @@ jobs:
           else
             echo "No svn-to-git-sync branch found. (First run?)"
           fi
-
-      - name: Sanitize git-svn metadata
-        run: |
-          set -euo pipefail
-          cd mirror
-          # If a previous run fetched commits but failed to push them, the metadata will contain SHAs that are missing from the repo. This causes "Invalid revision range" errors during fetch. We remove them so git-svn re-fetches.
-          find .git/svn -type f | while read f; do
-            if grep -qE '^[0-9]+ [0-9a-f]{40}' "$f"; then
-              tmp=$(mktemp)
-              while IFS= read -r line; do
-                sha=$(echo "$line" | awk '{print $2}')
-                if [ -n "$sha" ] && ! git cat-file -e "${sha}" 2>/dev/null; then
-                  echo "Removing missing SHA $sha from $f"
-                else
-                  echo "$line" >> "$tmp"
-                fi
-              done < "$f"
-              mv "$tmp" "$f"
-            fi
-          done
       - name: Incremental fetch
-        run: |
-          set -euo pipefail
-          cd mirror
-          success=false
-          for i in 1 2 3 4 5; do
-            if git svn fetch --use-log-author; then success=true; break; fi
-            echo "fetch failed, retry $i..."; sleep 20
-          done
-          $success || { echo "git svn fetch failed after 5 attempts"; exit 1; }
-
+          run: |
+            set -euo pipefail
+            cd mirror
+            success=false
+            for i in 1 2 3 4 5; do
+              out=$(git svn fetch --use-log-author 2>&1) && { success=true; echo "$out"; break; }
+              echo "$out"
+              if echo "$out" | grep -q 'Invalid revision range'; then
+                echo "Restored rev-map points at a commit that no longer exists"
+                echo "(likely orphaned by an earlier force-push). Clearing it so"
+                echo "git-svn rebuilds the map from git-svn-id trailers already"
+                echo "in this clone's history, instead of resuming from a dead SHA."
+                rm -rf .git/svn
+              fi
+              echo "fetch failed, retry $i..."; sleep 20
+            done
+            $success || { echo "git svn fetch failed after 5 attempts"; exit 1; }
       - name: Materialise SVN refs as Git branches/tags
         run: |
           cd mirror
@@ -191,7 +178,7 @@ jobs:
             name="${ref#refs/remotes/origin/}"
             name="${name#refs/remotes/git-svn/}"
             case "$name" in
-              trunk|git-svn|tags/*|master|HEAD|svn-to-git-sync) continue ;;
+              trunk|git-svn|tags/*|master|HEAD|svn-to-git-sync|svn-sync-entrypoint) continue ;;
               *@*) continue ;;   # skip "recreated at revision" refs
               "") continue ;;
             esac
