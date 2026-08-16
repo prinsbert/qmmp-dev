@@ -32,6 +32,8 @@ jobs:
           set -euo pipefail
           git clone "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" mirror
           cd mirror
+          # Detach HEAD so we can force-fetch and update all branches without Git complaining
+          git checkout --detach
           git fetch origin '+refs/heads/*:refs/heads/*'
           git fetch origin '+refs/tags/*:refs/tags/*'
       - name: Sync new SVN revisions
