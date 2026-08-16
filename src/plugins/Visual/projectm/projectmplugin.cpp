@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2025 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -29,7 +29,7 @@
 #include <locale.h>
 #include <qmmp/qmmp.h>
 #ifdef PROJECTM_4
-#include "projectm4widget.h"
+#include "projectm4window.h"
 #else
 #include "projectmwidget.h"
 #endif
@@ -48,27 +48,27 @@ ProjectMPlugin::ProjectMPlugin (QWidget *parent)
     m_splitter->addWidget(listWidget);
 #ifdef PROJECTM_4
     m_projectMWidget = new ProjectM4Widget(listWidget, m_splitter);
+    m_splitter->addWidget(createWindowContainer(m_projectMWidget, this));
 #else
     m_projectMWidget = new ProjectMWidget(listWidget, m_splitter);
-#endif
     m_splitter->addWidget(m_projectMWidget);
-
-    m_splitter->setStretchFactor(1,1);
+#endif
+    m_splitter->setStretchFactor(1, 1);
     QHBoxLayout *layout = new QHBoxLayout;
     layout->addWidget(m_splitter);
-    layout->setContentsMargins(0,0,0,0);
+    layout->setContentsMargins(0, 0, 0, 0);
     setLayout(layout);
-    addActions(m_projectMWidget->actions());
 #ifdef PROJECTM_4
     connect(m_projectMWidget, &ProjectM4Widget::showMenuToggled, listWidget, &QListWidget::setVisible);
     connect(m_projectMWidget, &ProjectM4Widget::fullscreenToggled, this, &ProjectMPlugin::setFullScreen);
 #else
+    addActions(m_projectMWidget->actions());
     connect(m_projectMWidget, &ProjectMWidget::showMenuToggled, listWidget, &QListWidget::setVisible);
     connect(m_projectMWidget, &ProjectMWidget::fullscreenToggled, this, &ProjectMPlugin::setFullScreen);
 #endif
     listWidget->hide();
     resize(600,400);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     restoreGeometry(settings.value("ProjectM/geometry"_L1).toByteArray());
     m_splitter->setSizes(QList<int>() << 300 << 300);
     m_splitter->restoreState(settings.value("ProjectM/splitter_sizes"_L1).toByteArray());
@@ -113,7 +113,7 @@ void ProjectMPlugin::setFullScreen(bool yes)
 void ProjectMPlugin::closeEvent(QCloseEvent *event)
 {
     //save geometry
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("ProjectM/geometry"_L1, saveGeometry());
     settings.setValue("ProjectM/splitter_sizes"_L1, m_splitter->saveState());
     Visual::closeEvent(event); //removes visualization object

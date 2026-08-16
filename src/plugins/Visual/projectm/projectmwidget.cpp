@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2025 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   Copyright (C) 2007 by  projectM team                                  *
@@ -30,6 +30,7 @@
 #include <QOpenGLContext>
 #include <qmmp/soundcore.h>
 #include <qmmp/qmmp.h>
+#include <qmmp/visual.h>
 #include "projectmwrapper.h"
 #include "projectmwidget.h"
 
@@ -65,6 +66,7 @@ void ProjectMWidget::addPCM(float *left, float *right)
 
 void ProjectMWidget::initializeGL()
 {
+    initializeOpenGLFunctions();
     glShadeModel(GL_SMOOTH);
     glClearColor(0,0,0,0);
     // Setup our viewport
@@ -95,9 +97,9 @@ void ProjectMWidget::initializeGL()
         settings.textureSize = 1024;
         settings.windowWidth = 512;
         settings.windowHeight = 512;
-        settings.presetURL = QString(qApp->applicationDirPath() + u"/projectM/presets"_s).toLocal8Bit().constData();
-        settings.titleFontURL = QString(qApp->applicationDirPath() + u"/projectM/fonts/Vera.ttf"_s).toLocal8Bit().constData();
-        settings.menuFontURL = QString(qApp->applicationDirPath() + u"/projectM/fonts/VeraMono.ttf"_s).toLocal8Bit().constData();
+        settings.presetURL = QString(qApp->applicationDirPath() + u"/../share/projectM/presets"_s).toLocal8Bit().constData();
+        settings.titleFontURL = QString(qApp->applicationDirPath() + u"/../share/projectM/fonts/Vera.ttf"_s).toLocal8Bit().constData();
+        settings.menuFontURL = QString(qApp->applicationDirPath() + u"/../share/projectM/fonts/VeraMono.ttf"_s).toLocal8Bit().constData();
         settings.smoothPresetDuration = 5;
         settings.presetDuration = 30;
         settings.beatSensitivity = 1.0;

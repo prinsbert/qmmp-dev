@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2025 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,10 +17,12 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef PROJECTM4WIDGET_H
-#define PROJECTM4WIDGET_H
+#ifndef PROJECTM4WINDOW_H
+#define PROJECTM4WINDOW_H
 
 #include <QOpenGLWidget>
+#include <QOpenGLWindow>
+#include <QOpenGLFunctions>
 #include <projectM-4/types.h>
 #include <projectM-4/playlist_core.h>
 #include <qmmp/visual.h>
@@ -32,7 +34,7 @@ class QListWidget;
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class ProjectM4Widget : public QOpenGLWidget
+class ProjectM4Widget : public QOpenGLWindow, protected QOpenGLFunctions
 {
     Q_OBJECT
 public:
@@ -40,7 +42,6 @@ public:
 
     ~ProjectM4Widget();
 
-    projectm_handle handle();
     void addPCM(float *left, float *right);
 
 signals:
@@ -70,6 +71,7 @@ private:
     projectm_playlist_handle m_playlistHandle = nullptr;
     QMenu *m_menu;
     QListWidget *m_listWidget;
+    QWidget *m_parent;
     float m_buf[QMMP_VISUAL_NODE_SIZE * 2] = { 0 };
 };
 
