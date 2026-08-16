@@ -97,12 +97,16 @@ jobs:
           git config svn-remote.svn.fetch    "trunk:refs/remotes/origin/trunk"
           git config svn-remote.svn.branches "branches/*:refs/remotes/origin/*"
           git config svn-remote.svn.tags     "tags/*:refs/remotes/origin/tags/*"
-          #git svn rebuild --all # This command does not exist (rebuild is an internal Perl function name inside git-svn's implementation) and the incremental fetch step will automatically rebuild the map and pull in any new SVN commits          
-          # Point git-svn's expected trunk ref at what the clone actually gave us
-          git update-ref refs/remotes/origin/trunk refs/remotes/origin/master
+          #git svn rebuild --all # This command does not exist (rebuild is an internal Perl function name inside git-svn's implementation) and the incremental fetch step will automatically rebuild the map and pull in any new SVN commits
+          # Point git-svn's expected trunk ref at what the clone actually gave us (if not already restored from svn-to-git-sync)
+          if ! git rev-parse --verify --quiet refs/remotes/origin/trunk >/dev/null; then
+            git update-ref refs/remotes/origin/trunk refs/remotes/origin/master
+          fi
           # Same for tags: plain clone puts them at refs/tags/*, git-svn wants refs/remotes/origin/tags/*
           for t in $(git tag -l); do
-            git update-ref "refs/remotes/origin/tags/$t" "refs/tags/$t"
+            if ! git rev-parse --verify --quiet "refs/remotes/origin/tags/$t" >/dev/null; then
+              git update-ref "refs/remotes/origin/tags/$t" "refs/tags/$t"
+            fi
           done
 
       - name: Restore git-svn metadata from remote branch
@@ -111,7 +115,7 @@ jobs:
           cd mirror
           # Fetch the metadata branch into a temporary tracking ref
           git fetch origin svn-to-git-sync:refs/remotes/origin/svn-to-git-sync || true
-          
+
           # If the branch exists, extract the folder directly
           if git rev-parse --verify --quiet refs/remotes/origin/svn-to-git-sync >/dev/null; then
             echo "Found svn-to-git-sync branch. Extracting metadata..."
@@ -123,6 +127,25 @@ jobs:
             echo "No svn-to-git-sync branch found. (First run?)"
           fi
 
+      - name: Sanitize git-svn metadata
+        run: |
+          set -euo pipefail
+          cd mirror
+          # If a previous run fetched commits but failed to push them, the metadata will contain SHAs that are missing from the repo. This causes "Invalid revision range" errors during fetch. We remove them so git-svn re-fetches.
+          find .git/svn -type f | while read f; do
+            if grep -qE '^[0-9]+ [0-9a-f]{40}' "$f"; then
+              tmp=$(mktemp)
+              while IFS= read -r line; do
+                sha=$(echo "$line" | awk '{print $2}')
+                if [ -n "$sha" ] && ! git cat-file -e "${sha}" 2>/dev/null; then
+                  echo "Removing missing SHA $sha from $f"
+                else
+                  echo "$line" >> "$tmp"
+                fi
+              done < "$f"
+              mv "$tmp" "$f"
+            fi
+          done
       - name: Incremental fetch
         run: |
           set -euo pipefail
@@ -133,28 +156,6 @@ jobs:
             echo "fetch failed, retry $i..."; sleep 20
           done
           $success || { echo "git svn fetch failed after 5 attempts"; exit 1; }
-
-      - name: Backup git-svn metadata to remote branch
-        run: |
-          set -euo pipefail
-          TMP_REPO=$(mktemp -d)
-          cd "$TMP_REPO"
-          git init -q
-          git checkout -q -b svn-to-git-sync
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          # Prevent line-ending corruption
-          echo "* -text" > .gitattributes
-          git add .gitattributes
-          
-          # Copy the live .git/svn directory into the temp repo
-          cp -r "$GITHUB_WORKSPACE/mirror/.git/svn" ./svn-meta
-          git add svn-meta
-          git commit -q -m "Update git-svn metadata"
-          
-          REMOTE="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git push --force "$REMOTE" svn-to-git-sync:refs/heads/svn-to-git-sync
 
       - name: Materialise SVN refs as Git branches/tags
         run: |
@@ -169,6 +170,7 @@ jobs:
           done
           [ -n "$trunk_ref" ] || { echo "No trunk ref found"; exit 1; }
           git update-ref refs/heads/master "$trunk_ref"
+          git update-ref refs/remotes/origin/master "$trunk_ref"
 
           #
           # Try to match branches
@@ -225,3 +227,22 @@ jobs:
           done
           git push --force github 'refs/heads/*:refs/heads/*'
           git push --force github 'refs/tags/*:refs/tags/*'
+
+      - name: Backup git-svn metadata to remote branch
+        run: |
+          set -euo pipefail
+          TMP_REPO=$(mktemp -d)
+          cd "$TMP_REPO"
+          git init -q
+          git checkout -q -b svn-to-git-sync
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Prevent line-ending corruption
+          echo "* -text" > .gitattributes
+          git add .gitattributes
+          # Copy the live .git/svn directory into the temp repo
+          cp -r "$GITHUB_WORKSPACE/mirror/.git/svn" ./svn-meta
+          git add svn-meta
+          git commit -q -m "Update git-svn metadata"
+          REMOTE="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push --force "$REMOTE" svn-to-git-sync:refs/heads/svn-to-git-sync
