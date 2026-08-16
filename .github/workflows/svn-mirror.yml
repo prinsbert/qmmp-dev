@@ -1,5 +1,4 @@
 name: SVN → Git mirror
-
 on:
   schedule:
     - cron: '17 */12 * * *'      # (offset to avoid GH load)
@@ -14,10 +13,8 @@ permissions:
 concurrency:
   group: svn-mirror
   cancel-in-progress: false
-
 env:
   SVN_URL: svn://svn.code.sf.net/p/qmmp-dev/code/
-
 jobs:
   mirror:
     runs-on: ubuntu-latest
@@ -26,12 +23,10 @@ jobs:
         run: |
           sudo apt-get update -y
           sudo apt-get install -y subversion
-
       - name: Configure Git identity
         run: |
           git config --global user.name  "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
       - name: Clone existing mirror from GitHub
         run: |
           set -euo pipefail
@@ -39,7 +34,6 @@ jobs:
           cd mirror
           git fetch origin '+refs/heads/*:refs/heads/*'
           git fetch origin '+refs/tags/*:refs/tags/*'
-
       - name: Sync new SVN revisions
         run: |
           cd mirror
@@ -50,15 +44,12 @@ jobs:
           import re
           import sys
           from datetime import datetime
-
           SVN_URL = os.environ.get('SVN_URL', '').rstrip('/')
-
           def run(cmd, check=True, capture=True):
               if capture:
                   return subprocess.run(cmd, check=check, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
               else:
                   return subprocess.run(cmd, check=check)
-
           # 1. Find the last synced SVN revision from the master branch's git-svn-id trailer
           res = run(['git', 'log', '-1', 'master', '--format=%B'], check=False)
           last_rev = 0
@@ -66,48 +57,38 @@ jobs:
               match = re.search(r'git-svn-id: .*@(\d+)', res.stdout)
               if match:
                   last_rev = int(match.group(1))
-
           print(f"Current mirrored SVN revision: r{last_rev}")
-
           # 2. Fetch SVN logs for all new revisions
           start_rev = last_rev + 1
           res = run(['svn', 'log', '-r', f'{start_rev}:HEAD', '--xml', '-v', SVN_URL])
           if not res.stdout.strip():
               print("No new revisions to sync.")
               sys.exit(0)
-
           root = ET.fromstring(res.stdout)
           logentries = root.findall('logentry')
           if not logentries:
               print("No new revisions to sync.")
               sys.exit(0)
-
           # 3. Process each new SVN revision
           for entry in logentries:
               rev = entry.get('revision')
               author = entry.find('author').text or 'unknown'
               date_str = entry.find('date').text
               msg = entry.find('msg').text or ''
-              
               # Parse SVN timestamp to Git format
               dt = datetime.strptime(date_str[:19], '%Y-%m-%dT%H:%M:%S')
               git_date = dt.strftime('%Y-%m-%dT%H:%M:%S')
-
               print(f"Processing r{rev} by {author} on {git_date}...")
-              
               paths_elem = entry.find('paths')
               if paths_elem is None:
                   continue
-
               branch_changes = {}
-              
               # Group changes by Git branch
               for path_elem in paths_elem.findall('path'):
                   action = path_elem.get('action', 'M')
                   p = path_elem.text.strip().strip('/')
                   copyfrom_path = path_elem.get('copyfrom-path', '').strip('/')
                   kind = path_elem.get('kind', 'file')
-
                   # Handle SVN branch/tag copies natively
                   if action == 'A' and copyfrom_path:
                       src_git_ref = 'master'
@@ -115,7 +96,6 @@ jobs:
                           src_git_ref = copyfrom_path.split('/')[1]
                       elif copyfrom_path.startswith('tags/'):
                           src_git_ref = copyfrom_path.split('/')[1]
-                      
                       if p.startswith('branches/'):
                           new_branch = p.split('/')[1]
                           if run(['git', 'rev-parse', '--verify', new_branch], check=False).returncode != 0:
@@ -127,7 +107,6 @@ jobs:
                               run(['git', 'tag', new_tag, src_git_ref])
                               print(f"Created tag {new_tag} from {src_git_ref}")
                       continue
-
                   # Map SVN paths to Git branches
                   if p.startswith('trunk/'):
                       git_ref = 'master'
@@ -146,20 +125,16 @@ jobs:
                       continue
                   else:
                       continue
-
                   local_path = local_path.rstrip('/')
                   if git_ref not in branch_changes:
                       branch_changes[git_ref] = []
                   branch_changes[git_ref].append((action, local_path, svn_path, kind))
-
               # Apply file changes and commit per branch
               for git_ref, changes in branch_changes.items():
                   if run(['git', 'rev-parse', '--verify', git_ref], check=False).returncode != 0:
                       print(f"Branch {git_ref} does not exist in Git, skipping.")
                       continue
-                  
                   run(['git', 'checkout', '-f', git_ref], check=False)
-                  
                   for action, local_path, svn_path, kind in changes:
                       if action in ['A', 'M', 'R']:
                           if kind == 'dir':
@@ -178,7 +153,6 @@ jobs:
                               run(['git', 'add', local_path])
                       elif action == 'D':
                           run(['git', 'rm', '-rf', '--ignore-unmatch', local_path], check=False)
-
                   # Create the Git commit
                   status = run(['git', 'status', '--porcelain'])
                   if status.stdout.strip():
@@ -192,10 +166,8 @@ jobs:
                       print(f"Committed r{rev} to {git_ref}")
                   else:
                       print(f"No changes to commit for r{rev} on {git_ref}")
-
           print("Sync complete.")
           EOF
-
       - name: Push mirror to GitHub
         run: |
           cd mirror
