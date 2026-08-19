@@ -28,6 +28,7 @@ SkinnedShortcutItem::SkinnedShortcutItem(QTreeWidgetItem *parent, int type) :
                     SkinnedActionManager::instance()->action(type)->shortcut().toString(QKeySequence::NativeText) }),
     m_action(SkinnedActionManager::instance()->action(type))
 {
+    m_shortcut = m_action->shortcut();
     setIcon(0, m_action->icon());
 }
 
