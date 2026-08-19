@@ -1,6 +1,10 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 2.4.1
+* fixed Qt 6.2 support in the projectm plugin
+* fixed shortcuts settings in the skinned plugin
+
 Version 2.4.0
 * added batch tag editor plugin (experimental)
 * added built-in lyrics editor
