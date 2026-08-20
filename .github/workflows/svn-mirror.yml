@@ -326,3 +326,84 @@ jobs:
           # a normal push should always fast-forward, so we do not use the --force flag
           git push "$REMOTE" 'refs/heads/*:refs/heads/*'
           git push "$REMOTE" 'refs/tags/*:refs/tags/*'
+      #
+      # Step 6: Update README.md on svn-sync-entrypoint with latest mirror state
+      #
+      - name: Update README.md on svn-sync-entrypoint
+        run: |
+          set -euo pipefail
+          cd mirror
+          git checkout -f svn-sync-entrypoint
+          # Gather repository state information from ALL branches
+          LATEST_REV=$(git log --all --format='%B' 2>/dev/null | grep -oP 'git-svn-id:.*@\K[0-9]+' | sort -n | tail -1 || true)
+          [ -z "$LATEST_REV" ] && LATEST_REV="unknown"
+          SYNC_TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
+          # Get branches (excluding svn-sync-entrypoint)
+          BRANCH_LIST=$(git for-each-ref --format='%(refname:short)' refs/heads 2>/dev/null | grep -v '^svn-sync-entrypoint$' | sort || true)
+          if [ -n "$BRANCH_LIST" ]; then
+            BRANCH_COUNT=$(echo "$BRANCH_LIST" | wc -l)
+            BRANCHES_MD=$(echo "$BRANCH_LIST" | sed 's/^/- `/; s/$/`/')
+          else
+            BRANCH_COUNT=0
+            BRANCHES_MD="*None*"
+          fi
+          # Get tags
+          TAG_COUNT=$(git tag 2>/dev/null | wc -l || echo 0)
+          TAG_COUNT=$((TAG_COUNT))
+          if [ "$TAG_COUNT" -gt 0 ]; then
+            TAGS_MD=$(git for-each-ref --sort=-creatordate --format='%(refname:short)' refs/tags 2>/dev/null | head -15 | sed 's/^/- `/; s/$/`/')
+            if [ "$TAG_COUNT" -gt 15 ]; then
+              TAGS_MD="${TAGS_MD}
+          *...and $((TAG_COUNT - 15)) more*"
+            fi
+          else
+            TAGS_MD="*None*"
+          fi
+          # Generate the new state block
+          NEW_STATE=$(cat <<EOF
+          ## Mirror Status
+
+          | Field | Value |
+          |-------|-------|
+          | Latest SVN revision | \`r${LATEST_REV}\` |
+          | Last synced | ${SYNC_TIMESTAMP} |
+          | Branches | ${BRANCH_COUNT} |
+          | Tags | ${TAG_COUNT} |
+          
+          ## Branches
+
+          ${BRANCHES_MD}
+
+          ## Tags
+
+          ${TAGS_MD}
+          EOF
+          )
+          # Surgically replace the old state block if it exists, otherwise append it
+          if grep -q '^## Mirror Status$' README.md; then
+            # Use awk to replace everything from "## Mirror Status" to the next top-level heading (or EOF)
+            awk -v new_state="$NEW_STATE" '
+              BEGIN { state=1 }
+              /^## Mirror Status$/ { 
+                printf "%s\n\n", new_state
+                state=0
+                next 
+              }
+              state && /^## [A-Z]/ && !/^## Mirror Status$/ { state=1 }
+              state { print }
+            ' README.md > README.md.tmp && mv README.md.tmp README.md
+          else
+            # No existing state block; append after the existing intro
+            printf "\n%s\n" "$NEW_STATE" >> README.md
+          fi
+          # Commit and push if changed
+          git add README.md
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "docs: update README with mirror state (r${LATEST_REV})"
+            git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" svn-sync-entrypoint
+            echo "README.md updated on svn-sync-entrypoint"
+          else
+            echo "README.md unchanged, skipping commit"
+          fi
