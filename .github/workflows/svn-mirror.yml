@@ -76,11 +76,18 @@ jobs:
           #  4a: Determine the last SVN revision already mirrored 
           # Every commit we create ends with a trailer like:
           #   git-svn-id: svn://svn.code.sf.net/p/qmmp-dev/code/@1234
-          # We search across ALL branches (not just master) to find the
-          # absolute highest synced revision. This prevents re-walking logs
-          # if the latest SVN activity only touched branches/tags.
-          LAST_REV=$(git log --all --format=%B 2>/dev/null | grep -oP 'git-svn-id: .*@\K[0-9]+' | sort -n | tail -1 || true)
-          LAST_REV=${LAST_REV:-0}
+          # We search across ALL branches (not just master) to find the absolute highest synced revision. This prevents re-walking logs if the latest SVN activity only touched branches/tags.
+          declare -A rev_to_sha
+          while IFS= read -r -d '' sha && IFS= read -r -d '' body; do
+            rev=$(printf '%s' "$body" | grep -oP 'git-svn-id:.*@\K[0-9]+' | tail -1)
+            [ -n "$rev" ] && rev_to_sha[$rev]="$sha"
+          done < <(git log --all --format='%H%x00%B%x00' 2>/dev/null)
+          
+          if [ ${#rev_to_sha[@]} -gt 0 ]; then
+            LAST_REV=$(printf '%s\n' "${!rev_to_sha[@]}" | sort -n | tail -1)
+          else
+            LAST_REV=0
+          fi
           echo "Current mirrored SVN revision: r$LAST_REV"
 
           START_REV=$((LAST_REV + 1))
@@ -198,7 +205,7 @@ jobs:
                     src_rev=$(echo "$copyfrom" | sed -n 's/.*:r\{0,1\}\([0-9]*\)$/\1/p')
                     src_commit=""
                     if [ -n "$src_rev" ]; then
-                      src_commit=$(git log --all --grep="git-svn-id:.*@${src_rev}$" --format=%H 2>/dev/null | head -1)
+                      src_commit="${rev_to_sha[$src_rev]-}"
                     fi
 
                     if ! git rev-parse --verify --quiet "refs/tags/$tag_name" >/dev/null; then
@@ -228,7 +235,7 @@ jobs:
                   src_rev=$(echo "$copyfrom" | sed -n 's/.*:r\{0,1\}\([0-9]*\)$/\1/p')
                   src_commit=""
                   if [ -n "$src_rev" ]; then
-                    src_commit=$(git log --all --grep="git-svn-id:.*@${src_rev}$" --format=%H 2>/dev/null | head -1)
+                    src_commit="${rev_to_sha[$src_rev]-}"
                   fi
 
                   if ! git rev-parse --verify --quiet "$git_branch" >/dev/null; then
@@ -285,6 +292,7 @@ jobs:
 
                 commit_msg="$msg"$'\n\n'"git-svn-id: $SVN_URL@$rev"
                 GIT_AUTHOR_DATE="$git_date" GIT_COMMITTER_DATE="$git_date" git commit -m "$commit_msg"
+                rev_to_sha[$rev]="$(git rev-parse HEAD)"
                 echo "  Committed r$rev to $git_branch"
               else
                 echo "  No changes to commit for r$rev on $git_branch"
