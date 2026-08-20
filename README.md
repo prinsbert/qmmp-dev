@@ -4,7 +4,7 @@
 
 This repository is an archive tracking the [qmmp](https://sourceforge.net/p/qmmp-dev/) source code hosted on SourceForge, but with the commit history converted from SVN to Git. **This repository is not the source of truth.** All real development happens in the upstream [SVN repository](https://sourceforge.net/p/qmmp-dev/code/). The sync script attempts to follow all [branches](https://github.com/prinsbert/qmmp-dev/branches) as closely as possible, where `trunk` is renamed to [`master`](https://github.com/prinsbert/qmmp-dev/tree/master).
 
-## Mirror Status
+### Mirror Status
 
 | Field | Value |
 |-------|-------|
