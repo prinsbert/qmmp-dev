@@ -336,11 +336,11 @@ jobs:
           cd mirror
           git checkout -f svn-sync-entrypoint
           REPO_URL="https://github.com/${GITHUB_REPOSITORY}"
-          
+
           # Gather repository state information from ALL branches
           LATEST_REV=$(git log --all --format='%B' 2>/dev/null | grep -oP 'git-svn-id:.*@\K[0-9]+' | sort -n | tail -1 || true)
           [ -z "$LATEST_REV" ] && LATEST_REV="unknown"
-          
+
           # Find the Git commit SHA for the latest revision to link it
           LATEST_SHA=""
           if [ "$LATEST_REV" != "unknown" ]; then
@@ -354,37 +354,43 @@ jobs:
               fi
             done
           fi
-          
+
           if [ -n "$LATEST_SHA" ]; then
             REV_MD="[\`r${LATEST_REV}\`](${REPO_URL}/commit/${LATEST_SHA})"
           else
             REV_MD="r${LATEST_REV}"
           fi
+
           SYNC_TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
-          # Get branches (excluding svn-sync-entrypoint) formatted as inline links
+
+          # Get branches (excluding svn-sync-entrypoint) formatted as inline links (stripped extra whitespace)
           BRANCH_LIST=$(git for-each-ref --format='%(refname:short)' refs/heads 2>/dev/null | grep -v '^svn-sync-entrypoint$' | sort || true)
           if [ -n "$BRANCH_LIST" ]; then
-            BRANCH_COUNT=$(echo "$BRANCH_LIST" | wc -l)
+            BRANCH_COUNT=$(echo "$BRANCH_LIST" | wc -l | tr -d ' ')
             #                                          .* instead of ^ so the ampersand (&) captures the full branch name
             BRANCHES_MD=$(echo "$BRANCH_LIST" | sed "s|.*|[\`&\`](${REPO_URL}/tree/&)|" | paste -sd ' ')
           else
             BRANCH_COUNT=0
             BRANCHES_MD="*None*"
           fi
+
           # Get tags formatted as inline links
-          TAG_COUNT=$(git tag 2>/dev/null | wc -l || echo 0)
-          TAG_COUNT=$((TAG_COUNT))
-          if [ "$TAG_COUNT" -gt 0 ]; then
-            TAG_LIST=$(git for-each-ref --sort=-creatordate --format='%(refname:short)' refs/tags 2>/dev/null | head -20)
-            TAGS_MD=$(echo "$TAG_LIST" | sed "s|^|[\`&\`](${REPO_URL}/releases/tag/&)|" | paste -sd ' ')
+          TAG_LIST=$(git tag --sort=-v:refname 2>/dev/null || true)
+          if [ -n "$TAG_LIST" ]; then
+            TAG_COUNT=$(echo "$TAG_LIST" | wc -l | tr -d ' ')
+            DISPLAY_LIST=$(echo "$TAG_LIST" | head -n 20)
+            TAGS_MD=$(echo "$DISPLAY_LIST" | sed "s|.*|[\`&\`](${REPO_URL}/releases/tag/&)|" | paste -sd ' ')
             if [ "$TAG_COUNT" -gt 20 ]; then
-              TAGS_MD="${TAGS_MD} [+${TAG_COUNT - 20} more](${REPO_URL}/tags)"
+              MORE_COUNT=$((TAG_COUNT - 20))
+              TAGS_MD="${TAGS_MD} [+${MORE_COUNT} more](${REPO_URL}/tags)"
             fi
           else
+            TAG_COUNT=0
             TAGS_MD="*None*"
           fi
-          # Generate the new state block
-          NEW_STATE=$(cat <<EOF
+
+          # Generate state block and strip leading indentation spaces
+          NEW_STATE=$(cat <<EOF | sed 's/^[[:space:]]*//'
           ### Mirror Status
 
           | Field | Value |
@@ -393,25 +399,28 @@ jobs:
           | Last synced | ${SYNC_TIMESTAMP} |
           | Branches (${BRANCH_COUNT}) | ${BRANCHES_MD} |
           | Tags (${TAG_COUNT}) | ${TAGS_MD} |
+
           EOF
           )
-          # Surgically replace the old state block if it exists, otherwise append it
+
+          # Surgically update or append block
           if grep -q '^### Mirror Status$' README.md; then
-            # Use awk to replace everything from "## Mirror Status" to the next top-level heading (or EOF)
-            awk -v new_state="$NEW_STATE" '
-              BEGIN { state=1 }
-              /^### Mirror Status$/ { 
-                printf "%s\n\n", new_state
-                state=0
-                next 
+            NEW_STATE="$NEW_STATE" awk '
+              BEGIN { skip = 0 }
+              /^### Mirror Status$/ {
+                print ENVIRON["NEW_STATE"]
+                skip = 1
+                next
               }
-              state && /^## [A-Z]/ && !/^### Mirror Status$/ { state=1 }
-              state { print }
+              # the block has ended when we encounter the next Markdown heading
+              skip && /^#/ { skip = 0 }
+              !skip { print }
             ' README.md > README.md.tmp && mv README.md.tmp README.md
           else
             # No existing state block; append after the existing intro
             printf "\n%s\n" "$NEW_STATE" >> README.md
           fi
+
           # Commit and push if changed
           git add README.md
           if ! git diff --cached --quiet; then
