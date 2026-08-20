@@ -2,11 +2,7 @@
 
 ## SVN → Git mirror
 
-This repository is an archive tracking the [qmmp](https://sourceforge.net/p/qmmp-dev/) source code hosted on SourceForge, but with the commit history converted from SVN to Git.
-
-**This mirror is not the source of truth.** All real development happens in the upstream [SVN repository](https://sourceforge.net/p/qmmp-dev/code/).
-
-The sync script attempt to follow all [branches](https://github.com/prinsbert/qmmp-dev/branches) as closely as possible, where `trunk` is converted into [`master`](https://github.com/prinsbert/qmmp-dev/tree/master).
+This repository is an archive tracking the [qmmp](https://sourceforge.net/p/qmmp-dev/) source code hosted on SourceForge, but with the commit history converted from SVN to Git. **This repository is not the source of truth.** All real development happens in the upstream [SVN repository](https://sourceforge.net/p/qmmp-dev/code/). The sync script attempts to follow all [branches](https://github.com/prinsbert/qmmp-dev/branches) as closely as possible, where `trunk` is renamed to [`master`](https://github.com/prinsbert/qmmp-dev/tree/master).
 
 ## Description
 Qmmp is an audio-player, written with the help of the Qt library. The user interface is similar to [Winamp](https://nl.wikipedia.org/wiki/Winamp) or [XMMS](https://nl.wikipedia.org/wiki/XMMS). Alternative user interfaces are available, for example by downloading `.wsz` files from the [Webamp Skin Museum](https://skins.webamp.org/).
