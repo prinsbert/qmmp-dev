@@ -11,11 +11,14 @@ on:
         required: false
         default: false
         type: boolean
+
 permissions:
   contents: write
   actions: read
+
 env:
   BUILD_TYPE: Release
+
 jobs:
   # ==========================================================================
   # Job 1: Check if there are new commits since the last nightly build
@@ -37,6 +40,7 @@ jobs:
         with:
           fetch-depth: 0
           ref: master
+
       - name: Check for new commits
         id: check
         run: |
@@ -44,6 +48,7 @@ jobs:
           CURRENT_SHA=$(git rev-parse HEAD)
           SHORT_SHA=$(echo "${CURRENT_SHA}" | cut -c1-8)
           BUILD_DATE=$(date -u +'%Y-%m-%d')
+          
           COMMIT_MESSAGE=$(git log -1 --pretty=format:"%s")
           COMMIT_AUTHOR=$(git log -1 --pretty=format:"%an <%ae>")
           COMMIT_DATE=$(git log -1 --pretty=format:"%ai")
@@ -100,9 +105,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   # ==========================================================================
-  # Job 2: Build on Ubuntu 22.04
+  # Job 2: Build on Linux (Ubuntu) - Binary Tarball
   # ==========================================================================
-  build-ubuntu-22-04:
+  build-linux-binary:
     needs: check-for-updates
     if: needs.check-for-updates.outputs.should_build == 'true'
     runs-on: ubuntu-22.04
@@ -111,6 +116,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: master
+          path: qmmp-src
 
       - name: Install required dependencies
         run: |
@@ -173,7 +179,7 @@ jobs:
 
       - name: Configure with CMake
         run: |
-          mkdir -p build && cd build
+          mkdir -p qmmp-src/build && cd qmmp-src/build
           cmake .. \
             -G Ninja \
             -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
@@ -186,38 +192,39 @@ jobs:
 
       - name: Build
         run: |
-          cd build
+          cd qmmp-src/build
           ninja -j$(nproc)
 
       - name: Install to staging directory
         run: |
-          cd build
-          DESTDIR=${{ github.workspace }}/staging ninja install
+          cd qmmp-src/build
+          DESTDIR=${{ github.workspace }}/staging-binary ninja install
 
-      - name: Create tarball
+      - name: Create binary tarball
         run: |
           cd ${{ github.workspace }}
-          tar -czf qmmp-${{ needs.check-for-updates.outputs.build_date }}-ubuntu-22.04-x86_64.tar.gz -C staging .
+          tar -czf qmmp-${{ needs.check-for-updates.outputs.build_date }}-linux-x86_64-binary.tar.gz -C staging-binary .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: qmmp-ubuntu-22.04
-          path: qmmp-*.tar.gz
+          name: qmmp-linux-binary
+          path: qmmp-*-linux-x86_64-binary.tar.gz
           retention-days: 7
 
   # ==========================================================================
-  # Job 3: Build on Ubuntu 24.04
+  # Job 3: Build on Linux (Ubuntu) - AppImage
   # ==========================================================================
-  build-ubuntu-24-04:
+  build-linux-appimage:
     needs: check-for-updates
     if: needs.check-for-updates.outputs.should_build == 'true'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           ref: master
+          path: qmmp-src
 
       - name: Install required dependencies
         run: |
@@ -231,6 +238,7 @@ jobs:
             bzip2 \
             gzip \
             qt6-base-dev \
+            qt6-base-private-dev \
             qt6-tools-dev \
             qt6-tools-dev-tools \
             libmad0-dev \
@@ -238,7 +246,9 @@ jobs:
             libogg-dev \
             libasound2-dev \
             libtag1-dev \
-            libcurl4-openssl-dev
+            libcurl4-openssl-dev \
+            file \
+            fuse
 
       - name: Install optional dependencies
         run: |
@@ -276,11 +286,14 @@ jobs:
             libxcb1-dev \
             x11proto-dev \
             librcd0-dev \
-            libmms-dev || true
+            libmms-dev \
+            libgl1-mesa-dev \
+            libgstreamer1.0-dev \
+            libgstreamer-plugins-base1.0-dev || true
 
-      - name: Configure with CMake
+      - name: Configure with CMake for AppImage
         run: |
-          mkdir -p build && cd build
+          mkdir -p qmmp-src/build && cd qmmp-src/build
           cmake .. \
             -G Ninja \
             -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
@@ -289,29 +302,115 @@ jobs:
             -DUSE_PIPEWIRE=TRUE \
             -DUSE_PROJECTM=TRUE \
             -DUSE_LIBCDDB=TRUE \
-            -DQMMP_DEFAULT_UI=qsui
+            -DQMMP_DEFAULT_UI=qsui \
+            -DCMAKE_BUILD_WITH_INSTALL_RPATH=FALSE \
+            -DCMAKE_INSTALL_RPATH='$ORIGIN/../lib'
 
       - name: Build
         run: |
-          cd build
+          cd qmmp-src/build
           ninja -j$(nproc)
 
-      - name: Install to staging directory
+      - name: Install to AppDir
         run: |
-          cd build
-          DESTDIR=${{ github.workspace }}/staging ninja install
+          mkdir -p ${{ github.workspace }}/AppDir
+          cd qmmp-src/build
+          DESTDIR=${{ github.workspace }}/AppDir ninja install
 
-      - name: Create tarball
+      - name: Download linuxdeploy
         run: |
-          cd ${{ github.workspace }}
-          tar -czf qmmp-${{ needs.check-for-updates.outputs.build_date }}-ubuntu-24.04-x86_64.tar.gz -C staging .
+          wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+          chmod +x linuxdeploy-x86_64.AppImage
+          
+          wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
+          chmod +x linuxdeploy-plugin-qt-x86_64.AppImage
+          
+          wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-appimage/releases/download/continuous/linuxdeploy-plugin-appimage-x86_64.AppImage
+          chmod +x linuxdeploy-plugin-appimage-x86_64.AppImage
+
+      - name: Create AppImage
+        run: |
+          # Create desktop file
+          cat > ${{ github.workspace }}/AppDir/usr/share/applications/qmmp.desktop << 'EOF'
+          [Desktop Entry]
+          Name=Qmmp
+          Comment=Qt-based Multimedia Player
+          Exec=qmmp
+          Icon=qmmp
+          Type=Application
+          Categories=AudioVideo;Audio;Player;
+          MimeType=audio/x-mpegurl;audio/mpeg;audio/x-mp3;audio/flac;audio/ogg;audio/x-vorbis+ogg;audio/x-wav;
+          Terminal=false
+          StartupNotify=true
+          EOF
+          
+          # Copy desktop file to AppDir root
+          cp ${{ github.workspace }}/AppDir/usr/share/applications/qmmp.desktop ${{ github.workspace }}/AppDir/
+          
+          # Find and copy icon
+          if [ -f ${{ github.workspace }}/AppDir/usr/share/icons/hicolor/128x128/apps/qmmp.png ]; then
+            cp ${{ github.workspace }}/AppDir/usr/share/icons/hicolor/128x128/apps/qmmp.png ${{ github.workspace }}/AppDir/qmmp.png
+          elif [ -f ${{ github.workspace }}/AppDir/usr/share/pixmaps/qmmp.png ]; then
+            cp ${{ github.workspace }}/AppDir/usr/share/pixmaps/qmmp.png ${{ github.workspace }}/AppDir/qmmp.png
+          else
+            # Find any qmmp icon
+            ICON=$(find ${{ github.workspace }}/AppDir -name "qmmp.png" 2>/dev/null | head -1)
+            if [ -n "$ICON" ]; then
+              cp "$ICON" ${{ github.workspace }}/AppDir/qmmp.png
+            fi
+          fi
+          
+          # Set QT_PLUGIN_PATH for linuxdeploy
+          export QT_PLUGIN_PATH=/usr/lib/qt6/plugins
+          
+          # Create AppImage (with EXTRA_QT_PLUGINS for multimedia)
+          ./linuxdeploy-x86_64.AppImage \
+            --appdir ${{ github.workspace }}/AppDir \
+            --plugin qt \
+            --plugin appimage \
+            -e ${{ github.workspace }}/AppDir/usr/bin/qmmp \
+            -d ${{ github.workspace }}/AppDir/qmmp.desktop \
+            -i ${{ github.workspace }}/AppDir/qmmp.png \
+            --output appimage \
+            -v2 \
+            EXTRA_QT_PLUGINS="multimedia,multimediawidgets" \
+            DEPLOY_GSTREAMER_PLUGINS="1" \
+            || true
+          
+          # Find and rename the created AppImage
+          APPIMAGE_FILE=$(find . -maxdepth 1 -name "Qmmp*.AppImage" -o -name "qmmp*.AppImage" 2>/dev/null | head -1)
+          if [ -n "$APPIMAGE_FILE" ]; then
+            mv "$APPIMAGE_FILE" "qmmp-${{ needs.check-for-updates.outputs.build_date }}-linux-x86_64.AppImage"
+          fi
+          
+          # If no AppImage was created, create a simple one from AppDir
+          if [ ! -f "qmmp-${{ needs.check-for-updates.outputs.build_date }}-linux-x86_64.AppImage" ]; then
+            echo "linuxdeploy failed, creating minimal AppImage..."
+            cd ${{ github.workspace }}/AppDir
+            wget -q https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+            chmod +x appimagetool-x86_64.AppImage
+            ./appimagetool-x86_64.AppImage --no-appstream ${{ github.workspace }}/AppDir \
+              ${{ github.workspace }}/qmmp-${{ needs.check-for-updates.outputs.build_date }}-linux-x86_64.AppImage || true
+          fi
+        env:
+          LD_LIBRARY_PATH: ${{ github.workspace }}/AppDir/usr/lib:${{ github.workspace }}/AppDir/usr/lib/qmmp-*
+          QMAKE: /usr/lib/qt6/bin/qmake
+
+      - name: List AppDir contents for debugging
+        if: always()
+        run: |
+          echo "=== AppDir Structure ==="
+          find ${{ github.workspace }}/AppDir -type f 2>/dev/null | head -50
+          echo "=== AppImage Files ==="
+          ls -la *.AppImage 2>/dev/null || echo "No AppImage files found"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: qmmp-ubuntu-24.04
-          path: qmmp-*.tar.gz
+          name: qmmp-linux-appimage
+          path: qmmp-*-linux-x86_64.AppImage
           retention-days: 7
+          if-no-files-found: warn
 
   # ==========================================================================
   # Job 4: Build on macOS
@@ -325,6 +424,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: master
+          path: qmmp-src
 
       - name: Install Homebrew dependencies
         run: |
@@ -362,7 +462,7 @@ jobs:
 
       - name: Configure with CMake
         run: |
-          mkdir -p build && cd build
+          mkdir -p qmmp-src/build && cd qmmp-src/build
           cmake .. \
             -G Ninja \
             -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
@@ -384,24 +484,24 @@ jobs:
 
       - name: Build
         run: |
-          cd build
+          cd qmmp-src/build
           ninja -j$(sysctl -n hw.ncpu)
 
       - name: Install to staging directory
         run: |
-          cd build
-          DESTDIR=${{ github.workspace }}/staging ninja install
+          cd qmmp-src/build
+          DESTDIR=${{ github.workspace }}/staging-macos ninja install
 
       - name: Create tarball
         run: |
           cd ${{ github.workspace }}
-          tar -czf qmmp-${{ needs.check-for-updates.outputs.build_date }}-macos-arm64.tar.gz -C staging .
+          tar -czf qmmp-${{ needs.check-for-updates.outputs.build_date }}-macos-arm64.tar.gz -C staging-macos .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: qmmp-macos
-          path: qmmp-*.tar.gz
+          path: qmmp-*-macos-arm64.tar.gz
           retention-days: 7
 
   # ==========================================================================
@@ -419,6 +519,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: master
+          path: qmmp-src
 
       - name: Setup MSYS2 with UCRT64
         uses: msys2/setup-msys2@v2
@@ -463,7 +564,7 @@ jobs:
 
       - name: Configure with CMake
         run: |
-          mkdir -p build && cd build
+          mkdir -p qmmp-src/build && cd qmmp-src/build
           cmake .. \
             -G Ninja \
             -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
@@ -485,18 +586,18 @@ jobs:
 
       - name: Build
         run: |
-          cd build
+          cd qmmp-src/build
           ninja -j$(nproc)
 
       - name: Install to staging directory
         run: |
-          cd build
-          DESTDIR=${{ github.workspace }}/staging ninja install
+          cd qmmp-src/build
+          DESTDIR=${{ github.workspace }}/staging-windows ninja install
 
       - name: Create 7z archive
         run: |
           cd ${{ github.workspace }}
-          7z a -mx=9 qmmp-${{ needs.check-for-updates.outputs.build_date }}-windows-x86_64.7z ./staging/*
+          7z a -mx=9 qmmp-${{ needs.check-for-updates.outputs.build_date }}-windows-x86_64.7z ./staging-windows/*
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -511,8 +612,8 @@ jobs:
   create-release:
     needs:
       - check-for-updates
-      - build-ubuntu-22-04
-      - build-ubuntu-24-04
+      - build-linux-binary
+      - build-linux-appimage
       - build-macos
       - build-windows
     if: needs.check-for-updates.outputs.should_build == 'true'
@@ -533,7 +634,7 @@ jobs:
       - name: List downloaded artifacts
         run: |
           echo "=== Downloaded Artifacts ==="
-          find artifacts -type f -name "*.tar.gz" -o -name "*.7z" | sort
+          find artifacts -type f \( -name "*.tar.gz" -o -name "*.7z" -o -name "*.AppImage" \) | sort
           echo "============================"
 
       - name: Get recent changes
@@ -545,19 +646,23 @@ jobs:
             LAST_SHA=$(gh release view nightly --json body -q '.body' | grep -oP 'Commit SHA: \K[a-f0-9]{40}' || echo "")
           fi
           
-          if [ -n "${LAST_SHA}" ]; then
-            echo "## 📝 Recent Changes" >> $GITHUB_OUTPUT
-            echo "" >> $GITHUB_OUTPUT
-            git log "${LAST_SHA}..HEAD" --pretty=format:"- %s (%h)" --no-merges >> $GITHUB_OUTPUT
-            echo "" >> $GITHUB_OUTPUT
-          else
-            echo "## 📝 Recent Changes" >> $GITHUB_OUTPUT
-            echo "" >> $GITHUB_OUTPUT
-            echo "First nightly build - showing last 20 commits:" >> $GITHUB_OUTPUT
-            echo "" >> $GITHUB_OUTPUT
-            git log -20 --pretty=format:"- %s (%h)" --no-merges >> $GITHUB_OUTPUT
-            echo "" >> $GITHUB_OUTPUT
-          fi
+          {
+            echo "changes_content<<CHANGEEOF"
+            if [ -n "${LAST_SHA}" ]; then
+              echo "## 📝 Recent Changes"
+              echo ""
+              git log "${LAST_SHA}..HEAD" --pretty=format:"- %s (%h)" --no-merges || echo "- Unable to retrieve changes"
+              echo ""
+            else
+              echo "## 📝 Recent Changes"
+              echo ""
+              echo "First nightly build - showing last 15 commits:"
+              echo ""
+              git log -15 --pretty=format:"- %s (%h)" --no-merges || echo "- Unable to retrieve changes"
+              echo ""
+            fi
+            echo "CHANGEEOF"
+          } >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -567,12 +672,29 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create release body
+      - name: Create GitHub release
         run: |
-          cat > release_body.md << 'HEREDOC'
+          # Collect all archive files
+          ARCHIVES=""
+          for artifact_dir in artifacts/*/; do
+            for file in "${artifact_dir}"*.tar.gz "${artifact_dir}"*.7z "${artifact_dir}"*.AppImage; do
+              if [ -f "$file" ]; then
+                ARCHIVES="${ARCHIVES} ${file}"
+              fi
+            done
+          done
+          
+          if [ -z "${ARCHIVES}" ]; then
+            echo "ERROR: No archives found!"
+            find artifacts -type f | head -20
+            exit 1
+          fi
+          
+          # Create release body
+          cat > release_body.md << RELEASEEOF
           # 🌙 Qmmp Nightly Build
           
-          > **⚠️ Warning:** This is an automated nightly build from the development branch.
+          > **⚠️ Warning:** This is an automated nightly build from the \`master\` branch.
           > It may contain bugs, incomplete features, or breaking changes.
           > **Use at your own risk!** For stable releases, visit the [Releases](https://github.com/qmmp-dev/qmmp/releases) page.
           
@@ -582,169 +704,103 @@ jobs:
           
           | Property | Value |
           |----------|-------|
-          | **Build Date** | BUILD_DATE |
-          | **Commit SHA** | `SHORT_SHA` |
-          | **Full SHA** | `COMMIT_SHA` |
-          | **Last Commit** | COMMIT_MESSAGE |
-          | **Author** | COMMIT_AUTHOR |
-          | **Commit Date** | COMMIT_DATE |
-          | **Commits Since Last** | COMMITS_COUNT |
+          | **Build Date** | ${{ needs.check-for-updates.outputs.build_date }} |
+          | **Commit SHA** | \`${{ needs.check-for-updates.outputs.short_sha }}\` |
+          | **Full SHA** | \`${{ needs.check-for-updates.outputs.commit_sha }}\` |
+          | **Last Commit** | ${{ needs.check-for-updates.outputs.commit_message }} |
+          | **Author** | ${{ needs.check-for-updates.outputs.commit_author }} |
+          | **Commit Date** | ${{ needs.check-for-updates.outputs.commit_date }} |
+          | **Commits Since Last** | ${{ needs.check-for-updates.outputs.commits_count }} |
           
           ---
           
           ## 📦 Downloads
           
-          ### Linux
-          | Distribution | Architecture | File |
-          |--------------|--------------|------|
-          | Ubuntu 22.04 (Jammy) | x86_64 | `qmmp-*-ubuntu-22.04-x86_64.tar.gz` |
-          | Ubuntu 24.04 (Noble) | x86_64 | `qmmp-*-ubuntu-24.04-x86_64.tar.gz` |
+          ### 🐧 Linux
           
-          ### macOS
+          | Format | File | Description |
+          |--------|------|-------------|
+          | **Binary** | \`qmmp-*-linux-x86_64-binary.tar.gz\` | Pre-built binaries for installation to \`/usr\` |
+          | **AppImage** | \`qmmp-*-linux-x86_64.AppImage\` | Portable, no installation required |
+          
+          ### 🍎 macOS
+          
           | Architecture | File |
           |--------------|------|
-          | Apple Silicon (ARM64) | `qmmp-*-macos-arm64.tar.gz` |
+          | Apple Silicon (ARM64) | \`qmmp-*-macos-arm64.tar.gz\` |
           
-          ### Windows
-          | Architecture | File |
-          |--------------|------|
-          | x86_64 | `qmmp-*-windows-x86_64.7z` |
+          ### 🪟 Windows
+          
+          | Architecture | File | Runtime |
+          |--------------|------|---------|
+          | x86_64 | \`qmmp-*-windows-x86_64.7z\` | MSYS2 UCRT64 |
           
           ---
           
-          CHANGES_SECTION
+          ${{ steps.changes.outputs.changes_content }}
           
           ---
           
           ## 🔧 Included Features
           
-          ### Core
-          - Qmmp core library
-          - Qt6-based UI library
-          
           ### Decoders
-          - MP3 (MAD, MPG123)
-          - FLAC
-          - OGG Vorbis
-          - Musepack
-          - WavPack
-          - AAC/FAAD
-          - Opus
-          - XMP (module formats)
-          - Game Music Emu
-          - SID (Commodore 64)
-          - FFmpeg (many formats)
-          - sndfile
-          - WildMidi
-          - CUE sheets
+          MP3 (MAD/MPG123) • FLAC • OGG Vorbis • Musepack • WavPack • AAC/FAAD • Opus • XMP • Game Music Emu • SID • FFmpeg • sndfile • WildMidi • CUE
           
           ### Output Plugins
-          - ALSA (Linux)
-          - PipeWire (Linux)
-          - PulseAudio (Linux)
-          - Qt Multimedia (cross-platform)
-          - WASAPI (Windows)
-          - DirectSound (Windows)
-          - WaveOut (Windows)
-          - Null output
+          ALSA • PipeWire • PulseAudio • Qt Multimedia • WASAPI • DirectSound • WaveOut • Null
           
           ### Effects
-          - Sample Rate Converter (SoX)
-          - BS2B (binaural)
-          - LADSPA
-          - Crossfade
-          - Stereo tools
-          - Mono to Stereo
+          Sample Rate Converter (SoX) • BS2B • LADSPA • Crossfade • Stereo Tools • Mono to Stereo
           
           ### Visualization
-          - Analyzer
-          - projectM
+          Analyzer • projectM
           
           ### General Plugins
-          - MPRIS2 D-Bus interface
-          - Scrobbler (Last.fm)
-          - ListenBrainz
-          - System tray icon
-          - Notifications
-          - Lyrics
-          - Hotkeys
-          - Cover art
-          - ReplayGain scanner
-          - And more...
+          MPRIS2 • Scrobbler • ListenBrainz • System Tray • Notifications • Lyrics • Hotkeys • Cover Art • ReplayGain • Tag Editor • And more...
           
           ### User Interfaces
-          - Simple UI (default)
-          - Skinned UI (classic Winamp-style)
+          Simple UI (default) • Skinned UI (classic Winamp-style)
           
           ---
           
-          ## 📥 Installation Notes
+          ## 📥 Installation
           
-          ### Linux
-          ```bash
-          tar -xzf qmmp-*-ubuntu-*.tar.gz
-          sudo cp -r * /
+          ### Linux - Binary Tarball
+          \`\`\`bash
+          tar -xzf qmmp-*-linux-x86_64-binary.tar.gz
+          sudo cp -r usr / && sudo cp -r etc / 2>/dev/null || true
           sudo ldconfig
-          ```
+          \`\`\`
+          
+          ### Linux - AppImage
+          \`\`\`bash
+          chmod +x qmmp-*-linux-x86_64.AppImage
+          ./qmmp-*-linux-x86_64.AppImage
+          \`\`\`
           
           ### macOS
-          ```bash
-          tar -xzf qmmp-*-macos-*.tar.gz
-          sudo cp -r * /
-          ```
-          > Note: You may need to adjust library paths or use `install_name_tool` for dynamic libraries.
+          \`\`\`bash
+          tar -xzf qmmp-*-macos-arm64.tar.gz
+          sudo cp -r usr/local/* /usr/local/
+          \`\`\`
           
           ### Windows
-          1. Extract the `.7z` archive to a folder of your choice
-          2. Ensure the MSYS2 UCRT64 bin directory is in your PATH, or copy required DLLs
-          3. Run `qmmp.exe`
+          1. Extract \`qmmp-*-windows-x86_64.7z\` to a folder
+          2. Ensure MSYS2 UCRT64 \`bin\` directory is in PATH, or copy required DLLs
+          3. Run \`bin\qmmp.exe\`
           
           ---
           
-          ## 🔗 Useful Links
+          ## 🔗 Links
           
-          - [Qmmp Website](http://qmmp.ylsoftware.com/)
-          - [Source Code](https://github.com/qmmp-dev/qmmp)
-          - [Issue Tracker](https://github.com/qmmp-dev/qmmp/issues)
-          - [Wiki](https://github.com/qmmp-dev/qmmp/wiki)
-          - [Stable Releases](https://github.com/qmmp-dev/qmmp/releases)
+          [Website](http://qmmp.ylsoftware.com/) • [Source](https://github.com/qmmp-dev/qmmp) • [Issues](https://github.com/qmmp-dev/qmmp/issues) • [Wiki](https://github.com/qmmp-dev/qmmp/wiki) • [Stable Releases](https://github.com/qmmp-dev/qmmp/releases)
           
           ---
           
-          *🤖 This release was automatically generated by [GitHub Actions](https://github.com/qmmp-dev/qmmp/actions) on BUILD_DATE*
-          HEREDOC
+          *🤖 Auto-generated by [GitHub Actions](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) on ${{ needs.check-for-updates.outputs.build_date }}*
+          RELEASEEOF
           
-          # Replace placeholders
-          sed -i "s|BUILD_DATE|${{ needs.check-for-updates.outputs.build_date }}|g" release_body.md
-          sed -i "s|SHORT_SHA|${{ needs.check-for-updates.outputs.short_sha }}|g" release_body.md
-          sed -i "s|COMMIT_SHA|${{ needs.check-for-updates.outputs.commit_sha }}|g" release_body.md
-          sed -i "s|COMMIT_MESSAGE|${{ needs.check-for-updates.outputs.commit_message }}|g" release_body.md
-          sed -i "s|COMMIT_AUTHOR|${{ needs.check-for-updates.outputs.commit_author }}|g" release_body.md
-          sed -i "s|COMMIT_DATE|${{ needs.check-for-updates.outputs.commit_date }}|g" release_body.md
-          sed -i "s|COMMITS_COUNT|${{ needs.check-for-updates.outputs.commits_count }}|g" release_body.md
-          sed -i "/CHANGES_SECTION/{
-            r <(cat << 'EOF'
-          ${{ steps.changes.outputs }}
-          EOF
-          )
-            d
-          }" release_body.md
-          
-          echo "=== Release Body Preview ==="
-          cat release_body.md
-          echo "============================"
-
-      - name: Create GitHub release
-        run: |
-          # Find all archive files
-          ARCHIVES=$(find artifacts -type f \( -name "*.tar.gz" -o -name "*.7z" \) 2>/dev/null | tr '\n' ' ')
-          
-          if [ -z "${ARCHIVES}" ]; then
-            echo "ERROR: No archives found!"
-            exit 1
-          fi
-          
-          # Create the release with all artifacts
+          # Create the release
           gh release create nightly \
             --title "🌙 Nightly Build - ${{ needs.check-for-updates.outputs.build_date }}" \
             --notes-file release_body.md \
@@ -756,7 +812,7 @@ jobs:
       - name: Verify release
         run: |
           echo "=== Release Created Successfully ==="
-          gh release view nightly
+          gh release view nightly --json tagName,name,assets --jq '{tag: .tagName, name: .name, assets: [.assets[] | {name: .name, size: (.size / 1048576 | floor | tostring + " MB")]}]'
           echo "====================================="
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
