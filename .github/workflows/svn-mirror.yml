@@ -176,7 +176,7 @@ jobs:
               [ -z "$git_branch" ] && continue
 
               # Accumulate this change into the branch's change list
-              if [ -z "${branch_changes[$git_branch]}" ]; then
+              if [ -z "${branch_changes[$git_branch]-}" ]; then
                 branch_changes[$git_branch]="$action|$local_path|$copyfrom"
               else
                 branch_changes[$git_branch]+=$'\n'"$action|$local_path|$copyfrom"
