@@ -31,27 +31,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      # ─────────────────────────────────────────────────────────────────────
+      # 
       # Step 1: Install the SVN client (not pre-installed on ubuntu-latest)
-      # ─────────────────────────────────────────────────────────────────────
+      # 
       - name: Install subversion
         run: |
           set -euo pipefail
           sudo apt-get update -y
           sudo apt-get install -y subversion
 
-      # ─────────────────────────────────────────────────────────────────────
+      # 
       # Step 2: Configure Git identity for the commits we'll create
-      # ─────────────────────────────────────────────────────────────────────
+      # 
       - name: Configure Git identity
         run: |
           set -euo pipefail
           git config --global user.name  "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      # ─────────────────────────────────────────────────────────────────────
+      # 
       # Step 3: Clone the existing Git mirror so we have history to append to
-      # ─────────────────────────────────────────────────────────────────────
+      # 
       - name: Clone existing mirror from GitHub
         run: |
           set -euo pipefail
@@ -65,15 +65,15 @@ jobs:
           git fetch origin '+refs/heads/*:refs/heads/*'
           git fetch origin '+refs/tags/*:refs/tags/*'
 
-      # ─────────────────────────────────────────────────────────────────────
+      # 
       # Step 4: Core sync logic — fetch new SVN revisions and replay them
-      # ─────────────────────────────────────────────────────────────────────
+      # 
       - name: Sync new SVN revisions
         run: |
           set -euo pipefail
           cd mirror
 
-          # ── 4a: Determine the last SVN revision already mirrored ──────────
+          #  4a: Determine the last SVN revision already mirrored 
           # Every commit we create ends with a trailer like:
           #   git-svn-id: svn://svn.code.sf.net/p/qmmp-dev/code/@1234
           # We search across ALL branches (not just master) to find the
@@ -85,11 +85,9 @@ jobs:
 
           START_REV=$((LAST_REV + 1))
 
-          # ── 4b: Fetch the SVN log for all new revisions ───────────────────
-          # `svn log -r START:HEAD` returns all revisions from START to the
-          # latest.  If START is beyond HEAD (no new revisions), svn log exits
-          # non-zero — we handle that gracefully.
-          if ! svn log -v -r "$START_REV:HEAD" "$SVN_URL" > /tmp/svn_log.txt 2>/dev/null; then
+          #  4b: Fetch the SVN log for all new revisions 
+          # `svn --non-interactive log -r START:HEAD` returns all revisions from START to the latest.  If START is beyond HEAD (no new revisions), svn log exits non-zero. We handle that gracefully.
+          if ! svn --non-interactive log --non-interactive -v -r "$START_REV:HEAD" "$SVN_URL" > /tmp/svn_log.txt 2>/dev/null; then
             echo "No new revisions to sync (svn log returned no results or failed)."
             exit 0
           fi
@@ -101,7 +99,7 @@ jobs:
             exit 0
           fi
 
-          # ── 4c: Parse and process each SVN revision ───────────────────────
+          #  4c: Parse and process each SVN revision 
           # SVN log entries are separated by a line of exactly 72 dashes.
           # We use awk with RS="-{72}" to split the file into records, then
           # pipe each record (delimited by NUL) to a Bash while-loop.
@@ -111,16 +109,16 @@ jobs:
             block="${block#"${block%%[![:space:]]*}"}"
             [ -z "$block" ] && continue
 
-            # ── Parse the header line: "r123 | author | date | n lines" ────
+            #  Parse the header line: "r123 | author | date | n lines" 
             rev=$(echo "$block" | head -n1 | awk '{print $1}' | tr -d 'r')
             author=$(echo "$block" | head -n1 | awk -F'|' '{print $2}' | sed 's/^ *//;s/ *$//')
             git_date=$(echo "$block" | head -n1 | awk -F'|' '{print $3}' | awk '{print $1"T"$2" "$3}')
 
-            # ── Parse the "Changed paths" section ───────────────────────────
+            #  Parse the "Changed paths" section 
             # Extract lines matching "   M /path" (3 spaces, action, space, path)
             mapfile -t path_lines < <(echo "$block" | sed -n '/Changed paths:/,/^$/p' | grep -E '^   [A-Z]')
 
-            # ── Parse the commit message ────────────────────────────────────
+            #  Parse the commit message 
             # Preserve multi-paragraph messages (don't skip interior blank lines)
             msg=$(echo "$block" | awk 'BEGIN{p=0} p{print} /^$/{p=1}')
             [ -z "$msg" ] && msg="<empty SVN commit message>"
@@ -128,7 +126,8 @@ jobs:
 
             echo "Processing r$rev by $author..."
 
-            # ── Group changed paths by their target Git branch ──────────────
+            #  Group changed paths by their target Git branch 
+            # (NOTE: D /branches/oldbranch (deleting the whole branch) just falls through to "branch doesn't exist locally, skip" or leaves the git branch dangling)
             declare -A branch_changes
             for pline in "${path_lines[@]}"; do
               # BUG FIX: path_lines entries look like "   M /trunk/file.c".
@@ -172,9 +171,7 @@ jobs:
                   local_path=""
                 fi
               fi
-
-              [ -z "$git_branch" ] && continue
-
+              [ -z "$git_branch" ] && { echo "  WARNING: unroutable path, skipping: $rest"; continue; }
               # Accumulate this change into the branch's change list
               if [ -z "${branch_changes[$git_branch]-}" ]; then
                 branch_changes[$git_branch]="$action|$local_path|$copyfrom"
@@ -183,10 +180,10 @@ jobs:
               fi
             done
 
-            # ── Apply changes to each affected branch or tag ───────────────
+            #  Apply changes to each affected branch or tag 
             for git_branch in "${!branch_changes[@]}"; do
 
-              # ── Tag handling ──────────────────────────────────────────────
+              #  Tag handling 
               if [[ "$git_branch" == tag_* ]]; then
                 tag_name=${git_branch#tag_}
                 while IFS= read -r change; do
@@ -218,7 +215,7 @@ jobs:
                 continue
               fi
 
-              # ── Branch creation detection ────────────────────────────────
+              #  Branch creation detection 
               while IFS= read -r change; do
                 IFS='|' read -r action local_path copyfrom <<< "$change"
                 if [ "$action" == "A" ] && [ -n "$copyfrom" ] && [ -z "$local_path" ]; then
@@ -251,13 +248,15 @@ jobs:
                 continue
               fi
 
-              # ── Apply file-level changes to the branch ───────────────────
+              #  Apply file-level changes to the branch 
               git checkout -f "$git_branch"
 
               while IFS= read -r change; do
                 IFS='|' read -r action local_path copyfrom <<< "$change"
                 [ -z "$local_path" ] && continue
-
+                case "$local_path" in
+                  *..*) echo "  WARNING: suspicious path, skipping: $local_path"; continue ;;
+                esac
                 if [ "$action" == "D" ]; then
                   git rm -rf --ignore-unmatch "$local_path"
                 else
@@ -270,16 +269,16 @@ jobs:
                   mkdir -p "$(dirname "$local_path")"
 
                   # Try `svn cat` first (files), fall back to `svn export` (directories)
-                  if svn cat -r "$rev" "$svn_target" > "$local_path" 2>/dev/null; then
+                  if svn --non-interactive cat -r "$rev" "$svn_target" > "$local_path" 2>/dev/null; then
                     git add "$local_path"
                   else
-                    svn export -r "$rev" --force "$svn_target" "$local_path"
+                    svn --non-interactive export -r "$rev" --force "$svn_target" "$local_path"
                     git add -A "$local_path"
                   fi
                 fi
               done <<< "${branch_changes[$git_branch]}"
 
-              # ── Commit if there are staged changes ───────────────────────
+              #  Commit if there are staged changes 
               if ! git diff --cached --quiet; then
                 git config user.name "$author"
                 git config user.email "$author@users.noreply.github.com"
@@ -294,13 +293,14 @@ jobs:
           done
           echo "Sync complete."
 
-      # ─────────────────────────────────────────────────────────────────────
+      # 
       # Step 5: Push the updated mirror back to GitHub
-      # ─────────────────────────────────────────────────────────────────────
+      # 
       - name: Push mirror to GitHub
         run: |
           set -euo pipefail
           cd mirror
           REMOTE="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
-          git push --force "$REMOTE" 'refs/heads/*:refs/heads/*'
-          git push --force "$REMOTE" 'refs/tags/*:refs/tags/*'
+          # a normal push should always fast-forward, so we do not use the --force flag
+          git push "$REMOTE" 'refs/heads/*:refs/heads/*'
+          git push "$REMOTE" 'refs/tags/*:refs/tags/*'
