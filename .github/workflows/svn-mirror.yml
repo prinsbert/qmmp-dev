@@ -96,8 +96,8 @@ jobs:
           START_REV=$((LAST_REV + 1))
 
           #  4b: Fetch the SVN log for all new revisions 
-          # `svn --non-interactive log -r START:HEAD` returns all revisions from START to the latest.  If START is beyond HEAD (no new revisions), svn log exits non-zero. We handle that gracefully.
-          if ! svn --non-interactive log --non-interactive -v -r "$START_REV:HEAD" "$SVN_URL" > /tmp/svn_log.txt 2>/dev/null; then
+          # `svn log -r START:HEAD` returns all revisions from START to the latest.  If START is beyond HEAD (no new revisions), svn log exits non-zero. We handle that gracefully.
+          if ! svn --non-interactive log -v -r "$START_REV:HEAD" "$SVN_URL" > /tmp/svn_log.txt 2>/dev/null; then
             echo "No new revisions to sync (svn log returned no results or failed)."
             exit 0
           fi
