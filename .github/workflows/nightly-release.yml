@@ -1,0 +1,762 @@
+name: Nightly Build
+
+on:
+  schedule:
+    # Run daily at 03:00 UTC
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+    inputs:
+      force_build:
+        description: 'Force build even without new commits'
+        required: false
+        default: false
+        type: boolean
+permissions:
+  contents: write
+  actions: read
+env:
+  BUILD_TYPE: Release
+jobs:
+  # ==========================================================================
+  # Job 1: Check if there are new commits since the last nightly build
+  # ==========================================================================
+  check-for-updates:
+    runs-on: ubuntu-latest
+    outputs:
+      should_build: ${{ steps.check.outputs.should_build }}
+      commit_sha: ${{ steps.check.outputs.commit_sha }}
+      short_sha: ${{ steps.check.outputs.short_sha }}
+      build_date: ${{ steps.check.outputs.build_date }}
+      commit_message: ${{ steps.check.outputs.commit_message }}
+      commit_author: ${{ steps.check.outputs.commit_author }}
+      commit_date: ${{ steps.check.outputs.commit_date }}
+      commits_count: ${{ steps.check.outputs.commits_count }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: master
+      - name: Check for new commits
+        id: check
+        run: |
+          # Get current commit info
+          CURRENT_SHA=$(git rev-parse HEAD)
+          SHORT_SHA=$(echo "${CURRENT_SHA}" | cut -c1-8)
+          BUILD_DATE=$(date -u +'%Y-%m-%d')
+          COMMIT_MESSAGE=$(git log -1 --pretty=format:"%s")
+          COMMIT_AUTHOR=$(git log -1 --pretty=format:"%an <%ae>")
+          COMMIT_DATE=$(git log -1 --pretty=format:"%ai")
+          
+          # Count commits since last nightly (if exists)
+          LAST_NIGHTLY_SHA=""
+          if gh release view nightly --json body -q '.body' 2>/dev/null; then
+            LAST_NIGHTLY_SHA=$(gh release view nightly --json body -q '.body' | grep -oP 'Commit SHA: \K[a-f0-9]{40}' || echo "")
+          fi
+          
+          if [ -n "${LAST_NIGHTLY_SHA}" ]; then
+            COMMITS_COUNT=$(git rev-list "${LAST_NIGHTLY_SHA}..HEAD" --count)
+          else
+            COMMITS_COUNT="N/A (first nightly)"
+          fi
+          
+          # Determine if we should build
+          FORCE_BUILD="${{ github.event.inputs.force_build }}"
+          
+          if [ "${FORCE_BUILD}" = "true" ]; then
+            SHOULD_BUILD="true"
+            REASON="Manual force build triggered"
+          elif [ -z "${LAST_NIGHTLY_SHA}" ]; then
+            SHOULD_BUILD="true"
+            REASON="First nightly build (no previous release found)"
+          elif [ "${CURRENT_SHA}" != "${LAST_NIGHTLY_SHA}" ]; then
+            SHOULD_BUILD="true"
+            REASON="New commits detected (${COMMITS_COUNT} commit(s) since last build)"
+          else
+            SHOULD_BUILD="false"
+            REASON="No new commits since last build"
+          fi
+          
+          # Set outputs
+          echo "should_build=${SHOULD_BUILD}" >> $GITHUB_OUTPUT
+          echo "commit_sha=${CURRENT_SHA}" >> $GITHUB_OUTPUT
+          echo "short_sha=${SHORT_SHA}" >> $GITHUB_OUTPUT
+          echo "build_date=${BUILD_DATE}" >> $GITHUB_OUTPUT
+          echo "commit_message=${COMMIT_MESSAGE}" >> $GITHUB_OUTPUT
+          echo "commit_author=${COMMIT_AUTHOR}" >> $GITHUB_OUTPUT
+          echo "commit_date=${COMMIT_DATE}" >> $GITHUB_OUTPUT
+          echo "commits_count=${COMMITS_COUNT}" >> $GITHUB_OUTPUT
+          
+          echo "========================================"
+          echo "Nightly Build Check Results"
+          echo "========================================"
+          echo "Should Build: ${SHOULD_BUILD}"
+          echo "Reason: ${REASON}"
+          echo "Current SHA: ${CURRENT_SHA}"
+          echo "Last Nightly SHA: ${LAST_NIGHTLY_SHA:-None}"
+          echo "Commits Since Last: ${COMMITS_COUNT}"
+          echo "========================================"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # ==========================================================================
+  # Job 2: Build on Ubuntu 22.04
+  # ==========================================================================
+  build-ubuntu-22-04:
+    needs: check-for-updates
+    if: needs.check-for-updates.outputs.should_build == 'true'
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Install required dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            cmake \
+            ninja-build \
+            tar \
+            unzip \
+            bzip2 \
+            gzip \
+            qt6-base-dev \
+            qt6-tools-dev \
+            qt6-tools-dev-tools \
+            libmad0-dev \
+            libvorbis-dev \
+            libogg-dev \
+            libasound2-dev \
+            libtag1-dev \
+            libcurl4-openssl-dev
+
+      - name: Install optional dependencies
+        run: |
+          sudo apt-get install -y \
+            libmpg123-dev \
+            qtmultimedia6-dev \
+            libflac-dev \
+            libmpcdec-dev \
+            libjack-jackd2-dev \
+            libsoxr-dev \
+            libxmp-dev \
+            libsndfile1-dev \
+            libwavpack-dev \
+            libpulse-dev \
+            libpipewire-0.3-dev \
+            libavcodec-dev \
+            libavformat-dev \
+            libavutil-dev \
+            libswresample-dev \
+            libcdio-dev \
+            libcdio-paranoia-dev \
+            libcddb2-dev \
+            libfaad-dev \
+            libgme-dev \
+            libopus-dev \
+            libopusfile-dev \
+            libwildmidi-dev \
+            libsidplayfp-dev \
+            libbs2b-dev \
+            libprojectm-dev \
+            libenca-dev \
+            libarchive-dev \
+            libshout3-dev \
+            libx11-dev \
+            libxcb1-dev \
+            x11proto-dev \
+            librcd0-dev \
+            libmms-dev || true
+
+      - name: Configure with CMake
+        run: |
+          mkdir -p build && cd build
+          cmake .. \
+            -G Ninja \
+            -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
+            -DCMAKE_INSTALL_PREFIX=/usr \
+            -DUSE_QTMULTIMEDIA=TRUE \
+            -DUSE_PIPEWIRE=TRUE \
+            -DUSE_PROJECTM=TRUE \
+            -DUSE_LIBCDDB=TRUE \
+            -DQMMP_DEFAULT_UI=qsui
+
+      - name: Build
+        run: |
+          cd build
+          ninja -j$(nproc)
+
+      - name: Install to staging directory
+        run: |
+          cd build
+          DESTDIR=${{ github.workspace }}/staging ninja install
+
+      - name: Create tarball
+        run: |
+          cd ${{ github.workspace }}
+          tar -czf qmmp-${{ needs.check-for-updates.outputs.build_date }}-ubuntu-22.04-x86_64.tar.gz -C staging .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qmmp-ubuntu-22.04
+          path: qmmp-*.tar.gz
+          retention-days: 7
+
+  # ==========================================================================
+  # Job 3: Build on Ubuntu 24.04
+  # ==========================================================================
+  build-ubuntu-24-04:
+    needs: check-for-updates
+    if: needs.check-for-updates.outputs.should_build == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Install required dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            cmake \
+            ninja-build \
+            tar \
+            unzip \
+            bzip2 \
+            gzip \
+            qt6-base-dev \
+            qt6-tools-dev \
+            qt6-tools-dev-tools \
+            libmad0-dev \
+            libvorbis-dev \
+            libogg-dev \
+            libasound2-dev \
+            libtag1-dev \
+            libcurl4-openssl-dev
+
+      - name: Install optional dependencies
+        run: |
+          sudo apt-get install -y \
+            libmpg123-dev \
+            qtmultimedia6-dev \
+            libflac-dev \
+            libmpcdec-dev \
+            libjack-jackd2-dev \
+            libsoxr-dev \
+            libxmp-dev \
+            libsndfile1-dev \
+            libwavpack-dev \
+            libpulse-dev \
+            libpipewire-0.3-dev \
+            libavcodec-dev \
+            libavformat-dev \
+            libavutil-dev \
+            libswresample-dev \
+            libcdio-dev \
+            libcdio-paranoia-dev \
+            libcddb2-dev \
+            libfaad-dev \
+            libgme-dev \
+            libopus-dev \
+            libopusfile-dev \
+            libwildmidi-dev \
+            libsidplayfp-dev \
+            libbs2b-dev \
+            libprojectm-dev \
+            libenca-dev \
+            libarchive-dev \
+            libshout3-dev \
+            libx11-dev \
+            libxcb1-dev \
+            x11proto-dev \
+            librcd0-dev \
+            libmms-dev || true
+
+      - name: Configure with CMake
+        run: |
+          mkdir -p build && cd build
+          cmake .. \
+            -G Ninja \
+            -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
+            -DCMAKE_INSTALL_PREFIX=/usr \
+            -DUSE_QTMULTIMEDIA=TRUE \
+            -DUSE_PIPEWIRE=TRUE \
+            -DUSE_PROJECTM=TRUE \
+            -DUSE_LIBCDDB=TRUE \
+            -DQMMP_DEFAULT_UI=qsui
+
+      - name: Build
+        run: |
+          cd build
+          ninja -j$(nproc)
+
+      - name: Install to staging directory
+        run: |
+          cd build
+          DESTDIR=${{ github.workspace }}/staging ninja install
+
+      - name: Create tarball
+        run: |
+          cd ${{ github.workspace }}
+          tar -czf qmmp-${{ needs.check-for-updates.outputs.build_date }}-ubuntu-24.04-x86_64.tar.gz -C staging .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qmmp-ubuntu-24.04
+          path: qmmp-*.tar.gz
+          retention-days: 7
+
+  # ==========================================================================
+  # Job 4: Build on macOS
+  # ==========================================================================
+  build-macos:
+    needs: check-for-updates
+    if: needs.check-for-updates.outputs.should_build == 'true'
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Install Homebrew dependencies
+        run: |
+          brew update
+          
+          # Required dependencies
+          brew install cmake ninja qt@6 libmad libvorbis libogg taglib curl
+          
+          # Optional dependencies (install what's available)
+          brew install \
+            mpg123 \
+            flac \
+            mpcdec \
+            jack \
+            libsoxr \
+            libxmp \
+            libsndfile \
+            wavpack \
+            pipewire \
+            ffmpeg \
+            libcdio \
+            libcddb \
+            faad2 \
+            game-music-emu \
+            opus \
+            opusfile \
+            wildmidi \
+            sidplayfp \
+            libbs2b \
+            libprojectm \
+            libarchive \
+            libshout \
+            enca \
+            pkg-config || true
+
+      - name: Configure with CMake
+        run: |
+          mkdir -p build && cd build
+          cmake .. \
+            -G Ninja \
+            -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
+            -DCMAKE_PREFIX_PATH="$(brew --prefix qt@6)" \
+            -DUSE_ALSA=FALSE \
+            -DUSE_OSS=FALSE \
+            -DUSE_OSS4=FALSE \
+            -DUSE_PULSE=FALSE \
+            -DUSE_PIPEWIRE=FALSE \
+            -DUSE_JACK=FALSE \
+            -DUSE_QTMULTIMEDIA=TRUE \
+            -DUSE_PROJECTM=TRUE \
+            -DUSE_LIBCDDB=TRUE \
+            -DQMMP_DEFAULT_UI=qsui
+        env:
+          LDFLAGS: "-L$(brew --prefix qt@6)/lib -L$(brew --prefix libogg)/lib -L$(brew --prefix libvorbis)/lib"
+          CPPFLAGS: "-I$(brew --prefix qt@6)/include -I$(brew --prefix libogg)/include -I$(brew --prefix libvorbis)/include"
+          PKG_CONFIG_PATH: "$(brew --prefix qt@6)/lib/pkgconfig:$(brew --prefix libogg)/lib/pkgconfig:$(brew --prefix libvorbis)/lib/pkgconfig"
+
+      - name: Build
+        run: |
+          cd build
+          ninja -j$(sysctl -n hw.ncpu)
+
+      - name: Install to staging directory
+        run: |
+          cd build
+          DESTDIR=${{ github.workspace }}/staging ninja install
+
+      - name: Create tarball
+        run: |
+          cd ${{ github.workspace }}
+          tar -czf qmmp-${{ needs.check-for-updates.outputs.build_date }}-macos-arm64.tar.gz -C staging .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qmmp-macos
+          path: qmmp-*.tar.gz
+          retention-days: 7
+
+  # ==========================================================================
+  # Job 5: Build on Windows (MSYS2/UCRT64)
+  # ==========================================================================
+  build-windows:
+    needs: check-for-updates
+    if: needs.check-for-updates.outputs.should_build == 'true'
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Setup MSYS2 with UCRT64
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: UCRT64
+          update: true
+          install: >-
+            mingw-w64-ucrt-x86_64-toolchain
+            mingw-w64-ucrt-x86_64-cmake
+            mingw-w64-ucrt-x86_64-ninja
+            mingw-w64-ucrt-x86_64-pkgconf
+            mingw-w64-ucrt-x86_64-qt6-base
+            mingw-w64-ucrt-x86_64-qt6-tools
+            mingw-w64-ucrt-x86_64-qt6-multimedia
+            mingw-w64-ucrt-x86_64-libmad
+            mingw-w64-ucrt-x86_64-libvorbis
+            mingw-w64-ucrt-x86_64-libogg
+            mingw-w64-ucrt-x86_64-taglib
+            mingw-w64-ucrt-x86_64-curl
+            mingw-w64-ucrt-x86_64-mpg123
+            mingw-w64-ucrt-x86_64-flac
+            mingw-w64-ucrt-x86_64-libmpcdec
+            mingw-w64-ucrt-x86_64-jack2
+            mingw-w64-ucrt-x86_64-libsoxr
+            mingw-w64-ucrt-x86_64-libxmp
+            mingw-w64-ucrt-x86_64-libsndfile
+            mingw-w64-ucrt-x86_64-wavpack
+            mingw-w64-ucrt-x86_64-ffmpeg
+            mingw-w64-ucrt-x86_64-libcdio
+            mingw-w64-ucrt-x86_64-libcddb
+            mingw-w64-ucrt-x86_64-faad2
+            mingw-w64-ucrt-x86_64-game-music-emu
+            mingw-w64-ucrt-x86_64-opus
+            mingw-w64-ucrt-x86_64-libopusfile
+            mingw-w64-ucrt-x86_64-wildmidi
+            mingw-w64-ucrt-x86_64-sidplayfp
+            mingw-w64-ucrt-x86_64-libbs2b
+            mingw-w64-ucrt-x86_64-libprojectm
+            mingw-w64-ucrt-x86_64-libarchive
+            mingw-w64-ucrt-x86_64-libshout
+            mingw-w64-ucrt-x86_64-7zip
+
+      - name: Configure with CMake
+        run: |
+          mkdir -p build && cd build
+          cmake .. \
+            -G Ninja \
+            -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
+            -DUSE_ALSA=FALSE \
+            -DUSE_OSS=FALSE \
+            -DUSE_OSS4=FALSE \
+            -DUSE_PULSE=FALSE \
+            -DUSE_PIPEWIRE=FALSE \
+            -DUSE_JACK=FALSE \
+            -DUSE_NULL=TRUE \
+            -DUSE_WAVEOUT=TRUE \
+            -DUSE_DSOUND=TRUE \
+            -DUSE_WASAPI=TRUE \
+            -DUSE_QTMULTIMEDIA=TRUE \
+            -DUSE_PROJECTM=TRUE \
+            -DUSE_LIBCDDB=TRUE \
+            -DQMMP_DEFAULT_UI=qsui \
+            -DQMMP_DEFAULT_OUTPUT=wasapi
+
+      - name: Build
+        run: |
+          cd build
+          ninja -j$(nproc)
+
+      - name: Install to staging directory
+        run: |
+          cd build
+          DESTDIR=${{ github.workspace }}/staging ninja install
+
+      - name: Create 7z archive
+        run: |
+          cd ${{ github.workspace }}
+          7z a -mx=9 qmmp-${{ needs.check-for-updates.outputs.build_date }}-windows-x86_64.7z ./staging/*
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qmmp-windows
+          path: qmmp-*.7z
+          retention-days: 7
+
+  # ==========================================================================
+  # Job 6: Create GitHub Release with all artifacts
+  # ==========================================================================
+  create-release:
+    needs:
+      - check-for-updates
+      - build-ubuntu-22-04
+      - build-ubuntu-24-04
+      - build-macos
+      - build-windows
+    if: needs.check-for-updates.outputs.should_build == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: false
+
+      - name: List downloaded artifacts
+        run: |
+          echo "=== Downloaded Artifacts ==="
+          find artifacts -type f -name "*.tar.gz" -o -name "*.7z" | sort
+          echo "============================"
+
+      - name: Get recent changes
+        id: changes
+        run: |
+          # Get changes since last nightly if exists
+          LAST_SHA=""
+          if gh release view nightly --json body -q '.body' 2>/dev/null; then
+            LAST_SHA=$(gh release view nightly --json body -q '.body' | grep -oP 'Commit SHA: \K[a-f0-9]{40}' || echo "")
+          fi
+          
+          if [ -n "${LAST_SHA}" ]; then
+            echo "## 📝 Recent Changes" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            git log "${LAST_SHA}..HEAD" --pretty=format:"- %s (%h)" --no-merges >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+          else
+            echo "## 📝 Recent Changes" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "First nightly build - showing last 20 commits:" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            git log -20 --pretty=format:"- %s (%h)" --no-merges >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Delete existing nightly release
+        run: |
+          gh release delete nightly --yes --cleanup-tag || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create release body
+        run: |
+          cat > release_body.md << 'HEREDOC'
+          # 🌙 Qmmp Nightly Build
+          
+          > **⚠️ Warning:** This is an automated nightly build from the development branch.
+          > It may contain bugs, incomplete features, or breaking changes.
+          > **Use at your own risk!** For stable releases, visit the [Releases](https://github.com/qmmp-dev/qmmp/releases) page.
+          
+          ---
+          
+          ## 📋 Build Information
+          
+          | Property | Value |
+          |----------|-------|
+          | **Build Date** | BUILD_DATE |
+          | **Commit SHA** | `SHORT_SHA` |
+          | **Full SHA** | `COMMIT_SHA` |
+          | **Last Commit** | COMMIT_MESSAGE |
+          | **Author** | COMMIT_AUTHOR |
+          | **Commit Date** | COMMIT_DATE |
+          | **Commits Since Last** | COMMITS_COUNT |
+          
+          ---
+          
+          ## 📦 Downloads
+          
+          ### Linux
+          | Distribution | Architecture | File |
+          |--------------|--------------|------|
+          | Ubuntu 22.04 (Jammy) | x86_64 | `qmmp-*-ubuntu-22.04-x86_64.tar.gz` |
+          | Ubuntu 24.04 (Noble) | x86_64 | `qmmp-*-ubuntu-24.04-x86_64.tar.gz` |
+          
+          ### macOS
+          | Architecture | File |
+          |--------------|------|
+          | Apple Silicon (ARM64) | `qmmp-*-macos-arm64.tar.gz` |
+          
+          ### Windows
+          | Architecture | File |
+          |--------------|------|
+          | x86_64 | `qmmp-*-windows-x86_64.7z` |
+          
+          ---
+          
+          CHANGES_SECTION
+          
+          ---
+          
+          ## 🔧 Included Features
+          
+          ### Core
+          - Qmmp core library
+          - Qt6-based UI library
+          
+          ### Decoders
+          - MP3 (MAD, MPG123)
+          - FLAC
+          - OGG Vorbis
+          - Musepack
+          - WavPack
+          - AAC/FAAD
+          - Opus
+          - XMP (module formats)
+          - Game Music Emu
+          - SID (Commodore 64)
+          - FFmpeg (many formats)
+          - sndfile
+          - WildMidi
+          - CUE sheets
+          
+          ### Output Plugins
+          - ALSA (Linux)
+          - PipeWire (Linux)
+          - PulseAudio (Linux)
+          - Qt Multimedia (cross-platform)
+          - WASAPI (Windows)
+          - DirectSound (Windows)
+          - WaveOut (Windows)
+          - Null output
+          
+          ### Effects
+          - Sample Rate Converter (SoX)
+          - BS2B (binaural)
+          - LADSPA
+          - Crossfade
+          - Stereo tools
+          - Mono to Stereo
+          
+          ### Visualization
+          - Analyzer
+          - projectM
+          
+          ### General Plugins
+          - MPRIS2 D-Bus interface
+          - Scrobbler (Last.fm)
+          - ListenBrainz
+          - System tray icon
+          - Notifications
+          - Lyrics
+          - Hotkeys
+          - Cover art
+          - ReplayGain scanner
+          - And more...
+          
+          ### User Interfaces
+          - Simple UI (default)
+          - Skinned UI (classic Winamp-style)
+          
+          ---
+          
+          ## 📥 Installation Notes
+          
+          ### Linux
+          ```bash
+          tar -xzf qmmp-*-ubuntu-*.tar.gz
+          sudo cp -r * /
+          sudo ldconfig
+          ```
+          
+          ### macOS
+          ```bash
+          tar -xzf qmmp-*-macos-*.tar.gz
+          sudo cp -r * /
+          ```
+          > Note: You may need to adjust library paths or use `install_name_tool` for dynamic libraries.
+          
+          ### Windows
+          1. Extract the `.7z` archive to a folder of your choice
+          2. Ensure the MSYS2 UCRT64 bin directory is in your PATH, or copy required DLLs
+          3. Run `qmmp.exe`
+          
+          ---
+          
+          ## 🔗 Useful Links
+          
+          - [Qmmp Website](http://qmmp.ylsoftware.com/)
+          - [Source Code](https://github.com/qmmp-dev/qmmp)
+          - [Issue Tracker](https://github.com/qmmp-dev/qmmp/issues)
+          - [Wiki](https://github.com/qmmp-dev/qmmp/wiki)
+          - [Stable Releases](https://github.com/qmmp-dev/qmmp/releases)
+          
+          ---
+          
+          *🤖 This release was automatically generated by [GitHub Actions](https://github.com/qmmp-dev/qmmp/actions) on BUILD_DATE*
+          HEREDOC
+          
+          # Replace placeholders
+          sed -i "s|BUILD_DATE|${{ needs.check-for-updates.outputs.build_date }}|g" release_body.md
+          sed -i "s|SHORT_SHA|${{ needs.check-for-updates.outputs.short_sha }}|g" release_body.md
+          sed -i "s|COMMIT_SHA|${{ needs.check-for-updates.outputs.commit_sha }}|g" release_body.md
+          sed -i "s|COMMIT_MESSAGE|${{ needs.check-for-updates.outputs.commit_message }}|g" release_body.md
+          sed -i "s|COMMIT_AUTHOR|${{ needs.check-for-updates.outputs.commit_author }}|g" release_body.md
+          sed -i "s|COMMIT_DATE|${{ needs.check-for-updates.outputs.commit_date }}|g" release_body.md
+          sed -i "s|COMMITS_COUNT|${{ needs.check-for-updates.outputs.commits_count }}|g" release_body.md
+          sed -i "/CHANGES_SECTION/{
+            r <(cat << 'EOF'
+          ${{ steps.changes.outputs }}
+          EOF
+          )
+            d
+          }" release_body.md
+          
+          echo "=== Release Body Preview ==="
+          cat release_body.md
+          echo "============================"
+
+      - name: Create GitHub release
+        run: |
+          # Find all archive files
+          ARCHIVES=$(find artifacts -type f \( -name "*.tar.gz" -o -name "*.7z" \) 2>/dev/null | tr '\n' ' ')
+          
+          if [ -z "${ARCHIVES}" ]; then
+            echo "ERROR: No archives found!"
+            exit 1
+          fi
+          
+          # Create the release with all artifacts
+          gh release create nightly \
+            --title "🌙 Nightly Build - ${{ needs.check-for-updates.outputs.build_date }}" \
+            --notes-file release_body.md \
+            --prerelease \
+            ${ARCHIVES}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify release
+        run: |
+          echo "=== Release Created Successfully ==="
+          gh release view nightly
+          echo "====================================="
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
