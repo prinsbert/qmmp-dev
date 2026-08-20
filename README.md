@@ -16,12 +16,12 @@ Qmmp is an audio-player, written with the help of the Qt library. The user inter
 
 
 ### Features
--    MPEG1 layer 2/3
--    Ogg Vorbis
--    Ogg Opus
--    Native FLAC/Ogg FLAC
--    Musepack
--    WavePack
+-    [MPEG1 layer 2/3](https://en.wikipedia.org/wiki/MP3)
+-    [Ogg Vorbis](https://en.wikipedia.org/wiki/Vorbis)
+-    [Ogg Opus](https://en.wikipedia.org/wiki/Opus_(audio_format))
+-    [Native FLAC/Ogg FLAC](https://en.wikipedia.org/wiki/FLAC)
+-    [Musepack](https://en.wikipedia.org/wiki/Musepack)
+-    [WavPack](https://en.wikipedia.org/wiki/WavPack)
 -    tracker modules (mod, s3m, it, xm, etc)
 -    ADTS AAC
 -    CD Audio
@@ -29,14 +29,14 @@ Qmmp is an audio-player, written with the help of the Qt library. The user inter
 -    PCM WAVE (and other formats provided by libsndfile library)
 -    Midi
 -    SID
--    Chiptune formats (AY, GBS, GYM, HES, KSS, NSF, NSFE, SAP, SPC, VGM, VGZ, VTX)
+-    [Chiptune](https://en.wikipedia.org/wiki/Chiptune) formats (AY, GBS, GYM, HES, KSS, NSF, NSFE, SAP, SPC, VGM, VGZ, VTX)
 -    OSS4 (FreeBSD)
--    ALSA (Linux)
--    Pulse Audio
--    JACK
+-    [ALSA](https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture) (Linux)
+-    [Pulse Audio](https://en.wikipedia.org/wiki/PulseAudio)
+-    [JACK](https://en.wikipedia.org/wiki/JACK_Audio_Connection_Kit)
 -    WaveOut (Win32)
 -    DirectSound (Win32)
--    WASAPI (Win32)
+-    [WASAPI](https://en.wikipedia.org/wiki/Technical_features_new_to_Windows_Vista#Audio_stack_architecture) (Win32)
 
 <img width="1163" height="808" alt="Main window of qmmp media player (alternative skin)" src="https://github.com/user-attachments/assets/4bff2267-9e63-488f-8d9e-596c1c0178f1" />
 <img width="742" height="706" alt="Audio visualization" src="https://github.com/user-attachments/assets/1619c8c0-00e0-4cb7-bf45-d4ff142adde0" />
