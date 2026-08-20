@@ -20,6 +20,7 @@
 
 #include <QSettings>
 #include <QStringList>
+#include <wildmidi_lib.h>
 #include <qmmp/qmmp.h>
 #include "wildmidihelper.h"
 #include "ui_wildmidisettingsdialog.h"
@@ -42,6 +43,11 @@ WildMidiSettingsDialog::WildMidiSettingsDialog(QWidget *parent)
     m_ui->sampleRateComboBox->setCurrentIndex(i);
     m_ui->enhancedResamplingCheckBox->setChecked(settings.value(u"enhanced_resampling"_s, false).toBool());
     m_ui->reverbCheckBox->setChecked(settings.value(u"reverberation"_s, false).toBool());
+#if LIBWILDMIDI_VERSION >= 0x000500L
+    m_ui->opl3CheckBox->setChecked(settings.value(u"use_opl3"_s, false).toBool());
+#else
+    m_ui->opl3CheckBox->setVisible(false);
+#endif
     settings.endGroup();
 }
 
@@ -59,6 +65,9 @@ void WildMidiSettingsDialog::accept()
                       m_ui->sampleRateComboBox->itemData(m_ui->sampleRateComboBox->currentIndex()));
     settings.setValue(u"enhanced_resampling"_s, m_ui->enhancedResamplingCheckBox->isChecked());
     settings.setValue(u"reverberation"_s, m_ui->reverbCheckBox->isChecked());
+#if LIBWILDMIDI_VERSION >= 0x000500L
+    settings.setValue(u"use_opl3"_s, m_ui->opl3CheckBox->isChecked());
+#endif
     settings.endGroup();
     WildMidiHelper::instance()->readSettings();
     QDialog::accept();
