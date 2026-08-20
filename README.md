@@ -4,6 +4,21 @@
 
 This repository is an archive tracking the [qmmp](https://sourceforge.net/p/qmmp-dev/) source code hosted on SourceForge, but with the commit history converted from SVN to Git. **This repository is not the source of truth.** All real development happens in the upstream [SVN repository](https://sourceforge.net/p/qmmp-dev/code/). The sync script attempts to follow all [branches](https://github.com/prinsbert/qmmp-dev/branches) as closely as possible, where `trunk` is renamed to [`master`](https://github.com/prinsbert/qmmp-dev/tree/master).
 
+## Mirror Status
+
+| Field | Value |
+|-------|-------|
+| Latest SVN revision | `r13260` |
+| Last synced | 2026-08-20 13:30:34 UTC |
+| Branches | 52 |
+| Tags | 1 |
+
+### Branches
+
+[`master`](tree/master), `qmmp-x`
+
+### Tags
+
 ## Description
 Qmmp is an audio-player, written with the help of the Qt library. The user interface is similar to [Winamp](https://nl.wikipedia.org/wiki/Winamp) or [XMMS](https://nl.wikipedia.org/wiki/XMMS). Alternative user interfaces are available, for example by downloading `.wsz` files from the [Webamp Skin Museum](https://skins.webamp.org/).
 
@@ -37,71 +52,3 @@ Qmmp is an audio-player, written with the help of the Qt library. The user inter
 <img width="1163" height="808" alt="Main window of qmmp media player (alternative skin)" src="https://github.com/user-attachments/assets/4bff2267-9e63-488f-8d9e-596c1c0178f1" />
 <img width="742" height="706" alt="Audio visualization" src="https://github.com/user-attachments/assets/1619c8c0-00e0-4cb7-bf45-d4ff142adde0" />
 
-
-## Mirror Status
-
-| Field | Value |
-|-------|-------|
-| Latest SVN revision | `r13260` |
-| Last synced | 2026-08-20 13:30:34 UTC |
-| Branches | 52 |
-| Tags | 1 |
-
-## Branches
-
-- `master`
-- `qmmp-0.1`
-- `qmmp-0.10`
-- `qmmp-0.10.1`
-- `qmmp-0.11`
-- `qmmp-0.12`
-- `qmmp-0.2`
-- `qmmp-0.3`
-- `qmmp-0.4`
-- `qmmp-0.5`
-- `qmmp-0.6`
-- `qmmp-0.7`
-- `qmmp-0.8`
-- `qmmp-0.9`
-- `qmmp-1.0`
-- `qmmp-1.1`
-- `qmmp-1.1.1`
-- `qmmp-1.2`
-- `qmmp-1.3`
-- `qmmp-1.4`
-- `qmmp-1.5`
-- `qmmp-1.6`
-- `qmmp-1.7`
-- `qmmp-1.7.3`
-- `qmmp-2.0`
-- `qmmp-2.1`
-- `qmmp-2.2`
-- `qmmp-2.3`
-- `qmmp-2.4`
-- `qmmp-plgunin-pack-1.3`
-- `qmmp-plugin-pack-0.10`
-- `qmmp-plugin-pack-0.11`
-- `qmmp-plugin-pack-0.12`
-- `qmmp-plugin-pack-0.6`
-- `qmmp-plugin-pack-0.7`
-- `qmmp-plugin-pack-0.8`
-- `qmmp-plugin-pack-0.9`
-- `qmmp-plugin-pack-1.0`
-- `qmmp-plugin-pack-1.1`
-- `qmmp-plugin-pack-1.1.1`
-- `qmmp-plugin-pack-1.2`
-- `qmmp-plugin-pack-1.3`
-- `qmmp-plugin-pack-1.4`
-- `qmmp-plugin-pack-1.5`
-- `qmmp-plugin-pack-1.6`
-- `qmmp-plugin-pack-1.7`
-- `qmmp-plugin-pack-2.0`
-- `qmmp-plugin-pack-2.1`
-- `qmmp-plugin-pack-2.2`
-- `qmmp-plugin-pack-2.3`
-- `qmmp-plugin-pack-2.4`
-- `svn-to-git-sync`
-
-## Tags
-
-- `qmmp-2.4.1`
