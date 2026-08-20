@@ -201,17 +201,27 @@ jobs:
                   IFS='|' read -r action local_path copyfrom <<< "$change"
                   if [ "$action" == "A" ] && [ -n "$copyfrom" ]; then
                     src_ref="master"
+                    src_tag=""
                     if [[ "$copyfrom" == "/branches/"* ]]; then
                       src_ref=$(echo "$copyfrom" | sed 's|/branches/\([^/]*\).*|\1|')
+                    elif [[ "$copyfrom" == "/tags/"* ]]; then
+                      # Copied from a tag rather than trunk/a branch. Tags have
+                      # no commit history of their own — they're a fixed
+                      # pointer to a commit on whatever branch they were cut
+                      # from — so the useful reference is the tag ref itself,
+                      # not a (branch, revision) lookup.
+                      src_tag=$(echo "$copyfrom" | sed 's|/tags/\([^/]*\).*|\1|')
+                      src_ref="refs/tags/$src_tag"
                     fi
 
                     # Create tags at the exact source revision if possible
                     src_rev=$(echo "$copyfrom" | sed -n 's/.*:r\{0,1\}\([0-9]*\)$/\1/p')
                     src_commit=""
-                    if [ -n "$src_rev" ]; then
+                    if [ -n "$src_tag" ]; then
+                      src_commit=$(git rev-parse --verify --quiet "refs/tags/$src_tag" 2>/dev/null || true)
+                    elif [ -n "$src_rev" ]; then
                       src_commit="${rev_to_sha["$src_ref:$src_rev"]-}"
                     fi
-
                     if ! git rev-parse --verify --quiet "refs/tags/$tag_name" >/dev/null; then
                       if [ -n "$src_commit" ]; then
                         git tag "$tag_name" "$src_commit"
