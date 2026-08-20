@@ -326,70 +326,83 @@ jobs:
           # a normal push should always fast-forward, so we do not use the --force flag
           git push "$REMOTE" 'refs/heads/*:refs/heads/*'
           git push "$REMOTE" 'refs/tags/*:refs/tags/*'
-      #
+      
+      # 
       # Step 6: Update README.md on svn-sync-entrypoint with latest mirror state
-      #
+      # 
       - name: Update README.md on svn-sync-entrypoint
         run: |
           set -euo pipefail
           cd mirror
           git checkout -f svn-sync-entrypoint
+          REPO_URL="https://github.com/${GITHUB_REPOSITORY}"
           # Gather repository state information from ALL branches
           LATEST_REV=$(git log --all --format='%B' 2>/dev/null | grep -oP 'git-svn-id:.*@\K[0-9]+' | sort -n | tail -1 || true)
           [ -z "$LATEST_REV" ] && LATEST_REV="unknown"
+          # Find the Git commit SHA for the latest revision to link it
+          LATEST_SHA=""
+          if [ "$LATEST_REV" != "unknown" ]; then
+            for ref in $(git for-each-ref --format='%(refname:short)' refs/heads); do
+              sha=$(git log "$ref" --format='%H %B' 2>/dev/null | awk -v rev="$LATEST_REV" '
+                $0 ~ "git-svn-id:.*@"rev"$" { print $1; exit }
+              ' || true)
+              if [ -n "$sha" ]; then
+                # If multiple branches have the same latest rev, pick the first one (usually master)
+                LATEST_SHA="$sha"
+                break
+              fi
+            done
+          fi
+          if [ -n "$LATEST_SHA" ]; then
+            REV_MD="[r${LATEST_REV}](${REPO_URL}/commit/${LATEST_SHA})"
+          else
+            REV_MD="r${LATEST_REV}"
+          fi
           SYNC_TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
-          # Get branches (excluding svn-sync-entrypoint)
+          # Get branches (excluding svn-sync-entrypoint) formatted as inline links
           BRANCH_LIST=$(git for-each-ref --format='%(refname:short)' refs/heads 2>/dev/null | grep -v '^svn-sync-entrypoint$' | sort || true)
           if [ -n "$BRANCH_LIST" ]; then
             BRANCH_COUNT=$(echo "$BRANCH_LIST" | wc -l)
-            BRANCHES_MD=$(echo "$BRANCH_LIST" | sed 's/^/- `/; s/$/`/')
+            BRANCHES_MD=$(echo "$BRANCH_LIST" | sed "s|^|[\`&\`](${REPO_URL}/tree/&)|" | paste -sd ' ')
           else
             BRANCH_COUNT=0
             BRANCHES_MD="*None*"
           fi
-          # Get tags
+          # Get tags formatted as inline links
           TAG_COUNT=$(git tag 2>/dev/null | wc -l || echo 0)
           TAG_COUNT=$((TAG_COUNT))
           if [ "$TAG_COUNT" -gt 0 ]; then
-            TAGS_MD=$(git for-each-ref --sort=-creatordate --format='%(refname:short)' refs/tags 2>/dev/null | head -15 | sed 's/^/- `/; s/$/`/')
-            if [ "$TAG_COUNT" -gt 15 ]; then
-              TAGS_MD="${TAGS_MD}
-          *...and $((TAG_COUNT - 15)) more*"
+            TAG_LIST=$(git for-each-ref --sort=-creatordate --format='%(refname:short)' refs/tags 2>/dev/null | head -20)
+            TAGS_MD=$(echo "$TAG_LIST" | sed "s|^|[\`&\`](${REPO_URL}/releases/tag/&)|" | paste -sd ' ')
+            if [ "$TAG_COUNT" -gt 20 ]; then
+              TAGS_MD="${TAGS_MD} [+${TAG_COUNT - 20} more](${REPO_URL}/tags)"
             fi
           else
             TAGS_MD="*None*"
           fi
           # Generate the new state block
           NEW_STATE=$(cat <<EOF
-          ## Mirror Status
+          ### Mirror Status
 
           | Field | Value |
           |-------|-------|
-          | Latest SVN revision | \`r${LATEST_REV}\` |
+          | Latest SVN revision | ${REV_MD} |
           | Last synced | ${SYNC_TIMESTAMP} |
-          | Branches | ${BRANCH_COUNT} |
-          | Tags | ${TAG_COUNT} |
-          
-          ## Branches
-
-          ${BRANCHES_MD}
-
-          ## Tags
-
-          ${TAGS_MD}
+          | Branches (${BRANCH_COUNT}) | ${BRANCHES_MD} |
+          | Tags (${TAG_COUNT}) | ${TAGS_MD} |
           EOF
           )
           # Surgically replace the old state block if it exists, otherwise append it
-          if grep -q '^## Mirror Status$' README.md; then
+          if grep -q '^### Mirror Status$' README.md; then
             # Use awk to replace everything from "## Mirror Status" to the next top-level heading (or EOF)
             awk -v new_state="$NEW_STATE" '
               BEGIN { state=1 }
-              /^## Mirror Status$/ { 
+              /^### Mirror Status$/ { 
                 printf "%s\n\n", new_state
                 state=0
                 next 
               }
-              state && /^## [A-Z]/ && !/^## Mirror Status$/ { state=1 }
+              state && /^## [A-Z]/ && !/^### Mirror Status$/ { state=1 }
               state { print }
             ' README.md > README.md.tmp && mv README.md.tmp README.md
           else
