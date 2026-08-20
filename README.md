@@ -9,7 +9,7 @@ This repository is an archive tracking the [qmmp](https://sourceforge.net/p/qmmp
 The sync script attempt to follow all [branches](https://github.com/prinsbert/qmmp-dev/branches) as close as possible, where `trunk` is converted into [`master`](https://github.com/prinsbert/qmmp-dev/tree/master).
 
 ## Description
-Qmmp is an audio-player, written with the help of the Qt library. The user interface is similar to [Winamp](https://nl.wikipedia.org/wiki/Winamp) or [XMMS](https://nl.wikipedia.org/wiki/XMMS). Alternative user interfaces also are available.
+Qmmp is an audio-player, written with the help of the Qt library. The user interface is similar to [Winamp](https://nl.wikipedia.org/wiki/Winamp) or [XMMS](https://nl.wikipedia.org/wiki/XMMS). Alternative user interfaces are available, for example on the [Webamp Skin Museum](https://skins.webamp.org/).
 
 <img width="609" height="478" alt="Main window of qmmp media player" src="https://github.com/user-attachments/assets/a9fe56ba-fc13-43b3-bb42-1162606ff939" />
 <img width="784" height="760" alt="Main window of qmmp media player with playlist" src="https://github.com/user-attachments/assets/8647b03b-87ac-427c-bfd8-b4f4e56d715c" />
