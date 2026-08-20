@@ -77,17 +77,18 @@ jobs:
           # Every commit we create ends with a trailer like:
           #   git-svn-id: svn://svn.code.sf.net/p/qmmp-dev/code/@1234
           # We search across ALL branches (not just master) to find the absolute highest synced revision. This prevents re-walking logs if the latest SVN activity only touched branches/tags.
+          # Map each (branch, SVN revision) pair to the git commit that represents it. Keyed by branch (not just revision) because a single SVN revision can legitimately produce commits on more than one branch — e.g. one atomic SVN commit that touches both /trunk and an existing /branches/X. Each such commit still has exactly one parent, on its own branch's line of history; the ambiguity was purely in how we were looking them back up.
           declare -A rev_to_sha
-          while IFS= read -r -d '' sha && IFS= read -r -d '' body; do
-            # git inserts its own separator newline between log entries, which lands as a leading \n on every SHA field after the first. Strip it.
-            sha="${sha#$'\n'}"
-            # `|| true` guards against grep finding no git-svn-id trailer (any commit not created by this mirror, or a malformed one) — under `set -e -o pipefail`, grep's exit 1 would otherwise abort the whole script.
-            rev=$(printf '%s' "$body" | grep -oP 'git-svn-id:.*@\K[0-9]+' | tail -1 || true)
-            [ -n "$rev" ] && rev_to_sha[$rev]="$sha"
-          done < <(git log --all --format='%H%x00%B%x00' 2>/dev/null)
+          for ref in $(git for-each-ref --format='%(refname:short)' refs/heads); do
+            while IFS= read -r -d '' sha && IFS= read -r -d '' body; do
+              sha="${sha#$'\n'}"
+              rev=$(printf '%s' "$body" | grep -oP 'git-svn-id:.*@\K[0-9]+' | tail -1 || true)
+              [ -n "$rev" ] && rev_to_sha["$ref:$rev"]="$sha"
+            done < <(git log "$ref" --format='%H%x00%B%x00' 2>/dev/null)
+          done
           
           if [ ${#rev_to_sha[@]} -gt 0 ]; then
-            LAST_REV=$(printf '%s\n' "${!rev_to_sha[@]}" | sort -n | tail -1)
+            LAST_REV=$(printf '%s\n' "${!rev_to_sha[@]}" | sed 's/^.*://' | sort -n | tail -1)
           else
             LAST_REV=0
           fi
@@ -208,7 +209,7 @@ jobs:
                     src_rev=$(echo "$copyfrom" | sed -n 's/.*:r\{0,1\}\([0-9]*\)$/\1/p')
                     src_commit=""
                     if [ -n "$src_rev" ]; then
-                      src_commit="${rev_to_sha[$src_rev]-}"
+                      src_commit="${rev_to_sha["$src_ref:$src_rev"]-}"
                     fi
 
                     if ! git rev-parse --verify --quiet "refs/tags/$tag_name" >/dev/null; then
@@ -238,7 +239,7 @@ jobs:
                   src_rev=$(echo "$copyfrom" | sed -n 's/.*:r\{0,1\}\([0-9]*\)$/\1/p')
                   src_commit=""
                   if [ -n "$src_rev" ]; then
-                    src_commit="${rev_to_sha[$src_rev]-}"
+                    src_commit="${rev_to_sha["$src_ref:$src_rev"]-}"
                   fi
 
                   if ! git rev-parse --verify --quiet "$git_branch" >/dev/null; then
@@ -295,7 +296,7 @@ jobs:
 
                 commit_msg="$msg"$'\n\n'"git-svn-id: $SVN_URL@$rev"
                 GIT_AUTHOR_DATE="$git_date" GIT_COMMITTER_DATE="$git_date" git commit -m "$commit_msg"
-                rev_to_sha[$rev]="$(git rev-parse HEAD)"
+                rev_to_sha["$git_branch:$rev"]="$(git rev-parse HEAD)"
                 echo "  Committed r$rev to $git_branch"
               else
                 echo "  No changes to commit for r$rev on $git_branch"
