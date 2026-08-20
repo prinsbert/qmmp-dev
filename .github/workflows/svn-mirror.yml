@@ -79,7 +79,10 @@ jobs:
           # We search across ALL branches (not just master) to find the absolute highest synced revision. This prevents re-walking logs if the latest SVN activity only touched branches/tags.
           declare -A rev_to_sha
           while IFS= read -r -d '' sha && IFS= read -r -d '' body; do
-            rev=$(printf '%s' "$body" | grep -oP 'git-svn-id:.*@\K[0-9]+' | tail -1)
+            # git inserts its own separator newline between log entries, which lands as a leading \n on every SHA field after the first. Strip it.
+            sha="${sha#$'\n'}"
+            # `|| true` guards against grep finding no git-svn-id trailer (any commit not created by this mirror, or a malformed one) — under `set -e -o pipefail`, grep's exit 1 would otherwise abort the whole script.
+            rev=$(printf '%s' "$body" | grep -oP 'git-svn-id:.*@\K[0-9]+' | tail -1 || true)
             [ -n "$rev" ] && rev_to_sha[$rev]="$sha"
           done < <(git log --all --format='%H%x00%B%x00' 2>/dev/null)
           
