@@ -1,7 +1,7 @@
 name: Mirror SourceForge Wiki to GitHub Pages
 on:
-  schedule:
-    - cron: "0 6 * * 6"
+  #schedule:
+  #  - cron: "0 6 * * 6"
   workflow_dispatch:
   push:
     branches: [ sourceforge-wiki ]
