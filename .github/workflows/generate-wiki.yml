@@ -1,0 +1,217 @@
+name: Mirror SourceForge Wiki to GitHub Pages
+
+on:
+  schedule:
+    - cron: "0 6 * * 6" 
+  workflow_dispatch:
+  push:
+    branches: [ sourceforge-wiki ]
+    paths:
+      - '.github/workflows/wiki-mirror.yml'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: "wiki-mirror"
+  cancel-in-progress: false
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch feed.atom and render HTML
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import urllib.request, urllib.parse, gzip, zlib
+          import xml.etree.ElementTree as ET
+          import html, re, pathlib, sys
+          FEED_URL  = "https://sourceforge.net/p/qmmp-dev/wiki/feed.atom"
+          WIKI_BASE  = "https://sourceforge.net/p/qmmp-dev/wiki/"
+          OUT        = pathlib.Path("docs")
+          (OUT / "assets").mkdir(parents=True, exist_ok=True)
+          ATOM  = "{http://www.w3.org/2005/Atom}"
+          XHTML = "{http://www.w3.org/1999/xhtml}"
+          # fetch (handle gzip/deflate)
+          req = urllib.request.Request(
+              FEED_URL,
+              headers={"User-Agent": "github-actions-wiki-mirror", "Accept-Encoding": "gzip, deflate"},
+          )
+          with urllib.request.urlopen(req, timeout=120) as r:
+              data = r.read()
+              enc = (r.headers.get("Content-Encoding") or "").lower()
+              if enc == "gzip":
+                  data = gzip.decompress(data)
+              elif enc == "deflate":
+                  try:
+                      data = zlib.decompress(data)
+                  except zlib.error:
+                      data = zlib.decompress(data, -zlib.MAX_WBITS)
+          root = ET.fromstring(data)
+          # parse entries
+          pages = []
+          for entry in root.iter(ATOM + "entry"):
+              def find(tag):
+                  return entry.find(ATOM + tag)
+              title_el   = find("title")
+              content_el = find("content")
+              updated_el = find("updated")
+              id_el      = find("id")
+              title = (title_el.text or "").strip() if title_el is not None else "Untitled"
+              # alternate link (the canonical wiki page URL)
+              href = None
+              for ln in entry.findall(ATOM + "link"):
+                  if ln.get("rel", "alternate") == "alternate":
+                      href = ln.get("href")
+                      break
+              if not href and id_el is not None and id_el.text:
+                  href = id_el.text.strip()
+              # derive slug from URL like .../wiki/PageName/  ->  PageName
+              slug = None
+              if href:
+                  m = re.search(r"/wiki/([^/?#]+)/?(?:[?#].*)?$", href)
+                  if m:
+                      slug = urllib.parse.unquote(m.group(1))
+              if not slug:
+                  slug = re.sub(r"[^A-Za-z0-9._-]+", "_", title) or "page"
+              # extract body
+              ctype = (content_el.get("type") or "html").lower() if content_el is not None else "html"
+              body = ""
+              if content_el is not None:
+                  if ctype == "xhtml":
+                      parts = []
+                      for c in content_el:
+                          s = ET.tostring(c, encoding="unicode")
+                          s = re.sub(r'\s+xmlns(:[A-Za-z0-9_-]+)?="[^"]*"', "", s)
+                          s = s.replace(XHTML, "")
+                          parts.append(s)
+                      body = "".join(parts)
+                  else:
+                      body = html.unescape(content_el.text or "")
+              updated = (updated_el.text or "").strip() if updated_el is not None else ""
+              pages.append({
+                  "title": title,
+                  "slug":  slug,
+                  "body":  body,
+                  "updated": updated,
+                  "href":  href or "",
+              })
+          known_slugs = {p["slug"] for p in pages}
+
+          # rewrite internal wiki links to local .html
+          def rewrite_links(s):
+              def repl(m):
+                  url = html.unescape(m.group(1))
+                  mu = re.match(r"^https?://sourceforge\.net/p/qmmp-dev/wiki/([^/?#]+)/?(?:[?#].*)?$", url)
+                  if mu:
+                      target = urllib.parse.unquote(mu.group(1))
+                      return f'href="{urllib.parse.quote(target)}.html"'
+                  return m.group(0)
+              return re.sub(r'href="([^"]*)"', repl, s)
+          # static assets
+          (OUT / "assets" / "style.css").write_text(r"""
+          body {
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+              line-height: 1.6; color: #1f2328;
+              max-width: 980px; margin: 0 auto;
+              padding: 1rem 1.5rem 5rem;
+          }
+          header {
+              border-bottom: 1px solid #d0d7de; padding-bottom: .5rem;
+              margin-bottom: 1.5rem; font-size: 1.05rem;
+          }
+          header a { text-decoration: none; color: #0969da; font-weight: 600; }
+          main h1 { font-size: 2rem; margin-bottom: 1rem; border-bottom: 1px solid #d0d7de; padding-bottom: .3rem; }
+          article h1, article h2, article h3 { margin-top: 1.6em; }
+          a { color: #0969da; }
+          pre, code { background: #f6f8fa; }
+          pre { padding: 1em; overflow:auto; border-radius: 6px; }
+          table { border-collapse: collapse; }
+          th, td { border: 1px solid #d0d7de; padding: .35em .7em; }
+          img { max-width: 100%; height: auto; }
+          .meta { font-size: .85rem; color: #57606a;
+                  margin-top: 2rem; border-top: 1px solid #d0d7de;
+                  padding-top: .8rem; }
+          ul#index li { margin: .25em 0; }
+          """, encoding="utf-8")
+          (OUT / ".nojekyll").write_text("")
+          PAGE_TPL = """<!DOCTYPE html>
+          <html lang="en">
+          <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>{title} – qmmp-dev Wiki (mirror)</title>
+          <link rel="stylesheet" href="assets/style.css">
+          </head>
+          <body>
+            <header><a href="index.html">qmmp-dev Wiki – SourceForge mirror</a></header>
+            <main>
+              <h1>{title}</h1>
+              <article>
+          {body}
+              </article>
+              <p class="meta">
+                Source: <a href="{href}">{href}</a><br>
+                Last updated: {updated}
+              </p>
+            </main>
+          </body>
+          </html>
+          """
+          for p in pages:
+              page_html = PAGE_TPL.format(
+                  title   = html.escape(p["title"]),
+                  body    = rewrite_links(p["body"]),
+                  href    = html.escape(p["href"]),
+                  updated = html.escape(p["updated"]),
+              )
+              (OUT / f"{p['slug']}.html").write_text(page_html, encoding="utf-8")
+          # index page
+          rows = "\n".join(
+              f'  <li><a href="{urllib.parse.quote(p["slug"])}.html">{html.escape(p["title"])}</a> '
+              f'<span class="meta">{html.escape(p["updated"])}</span></li>'
+              for p in sorted(pages, key=lambda x: x["title"].lower())
+          )
+          index = f"""<!DOCTYPE html>
+          <html lang="en">
+          <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>qmmp-dev Wiki (SourceForge mirror)</title>
+          <link rel="stylesheet" href="assets/style.css">
+          </head>
+          <body>
+            <header><a href="index.html">qmmp-dev Wiki – SourceForge mirror</a></header>
+            <main>
+              <h1>qmmp-dev Wiki</h1>
+              <p>Auto-generated from the
+                 <a href="https://sourceforge.net/p/qmmp-dev/wiki/feed.atom">SourceForge feed.atom</a>.</p>
+              <ul id="index">
+          {rows}
+              </ul>
+            </main>
+          </body>
+          </html>
+          """
+          (OUT / "index.html").write_text(index, encoding="utf-8")
+
+          print(f"Generated {len(pages)} pages under docs/")
+          PY
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
