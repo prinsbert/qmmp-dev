@@ -1,7 +1,7 @@
 name: Delete old workflow runs
 on:
   schedule:
-    - cron: "0 3 * * 0"
+    - cron: "0 3 * * 0" # Every Sunday at 03:00 UTC
   workflow_dispatch:
 jobs:
   cleanup:
@@ -10,17 +10,18 @@ jobs:
       actions: write
       contents: read
     steps:
-      - name: Delete runs older than 30 days
+      - name: Delete old runs
         env:
           GH_TOKEN: ${{ github.token }}
+          TARGET_REPO: ${{ github.repository }}
         run: |
-          # Calculate the date 30 days ago in ISO 8601 format
-          CUTOFF_DATE=$(date -d '30 days ago' --iso-8601)
-          echo "Fetching runs (ignoring the 10 newest runs). Deleting runs older than $CUTOFF_DATE..."
-          # 'gh run list' returns runs from newest to oldest.
-          # jq skips the first 10 runs (.[10:]), filters by date, and extracts the ID.
-          gh run list --limit 1000 --json databaseId,createdAt --jq ".[10:] | .[] | select(.createdAt < \"$CUTOFF_DATE\") | .databaseId" \
+          # Calculate the date in ISO 8601 format
+          CUTOFF_DATE=$(date -d '7 days ago' --iso-8601)
+          echo "Cleaning up runs in $TARGET_REPO older than $CUTOFF_DATE (but keeping the 5 newest)..."
+          # Note: Added --repo "$TARGET_REPO" to both gh commands
+          gh run list --repo "$TARGET_REPO" --limit 1000 --json databaseId,createdAt \
+            --jq ".[5:] | .[] | select(.createdAt < \"$CUTOFF_DATE\") | .databaseId" \
             | while read run_id; do
                 echo "Deleting run ID: $run_id"
-                gh run delete "$run_id"
+                gh run delete "$run_id" --repo "$TARGET_REPO"
               done
