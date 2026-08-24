@@ -1,9 +1,9 @@
 name: Nightly Build
 
 on:
-  schedule:
-    # Run daily at 03:00 UTC
-    - cron: '0 3 * * *'
+  # schedule:
+    # # Run daily at 03:00 UTC
+    # - cron: '0 3 * * *'
   workflow_dispatch:
     inputs:
       force_build:
