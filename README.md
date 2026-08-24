@@ -1,4 +1,5 @@
 # qmmp 
+<img width="548" height="430" alt="Main window of qmmp media player" src="https://github.com/user-attachments/assets/a9fe56ba-fc13-43b3-bb42-1162606ff939" />
 
 ## SVN → Git mirror
 
@@ -15,8 +16,7 @@ This repository is an archive tracking the [qmmp](https://sourceforge.net/p/qmmp
 ## Description
 Qmmp is an audio-player, written with the help of the Qt library. The user interface is similar to [Winamp](https://nl.wikipedia.org/wiki/Winamp) or [XMMS](https://nl.wikipedia.org/wiki/XMMS). Alternative user interfaces are available, for example by downloading `.wsz` files from the [Webamp Skin Museum](https://skins.webamp.org/).
 
-<img width="609" height="478" alt="Main window of qmmp media player" src="https://github.com/user-attachments/assets/a9fe56ba-fc13-43b3-bb42-1162606ff939" />
-<img width="784" height="760" alt="Main window of qmmp media player with playlist" src="https://github.com/user-attachments/assets/8647b03b-87ac-427c-bfd8-b4f4e56d715c" />
+<img width="588" height="570" alt="Main window of qmmp media player with playlist" src="https://github.com/user-attachments/assets/8647b03b-87ac-427c-bfd8-b4f4e56d715c" />
 
 
 ### Features
@@ -42,6 +42,6 @@ Qmmp is an audio-player, written with the help of the Qt library. The user inter
 -    DirectSound (Win32)
 -    [WASAPI](https://en.wikipedia.org/wiki/Technical_features_new_to_Windows_Vista#Audio_stack_architecture) (Win32)
 
-<img width="1163" height="808" alt="Main window of qmmp media player (alternative skin)" src="https://github.com/user-attachments/assets/4bff2267-9e63-488f-8d9e-596c1c0178f1" />
+<img width="849" height="590" alt="Main window of qmmp media player (alternative skin)" src="https://github.com/user-attachments/assets/4bff2267-9e63-488f-8d9e-596c1c0178f1" />
 <img width="742" height="706" alt="Audio visualization" src="https://github.com/user-attachments/assets/1619c8c0-00e0-4cb7-bf45-d4ff142adde0" />
 
