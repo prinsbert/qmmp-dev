@@ -22,7 +22,6 @@
 
 #include <QMainWindow>
 #include <qmmp/qmmp.h>
-#include <qmmpui/mediaplayer.h>
 #include <qmmpui/metadataformatter.h>
 
 class QSlider;
