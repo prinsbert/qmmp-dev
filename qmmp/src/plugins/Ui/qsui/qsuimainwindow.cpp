@@ -35,7 +35,6 @@
 #include <qmmpui/playlistparser.h>
 #include <qmmpui/playlistformat.h>
 #include <qmmpui/filedialog.h>
-#include <qmmpui/playlistmodel.h>
 #include <qmmpui/mediaplayer.h>
 #include <qmmpui/uihelper.h>
 #include <qmmpui/configdialog.h>
