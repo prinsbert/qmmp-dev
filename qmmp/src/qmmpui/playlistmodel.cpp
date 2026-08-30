@@ -54,11 +54,6 @@ public:
             container = new NormalContainer;
 
         container->setLinesPerGroup(uiSettings->linesPerGroup());
-
-        // if(uiSettings->isShuffle())
-        //     playState = new ShufflePlayState(q);
-        // else
-        //     playState = new NormalPlayState(q);
     }
 
     ~PlayListModelPrivate()
