@@ -54,11 +54,6 @@ public:
             container = new NormalContainer;
 
         container->setLinesPerGroup(uiSettings->linesPerGroup());
-
-        if(uiSettings->isShuffle())
-            playState = new ShufflePlayState(q);
-        else
-            playState = new NormalPlayState(q);
     }
 
     ~PlayListModelPrivate()
@@ -475,6 +470,11 @@ PlayListModel::PlayListModel(const QString &name, QObject *parent) :
     connect(d->coverLoder, &CoverLoader::ready, this, [d](const QString &path, const QImage &img) { d->setCover(path, img); });
     connect(d->task, &PlayListTask::finished, this, [d]{ d->onTaskFinished(); });
     connect(d->task, &PlayListTask::finished, this, [d]{ d->startCoverLoader(); });
+
+    if(d->uiSettings->isShuffle())
+        d->playState = new ShufflePlayState(this);
+    else
+        d->playState = new NormalPlayState(this);
 }
 
 PlayListModel::~PlayListModel()
