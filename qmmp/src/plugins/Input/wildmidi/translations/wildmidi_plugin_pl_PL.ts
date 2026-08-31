@@ -11,7 +11,7 @@
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="43"/>
         <source>Midi Files</source>
-        <translation>Pliki Midi</translation>
+        <translation>Pliki MIDI</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="95"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="97"/>
         <source>This plugin uses WildMidi library to play midi files</source>
-        <translation>Ta wtyczka używa biblioteki WildMidi do odtwarzania plików midi</translation>
+        <translation>Ta wtyczka używa biblioteki WildMidi do odtwarzania plików MIDI</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="98"/>
@@ -69,7 +69,7 @@
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="67"/>
         <source>Use built-in OPL3 FM synthesizer</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyj wbudowanego syntezatora FM OPL3</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.cpp" line="40"/>

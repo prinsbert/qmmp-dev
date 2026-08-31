@@ -69,7 +69,7 @@
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="67"/>
         <source>Use built-in OPL3 FM synthesizer</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать встроенный OPL3 FM-синтезатор</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.cpp" line="40"/>

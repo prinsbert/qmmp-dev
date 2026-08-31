@@ -1181,7 +1181,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="935"/>
+        <location filename="../qsuimainwindow.cpp" line="934"/>
         <source>Qmmp</source>
         <translation>QMMP</translation>
     </message>
@@ -1328,178 +1328,178 @@
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="259"/>
-        <location filename="../qsuimainwindow.cpp" line="294"/>
+        <location filename="../qsuimainwindow.cpp" line="293"/>
         <source>Rename Playlist</source>
         <translation>プレイリスト名を変更</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="85"/>
+        <location filename="../qsuimainwindow.cpp" line="84"/>
         <source>&amp;Copy Selection To</source>
         <translation>選択項目のコピー先(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="294"/>
+        <location filename="../qsuimainwindow.cpp" line="293"/>
         <source>Playlist name:</source>
         <translation>プレイリスト名 :</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="335"/>
+        <location filename="../qsuimainwindow.cpp" line="334"/>
         <source>Appearance</source>
         <translation>外観</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="336"/>
+        <location filename="../qsuimainwindow.cpp" line="335"/>
         <source>Shortcuts</source>
         <translation>ショートカット</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="452"/>
+        <location filename="../qsuimainwindow.cpp" line="451"/>
         <source>Add new playlist</source>
         <translation>新しいプレイリストを追加</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="458"/>
+        <location filename="../qsuimainwindow.cpp" line="457"/>
         <source>Show all tabs</source>
         <translation>すべてのタブを表示</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="485"/>
+        <location filename="../qsuimainwindow.cpp" line="484"/>
         <source>Ctrl+0</source>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="491"/>
+        <location filename="../qsuimainwindow.cpp" line="490"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="496"/>
+        <location filename="../qsuimainwindow.cpp" line="495"/>
         <source>Position</source>
         <translation>配置</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="498"/>
+        <location filename="../qsuimainwindow.cpp" line="497"/>
         <source>Volume</source>
         <translation>音量</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="500"/>
+        <location filename="../qsuimainwindow.cpp" line="499"/>
         <source>Balance</source>
         <translation>バランス</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="503"/>
+        <location filename="../qsuimainwindow.cpp" line="502"/>
         <source>Quick Search</source>
         <translation>クイック検索</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="562"/>
+        <location filename="../qsuimainwindow.cpp" line="561"/>
         <source>Edit Toolbars</source>
         <translation>ツールバーの編集</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="563"/>
+        <location filename="../qsuimainwindow.cpp" line="562"/>
         <source>Edit Statusbar</source>
         <translation>ステータスバーの編集</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="565"/>
+        <location filename="../qsuimainwindow.cpp" line="564"/>
         <source>Sort List</source>
         <translation>リストを並べ換え</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="567"/>
-        <location filename="../qsuimainwindow.cpp" line="583"/>
+        <location filename="../qsuimainwindow.cpp" line="566"/>
+        <location filename="../qsuimainwindow.cpp" line="582"/>
         <source>By Title</source>
         <translation>タイトル名順</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="568"/>
-        <location filename="../qsuimainwindow.cpp" line="584"/>
+        <location filename="../qsuimainwindow.cpp" line="567"/>
+        <location filename="../qsuimainwindow.cpp" line="583"/>
         <source>By Album</source>
         <translation>アルバム名順</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="569"/>
-        <location filename="../qsuimainwindow.cpp" line="585"/>
+        <location filename="../qsuimainwindow.cpp" line="568"/>
+        <location filename="../qsuimainwindow.cpp" line="584"/>
         <source>By Artist</source>
         <translation>アーティスト名順</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="570"/>
-        <location filename="../qsuimainwindow.cpp" line="586"/>
+        <location filename="../qsuimainwindow.cpp" line="569"/>
+        <location filename="../qsuimainwindow.cpp" line="585"/>
         <source>By Album Artist</source>
         <translation>アルバムのアーティスト名順</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="571"/>
-        <location filename="../qsuimainwindow.cpp" line="587"/>
+        <location filename="../qsuimainwindow.cpp" line="570"/>
+        <location filename="../qsuimainwindow.cpp" line="586"/>
         <source>By Filename</source>
         <translation>ファイル名順</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="572"/>
-        <location filename="../qsuimainwindow.cpp" line="588"/>
+        <location filename="../qsuimainwindow.cpp" line="571"/>
+        <location filename="../qsuimainwindow.cpp" line="587"/>
         <source>By Path + Filename</source>
         <translation>パスとファイル名順</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="573"/>
-        <location filename="../qsuimainwindow.cpp" line="589"/>
+        <location filename="../qsuimainwindow.cpp" line="572"/>
+        <location filename="../qsuimainwindow.cpp" line="588"/>
         <source>By Date</source>
         <translation>日付順</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="574"/>
-        <location filename="../qsuimainwindow.cpp" line="590"/>
+        <location filename="../qsuimainwindow.cpp" line="573"/>
+        <location filename="../qsuimainwindow.cpp" line="589"/>
         <source>By Track Number</source>
         <translation>トラック番号順</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="575"/>
-        <location filename="../qsuimainwindow.cpp" line="591"/>
+        <location filename="../qsuimainwindow.cpp" line="574"/>
+        <location filename="../qsuimainwindow.cpp" line="590"/>
         <source>By Disc Number</source>
         <translation>ディスク番号順</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="576"/>
-        <location filename="../qsuimainwindow.cpp" line="592"/>
+        <location filename="../qsuimainwindow.cpp" line="575"/>
+        <location filename="../qsuimainwindow.cpp" line="591"/>
         <source>By File Creation Date</source>
         <translation>ファイルの作成日順</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="577"/>
-        <location filename="../qsuimainwindow.cpp" line="593"/>
+        <location filename="../qsuimainwindow.cpp" line="576"/>
+        <location filename="../qsuimainwindow.cpp" line="592"/>
         <source>By File Modification Date</source>
         <translation>ファイルの変更日時順</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="578"/>
+        <location filename="../qsuimainwindow.cpp" line="577"/>
         <source>By Group</source>
         <translation>グループ名順</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="581"/>
+        <location filename="../qsuimainwindow.cpp" line="580"/>
         <source>Sort Selection</source>
         <translation>選択範囲内で並び換え</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="597"/>
+        <location filename="../qsuimainwindow.cpp" line="596"/>
         <source>Randomize List</source>
         <translation>リストを順不同</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="599"/>
+        <location filename="../qsuimainwindow.cpp" line="598"/>
         <source>Reverse List</source>
         <translation>リストを逆順</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="640"/>
+        <location filename="../qsuimainwindow.cpp" line="639"/>
         <source>Actions</source>
         <translation>操作</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="956"/>
+        <location filename="../qsuimainwindow.cpp" line="955"/>
         <source>&amp;New PlayList</source>
         <translation>新しいプレイリスト(&amp;N)</translation>
     </message>
