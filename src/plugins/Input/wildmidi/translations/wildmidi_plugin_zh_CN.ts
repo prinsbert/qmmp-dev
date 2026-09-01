@@ -57,22 +57,27 @@
         <translation>取样率：</translation>
     </message>
     <message>
-        <location filename="../wildmidisettingsdialog.ui" line="50"/>
+        <location filename="../wildmidisettingsdialog.ui" line="53"/>
         <source>Enhanced resampling</source>
         <translation>提高再取样</translation>
     </message>
     <message>
-        <location filename="../wildmidisettingsdialog.ui" line="57"/>
+        <location filename="../wildmidisettingsdialog.ui" line="60"/>
         <source>Reverberation</source>
         <translation>混响效果</translation>
     </message>
     <message>
-        <location filename="../wildmidisettingsdialog.cpp" line="39"/>
+        <location filename="../wildmidisettingsdialog.ui" line="67"/>
+        <source>Use built-in OPL3 FM synthesizer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../wildmidisettingsdialog.cpp" line="40"/>
         <source>44100 Hz</source>
         <translation>44100赫兹</translation>
     </message>
     <message>
-        <location filename="../wildmidisettingsdialog.cpp" line="40"/>
+        <location filename="../wildmidisettingsdialog.cpp" line="41"/>
         <source>48000 Hz</source>
         <translation>48000赫兹</translation>
     </message>

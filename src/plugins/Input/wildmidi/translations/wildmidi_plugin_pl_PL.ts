@@ -11,7 +11,7 @@
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="43"/>
         <source>Midi Files</source>
-        <translation>Pliki Midi</translation>
+        <translation>Pliki MIDI</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="95"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="97"/>
         <source>This plugin uses WildMidi library to play midi files</source>
-        <translation>Ta wtyczka używa biblioteki WildMidi do odtwarzania plików midi</translation>
+        <translation>Ta wtyczka używa biblioteki WildMidi do odtwarzania plików MIDI</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="98"/>
@@ -57,22 +57,27 @@
         <translation>Próbkowanie:</translation>
     </message>
     <message>
-        <location filename="../wildmidisettingsdialog.ui" line="50"/>
+        <location filename="../wildmidisettingsdialog.ui" line="53"/>
         <source>Enhanced resampling</source>
         <translation>Rozszerzony resampling</translation>
     </message>
     <message>
-        <location filename="../wildmidisettingsdialog.ui" line="57"/>
+        <location filename="../wildmidisettingsdialog.ui" line="60"/>
         <source>Reverberation</source>
         <translation>Pogłos</translation>
     </message>
     <message>
-        <location filename="../wildmidisettingsdialog.cpp" line="39"/>
+        <location filename="../wildmidisettingsdialog.ui" line="67"/>
+        <source>Use built-in OPL3 FM synthesizer</source>
+        <translation>Użyj wbudowanego syntezatora FM OPL3</translation>
+    </message>
+    <message>
+        <location filename="../wildmidisettingsdialog.cpp" line="40"/>
         <source>44100 Hz</source>
         <translation>44100 Hz</translation>
     </message>
     <message>
-        <location filename="../wildmidisettingsdialog.cpp" line="40"/>
+        <location filename="../wildmidisettingsdialog.cpp" line="41"/>
         <source>48000 Hz</source>
         <translation>48000 Hz</translation>
     </message>

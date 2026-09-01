@@ -48,21 +48,31 @@ bool WildMidiHelper::initialize()
     QSettings settings;
     settings.beginGroup(u"Midi"_s);
 
-    QStringList availableConfigFiles = configFiles();
-    QString configPath = availableConfigFiles.isEmpty() ? QString() : availableConfigFiles.constFirst();
-    configPath = settings.value(u"conf_path"_s, configPath).toString();
-    if(configPath.isEmpty() || !QFile::exists(configPath))
+    QString configPath;
+#if LIBWILDMIDI_VERSION >= 0x000500L
+    if(settings.value(u"use_opl3"_s, false).toBool())
     {
-        qCWarning(plugin, "missing config file path: %s", qPrintable(configPath));
-        m_mutex.unlock();
-        return false;
+        configPath = QStringLiteral("@opl3");
     }
-
-    if(!validateConfigFile(configPath))
+    else
+#endif
     {
-        qCWarning(plugin, "malformed WildMidi config: %s", qPrintable(configPath));
-        m_mutex.unlock();
-        return false;
+        QStringList configs = configFiles();
+        configPath = settings.value(u"conf_path"_s, configs.isEmpty() ? QString() : configs.constFirst()).toString();
+
+        if(configPath.isEmpty() || !QFile::exists(configPath))
+        {
+            qCWarning(plugin, "missing config file path: %s", qPrintable(configPath));
+            m_mutex.unlock();
+            return false;
+        }
+
+        if(!validateConfigFile(configPath))
+        {
+            qCWarning(plugin, "malformed WildMidi config: %s", qPrintable(configPath));
+            m_mutex.unlock();
+            return false;
+        }
     }
 
     unsigned short int mixer_options = 0;

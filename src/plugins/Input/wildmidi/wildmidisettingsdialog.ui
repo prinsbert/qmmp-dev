@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>339</width>
-    <height>181</height>
+    <width>341</width>
+    <height>212</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>WildMidi Plugin Settings</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
+  <layout class="QFormLayout" name="formLayout">
    <property name="leftMargin">
     <number>6</number>
    </property>
@@ -30,7 +30,7 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="1" colspan="2">
+   <item row="0" column="1">
     <widget class="QComboBox" name="confPathComboBox">
      <property name="editable">
       <bool>true</bool>
@@ -44,21 +44,31 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="3">
+   <item row="1" column="1">
+    <widget class="QComboBox" name="sampleRateComboBox"/>
+   </item>
+   <item row="2" column="0" colspan="2">
     <widget class="QCheckBox" name="enhancedResamplingCheckBox">
      <property name="text">
       <string>Enhanced resampling</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="0" colspan="3">
+   <item row="3" column="0" colspan="2">
     <widget class="QCheckBox" name="reverbCheckBox">
      <property name="text">
       <string>Reverberation</string>
      </property>
     </widget>
    </item>
-   <item row="4" column="0" colspan="3">
+   <item row="4" column="0" colspan="2">
+    <widget class="QCheckBox" name="opl3CheckBox">
+     <property name="text">
+      <string>Use built-in OPL3 FM synthesizer</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -71,8 +81,18 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="1" colspan="2">
-    <widget class="QComboBox" name="sampleRateComboBox"/>
+   <item row="5" column="0" colspan="2">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>
@@ -85,8 +105,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>214</x>
-     <y>167</y>
+     <x>220</x>
+     <y>205</y>
     </hint>
     <hint type="destinationlabel">
      <x>103</x>
@@ -107,6 +127,22 @@
     <hint type="destinationlabel">
      <x>148</x>
      <y>169</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>opl3CheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>confPathComboBox</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>219</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>251</x>
+     <y>28</y>
     </hint>
    </hints>
   </connection>
