@@ -4,62 +4,74 @@
 <context>
     <name>ProjectM4Widget</name>
     <message>
-        <location filename="../projectm4window.cpp" line="165"/>
+        <location filename="../projectm4window.cpp" line="161"/>
+        <location filename="../projectm4window.cpp" line="170"/>
         <source>&amp;Show Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectm4window.cpp" line="165"/>
+        <location filename="../projectm4window.cpp" line="161"/>
+        <location filename="../projectm4window.cpp" line="163"/>
+        <location filename="../projectm4window.cpp" line="170"/>
         <source>M</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectm4window.cpp" line="167"/>
+        <location filename="../projectm4window.cpp" line="163"/>
+        <location filename="../projectm4window.cpp" line="172"/>
         <source>&amp;Next Preset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectm4window.cpp" line="167"/>
+        <location filename="../projectm4window.cpp" line="172"/>
         <source>N</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectm4window.cpp" line="168"/>
+        <location filename="../projectm4window.cpp" line="164"/>
+        <location filename="../projectm4window.cpp" line="173"/>
         <source>&amp;Previous Preset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectm4window.cpp" line="168"/>
+        <location filename="../projectm4window.cpp" line="164"/>
+        <location filename="../projectm4window.cpp" line="173"/>
         <source>P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectm4window.cpp" line="169"/>
+        <location filename="../projectm4window.cpp" line="165"/>
+        <location filename="../projectm4window.cpp" line="174"/>
         <source>&amp;Shuffle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectm4window.cpp" line="169"/>
+        <location filename="../projectm4window.cpp" line="165"/>
+        <location filename="../projectm4window.cpp" line="174"/>
         <source>R</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectm4window.cpp" line="170"/>
+        <location filename="../projectm4window.cpp" line="166"/>
+        <location filename="../projectm4window.cpp" line="175"/>
         <source>&amp;Lock Preset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectm4window.cpp" line="170"/>
+        <location filename="../projectm4window.cpp" line="166"/>
+        <location filename="../projectm4window.cpp" line="175"/>
         <source>L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectm4window.cpp" line="172"/>
+        <location filename="../projectm4window.cpp" line="168"/>
+        <location filename="../projectm4window.cpp" line="177"/>
         <source>&amp;Fullscreen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectm4window.cpp" line="172"/>
+        <location filename="../projectm4window.cpp" line="168"/>
+        <location filename="../projectm4window.cpp" line="177"/>
         <source>F</source>
         <translation type="unfinished"></translation>
     </message>
@@ -75,110 +87,110 @@
 <context>
     <name>ProjectMWidget</name>
     <message>
-        <location filename="../projectmwidget.cpp" line="148"/>
-        <location filename="../projectmwidget.cpp" line="160"/>
+        <location filename="../projectmwidget.cpp" line="146"/>
+        <location filename="../projectmwidget.cpp" line="158"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="148"/>
-        <location filename="../projectmwidget.cpp" line="160"/>
+        <location filename="../projectmwidget.cpp" line="146"/>
+        <location filename="../projectmwidget.cpp" line="158"/>
         <source>F1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="149"/>
-        <location filename="../projectmwidget.cpp" line="161"/>
+        <location filename="../projectmwidget.cpp" line="147"/>
+        <location filename="../projectmwidget.cpp" line="159"/>
         <source>&amp;Show Song Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="149"/>
-        <location filename="../projectmwidget.cpp" line="161"/>
+        <location filename="../projectmwidget.cpp" line="147"/>
+        <location filename="../projectmwidget.cpp" line="159"/>
         <source>F2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="150"/>
-        <location filename="../projectmwidget.cpp" line="162"/>
+        <location filename="../projectmwidget.cpp" line="148"/>
+        <location filename="../projectmwidget.cpp" line="160"/>
         <source>&amp;Show Preset Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="150"/>
-        <location filename="../projectmwidget.cpp" line="162"/>
+        <location filename="../projectmwidget.cpp" line="148"/>
+        <location filename="../projectmwidget.cpp" line="160"/>
         <source>F3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="151"/>
-        <location filename="../projectmwidget.cpp" line="163"/>
+        <location filename="../projectmwidget.cpp" line="149"/>
+        <location filename="../projectmwidget.cpp" line="161"/>
         <source>&amp;Show Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="151"/>
-        <location filename="../projectmwidget.cpp" line="163"/>
+        <location filename="../projectmwidget.cpp" line="149"/>
+        <location filename="../projectmwidget.cpp" line="161"/>
         <source>M</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="153"/>
-        <location filename="../projectmwidget.cpp" line="165"/>
+        <location filename="../projectmwidget.cpp" line="151"/>
+        <location filename="../projectmwidget.cpp" line="163"/>
         <source>&amp;Next Preset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="153"/>
-        <location filename="../projectmwidget.cpp" line="165"/>
+        <location filename="../projectmwidget.cpp" line="151"/>
+        <location filename="../projectmwidget.cpp" line="163"/>
         <source>N</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="154"/>
-        <location filename="../projectmwidget.cpp" line="166"/>
+        <location filename="../projectmwidget.cpp" line="152"/>
+        <location filename="../projectmwidget.cpp" line="164"/>
         <source>&amp;Previous Preset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="154"/>
-        <location filename="../projectmwidget.cpp" line="166"/>
+        <location filename="../projectmwidget.cpp" line="152"/>
+        <location filename="../projectmwidget.cpp" line="164"/>
         <source>P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="155"/>
-        <location filename="../projectmwidget.cpp" line="167"/>
+        <location filename="../projectmwidget.cpp" line="153"/>
+        <location filename="../projectmwidget.cpp" line="165"/>
         <source>&amp;Random Preset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="155"/>
-        <location filename="../projectmwidget.cpp" line="167"/>
+        <location filename="../projectmwidget.cpp" line="153"/>
+        <location filename="../projectmwidget.cpp" line="165"/>
         <source>R</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="156"/>
-        <location filename="../projectmwidget.cpp" line="168"/>
+        <location filename="../projectmwidget.cpp" line="154"/>
+        <location filename="../projectmwidget.cpp" line="166"/>
         <source>&amp;Lock Preset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="156"/>
-        <location filename="../projectmwidget.cpp" line="168"/>
+        <location filename="../projectmwidget.cpp" line="154"/>
+        <location filename="../projectmwidget.cpp" line="166"/>
         <source>L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="158"/>
-        <location filename="../projectmwidget.cpp" line="170"/>
+        <location filename="../projectmwidget.cpp" line="156"/>
+        <location filename="../projectmwidget.cpp" line="168"/>
         <source>&amp;Fullscreen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="158"/>
-        <location filename="../projectmwidget.cpp" line="170"/>
+        <location filename="../projectmwidget.cpp" line="156"/>
+        <location filename="../projectmwidget.cpp" line="168"/>
         <source>F</source>
         <translation type="unfinished"></translation>
     </message>
