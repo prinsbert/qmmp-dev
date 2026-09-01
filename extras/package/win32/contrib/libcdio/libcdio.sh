@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=libcdio
-VERSION=2.3.0
+VERSION=2.4.0
 
 case $1 in
   --download)
