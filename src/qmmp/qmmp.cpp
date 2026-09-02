@@ -74,7 +74,7 @@ void Qmmp::setConfigDir(const QString &path)
 QString Qmmp::cacheDir()
 {
 #ifdef Q_OS_WIN
-    return *::configDir();
+    return Qmmp::configDir();
 #else
     if(::configDir()->isEmpty())
         return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation),
