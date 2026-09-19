@@ -299,13 +299,14 @@ jobs:
 
                   mkdir -p "$(dirname "$local_path")"
 
-                  # Try `svn cat` first (files), fall back to `svn export` (directories)
-                  if svn --non-interactive cat -r "$rev" "$svn_target" > "$local_path" 2>/dev/null; then
+                  # Try `svn cat` first (files), fall back to `svn export` (directories). "@$rev" is a PEG revision: without it svn resolves the path at HEAD *first*, so any path deleted later in this sync range (absent at HEAD) fails with E160013 naming the HEAD revision.
+                  # The peg pins resolution to the revision the log entry is about (which also makes -r "$rev" redundant, kept for explicitness).
+                  if svn --non-interactive cat -r "$rev" "$svn_target@$rev" > "$local_path" 2>/dev/null; then
                     git add "$local_path"
                   else
                     # A failed export here is fatal: the log claims this path exists at r$rev, so a miss means log/repo disagreement or a transient error. Abort cleanly — nothing has been pushed, the next run simply retries.
-                    svn --non-interactive export -r "$rev" --force "$svn_target" "$local_path" \
-                      || { echo "  ERROR: r$rev: fetch failed for $svn_target (branch $git_branch) — aborting, nothing was pushed; safe to re-run"; exit 1; }
+                    svn --non-interactive export -r "$rev" --force "$svn_target@$rev" "$local_path" \
+                      || { echo "  ERROR: r$rev: fetch failed for $svn_target@$rev (branch $git_branch) — aborting, nothing was pushed; safe to re-run"; exit 1; }
                     git add -A "$local_path"
                   fi
                 fi
@@ -507,4 +508,3 @@ jobs:
           else
             echo "README.md unchanged, skipping commit"
           fi
-          
