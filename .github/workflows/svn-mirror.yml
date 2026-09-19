@@ -139,7 +139,7 @@ jobs:
 
             #  Group changed paths by their target Git branch 
             # (NOTE: D /branches/oldbranch (deleting the whole branch) just falls through to "branch doesn't exist locally, skip" or leaves the git branch dangling)
-            declare -A branch_changes
+            declare -A branch_changes tag_changes
             for pline in "${path_lines[@]}"; do
               # BUG FIX: path_lines entries look like "   M /trunk/file.c".
               # The action letter is at index 3 (after 3 spaces). The path
@@ -179,78 +179,56 @@ jobs:
                   local_path=""
                 fi
               elif [[ "$rest" == "/tags/"* ]]; then
+                # Tags live in their own array so a tag key can never collide with a real branch name (e.g. /branches/tag_foo).
                 tmp=${rest#/tags/}
                 tag_name=${tmp%%/*}
-                git_branch="tag_$tag_name"
                 if [[ "$tmp" == */* ]]; then
                   local_path=${tmp#*/}
                 else
                   local_path=""
                 fi
+                entry="$action"$'\x1f'"$local_path"$'\x1f'"$copyfrom"$'\x1f'"$cf_rev"
+                if [ -z "${tag_changes[$tag_name]-}" ]; then
+                  tag_changes[$tag_name]="$entry"
+                else
+                  tag_changes[$tag_name]+=$'\n'"$entry"
+                fi
+                continue
               fi
               [ -z "$git_branch" ] && { echo "  WARNING: unroutable path, skipping: $rest"; continue; }
               # Accumulate this change into the branch's change list
+              # \x1f can't appear in a path the way '|' theoretically could
+              entry="$action"$'\x1f'"$local_path"$'\x1f'"$copyfrom"$'\x1f'"$cf_rev"
               if [ -z "${branch_changes[$git_branch]-}" ]; then
-                branch_changes[$git_branch]="$action|$local_path|$copyfrom|$cf_rev"
+                branch_changes[$git_branch]="$entry"
               else
-                branch_changes[$git_branch]+=$'\n'"$action|$local_path|$copyfrom|$cf_rev"
+                branch_changes[$git_branch]+=$'\n'"$entry"
               fi
             done
 
-            #  Apply changes to each affected branch or tag. Real branches first, tag_* last: a tag cut in the same revision that changed its source branch must see the branch's new commit.
+            #  Apply changes to each affected branch (tags get their own pass below, always after branches).
             while IFS= read -r git_branch; do
               [ -n "$git_branch" ] || continue
-              #  Tag handling 
-              if [[ "$git_branch" == tag_* ]]; then
-                tag_name=${git_branch#tag_}
-                while IFS= read -r change; do
-                  IFS='|' read -r action local_path copyfrom cf_rev <<< "$change"
-                  if [ "$action" == "A" ] && [ -n "$copyfrom" ]; then
-                    src_ref="master"
-                    src_tag=""
-                    if [[ "$copyfrom" == "/branches/"* ]]; then
-                      tmp=${copyfrom#/branches/}; src_ref=${tmp%%/*}
-                    elif [[ "$copyfrom" == "/tags/"* ]]; then
-                      # Copied from a tag rather than trunk/a branch. Tags have no commit history of their own — they're a fixed pointer to a commit on whatever branch they were cut from — so the useful reference is the tag ref itself, not a (branch, revision) lookup.
-                      tmp=${copyfrom#/tags/}; src_tag=${tmp%%/*}
-                      src_ref="refs/tags/$src_tag"
-                    fi
-
-                  # Create tags at the exact source revision if possible (snapshot: last commit on src_ref at or before cf_rev)
-                    src_commit=""
-                    if [ -n "$src_tag" ]; then
-                      src_commit=$(git rev-parse --verify --quiet "refs/tags/$src_tag" 2>/dev/null || true)
-                    elif [ -n "$cf_rev" ]; then
-                      # Snapshot semantics: last commit on src_ref at or before the copyfrom revision (git-svn behaviour).
-                      best=0
-                      for k in "${!rev_to_sha[@]}"; do
-                        [[ "$k" == "$src_ref:"* ]] || continue
-                        r=${k##*:}
-                        if [ "$r" -le "$cf_rev" ] && [ "$r" -gt "$best" ]; then
-                          best=$r
-                          src_commit=${rev_to_sha[$k]}
-                        fi
-                      done
-                    fi
-                    if ! git rev-parse --verify --quiet "refs/tags/$tag_name" >/dev/null; then
-                      if [ -n "$src_commit" ]; then
-                        git tag "$tag_name" "$src_commit"
-                        echo "  Created tag $tag_name at commit $src_commit (SVN r$cf_rev)"
-                      elif git rev-parse --verify --quiet "$src_ref" >/dev/null 2>&1; then
-                        git tag "$tag_name" "$src_ref"
-                        echo "  Created tag $tag_name from $src_ref tip (fallback)"
-                      else
-                        echo "  WARNING: cannot resolve copyfrom '$copyfrom' for tag $tag_name, skipping"
-                      fi
-                    fi
-                  fi
-                done <<< "${branch_changes[$git_branch]}"
-                continue
-              fi
 
               #  Branch creation detection 
               while IFS= read -r change; do
-                IFS='|' read -r action local_path copyfrom cf_rev <<< "$change"
+                IFS=$'\x1f' read -r action local_path copyfrom cf_rev <<< "$change"
+
+                # Whole-branch deletion: "D /branches/X" (no file part, no copyfrom)
+                if [ "$action" == "D" ] && [ -z "$local_path" ] && [ -z "$copyfrom" ]; then
+                  if [ "$git_branch" == "master" ]; then
+                    echo "  WARNING: refusing to delete master, skipping"
+                  elif git rev-parse --verify --quiet "refs/heads/$git_branch" >/dev/null; then
+                    if [ "$(git branch --show-current)" == "$git_branch" ]; then
+                      git checkout --detach
+                    fi
+                    git branch -D "$git_branch"
+                    echo "refs/heads/$git_branch" >> /tmp/deleted_refs.txt
+                    echo "  Deleted branch $git_branch (removed from SVN)"
+                  fi
+                  continue
+                fi
+
                 if [ "$action" == "A" ] && [ -n "$copyfrom" ] && [ -z "$local_path" ]; then
                   src_ref="master"
                   if [[ "$copyfrom" == "/branches/"* ]]; then
@@ -293,7 +271,7 @@ jobs:
               git checkout -f "$git_branch"
 
               while IFS= read -r change; do
-                IFS='|' read -r action local_path copyfrom cf_rev <<< "$change"
+                IFS=$'\x1f' read -r action local_path copyfrom cf_rev <<< "$change"
                 [ -z "$local_path" ] && continue
                 case "$local_path" in
                   *..*) echo "  WARNING: suspicious path, skipping: $local_path"; continue ;;
@@ -332,9 +310,69 @@ jobs:
                 echo "  No changes to commit for r$rev on $git_branch"
               fi
             done < <(
-              printf '%s\n' "${!branch_changes[@]}" | grep -v '^tag_' || true
-              printf '%s\n' "${!branch_changes[@]}" | grep '^tag_' || true
+              # Existing branches first: their commits for this revision must be in rev_to_sha before branches created from them in the same revision are processed. Creations follow.
+              for b in "${!branch_changes[@]}"; do
+                if git rev-parse --verify --quiet "refs/heads/$b" >/dev/null; then
+                  echo "$b"
+                fi
+              done
+              for b in "${!branch_changes[@]}"; do
+                if ! git rev-parse --verify --quiet "refs/heads/$b" >/dev/null; then
+                  echo "$b"
+                fi
+              done
             )
+            #  Apply tag operations — always after all branches, so a tag cut in the same revision that changed its source branch sees the branch's new commit.
+            for tag_name in "${!tag_changes[@]}"; do
+              while IFS= read -r change; do
+                IFS=$'\x1f' read -r action local_path copyfrom cf_rev <<< "$change"
+                if [ "$action" == "A" ] && [ -n "$copyfrom" ] && [ -z "$local_path" ]; then
+                  src_ref="master"
+                  src_tag=""
+                  if [[ "$copyfrom" == "/branches/"* ]]; then
+                    tmp=${copyfrom#/branches/}; src_ref=${tmp%%/*}
+                  elif [[ "$copyfrom" == "/tags/"* ]]; then
+                    tmp=${copyfrom#/tags/}; src_tag=${tmp%%/*}
+                    src_ref="refs/tags/$src_tag"
+                  fi
+
+                  src_commit=""
+                  if [ -n "$src_tag" ]; then
+                    src_commit=$(git rev-parse --verify --quiet "refs/tags/$src_tag" 2>/dev/null || true)
+                  elif [ -n "$cf_rev" ]; then
+                    best=0
+                    for k in "${!rev_to_sha[@]}"; do
+                      [[ "$k" == "$src_ref:"* ]] || continue
+                      r=${k##*:}
+                      if [ "$r" -le "$cf_rev" ] && [ "$r" -gt "$best" ]; then
+                        best=$r
+                        src_commit=${rev_to_sha[$k]}
+                      fi
+                    done
+                  fi
+
+                  if ! git rev-parse --verify --quiet "refs/tags/$tag_name" >/dev/null; then
+                    if [ -n "$src_commit" ]; then
+                      git tag "$tag_name" "$src_commit"
+                      echo "  Created tag $tag_name at commit $src_commit (SVN r$cf_rev)"
+                    elif git rev-parse --verify --quiet "$src_ref" >/dev/null 2>&1; then
+                      git tag "$tag_name" "$src_ref"
+                      echo "  Created tag $tag_name from $src_ref tip (fallback)"
+                    else
+                      echo "  WARNING: cannot resolve copyfrom '$copyfrom' for tag $tag_name, skipping"
+                    fi
+                  fi
+                elif [ "$action" == "D" ] && [ -z "$local_path" ]; then
+                  if git rev-parse --verify --quiet "refs/tags/$tag_name" >/dev/null; then
+                    git tag -d "$tag_name"
+                    echo "refs/tags/$tag_name" >> /tmp/deleted_refs.txt
+                    echo "  Deleted tag $tag_name (removed from SVN)"
+                  fi
+                else
+                  echo "  WARNING: unsupported tag operation ($action $local_path) on $tag_name, skipping"
+                fi
+              done <<< "${tag_changes[$tag_name]}"
+            done
           done
           echo "Sync complete."
 
