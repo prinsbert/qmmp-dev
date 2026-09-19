@@ -153,8 +153,14 @@ jobs:
 
               # Extract copyfrom info if present
               copyfrom=$(echo "$rest" | sed -n 's/.* (from \(.*\))/\1/p')
+              cf_rev=""
               if [ -n "$copyfrom" ]; then
                 rest=$(echo "$rest" | sed 's/ (from.*//')
+                # svn log copyfrom is "<path>:<rev>" (e.g. "/branches/myproduct-2.4:13274"). Split it here so nothing downstream glues ":13274" onto a branch/tag name.
+                if [[ "$copyfrom" =~ ^(.+):r?([0-9]+)$ ]]; then
+                  cf_rev="${BASH_REMATCH[2]}"
+                  copyfrom="${BASH_REMATCH[1]}"
+                fi
               fi
 
               git_branch=""
@@ -185,50 +191,56 @@ jobs:
               [ -z "$git_branch" ] && { echo "  WARNING: unroutable path, skipping: $rest"; continue; }
               # Accumulate this change into the branch's change list
               if [ -z "${branch_changes[$git_branch]-}" ]; then
-                branch_changes[$git_branch]="$action|$local_path|$copyfrom"
+                branch_changes[$git_branch]="$action|$local_path|$copyfrom|$cf_rev"
               else
-                branch_changes[$git_branch]+=$'\n'"$action|$local_path|$copyfrom"
+                branch_changes[$git_branch]+=$'\n'"$action|$local_path|$copyfrom|$cf_rev"
               fi
             done
 
-            #  Apply changes to each affected branch or tag 
-            for git_branch in "${!branch_changes[@]}"; do
-
+            #  Apply changes to each affected branch or tag. Real branches first, tag_* last: a tag cut in the same revision that changed its source branch must see the branch's new commit.
+            while IFS= read -r git_branch; do
+              [ -n "$git_branch" ] || continue
               #  Tag handling 
               if [[ "$git_branch" == tag_* ]]; then
                 tag_name=${git_branch#tag_}
                 while IFS= read -r change; do
-                  IFS='|' read -r action local_path copyfrom <<< "$change"
+                  IFS='|' read -r action local_path copyfrom cf_rev <<< "$change"
                   if [ "$action" == "A" ] && [ -n "$copyfrom" ]; then
                     src_ref="master"
                     src_tag=""
                     if [[ "$copyfrom" == "/branches/"* ]]; then
-                      src_ref=$(echo "$copyfrom" | sed 's|/branches/\([^/]*\).*|\1|')
+                      tmp=${copyfrom#/branches/}; src_ref=${tmp%%/*}
                     elif [[ "$copyfrom" == "/tags/"* ]]; then
-                      # Copied from a tag rather than trunk/a branch. Tags have
-                      # no commit history of their own — they're a fixed
-                      # pointer to a commit on whatever branch they were cut
-                      # from — so the useful reference is the tag ref itself,
-                      # not a (branch, revision) lookup.
-                      src_tag=$(echo "$copyfrom" | sed 's|/tags/\([^/]*\).*|\1|')
+                      # Copied from a tag rather than trunk/a branch. Tags have no commit history of their own — they're a fixed pointer to a commit on whatever branch they were cut from — so the useful reference is the tag ref itself, not a (branch, revision) lookup.
+                      tmp=${copyfrom#/tags/}; src_tag=${tmp%%/*}
                       src_ref="refs/tags/$src_tag"
                     fi
 
-                    # Create tags at the exact source revision if possible
-                    src_rev=$(echo "$copyfrom" | sed -n 's/.*:r\{0,1\}\([0-9]*\)$/\1/p')
+                  # Create tags at the exact source revision if possible (snapshot: last commit on src_ref at or before cf_rev)
                     src_commit=""
                     if [ -n "$src_tag" ]; then
                       src_commit=$(git rev-parse --verify --quiet "refs/tags/$src_tag" 2>/dev/null || true)
-                    elif [ -n "$src_rev" ]; then
-                      src_commit="${rev_to_sha["$src_ref:$src_rev"]-}"
+                    elif [ -n "$cf_rev" ]; then
+                      # Snapshot semantics: last commit on src_ref at or before the copyfrom revision (git-svn behaviour).
+                      best=0
+                      for k in "${!rev_to_sha[@]}"; do
+                        [[ "$k" == "$src_ref:"* ]] || continue
+                        r=${k##*:}
+                        if [ "$r" -le "$cf_rev" ] && [ "$r" -gt "$best" ]; then
+                          best=$r
+                          src_commit=${rev_to_sha[$k]}
+                        fi
+                      done
                     fi
                     if ! git rev-parse --verify --quiet "refs/tags/$tag_name" >/dev/null; then
                       if [ -n "$src_commit" ]; then
                         git tag "$tag_name" "$src_commit"
-                        echo "  Created tag $tag_name at commit $src_commit (SVN r$src_rev)"
-                      else
+                        echo "  Created tag $tag_name at commit $src_commit (SVN r$cf_rev)"
+                      elif git rev-parse --verify --quiet "$src_ref" >/dev/null 2>&1; then
                         git tag "$tag_name" "$src_ref"
-                        echo "  Created tag $tag_name from $src_ref (fallback)"
+                        echo "  Created tag $tag_name from $src_ref tip (fallback)"
+                      else
+                        echo "  WARNING: cannot resolve copyfrom '$copyfrom' for tag $tag_name, skipping"
                       fi
                     fi
                   fi
@@ -238,27 +250,35 @@ jobs:
 
               #  Branch creation detection 
               while IFS= read -r change; do
-                IFS='|' read -r action local_path copyfrom <<< "$change"
+                IFS='|' read -r action local_path copyfrom cf_rev <<< "$change"
                 if [ "$action" == "A" ] && [ -n "$copyfrom" ] && [ -z "$local_path" ]; then
                   src_ref="master"
                   if [[ "$copyfrom" == "/branches/"* ]]; then
-                    src_ref=$(echo "$copyfrom" | sed 's|/branches/\([^/]*\).*|\1|')
+                    tmp=${copyfrom#/branches/}; src_ref=${tmp%%/*}
                   fi
 
-                  # Create branches at the exact source revision if possible
-                  src_rev=$(echo "$copyfrom" | sed -n 's/.*:r\{0,1\}\([0-9]*\)$/\1/p')
+                  # Create branches at the exact source revision if possible (snapshot: last commit on src_ref at or before cf_rev)
                   src_commit=""
-                  if [ -n "$src_rev" ]; then
-                    src_commit="${rev_to_sha["$src_ref:$src_rev"]-}"
+                  if [ -n "$cf_rev" ]; then
+                    best=0
+                    for k in "${!rev_to_sha[@]}"; do
+                      [[ "$k" == "$src_ref:"* ]] || continue
+                      r=${k##*:}
+                      if [ "$r" -le "$cf_rev" ] && [ "$r" -gt "$best" ]; then
+                        best=$r
+                        src_commit=${rev_to_sha[$k]}
+                      fi
+                    done
                   fi
-
                   if ! git rev-parse --verify --quiet "$git_branch" >/dev/null; then
                     if [ -n "$src_commit" ]; then
                       git branch "$git_branch" "$src_commit"
-                      echo "  Created branch $git_branch at commit $src_commit (SVN r$src_rev)"
-                    else
+                      echo "  Created branch $git_branch at commit $src_commit (SVN r$cf_rev)"
+                    elif git rev-parse --verify --quiet "$src_ref" >/dev/null 2>&1; then
                       git branch "$git_branch" "$src_ref"
-                      echo "  Created branch $git_branch from $src_ref (fallback)"
+                      echo "  Created branch $git_branch from $src_ref tip (fallback)"
+                    else
+                      echo "  WARNING: cannot resolve copyfrom '$copyfrom' for branch $git_branch, skipping"
                     fi
                   fi
                 fi
@@ -273,7 +293,7 @@ jobs:
               git checkout -f "$git_branch"
 
               while IFS= read -r change; do
-                IFS='|' read -r action local_path copyfrom <<< "$change"
+                IFS='|' read -r action local_path copyfrom cf_rev <<< "$change"
                 [ -z "$local_path" ] && continue
                 case "$local_path" in
                   *..*) echo "  WARNING: suspicious path, skipping: $local_path"; continue ;;
@@ -311,7 +331,10 @@ jobs:
               else
                 echo "  No changes to commit for r$rev on $git_branch"
               fi
-            done
+            done < <(
+              printf '%s\n' "${!branch_changes[@]}" | grep -v '^tag_' || true
+              printf '%s\n' "${!branch_changes[@]}" | grep '^tag_' || true
+            )
           done
           echo "Sync complete."
 
