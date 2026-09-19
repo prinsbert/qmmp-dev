@@ -31,27 +31,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      # 
+      #
       # Step 1: Install the SVN client (not pre-installed on ubuntu-latest)
-      # 
+      #
       - name: Install subversion
         run: |
           set -euo pipefail
           sudo apt-get update -y
           sudo apt-get install -y subversion
 
-      # 
+      #
       # Step 2: Configure Git identity for the commits we'll create
-      # 
+      #
       - name: Configure Git identity
         run: |
           set -euo pipefail
           git config --global user.name  "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      # 
+      #
       # Step 3: Clone the existing Git mirror so we have history to append to
-      # 
+      #
       - name: Clone existing mirror from GitHub
         run: |
           set -euo pipefail
@@ -65,9 +65,9 @@ jobs:
           git fetch origin '+refs/heads/*:refs/heads/*'
           git fetch origin '+refs/tags/*:refs/tags/*'
 
-      # 
+      #
       # Step 4: Core sync logic — fetch new SVN revisions and replay them
-      # 
+      #
       - name: Sync new SVN revisions
         run: |
           set -euo pipefail
@@ -138,8 +138,9 @@ jobs:
             echo "Processing r$rev by $author..."
 
             #  Group changed paths by their target Git branch 
-            # (NOTE: D /branches/oldbranch (deleting the whole branch) just falls through to "branch doesn't exist locally, skip" or leaves the git branch dangling)
-            declare -A branch_changes tag_changes
+            # Whole-branch/tag deletions are honored; the actual ref removal happens in the per-branch pass below.
+            # "=()" clears the arrays each revision. A bare re-declare inside the loop would KEEP entries from previous revisions, and stale re-fetches of since-deleted paths at the current revision abort with svn E160013.
+            declare -A branch_changes=() tag_changes=()
             for pline in "${path_lines[@]}"; do
               # BUG FIX: path_lines entries look like "   M /trunk/file.c".
               # The action letter is at index 3 (after 3 spaces). The path
@@ -291,7 +292,9 @@ jobs:
                   if svn --non-interactive cat -r "$rev" "$svn_target" > "$local_path" 2>/dev/null; then
                     git add "$local_path"
                   else
-                    svn --non-interactive export -r "$rev" --force "$svn_target" "$local_path"
+                    # A failed export here is fatal: the log claims this path exists at r$rev, so a miss means log/repo disagreement or a transient error. Abort cleanly — nothing has been pushed, the next run simply retries.
+                    svn --non-interactive export -r "$rev" --force "$svn_target" "$local_path" \
+                      || { echo "  ERROR: r$rev: fetch failed for $svn_target (branch $git_branch) — aborting, nothing was pushed; safe to re-run"; exit 1; }
                     git add -A "$local_path"
                   fi
                 fi
@@ -376,9 +379,9 @@ jobs:
           done
           echo "Sync complete."
 
-      # 
+      #
       # Step 5: Push the updated mirror back to GitHub
-      # 
+      #
       - name: Push mirror to GitHub
         run: |
           set -euo pipefail
@@ -387,10 +390,19 @@ jobs:
           # a normal push should always fast-forward, so we do not use the --force flag
           git push "$REMOTE" 'refs/heads/*:refs/heads/*'
           git push "$REMOTE" 'refs/tags/*:refs/tags/*'
-      
-      # 
+
+          # Local deletions don't propagate via glob refspecs; delete any
+          # refs removed from SVN this run (/tmp persists across steps).
+          if [ -s /tmp/deleted_refs.txt ]; then
+            while IFS= read -r ref; do
+              [ -n "$ref" ] || continue
+              git push "$REMOTE" --delete "$ref" || echo "  WARNING: could not delete remote $ref"
+            done < /tmp/deleted_refs.txt
+          fi
+
+      #
       # Step 6: Update README.md on svn-sync-entrypoint with latest mirror state
-      # 
+      #
       - name: Update README.md on svn-sync-entrypoint
         run: |
           set -euo pipefail
