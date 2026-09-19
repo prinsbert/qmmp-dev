@@ -282,35 +282,51 @@ jobs:
               #  Apply file-level changes to the branch 
               git checkout -f "$git_branch"
 
-              while IFS= read -r change; do
-                IFS=$'\x1f' read -r action local_path copyfrom cf_rev <<< "$change"
-                [ -z "$local_path" ] && continue
-                case "$local_path" in
-                  *..*|/*) echo "  WARNING: suspicious path, skipping: $local_path"; continue ;;
-                esac
-                if [ "$action" == "D" ]; then
-                  git rm -rf --ignore-unmatch "$local_path"
-                else
-                  if [[ "$git_branch" == "master" ]]; then
-                    svn_target="$SVN_URL/trunk/$local_path"
+              # Two passes: deletions first, then adds/modifications. A "replace" (R, or D+A of one path in one revision) must remove the old entry before new content is fetched; svn lists paths alphabetically, so the A/R line can precede the D line and in-order replay would export onto a file the D should have removed (the r13284 failure).
+              for pass in D X; do
+                while IFS= read -r change; do
+                  IFS=$'\x1f' read -r action local_path copyfrom cf_rev <<< "$change"
+                  [ -z "$local_path" ] && continue
+                  case "$local_path" in
+                    *..*|/*) echo "  WARNING: suspicious path, skipping: $local_path"; continue ;;
+                  esac
+                  if [ "$pass" == "D" ]; then
+                    [ "$action" == "D" ] || continue
+                    git rm -rf --ignore-unmatch "$local_path"
                   else
-                    svn_target="$SVN_URL/branches/$git_branch/$local_path"
-                  fi
+                    [ "$action" != "D" ] || continue
+                    if [[ "$git_branch" == "master" ]]; then
+                      svn_target="$SVN_URL/trunk/$local_path"
+                    else
+                      svn_target="$SVN_URL/branches/$git_branch/$local_path"
+                    fi
 
-                  mkdir -p "$(dirname "$local_path")"
+                    mkdir -p "$(dirname "$local_path")"
 
-                  # Try `svn cat` first (files), fall back to `svn export` (directories). "@$rev" is a PEG revision: without it svn resolves the path at HEAD *first*, so any path deleted later in this sync range (absent at HEAD) fails with E160013 naming the HEAD revision.
-                  # The peg pins resolution to the revision the log entry is about (which also makes -r "$rev" redundant, kept for explicitness).
-                  if svn --non-interactive cat -r "$rev" "$svn_target@$rev" > "$local_path" 2>/dev/null; then
-                    git add "$local_path"
-                  else
-                    # A failed export here is fatal: the log claims this path exists at r$rev, so a miss means log/repo disagreement or a transient error. Abort cleanly — nothing has been pushed, the next run simply retries.
-                    svn --non-interactive export -r "$rev" --force "$svn_target@$rev" "$local_path" \
-                      || { echo "  ERROR: r$rev: fetch failed for $svn_target@$rev (branch $git_branch) — aborting, nothing was pushed; safe to re-run"; exit 1; }
-                    git add -A "$local_path"
+                    # `svn cat` doubles as the file-vs-directory probe: success means the path is a file. It writes to a temp name so a local directory at $local_path can't abort the probe via redirection and get misrouted into the export branch.
+                    if svn --non-interactive cat -r "$rev" "$svn_target@$rev" > "$local_path.mirror-tmp" 2>/dev/null; then
+                      # File: if our tree still has a directory at the path (SVN replaced a dir with a file), clear it first.
+                      if [ -d "$local_path" ]; then
+                        git rm -rf -q --ignore-unmatch "$local_path" >/dev/null 2>&1 || true
+                        rm -rf "$local_path"
+                      fi
+                      mv -f "$local_path.mirror-tmp" "$local_path"
+                      git add -A "$local_path"
+                    else
+                      rm -f "$local_path.mirror-tmp"
+                      # Directory: if our tree still has a plain file at the path (SVN replaced a file with a dir — the r13284 case), export fails locally with E155007; clear it.
+                      if [ -e "$local_path" ] && [ ! -d "$local_path" ]; then
+                        git rm -rf -q --ignore-unmatch "$local_path" >/dev/null 2>&1 || true
+                        rm -f "$local_path"
+                      fi
+                      # A failed export here is fatal: the log claims this path exists at r$rev, so a miss means log/repo disagreement or a transient error. Abort cleanly — nothing has been pushed, the next run simply retries.
+                      svn --non-interactive export -r "$rev" --force "$svn_target@$rev" "$local_path" \
+                        || { echo "  ERROR: r$rev: fetch failed for $svn_target@$rev (branch $git_branch) — aborting, nothing was pushed; safe to re-run"; exit 1; }
+                      git add -A "$local_path"
+                    fi
                   fi
-                fi
-              done <<< "${branch_changes[$git_branch]}"
+                done <<< "${branch_changes[$git_branch]}"
+              done
 
               #  Commit if there are staged changes 
               if ! git diff --cached --quiet; then
