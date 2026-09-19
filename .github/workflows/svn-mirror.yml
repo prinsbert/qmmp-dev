@@ -78,23 +78,36 @@ jobs:
           #  4a: Determine the last SVN revision already mirrored 
           # Every commit we create ends with a trailer like:
           #   git-svn-id: svn://svn.code.sf.net/p/qmmp-dev/code/@1234
-          # We search across ALL branches (not just master) to find the absolute highest synced revision. This prevents re-walking logs if the latest SVN activity only touched branches/tags.
-          # Map each (branch, SVN revision) pair to the git commit that represents it. Keyed by branch (not just revision) because a single SVN revision can legitimately produce commits on more than one branch — e.g. one atomic SVN commit that touches both /trunk and an existing /branches/X. Each such commit still has exactly one parent, on its own branch's line of history; the ambiguity was purely in how we were looking them back up.
-          declare -A rev_to_sha
+          # Appends are tip-only and in ascending revision order, so each branch tip carries that branch's highest revision. Checking tips only is O(branches); the old full-history walk (with ~3 process spawns per commit) cost ~10 min on every run. Assumes mirror branches are only ever written by this workflow.
+          LAST_REV=0
           for ref in $(git for-each-ref --format='%(refname:short)' refs/heads); do
+            tip_rev=$(git log -1 --format=%B "$ref" 2>/dev/null | grep -oP 'git-svn-id:.*@\K[0-9]+' | tail -1 || true)
+            if [ -n "$tip_rev" ] && [ "$tip_rev" -gt "$LAST_REV" ]; then
+              LAST_REV=$tip_rev
+            fi
+          done
+          echo "Current mirrored SVN revision: r$LAST_REV"
+
+          # Resolve the commit a copyfrom "<path>:<rev>" points at: the last commit on src_ref at or before cf_rev (git-svn snapshot semantics).
+          # Walking a branch tip-first yields strictly descending SVN revisions (linear mirror, appends only), so the FIRST commit with rev <= cf_rev is exactly that snapshot — early exit keeps the common case (recent copyfrom) to a handful of commits, and in-process bash parsing (no grep/sed forks per commit) keeps even a worst-case full walk to seconds. Echoes the SHA, or nothing if no commit is <= cf_rev (caller falls back to src_ref tip).
+          snapshot_sha() {
+            local src_ref=$1 cf_rev=$2 sha body rev probe
             while IFS= read -r -d '' sha && IFS= read -r -d '' body; do
               sha="${sha#$'\n'}"
-              rev=$(printf '%s' "$body" | grep -oP 'git-svn-id:.*@\K[0-9]+' | tail -1 || true)
-              [ -n "$rev" ] && rev_to_sha["$ref:$rev"]="$sha"
-            done < <(git log "$ref" --format='%H%x00%B%x00' 2>/dev/null)
-          done
-          
-          if [ ${#rev_to_sha[@]} -gt 0 ]; then
-            LAST_REV=$(printf '%s\n' "${!rev_to_sha[@]}" | sed 's/^.*://' | sort -n | tail -1)
-          else
-            LAST_REV=0
-          fi
-          echo "Current mirrored SVN revision: r$LAST_REV"
+              rev=""
+              probe="$body"
+              # last git-svn-id match = the trailer (same as `grep | tail -1`)
+              while [[ "$probe" =~ git-svn-id:[^@]*@([0-9]+) ]]; do
+                rev="${BASH_REMATCH[1]}"
+                probe="${probe#*"${BASH_REMATCH[0]}"}"
+              done
+              if [ -n "$rev" ] && [ "$rev" -le "$cf_rev" ]; then
+                echo "$sha"
+                return 0
+              fi
+            done < <(git log "$src_ref" --format='%H%x00%B%x00' 2>/dev/null)
+            return 0
+          }
 
           START_REV=$((LAST_REV + 1))
 
@@ -242,18 +255,10 @@ jobs:
                     tmp=${copyfrom#/branches/}; src_ref=${tmp%%/*}
                   fi
 
-                  # Create branches at the exact source revision if possible (snapshot: last commit on src_ref at or before cf_rev)
+                  # Create branches at the snapshot commit (last commit on src_ref at or before cf_rev), falling back to src_ref tip.
                   src_commit=""
                   if [ -n "$cf_rev" ]; then
-                    best=0
-                    for k in "${!rev_to_sha[@]}"; do
-                      [[ "$k" == "$src_ref:"* ]] || continue
-                      r=${k##*:}
-                      if [ "$r" -le "$cf_rev" ] && [ "$r" -gt "$best" ]; then
-                        best=$r
-                        src_commit=${rev_to_sha[$k]}
-                      fi
-                    done
+                    src_commit=$(snapshot_sha "$src_ref" "$cf_rev")
                   fi
                   if ! git rev-parse --verify --quiet "$git_branch" >/dev/null; then
                     if [ -n "$src_commit" ]; then
@@ -313,13 +318,12 @@ jobs:
 
                 commit_msg="$msg"$'\n\n'"git-svn-id: $SVN_URL@$rev"
                 GIT_AUTHOR_DATE="$git_date" GIT_COMMITTER_DATE="$git_date" git commit -m "$commit_msg"
-                rev_to_sha["$git_branch:$rev"]="$(git rev-parse HEAD)"
                 echo "  Committed r$rev to $git_branch"
               else
                 echo "  No changes to commit for r$rev on $git_branch"
               fi
             done < <(
-              # Existing branches first: their commits for this revision must be in rev_to_sha before branches created from them in the same revision are processed. Creations follow.
+              # Existing branches first: their commits for this revision land on the branch tip before branches created from them in the same revision are processed (snapshot_sha reads live refs, so it sees those tips). Creations follow.
               for b in "${!branch_changes[@]}"; do
                 if git rev-parse --verify --quiet "refs/heads/$b" >/dev/null; then
                   echo "$b"
@@ -349,15 +353,7 @@ jobs:
                   if [ -n "$src_tag" ]; then
                     src_commit=$(git rev-parse --verify --quiet "refs/tags/$src_tag" 2>/dev/null || true)
                   elif [ -n "$cf_rev" ]; then
-                    best=0
-                    for k in "${!rev_to_sha[@]}"; do
-                      [[ "$k" == "$src_ref:"* ]] || continue
-                      r=${k##*:}
-                      if [ "$r" -le "$cf_rev" ] && [ "$r" -gt "$best" ]; then
-                        best=$r
-                        src_commit=${rev_to_sha[$k]}
-                      fi
-                    done
+                    src_commit=$(snapshot_sha "$src_ref" "$cf_rev")
                   fi
 
                   if ! git rev-parse --verify --quiet "refs/tags/$tag_name" >/dev/null; then
@@ -511,3 +507,4 @@ jobs:
           else
             echo "README.md unchanged, skipping commit"
           fi
+          
