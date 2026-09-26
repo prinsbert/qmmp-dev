@@ -1,4 +1,5 @@
-# qmmp 
+# Qmmp Git Mirror 
+Mirror of the source code for the Qmmp media player converted from SVN to Git
 
 > ⚠️ **You may be interested in:** a [fork of Qmmp with improvements to the media library](https://github.com/desertmilk/qmmp-with-media-library). It adds Artist/Album filtering to the Media Library (closer to Winamp behavior), and in skinned mode applies the loaded skin to the Media Library window with snapping so it groups with the Equalizer and Playlist windows.
 
