@@ -153,8 +153,7 @@ jobs:
 
           #  4c: Parse and process each SVN revision 
           # SVN log entries are separated by a line of exactly 72 dashes.
-          # We use awk with RS="-{72}" to split the file into records, feeding them (NUL-delimited) to a Bash while-loop via process substitution
-          # so counters set inside the loop survive it.
+          # We use awk with RS="-{72}" to split the file into records, feeding them (NUL-delimited) to a Bash while-loop via process substitution so counters set inside the loop survive it.
           while IFS= read -r -d '' block; do
 
             # Strip leading whitespace (awk records start with a newline)
@@ -504,8 +503,7 @@ jobs:
           set -euo pipefail
           cd mirror
 
-          # Bail out when the mirror didn't actually change: rewriting the
-          # block would only churn the timestamp, making "Last changed" a lie.
+          # Bail out when the mirror didn't actually change: rewriting the block would only churn the timestamp, making "Last changed" a lie.
           if [ ! -e /tmp/mirror_changed ]; then
             echo "No mirror changes this run. Skipping README update."
             exit 0
