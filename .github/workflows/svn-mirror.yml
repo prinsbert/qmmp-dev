@@ -17,7 +17,7 @@ permissions:
 
 concurrency:
   group: svn-mirror             # Ensure only one mirror run at a time
-  cancel-in-progress: false     # Don't cancel a running sync — let it finish
+  cancel-in-progress: false     # Don't cancel a running sync. Let it finish
 
 env:
   SVN_URL: svn://svn.code.sf.net/p/qmmp-dev/code/
@@ -68,12 +68,36 @@ jobs:
           git fetch origin '+refs/tags/*:refs/tags/*'
 
       #
-      # Step 4: Core sync logic — fetch new SVN revisions and replay them
+      # Step 4: Core sync logic: fetch new SVN revisions and replay them
       #
       - name: Sync new SVN revisions
         run: |
           set -euo pipefail
           cd mirror
+
+          # State files in /tmp (persists across steps in this job):
+          #   mirror_changed: touched when this run mutated any ref; steps 5 & 6 bail out early when it's absent.
+          #   created_refs / deleted_refs: feeds the run summary and the push step.
+          CHANGED_FLAG=/tmp/mirror_changed
+          CREATED_REFS=/tmp/created_refs.txt
+          DELETED_REFS=/tmp/deleted_refs.txt
+          rm -f "$CHANGED_FLAG" "$CREATED_REFS" "$DELETED_REFS"
+
+          # Run counters (used by the summary at the end of this step).
+          REV_TOTAL=0 COMMITS=0 WARNINGS=0 FIRST_REV="" LAST_SEEN_REV=""
+
+          warn() { echo "  WARNING: $*"; WARNINGS=$((WARNINGS+1)); }
+
+          # Exit path for "nothing new on the SVN side": renders an up-to-date summary so the run isn't silent on the job Summary page.
+          uptodate_exit() {
+            {
+              echo "## 🪞 SVN → Git mirror ($(date -u '+%Y-%m-%d %H:%M:%S UTC'))"
+              echo
+              echo "✅ Mirror already up to date at r$LAST_REV. No new SVN revisions."
+            } >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
+            echo "No new revisions to sync. Mirror up to date at r$LAST_REV."
+            exit 0
+          }
 
           #  4a: Determine the last SVN revision already mirrored 
           # Every commit we create ends with a trailer like:
@@ -89,7 +113,7 @@ jobs:
           echo "Current mirrored SVN revision: r$LAST_REV"
 
           # Resolve the commit a copyfrom "<path>:<rev>" points at: the last commit on src_ref at or before cf_rev (git-svn snapshot semantics).
-          # Walking a branch tip-first yields strictly descending SVN revisions (linear mirror, appends only), so the FIRST commit with rev <= cf_rev is exactly that snapshot — early exit keeps the common case (recent copyfrom) to a handful of commits, and in-process bash parsing (no grep/sed forks per commit) keeps even a worst-case full walk to seconds. Echoes the SHA, or nothing if no commit is <= cf_rev (caller falls back to src_ref tip).
+          # Walking a branch tip-first yields strictly descending SVN revisions (linear mirror, appends only), so the FIRST commit with rev <= cf_rev is exactly that snapshot. Early exit keeps the common case (recent copyfrom) to a handful of commits, and in-process bash parsing (no grep/sed forks per commit) keeps even a worst-case full walk to seconds. Echoes the SHA, or nothing if no commit is <= cf_rev (caller falls back to src_ref tip).
           snapshot_sha() {
             local src_ref=$1 cf_rev=$2 sha body rev probe
             while IFS= read -r -d '' sha && IFS= read -r -d '' body; do
@@ -112,11 +136,10 @@ jobs:
           START_REV=$((LAST_REV + 1))
 
           #  4b: Fetch the SVN log for all new revisions 
-          # `svn log -r START:HEAD` returns all revisions from START to the latest.  If START is beyond HEAD (no new revisions), svn log exits non-zero. We handle that gracefully — but only when that's actually why it failed; any other failure (auth, network, SF.net outage) is a real error and must not be mistaken for "nothing to sync".
+          # `svn log -r START:HEAD` returns all revisions from START to the latest.  If START is beyond HEAD (no new revisions), svn log exits non-zero. We handle that gracefully, but only when that's actually why it failed; any other failure (auth, network, SF.net outage) is a real error and must not be mistaken for "nothing to sync".
           if ! svn --non-interactive log -v -r "$START_REV:HEAD" "$SVN_URL" > /tmp/svn_log.txt 2>/tmp/svn_log_err.txt; then
             if grep -qiE 'No such revision|E160006' /tmp/svn_log_err.txt; then
-              echo "No new revisions to sync (START_REV r$START_REV is beyond HEAD)."
-              exit 0
+              uptodate_exit
             fi
             echo "ERROR: svn log failed unexpectedly:"; cat /tmp/svn_log_err.txt
             exit 1
@@ -125,15 +148,14 @@ jobs:
           # Secondary check: if the file is empty or has only 1 line, there's
           # nothing useful in it.
           if [ ! -s /tmp/svn_log.txt ] || [ "$(wc -l < /tmp/svn_log.txt)" -le 1 ]; then
-            echo "No new revisions to sync."
-            exit 0
+            uptodate_exit
           fi
 
           #  4c: Parse and process each SVN revision 
           # SVN log entries are separated by a line of exactly 72 dashes.
-          # We use awk with RS="-{72}" to split the file into records, then
-          # pipe each record (delimited by NUL) to a Bash while-loop.
-          gawk 'BEGIN{RS="-{72}"} NF>0 {print $0 "\x00"}' /tmp/svn_log.txt | while IFS= read -r -d '' block; do
+          # We use awk with RS="-{72}" to split the file into records, feeding them (NUL-delimited) to a Bash while-loop via process substitution
+          # so counters set inside the loop survive it.
+          while IFS= read -r -d '' block; do
 
             # Strip leading whitespace (awk records start with a newline)
             block="${block#"${block%%[![:space:]]*}"}"
@@ -153,8 +175,14 @@ jobs:
             msg=$(printf '%s\n' "$block" | awk 'BEGIN{p=0} p{print} /^$/{p=1}')
             [ -z "$msg" ] && msg="<empty SVN commit message>"
             [ -z "$author" ] && author="unknown"
-            [[ "$rev" =~ ^[0-9]+$ ]] || { echo "  WARNING: unparsable revision header, skipping block"; continue; }
-            echo "Processing r$rev by $author..."
+            if [[ ! "$rev" =~ ^[0-9]+$ ]]; then
+              warn "unparsable revision header, skipping block"
+              continue
+            fi
+            REV_TOTAL=$((REV_TOTAL+1))
+            LAST_SEEN_REV=$rev
+            if [ -z "$FIRST_REV" ]; then FIRST_REV=$rev; fi
+            echo "Processing r$rev by $author... ($REV_TOTAL of run)"
 
             #  Group changed paths by their target Git branch 
             # Whole-branch/tag deletions are honored; the actual ref removal happens in the per-branch pass below.
@@ -215,7 +243,10 @@ jobs:
                 fi
                 continue
               fi
-              [ -z "$git_branch" ] && { echo "  WARNING: unroutable path, skipping: $rest"; continue; }
+              if [ -z "$git_branch" ]; then
+                warn "unroutable path, skipping: $rest"
+                continue
+              fi
               # Accumulate this change into the branch's change list
               # \x1f can't appear in a path the way '|' theoretically could
               entry="$action"$'\x1f'"$local_path"$'\x1f'"$copyfrom"$'\x1f'"$cf_rev"
@@ -237,13 +268,14 @@ jobs:
                 # Whole-branch deletion: "D /branches/X" (no file part, no copyfrom)
                 if [ "$action" == "D" ] && [ -z "$local_path" ] && [ -z "$copyfrom" ]; then
                   if [ "$git_branch" == "master" ]; then
-                    echo "  WARNING: refusing to delete master, skipping"
+                    warn "refusing to delete master, skipping"
                   elif git rev-parse --verify --quiet "refs/heads/$git_branch" >/dev/null; then
                     if [ "$(git branch --show-current)" == "$git_branch" ]; then
                       git checkout --detach
                     fi
                     git branch -D "$git_branch"
-                    echo "refs/heads/$git_branch" >> /tmp/deleted_refs.txt
+                    echo "refs/heads/$git_branch" >> "$DELETED_REFS"
+                    touch "$CHANGED_FLAG"
                     echo "  Deleted branch $git_branch (removed from SVN)"
                   fi
                   continue
@@ -263,12 +295,16 @@ jobs:
                   if ! git rev-parse --verify --quiet "$git_branch" >/dev/null; then
                     if [ -n "$src_commit" ]; then
                       git branch "$git_branch" "$src_commit"
+                      echo "branches/$git_branch (from $copyfrom@r$cf_rev)" >> "$CREATED_REFS"
+                      touch "$CHANGED_FLAG"
                       echo "  Created branch $git_branch at commit $src_commit (SVN r$cf_rev)"
                     elif git rev-parse --verify --quiet "$src_ref" >/dev/null 2>&1; then
                       git branch "$git_branch" "$src_ref"
+                      echo "branches/$git_branch (from $src_ref tip)" >> "$CREATED_REFS"
+                      touch "$CHANGED_FLAG"
                       echo "  Created branch $git_branch from $src_ref tip (fallback)"
                     else
-                      echo "  WARNING: cannot resolve copyfrom '$copyfrom' for branch $git_branch, skipping"
+                      warn "cannot resolve copyfrom '$copyfrom' for branch $git_branch, skipping"
                     fi
                   fi
                 fi
@@ -288,7 +324,7 @@ jobs:
                   IFS=$'\x1f' read -r action local_path copyfrom cf_rev <<< "$change"
                   [ -z "$local_path" ] && continue
                   case "$local_path" in
-                    *..*|/*) echo "  WARNING: suspicious path, skipping: $local_path"; continue ;;
+                    *..*|/*) warn "suspicious path, skipping: $local_path"; continue ;;
                   esac
                   if [ "$pass" == "D" ]; then
                     [ "$action" == "D" ] || continue
@@ -314,14 +350,14 @@ jobs:
                       git add -A "$local_path"
                     else
                       rm -f "$local_path.mirror-tmp"
-                      # Directory: if our tree still has a plain file at the path (SVN replaced a file with a dir — the r13284 case), export fails locally with E155007; clear it.
+                      # Directory: if our tree still has a plain file at the path (SVN replaced a file with a dir; the r13284 case), export fails locally with E155007; clear it.
                       if [ -e "$local_path" ] && [ ! -d "$local_path" ]; then
                         git rm -rf -q --ignore-unmatch "$local_path" >/dev/null 2>&1 || true
                         rm -f "$local_path"
                       fi
-                      # A failed export here is fatal: the log claims this path exists at r$rev, so a miss means log/repo disagreement or a transient error. Abort cleanly — nothing has been pushed, the next run simply retries.
+                      # A failed export here is fatal: the log claims this path exists at r$rev, so a miss means log/repo disagreement or a transient error. Abort cleanly. Nothing has been pushed, the next run simply retries.
                       svn --non-interactive export -r "$rev" --force "$svn_target@$rev" "$local_path" \
-                        || { echo "  ERROR: r$rev: fetch failed for $svn_target@$rev (branch $git_branch) — aborting, nothing was pushed; safe to re-run"; exit 1; }
+                        || { echo "  ERROR: r$rev: fetch failed for $svn_target@$rev (branch $git_branch): aborting, nothing was pushed; safe to re-run"; exit 1; }
                       git add -A "$local_path"
                     fi
                   fi
@@ -335,6 +371,8 @@ jobs:
 
                 commit_msg="$msg"$'\n\n'"git-svn-id: $SVN_URL@$rev"
                 GIT_AUTHOR_DATE="$git_date" GIT_COMMITTER_DATE="$git_date" git commit -m "$commit_msg"
+                COMMITS=$((COMMITS+1))
+                touch "$CHANGED_FLAG"
                 echo "  Committed r$rev to $git_branch"
               else
                 echo "  No changes to commit for r$rev on $git_branch"
@@ -352,7 +390,7 @@ jobs:
                 fi
               done
             )
-            #  Apply tag operations — always after all branches, so a tag cut in the same revision that changed its source branch sees the branch's new commit.
+            #  Apply tag operations always after all branches, so a tag cut in the same revision that changed its source branch sees the branch's new commit.
             for tag_name in "${!tag_changes[@]}"; do
               while IFS= read -r change; do
                 IFS=$'\x1f' read -r action local_path copyfrom cf_rev <<< "$change"
@@ -376,27 +414,60 @@ jobs:
                   if ! git rev-parse --verify --quiet "refs/tags/$tag_name" >/dev/null; then
                     if [ -n "$src_commit" ]; then
                       git tag "$tag_name" "$src_commit"
+                      echo "tags/$tag_name (from $copyfrom@r$cf_rev)" >> "$CREATED_REFS"
+                      touch "$CHANGED_FLAG"
                       echo "  Created tag $tag_name at commit $src_commit (SVN r$cf_rev)"
                     elif git rev-parse --verify --quiet "$src_ref" >/dev/null 2>&1; then
                       git tag "$tag_name" "$src_ref"
+                      echo "tags/$tag_name (from $src_ref tip)" >> "$CREATED_REFS"
+                      touch "$CHANGED_FLAG"
                       echo "  Created tag $tag_name from $src_ref tip (fallback)"
                     else
-                      echo "  WARNING: cannot resolve copyfrom '$copyfrom' for tag $tag_name, skipping"
+                      warn "cannot resolve copyfrom '$copyfrom' for tag $tag_name, skipping"
                     fi
                   fi
                 elif [ "$action" == "D" ] && [ -z "$local_path" ]; then
                   if git rev-parse --verify --quiet "refs/tags/$tag_name" >/dev/null; then
                     git tag -d "$tag_name"
-                    echo "refs/tags/$tag_name" >> /tmp/deleted_refs.txt
+                    echo "refs/tags/$tag_name" >> "$DELETED_REFS"
+                    touch "$CHANGED_FLAG"
                     echo "  Deleted tag $tag_name (removed from SVN)"
                   fi
                 else
-                  echo "  WARNING: unsupported tag operation ($action $local_path) on $tag_name, skipping"
+                  warn "unsupported tag operation ($action $local_path) on $tag_name, skipping"
                 fi
               done <<< "${tag_changes[$tag_name]}"
             done
-          done
-          echo "Sync complete."
+          done < <(gawk 'BEGIN{RS="-{72}"} NF>0 {print $0 "\x00"}' /tmp/svn_log.txt)
+
+          #  4d: Run summary: human-readable report on the job Summary page 
+          # Join each line of a ref list into backticked, comma-separated Markdown.
+          mdlist() { awk 'NR>1{printf ", "} {printf "`%s`", $0} END{print ""}' "$1"; }
+
+          echo "Sync complete: $REV_TOTAL revision(s) replayed, $COMMITS commit(s) created, $WARNINGS warning(s)."
+          {
+            echo "## 🪞 SVN → Git mirror ($(date -u '+%Y-%m-%d %H:%M:%S UTC'))"
+            echo
+            echo "| | |"
+            echo "|---|---|"
+            echo "| Revisions replayed | **$REV_TOTAL** (r$FIRST_REV → r$LAST_SEEN_REV) |"
+            echo "| Git commits created | $COMMITS |"
+            if [ -s "$CREATED_REFS" ]; then
+              echo "| Refs created | $(mdlist "$CREATED_REFS") |"
+            else
+              echo "| Refs created | *None* |"
+            fi
+            if [ -s "$DELETED_REFS" ]; then
+              echo "| Refs deleted | $(mdlist "$DELETED_REFS") |"
+            else
+              echo "| Refs deleted | *None* |"
+            fi
+            echo "| Warnings | $WARNINGS |"
+            echo
+            if [ ! -e "$CHANGED_FLAG" ]; then
+              echo "ℹ️ Revisions were replayed but produced no Git changes (e.g. property-only SVN commits). Nothing to push, README untouched."
+            fi
+          } >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
 
       #
       # Step 5: Push the updated mirror back to GitHub
@@ -405,6 +476,13 @@ jobs:
         run: |
           set -euo pipefail
           cd mirror
+
+          # Nothing mutated locally this run → local refs are identical to remote; skip the (harmless but pointless) round trips.
+          if [ ! -e /tmp/mirror_changed ]; then
+            echo "Nothing changed in the mirror this run. Nothing to push."
+            exit 0
+          fi
+
           REMOTE="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
           # a normal push should always fast-forward, so we do not use the --force flag
           git push "$REMOTE" 'refs/heads/*:refs/heads/*'
@@ -425,6 +503,14 @@ jobs:
         run: |
           set -euo pipefail
           cd mirror
+
+          # Bail out when the mirror didn't actually change: rewriting the
+          # block would only churn the timestamp, making "Last changed" a lie.
+          if [ ! -e /tmp/mirror_changed ]; then
+            echo "No mirror changes this run. Skipping README update."
+            exit 0
+          fi
+
           git checkout -f svn-sync-entrypoint
           REPO_URL="https://github.com/${GITHUB_REPOSITORY}"
 
@@ -481,13 +567,14 @@ jobs:
           fi
 
           # Generate state block and strip leading indentation spaces
+          # NOTE: the timestamp is only refreshed when the mirror actually changed (guarded above), so it reads as "Last changed", not "last time the workflow happened to run".
           NEW_STATE=$(cat <<EOF | sed 's/^[[:space:]]*//'
           ### Mirror Status
 
           | Field | Value |
           |-------|-------|
           | Latest SVN revision | ${REV_MD} |
-          | Last synced | ${SYNC_TIMESTAMP} |
+          | Last changed | ${SYNC_TIMESTAMP} |
           | Branches (${BRANCH_COUNT}) | ${BRANCHES_MD} |
           | Tags (${TAG_COUNT}) | ${TAGS_MD} |
 
