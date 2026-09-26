@@ -1,4 +1,7 @@
 # qmmp 
+
+> ⚠️ **You may be interested in:** a [fork of Qmmp with improvements to the media library](https://github.com/desertmilk/qmmp-with-media-library). It adds Artist/Album filtering to the Media Library (closer to Winamp behavior), and in skinned mode applies the loaded skin to the Media Library window with snapping so it groups with the Equalizer and Playlist windows.
+
 <img width="548" height="430" alt="Main window of qmmp media player" src="https://github.com/user-attachments/assets/a9fe56ba-fc13-43b3-bb42-1162606ff939" />
 
 ## SVN → Git mirror
