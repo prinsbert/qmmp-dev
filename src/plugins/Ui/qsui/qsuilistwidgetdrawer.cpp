@@ -133,12 +133,12 @@ void QSUiListWidgetDrawer::readSettings()
 
 void QSUiListWidgetDrawer::loadSystemColors()
 {
-    m_normal = qApp->palette().color(QPalette::Text);
-    m_alternate_bg = qApp->palette().color(QPalette::AlternateBase);
-    m_current = qApp->palette().color(QPalette::Text);
-    m_highlighted = qApp->palette().color(QPalette::HighlightedText);
-    m_normal_bg = qApp->palette().color(QPalette::Base);
-    m_selected_bg = qApp->palette().color(QPalette::Highlight);
+    m_normal = qApp->palette("QListView").color(QPalette::Text);
+    m_alternate_bg = qApp->palette("QListView").color(QPalette::AlternateBase);
+    m_current = qApp->palette("QListView").color(QPalette::Text);
+    m_highlighted = qApp->palette("QListView").color(QPalette::HighlightedText);
+    m_normal_bg = qApp->palette("QListView").color(QPalette::Base);
+    m_selected_bg = qApp->palette("QListView").color(QPalette::Highlight);
     m_splitter = m_normal;
     m_group_bg = m_normal_bg;
     m_group_alt_bg = m_alternate_bg,
