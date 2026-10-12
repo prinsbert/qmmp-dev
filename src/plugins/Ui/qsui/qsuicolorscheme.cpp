@@ -25,13 +25,13 @@
 
 QSUiColorScheme::QSUiColorScheme()
 {
-    QString normalBg = qApp->palette().color(QPalette::Base).name();
-    QString alternate = qApp->palette().color(QPalette::AlternateBase).name();
-    QString selectedBg = qApp->palette().color(QPalette::Highlight).name();
-    QString normal = qApp->palette().color(QPalette::Text).name();
-    QString current = qApp->palette().color(QPalette::Text).name();
-    QString highlighted = qApp->palette().color(QPalette::HighlightedText).name();
-    QString groupText = qApp->palette().color(QPalette::Text).name();
+    QString normalBg = qApp->palette("QListView").color(QPalette::Base).name();
+    QString alternate = qApp->palette("QListView").color(QPalette::AlternateBase).name();
+    QString selectedBg = qApp->palette("QListView").color(QPalette::Highlight).name();
+    QString normal = qApp->palette("QListView").color(QPalette::Text).name();
+    QString current = qApp->palette("QListView").color(QPalette::Text).name();
+    QString highlighted = qApp->palette("QListView").color(QPalette::HighlightedText).name();
+    QString groupText = qApp->palette("QListView").color(QPalette::Text).name();
 
     m_descriptors = {
         { VIS_COLOR_1,                 { u"vis_color1"_s, u"#BECBFF"_s, u"#9E9E9E"_s }},
