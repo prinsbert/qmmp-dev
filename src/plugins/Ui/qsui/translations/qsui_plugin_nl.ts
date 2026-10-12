@@ -120,22 +120,22 @@
         <translation>Vloeiend schuiven inschakelen</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="298"/>
+        <location filename="../forms/qsuisettings.ui" line="305"/>
         <source>Reset colors</source>
         <translation>Standaardkleuren herstellen</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="308"/>
+        <location filename="../forms/qsuisettings.ui" line="315"/>
         <source>Fonts</source>
         <translation>Lettertypen</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="314"/>
+        <location filename="../forms/qsuisettings.ui" line="321"/>
         <source>Use system fonts</source>
         <translation>Systeemlettertypen gebruiken</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="388"/>
+        <location filename="../forms/qsuisettings.ui" line="395"/>
         <source>Playlist:</source>
         <translation>Afspeellijst:</translation>
     </message>
@@ -160,137 +160,142 @@
         <translation>Nummerweergave</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="87"/>
+        <location filename="../forms/qsuisettings.ui" line="94"/>
         <source>Show protocol</source>
         <translation>Protocol tonen</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="155"/>
+        <location filename="../forms/qsuisettings.ui" line="162"/>
         <source>Show song numbers</source>
         <translation>CD-nummers tonen</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="162"/>
+        <location filename="../forms/qsuisettings.ui" line="169"/>
         <source>Show song lengths</source>
         <translation>Duur van nummers tonen</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="172"/>
+        <location filename="../forms/qsuisettings.ui" line="179"/>
         <source>Align song numbers</source>
         <translation>CD-nummers uitlijnen</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="94"/>
+        <location filename="../forms/qsuisettings.ui" line="101"/>
         <source>Show anchor</source>
         <translation>Verankering tonen</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="108"/>
+        <location filename="../forms/qsuisettings.ui" line="115"/>
         <source>Show popup information</source>
         <translation>Pop-up tonen</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="120"/>
+        <location filename="../forms/qsuisettings.ui" line="127"/>
         <source>Edit template</source>
         <translation>Sjabloon bewerken</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="214"/>
+        <location filename="../forms/qsuisettings.ui" line="221"/>
         <source>Light Mode</source>
         <translation>Licht thema</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="246"/>
+        <location filename="../forms/qsuisettings.ui" line="253"/>
         <source>Dark Mode</source>
         <translation>Donker thema</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="275"/>
+        <location filename="../forms/qsuisettings.ui" line="282"/>
         <source>Color mode:</source>
         <translation>Kleurenschema:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="455"/>
+        <location filename="../forms/qsuisettings.ui" line="462"/>
         <source>Reset fonts</source>
         <translation>Lettertypen herstellen</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="404"/>
+        <location filename="../forms/qsuisettings.ui" line="411"/>
         <source>Column headers:</source>
         <translation>Kolomtitels:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="470"/>
+        <location filename="../forms/qsuisettings.ui" line="477"/>
         <source>Tab names:</source>
         <translation>Tabbladnamen:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="551"/>
+        <location filename="../forms/qsuisettings.ui" line="558"/>
         <source>Miscellaneous</source>
         <translation>Overig</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="101"/>
+        <location filename="../forms/qsuisettings.ui" line="108"/>
         <source>Show splitters</source>
         <translation>Splitsgrepen tonen</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="149"/>
+        <location filename="../forms/qsuisettings.ui" line="87"/>
+        <source>Reduce row spacing</source>
+        <translation>Afstand tussen rijen verkleinen</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="156"/>
         <source>Single Column Mode</source>
         <translation>Eénkolommodus</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="196"/>
+        <location filename="../forms/qsuisettings.ui" line="203"/>
         <source>Colors</source>
         <translation>Kleuren</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="480"/>
+        <location filename="../forms/qsuisettings.ui" line="487"/>
         <source>Groups:</source>
         <translation>Groepen:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="487"/>
+        <location filename="../forms/qsuisettings.ui" line="494"/>
         <source>Extra group row:</source>
         <translation>Aanvullende groepsrij:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="584"/>
+        <location filename="../forms/qsuisettings.ui" line="591"/>
         <source>Tab position:</source>
         <translation>Tabbladpositie:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="621"/>
+        <location filename="../forms/qsuisettings.ui" line="628"/>
         <source>Toolbars</source>
         <translation>Werkbalken</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="629"/>
+        <location filename="../forms/qsuisettings.ui" line="636"/>
         <source>Icon size:</source>
         <translation>Pictogramgrootte:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="654"/>
+        <location filename="../forms/qsuisettings.ui" line="661"/>
         <source>Customize...</source>
         <translation>Aanpassen...</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="557"/>
+        <location filename="../forms/qsuisettings.ui" line="564"/>
         <source>Tabs</source>
         <translation>Tabbladen</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="563"/>
+        <location filename="../forms/qsuisettings.ui" line="570"/>
         <source>Show close buttons</source>
         <translation>Sluitknoppen tonen</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="570"/>
+        <location filename="../forms/qsuisettings.ui" line="577"/>
         <source>Show tab list menu</source>
         <translation>Tabbladlijst tonen</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="577"/>
+        <location filename="../forms/qsuisettings.ui" line="584"/>
         <source>Show &apos;New Playlist&apos; button</source>
         <translation>Knop &apos;Nieuwe afspeellijst&apos; tonen</translation>
     </message>
@@ -899,93 +904,93 @@
 <context>
     <name>QSUiColorScheme</name>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="168"/>
+        <location filename="../qsuicolorscheme.cpp" line="181"/>
         <source>Color #1:</source>
         <translation>Kleur #1:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="169"/>
+        <location filename="../qsuicolorscheme.cpp" line="182"/>
         <source>Color #2:</source>
         <translation>Kleur #2:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="170"/>
+        <location filename="../qsuicolorscheme.cpp" line="183"/>
         <source>Color #3:</source>
         <translation>Kleur #3:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="171"/>
+        <location filename="../qsuicolorscheme.cpp" line="184"/>
         <source>Peaks:</source>
         <translation>Pieken:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="172"/>
-        <location filename="../qsuicolorscheme.cpp" line="183"/>
+        <location filename="../qsuicolorscheme.cpp" line="185"/>
+        <location filename="../qsuicolorscheme.cpp" line="196"/>
         <source>Background:</source>
         <translation>Achtergrond:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="173"/>
+        <location filename="../qsuicolorscheme.cpp" line="186"/>
         <source>Background #1:</source>
         <translation>Achtergrond #1:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="174"/>
+        <location filename="../qsuicolorscheme.cpp" line="187"/>
         <source>Background #2:</source>
         <translation>Achtergrond #2:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="175"/>
+        <location filename="../qsuicolorscheme.cpp" line="188"/>
         <source>Highlighted background:</source>
         <translation>Gemarkeerde achtergrond:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="176"/>
+        <location filename="../qsuicolorscheme.cpp" line="189"/>
         <source>Splitter:</source>
         <translation>Splitsgreep:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="177"/>
+        <location filename="../qsuicolorscheme.cpp" line="190"/>
         <source>Normal text:</source>
         <translation>Normale tekst:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="178"/>
+        <location filename="../qsuicolorscheme.cpp" line="191"/>
         <source>Highlighted text:</source>
         <translation>Gemarkeerde tekst:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="179"/>
+        <location filename="../qsuicolorscheme.cpp" line="192"/>
         <source>Group text:</source>
         <translation>Groeperingstekst:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="180"/>
+        <location filename="../qsuicolorscheme.cpp" line="193"/>
         <source>Group background:</source>
         <translation>Groeperingsachtergrond:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="181"/>
+        <location filename="../qsuicolorscheme.cpp" line="194"/>
         <source>Current track text:</source>
         <translation>Huidige nummertekst:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="182"/>
+        <location filename="../qsuicolorscheme.cpp" line="195"/>
         <source>Current track background:</source>
         <translation>Huidige nummerachtergrond:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="184"/>
+        <location filename="../qsuicolorscheme.cpp" line="197"/>
         <source>Progress bar:</source>
         <translation>Voortgangsbalk:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="185"/>
+        <location filename="../qsuicolorscheme.cpp" line="198"/>
         <source>Waveform:</source>
         <translation>Waveform:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="186"/>
+        <location filename="../qsuicolorscheme.cpp" line="199"/>
         <source>RMS:</source>
         <translation>RMS:</translation>
     </message>
@@ -1009,16 +1014,21 @@
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="65"/>
+        <source>Alternate row colors</source>
+        <translation>Rijkleuren afwisselen</translation>
+    </message>
+    <message>
+        <location filename="../qsuicolorschemewidget.cpp" line="66"/>
         <source>Use system colors</source>
         <translation>Systeemkleuren gebruiken</translation>
     </message>
     <message>
-        <location filename="../qsuicolorschemewidget.cpp" line="73"/>
+        <location filename="../qsuicolorschemewidget.cpp" line="75"/>
         <source>Override group colors</source>
         <translation>Huidige groepskleuren overtekenen</translation>
     </message>
     <message>
-        <location filename="../qsuicolorschemewidget.cpp" line="81"/>
+        <location filename="../qsuicolorschemewidget.cpp" line="84"/>
         <source>Override current track colors</source>
         <translation>Huidige nummerkleuren overtekenen</translation>
     </message>

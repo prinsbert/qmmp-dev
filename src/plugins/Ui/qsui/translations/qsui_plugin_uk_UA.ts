@@ -120,22 +120,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="298"/>
+        <location filename="../forms/qsuisettings.ui" line="305"/>
         <source>Reset colors</source>
         <translation>Скинути кольори</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="308"/>
+        <location filename="../forms/qsuisettings.ui" line="315"/>
         <source>Fonts</source>
         <translation>Шрифти</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="314"/>
+        <location filename="../forms/qsuisettings.ui" line="321"/>
         <source>Use system fonts</source>
         <translation>Використовувати системні шрифти</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="388"/>
+        <location filename="../forms/qsuisettings.ui" line="395"/>
         <source>Playlist:</source>
         <translation>Список:</translation>
     </message>
@@ -160,137 +160,142 @@
         <translation>Перелік пісень</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="87"/>
+        <location filename="../forms/qsuisettings.ui" line="94"/>
         <source>Show protocol</source>
         <translation>Показати протокол</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="155"/>
+        <location filename="../forms/qsuisettings.ui" line="162"/>
         <source>Show song numbers</source>
         <translation>Показувати номери пісень</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="162"/>
+        <location filename="../forms/qsuisettings.ui" line="169"/>
         <source>Show song lengths</source>
         <translation>Показувати довжину пісні</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="172"/>
+        <location filename="../forms/qsuisettings.ui" line="179"/>
         <source>Align song numbers</source>
         <translation>Вирівнювати номери фрагментів</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="94"/>
+        <location filename="../forms/qsuisettings.ui" line="101"/>
         <source>Show anchor</source>
         <translation>Показувати &quot;якір&quot;</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="108"/>
+        <location filename="../forms/qsuisettings.ui" line="115"/>
         <source>Show popup information</source>
         <translation>Показувати спливаюче вікно з інформацією</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="120"/>
+        <location filename="../forms/qsuisettings.ui" line="127"/>
         <source>Edit template</source>
         <translation>Редагувати шаблон</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="214"/>
+        <location filename="../forms/qsuisettings.ui" line="221"/>
         <source>Light Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="246"/>
+        <location filename="../forms/qsuisettings.ui" line="253"/>
         <source>Dark Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="275"/>
+        <location filename="../forms/qsuisettings.ui" line="282"/>
         <source>Color mode:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="455"/>
+        <location filename="../forms/qsuisettings.ui" line="462"/>
         <source>Reset fonts</source>
         <translation>Скинути шрифти</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="404"/>
+        <location filename="../forms/qsuisettings.ui" line="411"/>
         <source>Column headers:</source>
         <translation>Назви стовпців:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="470"/>
+        <location filename="../forms/qsuisettings.ui" line="477"/>
         <source>Tab names:</source>
         <translation>Назва закладки:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="551"/>
+        <location filename="../forms/qsuisettings.ui" line="558"/>
         <source>Miscellaneous</source>
         <translation>Різне</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="101"/>
+        <location filename="../forms/qsuisettings.ui" line="108"/>
         <source>Show splitters</source>
         <translation>Показувати розділювачі</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="149"/>
+        <location filename="../forms/qsuisettings.ui" line="87"/>
+        <source>Reduce row spacing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="156"/>
         <source>Single Column Mode</source>
         <translation>Одностовпчиковий режим</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="196"/>
+        <location filename="../forms/qsuisettings.ui" line="203"/>
         <source>Colors</source>
         <translation>Кольори</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="480"/>
+        <location filename="../forms/qsuisettings.ui" line="487"/>
         <source>Groups:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="487"/>
+        <location filename="../forms/qsuisettings.ui" line="494"/>
         <source>Extra group row:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="584"/>
+        <location filename="../forms/qsuisettings.ui" line="591"/>
         <source>Tab position:</source>
         <translation>Розташування вкладок:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="621"/>
+        <location filename="../forms/qsuisettings.ui" line="628"/>
         <source>Toolbars</source>
         <translation>Панелі знарядь</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="629"/>
+        <location filename="../forms/qsuisettings.ui" line="636"/>
         <source>Icon size:</source>
         <translation>Розмір піктограм:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="654"/>
+        <location filename="../forms/qsuisettings.ui" line="661"/>
         <source>Customize...</source>
         <translation>Налаштувати...</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="557"/>
+        <location filename="../forms/qsuisettings.ui" line="564"/>
         <source>Tabs</source>
         <translation>Вкладки</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="563"/>
+        <location filename="../forms/qsuisettings.ui" line="570"/>
         <source>Show close buttons</source>
         <translation>Показати кнопки закриття</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="570"/>
+        <location filename="../forms/qsuisettings.ui" line="577"/>
         <source>Show tab list menu</source>
         <translation>Показувати меню з переліком вкладок</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="577"/>
+        <location filename="../forms/qsuisettings.ui" line="584"/>
         <source>Show &apos;New Playlist&apos; button</source>
         <translation>Показувати кнопку &quot;Новий список&quot;</translation>
     </message>
@@ -899,93 +904,93 @@
 <context>
     <name>QSUiColorScheme</name>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="168"/>
+        <location filename="../qsuicolorscheme.cpp" line="181"/>
         <source>Color #1:</source>
         <translation type="unfinished">Колір #1:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="169"/>
+        <location filename="../qsuicolorscheme.cpp" line="182"/>
         <source>Color #2:</source>
         <translation type="unfinished">Колір #2:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="170"/>
+        <location filename="../qsuicolorscheme.cpp" line="183"/>
         <source>Color #3:</source>
         <translation type="unfinished">Колір #3:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="171"/>
+        <location filename="../qsuicolorscheme.cpp" line="184"/>
         <source>Peaks:</source>
         <translation type="unfinished">Піки:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="172"/>
-        <location filename="../qsuicolorscheme.cpp" line="183"/>
+        <location filename="../qsuicolorscheme.cpp" line="185"/>
+        <location filename="../qsuicolorscheme.cpp" line="196"/>
         <source>Background:</source>
         <translation type="unfinished">Тло:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="173"/>
+        <location filename="../qsuicolorscheme.cpp" line="186"/>
         <source>Background #1:</source>
         <translation type="unfinished">Тло #1:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="174"/>
+        <location filename="../qsuicolorscheme.cpp" line="187"/>
         <source>Background #2:</source>
         <translation type="unfinished">Тло #2:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="175"/>
+        <location filename="../qsuicolorscheme.cpp" line="188"/>
         <source>Highlighted background:</source>
         <translation type="unfinished">Виділене тло:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="176"/>
+        <location filename="../qsuicolorscheme.cpp" line="189"/>
         <source>Splitter:</source>
         <translation type="unfinished">Розділювач:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="177"/>
+        <location filename="../qsuicolorscheme.cpp" line="190"/>
         <source>Normal text:</source>
         <translation type="unfinished">Звичайний текст:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="178"/>
+        <location filename="../qsuicolorscheme.cpp" line="191"/>
         <source>Highlighted text:</source>
         <translation type="unfinished">Виділений текст:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="179"/>
+        <location filename="../qsuicolorscheme.cpp" line="192"/>
         <source>Group text:</source>
         <translation type="unfinished">Текст групи:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="180"/>
+        <location filename="../qsuicolorscheme.cpp" line="193"/>
         <source>Group background:</source>
         <translation type="unfinished">Тло групи:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="181"/>
+        <location filename="../qsuicolorscheme.cpp" line="194"/>
         <source>Current track text:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="182"/>
+        <location filename="../qsuicolorscheme.cpp" line="195"/>
         <source>Current track background:</source>
         <translation type="unfinished">Тло поточної доріжки</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="184"/>
+        <location filename="../qsuicolorscheme.cpp" line="197"/>
         <source>Progress bar:</source>
         <translation type="unfinished">Смуга поступу:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="185"/>
+        <location filename="../qsuicolorscheme.cpp" line="198"/>
         <source>Waveform:</source>
         <translation type="unfinished">Форма хвилі:</translation>
     </message>
     <message>
-        <location filename="../qsuicolorscheme.cpp" line="186"/>
+        <location filename="../qsuicolorscheme.cpp" line="199"/>
         <source>RMS:</source>
         <translation type="unfinished">Середнє квадратичне:</translation>
     </message>
@@ -1009,16 +1014,21 @@
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="65"/>
+        <source>Alternate row colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuicolorschemewidget.cpp" line="66"/>
         <source>Use system colors</source>
         <translation type="unfinished">Використовувати системні кольори</translation>
     </message>
     <message>
-        <location filename="../qsuicolorschemewidget.cpp" line="73"/>
+        <location filename="../qsuicolorschemewidget.cpp" line="75"/>
         <source>Override group colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuicolorschemewidget.cpp" line="81"/>
+        <location filename="../qsuicolorschemewidget.cpp" line="84"/>
         <source>Override current track colors</source>
         <translation type="unfinished"></translation>
     </message>

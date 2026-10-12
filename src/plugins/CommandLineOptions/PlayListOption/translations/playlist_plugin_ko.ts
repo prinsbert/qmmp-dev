@@ -41,7 +41,7 @@
     <message>
         <location filename="../playlistoption.cpp" line="40"/>
         <source>Remove playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>재생목록 삭제</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="41"/>
@@ -120,12 +120,12 @@
     <message>
         <location filename="../playlistoption.cpp" line="206"/>
         <source>Unable to remove last remaining playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>마지막 남은 재생목록은 삭제할 수 없습니다</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="209"/>
         <source>Missing playlist ID</source>
-        <translation type="unfinished"></translation>
+        <translation>재생목록 ID가 없습니다</translation>
     </message>
 </context>
 </TS>
