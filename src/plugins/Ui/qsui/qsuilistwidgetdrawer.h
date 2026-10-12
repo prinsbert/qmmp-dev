@@ -28,6 +28,7 @@
 #include <QFontMetrics>
 #include <QImage>
 
+class QWidget;
 class QPainter;
 class PlayListHeaderModel;
 class QmmpUiSettings;
@@ -74,7 +75,7 @@ struct QSUiListWidgetRow
 class QSUiListWidgetDrawer
 {
 public:
-    QSUiListWidgetDrawer();
+    QSUiListWidgetDrawer(const QWidget *listWidget);
     ~QSUiListWidgetDrawer();
 
     void readSettings();
@@ -92,6 +93,7 @@ public:
     void drawDropLine(QPainter *painter, int y, int width);
 
 private:
+    int getRowHeightFromStyle();
 
     enum Font
     {
@@ -107,6 +109,7 @@ private:
     QColor m_group_bg, m_group_alt_bg, m_group_text, m_current_bg, m_current_alt_bg;
     PlayListHeaderModel *m_header_model;
     QmmpUiSettings *m_ui_settings;
+    const QWidget *m_listWidget;
     QImage m_emptyCover;
     bool m_show_numbers = false;
     bool m_show_anchor = false;
@@ -117,6 +120,7 @@ private:
     int m_padding = 0;
     int m_number_width = 0;
     int m_row_height = 0;
+    int m_text_offset = 0;
 };
 
 #endif // QSUILISTWIDGETDRAWER_H

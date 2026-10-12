@@ -40,8 +40,10 @@
 #include "qsuiactionmanager.h"
 #include "qsuipopupwidget.h"
 
-QSUiListWidget::QSUiListWidget(PlayListModel *model, QWidget *parent) : QWidget(parent),
-    m_model(model)
+QSUiListWidget::QSUiListWidget(PlayListModel *model, QWidget *parent) :
+    QWidget(parent),
+    m_model(model),
+    m_drawer(this)
 {
     setFocusPolicy(Qt::StrongFocus);
     m_ui_settings = QmmpUiSettings::instance();

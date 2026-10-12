@@ -51,6 +51,7 @@ private:
     QCheckBox *m_plSystemColorsCheckBox;
     QCheckBox *m_plOverrideGroupColorsCheckBox;
     QCheckBox *m_plOverrideCurrentTrackColorsCheckBox;
+    QCheckBox *m_plAlternateRowColorsCheckBox;
 };
 
 #endif // QSUICOLORSCHEMEWIDGET_H

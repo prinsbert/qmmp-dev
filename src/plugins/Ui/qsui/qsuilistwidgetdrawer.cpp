@@ -22,6 +22,8 @@
 #include <QPainter>
 #include <QApplication>
 #include <QStyleHints>
+#include <QStyle>
+#include <QStyleOption>
 #include <qmmp/qmmp.h>
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/qmmpuisettings.h>
@@ -30,11 +32,13 @@
 
 // |= number=|=row1=|=row2=|=extra= duration=|
 
-QSUiListWidgetDrawer::QSUiListWidgetDrawer() :
+QSUiListWidgetDrawer::QSUiListWidgetDrawer(const QWidget *listWidget) :
+    m_header_model(PlayListManager::instance()->headerModel()),
+    m_ui_settings(QmmpUiSettings::instance()),
+    m_listWidget(listWidget),
     m_emptyCover(u":/qsui/ui_no_cover.png"_s)
+
 {
-    m_header_model = PlayListManager::instance()->headerModel();
-    m_ui_settings = QmmpUiSettings::instance();
     readSettings();
 }
 
@@ -118,8 +122,15 @@ void QSUiListWidgetDrawer::readSettings()
         m_current_alt_bg = m_current_bg;
         m_current = scheme.color(QSUiColorScheme::PL_CURRENT_TRACK_TEXT);
     }
-    
-    settings.endGroup();
+
+    if(!scheme.plAlternateRowColors())
+    {
+        m_alternate_bg = m_normal_bg;
+        if(!scheme.plOverrideGroupColors())
+            m_group_alt_bg = m_group_bg;
+        if(!scheme.plOverrideCurrentTrackColors())
+            m_current_alt_bg = m_current_bg;
+    }
 
     for(int i = 0; i <= PL_GROUP_FONT_EXTRA; ++i)
     {
@@ -128,7 +139,15 @@ void QSUiListWidgetDrawer::readSettings()
     }
 
     m_padding = m_metrics[MAIN_FONT_NORMAL]->horizontalAdvance(u"9"_s) / 2;
-    m_row_height = m_metrics[MAIN_FONT_NORMAL]->lineSpacing() + 1;
+
+    if(settings.value(u"pl_reduce_row_spacing"_s, false).toBool())
+        m_row_height = m_metrics[MAIN_FONT_NORMAL]->lineSpacing() + 1;
+    else
+        m_row_height = getRowHeightFromStyle();
+
+    m_text_offset = m_metrics[MAIN_FONT_NORMAL]->overlinePos() + qMax(0, (m_row_height - m_metrics[MAIN_FONT_NORMAL]->lineSpacing()) / 2) - 1;
+
+    settings.endGroup();
 }
 
 void QSUiListWidgetDrawer::loadSystemColors()
@@ -304,14 +323,14 @@ void QSUiListWidgetDrawer::drawSeparator(QPainter *painter, QSUiListWidgetRow *r
 {
     int sx = rtl ? (row->rect.right() - 50 - row->numberColumnWidth - m_metrics[MAIN_FONT_NORMAL]->horizontalAdvance(row->titles[0])) :
         (row->rect.x() + row->numberColumnWidth + 50);
-    int sy = row->rect.y() + m_metrics[MAIN_FONT_NORMAL]->overlinePos() - 1;
+    int sy = row->rect.y() + m_text_offset;
     bool dividingLine = m_ui_settings->groupDividingLineVisible();
 
     painter->setFont(m_fonts[MAIN_FONT_NORMAL]);
     painter->setPen((row->flags & QSUiListWidgetRow::SELECTED) ? m_highlighted : m_group_text);
     painter->drawText(sx, sy, row->titles[0]);
 
-    sy -= m_metrics[MAIN_FONT_NORMAL]->lineSpacing() / 2 - 2;
+    sy = row->rect.y() + row->rect.height() / 2;
 
     if(rtl)
     {
@@ -415,7 +434,7 @@ void QSUiListWidgetDrawer::drawMultiLineSeparator(QPainter *painter, QSUiListWid
 
 void QSUiListWidgetDrawer::drawTrack(QPainter *painter, QSUiListWidgetRow *row, bool rtl)
 {
-    int sy = row->rect.y() + m_metrics[MAIN_FONT_NORMAL]->overlinePos() - 1;
+    int sy = row->rect.y() + m_text_offset;
     int sx = rtl ? row->rect.right() : row->rect.x();
     int title_x = 0, extra_x = 0;
     bool draw_extra = false;
@@ -602,4 +621,15 @@ void QSUiListWidgetDrawer::drawDropLine(QPainter *painter, int y, int width)
 {
     painter->setPen(m_current);
     painter->drawLine(5, y, width - 5 , y);
+}
+
+int QSUiListWidgetDrawer::getRowHeightFromStyle()
+{
+    QStyleOptionViewItem opt;
+    opt.initFrom(m_listWidget);
+    opt.fontMetrics = *m_metrics[MAIN_FONT_NORMAL];
+    opt.font = m_fonts[MAIN_FONT_NORMAL];
+    opt.showDecorationSelected = false;
+    opt.widget = m_listWidget;
+    return m_listWidget->style()->sizeFromContents(QStyle::CT_ItemViewItem, &opt, QSize(), m_listWidget).height();
 }

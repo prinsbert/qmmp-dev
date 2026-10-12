@@ -62,7 +62,9 @@ QSUiColorSchemeWidget::QSUiColorSchemeWidget(QWidget *parent) : QWidget(parent)
 
         if(i == QSUiColorScheme::PL_BACKGROUND_1)
         {
+            m_plAlternateRowColorsCheckBox = new QCheckBox(tr("Alternate row colors"), parentWidget);
             m_plSystemColorsCheckBox = new QCheckBox(tr("Use system colors"), parentWidget);
+            layout->addRow(m_plAlternateRowColorsCheckBox);
             layout->addRow(m_plSystemColorsCheckBox);
             connect(m_plSystemColorsCheckBox, &QCheckBox::toggled, this, [this](bool checked) {
                 setColorWidgetsEnabled(QSUiColorScheme::PL_BACKGROUND_1, QSUiColorScheme::PL_HIGHLIGHTED_TEXT, !checked);
@@ -75,6 +77,7 @@ QSUiColorSchemeWidget::QSUiColorSchemeWidget(QWidget *parent) : QWidget(parent)
             connect(m_plOverrideGroupColorsCheckBox, &QCheckBox::toggled, this, [this](bool checked) {
                 setColorWidgetsEnabled(QSUiColorScheme::PL_GROUP_TEXT, QSUiColorScheme::PL_GROUP_BACKGROUND, checked);
             } );
+
         }
         else if(i == QSUiColorScheme::PL_CURRENT_TRACK_TEXT)
         {
@@ -110,6 +113,7 @@ void QSUiColorSchemeWidget::loadDefaults(bool darkMode)
     for(auto it = m_colorWidges.cbegin(); it != m_colorWidges.cend(); ++it)
         it.value()->setColor(m_scheme.color(it.key()));
 
+    m_plAlternateRowColorsCheckBox->setChecked(m_scheme.plAlternateRowColors());
     m_plSystemColorsCheckBox->setChecked(m_scheme.plUseSystemColors());
     m_plOverrideGroupColorsCheckBox->setChecked(m_scheme.plOverrideGroupColors());
     m_plOverrideCurrentTrackColorsCheckBox->setChecked(m_scheme.plOverrideCurrentTrackColors());
@@ -121,6 +125,7 @@ void QSUiColorSchemeWidget::load(const QSettings *settings, bool darkMode)
     for(auto it = m_colorWidges.cbegin(); it != m_colorWidges.cend(); ++it)
         it.value()->setColor(m_scheme.color(it.key()));
 
+    m_plAlternateRowColorsCheckBox->setChecked(m_scheme.plAlternateRowColors());
     m_plSystemColorsCheckBox->setChecked(m_scheme.plUseSystemColors());
     m_plOverrideGroupColorsCheckBox->setChecked(m_scheme.plOverrideGroupColors());
     m_plOverrideCurrentTrackColorsCheckBox->setChecked(m_scheme.plOverrideCurrentTrackColors());
@@ -131,6 +136,7 @@ void QSUiColorSchemeWidget::write(QSettings *settings, bool darkMode)
     for(auto it = m_colorWidges.cbegin(); it != m_colorWidges.cend(); ++it)
         m_scheme.setColor(it.key(), it.value()->color());
 
+    m_scheme.setPlAlternateRowColors(m_plAlternateRowColorsCheckBox->isChecked());
     m_scheme.setPlUseSystemColors(m_plSystemColorsCheckBox->isChecked());
     m_scheme.setPlOverrideGroupColors(m_plOverrideGroupColorsCheckBox->isChecked());
     m_scheme.setPlOverrideCurrentTrackColors(m_plOverrideCurrentTrackColorsCheckBox->isChecked());

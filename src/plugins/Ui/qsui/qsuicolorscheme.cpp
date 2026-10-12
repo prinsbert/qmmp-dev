@@ -83,6 +83,7 @@ void QSUiColorScheme::loadDefaults(bool darkMode)
     m_plSystemColors = true;
     m_plOverrideGroupColors = false;
     m_plOverrideCurrentTrackColors = false;
+    m_plAlternateRowColors = true;
 }
 
 void QSUiColorScheme::load(const QSettings *settings, bool darkMode)
@@ -104,6 +105,7 @@ void QSUiColorScheme::load(const QSettings *settings, bool darkMode)
     m_plSystemColors = settings->value(u"pl_system_colors"_s + suffix, true).toBool();
     m_plOverrideGroupColors = settings->value(u"pl_override_group_colors"_s + suffix, false).toBool();
     m_plOverrideCurrentTrackColors = settings->value(u"pl_override_current_track_colors"_s + suffix, false).toBool();
+    m_plAlternateRowColors = settings->value(u"pl_alternate_row_colors"_s + suffix, true).toBool();
 }
 
 void QSUiColorScheme::write(QSettings *settings, bool darkMode) const
@@ -120,6 +122,7 @@ void QSUiColorScheme::write(QSettings *settings, bool darkMode) const
     settings->setValue(u"pl_system_colors"_s + suffix, m_plSystemColors);
     settings->setValue(u"pl_override_group_colors"_s + suffix, m_plOverrideGroupColors);
     settings->setValue(u"pl_override_current_track_colors"_s + suffix, m_plOverrideCurrentTrackColors);
+    settings->setValue(u"pl_alternate_row_colors"_s + suffix, m_plAlternateRowColors);
 }
 
 void QSUiColorScheme::setColor(QSUiColorRole role, const QColor &color)
@@ -147,6 +150,11 @@ void QSUiColorScheme::setPlOverrideCurrentTrackColors(bool plOverrideCurrentTrac
     m_plOverrideCurrentTrackColors = plOverrideCurrentTrackColors;
 }
 
+void QSUiColorScheme::setPlAlternateRowColors(bool plAlternateRowColors)
+{
+    m_plAlternateRowColors = plAlternateRowColors;
+}
+
 bool QSUiColorScheme::plUseSystemColors() const
 {
     return m_plSystemColors;
@@ -160,6 +168,11 @@ bool QSUiColorScheme::plOverrideGroupColors() const
 bool QSUiColorScheme::plOverrideCurrentTrackColors() const
 {
     return m_plOverrideCurrentTrackColors;
+}
+
+bool QSUiColorScheme::plAlternateRowColors() const
+{
+    return m_plAlternateRowColors;
 }
 
 QHash<QSUiColorScheme::QSUiColorRole, QString> QSUiColorScheme::getTitles()

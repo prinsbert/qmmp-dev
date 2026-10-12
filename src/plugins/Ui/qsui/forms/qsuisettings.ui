@@ -82,6 +82,13 @@
            </widget>
           </item>
           <item>
+           <widget class="QCheckBox" name="reduceRowSpacingCheckBox">
+            <property name="text">
+             <string>Reduce row spacing</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QCheckBox" name="protocolCheckBox">
             <property name="text">
              <string>Show protocol</string>
@@ -256,8 +263,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>96</width>
-                <height>26</height>
+                <width>82</width>
+                <height>82</height>
                </rect>
               </property>
              </widget>

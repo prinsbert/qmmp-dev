@@ -65,10 +65,12 @@ public:
     void setPlUseSystemColors(bool plSystemColors);
     void setPlOverrideGroupColors(bool plOverrideGroupColors);
     void setPlOverrideCurrentTrackColors(bool plOverrideCurrentTrackColors);
+    void setPlAlternateRowColors(bool plAlternateRowColors);
 
     bool plUseSystemColors() const;
     bool plOverrideGroupColors() const;
     bool plOverrideCurrentTrackColors() const;
+    bool plAlternateRowColors() const;
 
     static QHash<QSUiColorRole, QString> getTitles();
 
@@ -85,6 +87,7 @@ private:
     bool m_plSystemColors = true;
     bool m_plOverrideGroupColors = false;
     bool m_plOverrideCurrentTrackColors = false;
+    bool m_plAlternateRowColors = true;
 
 };
 
