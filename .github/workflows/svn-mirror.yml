@@ -519,40 +519,66 @@ jobs:
             echo "No mirror changes this run. Skipping README update (use the 'readme_only' dispatch input to force a regen)."
             exit 0
           fi
+
           git checkout -f svn-sync-entrypoint
           REPO_URL="https://github.com/${GITHUB_REPOSITORY}"
+
+          # Tweakables
+          RECENT_COUNT=10          # rows in the recent-commits table
+          TAGS_MAX=20              # tags listed before collapsing into "[+N more]"
+          SUBJECT_MAX=100          # message cell width before truncation
+
+          # --- Markdown helpers -------------------------------------------------
+          # Escape characters that would break a GFM table cell: backslash first (so we
+          # don't double the escapes we're about to add), then pipe (cell separator) and
+          # backtick (code-span delimiter). Valid in plain text AND inside code spans.
+          esc_md() { printf '%s' "$1" | sed -e 's/\\/\\\\/g' -e 's/|/\\|/g' -e 's/`/\\`/g'; }
+
+          # Linked branch name; master bold so the mainline stands out
+          branch_link() {
+            local b link
+            b=$(esc_md "$1")
+            link=$(printf '[`%s`](%s/tree/%s)' "$b" "$REPO_URL" "$b")
+            if [ "$1" = "master" ]; then link="**${link}**"; fi
+            printf '%s' "$link"
+          }
 
           # Branches (excluding svn-sync-entrypoint) feed both the summary table and the recent-commits list
           BRANCH_LIST=$(git for-each-ref --format='%(refname:short)' refs/heads 2>/dev/null | grep -v '^svn-sync-entrypoint$' | sort || true)
 
           #  Recent commits: last N mirrored commits across all branches, newest first 
-          # Take the N most recent git-svn commits per branch, merge and keep the global top N by revision. Exact despite the per-branch cutoff: any commit in the global top N is necessarily within its own branch's top N. Records are TAB-separated:
-          #   <rev> <sha> <date> <branch> <subject>
-          RECENT_COUNT=10
+          # Take the N most recent git-svn commits per branch, merge, and keep the global top N
+          # by revision. Exact despite the per-branch cutoff: any commit in the global top N is
+          # necessarily within its own branch's top N. Dedup by SHA: one commit reachable from
+          # several branches would otherwise occupy several rows; prio makes master win ties.
+          # Records are TAB-separated:
+          #   <rev> <prio> <sha> <date> <branch> <subject>
           RECENTS_RAW=""
           while IFS= read -r ref; do
             [ -n "$ref" ] || continue
+            prio=1; [ "$ref" = "master" ] && prio=0
             # Same NUL-record trick as snapshot_sha(): %B is multi-line, so fields can't be read line-wise.
             while IFS= read -r -d '' sha && IFS= read -r -d '' rev_date && IFS= read -r -d '' subject && IFS= read -r -d '' body; do
               sha="${sha#$'\n'}"                        # git log emits a newline between records
               rev=$(printf '%s\n' "$body" | grep -oP 'git-svn-id:.*@\K[0-9]+' | tail -1 || true)
               [ -z "$rev" ] && continue                 # belt & braces: --grep already filtered to mirrored commits
-              printf -v row '%s\t%s\t%s\t%s\t%s' "$rev" "$sha" "$rev_date" "$ref" "$subject"
+              printf -v row '%s\t%s\t%s\t%s\t%s\t%s' "$rev" "$prio" "$sha" "$rev_date" "$ref" "$subject"
               RECENTS_RAW+="${row}"$'\n'
             done < <(git log "$ref" -n "$RECENT_COUNT" --extended-regexp --grep='git-svn-id:' \
                        --date=format:'%Y-%m-%d %H:%M' \
                        --format='%H%x00%ad%x00%s%x00%B%x00' 2>/dev/null)
           done < <(printf '%s\n' "$BRANCH_LIST")
 
-          # Newest first (numeric desc on rev; SHA as a deterministic tie-break when one SVN revision was mirrored onto several branches). First line doubles as "Latest SVN revision".
-          RECENTS_SORTED=$(printf '%s' "$RECENTS_RAW" | sort -t$'\t' -k1,1nr -k2,2 || true)
+          # Newest first (numeric desc on rev); master beats other branches on equal rev (dedup
+          # winner); SHA breaks any remaining tie deterministically. sed -n instead of head -n:
+          # head exits early and can break the writer's pipe (the printf warning you saw).
+          RECENTS_SORTED=$(printf '%s' "$RECENTS_RAW" | sort -t$'\t' -k1,1nr -k2,2n -k3,3 | awk -F'\t' '!seen[$3]++' || true)
 
-            
           LATEST_REV="unknown"
           LATEST_SHA=""
           if [ -n "$RECENTS_SORTED" ]; then
             first_line="${RECENTS_SORTED%%$'\n'*}"
-            IFS=$'\t' read -r LATEST_REV LATEST_SHA _rest <<< "$first_line"
+            IFS=$'\t' read -r LATEST_REV _prio LATEST_SHA _rest <<< "$first_line"
           fi
           if [ -n "$LATEST_SHA" ]; then
             REV_MD="[\`r${LATEST_REV}\`](${REPO_URL}/commit/${LATEST_SHA})"
@@ -562,7 +588,7 @@ jobs:
 
           SYNC_TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
 
-          # Branches as inline links; trunk/master in bold so the mainline stands out
+          # Branches row of the summary table
           BRANCH_COUNT=0
           BRANCHES_MD="*None*"
           if [ -n "$BRANCH_LIST" ]; then
@@ -570,23 +596,18 @@ jobs:
             BRANCHES_MD=""
             while IFS= read -r b; do
               [ -n "$b" ] || continue
-              if [ "$b" == "master" ]; then
-                BRANCHES_MD+="**[\`${b}\`](${REPO_URL}/tree/${b})** "
-              else
-                BRANCHES_MD+="[\`${b}\`](${REPO_URL}/tree/${b}) "
-              fi
+              BRANCHES_MD+="$(branch_link "$b") "
             done <<< "$BRANCH_LIST"
             BRANCHES_MD=${BRANCHES_MD%?}              # drop trailing space
           fi
 
-          # Get tags formatted as inline links (unchanged)
+          # Tags as inline links (head -> sed so a >20-tag repo can't trigger the broken-pipe warning)
           TAG_LIST=$(git tag --sort=-v:refname 2>/dev/null || true)
           if [ -n "$TAG_LIST" ]; then
             TAG_COUNT=$(printf '%s\n' "$TAG_LIST" | wc -l | tr -d ' ')
-            DISPLAY_LIST=$(printf '%s\n' "$TAG_LIST" | head -n 20)
-            TAGS_MD=$(printf '%s\n' "$DISPLAY_LIST" | sed "s|.*|[\`&\`](${REPO_URL}/releases/tag/&)|" | paste -sd ' ')
-            if [ "$TAG_COUNT" -gt 20 ]; then
-              MORE_COUNT=$((TAG_COUNT - 20))
+            TAGS_MD=$(printf '%s\n' "$TAG_LIST" | sed -n "1,${TAGS_MAX}p" | sed "s|.*|[\`&\`](${REPO_URL}/releases/tag/&)|" | paste -sd ' ')
+            if [ "$TAG_COUNT" -gt "$TAGS_MAX" ]; then
+              MORE_COUNT=$((TAG_COUNT - TAGS_MAX))
               TAGS_MD="${TAGS_MD} [+${MORE_COUNT} more](${REPO_URL}/tags)"
             fi
           else
@@ -594,21 +615,16 @@ jobs:
             TAGS_MD="*None*"
           fi
 
-          # Render the recent-commits table; escape | and ` in messages so they can't break the table/code spans
+          # Render the recent-commits table: branch and rev share the first cell
           RECENTS_MD=""
           if [ -n "$RECENTS_SORTED" ]; then
-            RECENTS_MD="| Rev | Branch | Date | Message |"$'\n'"|-----|--------|------|---------|"
-            while IFS=$'\t' read -r rev sha rev_date branch subject; do
+            RECENTS_MD="| Branch / Rev | Date | Message |"$'\n'"|--------------|------|---------|"
+            while IFS=$'\t' read -r rev _prio sha rev_date branch subject; do
               [ -n "$rev" ] || continue
-              # Keep rows readable; truncate BEFORE escaping so an escape sequence is never cut in half
-              if [ "${#subject}" -gt 100 ]; then subject="${subject:0:97}..."; fi
-              subject=$(printf '%s' "$subject" | sed -e 's/|/\\|/g' -e 's/`/\\`/g')
-              if [ "$branch" == "master" ]; then
-                branch_cell="**[\`${branch}\`](${REPO_URL}/tree/${branch})**"
-              else
-                branch_cell="[\`${branch}\`](${REPO_URL}/tree/${branch})"
-              fi
-              RECENTS_MD+=$'\n'"| [\`r${rev}\`](${REPO_URL}/commit/${sha}) | ${branch_cell} | ${rev_date} | ${subject} |"
+              # Truncate BEFORE escaping so an escape sequence is never cut in half
+              if [ "${#subject}" -gt "$SUBJECT_MAX" ]; then subject="${subject:0:$((SUBJECT_MAX-3))}..."; fi
+              subject=$(esc_md "$subject")
+              RECENTS_MD+=$'\n'"| $(branch_link "$branch")/[\`r${rev}\`](${REPO_URL}/commit/${sha}) | ${rev_date} | ${subject} |"
             done < <(printf '%s\n' "$RECENTS_SORTED" | sed -n "1,${RECENT_COUNT}p")
           else
             RECENTS_MD="*No mirrored commits yet.*"
