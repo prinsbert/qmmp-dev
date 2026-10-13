@@ -512,24 +512,37 @@ jobs:
           git checkout -f svn-sync-entrypoint
           REPO_URL="https://github.com/${GITHUB_REPOSITORY}"
 
-          # Gather repository state information from ALL branches
-          LATEST_REV=$(git log --all --format='%B' 2>/dev/null | grep -oP 'git-svn-id:.*@\K[0-9]+' | sort -n | tail -1 || true)
-          [ -z "$LATEST_REV" ] && LATEST_REV="unknown"
+          # Branches (excluding svn-sync-entrypoint) feed both the summary table and the recent-commits list
+          BRANCH_LIST=$(git for-each-ref --format='%(refname:short)' refs/heads 2>/dev/null | grep -v '^svn-sync-entrypoint$' | sort || true)
 
-          # Find the Git commit SHA for the latest revision to link it
+          #  Recent commits: last N mirrored commits across all branches, newest first 
+          # Take the N most recent git-svn commits per branch, merge and keep the global top N by revision. Exact despite the per-branch cutoff: any commit in the global top N is necessarily within its own branch's top N. Records are TAB-separated:
+          #   <rev> <sha> <date> <branch> <subject>
+          RECENT_COUNT=10
+          RECENTS_RAW=""
+          while IFS= read -r ref; do
+            [ -n "$ref" ] || continue
+            # Same NUL-record trick as snapshot_sha(): %B is multi-line, so fields can't be read line-wise.
+            while IFS= read -r -d '' sha && IFS= read -r -d '' rev_date && IFS= read -r -d '' subject && IFS= read -r -d '' body; do
+              sha="${sha#$'\n'}"                        # git log emits a newline between records
+              rev=$(printf '%s\n' "$body" | grep -oP 'git-svn-id:.*@\K[0-9]+' | tail -1 || true)
+              [ -z "$rev" ] && continue                 # belt & braces: --grep already filtered to mirrored commits
+              printf -v row '%s\t%s\t%s\t%s\t%s' "$rev" "$sha" "$rev_date" "$ref" "$subject"
+              RECENTS_RAW+="${row}"$'\n'
+            done < <(git log "$ref" -n "$RECENT_COUNT" --extended-regexp --grep='git-svn-id:' \
+                       --date=format:'%Y-%m-%d %H:%M' \
+                       --format='%H%x00%ad%x00%s%x00%B%x00' 2>/dev/null)
+          done < <(printf '%s\n' "$BRANCH_LIST")
+
+          # Newest first (numeric desc on rev; SHA as a deterministic tie-break when one SVN revision was mirrored onto several branches). First line doubles as "Latest SVN revision".
+          RECENTS_SORTED=$(printf '%s' "$RECENTS_RAW" | sort -t$'\t' -k1,1nr -k2,2 || true)
+
+          LATEST_REV="unknown"
           LATEST_SHA=""
-          if [ "$LATEST_REV" != "unknown" ]; then
-            for ref in $(git for-each-ref --format='%(refname:short)' refs/heads); do
-              # Use git's native grep to find the exact commit and extract just the hash
-              sha=$(git log "$ref" --extended-regexp --grep="git-svn-id:.*@${LATEST_REV}( |$)" --format='%H' -1 2>/dev/null || true)          
-              if [ -n "$sha" ]; then
-                # If multiple branches have the same latest rev, pick the first one (usually master)
-                LATEST_SHA="$sha"
-                break
-              fi
-            done
+          if [ -n "$RECENTS_SORTED" ]; then
+            first_line="${RECENTS_SORTED%%$'\n'*}"
+            IFS=$'\t' read -r LATEST_REV LATEST_SHA _rest <<< "$first_line"
           fi
-
           if [ -n "$LATEST_SHA" ]; then
             REV_MD="[\`r${LATEST_REV}\`](${REPO_URL}/commit/${LATEST_SHA})"
           else
@@ -538,18 +551,24 @@ jobs:
 
           SYNC_TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
 
-          # Get branches (excluding svn-sync-entrypoint) formatted as inline links (stripped extra whitespace)
-          BRANCH_LIST=$(git for-each-ref --format='%(refname:short)' refs/heads 2>/dev/null | grep -v '^svn-sync-entrypoint$' | sort || true)
+          # Branches as inline links; trunk/master in bold so the mainline stands out
+          BRANCH_COUNT=0
+          BRANCHES_MD="*None*"
           if [ -n "$BRANCH_LIST" ]; then
             BRANCH_COUNT=$(printf '%s\n' "$BRANCH_LIST" | wc -l | tr -d ' ')
-            #                                          .* instead of ^ so the ampersand (&) captures the full branch name
-            BRANCHES_MD=$(printf '%s\n' "$BRANCH_LIST" | sed "s|.*|[\`&\`](${REPO_URL}/tree/&)|" | paste -sd ' ')
-          else
-            BRANCH_COUNT=0
-            BRANCHES_MD="*None*"
+            BRANCHES_MD=""
+            while IFS= read -r b; do
+              [ -n "$b" ] || continue
+              if [ "$b" == "master" ]; then
+                BRANCHES_MD+="**[\`${b}\`](${REPO_URL}/tree/${b})** "
+              else
+                BRANCHES_MD+="[\`${b}\`](${REPO_URL}/tree/${b}) "
+              fi
+            done <<< "$BRANCH_LIST"
+            BRANCHES_MD=${BRANCHES_MD%?}              # drop trailing space
           fi
 
-          # Get tags formatted as inline links
+          # Get tags formatted as inline links (unchanged)
           TAG_LIST=$(git tag --sort=-v:refname 2>/dev/null || true)
           if [ -n "$TAG_LIST" ]; then
             TAG_COUNT=$(printf '%s\n' "$TAG_LIST" | wc -l | tr -d ' ')
@@ -564,8 +583,29 @@ jobs:
             TAGS_MD="*None*"
           fi
 
+          # Render the recent-commits table; escape | and ` in messages so they can't break the table/code spans
+          RECENTS_MD=""
+          if [ -n "$RECENTS_SORTED" ]; then
+            RECENTS_MD="| Rev | Branch | Date | Message |"$'\n'"|-----|--------|------|---------|"
+            while IFS=$'\t' read -r rev sha rev_date branch subject; do
+              [ -n "$rev" ] || continue
+              # Keep rows readable; truncate BEFORE escaping so an escape sequence is never cut in half
+              if [ "${#subject}" -gt 100 ]; then subject="${subject:0:97}..."; fi
+              subject=$(printf '%s' "$subject" | sed -e 's/|/\\|/g' -e 's/`/\\`/g')
+              if [ "$branch" == "master" ]; then
+                branch_cell="**[\`${branch}\`](${REPO_URL}/tree/${branch})**"
+              else
+                branch_cell="[\`${branch}\`](${REPO_URL}/tree/${branch})"
+              fi
+              RECENTS_MD+=$'\n'"| [\`r${rev}\`](${REPO_URL}/commit/${sha}) | ${branch_cell} | ${rev_date} | ${subject} |"
+            done < <(printf '%s\n' "$RECENTS_SORTED" | head -n "$RECENT_COUNT")
+          else
+            RECENTS_MD="*No mirrored commits yet.*"
+          fi
+
           # Generate state block and strip leading indentation spaces
           # NOTE: the timestamp is only refreshed when the mirror actually changed (guarded above), so it reads as "Last changed", not "last time the workflow happened to run".
+          # NOTE: no literal backticks below on purpose — an unquoted heredoc executes them; all Markdown backticks live in the pre-built variables.
           NEW_STATE=$(cat <<EOF | sed 's/^[[:space:]]*//'
           ### Mirror Status
 
@@ -576,6 +616,9 @@ jobs:
           | Branches (${BRANCH_COUNT}) | ${BRANCHES_MD} |
           | Tags (${TAG_COUNT}) | ${TAGS_MD} |
 
+          #### Recent commits (last ${RECENT_COUNT})
+
+          ${RECENTS_MD}
           EOF
           )
 
@@ -588,8 +631,11 @@ jobs:
                 skip = 1
                 next
               }
-              # the block has ended when we encounter the next Markdown heading
-              skip && /^#/ { skip = 0 }
+              # The block has ended at the next Markdown heading, EXCEPT our own level-4
+              # subheading ("#### Recent commits ..."), which belongs to the block. Without
+              # this exclusion, the next run would splice the new block in at that
+              # subheading and duplicate the table below it.
+              skip && /^#/ && !/^#### Recent commits/ { skip = 0 }
               !skip { print }
             ' README.md > README.md.tmp && mv README.md.tmp README.md
           else
