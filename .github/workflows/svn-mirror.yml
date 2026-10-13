@@ -569,9 +569,7 @@ jobs:
                        --format='%H%x00%ad%x00%s%x00%B%x00' 2>/dev/null)
           done < <(printf '%s\n' "$BRANCH_LIST")
 
-          # Newest first (numeric desc on rev); master beats other branches on equal rev (dedup
-          # winner); SHA breaks any remaining tie deterministically. sed -n instead of head -n:
-          # head exits early and can break the writer's pipe (the printf warning you saw).
+          # Newest first (numeric desc on rev); master beats other branches on equal rev (dedup winner); SHA breaks any remaining tie deterministically. sed -n instead of head -n: head exits early and can break the writer's pipe (the printf warning you saw).
           RECENTS_SORTED=$(printf '%s' "$RECENTS_RAW" | sort -t$'\t' -k1,1nr -k2,2n -k3,3 | awk -F'\t' '!seen[$3]++' || true)
 
           LATEST_REV="unknown"
@@ -618,7 +616,8 @@ jobs:
           # Render the recent-commits table: branch and rev share the first cell
           RECENTS_MD=""
           if [ -n "$RECENTS_SORTED" ]; then
-            RECENTS_MD="| Branch / Rev | Date | Message |"$'\n'"|--------------|------|---------|"
+            # Add a lot of non-breaking spaces to force a minimum width on the column: Github is not so smart about auto-sizing and would stretch the last column whil all others be way too narrow.
+            RECENTS_MD="| Revision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Message |"$'\n'"|--------------|------|---------|"
             while IFS=$'\t' read -r rev _prio sha rev_date branch subject; do
               [ -n "$rev" ] || continue
               # Truncate BEFORE escaping so an escape sequence is never cut in half
@@ -633,10 +632,12 @@ jobs:
           # Generate state block and strip leading indentation spaces
           # NOTE: the timestamp is only refreshed when the mirror actually changed (guarded above), so it reads as "Last changed", not "last time the workflow happened to run".
           # NOTE: no literal backticks below on purpose — an unquoted heredoc executes them; all Markdown backticks live in the pre-built variables.
+          # NOTE: We add a lot of non-breaking spaces to the header row in order to force a minimum width on the column: Github is not so smart about auto-sizing and would stretch the last column whil all others be way too narrow.
+            
           NEW_STATE=$(cat <<EOF | sed 's/^[[:space:]]*//'
           ### Mirror Status
 
-          | Field | Value |
+          | Field&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Value |
           |-------|-------|
           | Latest SVN revision | ${REV_MD} |
           | Last changed | ${SYNC_TIMESTAMP} |
@@ -658,10 +659,7 @@ jobs:
                 skip = 1
                 next
               }
-              # The block has ended at the next Markdown heading, EXCEPT our own level-4
-              # subheading ("#### Recent commits ..."), which belongs to the block. Without
-              # this exclusion, the next run would splice the new block in at that
-              # subheading and duplicate the table below it.
+              # The block has ended at the next Markdown heading, EXCEPT our own level-4 subheading ("#### Recent commits ..."), which belongs to the block. Without this exclusion, the next run would splice the new block in at that subheading and duplicate the table below it.
               skip && /^#/ && !/^#### Recent commits/ { skip = 0 }
               !skip { print }
             ' README.md > README.md.tmp && mv README.md.tmp README.md
