@@ -617,7 +617,7 @@ jobs:
           RECENTS_MD=""
           if [ -n "$RECENTS_SORTED" ]; then
             # Add a lot of non-breaking spaces to force a minimum width on the column: Github is not so smart about auto-sizing and would stretch the last column whil all others be way too narrow.
-            RECENTS_MD="| Revision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Message |"$'\n'"|--------------|------|---------|"
+            RECENTS_MD="| Revision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Message |"$'\n'"|:---|:---|:---|"
             while IFS=$'\t' read -r rev _prio sha rev_date branch subject; do
               [ -n "$rev" ] || continue
               # Truncate BEFORE escaping so an escape sequence is never cut in half
@@ -638,7 +638,7 @@ jobs:
           ### Mirror Status
 
           | Field&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Value |
-          |-------|-------|
+          |:---|:---|
           | Latest SVN revision | ${REV_MD} |
           | Last changed | ${SYNC_TIMESTAMP} |
           | Branches (${BRANCH_COUNT}) | ${BRANCHES_MD} |
