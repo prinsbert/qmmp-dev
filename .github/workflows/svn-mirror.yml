@@ -6,6 +6,11 @@ on:
   schedule:
     - cron: '21 */14 * * *'
   workflow_dispatch:            # Manual "Run workflow" button in the Actions UI
+    inputs:
+      readme_only:
+        description: 'Skip SVN sync; only regenerate the README.md status block'
+        type: boolean
+        default: false
   push:
     # The branch name is deliberately non-existent so this trigger only fires when the workflow file itself is pushed (for testing config changes).
     branches: [ never-because-the-repository-was-seeded-already ]
@@ -37,6 +42,7 @@ jobs:
       # Step 1: Install the SVN client (not pre-installed on ubuntu-latest)
       #
       - name: Install subversion
+        if: ${{ inputs.readme_only != true }}
         run: |
           set -euo pipefail
           sudo apt-get update -y
@@ -71,6 +77,7 @@ jobs:
       # Step 4: Core sync logic: fetch new SVN revisions and replay them
       #
       - name: Sync new SVN revisions
+        if: ${{ inputs.readme_only != true }}
         run: |
           set -euo pipefail
           cd mirror
@@ -472,6 +479,7 @@ jobs:
       # Step 5: Push the updated mirror back to GitHub
       #
       - name: Push mirror to GitHub
+        if: ${{ inputs.readme_only != true }}
         run: |
           set -euo pipefail
           cd mirror
@@ -499,16 +507,18 @@ jobs:
       # Step 6: Update README.md on svn-sync-entrypoint with latest mirror state
       #
       - name: Update README.md on svn-sync-entrypoint
+        env:
+          FORCE_README: ${{ inputs.readme_only == true && '1' || '0' }}
         run: |
           set -euo pipefail
           cd mirror
 
           # Bail out when the mirror didn't actually change: rewriting the block would only churn the timestamp, making "Last changed" a lie.
-          if [ ! -e /tmp/mirror_changed ]; then
-            echo "No mirror changes this run. Skipping README update."
+          # Exception: a manual readme_only run (FORCE_README=1) exists precisely to rewrite the block.
+          if [ ! -e /tmp/mirror_changed ] && [ "${FORCE_README:-0}" != "1" ]; then
+            echo "No mirror changes this run. Skipping README update (use the 'readme_only' dispatch input to force a regen)."
             exit 0
           fi
-
           git checkout -f svn-sync-entrypoint
           REPO_URL="https://github.com/${GITHUB_REPOSITORY}"
 
