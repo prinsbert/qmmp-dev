@@ -22,7 +22,7 @@ This repository is an archive tracking the [Qmmp source code](https://sourceforg
 
 #### Recent commits (last 10)
 
-| Branch / Rev &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Date&nbsp;&nbsp;&nbsp;&nbsp; | Message |
+| Branch / Rev &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Message |
 |--------------|------|---------|
 | [`qmmp-2.4`](https://github.com/prinsbert/qmmp-dev/tree/qmmp-2.4)/[`r13301`](https://github.com/prinsbert/qmmp-dev/commit/a44a869c4ef57db589d3fffcc5b72a8e3f8e1a76) | 2026-10-12 19:07 | updated translations |
 | [`qmmp-2.4`](https://github.com/prinsbert/qmmp-dev/tree/qmmp-2.4)/[`r13300`](https://github.com/prinsbert/qmmp-dev/commit/fbefbdc25be46f3593935cd62644eef9776881e9) | 2026-10-12 19:05 | qsui: fixed row spacing; added feature to disable alternate row colors (#1239) |
