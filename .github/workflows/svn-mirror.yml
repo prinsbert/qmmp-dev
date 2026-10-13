@@ -547,6 +547,7 @@ jobs:
           # Newest first (numeric desc on rev; SHA as a deterministic tie-break when one SVN revision was mirrored onto several branches). First line doubles as "Latest SVN revision".
           RECENTS_SORTED=$(printf '%s' "$RECENTS_RAW" | sort -t$'\t' -k1,1nr -k2,2 || true)
 
+            
           LATEST_REV="unknown"
           LATEST_SHA=""
           if [ -n "$RECENTS_SORTED" ]; then
@@ -608,7 +609,7 @@ jobs:
                 branch_cell="[\`${branch}\`](${REPO_URL}/tree/${branch})"
               fi
               RECENTS_MD+=$'\n'"| [\`r${rev}\`](${REPO_URL}/commit/${sha}) | ${branch_cell} | ${rev_date} | ${subject} |"
-            done < <(printf '%s\n' "$RECENTS_SORTED" | head -n "$RECENT_COUNT")
+            done < <(printf '%s\n' "$RECENTS_SORTED" | sed -n "1,${RECENT_COUNT}p")
           else
             RECENTS_MD="*No mirrored commits yet.*"
           fi
