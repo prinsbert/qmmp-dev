@@ -80,7 +80,7 @@ void ProjectM4Widget::addPCM(float *left, float *right)
 {
     if(m_handle)
     {
-        for(size_t i = 0; i < QMMP_VISUAL_NODE_SIZE; ++i)
+        for(int i = 0; i < QMMP_VISUAL_NODE_SIZE; ++i)
         {
             m_buf[i * 2] = left[i];
             m_buf[i * 2 + 1] = right[i];
