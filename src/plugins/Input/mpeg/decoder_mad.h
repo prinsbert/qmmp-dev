@@ -81,7 +81,7 @@ private:
     bool findHeader();
     bool findXingHeader(struct mad_bitptr, unsigned int bitlen);
     LameHeader *findLameHeader(struct mad_bitptr ptr, unsigned int bitlen);
-    uint findID3v2(uchar *data, ulong size);
+    uint findID3v2(const uchar *data, ulong size);
 
     bool m_inited = false, m_eof = false;
     qint64 m_totalTime = 0;

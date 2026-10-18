@@ -3,7 +3,7 @@
  *                                                                         *
  * Copyright (c) 2000-2001 Brad Hughes <bhughes@trolltech.com>             *
  * Copyright (C) 2000-2004 Robert Leslie <rob@mars.org>                    *
- * Copyright (C) 2009-2020 Ilya Kotov forkotov02@ya.ru                     *
+ * Copyright (C) 2009-2026 Ilya Kotov forkotov02@ya.ru                     *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -271,7 +271,7 @@ bool DecoderMAD::findHeader()
         {
             if(m_stream.error == MAD_ERROR_LOSTSYNC)
             {
-                uint tagSize = findID3v2((uchar *)m_stream.this_frame,
+                uint tagSize = findID3v2(m_stream.this_frame,
                                          (ulong) (m_stream.bufend - m_stream.this_frame));
                 if (tagSize > 0)
                 {
@@ -475,9 +475,9 @@ bool DecoderMAD::fillBuffer()
     return true;
 }
 
-uint DecoderMAD::findID3v2(uchar *data, ulong size) //retuns ID3v2 tag size
+uint DecoderMAD::findID3v2(const uchar *data, ulong size) //retuns ID3v2 tag size
 {
-    if (size < 10)
+    if(size < TagLib::ID3v2::Header::size())
         return 0;
 
     if (((data[0] == 'I' && data[1] == 'D' && data[2] == '3') || //ID3v2 tag
@@ -485,9 +485,8 @@ uint DecoderMAD::findID3v2(uchar *data, ulong size) //retuns ID3v2 tag size
             data[3] < 0xff && data[4] < 0xff && data[6] < 0x80 &&
             data[7] < 0x80 && data[8] < 0x80 && data[9] < 0x80)
     {
-        TagLib::ByteVector byteVector((char *)data, size);
-        TagLib::ID3v2::Header header(byteVector);
-        return header.tagSize();
+        TagLib::ID3v2::Header header(TagLib::ByteVector(reinterpret_cast<const char*>(data), TagLib::ID3v2::Header::size()));
+        return header.completeTagSize();
     }
     return 0;
 }
