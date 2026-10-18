@@ -80,21 +80,28 @@ bool DecoderMpegFactory::canDecode(QIODevice *input) const
 
     if(!memcmp(buf, "ID3", 3))
     {
-        TagLib::ByteVector byteVector(buf, dataSize);
-        TagLib::ID3v2::Header header(byteVector);
-
         //skip id3v2tag if possible
         if(input->isSequential())
         {
-            if(header.tagSize() >= dataSize)
+            TagLib::ID3v2::Header header(TagLib::ByteVector(buf, TagLib::ID3v2::Header::size()));
+
+            if(header.completeTagSize() >= dataSize)
                 return false;
 
-            dataSize -= header.tagSize();
-            memmove(buf, buf + header.tagSize(), dataSize);
+            dataSize -= header.completeTagSize();
+            memmove(buf, buf + header.completeTagSize(), dataSize);
         }
         else
         {
-            input->seek(header.tagSize());
+            //skip all ID3v2 tags
+            while(!memcmp(buf, "ID3", 3))
+            {
+                TagLib::ID3v2::Header header(TagLib::ByteVector(buf, TagLib::ID3v2::Header::size()));
+                input->seek(input->pos() + header.completeTagSize());
+                if(input->peek(buf, TagLib::ID3v2::Header::size()) != TagLib::ID3v2::Header::size())
+                    return false;
+            }
+
             dataSize = input->read(buf, sizeof(buf));
             input->seek(0); //restore initial position
         }
@@ -155,7 +162,7 @@ bool DecoderMpegFactory::canDecode(QIODevice *input) const
             mpg123_delete(handle);
             return false;
         }
-        if (mpg123_format(handle, 44100, MPG123_STEREO, MPG123_ENC_SIGNED_16) != MPG123_OK)
+        if(mpg123_format(handle, 44100, MPG123_STEREO, MPG123_ENC_SIGNED_16) != MPG123_OK)
         {
             mpg123_close(handle);
             mpg123_delete(handle);
