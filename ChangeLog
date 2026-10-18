@@ -1,6 +1,14 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 2.4.3
+* fixed cache path under Windows in the skinned user interface
+* fixed issue with multiple ID3v2 tags in the mpeg plugin
+* improved simple user interface:
+  - fixed system colors
+  - fixed row spacing 
+  - added feature to disable alternate row colors
+
 Version 2.4.2
 * added feature to enable built-in OPL3 FM synthesizer in the
   wildmidi plugin (requires WildMIDI 0.5.0 or higher)
