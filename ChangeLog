@@ -1,6 +1,10 @@
 Changelog of Qt-based Multimedia Player
 --------------
 
+Version 1.7.12
+* fixed projectM 4.x support
+* fixed issue with multiple ID3v2 tags in the mpeg plugin
+
 Version 1.7.11
 * fixed build with PipeWire versions less than 0.3.50
 * fixed settings dialog layout
