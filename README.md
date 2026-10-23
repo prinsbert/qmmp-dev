@@ -1,5 +1,5 @@
-# Git Mirror of qmmp (Qt-based Multimedia Player) 
-source code history for the [qmmp media player](https://sourceforge.net/projects/qmmp-dev/) converted from SVN to Git.
+# qmmp (Qt-based Multimedia Player)
+This repostory tracks upstream [qmmp](https://sourceforge.net/projects/qmmp-dev/) and converts the history from SVN to Git.
 
 > ⚠️ **You may be interested in:** a [fork of Qmmp with improvements to the media library](https://github.com/desertmilk/qmmp-with-media-library). It adds Artist/Album filtering to the Media Library, and has better support for [Winamp/Webamp skins](https://skins.webamp.org/) (and behaviors closer to classic Winamp, such as snapping to other panels, etc.).
 
