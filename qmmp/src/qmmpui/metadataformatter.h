@@ -67,7 +67,7 @@ public:
      * %dir(n) - name of the directory located on \b n levels above,
      * %dir - full path of the parent directory.
      */
-    MetaDataFormatter(const QString &pattern = QString());
+    explicit MetaDataFormatter(const QString &pattern = QString());
     /*!
      * Destructor.
      */

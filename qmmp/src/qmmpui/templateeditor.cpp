@@ -26,7 +26,7 @@ class TemplateEditorPrivate : public Ui::TemplateEditor
 {
     Q_DECLARE_PUBLIC(::TemplateEditor)
 public:
-    TemplateEditorPrivate(::TemplateEditor *editor) : q_ptr(editor)
+    explicit TemplateEditorPrivate(::TemplateEditor *editor) : q_ptr(editor)
     {
         setupUi(editor);
     }

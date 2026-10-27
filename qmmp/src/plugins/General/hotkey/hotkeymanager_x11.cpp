@@ -158,7 +158,7 @@ bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message
 {
     Q_UNUSED(eventType);
     Q_UNUSED(result);
-    xcb_generic_event_t *e = static_cast<xcb_generic_event_t*>(message);
+    const xcb_generic_event_t *e = static_cast<xcb_generic_event_t*>(message);
 
     if(e->response_type == XCB_KEY_PRESS)
     {

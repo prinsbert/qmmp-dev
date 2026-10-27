@@ -57,7 +57,7 @@ public:
      * Constructs plalist item with given metadata.
      * \param info Media file information.
      */
-    PlayListTrack(const TrackInfo &info);
+    explicit PlayListTrack(const TrackInfo &info);
     /*!
      * Move-constructs a PlayListTrack instance, making it point at the same object that \b other was pointing to.
      */

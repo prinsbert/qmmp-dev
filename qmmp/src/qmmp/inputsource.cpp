@@ -33,7 +33,7 @@ Q_GLOBAL_STATIC(QList<QmmpPluginCache *>, inputCache);
 class InputSourcePrivate
 {
 public:
-    InputSourcePrivate(const QString &source) : path(source) {}
+    explicit InputSourcePrivate(const QString &source) : path(source) {}
 
     static void loadPlugins()
     {
@@ -218,7 +218,7 @@ QString InputSource::file(const InputSourceFactory *factory)
 {
     InputSourcePrivate::loadPlugins();
     auto it = std::find_if(inputCache->cbegin(), inputCache->cend(),
-                           [factory](QmmpPluginCache *item) { return item->shortName() == factory->properties().shortName; } );
+                           [factory](const QmmpPluginCache *item) { return item->shortName() == factory->properties().shortName; } );
     return it == inputCache->cend() ? QString() : (*it)->file();
 }
 

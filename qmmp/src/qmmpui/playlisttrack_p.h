@@ -10,7 +10,7 @@ class PlayListTrackPrivate
 {
     Q_DECLARE_PUBLIC(PlayListTrack)
 public:
-    PlayListTrackPrivate(PlayListTrack *track);
+    explicit PlayListTrackPrivate(PlayListTrack *track);
     void formatTitle(int column) const;
     void formatGroup() const;
 

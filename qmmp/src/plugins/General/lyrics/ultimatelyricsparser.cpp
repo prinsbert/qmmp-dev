@@ -132,7 +132,7 @@ QList<LyricsProvider *> UltimateLyricsParser::providers()
 
 LyricsProvider *UltimateLyricsParser::provider(const QString &name) const
 {
-    auto it = std::find_if(m_providers.cbegin(), m_providers.cend(), [name](LyricsProvider *provider){ return provider->name() == name; });
+    auto it = std::find_if(m_providers.cbegin(), m_providers.cend(), [name](const LyricsProvider *provider){ return provider->name() == name; });
     return it == m_providers.cend() ? nullptr : *it;
 }
 

@@ -38,7 +38,7 @@ public:
      * Constructor.
      * \param charset Conversion charset.
      */
-    QmmpTextCodec(const QByteArray &charset);
+    explicit QmmpTextCodec(const QByteArray &charset);
     /*!
      * Destructor.
      */

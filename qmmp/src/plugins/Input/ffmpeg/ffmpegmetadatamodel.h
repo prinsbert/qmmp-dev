@@ -50,7 +50,7 @@ private:
 class ApeTagModel : public TagModel
 {
 public:
-    ApeTagModel(TagLib::APE::File *file);
+    explicit ApeTagModel(TagLib::APE::File *file);
     ~ApeTagModel();
     QString name() const override;
     QList<Qmmp::MetaData> keys() const override;

@@ -26,7 +26,7 @@
 class ShortcutDialogPrivate : public Ui::ShortcutDialog
 {
 public:
-    ShortcutDialogPrivate(const QKeySequence &k) : key(k) {}
+    explicit ShortcutDialogPrivate(const QKeySequence &k) : key(k) {}
     QKeySequence key;
 };
 

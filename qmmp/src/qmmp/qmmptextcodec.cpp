@@ -26,7 +26,7 @@
 class QmmpTextCodecPrivate
 {
 public:
-    QmmpTextCodecPrivate(const QByteArray &name) : name(name) {}
+    explicit QmmpTextCodecPrivate(const QByteArray &name) : name(name) {}
 
     ~QmmpTextCodecPrivate()
     {

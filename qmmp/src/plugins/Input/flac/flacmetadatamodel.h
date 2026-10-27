@@ -56,8 +56,8 @@ private:
 class FLACVorbisCommentModel : public TagModel
 {
 public:
-    FLACVorbisCommentModel(TagLib::FLAC::File *file);
-    FLACVorbisCommentModel(TagLib::Ogg::FLAC::File *file);
+    explicit FLACVorbisCommentModel(TagLib::FLAC::File *file);
+    explicit FLACVorbisCommentModel(TagLib::Ogg::FLAC::File *file);
     QString name() const override;
     QString value(Qmmp::MetaData key) const override;
     void setValue(Qmmp::MetaData key, const QString &value) override;
@@ -72,7 +72,7 @@ private:
 class FLACID3v2TagModel : public TagModel
 {
 public:
-    FLACID3v2TagModel(TagLib::FLAC::File *file);
+    explicit FLACID3v2TagModel(TagLib::FLAC::File *file);
     QString name() const override;
     QString value(Qmmp::MetaData key) const override;
     void setValue(Qmmp::MetaData key, const QString &value) override;

@@ -93,15 +93,15 @@ QmmpUiPluginCache::QmmpUiPluginCache(QObject *instance)
 {   
     m_instance = instance;
 
-    if(GeneralFactory *factory = generalFactory())
+    if(const GeneralFactory *factory = generalFactory())
     {
         m_shortName = factory->properties().shortName;
     }
-    else if(UiFactory *factory = uiFactory())
+    else if(const UiFactory *factory = uiFactory())
     {
         m_shortName = factory->properties().shortName;
     }
-    else if(FileDialogFactory *factory = fileDialogFactory())
+    else if(const FileDialogFactory *factory = fileDialogFactory())
     {
         m_shortName = factory->properties().shortName;
     }

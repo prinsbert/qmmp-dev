@@ -85,15 +85,15 @@ QStringList UiLoader::names()
     return out;
 }
 
-QString UiLoader::file(UiFactory *factory)
+QString UiLoader::file(const UiFactory *factory)
 {
     UiLoaderPrivate::loadPlugins();
     auto it = std::find_if(uiCache->cbegin(), uiCache->cend(),
-                           [factory](QmmpUiPluginCache *item) { return item->shortName() == factory->properties().shortName; } );
+                           [factory](const QmmpUiPluginCache *item) { return item->shortName() == factory->properties().shortName; } );
     return it == uiCache->cend() ? QString() : (*it)->file();
 }
 
-void UiLoader::select(UiFactory* factory)
+void UiLoader::select(const UiFactory* factory)
 {
     select(factory->properties().shortName);
 }
@@ -101,7 +101,7 @@ void UiLoader::select(UiFactory* factory)
 void UiLoader::select(const QString &name)
 {
     UiLoaderPrivate::loadPlugins();
-    if(std::any_of(uiCache->cbegin(), uiCache->cend(), [name](QmmpUiPluginCache *item) { return item->shortName() == name; } ))
+    if(std::any_of(uiCache->cbegin(), uiCache->cend(), [name](const QmmpUiPluginCache *item) { return item->shortName() == name; } ))
     {
         QSettings settings;
         settings.setValue (u"Ui/current_plugin"_s, name);

@@ -50,8 +50,8 @@ private:
 class SndFileTagModel : public TagModel
 {
 public:
-    SndFileTagModel(TagLib::RIFF::WAV::File *file);
-    SndFileTagModel(TagLib::RIFF::AIFF::File *file);
+    explicit SndFileTagModel(TagLib::RIFF::WAV::File *file);
+    explicit SndFileTagModel(TagLib::RIFF::AIFF::File *file);
     ~SndFileTagModel() = default;
 
     QString name() const override;

@@ -54,7 +54,7 @@ public:
      * Constructs an empty equalizer settings (0 dB, disabled)
      * \param bands - Number of bands (supported: 10, 15, 25, 31)
      */
-    EqSettings(Bands bands = EQ_BANDS_10);
+    explicit EqSettings(Bands bands = EQ_BANDS_10);
     /*!
      * Destructor.
      */

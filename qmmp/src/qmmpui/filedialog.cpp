@@ -128,7 +128,7 @@ QString FileDialog::file(const FileDialogFactory *factory)
 {
     FileDialogPrivate::loadPlugins();
     auto it = std::find_if(fileDialogCache->cbegin(), fileDialogCache->cend(),
-                           [factory] (QmmpUiPluginCache *item){ return item->shortName() == factory->properties().shortName; } );
+                           [factory](const QmmpUiPluginCache *item){ return item->shortName() == factory->properties().shortName; } );
     return it == fileDialogCache->cend() ? QString() : (*it)->file();
 }
 
@@ -174,7 +174,7 @@ FileDialog *FileDialog::instance()
     QString name = settings.value(u"FileDialog"_s, u"qt_dialog"_s).toString();
 
     auto it = std::find_if(fileDialogCache->cbegin(), fileDialogCache->cend(),
-                           [name] (QmmpUiPluginCache *item){ return item->shortName() == name; } );
+                           [name](const QmmpUiPluginCache *item){ return item->shortName() == name; } );
     if(it != fileDialogCache->cend())
         selected = (*it)->fileDialogFactory();
 

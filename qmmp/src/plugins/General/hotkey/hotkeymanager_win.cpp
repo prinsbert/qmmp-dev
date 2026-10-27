@@ -215,7 +215,7 @@ bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message
 {
     Q_UNUSED(eventType);
     Q_UNUSED(result);
-    MSG *m = static_cast<MSG*>(message);
+    const MSG *m = static_cast<MSG*>(message);
     if(m->message == WM_HOTKEY)
     {
         SoundCore *core = SoundCore::instance();

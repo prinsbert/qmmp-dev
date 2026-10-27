@@ -45,12 +45,12 @@ public:
      * Returns plugin file path.
      * \param factory User interface plugin factory.
      */
-    static QString file(UiFactory *factory);
+    static QString file(const UiFactory *factory);
     /*!
      * Selects active user interface factory.
      * \param factory Ui plugin factory.
      */
-    static void select(UiFactory* factory);
+    static void select(const UiFactory *factory);
     /*!
      * Selects active user interface.
      * \param name Ui plugin factory short name.
