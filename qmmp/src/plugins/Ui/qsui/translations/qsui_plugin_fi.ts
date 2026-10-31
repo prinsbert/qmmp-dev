@@ -237,7 +237,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="87"/>
         <source>Reduce row spacing</source>
-        <translation type="unfinished"></translation>
+        <translation>Pienennä riviväliä</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="156"/>
@@ -1015,7 +1015,7 @@
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="65"/>
         <source>Alternate row colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaihtuvat rivivärit</translation>
     </message>
     <message>
         <location filename="../qsuicolorschemewidget.cpp" line="66"/>
