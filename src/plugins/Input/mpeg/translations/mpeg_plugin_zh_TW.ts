@@ -4,42 +4,42 @@
 <context>
     <name>DecoderMpegFactory</name>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="177"/>
+        <location filename="../decodermpegfactory.cpp" line="184"/>
         <source>MPEG Plugin</source>
         <translation>MPEG插件</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="180"/>
+        <location filename="../decodermpegfactory.cpp" line="187"/>
         <source>MPEG Files</source>
         <translation>MPEG 檔案</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="417"/>
+        <location filename="../decodermpegfactory.cpp" line="424"/>
         <source>About MPEG Audio Plugin</source>
         <translation>關於 MPEG 聲訊插件</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="418"/>
+        <location filename="../decodermpegfactory.cpp" line="425"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
         <translation>MPEG 1.0/2.0/2.5 layer 1/2/3 音訊解碼器</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="419"/>
+        <location filename="../decodermpegfactory.cpp" line="426"/>
         <source>Compiled against:</source>
         <translation>編譯針對：</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="428"/>
+        <location filename="../decodermpegfactory.cpp" line="435"/>
         <source>mpg123, API version: %1</source>
         <translation>mpg123, API版本： %1</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="432"/>
+        <location filename="../decodermpegfactory.cpp" line="439"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>程式編寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="433"/>
+        <location filename="../decodermpegfactory.cpp" line="440"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation>基於mq3和madplay專案的源碼</translation>
     </message>
