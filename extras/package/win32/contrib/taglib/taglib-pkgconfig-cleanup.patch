@@ -1,0 +1,11 @@
+diff -U3 -r taglib-2.3.2-old/taglib.pc.cmake taglib-2.3.2-new/taglib.pc.cmake
+--- taglib-2.3.2-old/taglib.pc.cmake	2026-08-30 13:27:42 +0300
++++ taglib-2.3.2-new/taglib.pc.cmake	2026-11-01 18:28:42 +0300
+@@ -6,7 +6,6 @@
+ Name: TagLib
+ Description: Audio meta-data library
+ Requires:
+-Requires.private: zlib
+ Version: @TAGLIB_LIB_VERSION_STRING@
+ Libs: -L${libdir} -ltag@TAGLIB_INSTALL_SUFFIX@
+ Cflags: -I${includedir} -I${includedir}/taglib@TAGLIB_INSTALL_SUFFIX@

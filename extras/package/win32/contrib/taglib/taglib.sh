@@ -14,6 +14,7 @@ case $1 in
     cd temp
     tar xvzf $NAME-$VERSION.tar.gz
     cd $NAME-$VERSION
+    cat ../../taglib-pkg-config-cleanup.patch | patch -p1
     cmake ./ -DCMAKE_INSTALL_PREFIX=${PREFIX} -G "MSYS Makefiles" -DZLIB_ROOT=${ZLIB_ROOT} \
     -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DBUILD_SHARED_LIBS=ON
     mingw32-make -j${JOBS}
