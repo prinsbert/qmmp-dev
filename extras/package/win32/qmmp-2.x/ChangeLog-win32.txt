@@ -4,6 +4,13 @@ LEGEND
 [-] Bug fix
 [!] Enhancement
 
+2.4.3
+[*] qmmp-2.4.3
+[*] qt-6.11.3
+[*] taglib-2.3.2
+[*] libsidplayfp-3.1.2
+[+] libresidfp-1.2.3
+
 2.4.2
 [*] qmmp-2.4.2
 [*] libcdio-2.4.0
