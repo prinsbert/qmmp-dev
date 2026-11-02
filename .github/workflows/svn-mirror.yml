@@ -598,7 +598,8 @@ jobs:
             done <<< "$BRANCH_LIST"
             BRANCHES_MD=${BRANCHES_MD%?}              # drop trailing space
           fi
-
+          BRANCHES_URL="${REPO_URL}/branches"
+          
           # Tags as inline links (head -> sed so a >20-tag repo can't trigger the broken-pipe warning)
           TAG_LIST=$(git tag --sort=-v:refname 2>/dev/null || true)
           if [ -n "$TAG_LIST" ]; then
@@ -628,12 +629,11 @@ jobs:
           else
             RECENTS_MD="*No mirrored commits yet.*"
           fi
-
           # Generate state block and strip leading indentation spaces
           # NOTE: the timestamp is only refreshed when the mirror actually changed (guarded above), so it reads as "Last changed", not "last time the workflow happened to run".
           # NOTE: no literal backticks below on purpose — an unquoted heredoc executes them; all Markdown backticks live in the pre-built variables.
           # NOTE: We add a lot of non-breaking spaces to the header row in order to force a minimum width on the column: Github is not so smart about auto-sizing and would stretch the last column whil all others be way too narrow.
-            
+          
           NEW_STATE=$(cat <<EOF | sed 's/^[[:space:]]*//'
           ### Mirror Status
 
@@ -641,9 +641,8 @@ jobs:
           |:---|:---|
           | Latest SVN revision | ${REV_MD} |
           | Last changed | ${SYNC_TIMESTAMP} |
-          | Branches (${BRANCH_COUNT}) | ${BRANCHES_MD} |
+          | Branches | [${BRANCH_COUNT}](${BRANCHES_URL}) |
           | Tags (${TAG_COUNT}) | ${TAGS_MD} |
-
           #### Recent commits (last ${RECENT_COUNT})
 
           ${RECENTS_MD}
