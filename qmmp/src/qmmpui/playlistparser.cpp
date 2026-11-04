@@ -101,7 +101,7 @@ PlayListFormat *PlayListParser::findByMime(const QString &mime)
 {
     loadFormats();
     auto it = std::find_if(plFormats->cbegin(), plFormats->cend(),
-                           [mime](PlayListFormat *format) { return format->properties().contentTypes.contains(mime); } );
+                           [mime](const PlayListFormat *format) { return format->properties().contentTypes.contains(mime); } );
     return it == plFormats->cend() ? nullptr : *it;
 }
 
@@ -126,7 +126,7 @@ void PlayListParser::savePlayList(QList<PlayListTrack *> tracks, const QString &
 {
     if(tracks.isEmpty())
         return;
-    PlayListFormat* prs = PlayListParser::findByPath(f_name);
+    const PlayListFormat *prs = PlayListParser::findByPath(f_name);
     if(!prs)
         return;
     QFile file(f_name);
@@ -143,7 +143,7 @@ QList<PlayListTrack *> PlayListParser::loadPlaylist(const QString &f_name)
 {
     if(!QFile::exists(f_name))
         return QList<PlayListTrack *>();
-    PlayListFormat* prs = PlayListParser::findByPath(f_name);
+    const PlayListFormat* prs = PlayListParser::findByPath(f_name);
     if(!prs)
         return QList<PlayListTrack *>();
 
@@ -183,7 +183,7 @@ QList<PlayListTrack *> PlayListParser::loadPlaylist(const QString &f_name)
 QList<PlayListTrack *> PlayListParser::loadPlaylist(const QString &fmt, const QByteArray &content)
 {
     auto it = std::find_if(plFormats->cbegin(), plFormats->cend(),
-                           [fmt](PlayListFormat *format) { return format->properties().shortName == fmt; } );
+                           [fmt](const PlayListFormat *format) { return format->properties().shortName == fmt; } );
     return it == plFormats->cend() ? QList<PlayListTrack *>() : (*it)->decode(content);
 }
 

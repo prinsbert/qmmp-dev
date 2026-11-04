@@ -60,7 +60,7 @@ class MetaDataFormatterPrivate
     Q_DECLARE_PUBLIC(MetaDataFormatter)
 public:
 
-    MetaDataFormatterPrivate(MetaDataFormatter *f) : q_ptr(f)
+    explicit MetaDataFormatterPrivate(MetaDataFormatter *f) : q_ptr(f)
     {}
 
 private:

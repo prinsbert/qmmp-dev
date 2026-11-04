@@ -32,7 +32,7 @@ class PlayListTrack;
 class PlayListGroupPrivate
 {
 public:
-    PlayListGroupPrivate(const QString &name);
+    explicit PlayListGroupPrivate(const QString &name);
     ~PlayListGroupPrivate();
 
     QString formatTitle0() const;

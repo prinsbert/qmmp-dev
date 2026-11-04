@@ -36,7 +36,7 @@ Q_GLOBAL_STATIC(QList<QmmpUiPluginCache *>, fileDialogCache);
 class FileDialogPrivate
 {
 public:
-    FileDialogPrivate(FileDialog *dialog)
+    explicit FileDialogPrivate(FileDialog *dialog)
     {
         instance = dialog;
     }

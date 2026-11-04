@@ -36,7 +36,7 @@ class PopupWidget : public QFrame
 {
     Q_OBJECT
 public:
-    PopupWidget(QWidget *parent = nullptr);
+    explicit PopupWidget(QWidget *parent = nullptr);
 
     ~PopupWidget();
 

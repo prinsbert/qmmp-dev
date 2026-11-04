@@ -61,7 +61,7 @@ public:
     /*!
      * Move-constructs a PlayListTrack instance, making it point at the same object that \b other was pointing to.
      */
-    PlayListTrack(TrackInfo &&info);
+    explicit PlayListTrack(TrackInfo &&info);
     /*!
      * Object destructor.
      */

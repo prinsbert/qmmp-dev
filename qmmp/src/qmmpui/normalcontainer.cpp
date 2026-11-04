@@ -223,6 +223,7 @@ QList<PlayListItem *> NormalContainer::itemsAtLines(int pos, int length) const
 {
     QList<PlayListTrack *> tracks = m_tracks.mid(pos, length);
     QList<PlayListItem *> items;
+    items.reserve(tracks.count());
     for(PlayListTrack *t : std::as_const(tracks))
         items << t;
     return items;

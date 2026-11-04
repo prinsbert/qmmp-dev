@@ -89,7 +89,7 @@ QString LyricsProvider::getUrl(const TrackInfo &track) const
     {
         QString value = it.value();
 
-        for(const UrlFormat &format: m_urlFormats)
+        for(const UrlFormat &format : std::as_const(m_urlFormats))
             value.replace(QRegularExpression(QStringLiteral("[%1]").arg(QRegularExpression::escape(format.replace))), format.with);
 
         url.replace(it.key(), value);
