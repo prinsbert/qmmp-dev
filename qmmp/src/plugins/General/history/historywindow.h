@@ -37,7 +37,7 @@ class HistoryWindow : public QWidget
 {
     Q_OBJECT
 public:
-    explicit HistoryWindow(QSqlDatabase db, QWidget *parent = nullptr);
+    explicit HistoryWindow(const QSqlDatabase &db, QWidget *parent = nullptr);
     ~HistoryWindow();
 
 private slots:
@@ -58,8 +58,8 @@ private:
     void loadTopArtists();
     void loadTopGenres();
     void readSettings();
-    void removeTrack(QTreeWidgetItem *item);
-    void showInformation(QTreeWidgetItem *item);
+    void removeTracks(const QList<QTreeWidgetItem *> &items);
+    void showInformation(const QList<QTreeWidgetItem *> &items);
     void closeEvent(QCloseEvent *) override;
 
     Ui::HistoryWindow *m_ui;
