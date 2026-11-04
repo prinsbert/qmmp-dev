@@ -24,13 +24,9 @@
 
 GmeHelper::GmeHelper()
 {
-    m_emu = nullptr;
-
     QSettings settings;
     if(settings.value(u"GME/fadeout"_s, false).toBool())
         m_fade_length = settings.value(u"GME/fadeout_length"_s, 7000).toInt();
-    else
-        m_fade_length = 0;
 }
 
 GmeHelper::~GmeHelper()
