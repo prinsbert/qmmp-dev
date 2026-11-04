@@ -40,7 +40,7 @@ class Notifier : public QObject
 {
 Q_OBJECT
 public:
-    Notifier(QObject *parent = nullptr);
+    explicit Notifier(QObject *parent = nullptr);
 
     virtual~Notifier();
 

@@ -36,7 +36,7 @@ class LibraryModel : public QAbstractItemModel
 {
     Q_OBJECT
 public:
-    LibraryModel(QObject *parent = nullptr);
+    explicit LibraryModel(QObject *parent = nullptr);
     ~LibraryModel();
 
     Qt::ItemFlags flags(const QModelIndex &index) const override;

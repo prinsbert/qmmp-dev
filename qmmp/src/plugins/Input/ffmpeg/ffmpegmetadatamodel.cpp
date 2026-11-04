@@ -44,7 +44,7 @@ FFmpegMetaDataModel::FFmpegMetaDataModel(const QString &path, bool readOnly) : M
         avformat_find_stream_info(in, nullptr);
         av_read_play(in);
 
-        AVCodecParameters *c = nullptr;
+        const AVCodecParameters *c = nullptr;
 
         for (uint idx = 0; idx < in->nb_streams; idx++)
         {

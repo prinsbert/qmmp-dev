@@ -54,12 +54,12 @@ QList<PlayListTrack *> PLSPlaylistFormat::decode(const QByteArray &contents) con
     static const QRegularExpression titleRegExp(u"^Title(\\d+)=(.+)"_s);
     static const QRegularExpression lengthRegExp(u"^Length(\\d+)=(-{0,1}\\d+)"_s);
 
-    int number = 0;
     bool error = false;
 
     for(const QString &line : std::as_const(splitted))
     {
         QRegularExpressionMatch match;
+        int number;
 
         if((match = fileRegExp.match(line)).hasMatch())
         {

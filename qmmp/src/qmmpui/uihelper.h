@@ -50,7 +50,7 @@ public:
      * Object constructor,
      * \param parent Parent object
      */
-    UiHelper(QObject *parent = nullptr);
+    explicit UiHelper(QObject *parent = nullptr);
     /*!
      * Destructor
      */
@@ -82,7 +82,7 @@ public:
     /*!
      * Returns a list of actions of the menu type \b type
      */
-    QList<QAction *> actions(MenuType type = TOOLS_MENU);
+    QList<QAction *> actions(MenuType type = TOOLS_MENU) const;
     /*!
      * Creates menu with type \b type
      * \param type Menu type.

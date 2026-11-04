@@ -32,7 +32,7 @@ class Dock : public QObject
 {
     Q_OBJECT
 public:
-    Dock(QObject *parent = nullptr);
+    explicit Dock(QObject *parent = nullptr);
 
     ~Dock();
 

@@ -50,7 +50,7 @@ public:
      * Constructs FileLoader object.
      * \param parent QObject parent
      */
-    FileLoader(QObject *parent = nullptr);
+    explicit FileLoader(QObject *parent = nullptr);
     /*!
      * Sets file/directory to load
      */

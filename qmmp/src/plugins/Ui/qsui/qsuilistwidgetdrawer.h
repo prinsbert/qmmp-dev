@@ -75,7 +75,7 @@ struct QSUiListWidgetRow
 class QSUiListWidgetDrawer
 {
 public:
-    QSUiListWidgetDrawer(const QWidget *listWidget);
+    explicit QSUiListWidgetDrawer(const QWidget *listWidget);
     ~QSUiListWidgetDrawer();
 
     void readSettings();

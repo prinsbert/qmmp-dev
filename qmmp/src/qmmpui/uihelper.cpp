@@ -161,7 +161,7 @@ void UiHelper::removeAction(QAction *action)
     }
 }
 
-QList<QAction *> UiHelper::actions(MenuType type)
+QList<QAction *> UiHelper::actions(MenuType type) const
 {
     return d_ptr->menus[type].actions;
 }

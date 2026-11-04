@@ -39,7 +39,7 @@ class StatusIcon : public QObject
 {
 Q_OBJECT
 public:
-    StatusIcon(QObject *parent = nullptr);
+    explicit StatusIcon(QObject *parent = nullptr);
 
     ~StatusIcon();
 

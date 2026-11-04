@@ -43,7 +43,7 @@ class StatusIconPopupWidget : public QFrame
     Q_OBJECT
 public:
 
-    StatusIconPopupWidget(QWidget *parent = nullptr);
+    explicit StatusIconPopupWidget(QWidget *parent = nullptr);
     ~StatusIconPopupWidget();
 
     void showInfo(int x, int y, const QString &message); //x,y are tray icon position

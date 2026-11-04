@@ -30,7 +30,7 @@
 class FLACMetaDataModel : public MetaDataModel
 {
 public:
-    FLACMetaDataModel(const QString &path, bool readOnly);
+    explicit FLACMetaDataModel(const QString &path, bool readOnly);
     ~FLACMetaDataModel();
     QList<TagModel* > tags() const override;
     QImage cover() const override;

@@ -31,7 +31,7 @@ class StatusIconCoverWidget : public QWidget
 {
 Q_OBJECT
 public:
-    StatusIconCoverWidget(QWidget *parent = nullptr);
+    explicit StatusIconCoverWidget(QWidget *parent = nullptr);
     ~StatusIconCoverWidget() = default;
 
     void setImage(const QImage &img);

@@ -51,7 +51,7 @@ public:
     /*!
      * Creates file dialog object.
      */
-    virtual FileDialog* create() = 0;
+    virtual FileDialog *create() = 0;
     /*!
      * Returns file dialog plugin properties.
      */

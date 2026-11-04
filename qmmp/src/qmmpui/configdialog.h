@@ -38,7 +38,7 @@ public:
      * Constructor.
      * \param parent Parent widget
      */
-    ConfigDialog(QWidget *parent = nullptr);
+    explicit ConfigDialog(QWidget *parent = nullptr);
     /*!
      * Destructor
      */

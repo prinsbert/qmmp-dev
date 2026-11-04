@@ -34,7 +34,7 @@ class CoverViewer : public QWidget
 {
 Q_OBJECT
 public:
-    CoverViewer(QWidget *parent = nullptr);
+    explicit CoverViewer(QWidget *parent = nullptr);
 
     ~CoverViewer();
 

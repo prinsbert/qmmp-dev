@@ -24,7 +24,7 @@
 class EqSettingsPrivate
 {
 public:
-    EqSettingsPrivate(int bands) : bands(bands) {}
+    explicit EqSettingsPrivate(int bands) : bands(bands) {}
 
     double gains[31] = { 0 };
     double preamp = 0;
