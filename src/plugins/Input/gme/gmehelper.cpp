@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2026 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -27,10 +27,11 @@ GmeHelper::GmeHelper()
 {
      m_emu = 0;
 
-     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
-     m_fade_length = settings.value("GME/fadeout_length", 7000).toInt();
-     if(settings.value("GME/fadeout", false).toBool())
-         m_fade_length = 0;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    if(settings.value("GME/fadeout", false).toBool())
+        m_fade_length = settings.value("GME/fadeout_length", 7000).toInt();
+    else
+        m_fade_length = 0;
 }
 
 GmeHelper::~GmeHelper()
