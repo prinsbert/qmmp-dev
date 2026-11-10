@@ -2,9 +2,8 @@
 This repostory tracks upstream [qmmp](https://sourceforge.net/projects/qmmp-dev/) and converts the history from SVN to Git.
 
 > ⚠️ **You may be interested in:** a [fork of Qmmp with improvements to the media library](https://github.com/desertmilk/qmmp-with-media-library). It adds Artist/Album filtering to the Media Library, and has better support for [Winamp/Webamp skins](https://skins.webamp.org/) (and behaviors closer to classic Winamp, such as snapping to other panels, etc.).
-<a href="https://github.com/desertmilk/qmmp-with-media-library">
-<img width="743" height="889" alt="qmmp media player with media library" src="https://github.com/user-attachments/assets/dc9be5fe-37bf-4d52-9045-0ae7a2e7ed5c" />
-</a>
+> 
+> <a href="https://github.com/desertmilk/qmmp-with-media-library"><img width="743" height="889" alt="qmmp media player with media library" src="https://github.com/user-attachments/assets/dc9be5fe-37bf-4d52-9045-0ae7a2e7ed5c" /></a>
 
 ## SVN → Git mirror
 
